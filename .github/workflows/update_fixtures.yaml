@@ -32,7 +32,7 @@ jobs:
       - name: Update fixtures script
         env:
           TOMTOM_API_KEY: ${{ secrets.TOMTOM_API_KEY }}
-        run: python scripts/update_test_fixtures.py
+        run: poetry run python scripts/update_test_fixtures.py
 
       - name: Run tests
         run: poetry run pytest

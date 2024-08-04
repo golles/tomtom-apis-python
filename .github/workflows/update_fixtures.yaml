@@ -50,10 +50,10 @@ jobs:
           commit-message: Update fixtures
           committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-          branch: fixtures
+          branch: ci/update_fixtures
           delete-branch: true
           title: Update fixtures
-          body: New fixture files
+          body: New fixture files for tests
           labels: |
             automated pr
 

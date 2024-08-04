@@ -1,0 +1,25 @@
+{
+  "summary": { "numResults": 1, "queryTime": 128 },
+  "addresses": [
+    {
+      "address": {
+        "streetName": "Linden Street & 42nd Street",
+        "crossStreet": "Linden Street",
+        "municipality": "Oakland",
+        "neighbourhood": "Longfellow",
+        "countrySecondarySubdivision": "Alameda",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "94608",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "Linden Street & 42nd Street, Emeryville, CA 94608",
+        "localName": "Emeryville",
+        "street": "42nd Street"
+      },
+      "position": "37.832777,-122.27623"
+    }
+  ]
+}

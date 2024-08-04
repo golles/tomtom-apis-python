@@ -1,0 +1,473 @@
+{
+  "summary": {
+    "queryType": "NEARBY",
+    "queryTime": 51,
+    "numResults": 10,
+    "offset": 0,
+    "totalResults": 100,
+    "fuzzyLevel": 1,
+    "geoBias": { "lat": 48.872263, "lon": 2.299541 }
+  },
+  "results": [
+    {
+      "type": "POI",
+      "id": "5u2RrN_d1wM3Y9OolPUPAw",
+      "score": 99.9917755127,
+      "dist": 8.22949,
+      "info": "search:ta:250006000316400-FR",
+      "poi": {
+        "name": "TotalEnergies Relais Champs-Élysées",
+        "phone": "+33 1 56 52 00 01",
+        "categorySet": [{ "id": 9361009 }],
+        "url": "store.totalenergies.fr/en_EN/NF058897",
+        "categories": ["convenience stores", "shop"],
+        "classifications": [
+          {
+            "code": "SHOP",
+            "names": [
+              { "nameLocale": "en-US", "name": "shop" },
+              { "nameLocale": "en-US", "name": "convenience stores" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Triangle d'Or",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "Avenue des Champs-Élysées, 75008 Paris (Triangle d'Or)",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.8722, "lon": 2.2996 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.8731, "lon": 2.29823 },
+        "btmRightPoint": { "lat": 48.8713, "lon": 2.30097 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.87218, "lon": 2.29959 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "REFiiI839-Sh-sbaI5vGxg",
+      "score": 99.9835281372,
+      "dist": 16.475589,
+      "info": "search:ta:250009014108461-FR",
+      "poi": {
+        "name": "George V",
+        "phone": "+33 1 47 20 02 68",
+        "brands": [{ "name": "Indigo" }],
+        "categorySet": [{ "id": 7313 }],
+        "url": "www.parkindigo.fr",
+        "categories": ["parking garage"],
+        "classifications": [
+          {
+            "code": "PARKING_GARAGE",
+            "names": [{ "nameLocale": "en-US", "name": "parking garage" }]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "103",
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Triangle d'Or",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "103 Avenue des Champs-Élysées, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.872132, "lon": 2.299647 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.87303, "lon": 2.29828 },
+        "btmRightPoint": { "lat": 48.87123, "lon": 2.30101 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.8722, "lon": 2.2995 } },
+        { "type": "main", "position": { "lat": 48.8722, "lon": 2.29952 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "qt37oMdiv-fKOP1u9VAEkw",
+      "score": 99.9825515747,
+      "dist": 17.453278,
+      "info": "search:ta:250007000573567-FR",
+      "poi": {
+        "name": "TotalEnergies Relais des Champs Élysées",
+        "brands": [{ "name": "TotalEnergies" }],
+        "categorySet": [{ "id": 7311 }],
+        "categories": ["petrol station"],
+        "classifications": [
+          {
+            "code": "PETROL_STATION",
+            "names": [{ "nameLocale": "en-US", "name": "petrol station" }]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "109",
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Triangle d'Or",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "109 Avenue des Champs-Élysées, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.872122, "lon": 2.299437 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.87302, "lon": 2.29807 },
+        "btmRightPoint": { "lat": 48.87122, "lon": 2.3008 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.87214, "lon": 2.29971 } }
+      ],
+      "fuelTypes": ["Diesel", "Petrol"],
+      "vehicleTypes": ["Car"]
+    },
+    {
+      "type": "POI",
+      "id": "3eIRO-qlIwXjIPjGZ5Hmeg",
+      "score": 99.9695358276,
+      "dist": 30.462307,
+      "info": "search:ta:250009005513622-FR",
+      "poi": {
+        "name": "YPSIS",
+        "phone": "+33 1 41 31 32 72",
+        "categorySet": [{ "id": 9361015 }],
+        "categories": ["real estate agents", "shop"],
+        "classifications": [
+          {
+            "code": "SHOP",
+            "names": [
+              { "nameLocale": "en-US", "name": "shop" },
+              { "nameLocale": "en-US", "name": "real estate agents" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "122",
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Hoche-Friedland",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "122 Avenue des Champs-Élysées, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.872358, "lon": 2.299931 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.87326, "lon": 2.29856 },
+        "btmRightPoint": { "lat": 48.87146, "lon": 2.3013 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.87225, "lon": 2.29994 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "0Gp0tlrq4pfzl2eTETpCug",
+      "score": 99.9695358276,
+      "dist": 30.462307,
+      "info": "search:ta:250009005071887-FR",
+      "poi": {
+        "name": "VALORINVEST CONSEIL",
+        "categorySet": [{ "id": 9361015 }],
+        "categories": ["real estate agents", "shop"],
+        "classifications": [
+          {
+            "code": "SHOP",
+            "names": [
+              { "nameLocale": "en-US", "name": "shop" },
+              { "nameLocale": "en-US", "name": "real estate agents" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "122",
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Hoche-Friedland",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "122 Avenue des Champs-Élysées, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.872358, "lon": 2.299931 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.87326, "lon": 2.29856 },
+        "btmRightPoint": { "lat": 48.87146, "lon": 2.3013 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.87225, "lon": 2.29994 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "1U8msogeWWesnPI-qZ0njA",
+      "score": 99.9694442749,
+      "dist": 30.558824,
+      "info": "search:ta:250009003551309-FR",
+      "poi": {
+        "name": "CCF",
+        "phone": "+33 1 49 52 20 00",
+        "brands": [{ "name": "CCF" }],
+        "categorySet": [{ "id": 7328 }],
+        "url": "www.agences.ccf.fr/fr/france-FR/all",
+        "categories": ["bank"],
+        "classifications": [
+          { "code": "BANK", "names": [{ "nameLocale": "en-US", "name": "bank" }] }
+        ]
+      },
+      "address": {
+        "streetNumber": "109",
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Triangle d'Or",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "109 Avenue des Champs-Élysées, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.871988, "lon": 2.299526 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.87289, "lon": 2.29816 },
+        "btmRightPoint": { "lat": 48.87109, "lon": 2.30089 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.87218, "lon": 2.29957 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "jh6wv5JX4CjcCdUmv7Mwkw",
+      "score": 99.9535522461,
+      "dist": 46.45137,
+      "info": "search:ta:250009006508633-FR",
+      "poi": {
+        "name": "SOC CIVILE ROJEPA",
+        "categorySet": [{ "id": 9361015 }],
+        "categories": ["real estate agents", "shop"],
+        "classifications": [
+          {
+            "code": "SHOP",
+            "names": [
+              { "nameLocale": "en-US", "name": "shop" },
+              { "nameLocale": "en-US", "name": "real estate agents" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "120",
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Hoche-Friedland",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "120 Avenue des Champs-Élysées, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.872278, "lon": 2.300176 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.87318, "lon": 2.29881 },
+        "btmRightPoint": { "lat": 48.87138, "lon": 2.30154 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.87216, "lon": 2.30022 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "11gZ0mtEhLqy1zFY2BbLMQ",
+      "score": 99.9535522461,
+      "dist": 46.45137,
+      "info": "search:ta:250009006825388-FR",
+      "poi": {
+        "name": "SC IMMOBILIERE HABITATION MODERN",
+        "categorySet": [{ "id": 9361015 }],
+        "categories": ["real estate agents", "shop"],
+        "classifications": [
+          {
+            "code": "SHOP",
+            "names": [
+              { "nameLocale": "en-US", "name": "shop" },
+              { "nameLocale": "en-US", "name": "real estate agents" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "120",
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Hoche-Friedland",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "120 Avenue des Champs-Élysées, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.872278, "lon": 2.300176 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.87318, "lon": 2.29881 },
+        "btmRightPoint": { "lat": 48.87138, "lon": 2.30154 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.87216, "lon": 2.30022 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "8ISiYX4v1MCSE2226ubaCg",
+      "score": 99.9533081055,
+      "dist": 46.693561,
+      "info": "search:ta:250007000399475-FR",
+      "poi": {
+        "name": "Royal Mini Cab",
+        "categorySet": [{ "id": 9352024 }],
+        "categories": ["company", "transport"],
+        "classifications": [
+          {
+            "code": "COMPANY",
+            "names": [
+              { "nameLocale": "en-US", "name": "transport" },
+              { "nameLocale": "en-US", "name": "company" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Hoche-Friedland",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "Avenue des Champs-Élysées, 75008 Paris (Hoche-Friedland)",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.8726, "lon": 2.29916 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.8735, "lon": 2.29779 },
+        "btmRightPoint": { "lat": 48.8717, "lon": 2.30053 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.87252, "lon": 2.29911 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "21USjvv_PpYfSbAtxIq7YA",
+      "score": 99.9524612427,
+      "dist": 47.541104,
+      "info": "search:ta:250009013077781-FR",
+      "poi": {
+        "name": "Elysees Immo Invest",
+        "categorySet": [{ "id": 9352039 }],
+        "categories": ["company", "services"],
+        "classifications": [
+          {
+            "code": "COMPANY",
+            "names": [
+              { "nameLocale": "en-US", "name": "company" },
+              { "nameLocale": "en-US", "name": "services" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "64",
+        "streetName": "Rue Galilée",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Triangle d'Or",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "64 Rue Galilée, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.871955, "lon": 2.29909 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.87285, "lon": 2.29772 },
+        "btmRightPoint": { "lat": 48.87106, "lon": 2.30046 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.87201, "lon": 2.299 } },
+        { "type": "main", "position": { "lat": 48.87201, "lon": 2.299 } }
+      ]
+    }
+  ]
+}

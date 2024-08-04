@@ -1,0 +1,67 @@
+[tool.poetry]
+name = "tomtom-api"
+version = "0.1.0"
+description = "Asynchronous Python client for the TomTom API"
+authors = ["Sander Gols <developer@golles.nl>"]
+license = "MIT"
+readme = "README.md"
+documentation = "https://github.com/golles/tomtom-api-python"
+homepage = "https://github.com/golles/tomtom-api-python"
+repository = "https://github.com/golles/tomtom-api-python"
+packages = [{ include = "tomtom_api", from = "src" }]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/golles/tomtom-api-python/issues"
+
+[tool.poetry.dependencies]
+aiohttp = "^3.10.0"
+mashumaro = "^3.13"
+orjson = "^3.10.5"
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+aresponses = "^3.0.0"
+mypy = "^1.11.1"
+pylint = "^3.2.3"
+pytest = "^8.2.2"
+pytest-asyncio = "^0.23.7"
+pytest-cov = "^5.0.0"
+ruff = "^0.5.6"
+yamllint = "^1.35.1"
+
+[tool.coverage.run]
+source = ["tomtom_api"]
+
+[tool.mypy]
+python_version = "3.12"
+enable_incomplete_feature = ["NewGenericSyntax"]
+
+[[tool.mypy.overrides]]
+module = "aresponses.*"
+ignore_missing_imports = true
+
+[tool.pylint]
+max-line-length=150
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = [
+    "fixme", # Since this is WIP project, some things need to happen later
+    "line-too-long", # Doesn't deal well with multiline docstrings
+]
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-report=term --cov-report=xml"
+asyncio_mode = "auto"
+log_cli = true
+log_cli_level = "DEBUG"
+
+[tool.ruff]
+line-length = 150
+target-version = "py311"
+
+[tool.ruff.lint.isort]
+known-first-party = ["tomtom_api"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

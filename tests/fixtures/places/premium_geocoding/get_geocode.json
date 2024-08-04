@@ -1,0 +1,142 @@
+{
+  "summary": {
+    "query": "3401 s lamar blvd apartment 3441 austin tx",
+    "queryType": "NON_NEAR",
+    "queryTime": 1315,
+    "numResults": 2,
+    "offset": 0,
+    "totalResults": 2,
+    "fuzzyLevel": 1,
+    "content": "premium"
+  },
+  "results": [
+    {
+      "content": "premium",
+      "type": "Point Address",
+      "id": "r63Ckl7uJ7CwF-WfY051Rw",
+      "score": 12.0779495239,
+      "matchConfidence": {
+        "score": 0.7150310475515943
+      },
+      "address": {
+        "streetNumber": "3401",
+        "streetName": "South Lamar Boulevard",
+        "municipality": "Austin",
+        "neighbourhood": "South Lamar",
+        "countrySecondarySubdivision": "Travis",
+        "countrySubdivision": "TX",
+        "countrySubdivisionName": "Texas",
+        "countrySubdivisionCode": "TX",
+        "postalCode": "78704",
+        "extendedPostalCode": "78704-5805",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "3401 South Lamar Boulevard, Austin, TX 78704",
+        "localName": "Austin",
+        "unit": "3441"
+      },
+      "addressDetails": {
+        "numberOfUnits": 279,
+        "numberOfBuildings": 1,
+        "floorNumber": 4,
+        "hasElevator": true,
+        "hasStair": true,
+        "hasParking": true,
+        "wallHeight": 3
+      },
+      "position": {
+        "lat": 30.23966941103544,
+        "lon": -97.78704138350255
+      },
+      "viewport": {
+        "topLeftPoint": {
+          "lat": 30.24153,
+          "lon": -97.78699
+        },
+        "btmRightPoint": {
+          "lat": 30.23973,
+          "lon": -97.78491
+        }
+      },
+      "entryPoints": [
+        {
+          "type": "route",
+          "functions": ["PARKING"],
+          "pathToNext": "WALKING",
+          "position": {
+            "lat": 30.24054777888027,
+            "lon": -97.78596058222561
+          }
+        },
+        {
+          "type": "route",
+          "functions": ["ENTRANCE"],
+          "pathToNext": "WALKING",
+          "position": {
+            "lat": 30.240719797674036,
+            "lon": -97.78579765954056
+          }
+        },
+        {
+          "type": "route",
+          "functions": ["ELEVATOR"],
+          "pathToNext": "WALKING",
+          "position": {
+            "lat": 30.24062750793042,
+            "lon": -97.78585748105236
+          }
+        }
+      ]
+    },
+    {
+      "content": "standard",
+      "type": "Point Address",
+      "id": "TOm8JKsIsfWSLBUZ1LciiA",
+      "score": 8.4066877365,
+      "matchConfidence": {
+        "score": 0.5494750373252423
+      },
+      "address": {
+        "streetNumber": "3401",
+        "streetName": "North Lamar Boulevard",
+        "municipality": "Austin",
+        "neighbourhood": "West Campus",
+        "countrySecondarySubdivision": "Travis",
+        "countrySubdivision": "TX",
+        "countrySubdivisionName": "Texas",
+        "countrySubdivisionCode": "TX",
+        "postalCode": "78705",
+        "extendedPostalCode": "78705-1115",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "3401 North Lamar Boulevard, Austin, TX 78705",
+        "localName": "Austin"
+      },
+      "position": {
+        "lat": 30.30278,
+        "lon": -97.74438
+      },
+      "viewport": {
+        "topLeftPoint": {
+          "lat": 30.30368,
+          "lon": -97.74542
+        },
+        "btmRightPoint": {
+          "lat": 30.30188,
+          "lon": -97.74334
+        }
+      },
+      "entryPoints": [
+        {
+          "type": "main",
+          "position": {
+            "lat": 30.30295,
+            "lon": -97.74455
+          }
+        }
+      ]
+    }
+  ]
+}

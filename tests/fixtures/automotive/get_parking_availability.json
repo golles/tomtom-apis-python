@@ -1,0 +1,13 @@
+{
+  "statuses": [
+    {
+      "current": {
+        "emptySpots": 1,
+        "updatedAt": "2021-12-12T11:29:00Z",
+        "available": true,
+        "availabilityTrend": "emptying"
+      }
+    }
+  ],
+  "parkingAvailability": "00000000-0003-1d9a-0009-20d4467654e2"
+}

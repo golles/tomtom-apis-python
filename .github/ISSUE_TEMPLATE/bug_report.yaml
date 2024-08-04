@@ -1,0 +1,48 @@
+name: 🐛 Bug Report
+description: Create a report to help us improve the project
+labels: [bug]
+body:
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: Describe the bug
+      description: >-
+        A clear and concise description of what the bug is, steps to reproduce the behavior and a clear and concise description of what you expected to happen. You can add screenshots here as well.
+
+  - type: textarea
+    attributes:
+      label: Code snippet (Python only)
+      render: python
+      description: >-
+        Provide a sample snippet of the python code that reproduces the issue, no need for wrapping in ```.
+
+  - type: textarea
+    attributes:
+      label: Logs
+      render: text
+      description: >-
+        Provide any relevant logs or error messages here.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Versions
+
+  - type: input
+    validations:
+      required: true
+    attributes:
+      label: Version
+      placeholder: "0.1.0"
+
+  - type: input
+    validations:
+      required: true
+    attributes:
+      label: Python version
+      placeholder: "3.12"
+
+  - type: markdown
+    attributes:
+      value: Thanks for completing our form!

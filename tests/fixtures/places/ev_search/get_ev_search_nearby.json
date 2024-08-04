@@ -1,0 +1,225 @@
+{
+  "summary": {
+    "numResults": 2,
+    "totalResults": 191
+  },
+  "results": [
+    {
+      "id": "939d44d0-cf00-42e9-b9f3-bf4d2de125b5",
+      "name": "TotalEnergies",
+      "position": {
+        "lat": 52.364941,
+        "lon": 4.8935986
+      },
+      "chargingStations": [
+        {
+          "id": "e0bead1c-6884-11ee-9f49-42010aa40fc0",
+          "chargingPoints": [
+            {
+              "capabilities": [
+                "CreditCardPayable",
+                "RemoteStartStopCapable",
+                "RfidReader"
+              ],
+              "connectors": [
+                {
+                  "id": "1",
+                  "currentA": 25,
+                  "currentType": "AC3",
+                  "ratedPowerKW": 17.0,
+                  "type": "IEC62196Type2Outlet",
+                  "voltageV": 230
+                }
+              ],
+              "evseId": "NL-GFX-ETNLP011512-1",
+              "physicalReference": "TNLP011512",
+              "status": "Available"
+            },
+            {
+              "capabilities": [
+                "CreditCardPayable",
+                "RemoteStartStopCapable",
+                "RfidReader"
+              ],
+              "connectors": [
+                {
+                  "id": "2",
+                  "currentA": 25,
+                  "currentType": "AC3",
+                  "ratedPowerKW": 17.0,
+                  "type": "IEC62196Type2Outlet",
+                  "voltageV": 230
+                }
+              ],
+              "evseId": "NL-GFX-ETNLP011512-2",
+              "physicalReference": "TNLP011512",
+              "status": "Occupied"
+            }
+          ]
+        }
+      ],
+      "address": {
+        "countryCode": "NL",
+        "countryCodeISO3": "NLD",
+        "country": "Netherlands",
+        "countrySubdivision": "North Holland",
+        "countrySubdivisionName": "North Holland",
+        "countrySubdivisionCode": "NH",
+        "freeformAddress": "Oudezijds Voorburgwal 99F, 1012 EM Amsterdam",
+        "localName": "Amsterdam",
+        "municipality": "Amsterdam",
+        "postalCode": "1012 EM",
+        "streetNumber": "99F",
+        "streetName": "Oudezijds Voorburgwal"
+      },
+      "openingHours": {
+        "mode": "nextSevenDays",
+        "timeRanges": [
+          {
+            "startTime": {
+              "date": "2024-05-02",
+              "hour": 0,
+              "minute": 0
+            },
+            "endTime": {
+              "date": "2024-05-09",
+              "hour": 0,
+              "minute": 0
+            }
+          }
+        ]
+      },
+      "timeZone": {
+        "ianaId": "Europe/Amsterdam"
+      },
+      "paymentOptions": [
+        {
+          "brands": [
+            {
+              "name": "Plugsurfing"
+            },
+            {
+              "name": "Eneco"
+            },
+            {
+              "name": "Vattenfall InCharge - Incharge"
+            },
+            {
+              "name": "EVBox Charge"
+            },
+            {
+              "name": "Shell Recharge"
+            },
+            {
+              "name": "Vandebron"
+            }
+          ]
+        }
+      ],
+      "accessType": "Public"
+    },
+    {
+      "id": "c31bc9fb-8935-4df5-97c6-51acbaccc601",
+      "name": "EQUANS",
+      "position": {
+        "lat": 52.3653884,
+        "lon": 4.8922383
+      },
+      "chargingStations": [
+        {
+          "id": "67335c40-4e72-11e8-8f53-42010a840002",
+          "chargingPoints": [
+            {
+              "capabilities": ["RemoteStartStopCapable", "RfidReader"],
+              "connectors": [
+                {
+                  "id": "1",
+                  "currentA": 16,
+                  "currentType": "AC3",
+                  "ratedPowerKW": 11.0,
+                  "type": "IEC62196Type2Outlet",
+                  "voltageV": 230
+                }
+              ],
+              "evseId": "NL-GFX-EEVB-P1552388-1",
+              "physicalReference": "1552388",
+              "status": "Occupied"
+            },
+            {
+              "capabilities": ["RemoteStartStopCapable", "RfidReader"],
+              "connectors": [
+                {
+                  "id": "2",
+                  "currentA": 16,
+                  "currentType": "AC3",
+                  "ratedPowerKW": 11.0,
+                  "type": "IEC62196Type2Outlet",
+                  "voltageV": 230
+                }
+              ],
+              "evseId": "NL-GFX-EEVB-P1552388-2",
+              "physicalReference": "1552388",
+              "status": "OutOfService"
+            }
+          ]
+        }
+      ],
+      "address": {
+        "countryCode": "NL",
+        "countryCodeISO3": "NLD",
+        "country": "Netherlands",
+        "countrySubdivision": "North Holland",
+        "countrySubdivisionName": "North Holland",
+        "countrySubdivisionCode": "NH",
+        "freeformAddress": "Herengracht 505, 1017 BV Amsterdam",
+        "localName": "Amsterdam",
+        "municipality": "Amsterdam",
+        "postalCode": "1017 BV",
+        "streetNumber": "505",
+        "streetName": "Herengracht"
+      },
+      "openingHours": {
+        "mode": "nextSevenDays",
+        "timeRanges": [
+          {
+            "startTime": {
+              "date": "2024-05-02",
+              "hour": 0,
+              "minute": 0
+            },
+            "endTime": {
+              "date": "2024-05-09",
+              "hour": 0,
+              "minute": 0
+            }
+          }
+        ]
+      },
+      "timeZone": {
+        "ianaId": "Europe/Amsterdam"
+      },
+      "paymentOptions": [
+        {
+          "brands": [
+            {
+              "name": "Plugsurfing"
+            },
+            {
+              "name": "Vattenfall InCharge - Incharge"
+            },
+            {
+              "name": "EVBox Charge"
+            },
+            {
+              "name": "Shell Recharge"
+            },
+            {
+              "name": "Vandebron"
+            }
+          ]
+        }
+      ],
+      "accessType": "Public"
+    }
+  ]
+}

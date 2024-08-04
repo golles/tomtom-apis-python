@@ -1,0 +1,35 @@
+{
+  "summary": { "queryTime": 18, "numResults": 1 },
+  "addresses": [
+    {
+      "address": {
+        "buildingNumber": "1001",
+        "streetNumber": "1001",
+        "routeNumbers": [],
+        "street": "42nd Street",
+        "streetName": "42nd Street",
+        "streetNameAndNumber": "1001 42nd Street",
+        "countryCode": "US",
+        "countrySubdivision": "CA",
+        "countrySecondarySubdivision": "Alameda",
+        "municipality": "Oakland",
+        "postalCode": "94608",
+        "neighbourhood": "Longfellow",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "1001 42nd Street, Emeryville, CA 94608",
+        "boundingBox": {
+          "northEast": "37.832881,-122.276230",
+          "southWest": "37.832777,-122.276928",
+          "entity": "position"
+        },
+        "extendedPostalCode": "94608-3620",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "localName": "Emeryville"
+      },
+      "position": "37.832844,-122.276688",
+      "id": "MYXT6qXsxkmIiP4T9T7BZA"
+    }
+  ]
+}

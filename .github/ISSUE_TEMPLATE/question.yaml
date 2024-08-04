@@ -1,0 +1,15 @@
+name: ❓ Ask a question
+description: Anything that doesn't fit any of the other categories
+labels: [question]
+body:
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: My question
+      description: >-
+        A clear and concise question
+
+  - type: markdown
+    attributes:
+      value: Thanks for completing our form!

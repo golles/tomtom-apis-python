@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 TomTom dev portal
+    url: https://developer.tomtom.com
+    about: Find all information about the TomTom API's
+
+  - name: 🔑 Get TomTom API key
+    url: https://developer.tomtom.com/user/login
+    about: Login or create an account to get your key

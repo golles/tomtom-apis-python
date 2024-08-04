@@ -1,0 +1,197 @@
+{
+  "formatVersion": "0.0.1",
+  "batchItems": [
+    {
+      "statusCode": 200,
+      "response": {
+        "summary": {
+          "query": "lodz",
+          "queryType": "NON_NEAR",
+          "queryTime": 101,
+          "numResults": 1,
+          "offset": 0,
+          "totalResults": 363,
+          "fuzzyLevel": 1
+        },
+        "results": [
+          {
+            "type": "Geography",
+            "id": "PL/GEO/p0/4455",
+            "score": 5.98,
+            "info": "search:decarta:ta:616013002038177-PL",
+            "address": {
+              "municipality": "Lodz",
+              "countrySecondarySubdivision": "Łódź",
+              "countrySubdivision": "Łódzkie",
+              "countryCode": "PL",
+              "country": "Poland",
+              "countryCodeISO3": "POL",
+              "freeformAddress": "Lodz"
+            },
+            "position": {
+              "lat": 51.75905,
+              "lon": 19.4586
+            }
+          }
+        ]
+      }
+    },
+    {
+      "statusCode": 200,
+      "response": {
+        "summary": {
+          "query": "restaurant amsterdam",
+          "queryType": "NON_NEAR",
+          "queryTime": 186,
+          "numResults": 3,
+          "offset": 0,
+          "totalResults": 3731,
+          "fuzzyLevel": 1
+        },
+        "results": [
+          {
+            "type": "POI",
+            "id": "AU/POI/p0/261806",
+            "score": 7.5,
+            "info": "search:decarta:ta:036001105620466-AU",
+            "poi": {
+              "name": "Nieuw Amsterdam",
+              "categories": ["restaurant"],
+              "classifications": [
+                {
+                  "code": "RESTAURANT",
+                  "names": [
+                    {
+                      "nameLocale": "en-US",
+                      "name": "restaurant"
+                    }
+                  ]
+                }
+              ]
+            },
+            "address": {
+              "streetNumber": "112",
+              "streetName": "Hardware Street",
+              "municipalitySubdivision": "Melbourne CBD",
+              "municipality": "Melbourne",
+              "countrySecondarySubdivision": "Melbourne",
+              "countrySubdivision": "Vic",
+              "postalCode": "3000",
+              "countryCode": "AU",
+              "country": "Australia",
+              "countryCodeISO3": "AUS",
+              "freeformAddress": "Hardware Street 112, Melbourne CBD Melbourne, Vic, 3000"
+            },
+            "position": {
+              "lat": -37.8123,
+              "lon": 144.96068
+            }
+          },
+          {
+            "type": "POI",
+            "id": "BE/POI/p0/61115",
+            "score": 7.5,
+            "info": "review:decarta:ta:056001000066087-BE",
+            "poi": {
+              "name": "Borse van Amsterdam",
+              "url": "www.borsevanamsterdam.be",
+              "categories": ["belgian", "important tourist attraction", "restaurant"],
+              "classifications": [
+                {
+                  "code": "RESTAURANT",
+                  "names": [
+                    {
+                      "nameLocale": "en-US",
+                      "name": "belgian"
+                    },
+                    {
+                      "nameLocale": "en-US",
+                      "name": "restaurant"
+                    }
+                  ]
+                },
+                {
+                  "code": "IMPORTANT_TOURIST_ATTRACTION",
+                  "names": [
+                    {
+                      "nameLocale": "en-US",
+                      "name": "important tourist attraction"
+                    }
+                  ]
+                }
+              ]
+            },
+            "address": {
+              "streetNumber": "26",
+              "streetName": "Grote Markt",
+              "municipalitySubdivision": "Aalst",
+              "municipality": "Aalst",
+              "countrySecondarySubdivision": "Oost-Vlaanderen",
+              "countryTertiarySubdivision": "Aalst",
+              "countrySubdivision": "Vlaams Gewest",
+              "postalCode": "9300",
+              "countryCode": "BE",
+              "country": "Belgium",
+              "countryCodeISO3": "BEL",
+              "freeformAddress": "Grote Markt 26, 9300 Aalst"
+            },
+            "position": {
+              "lat": 50.93852,
+              "lon": 4.03821
+            }
+          },
+          {
+            "type": "POI",
+            "id": "BG/POI/p0/11627",
+            "score": 7.5,
+            "info": "search:decarta:ta:100009000014937-BG",
+            "poi": {
+              "name": "Amsterdam",
+              "phone": "+(359)-(87)-8868962",
+              "categories": ["restaurant"],
+              "classifications": [
+                {
+                  "code": "RESTAURANT",
+                  "names": [
+                    {
+                      "nameLocale": "en-US",
+                      "name": "restaurant"
+                    }
+                  ]
+                }
+              ]
+            },
+            "address": {
+              "streetNumber": "10",
+              "streetName": "улица К. Стоилов",
+              "municipalitySubdivision": "Plovdiv",
+              "municipality": "Пловдив",
+              "countrySecondarySubdivision": "Пловдив",
+              "postalCode": "4000",
+              "countryCode": "BG",
+              "country": "Bulgaria",
+              "countryCodeISO3": "BGR",
+              "freeformAddress": "улица К. Стоилов 10, 4000 Plovdiv (Пловдив)"
+            },
+            "position": {
+              "lat": 42.14805,
+              "lon": 24.7491
+            }
+          }
+        ]
+      }
+    },
+    {
+      "statusCode": 400,
+      "response": {
+        "errorText": "Error parsing 'maxFuzzyLevel': 'asd' is not a valid integer",
+        "message": "Error parsing 'maxFuzzyLevel': 'asd' is not a valid integer",
+        "httpStatusCode": 400
+      }
+    }
+  ],
+  "summary": {
+    "successfulRequests": 2,
+    "totalRequests": 3
+  }
+}

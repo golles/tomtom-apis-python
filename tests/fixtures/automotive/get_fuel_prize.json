@@ -1,0 +1,53 @@
+{
+  "fuels": [
+    {
+      "type": "diesel",
+      "price": [
+        {
+          "value": 1.469,
+          "currency": "EUR",
+          "currencySymbol": "€",
+          "volumeUnit": "liter"
+        }
+      ],
+      "updatedAt": "2021-12-12T11:29:14Z"
+    },
+    {
+      "type": "dieselPlus",
+      "price": [
+        {
+          "value": 1.539,
+          "currency": "EUR",
+          "currencySymbol": "€",
+          "volumeUnit": "liter"
+        }
+      ],
+      "updatedAt": "2021-12-12T11:29:14Z"
+    },
+    {
+      "type": "sp95_e10",
+      "price": [
+        {
+          "value": 1.559,
+          "currency": "EUR",
+          "currencySymbol": "€",
+          "volumeUnit": "liter"
+        }
+      ],
+      "updatedAt": "2021-12-12T11:29:15Z"
+    },
+    {
+      "type": "sp95",
+      "price": [
+        {
+          "value": 1.619,
+          "currency": "EUR",
+          "currencySymbol": "€",
+          "volumeUnit": "liter"
+        }
+      ],
+      "updatedAt": "2021-12-12T11:29:14Z"
+    }
+  ],
+  "fuelPrice": "1:2622f89a-6300-11ec-8d12-a0423f39b5a2"
+}

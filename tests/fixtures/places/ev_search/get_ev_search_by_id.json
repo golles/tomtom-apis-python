@@ -1,0 +1,158 @@
+{
+  "summary": {
+    "numResults": 1,
+    "totalResults": 1
+  },
+  "results": [
+    {
+      "id": "0b903425-3f5a-4072-9d5d-070f6f0647b3",
+      "name": "Mega M d.o.o.",
+      "position": {
+        "lat": 44.810263,
+        "lon": 20.4354
+      },
+      "chargingStations": [
+        {
+          "id": "RS*ORI*E1161",
+          "chargingPoints": [
+            {
+              "capabilities": ["RemoteStartStopCapable"],
+              "connectors": [
+                {
+                  "id": "1",
+                  "currentA": 32,
+                  "currentType": "AC3",
+                  "ratedPowerKW": 22.0,
+                  "type": "IEC62196Type2Outlet",
+                  "voltageV": 400
+                }
+              ],
+              "evseId": "RS*ORI*E1167",
+              "status": "Available"
+            },
+            {
+              "capabilities": ["RemoteStartStopCapable"],
+              "connectors": [
+                {
+                  "id": "1",
+                  "currentType": "DC",
+                  "ratedPowerKW": 50.0,
+                  "type": "Chademo"
+                }
+              ],
+              "evseId": "RS*ORI*E1166",
+              "status": "Occupied"
+            },
+            {
+              "capabilities": ["RemoteStartStopCapable"],
+              "connectors": [
+                {
+                  "id": "1",
+                  "currentA": 16,
+                  "currentType": "AC3",
+                  "ratedPowerKW": 11.0,
+                  "type": "IEC62196Type2Outlet",
+                  "voltageV": 400
+                }
+              ],
+              "evseId": "RS*ORI*E1163",
+              "status": "Unknown"
+            },
+            {
+              "capabilities": ["RemoteStartStopCapable"],
+              "connectors": [
+                {
+                  "id": "1",
+                  "currentA": 16,
+                  "currentType": "AC3",
+                  "ratedPowerKW": 11.0,
+                  "type": "IEC62196Type2Outlet",
+                  "voltageV": 400
+                }
+              ],
+              "evseId": "RS*ORI*E1162",
+              "status": "Available"
+            },
+            {
+              "capabilities": ["RemoteStartStopCapable"],
+              "connectors": [
+                {
+                  "id": "1",
+                  "currentType": "DC",
+                  "ratedPowerKW": 75.0,
+                  "type": "IEC62196Type2CCS"
+                }
+              ],
+              "evseId": "RS*ORI*E1165",
+              "status": "OutOfService"
+            },
+            {
+              "capabilities": ["RemoteStartStopCapable"],
+              "connectors": [
+                {
+                  "id": "1",
+                  "currentA": 16,
+                  "currentType": "AC3",
+                  "ratedPowerKW": 11.0,
+                  "type": "IEC62196Type2Outlet",
+                  "voltageV": 400
+                }
+              ],
+              "evseId": "RS*ORI*E1164",
+              "status": "Available"
+            }
+          ]
+        }
+      ],
+      "address": {
+        "countryCode": "RS",
+        "countryCodeISO3": "SRB",
+        "country": "Serbia",
+        "countrySubdivision": "Central Serbia",
+        "countrySubdivisionName": "Central Serbia",
+        "countrySecondarySubdivision": "Belgrade City",
+        "freeformAddress": "Улица Владимира Поповића 8, 11070 Belgrade",
+        "localName": "Belgrade",
+        "municipality": "Belgrade",
+        "municipalitySubdivision": "Нови Београд",
+        "postalCode": "11070",
+        "streetNumber": "8",
+        "streetName": "Улица Владимира Поповића"
+      },
+      "phone": "+386 3 777 77 77",
+      "openingHours": {
+        "mode": "nextSevenDays",
+        "timeRanges": [
+          {
+            "startTime": {
+              "date": "2024-05-02",
+              "hour": 0,
+              "minute": 0
+            },
+            "endTime": {
+              "date": "2024-05-09",
+              "hour": 0,
+              "minute": 0
+            }
+          }
+        ]
+      },
+      "timeZone": {
+        "ianaId": "Europe/Belgrade"
+      },
+      "paymentOptions": [
+        {
+          "brands": [
+            {
+              "name": "Shell Recharge"
+            },
+            {
+              "name": "Eneco"
+            }
+          ]
+        }
+      ],
+      "accessType": "Public"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "summary": {
+    "query": "de ruijterkade 154 amsterdam",
+    "queryType": "NON_NEAR",
+    "queryTime": 6,
+    "numResults": 1,
+    "offset": 0,
+    "totalResults": 1,
+    "fuzzyLevel": 1
+  },
+  "results": [
+    {
+      "type": "Point Address",
+      "id": "rqmZlYjBsGCl_TRdSbsD3g",
+      "score": 8.2362003326,
+      "matchConfidence": { "score": 1 },
+      "address": {
+        "streetNumber": "154",
+        "streetName": "De Ruijterkade",
+        "municipality": "Amsterdam",
+        "neighbourhood": "Nieuwmarkt en Lastage",
+        "countrySubdivision": "Noord-Holland",
+        "countrySubdivisionName": "Noord-Holland",
+        "countrySubdivisionCode": "NH",
+        "postalCode": "1011",
+        "extendedPostalCode": "1011 AC",
+        "countryCode": "NL",
+        "country": "Nederland",
+        "countryCodeISO3": "NLD",
+        "freeformAddress": "De Ruijterkade 154, 1011 AC Amsterdam",
+        "localName": "Amsterdam"
+      },
+      "position": { "lat": 52.37727, "lon": 4.90943 },
+      "viewport": {
+        "topLeftPoint": { "lat": 52.37817, "lon": 4.90796 },
+        "btmRightPoint": { "lat": 52.37637, "lon": 4.9109 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 52.37739, "lon": 4.90944 } }
+      ]
+    }
+  ]
+}

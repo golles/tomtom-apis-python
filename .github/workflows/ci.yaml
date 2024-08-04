@@ -97,7 +97,7 @@ jobs:
           fail_ci_if_error: true
 
       - name: SonarCloud Scan
-        if: github.event.pull_request.head.repo.fork == false
+        if: github.event.repository.private == false && github.event.pull_request.head.repo.fork == false
         uses: sonarsource/sonarcloud-github-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

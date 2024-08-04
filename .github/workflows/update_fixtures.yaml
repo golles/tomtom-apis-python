@@ -1,12 +1,21 @@
 name: Update fixtures
 
 on: # yamllint disable-line rule:truthy
-  workflow_dispatch: ~
+  workflow_dispatch:
+    inputs:
+      create_pr:
+        type: boolean
+        description: Create pull request
+        default: false
   schedule:
     - cron: "0 0 * * *" # every day at midnight
 
 env:
   DEFAULT_PYTHON: "3.12"
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   update_fixtures:
@@ -34,10 +43,24 @@ jobs:
           TOMTOM_API_KEY: ${{ secrets.TOMTOM_API_KEY }}
         run: poetry run python scripts/update_test_fixtures.py
 
+      - name: Create pull request
+        if: github.event.inputs.create_pr == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: Update fixtures
+          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          branch: fixtures
+          delete-branch: true
+          title: Update fixtures
+          body: New fixture files
+          labels: |
+            automated pr
+
       - name: Run tests
         run: poetry run pytest
 
-      - name: Upload fixtures
+      - name: Upload fixtures for failed test
         if: failure()
         uses: actions/upload-artifact@v4
         with:

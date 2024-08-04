@@ -266,7 +266,7 @@
       },
       {
         "method": "GET",
-        "fixture": "traffic/traffic/get_vector_incident_tile.png",
+        "fixture": "traffic/traffic/get_vector_incident_tile.pbf",
         "url": "traffic/map/4/tile/incidents/12/1207/1539.pbf?t=-1&tags=%5Bicon_category%2Cdescription%2Cdelay%2Cleft_hand_traffic%2Cmagnitude%2Ctraffic_road_coverage%2Cend_date%2Cid%2Croad_category%2Croad_subcategory%5D&key={{TT_KEY}}"
       }
     ]

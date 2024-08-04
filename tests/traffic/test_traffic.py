@@ -57,7 +57,7 @@ async def test_get_static_image(traffic_display: TrafficApi):
 
 
 @pytest.mark.usefixtures("image_response")
-@pytest.mark.parametrize("image_response", ["traffic/traffic/get_vector_incident_tile.png"], indirect=True)
+@pytest.mark.parametrize("image_response", ["traffic/traffic/get_vector_incident_tile.pbf"], indirect=True)
 async def test_get_tile_v1(traffic_display: TrafficApi):
     """Test the get_vector_incident_tile method."""
     response = await traffic_display.get_vector_incident_tile(

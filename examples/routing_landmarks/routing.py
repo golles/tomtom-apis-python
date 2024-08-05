@@ -1,5 +1,7 @@
 """Landmark routing example."""
 
+# pylint: disable=duplicate-code
+
 import asyncio
 import itertools
 import os

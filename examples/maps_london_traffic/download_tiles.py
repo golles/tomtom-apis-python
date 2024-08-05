@@ -1,5 +1,7 @@
 """London traffic example."""
 
+# pylint: disable=duplicate-code
+
 import asyncio
 import os
 
@@ -50,6 +52,8 @@ async def download_tiles(api: MapDisplayApi | TrafficApi, tiles: list[MapTile]) 
                 zoom=tile.zoom,
             )
             file_path = os.path.join(SCRIPT_DIR, "tiles", f"incidents_{tile.zoom}_{tile.x}_{tile.y}.png")
+        else:
+            raise ValueError("Invalid API type provided.")
 
         with open(file_path, "wb") as file:
             file.write(image_bytes)

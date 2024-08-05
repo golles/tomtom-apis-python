@@ -48,6 +48,14 @@ class MapTileV1Params(BaseParams):
     language: Language | None = None
 
 
+# class BracketStringArray(list):
+#     def __init__(self, *args):
+#         super().__init__(args)
+
+#     def __str__(self):
+#         return f"[{','.join(map(str, self))}]"
+
+
 @dataclass(kw_only=True)
 class MapTileV2Params(BaseParams):
     """Parameters for the map tile API."""

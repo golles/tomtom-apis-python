@@ -1,5 +1,7 @@
 """Exampels of some places API calls."""
 
+# pylint: disable=duplicate-code
+
 import asyncio
 import os
 

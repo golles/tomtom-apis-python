@@ -1,4 +1,4 @@
-name: Update fixtures
+name: Update fixtures and test
 
 on: # yamllint disable-line rule:truthy
   workflow_dispatch:
@@ -8,10 +8,11 @@ on: # yamllint disable-line rule:truthy
         description: Create pull request
         default: false
   schedule:
-    - cron: "0 0 * * *" # every day at midnight
+    - cron: "0 0 * * *" # Every day at UTC midnight.
 
 env:
   DEFAULT_PYTHON: "3.12"
+  DEFAULT_NODE: "20"
 
 permissions:
   contents: write
@@ -25,18 +26,11 @@ jobs:
       - name: Check out code from GitHub
         uses: actions/checkout@v4
 
-      - name: Setup Poetry
-        run: pipx install poetry
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - name: Setup environment
+        uses: ./.github/actions/setup-env
         with:
           python-version: ${{ env.DEFAULT_PYTHON }}
-          cache: poetry
-
-      - name: Setup env
-        run: |
-          ./scripts/setup_env.sh
+          node-version: ${{ env.DEFAULT_NODE }}
 
       - name: Update fixtures script
         env:
@@ -53,7 +47,9 @@ jobs:
           branch: ci/update_fixtures
           delete-branch: true
           title: Update fixtures
-          body: New fixture files for tests
+          body: |
+            New fixture files for tests.
+            Full log: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
           labels: |
             automated pr
 

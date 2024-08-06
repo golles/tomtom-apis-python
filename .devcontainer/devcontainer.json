@@ -39,10 +39,16 @@
         "ruff.importStrategy": "fromEnvironment",
         "ruff.interpreter": ["${workspaceFolder}/.venv/bin/python"],
         "terminal.integrated.defaultProfile.linux": "zsh",
+        "[html]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
         "[json]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
         "[jsonc]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[markdown]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
         "[python]": {

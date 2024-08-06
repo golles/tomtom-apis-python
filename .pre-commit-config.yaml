@@ -1,0 +1,92 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-docstring-first
+      # - id: check-executables-have-shebangs # Doesn't work in devcontainer on Mac
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-xml
+      - id: check-yaml
+      - id: detect-private-key
+      - id: end-of-file-fixer
+        exclude: |
+          (?x)^(
+              tests/fixtures/.*
+          )$
+      - id: name-tests-test
+        args: [--pytest-test-first]
+        exclude: const.py
+      - id: trailing-whitespace
+
+  # The following tools are all installed locally, so there is no need to use remote repos.
+  # The main reason is that there is no need to worry about version mismatch between the project and pre-commit.
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        entry: poetry run mypy
+        language: system
+        types: [python]
+        require_serial: true
+
+      - id: poetry-check
+        name: poetry check
+        entry: poetry check
+        language: system
+        pass_filenames: false
+
+      - id: poetry-lock
+        name: poetry lock
+        entry: poetry lock
+        language: system
+        pass_filenames: false
+
+      - id: poetry-install
+        name: poetry install
+        entry: poetry install
+        language: system
+        pass_filenames: false
+
+      - id: prettier
+        name: prettier
+        entry: prettier --write .
+        language: system
+        pass_filenames: false
+
+      - id: pylint
+        name: pylint
+        entry: poetry run pylint src tests
+        language: system
+        types: [python]
+        require_serial: true
+
+      - id: ruff-check
+        name: ruff linter
+        entry: poetry run ruff check --fix
+        language: system
+        types: [python]
+
+      - id: ruff-lint
+        name: ruff formatter
+        entry: poetry run ruff format --check .
+        language: system
+        types: [python]
+
+      - id: shellcheck
+        name: shellcheck
+        entry: poetry run shellcheck
+        language: system
+        types: [shell]
+
+      - id: yamllint
+        name: yamllint
+        entry: poetry run yamllint
+        language: system
+        types: [yaml]

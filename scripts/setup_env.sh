@@ -56,6 +56,19 @@ poetry install
 # Install other programs
 npm install -g prettier
 
+if [ "$CI" != "true" ]; then
+    # Add the pre-commit hook if not on CI
+    poetry run pre-commit install
+
+    # Install auto completions
+    mkdir -p ~/.zfunc
+    poetry completions zsh > ~/.zfunc/_poetry
+    grep -qxF 'fpath+=~/.zfunc' ~/.zshrc || echo 'fpath+=~/.zfunc' >> ~/.zshrc
+    grep -qxF 'autoload -Uz compinit && compinit' ~/.zshrc || echo 'autoload -Uz compinit && compinit' >> ~/.zshrc
+
+    log_yellow "poetry auto completion has been added or updated, you need to reload your terminal"
+fi
+
 # Check for --devcontainer argument
 if [ "$1" == "--devcontainer" ]; then
     log_yellow "\n\nThe dev container is ready"

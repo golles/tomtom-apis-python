@@ -581,16 +581,28 @@ class MapCode(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Connector(DataClassORJSONMixin):
-    """Represents a Connector."""
+    """
+    Represents a Connector.
+    Note that some API's use the field type while others use connectorType, after deserialization the values for both fields will be the same.
+    """
 
     # pylint: disable=invalid-name
     id: str | None = None
-    type: ConnectorType | None = None  # In EV search
+    type: ConnectorType | None = None  # In EV search.
     connectorType: ConnectorType | None = None  # In general search.
     ratedPowerKW: float
     voltageV: int | None = None
     currentA: int | None = None
     currentType: CurrentType
+
+    @classmethod
+    def __post_deserialize__(cls, obj: "Connector") -> "Connector":
+        # Handle the discrepancy between general search and EV search on connector type.
+        if obj.type is not None and obj.connectorType is None:
+            obj.connectorType = obj.type
+        elif obj.connectorType is not None and obj.type is None:
+            obj.type = obj.connectorType
+        return obj
 
 
 @dataclass(kw_only=True)

@@ -32,6 +32,11 @@ async def test_get_ev_search_nearby(ev_search_api: EVSearchApi):
 
     assert response
 
+    # Test that the fields Connector.type and Connector.connectorType are set the same after deserialization.
+    assert response.results[0].chargingStations
+    first_connector = response.results[0].chargingStations[0].chargingPoints[0].connectors[0]
+    assert first_connector.type == first_connector.connectorType
+
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/ev_search/get_ev_search_by_id.json"], indirect=True)
@@ -42,3 +47,8 @@ async def test_get_ev_search_by_id(ev_search_api: EVSearchApi):
     await ev_search_api.close()
 
     assert response
+
+    # Test that the fields Connector.type and Connector.connectorType are set the same after deserialization.
+    assert response.results[0].chargingStations
+    first_connector = response.results[0].chargingStations[0].chargingPoints[0].connectors[0]
+    assert first_connector.type == first_connector.connectorType

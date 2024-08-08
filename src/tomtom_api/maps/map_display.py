@@ -1,10 +1,18 @@
 """Map Display API"""
 
-from typing import Literal
-
 from tomtom_api.api import BaseApi, BaseParams
 
-from .models import MapServiceCopyrightsResponse, MapTileParams, MapTileV1Params, MapTileV2Params, StaticImageParams
+from .models import (
+    MapServiceCopyrightsResponse,
+    MapTileParams,
+    MapTileV1Params,
+    MapTileV2Params,
+    StaticImageParams,
+    TileFormatType,
+    LayerType,
+    LayerTypeWithPoiType,
+    StyleType,
+)
 
 
 class MapDisplayApi(BaseApi):
@@ -17,12 +25,12 @@ class MapDisplayApi(BaseApi):
     async def get_map_tile(  # pylint: disable=too-many-arguments
         self,
         *,
-        layer: Literal["basic", "hybrid", "labels"],
-        style: Literal["main", "night"],
+        layer: LayerType,
+        style: StyleType,
         x: int,
         y: int,
         zoom: int,
-        image_format: Literal["png", "jpg"],
+        image_format: TileFormatType,
         params: MapTileParams | None = None,
     ) -> bytes:
         """
@@ -32,7 +40,7 @@ class MapDisplayApi(BaseApi):
         """
 
         response = await self.get(
-            endpoint=f"/map/1/tile/{layer}/{style}/{zoom}/{x}/{y}.{image_format}",
+            endpoint=f"/map/1/tile/{layer.value}/{style.value}/{zoom}/{x}/{y}.{image_format.value}",
             params=params,
         )
 
@@ -44,7 +52,7 @@ class MapDisplayApi(BaseApi):
         x: int,
         y: int,
         zoom: int,
-        image_format: Literal["png", "jpg"],
+        image_format: TileFormatType,
         params: BaseParams | None = None,  # No extra params.
     ) -> bytes:
         """
@@ -54,7 +62,7 @@ class MapDisplayApi(BaseApi):
         """
 
         response = await self.get(
-            endpoint=f"/map/1/tile/sat/main/{zoom}/{x}/{y}.{image_format}",
+            endpoint=f"/map/1/tile/sat/main/{zoom}/{x}/{y}.{image_format.value}",
             params=params,
         )
 
@@ -66,7 +74,7 @@ class MapDisplayApi(BaseApi):
         x: int,
         y: int,
         zoom: int,
-        image_format: Literal["png", "jpg"],
+        image_format: TileFormatType,
         params: BaseParams | None = None,  # No extra params.
     ) -> bytes:
         """
@@ -76,7 +84,7 @@ class MapDisplayApi(BaseApi):
         """
 
         response = await self.get(
-            endpoint=f"/map/1/tile/hill/main/{zoom}/{x}/{y}.{image_format}",
+            endpoint=f"/map/1/tile/hill/main/{zoom}/{x}/{y}.{image_format.value}",
             params=params,
         )
 
@@ -103,7 +111,7 @@ class MapDisplayApi(BaseApi):
     async def get_tile_v1(  # pylint: disable=too-many-arguments
         self,
         *,
-        layer: Literal["basic", "hybrid", "labels", "poi"],
+        layer: LayerTypeWithPoiType,
         x: int,
         y: int,
         zoom: int,
@@ -115,7 +123,7 @@ class MapDisplayApi(BaseApi):
         See: https://developer.tomtom.com/map-display-api/documentation/vector/tile
         """
         response = await self.get(
-            endpoint=f"/map/1/tile/{layer}/main/{zoom}/{x}/{y}.pbf",
+            endpoint=f"/map/1/tile/{layer.value}/main/{zoom}/{x}/{y}.pbf",
             params=params,
         )
 
@@ -124,7 +132,7 @@ class MapDisplayApi(BaseApi):
     async def get_tile_v2(  # pylint: disable=too-many-arguments
         self,
         *,
-        layer: Literal["basic", "hybrid", "labels", "poi"],
+        layer: LayerTypeWithPoiType,
         x: int,
         y: int,
         zoom: int,
@@ -136,7 +144,7 @@ class MapDisplayApi(BaseApi):
         See: https://developer.tomtom.com/map-display-api/documentation/vector/tile-v2
         """
         response = await self.get(
-            endpoint=f"/map/1/tile/{layer}/{zoom}/{x}/{y}.pbf",
+            endpoint=f"/map/1/tile/{layer.value}/{zoom}/{x}/{y}.pbf",
             params=params,
         )
 

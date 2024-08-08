@@ -7,8 +7,10 @@ import os
 
 from tomtom_api import ApiOptions
 from tomtom_api.maps import MapDisplayApi
+from tomtom_api.maps.models import LayerType, StyleType, TileFormatType
 from tomtom_api.models import MapTile
 from tomtom_api.traffic import TrafficApi
+from tomtom_api.traffic.models import IncidentStyleType
 
 SCRIPT_DIR = os.path.dirname(__file__)
 TILES: list[MapTile] = [  # a 3x3 grid of London at zoom level 10.
@@ -36,17 +38,17 @@ async def download_tiles(api: MapDisplayApi | TrafficApi, tiles: list[MapTile]) 
     for tile in tiles:
         if isinstance(api, MapDisplayApi):
             image_bytes = await api.get_map_tile(
-                layer="basic",
-                style="main",
+                layer=LayerType.BASIC,
+                style=StyleType.MAIN,
                 x=tile.x,
                 y=tile.y,
                 zoom=tile.zoom,
-                image_format="png",
+                image_format=TileFormatType.PNG,
             )
             file_path = os.path.join(SCRIPT_DIR, "tiles", f"main_{tile.zoom}_{tile.x}_{tile.y}.png")
         elif isinstance(api, TrafficApi):
             image_bytes = await api.get_raster_incident_tile(
-                style="s1",
+                style=IncidentStyleType.S1,
                 x=tile.x,
                 y=tile.y,
                 zoom=tile.zoom,

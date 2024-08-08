@@ -1,10 +1,8 @@
 """Traffic API"""
 
-from typing import Literal
-
 from tomtom_api.api import BaseApi, BaseParams, BasePostData
 
-from .models import BBoxParam, BoudingBoxParam, RasterIncidentTilesParams, VectorIncidentTilesParams
+from .models import BBoxParam, BoudingBoxParam, IncidentStyleType, RasterIncidentTilesParams, VectorIncidentTilesParams
 
 
 class TrafficApi(BaseApi):
@@ -78,7 +76,7 @@ class TrafficApi(BaseApi):
     async def get_raster_incident_tile(  # pylint: disable=too-many-arguments
         self,
         *,
-        style: Literal["s0", "s0-dark", "s1", "s2", "s3", "night"],
+        style: IncidentStyleType,
         x: int,
         y: int,
         zoom: int,
@@ -90,7 +88,7 @@ class TrafficApi(BaseApi):
         See: https://developer.tomtom.com/traffic-api/documentation/traffic-incidents/raster-incident-tiles
         """
         response = await self.get(
-            endpoint=f"/traffic/map/4/tile/incidents/{style}/{zoom}/{x}/{y}.png",
+            endpoint=f"/traffic/map/4/tile/incidents/{style.value}/{zoom}/{x}/{y}.png",
             params=params,
         )
 

@@ -5,7 +5,7 @@ import pytest
 from tests.const import API_KEY
 from tomtom_api.api import ApiOptions
 from tomtom_api.places import GeocodingApi
-from tomtom_api.places.models import StructuredGeocodeParams
+from tomtom_api.places.models import StructuredGeocodeParams, ResultType
 
 
 @pytest.fixture(name="geocoding_api")
@@ -30,7 +30,7 @@ async def test_get_geocode(geocoding_api: GeocodingApi):
     assert len(response.results) == 1
     assert response.results[0]
     assert response.results[0].type
-    assert response.results[0].type == "Point Address"
+    assert response.results[0].type == ResultType.POINT_ADDRESS
     assert response.results[0].position
     assert response.results[0].position.lat == 52.37727
     assert response.results[0].position.lon == 4.90943
@@ -56,7 +56,7 @@ async def test_get_structured_geocode(geocoding_api: GeocodingApi):
     assert len(response.results) == 1
     assert response.results[0]
     assert response.results[0].type
-    assert response.results[0].type == "Point Address"
+    assert response.results[0].type == ResultType.POINT_ADDRESS
     assert response.results[0].position
     assert response.results[0].position.lat == 52.37727
     assert response.results[0].position.lon == 4.90943

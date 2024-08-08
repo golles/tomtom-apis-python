@@ -5,6 +5,7 @@ import pytest
 from tests.const import API_KEY
 from tomtom_api.api import ApiOptions
 from tomtom_api.places import PremiumGeocodingApi
+from tomtom_api.places.models import ResultType
 
 
 @pytest.fixture(name="premium_geocoding_api")
@@ -30,7 +31,7 @@ async def test_get_geocode(premium_geocoding_api: PremiumGeocodingApi):
     assert len(response.results) == 2
     assert response.results[0]
     assert response.results[0].type
-    assert response.results[0].type == "Point Address"
+    assert response.results[0].type == ResultType.POINT_ADDRESS
     assert response.results[0].position
     assert response.results[0].position.lat == 30.23966941103544
     assert response.results[0].position.lon == -97.78704138350255

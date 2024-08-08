@@ -5,7 +5,6 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import date
 from enum import Enum
-from typing import Literal
 
 from mashumaro import field_options
 from mashumaro.mixins.orjson import DataClassORJSONMixin
@@ -131,7 +130,7 @@ class RestrictionType(Enum):
     MOTORCYCLES = "motorcycles"
 
 
-class RoadclassType(Enum):
+class RoadClassTypeValue(Enum):
     """Represents a classification of roads"""
 
     MOTORWAY = "Motorway"
@@ -154,22 +153,53 @@ class StatusType(Enum):
     UNKNOWN = "Unknown"
 
 
+class RedirectModeType(Enum):
+    """Supported redirect mode types"""
+
+    AUTO = "auto"
+    MANUAL = "manual"
+
+
+class OpeningHoursType(Enum):
+    """Supported opening hours type"""
+
+    NEXT_SEVEN_DAYS = "nextSevenDays"
+
+
+class RelatedPoisType(Enum):
+    """Supported related pois type"""
+
+    ALL = "all"
+    CHILD = "child"
+    OFF = "off"
+    PARENT = "parent"
+
+
+class FilterType(Enum):
+    """Supported filter types"""
+
+    BACK_ROADS = "BackRoads"
+
+
+class RelationType(Enum):
+    """Supported relation types"""
+
+    CHILD = "child"
+    PARENT = "parent"
+
+
 @dataclass(kw_only=True)
 class AsynchronousSynchronousBatchParams(BaseParams):
-    """
-    Parameters for the post_asynchronous_synchronous_batch method.
-    """
+    """Parameters for the post_asynchronous_synchronous_batch method"""
 
     # pylint: disable=invalid-name
-    redirectMode: Literal["auto", "manual"]
+    redirectMode: RedirectModeType
     waitTimeSeconds: int
 
 
 @dataclass(kw_only=True)
 class AsynchronousBatchDownloadParams(BaseParams):
-    """
-    Parameters for the get_asynchronous_batch_download method.
-    """
+    """Parameters for the get_asynchronous_batch_download method."""
 
     # pylint: disable=invalid-name
     waitTimeSeconds: int
@@ -177,17 +207,15 @@ class AsynchronousBatchDownloadParams(BaseParams):
 
 @dataclass(kw_only=True)
 class PlaceByIdParams(BaseParams):
-    """
-    Parameters for the get_place_by_id method.
-    """
+    """Parameters for the get_place_by_id method."""
 
     # pylint: disable=invalid-name
     entityId: str
     language: Language | None = None
-    openingHours: Literal["nextSevenDays"] | None = None
+    openingHours: OpeningHoursType | None = None
     timeZone: str | None = None
     mapcodes: list[MapCodeType] | None = None
-    relatedPois: Literal["off", "child", "parent", "all"] | None = None
+    relatedPois: RelatedPoisType | None = None
     view: ViewType | None = None
 
 
@@ -209,7 +237,7 @@ class ReverseGeocodeParams(BaseParams):
     returnMatchType: bool | None = None
     view: ViewType | None = None
     mapcodes: list[MapCodeType] | None = None
-    filter: Literal["BackRoads"] | None = None
+    filter: FilterType | None = None
 
 
 @dataclass(kw_only=True)
@@ -226,9 +254,7 @@ class CrossStreetLookupParams(BaseParams):
 
 @dataclass(kw_only=True)
 class EvSearchNearbyParams(BaseParams):
-    """
-    Parameters for the get_ev_search_nearby method.
-    """
+    """Parameters for the get_ev_search_nearby method."""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     lat: float
@@ -246,18 +272,14 @@ class EvSearchNearbyParams(BaseParams):
 
 @dataclass(kw_only=True)
 class EvSearchByIdParams(BaseParams):
-    """
-    Parameters for the get_ev_search_by_id method.
-    """
+    """Parameters for the get_ev_search_by_id method."""
 
     id: str
 
 
 @dataclass(kw_only=True)
 class PremiumGeocodeParams(BaseParams):
-    """
-    Parameters for the premium get_geocode method.
-    """
+    """Parameters for the premium get_geocode method."""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     unit: str | None = None
@@ -395,7 +417,7 @@ class RelatedPoi(DataClassORJSONMixin):
     """Represents a RelatedPoi."""
 
     # pylint: disable=invalid-name
-    relationType: Literal["child", "parent"]
+    relationType: RelationType
     id: str
 
 
@@ -536,6 +558,12 @@ class BoundingBox(DataClassORJSONMixin):
     btmRightPoint: LatLon
 
 
+class RevGeoEntityType(Enum):
+    """Supported rev geo entity types"""
+
+    POSITION = "position"
+
+
 @dataclass(kw_only=True)
 class RevGeoBoundingBox(DataClassORJSONMixin):
     """Represents a BoundingBox for reverse geocode."""
@@ -543,7 +571,23 @@ class RevGeoBoundingBox(DataClassORJSONMixin):
     # pylint: disable=invalid-name
     northEast: str
     southWest: str
-    entity: Literal["position"]
+    entity: RevGeoEntityType
+
+
+class EntryPointType(Enum):
+    """Supported entry point types"""
+
+    MAIN = "main"
+    MINOR = "minor"
+    ROUTE = "route"
+
+
+class PathToNextType(Enum):
+    """Supported path to next types"""
+
+    DRIVING = "DRIVING"
+    WALKING = "WALKING"
+    UNKNOWN = "UNKNOWN"
 
 
 @dataclass(kw_only=True)
@@ -551,9 +595,9 @@ class EntryPoint(DataClassORJSONMixin):
     """Represents a EntryPoint."""
 
     # pylint: disable=invalid-name
-    type: Literal["main", "minor", "route"]
+    type: EntryPointType
     functions: list[FunctionType] | None = None
-    pathToNext: Literal["DRIVING", "WALKING", "UNKNOWN"] | None = None
+    pathToNext: PathToNextType | None = None
     position: LatLon
 
 
@@ -585,7 +629,7 @@ class Connector(DataClassORJSONMixin):
 
     # pylint: disable=invalid-name
     id: str | None = None
-    type: ConnectorType | None = None  # In EV search
+    type: ConnectorType | None = None  # In EV search.
     connectorType: ConnectorType | None = None  # In general search.
     ratedPowerKW: float
     voltageV: int | None = None
@@ -636,12 +680,31 @@ class PaymentOption(DataClassORJSONMixin):
     brands: list[Brand]
 
 
+class ResultType(Enum):
+    """Supported result types"""
+
+    POI = "POI"
+    STREET = "Street"
+    GEOGRAPHY = "Geography"
+    POINT_ADDRESS = "Point Address"
+    ADDRESS = "Address"
+    ADDRESS_RANGE = "Address Range"
+    CROSS_STREET = "Cross Street"
+
+
+class VehicleType(Enum):
+    """Supported vehicle types"""
+
+    CAR = "Car"
+    TRUCK = "Truck"
+
+
 @dataclass(kw_only=True)
 class Result(DataClassORJSONMixin):
     """Represents a Result."""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
-    type: Literal["POI", "Street", "Geography", "Point Address", "Address", "Address Range", "Cross Street"] | None = None
+    type: ResultType | None = None
     id: str
     score: float | None = None
     dist: float | None = None
@@ -662,7 +725,7 @@ class Result(DataClassORJSONMixin):
     chargingPark: ChargingPark | None = None
     dataSources: DataSources | None = None
     fuelTypes: list[str] | None = None
-    vehicleTypes: list[Literal["Car", "Truck"]] | None = None
+    vehicleTypes: list[VehicleType] | None = None
     chargingStations: list[ChargingStation] | None = None
     openingHours: OpeningHour | None = None
     timeZone: TimeZone | None = None
@@ -695,19 +758,42 @@ class W3WQueryIntent(DataClassORJSONMixin):
     address: str
 
 
+class BookmarkType(Enum):
+    """Supported bookmark types"""
+
+    HOME = "HOME"
+    WORK = "WORK"
+
+
 @dataclass(kw_only=True)
 class BookmarkQueryIntent(DataClassORJSONMixin):
     """Represents a BookmarkQueryIntent."""
 
-    bookmark: Literal["HOME", "WORK"]
+    bookmark: BookmarkType
+
+
+class QueryIntentType(Enum):
+    """Supported query intent types"""
+
+    COORDINATE = "COORDINATE"
+    NEARBY = "NEARBY"
+    W3W = "W3W"
+    BOOKMARK = "BOOKMARK"
 
 
 @dataclass(kw_only=True)
 class QueryIntent(DataClassORJSONMixin):
     """Represents a QueryIntent."""
 
-    type: Literal["COORDINATE", "NEARBY", "W3W", "BOOKMARK"]
+    type: QueryIntentType
     details: CoordinateQueryIntent | NearbyQueryIntent | W3WQueryIntent | BookmarkQueryIntent
+
+
+class QueryType(Enum):
+    """Supported query types"""
+
+    NEARBY = "NEARBY"
+    NON_NEAR = "NON_NEAR"
 
 
 @dataclass(kw_only=True)
@@ -717,7 +803,7 @@ class Summary(DataClassORJSONMixin):
     # pylint: disable=invalid-name, too-many-instance-attributes
     query: str | None = None
     queryTime: int | None = None
-    queryType: Literal["NEARBY", "NON_NEAR"] | None = None  # Deprecated
+    queryType: QueryType | None = None  # Deprecated
     numResults: int
     offset: int | None = None
     totalResults: int | None = None
@@ -750,6 +836,14 @@ class ReverseGeocodeResponse(DataClassORJSONMixin):
     addresses: list[Addresses]
 
 
+class MatchType(Enum):
+    """Supported match types"""
+
+    ADDRESS_POINT = "AddressPoint"
+    HOUSE_NUMBER_RANGE = "HouseNumberRange"
+    STREET = "Street"
+
+
 @dataclass(kw_only=True)
 class Addresses(DataClassORJSONMixin):
     """Represents Addresses."""
@@ -759,19 +853,25 @@ class Addresses(DataClassORJSONMixin):
     position: str
     roadClass: list[Roadclass] | None = None
     # roadUse:  # Deprecated
-    matchType: Literal["AddressPoint", "HouseNumberRange", "Street"] | None = None
+    matchType: MatchType | None = None
     dataSources: DataSources | None = None
     entityType: list[EntityType] | None = None
     mapcodes: list[MapCode] | None = None
     id: str | None = None
 
 
+class RoadClassType(Enum):
+    """Supported road class types"""
+
+    FUNCTIONAL = "Functional"
+
+
 @dataclass(kw_only=True)
 class Roadclass(DataClassORJSONMixin):
     """Represents Roadclass."""
 
-    type: Literal["Functional"]
-    values: list[RoadclassType]
+    type: RoadClassType
+    values: list[RoadClassTypeValue]
 
 
 @dataclass(kw_only=True)

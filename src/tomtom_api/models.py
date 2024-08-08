@@ -8,6 +8,13 @@ from enum import Enum
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
 
+class TileSizeType(Enum):
+    """Supported tile sizes"""
+
+    SIZE_256 = 256
+    SIZE_512 = 512
+
+
 @dataclass
 class LatLon(DataClassORJSONMixin):
     """

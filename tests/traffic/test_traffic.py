@@ -4,9 +4,9 @@ import pytest
 
 from tests.const import API_KEY
 from tomtom_api.api import ApiOptions
-from tomtom_api.models import Language
+from tomtom_api.models import Language, TileSizeType
 from tomtom_api.traffic import TrafficApi
-from tomtom_api.traffic.models import BoudingBoxParam, RasterIncidentTilesParams, VectorIncidentTilesParams
+from tomtom_api.traffic.models import BoudingBoxParam, IncidentStyleType, RasterIncidentTilesParams, VectorIncidentTilesParams
 
 
 @pytest.fixture(name="traffic_display")
@@ -44,11 +44,11 @@ async def test_get_incident_viewport(traffic_display: TrafficApi):
 async def test_get_static_image(traffic_display: TrafficApi):
     """Test the get_static_image method."""
     response = await traffic_display.get_raster_incident_tile(
-        style="s0",
+        style=IncidentStyleType.S0,
         x=1207,
         y=1539,
         zoom=12,
-        params=RasterIncidentTilesParams(t="-1", tileSize=256),
+        params=RasterIncidentTilesParams(t="-1", tileSize=TileSizeType.SIZE_256),
     )
 
     await traffic_display.close()

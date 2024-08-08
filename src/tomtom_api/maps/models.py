@@ -3,13 +3,67 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Literal
+from enum import Enum
 
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
-from tomtom_api.models import Language, ViewType
+from tomtom_api.models import Language, TileSizeType, ViewType
 
 from ..api import BaseParams
+
+
+class TravelModeType(Enum):
+    """Supported travel mode types"""
+
+    CAR = "Car"
+    TRUCK = "Truck"
+    TAXI = "Taxi"
+    BUS = "Bus"
+    VAN = "Van"
+    MOTORCYCLE = "Motorcycle"
+    BICYCLE = "Bicycle"
+    PEDESTRIAN = "Pedestrian"
+    OTHER = "Other"
+
+
+class AdrCategoryType(Enum):
+    """Supported ADR category types"""
+
+    B = "B"
+    C = "C"
+    D = "D"
+    E = "E"
+
+
+class TileFormatType(Enum):
+    """Supported tile formats"""
+
+    PNG = "png"
+    JPG = "jpg"
+
+
+class LayerType(Enum):
+    """Supported layer types"""
+
+    BASIC = "basic"
+    HYBRID = "hybrid"
+    LABELS = "labels"
+
+
+class LayerTypeWithPoiType(Enum):
+    """Supported layer types"""
+
+    BASIC = "basic"
+    HYBRID = "hybrid"
+    LABELS = "labels"
+    POI = "poi"
+
+
+class StyleType(Enum):
+    """Supported style types"""
+
+    MAIN = "main"
+    NIGHT = "night"
 
 
 @dataclass(kw_only=True)
@@ -17,7 +71,7 @@ class MapTileParams(BaseParams):
     """Parameters for the map tile API."""
 
     # pylint: disable=invalid-name
-    tileSize: Literal[256, 512] | None = None
+    tileSize: TileSizeType | None = None
     view: ViewType | None = None
     language: Language | None = None
 
@@ -27,13 +81,13 @@ class StaticImageParams(BaseParams):
     """Parameters for the map tile API."""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
-    layer: Literal["basic", "hybrid", "labels"] | None = None
-    style: Literal["main", "night"] | None = None
+    layer: LayerType | None = None
+    style: StyleType | None = None
     x: int | None = None
     y: int | None = None
     zoom: int | None = None
     center: list[float] | None = None
-    format: Literal["png", "jpg"] | None = None
+    format: TileFormatType | None = None
     width: int | None = None  # must be a positive integer between 1 and 8192.
     height: int | None = None  # must be a positive integer between 1 and 8192.
     bbox: list[float] | None = None
@@ -73,9 +127,9 @@ class MapTileV2Params(BaseParams):
     vehicleHeight: float | None = None
     generalLoadType: str | None = None
     dangerousGoodsLoadType: str | None = None
-    adrCategory: Literal["B", "C", "D", "E"] | None = None
+    adrCategory: AdrCategoryType | None = None
     commercialVehicle: bool | None = None
-    travelMode: Literal["Car", "Truck", "Taxi", "Bus", "Van", "Motorcycle", "Bicycle", "Pedestrian", "Other"] | None = None
+    travelMode: TravelModeType | None = None
     emissionClass: str | None = None
     engineType: str | None = None
     travelModeProfile: str | None = None

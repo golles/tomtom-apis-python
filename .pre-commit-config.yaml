@@ -25,8 +25,17 @@ repos:
         exclude: const.py
       - id: trailing-whitespace
 
+  - repo: local
+    hooks:
+      - id: sort-models
+        name: sort project model files
+        language: system
+        entry: find src -name models.py -exec poetry run python scripts/sort_models.py {} \;
+        pass_filenames: false
+
+  # CI checks
   # The following tools are all installed locally, so there is no need to use remote repos.
-  # The main reason is that there is no need to worry about version mismatch between the project and pre-commit.
+  # The main reason is to not have to worry about version mismatch between the project and pre-commit.
   - repo: local
     hooks:
       - id: mypy
@@ -39,12 +48,6 @@ repos:
       - id: poetry-check
         name: poetry check
         entry: poetry check
-        language: system
-        pass_filenames: false
-
-      - id: poetry-lock
-        name: poetry lock
-        entry: poetry lock
         language: system
         pass_filenames: false
 

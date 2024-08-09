@@ -3,13 +3,48 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Literal
+from enum import Enum
 
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
-from tomtom_api.models import Language, ViewType
+from tomtom_api.models import Language, TileSizeType, ViewType
 
 from ..api import BaseParams
+
+
+class AdrCategoryType(Enum):
+    """Supported ADR category types"""
+
+    B = "B"
+    C = "C"
+    D = "D"
+    E = "E"
+
+
+class LayerType(Enum):
+    """Supported layer types"""
+
+    BASIC = "basic"
+    HYBRID = "hybrid"
+    LABELS = "labels"
+
+
+class LayerTypeWithPoiType(Enum):
+    """Supported layer types"""
+
+    BASIC = "basic"
+    HYBRID = "hybrid"
+    LABELS = "labels"
+    POI = "poi"
+
+
+@dataclass(kw_only=True)
+class MapServiceCopyrightsResponse(DataClassORJSONMixin):
+    """Represents the map service copyrights response."""
+
+    # pylint: disable=invalid-name
+    formatVersion: str
+    copyrightsCaption: str
 
 
 @dataclass(kw_only=True)
@@ -17,27 +52,9 @@ class MapTileParams(BaseParams):
     """Parameters for the map tile API."""
 
     # pylint: disable=invalid-name
-    tileSize: Literal[256, 512] | None = None
+    tileSize: TileSizeType | None = None
     view: ViewType | None = None
     language: Language | None = None
-
-
-@dataclass(kw_only=True)
-class StaticImageParams(BaseParams):
-    """Parameters for the map tile API."""
-
-    # pylint: disable=invalid-name, too-many-instance-attributes
-    layer: Literal["basic", "hybrid", "labels"] | None = None
-    style: Literal["main", "night"] | None = None
-    x: int | None = None
-    y: int | None = None
-    zoom: int | None = None
-    center: list[float] | None = None
-    format: Literal["png", "jpg"] | None = None
-    width: int | None = None  # must be a positive integer between 1 and 8192.
-    height: int | None = None  # must be a positive integer between 1 and 8192.
-    bbox: list[float] | None = None
-    view: ViewType | None = None
 
 
 @dataclass(kw_only=True)
@@ -46,14 +63,6 @@ class MapTileV1Params(BaseParams):
 
     view: ViewType | None = None
     language: Language | None = None
-
-
-# class BracketStringArray(list):
-#     def __init__(self, *args):
-#         super().__init__(args)
-
-#     def __str__(self):
-#         return f"[{','.join(map(str, self))}]"
 
 
 @dataclass(kw_only=True)
@@ -73,18 +82,55 @@ class MapTileV2Params(BaseParams):
     vehicleHeight: float | None = None
     generalLoadType: str | None = None
     dangerousGoodsLoadType: str | None = None
-    adrCategory: Literal["B", "C", "D", "E"] | None = None
+    adrCategory: AdrCategoryType | None = None
     commercialVehicle: bool | None = None
-    travelMode: Literal["Car", "Truck", "Taxi", "Bus", "Van", "Motorcycle", "Bicycle", "Pedestrian", "Other"] | None = None
+    travelMode: TravelModeType | None = None
     emissionClass: str | None = None
     engineType: str | None = None
     travelModeProfile: str | None = None
 
 
 @dataclass(kw_only=True)
-class MapServiceCopyrightsResponse(DataClassORJSONMixin):
-    """Represents the map service copyrights response."""
+class StaticImageParams(BaseParams):
+    """Parameters for the map tile API."""
 
-    # pylint: disable=invalid-name
-    formatVersion: str
-    copyrightsCaption: str
+    # pylint: disable=invalid-name, too-many-instance-attributes
+    layer: LayerType | None = None
+    style: StyleType | None = None
+    x: int | None = None
+    y: int | None = None
+    zoom: int | None = None
+    center: list[float] | None = None
+    format: TileFormatType | None = None
+    width: int | None = None  # must be a positive integer between 1 and 8192.
+    height: int | None = None  # must be a positive integer between 1 and 8192.
+    bbox: list[float] | None = None
+    view: ViewType | None = None
+
+
+class StyleType(Enum):
+    """Supported style types"""
+
+    MAIN = "main"
+    NIGHT = "night"
+
+
+class TileFormatType(Enum):
+    """Supported tile formats"""
+
+    PNG = "png"
+    JPG = "jpg"
+
+
+class TravelModeType(Enum):
+    """Supported travel mode types"""
+
+    CAR = "Car"
+    TRUCK = "Truck"
+    TAXI = "Taxi"
+    BUS = "Bus"
+    VAN = "Van"
+    MOTORCYCLE = "Motorcycle"
+    BICYCLE = "Bicycle"
+    PEDESTRIAN = "Pedestrian"
+    OTHER = "Other"

@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Literal
+from enum import Enum
 
 from tomtom_api.api import BaseParams
-from tomtom_api.models import Language
+from tomtom_api.models import Language, TileSizeType
 
 
 @dataclass(kw_only=True)
@@ -39,6 +39,17 @@ class BoudingBoxParam:
         return f"{self.minY},{self.minX},{self.maxY},{self.maxX}"
 
 
+class IncidentStyleType(Enum):
+    """Supported incident tyle style types"""
+
+    S0 = "s0"
+    S0_DARK = "s0-dark"
+    S1 = "s1"
+    S2 = "s2"
+    S3 = "s3"
+    NIGHT = "night"
+
+
 @dataclass(kw_only=True)
 class RasterIncidentTilesParams(BaseParams):
     """
@@ -47,7 +58,7 @@ class RasterIncidentTilesParams(BaseParams):
 
     # pylint: disable=invalid-name
     t: str | None = None
-    tileSize: Literal[256, 512] | None = None
+    tileSize: TileSizeType | None = None
 
 
 @dataclass(kw_only=True)

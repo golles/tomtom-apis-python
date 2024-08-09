@@ -37,6 +37,7 @@ source = ["tomtom_api"]
 [tool.mypy]
 python_version = "3.12"
 enable_incomplete_feature = ["NewGenericSyntax"]
+ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
 module = "aresponses.*"

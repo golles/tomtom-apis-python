@@ -12,20 +12,6 @@ from tomtom_api.models import Language, TileSizeType, ViewType
 from ..api import BaseParams
 
 
-class TravelModeType(Enum):
-    """Supported travel mode types"""
-
-    CAR = "Car"
-    TRUCK = "Truck"
-    TAXI = "Taxi"
-    BUS = "Bus"
-    VAN = "Van"
-    MOTORCYCLE = "Motorcycle"
-    BICYCLE = "Bicycle"
-    PEDESTRIAN = "Pedestrian"
-    OTHER = "Other"
-
-
 class AdrCategoryType(Enum):
     """Supported ADR category types"""
 
@@ -33,13 +19,6 @@ class AdrCategoryType(Enum):
     C = "C"
     D = "D"
     E = "E"
-
-
-class TileFormatType(Enum):
-    """Supported tile formats"""
-
-    PNG = "png"
-    JPG = "jpg"
 
 
 class LayerType(Enum):
@@ -59,11 +38,13 @@ class LayerTypeWithPoiType(Enum):
     POI = "poi"
 
 
-class StyleType(Enum):
-    """Supported style types"""
+@dataclass(kw_only=True)
+class MapServiceCopyrightsResponse(DataClassORJSONMixin):
+    """Represents the map service copyrights response."""
 
-    MAIN = "main"
-    NIGHT = "night"
+    # pylint: disable=invalid-name
+    formatVersion: str
+    copyrightsCaption: str
 
 
 @dataclass(kw_only=True)
@@ -77,37 +58,11 @@ class MapTileParams(BaseParams):
 
 
 @dataclass(kw_only=True)
-class StaticImageParams(BaseParams):
-    """Parameters for the map tile API."""
-
-    # pylint: disable=invalid-name, too-many-instance-attributes
-    layer: LayerType | None = None
-    style: StyleType | None = None
-    x: int | None = None
-    y: int | None = None
-    zoom: int | None = None
-    center: list[float] | None = None
-    format: TileFormatType | None = None
-    width: int | None = None  # must be a positive integer between 1 and 8192.
-    height: int | None = None  # must be a positive integer between 1 and 8192.
-    bbox: list[float] | None = None
-    view: ViewType | None = None
-
-
-@dataclass(kw_only=True)
 class MapTileV1Params(BaseParams):
     """Parameters for the map tile API."""
 
     view: ViewType | None = None
     language: Language | None = None
-
-
-# class BracketStringArray(list):
-#     def __init__(self, *args):
-#         super().__init__(args)
-
-#     def __str__(self):
-#         return f"[{','.join(map(str, self))}]"
 
 
 @dataclass(kw_only=True)
@@ -136,9 +91,46 @@ class MapTileV2Params(BaseParams):
 
 
 @dataclass(kw_only=True)
-class MapServiceCopyrightsResponse(DataClassORJSONMixin):
-    """Represents the map service copyrights response."""
+class StaticImageParams(BaseParams):
+    """Parameters for the map tile API."""
 
-    # pylint: disable=invalid-name
-    formatVersion: str
-    copyrightsCaption: str
+    # pylint: disable=invalid-name, too-many-instance-attributes
+    layer: LayerType | None = None
+    style: StyleType | None = None
+    x: int | None = None
+    y: int | None = None
+    zoom: int | None = None
+    center: list[float] | None = None
+    format: TileFormatType | None = None
+    width: int | None = None  # must be a positive integer between 1 and 8192.
+    height: int | None = None  # must be a positive integer between 1 and 8192.
+    bbox: list[float] | None = None
+    view: ViewType | None = None
+
+
+class StyleType(Enum):
+    """Supported style types"""
+
+    MAIN = "main"
+    NIGHT = "night"
+
+
+class TileFormatType(Enum):
+    """Supported tile formats"""
+
+    PNG = "png"
+    JPG = "jpg"
+
+
+class TravelModeType(Enum):
+    """Supported travel mode types"""
+
+    CAR = "Car"
+    TRUCK = "Truck"
+    TAXI = "Taxi"
+    BUS = "Bus"
+    VAN = "Van"
+    MOTORCYCLE = "Motorcycle"
+    BICYCLE = "Bicycle"
+    PEDESTRIAN = "Pedestrian"
+    OTHER = "Other"

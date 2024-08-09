@@ -11,6 +11,36 @@ from tomtom_api.api import BaseParams
 
 
 @dataclass(kw_only=True)
+class Current(DataClassORJSONMixin):
+    """Represents a Current."""
+
+    # pylint: disable=invalid-name
+    available: bool
+    emptySpots: int
+    availabilityTrend: str
+    updatedAt: datetime
+
+
+@dataclass(kw_only=True)
+class Fuel(DataClassORJSONMixin):
+    """Represents a Fuel."""
+
+    # pylint: disable=invalid-name
+    type: list[str]
+    price: list[Price]
+    updatedAt: datetime
+
+
+@dataclass(kw_only=True)
+class FuelPricesResponse(DataClassORJSONMixin):
+    """Represents a FuelPrices response."""
+
+    # pylint: disable=invalid-name
+    fuelPrice: str
+    fuels: list[Fuel]
+
+
+@dataclass(kw_only=True)
 class FuelPrizeParams(BaseParams):
     """
     Parameters for the get_fuel_prize method.
@@ -28,24 +58,6 @@ class ParkingAvailabilityParams(BaseParams):
 
     # pylint: disable=invalid-name
     parkingAvailability: str
-
-
-@dataclass(kw_only=True)
-class Current(DataClassORJSONMixin):
-    """Represents a Current."""
-
-    # pylint: disable=invalid-name
-    available: bool
-    emptySpots: int
-    availabilityTrend: str
-    updatedAt: datetime
-
-
-@dataclass(kw_only=True)
-class Status(DataClassORJSONMixin):
-    """Represents a Status."""
-
-    current: Current
 
 
 @dataclass(kw_only=True)
@@ -69,19 +81,7 @@ class Price(DataClassORJSONMixin):
 
 
 @dataclass(kw_only=True)
-class Fuel(DataClassORJSONMixin):
-    """Represents a Fuel."""
+class Status(DataClassORJSONMixin):
+    """Represents a Status."""
 
-    # pylint: disable=invalid-name
-    type: list[str]
-    price: list[Price]
-    updatedAt: datetime
-
-
-@dataclass(kw_only=True)
-class FuelPricesResponse(DataClassORJSONMixin):
-    """Represents a FuelPrices response."""
-
-    # pylint: disable=invalid-name
-    fuelPrice: str
-    fuels: list[Fuel]
+    current: Current

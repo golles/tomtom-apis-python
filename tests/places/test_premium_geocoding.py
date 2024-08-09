@@ -18,7 +18,7 @@ async def fixture_premium_geocoding_api():
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/premium_geocoding/get_geocode.json"], indirect=True)
-async def test_get_geocode(premium_geocoding_api: PremiumGeocodingApi):
+async def test_deserialization_get_geocode(premium_geocoding_api: PremiumGeocodingApi):
     """Test the get_geocode method."""
 
     response = await premium_geocoding_api.get_geocode(

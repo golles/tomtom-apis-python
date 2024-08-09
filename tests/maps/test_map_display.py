@@ -30,7 +30,7 @@ async def fixture_map_display_api():
 
 @pytest.mark.usefixtures("image_response")
 @pytest.mark.parametrize("image_response", ["maps/get_map_tile.png"], indirect=True)
-async def test_get_map_tile(map_display_api: MapDisplayApi):
+async def test_deserialization_get_map_tile(map_display_api: MapDisplayApi):
     """Test the get_map_tile method."""
     response = await map_display_api.get_map_tile(
         layer=LayerType.BASIC,
@@ -48,7 +48,7 @@ async def test_get_map_tile(map_display_api: MapDisplayApi):
 
 @pytest.mark.usefixtures("image_response")
 @pytest.mark.parametrize("image_response", ["maps/get_satellite_tile.jpg"], indirect=True)
-async def test_get_satellite_tile(map_display_api: MapDisplayApi):
+async def test_deserialization_get_satellite_tile(map_display_api: MapDisplayApi):
     """Test the get_satellite_tile method."""
     response = await map_display_api.get_satellite_tile(
         x=0,
@@ -64,7 +64,7 @@ async def test_get_satellite_tile(map_display_api: MapDisplayApi):
 
 @pytest.mark.usefixtures("image_response")
 @pytest.mark.parametrize("image_response", ["maps/get_hillshade_tile.png"], indirect=True)
-async def test_get_hillshade_tile(map_display_api: MapDisplayApi):
+async def test_deserialization_get_hillshade_tile(map_display_api: MapDisplayApi):
     """Test the get_hillshade_tile method."""
     response = await map_display_api.get_hillshade_tile(
         x=0,
@@ -80,7 +80,7 @@ async def test_get_hillshade_tile(map_display_api: MapDisplayApi):
 
 @pytest.mark.usefixtures("image_response")
 @pytest.mark.parametrize("image_response", ["maps/get_static_image.png"], indirect=True)
-async def test_get_static_image(map_display_api: MapDisplayApi):
+async def test_deserialization_get_static_image(map_display_api: MapDisplayApi):
     """Test the get_static_image method."""
     response = await map_display_api.get_static_image(
         params=StaticImageParams(
@@ -102,7 +102,7 @@ async def test_get_static_image(map_display_api: MapDisplayApi):
 
 @pytest.mark.usefixtures("image_response")
 @pytest.mark.parametrize("image_response", ["maps/get_tile_v1.pbf"], indirect=True)
-async def test_get_tile_v1(map_display_api: MapDisplayApi):
+async def test_deserialization_get_tile_v1(map_display_api: MapDisplayApi):
     """Test the get_tile_v1 method."""
     response = await map_display_api.get_tile_v1(
         layer=LayerTypeWithPoiType.BASIC,
@@ -122,7 +122,7 @@ async def test_get_tile_v1(map_display_api: MapDisplayApi):
 
 @pytest.mark.usefixtures("image_response")
 @pytest.mark.parametrize("image_response", ["maps/get_tile_v2.pbf"], indirect=True)
-async def test_get_tile_v2(map_display_api: MapDisplayApi):
+async def test_deserialization_get_tile_v2(map_display_api: MapDisplayApi):
     """Test the get_tile_v2 method."""
     response = await map_display_api.get_tile_v2(
         layer=LayerTypeWithPoiType.BASIC,
@@ -156,7 +156,7 @@ async def test_get_tile_v2(map_display_api: MapDisplayApi):
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["maps/get_map_copyrights.txt"], indirect=True)
-async def test_get_map_copyrights(map_display_api: MapDisplayApi):
+async def test_deserialization_get_map_copyrights(map_display_api: MapDisplayApi):
     """Test the get_map_copyrights method."""
     response = await map_display_api.get_map_copyrights()
 
@@ -168,7 +168,7 @@ async def test_get_map_copyrights(map_display_api: MapDisplayApi):
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["maps/get_map_service_copyrights.json"], indirect=True)
-async def test_get_map_service_copyrights(map_display_api: MapDisplayApi):
+async def test_deserialization_get_map_service_copyrights(map_display_api: MapDisplayApi):
     """Test the get_map_copyrights method."""
     response = await map_display_api.get_map_service_copyrights()
 

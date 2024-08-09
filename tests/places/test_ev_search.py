@@ -18,7 +18,7 @@ async def fixture_ev_search_api():
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/ev_search/get_ev_search_nearby.json"], indirect=True)
-async def test_get_ev_search_nearby(ev_search_api: EVSearchApi):
+async def test_deserialization_get_ev_search_nearby(ev_search_api: EVSearchApi):
     """Test the get_ev_search_nearby method."""
     response = await ev_search_api.get_ev_search_nearby(
         params=EvSearchNearbyParams(
@@ -40,7 +40,7 @@ async def test_get_ev_search_nearby(ev_search_api: EVSearchApi):
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/ev_search/get_ev_search_by_id.json"], indirect=True)
-async def test_get_ev_search_by_id(ev_search_api: EVSearchApi):
+async def test_deserialization_get_ev_search_by_id(ev_search_api: EVSearchApi):
     """Test the get_ev_search_by_id method."""
     response = await ev_search_api.get_ev_search_by_id(params=EvSearchByIdParams(id="RS*ORI*E1161"))
 

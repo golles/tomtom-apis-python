@@ -18,7 +18,7 @@ async def fixture_search_api():
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_search.json"], indirect=True)
-async def test_get_search(search_api: SearchApi):
+async def test_deserialization_get_search(search_api: SearchApi):
     """Test the get_search method."""
     params = BaseParams().from_dict(
         {
@@ -46,7 +46,7 @@ async def test_get_search(search_api: SearchApi):
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_poi_search.json"], indirect=True)
-async def test_get_poi_search(search_api: SearchApi):
+async def test_deserialization_get_poi_search(search_api: SearchApi):
     """Test the get_poi_search method."""
     params = BaseParams().from_dict(
         {
@@ -72,7 +72,7 @@ async def test_get_poi_search(search_api: SearchApi):
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_category_search.json"], indirect=True)
-async def test_get_category_search(search_api: SearchApi):
+async def test_deserialization_get_category_search(search_api: SearchApi):
     """Test the get_category_search method."""
     params = BaseParams().from_dict(
         {
@@ -98,7 +98,7 @@ async def test_get_category_search(search_api: SearchApi):
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_geometry_search.json"], indirect=True)
-async def test_get_geometry_search(search_api: SearchApi):
+async def test_deserialization_get_geometry_search(search_api: SearchApi):
     """Test the get_geometry_search method."""
     params = BaseParams().from_dict(
         {
@@ -123,7 +123,7 @@ async def test_get_geometry_search(search_api: SearchApi):
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_nearby_search.json"], indirect=True)
-async def test_get_nearby_search(search_api: SearchApi):
+async def test_deserialization_get_nearby_search(search_api: SearchApi):
     """Test the get_nearby_search method."""
     params = BaseParams().from_dict(
         {
@@ -147,7 +147,7 @@ async def test_get_nearby_search(search_api: SearchApi):
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/post_search_along_route.json"], indirect=True)
-async def test_post_search_along_route(search_api: SearchApi):
+async def test_deserialization_post_search_along_route(search_api: SearchApi):
     """Test the post_search_along_route method."""
     params = BaseParams().from_dict(
         {
@@ -198,7 +198,7 @@ async def test_post_search_along_route(search_api: SearchApi):
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_place_by_id.json"], indirect=True)
-async def test_get_place_by_id(search_api: SearchApi):
+async def test_deserialization_get_place_by_id(search_api: SearchApi):
     """Test the test_get_place_by_id method."""
     response = await search_api.get_place_by_id(
         params=PlaceByIdParams(entityId="528009004256119"),
@@ -216,7 +216,7 @@ async def test_get_place_by_id(search_api: SearchApi):
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_poi_categories.json"], indirect=True)
-async def test_get_poi_categories(search_api: SearchApi):
+async def test_deserialization_get_poi_categories(search_api: SearchApi):
     """Test the get_poi_categories method."""
     response = await search_api.get_poi_categories(
         params=PoiCategoriesParams(),

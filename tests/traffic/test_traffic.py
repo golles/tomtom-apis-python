@@ -24,7 +24,7 @@ async def fixture_traffic_api():
 
 @pytest.mark.usefixtures("image_response")
 @pytest.mark.parametrize("image_response", ["traffic/traffic/get_incident_viewport.json"], indirect=True)
-async def test_get_incident_viewport(traffic_display: TrafficApi):
+async def test_deserialization_get_incident_viewport(traffic_display: TrafficApi):
     """Test the get_incident_viewport method."""
     response = await traffic_display.get_incident_viewport(
         bounding_box=BoudingBoxParam(minY=-939584.4813015489, minX=-23954526.723651607, maxY=14675583.153020501, maxX=25043442.895825107),
@@ -41,7 +41,7 @@ async def test_get_incident_viewport(traffic_display: TrafficApi):
 
 @pytest.mark.usefixtures("image_response")
 @pytest.mark.parametrize("image_response", ["traffic/traffic/get_raster_incident_tile.png"], indirect=True)
-async def test_get_static_image(traffic_display: TrafficApi):
+async def test_deserialization_get_static_image(traffic_display: TrafficApi):
     """Test the get_static_image method."""
     response = await traffic_display.get_raster_incident_tile(
         style=IncidentStyleType.S0,
@@ -58,7 +58,7 @@ async def test_get_static_image(traffic_display: TrafficApi):
 
 @pytest.mark.usefixtures("image_response")
 @pytest.mark.parametrize("image_response", ["traffic/traffic/get_vector_incident_tile.pbf"], indirect=True)
-async def test_get_tile_v1(traffic_display: TrafficApi):
+async def test_deserialization_get_tile_v1(traffic_display: TrafficApi):
     """Test the get_vector_incident_tile method."""
     response = await traffic_display.get_vector_incident_tile(
         x=1207,

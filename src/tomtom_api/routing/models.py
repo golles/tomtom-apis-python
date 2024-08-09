@@ -293,8 +293,8 @@ class EVLegSummary(DataClassORJSONMixin):
     travelTimeInSeconds: int
     trafficDelayInSeconds: int
     trafficLengthInMeters: int
-    departureTime: str
-    arrivalTime: str
+    departureTime: datetime
+    arrivalTime: datetime
     batteryConsumptionInkWh: float
     remainingChargeAtArrivalInkWh: float
     chargingInformationAtEndOfLeg: ChargingInformationAtEndOfLeg
@@ -318,8 +318,8 @@ class EVSummary(DataClassORJSONMixin):
     travelTimeInSeconds: int
     trafficDelayInSeconds: int
     trafficLengthInMeters: int
-    departureTime: str
-    arrivalTime: str
+    departureTime: datetime
+    arrivalTime: datetime
     batteryConsumptionInkWh: float
     remainingChargeAtArrivalInkWh: float
     totalChargingTimeInSeconds: float

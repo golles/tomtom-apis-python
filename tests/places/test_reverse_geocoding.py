@@ -19,7 +19,7 @@ async def fixture_reverse_geocoding_api():
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/reverse_geocoding/get_reverse_geocode.json"], indirect=True)
-async def test_get_reverse_geocode(reverse_geocoding_api: ReverseGeocodingApi):
+async def test_deserialization_get_reverse_geocode(reverse_geocoding_api: ReverseGeocodingApi):
     """Test the get_reverse_geocode method."""
 
     response = await reverse_geocoding_api.get_reverse_geocode(
@@ -48,7 +48,7 @@ async def test_get_reverse_geocode(reverse_geocoding_api: ReverseGeocodingApi):
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/reverse_geocoding/get_cross_street_lookup.json"], indirect=True)
-async def test_get_cross_street_lookup(reverse_geocoding_api: ReverseGeocodingApi):
+async def test_deserialization_get_cross_street_lookup(reverse_geocoding_api: ReverseGeocodingApi):
     """Test the get_cross_street_lookup method."""
 
     response = await reverse_geocoding_api.get_cross_street_lookup(

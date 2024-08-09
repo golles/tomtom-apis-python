@@ -1,5 +1,6 @@
 """Long Distance EV Routing tests"""
 
+from datetime import datetime
 import pytest
 
 from tests.const import API_KEY, LOC_AMSTERDAM
@@ -25,7 +26,7 @@ async def fixture_long_distance_ev_routing_api():
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["routing/long_distance_ev_routing/post_calculate_long_distance_ev_route.json"], indirect=True)
-async def test_post_calculate_long_distance_ev_route_success(long_distance_ev_routing_api: LongDistanceEVRoutingApi):
+async def test_deserialization_post_calculate_long_distance_ev_route(long_distance_ev_routing_api: LongDistanceEVRoutingApi):
     """Test the post_calculate_long_distance_ev_route method."""
     params = CalculateLongDistanceEVRouteParams(
         vehicleEngineType="electric",
@@ -77,3 +78,7 @@ async def test_post_calculate_long_distance_ev_route_success(long_distance_ev_ro
     assert response.routes[0].summary.batteryConsumptionInkWh > 30
     assert response.routes[0].summary.remainingChargeAtArrivalInkWh > 4
     assert response.routes[0].summary.totalChargingTimeInSeconds > 3000
+    assert isinstance(response.routes[0].summary.departureTime, datetime)
+    assert isinstance(response.routes[0].summary.arrivalTime, datetime)
+    assert isinstance(response.routes[0].legs[0].summary.departureTime, datetime)
+    assert isinstance(response.routes[0].legs[0].summary.arrivalTime, datetime)

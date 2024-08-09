@@ -1,5 +1,6 @@
 """Routing tests"""
 
+from datetime import datetime
 import pytest
 
 from tests.const import API_KEY
@@ -21,7 +22,7 @@ async def fixture_routing_api():
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["routing/routing/get_calculate_route.json"], indirect=True)
-async def test_get_calculate_route_success(routing_api: RoutingApi):
+async def test_deserialization_get_calculate_route(routing_api: RoutingApi):
     """Test the get_calculate_route method."""
     response = await routing_api.get_calculate_route(
         locations=LatLonList(locations=[LOC_AMSTERDAM, LOC_ROTTERDAM]),
@@ -40,11 +41,13 @@ async def test_get_calculate_route_success(routing_api: RoutingApi):
     assert response.routes[0].summary is not None
     assert response.routes[0].summary.lengthInMeters > 1000
     assert response.routes[0].summary.travelTimeInSeconds > 30
+    assert isinstance(response.routes[0].summary.departureTime, datetime)
+    assert isinstance(response.routes[0].summary.arrivalTime, datetime)
 
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["routing/routing/post_calculate_route.json"], indirect=True)
-async def test_post_calculate_route_success(routing_api: RoutingApi):
+async def test_deserialization_post_calculate_route(routing_api: RoutingApi):
     """Test the post_calculate_route method."""
     response = await routing_api.post_calculate_route(
         locations=LatLonList(locations=[LOC_AMSTERDAM, LOC_ROTTERDAM]),
@@ -77,11 +80,15 @@ async def test_post_calculate_route_success(routing_api: RoutingApi):
     assert response.routes[0].summary is not None
     assert response.routes[0].summary.lengthInMeters > 1000
     assert response.routes[0].summary.travelTimeInSeconds > 30
+    assert isinstance(response.routes[0].summary.departureTime, datetime)
+    assert isinstance(response.routes[0].summary.arrivalTime, datetime)
+    assert isinstance(response.routes[0].legs[0].summary.departureTime, datetime)
+    assert isinstance(response.routes[0].legs[0].summary.arrivalTime, datetime)
 
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["routing/routing/get_calculate_reachable_range.json"], indirect=True)
-async def test_get_calculate_reachable_range_success(routing_api: RoutingApi):
+async def test_deserialization_get_calculate_reachable_range(routing_api: RoutingApi):
     """Test the get_calculate_reachable_range method."""
     reponse = await routing_api.get_calculate_reachable_range(
         origin=LOC_AMSTERDAM,
@@ -105,7 +112,7 @@ async def test_get_calculate_reachable_range_success(routing_api: RoutingApi):
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["routing/routing/post_calculate_reachable_range.json"], indirect=True)
-async def test_post_calculate_reachable_range_success(routing_api: RoutingApi):
+async def test_deserialization_post_calculate_reachable_range(routing_api: RoutingApi):
     """Test the post_calculate_reachable_range method."""
     reponse = await routing_api.post_calculate_reachable_range(
         origin=LOC_AMSTERDAM,

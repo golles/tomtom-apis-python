@@ -18,7 +18,7 @@ async def fixture_waypoint_optimization_api():
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["routing/waypoint_optimization/post_waypointoptimization.json"], indirect=True)
-async def test_post_calculate_route_success(waypoint_optimization_api: WaypointOptimizationApi):
+async def test_deserialization_post_waypointoptimization(waypoint_optimization_api: WaypointOptimizationApi):
     """Test the post_waypointoptimization method."""
     response = await waypoint_optimization_api.post_waypointoptimization(
         data=WaypointOptimizationPostData.from_dict(

@@ -9,6 +9,18 @@ documentation = "https://github.com/golles/tomtom-api-python"
 homepage = "https://github.com/golles/tomtom-api-python"
 repository = "https://github.com/golles/tomtom-api-python"
 packages = [{ include = "tomtom_api", from = "src" }]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: AsyncIO",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/golles/tomtom-api-python/issues"

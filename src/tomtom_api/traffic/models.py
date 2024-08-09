@@ -9,17 +9,6 @@ from tomtom_api.api import BaseParams
 from tomtom_api.models import Language, TileSizeType
 
 
-class IncidentStyleType(Enum):
-    """Supported incident tyle style types"""
-
-    S0 = "s0"
-    S0_DARK = "s0-dark"
-    S1 = "s1"
-    S2 = "s2"
-    S3 = "s3"
-    NIGHT = "night"
-
-
 @dataclass(kw_only=True)
 class BBoxParam:
     """bbox param."""
@@ -48,6 +37,17 @@ class BoudingBoxParam:
     def to_comma_seperate(self) -> str:
         """Turn the object into a comma seperated string."""
         return f"{self.minY},{self.minX},{self.maxY},{self.maxX}"
+
+
+class IncidentStyleType(Enum):
+    """Supported incident tyle style types"""
+
+    S0 = "s0"
+    S0_DARK = "s0-dark"
+    S1 = "s1"
+    S2 = "s2"
+    S3 = "s3"
+    NIGHT = "night"
 
 
 @dataclass(kw_only=True)

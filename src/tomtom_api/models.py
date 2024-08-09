@@ -8,11 +8,67 @@ from enum import Enum
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
 
-class TileSizeType(Enum):
-    """Supported tile sizes"""
+class Language(Enum):
+    """
+    Supported languages for the Places API.
+    See: https://developer.tomtom.com/search-api/documentation/product-information/supported-languages
+    """
 
-    SIZE_256 = 256
-    SIZE_512 = 512
+    NGT = "NGT"  # Neutral Ground Truth, Official languages for all regions in local scripts if available.
+    NGT_LATN = "NGT-Latn"  # Neutral Ground Truth - Latin exonyms, Latin script will be used if available.
+    AF_ZA = "af-ZA"  # Afrikaans
+    AR = "ar"  # Arabic
+    EU_ES = "eu-ES"  # Basque
+    BG_BG = "bg-BG"  # Bulgarian
+    CA_ES = "ca-ES"  # Catalan (Spain)
+    ZH_CN = "zh-CN"  # Chinese (PRC)
+    ZH_TW = "zh-TW"  # Chinese (Taiwan)
+    CS_CZ = "cs-CZ"  # Czech
+    DA_DK = "da-DK"  # Danish
+    NL_BE = "nl-BE"  # Dutch (Belgium)
+    NL_NL = "nl-NL"  # Dutch
+    EN_AU = "en-AU"  # English (Australia)
+    EN_NZ = "en-NZ"  # English (New Zealand)
+    EN_GB = "en-GB"  # English (Great Britain)
+    EN_US = "en-US"  # English (USA)
+    ET_EE = "et-EE"  # Estonian
+    FI_FI = "fi-FI"  # Finnish
+    FR_CA = "fr-CA"  # French (Canada)
+    FR_FR = "fr-FR"  # French
+    GL_ES = "gl-ES"  # Galician
+    DE_DE = "de-DE"  # German
+    EL_GR = "el-GR"  # Greek
+    HR_HR = "hr-HR"  # Croatian
+    HE_IL = "he-IL"  # Hebrew
+    HU_HU = "hu-HU"  # Hungarian
+    ID_ID = "id-ID"  # Indonesian
+    IT_IT = "it-IT"  # Italian
+    KK_KZ = "kk-KZ"  # Kazakh
+    KO_KR = "ko-KR"  # Korean written in the Hangul script
+    KO_LATN_KR = "ko-Latn-KR"  # Korean written in the Latin script
+    KO_KORE_KR = "ko-Kore-KR"  # Korean written in the Hangul script
+    LV_LV = "lv-LV"  # Latvian
+    LT_LT = "lt-LT"  # Lithuanian
+    MS_MY = "ms-MY"  # Malay
+    NO_NO = "no-NO"  # Norwegian
+    NB_NO = "nb-NO"  # Norwegian
+    PL_PL = "pl-PL"  # Polish
+    PT_BR = "pt-BR"  # Portuguese (Brazil)
+    PT_PT = "pt-PT"  # Portuguese (Portugal)
+    RO_RO = "ro-RO"  # Romanian
+    RU_RU = "ru-RU"  # Russian written in the Cyrillic script
+    RU_LATN_RU = "ru-Latn-RU"  # Russian written in the Latin script
+    RU_CYRL_RU = "ru-Cyrl-RU"  # Russian written in the Cyrillic script
+    SR_RS = "sr-RS"  # Serbian
+    SK_SK = "sk-SK"  # Slovak
+    SL_SI = "sl-SI"  # Slovenian
+    ES_ES = "es-ES"  # Castilian Spanish
+    ES_419 = "es-419"  # Latin American Spanish
+    SV_SE = "sv-SE"  # Swedish
+    TH_TH = "th-TH"  # Thai
+    TR_TR = "tr-TR"  # Turkish
+    UK_UA = "uk-UA"  # Ukrainian
+    VI_VN = "vi-VN"  # Vietnamese
 
 
 @dataclass
@@ -89,67 +145,11 @@ class MapTile:
     zoom: int
 
 
-class Language(Enum):
-    """
-    Supported languages for the Places API.
-    See: https://developer.tomtom.com/search-api/documentation/product-information/supported-languages
-    """
+class TileSizeType(Enum):
+    """Supported tile sizes"""
 
-    NGT = "NGT"  # Neutral Ground Truth, Official languages for all regions in local scripts if available.
-    NGT_LATN = "NGT-Latn"  # Neutral Ground Truth - Latin exonyms, Latin script will be used if available.
-    AF_ZA = "af-ZA"  # Afrikaans
-    AR = "ar"  # Arabic
-    EU_ES = "eu-ES"  # Basque
-    BG_BG = "bg-BG"  # Bulgarian
-    CA_ES = "ca-ES"  # Catalan (Spain)
-    ZH_CN = "zh-CN"  # Chinese (PRC)
-    ZH_TW = "zh-TW"  # Chinese (Taiwan)
-    CS_CZ = "cs-CZ"  # Czech
-    DA_DK = "da-DK"  # Danish
-    NL_BE = "nl-BE"  # Dutch (Belgium)
-    NL_NL = "nl-NL"  # Dutch
-    EN_AU = "en-AU"  # English (Australia)
-    EN_NZ = "en-NZ"  # English (New Zealand)
-    EN_GB = "en-GB"  # English (Great Britain)
-    EN_US = "en-US"  # English (USA)
-    ET_EE = "et-EE"  # Estonian
-    FI_FI = "fi-FI"  # Finnish
-    FR_CA = "fr-CA"  # French (Canada)
-    FR_FR = "fr-FR"  # French
-    GL_ES = "gl-ES"  # Galician
-    DE_DE = "de-DE"  # German
-    EL_GR = "el-GR"  # Greek
-    HR_HR = "hr-HR"  # Croatian
-    HE_IL = "he-IL"  # Hebrew
-    HU_HU = "hu-HU"  # Hungarian
-    ID_ID = "id-ID"  # Indonesian
-    IT_IT = "it-IT"  # Italian
-    KK_KZ = "kk-KZ"  # Kazakh
-    KO_KR = "ko-KR"  # Korean written in the Hangul script
-    KO_LATN_KR = "ko-Latn-KR"  # Korean written in the Latin script
-    KO_KORE_KR = "ko-Kore-KR"  # Korean written in the Hangul script
-    LV_LV = "lv-LV"  # Latvian
-    LT_LT = "lt-LT"  # Lithuanian
-    MS_MY = "ms-MY"  # Malay
-    NO_NO = "no-NO"  # Norwegian
-    NB_NO = "nb-NO"  # Norwegian
-    PL_PL = "pl-PL"  # Polish
-    PT_BR = "pt-BR"  # Portuguese (Brazil)
-    PT_PT = "pt-PT"  # Portuguese (Portugal)
-    RO_RO = "ro-RO"  # Romanian
-    RU_RU = "ru-RU"  # Russian written in the Cyrillic script
-    RU_LATN_RU = "ru-Latn-RU"  # Russian written in the Latin script
-    RU_CYRL_RU = "ru-Cyrl-RU"  # Russian written in the Cyrillic script
-    SR_RS = "sr-RS"  # Serbian
-    SK_SK = "sk-SK"  # Slovak
-    SL_SI = "sl-SI"  # Slovenian
-    ES_ES = "es-ES"  # Castilian Spanish
-    ES_419 = "es-419"  # Latin American Spanish
-    SV_SE = "sv-SE"  # Swedish
-    TH_TH = "th-TH"  # Thai
-    TR_TR = "tr-TR"  # Turkish
-    UK_UA = "uk-UA"  # Ukrainian
-    VI_VN = "vi-VN"  # Vietnamese
+    SIZE_256 = 256
+    SIZE_512 = 512
 
 
 class ViewType(Enum):

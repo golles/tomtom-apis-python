@@ -2,7 +2,7 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 215,
+    "queryTime": 135,
     "numResults": 10,
     "offset": 0,
     "totalResults": 100,
@@ -26,8 +26,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -75,8 +75,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -123,8 +123,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -170,8 +170,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -204,55 +204,6 @@
     },
     {
       "type": "POI",
-      "id": "gfzlkgI16FU-xQNJZdyodA",
-      "score": 3.3983485243,
-      "dist": 256.950212,
-      "info": "search:ta:840069005515422-US",
-      "poi": {
-        "name": "La Nostra Pizza & Ristorante",
-        "phone": "+1 408-995-0924",
-        "categorySet": [{ "id": 7315036 }],
-        "url": "www.lanostrapizza.com",
-        "categories": ["pizza", "restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "80",
-        "streetName": "South 1st Street",
-        "municipality": "San Jose",
-        "neighbourhood": "Downtown San Jose",
-        "countrySecondarySubdivision": "Santa Clara",
-        "countrySubdivision": "CA",
-        "countrySubdivisionName": "California",
-        "countrySubdivisionCode": "CA",
-        "postalCode": "95113",
-        "extendedPostalCode": "95113-1241",
-        "countryCode": "US",
-        "country": "United States",
-        "countryCodeISO3": "USA",
-        "freeformAddress": "80 South 1st Street, San Jose, CA 95113",
-        "localName": "San Jose"
-      },
-      "position": { "lat": 37.334801, "lon": -121.889107 },
-      "viewport": {
-        "topLeftPoint": { "lat": 37.3357, "lon": -121.89024 },
-        "btmRightPoint": { "lat": 37.3339, "lon": -121.88798 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 37.33463, "lon": -121.88947 } },
-        { "type": "main", "position": { "lat": 37.33462, "lon": -121.88947 } }
-      ]
-    },
-    {
-      "type": "POI",
       "id": "FIXKMHXSK5CtcB7Ld09QAw",
       "score": 3.3983485243,
       "dist": 256.921453,
@@ -267,8 +218,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -302,6 +253,55 @@
     },
     {
       "type": "POI",
+      "id": "gfzlkgI16FU-xQNJZdyodA",
+      "score": 3.3983485243,
+      "dist": 256.950212,
+      "info": "search:ta:840069005515422-US",
+      "poi": {
+        "name": "La Nostra Pizza & Ristorante",
+        "phone": "+1 408-995-0924",
+        "categorySet": [{ "id": 7315036 }],
+        "url": "www.lanostrapizza.com",
+        "categories": ["pizza", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "80",
+        "streetName": "South 1st Street",
+        "municipality": "San Jose",
+        "neighbourhood": "Downtown San Jose",
+        "countrySecondarySubdivision": "Santa Clara",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "95113",
+        "extendedPostalCode": "95113-1241",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "80 South 1st Street, San Jose, CA 95113",
+        "localName": "San Jose"
+      },
+      "position": { "lat": 37.334801, "lon": -121.889107 },
+      "viewport": {
+        "topLeftPoint": { "lat": 37.3357, "lon": -121.89024 },
+        "btmRightPoint": { "lat": 37.3339, "lon": -121.88798 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 37.33463, "lon": -121.88947 } },
+        { "type": "main", "position": { "lat": 37.33462, "lon": -121.88947 } }
+      ]
+    },
+    {
+      "type": "POI",
       "id": "9VZCZeCowneKjs4ottng4w",
       "score": 3.3983215115,
       "dist": 360.52893,
@@ -315,8 +315,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -362,8 +362,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -410,8 +410,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -457,8 +457,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]

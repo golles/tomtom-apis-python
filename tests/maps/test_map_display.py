@@ -139,7 +139,7 @@ async def test_get_tile_v2(map_display_api: MapDisplayApi):
             vehicleWidth=2.5,
             vehicleHeight=2.5,
             generalLoadType="[General_Hazardous_Materials]",
-            dangerousGoodsLoadType="[Explosives]",
+            dangerousGoodsLoadType="[Gases,Explosives]",
             adrCategory=AdrCategoryType.B,
             commercialVehicle=True,
             travelMode=TravelModeType.TAXI,

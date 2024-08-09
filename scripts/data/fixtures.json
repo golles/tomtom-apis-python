@@ -40,7 +40,7 @@
       {
         "method": "GET",
         "fixture": "maps/get_tile_v2.pbf",
-        "url": "map/2/tile/basic/0/0/0.pbf?view=Unified&include=%5Broad_restrictions%5D&vehicleWeight=2000&vehicleAxleWeight=1000&numberOfAxles=2&vehicleLength=2.5&vehicleWidth=2.5&vehicleHeight=2.5&generalLoadType=%5BGeneral_Hazardous_Materials%5D&dangerousGoodsLoadType=%5BExplosives%5D&adrCategory=B&commercialVehicle=true&travelMode=Taxi&emissionClass=%5BEmissionClass5%5D&engineType=%5BDiesel%5D&travelModeProfile=0%2C1500%2C%2C%2C5.5%2C%2C2.2%2C%2C%2C%2C%2C%2C&key={{TT_KEY}}"
+        "url": "map/2/tile/basic/0/0/0.pbf?view=Unified&include=%5Broad_restrictions%5D&vehicleWeight=2000&vehicleAxleWeight=1000&numberOfAxles=2&vehicleLength=2.5&vehicleWidth=2.5&vehicleHeight=2.5&generalLoadType=%5BGeneral_Hazardous_Materials%5D&dangerousGoodsLoadType=%5BGases%2CExplosives%5D&adrCategory=B&commercialVehicle=true&travelMode=Taxi&emissionClass=%5BEmissionClass5%5D&engineType=%5BDiesel%5D&travelModeProfile=0%2C1500%2C%2C%2C5.5%2C%2C2.2%2C%2C%2C%2C%2C%2C&key={{TT_KEY}}"
       }
     ]
   },

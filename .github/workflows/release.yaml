@@ -10,7 +10,7 @@ env:
   DEFAULT_NODE: "20"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   pypi-publish:
@@ -40,9 +40,12 @@ jobs:
       - name: Build project
         run: poetry build
 
-      #   - name: Configure pypi token
-      #     run: poetry config pypi-token.testpypi ${{ secrets.PYPI_TOKEN }}
-      #     # run: poetry config pypi-token.pypi "${{ secrets.PYPI_TOKEN }}"
+      # TODO remove repository (and this comment) once ready to publish to pypi.
       - name: Publish project
         run: poetry publish --repository testpypi
-        # run: poetry publish
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: dist/

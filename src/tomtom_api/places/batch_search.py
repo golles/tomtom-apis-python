@@ -41,7 +41,7 @@ class BatchSearchApi(BaseApi):
         *,
         params: AsynchronousSynchronousBatchParams | None = None,
         data: BatchPostData,
-    ) -> dict:
+    ) -> str | None:
         """
         This endpoint allows the submission of a new batch for asynchronous processing. It responds with a redirect to the location at which the batch results can be obtained when the batch processing has completed.
 
@@ -54,7 +54,7 @@ class BatchSearchApi(BaseApi):
             data=data,
         )
 
-        return await reponse.dict()
+        return reponse.headers.get("Location", None)
 
     async def get_asynchronous_batch_download(
         self,

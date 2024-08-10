@@ -8,7 +8,7 @@ import os
 from tomtom_api import ApiOptions
 from tomtom_api.models import Language, LatLon
 from tomtom_api.places import GeocodingApi, ReverseGeocodingApi, SearchApi
-from tomtom_api.places.models import PlaceByIdParams, ReverseGeocodeParams
+from tomtom_api.places.models import NearbySearchParams, PlaceByIdParams, ReverseGeocodeParams
 
 
 async def get_place_by_id(api_key: str) -> None:
@@ -27,6 +27,23 @@ async def get_geocode(api_key: str) -> None:
         response = await geo_coding_api.get_geocode(query=query)
 
         print(f"\nGeocode for '{query}' = {response.results[0].type} @ {response.results[0].position.lat},{response.results[0].position.lon}")
+
+
+async def get_nearby_search(api_key: str) -> None:
+    """Example for get_nearby_search"""
+    async with SearchApi(ApiOptions(api_key=api_key)) as search_api:
+        radius = 10000
+        response = await search_api.get_nearby_search(
+            lat=29.7604,
+            lon=-95.3698,
+            params=NearbySearchParams(
+                limit=100,
+                radius=radius,
+                brandSet=["McDonald's"],
+            ),
+        )
+
+        print(f"\nThere are {len(response.results)} McDonald's restaurants in a {radius} meter radius of the centre of Houston")
 
 
 async def get_reverse_geocode(api_key: str) -> None:
@@ -56,4 +73,5 @@ if __name__ == "__main__":
 
     asyncio.run(get_place_by_id(user_api_key))
     asyncio.run(get_geocode(user_api_key))
+    asyncio.run(get_nearby_search(user_api_key))
     asyncio.run(get_reverse_geocode(user_api_key))

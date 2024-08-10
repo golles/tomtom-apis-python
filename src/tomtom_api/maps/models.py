@@ -1,4 +1,4 @@
-"""Models for the TomTom Maps API."""
+"""Models for the TomTom Maps API"""
 
 from __future__ import annotations
 
@@ -40,7 +40,7 @@ class LayerTypeWithPoiType(Enum):
 
 @dataclass(kw_only=True)
 class MapServiceCopyrightsResponse(DataClassORJSONMixin):
-    """Represents the map service copyrights response."""
+    """Represents the map service copyrights response"""
 
     # pylint: disable=invalid-name
     formatVersion: str
@@ -49,7 +49,7 @@ class MapServiceCopyrightsResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class MapTileParams(BaseParams):
-    """Parameters for the map tile API."""
+    """Parameters for the map tile API"""
 
     # pylint: disable=invalid-name
     tileSize: TileSizeType | None = None
@@ -59,7 +59,7 @@ class MapTileParams(BaseParams):
 
 @dataclass(kw_only=True)
 class MapTileV1Params(BaseParams):
-    """Parameters for the map tile API."""
+    """Parameters for the map tile API"""
 
     view: ViewType | None = None
     language: Language | None = None
@@ -67,7 +67,7 @@ class MapTileV1Params(BaseParams):
 
 @dataclass(kw_only=True)
 class MapTileV2Params(BaseParams):
-    """Parameters for the map tile API."""
+    """Parameters for the map tile API"""
 
     # TODO: include, generalLoadType, dangerousGoodsLoadType emissionClass and engineType should be a list as string surrounded by [] and separated by a ,
 
@@ -92,7 +92,7 @@ class MapTileV2Params(BaseParams):
 
 @dataclass(kw_only=True)
 class StaticImageParams(BaseParams):
-    """Parameters for the map tile API."""
+    """Parameters for the map tile API"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     layer: LayerType | None = None

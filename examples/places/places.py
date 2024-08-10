@@ -1,4 +1,4 @@
-"""Exampels of some places API calls."""
+"""Exampels of some places API calls"""
 
 # pylint: disable=duplicate-code
 
@@ -42,7 +42,7 @@ async def get_reverse_geocode(api_key: str) -> None:
 
 
 def get_api_key() -> str:
-    """Get the API key or ask for user input."""
+    """Get the API key or ask for user input"""
     apik_key = os.getenv("TOMTOM_API_KEY")
 
     if apik_key:

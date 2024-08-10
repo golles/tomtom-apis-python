@@ -1,4 +1,4 @@
-"""Exampels of some maps API calls."""
+"""Exampels of some maps API calls"""
 
 # pylint: disable=duplicate-code
 
@@ -26,7 +26,7 @@ async def get_map_service_copyrights(api_key: str) -> None:
 
 
 def get_api_key() -> str:
-    """Get the API key or ask for user input."""
+    """Get the API key or ask for user input"""
     apik_key = os.getenv("TOMTOM_API_KEY")
 
     if apik_key:

@@ -1,4 +1,4 @@
-"""Conftest for the tests."""
+"""Conftest for the tests"""
 
 from pathlib import Path
 
@@ -9,20 +9,20 @@ from .const import DEFAULT_HEADERS
 
 
 def load_json(filename: str) -> str:
-    """Load a fixture."""
+    """Load a fixture"""
     path = Path(__package__) / "fixtures" / filename
     return path.read_text(encoding="utf-8")
 
 
 def load_png(filename: str) -> bytes:
-    """Load a fixture."""
+    """Load a fixture"""
     path = Path(__package__) / "fixtures" / filename
     return path.read_bytes()
 
 
 @pytest.fixture(name="json_response")
 def fixture_json_response(request, aresponses: ResponsesMockServer):
-    """Fixture for adding the aresponses response with a configurable JSON file."""
+    """Fixture for adding the aresponses response with a configurable JSON file"""
     fixture_filename = request.param
     aresponses.add(
         response=aresponses.Response(
@@ -35,7 +35,7 @@ def fixture_json_response(request, aresponses: ResponsesMockServer):
 
 @pytest.fixture(name="image_response")
 def fixture_image_response(request, aresponses: ResponsesMockServer):
-    """Fixture for adding the aresponses response with a configurable image file."""
+    """Fixture for adding the aresponses response with a configurable image file"""
     fixture_filename = request.param
     aresponses.add(
         response=aresponses.Response(

@@ -1,4 +1,4 @@
-"""Models for the TomTom Places API."""
+"""Models for the TomTom Places API"""
 # pylint: disable=too-many-lines
 
 from __future__ import annotations
@@ -38,7 +38,7 @@ class AdditionalDataItem:
 
 @dataclass(kw_only=True)
 class AdditionalDataParams(BaseParams):
-    """Parameters for the get_additional_data method."""
+    """Parameters for the get_additional_data method"""
 
     # pylint: disable=invalid-name
     geometriesZoom: int | None = None
@@ -46,7 +46,7 @@ class AdditionalDataParams(BaseParams):
 
 @dataclass(kw_only=True)
 class AdditionalDataResponse(DataClassORJSONMixin):
-    """Represents a Additional Data response."""
+    """Represents a Additional Data response"""
 
     # pylint: disable=invalid-name
     additionalData: list[AdditionalDataItem]
@@ -54,7 +54,7 @@ class AdditionalDataResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Address(DataClassORJSONMixin):
-    """Represents a Address."""
+    """Represents a Address"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     streetNumber: str | None = None
@@ -80,7 +80,7 @@ class Address(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class AddressRange(DataClassORJSONMixin):
-    """Represents a AddressRange."""
+    """Represents a AddressRange"""
 
     # pylint: disable=invalid-name
     rangeLeft: str
@@ -91,7 +91,7 @@ class AddressRange(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Addresses(DataClassORJSONMixin):
-    """Represents Addresses."""
+    """Represents Addresses"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     address: RevGeocodeAddress
@@ -107,7 +107,7 @@ class Addresses(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class AsynchronousBatchDownloadParams(BaseParams):
-    """Parameters for the get_asynchronous_batch_download method."""
+    """Parameters for the get_asynchronous_batch_download method"""
 
     # pylint: disable=invalid-name
     waitTimeSeconds: int
@@ -124,7 +124,7 @@ class AsynchronousSynchronousBatchParams(BaseParams):
 
 @dataclass(kw_only=True)
 class AutocompleteParams(BaseParams):
-    """Parameters for the get_autocomplete method."""
+    """Parameters for the get_autocomplete method"""
 
     # pylint: disable=invalid-name
     limit: int | None = None
@@ -152,7 +152,7 @@ class AutocompleteResult(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class BatchItem:
-    """Represents an BatchItem."""
+    """Represents an BatchItem"""
 
     query: str
     post: list[Geometry | Route] | None = None
@@ -160,7 +160,7 @@ class BatchItem:
 
 @dataclass(kw_only=True)
 class BatchItemResponse(DataClassORJSONMixin):
-    """Represents a Batch Item response."""
+    """Represents a Batch Item response"""
 
     # pylint: disable=invalid-name
     statusCode: int
@@ -169,7 +169,7 @@ class BatchItemResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class BatchPostData(BasePostData):
-    """Data for the post Batch API."""
+    """Data for the post Batch API"""
 
     # pylint: disable=invalid-name
     batchItems: list[BatchItem]
@@ -177,7 +177,7 @@ class BatchPostData(BasePostData):
 
 @dataclass(kw_only=True)
 class BatchResponse(DataClassORJSONMixin):
-    """Represents a Batch response."""
+    """Represents a Batch response"""
 
     # pylint: disable=invalid-name
     formatVersion: str
@@ -187,7 +187,7 @@ class BatchResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class BatchResponseSummary(DataClassORJSONMixin):
-    """Represents a batch response summary."""
+    """Represents a batch response summary"""
 
     # pylint: disable=invalid-name
     successfulRequests: int
@@ -196,7 +196,7 @@ class BatchResponseSummary(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class BookmarkQueryIntent(DataClassORJSONMixin):
-    """Represents a BookmarkQueryIntent."""
+    """Represents a BookmarkQueryIntent"""
 
     bookmark: BookmarkType
 
@@ -210,7 +210,7 @@ class BookmarkType(Enum):
 
 @dataclass(kw_only=True)
 class BoundingBox(DataClassORJSONMixin):
-    """Represents a BoundingBox."""
+    """Represents a BoundingBox"""
 
     # pylint: disable=invalid-name
     topLeftPoint: LatLon
@@ -219,13 +219,13 @@ class BoundingBox(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Brand(DataClassORJSONMixin):
-    """Represents a Brand."""
+    """Represents a Brand"""
 
     name: str
 
 
 class CapabilitieType(Enum):
-    """Supported capabilities."""
+    """Supported capabilities"""
 
     CHARGING_PROFILE_CAPABLE = "ChargingProfileCapable"
     CHARGING_PREFERENCES_CAPABLE = "ChargingPreferencesCapable"
@@ -245,7 +245,7 @@ class CapabilitieType(Enum):
 
 @dataclass(kw_only=True)
 class CategorySearchParams(BaseParams):
-    """Parameters for the get_category_search method."""
+    """Parameters for the get_category_search method"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     typeahead: bool | None = None
@@ -276,14 +276,14 @@ class CategorySearchParams(BaseParams):
 
 @dataclass(kw_only=True)
 class ChargingPark(DataClassORJSONMixin):
-    """Represents a ChargingPark."""
+    """Represents a ChargingPark"""
 
     connectors: list[Connector]
 
 
 @dataclass(kw_only=True)
 class ChargingPoint(DataClassORJSONMixin):
-    """Represents a ChargingPoint."""
+    """Represents a ChargingPoint"""
 
     # pylint: disable=invalid-name
     capabilities: list[CapabilitieType]
@@ -295,7 +295,7 @@ class ChargingPoint(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class ChargingStation(DataClassORJSONMixin):
-    """Represents a ChargingStation."""
+    """Represents a ChargingStation"""
 
     # pylint: disable=invalid-name
     id: str
@@ -304,7 +304,7 @@ class ChargingStation(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Classification(DataClassORJSONMixin):
-    """Represents a Classification."""
+    """Represents a Classification"""
 
     code: str
     names: list[Name]
@@ -337,7 +337,7 @@ class Connector(DataClassORJSONMixin):
 
 
 class ConnectorType(Enum):
-    """Supported connector types."""
+    """Supported connector types"""
 
     STANDARD_HOUSEHOLD_COUNTRY_SPECIFIC = "StandardHouseholdCountrySpecific"
     IEC62196_TYPE1 = "IEC62196Type1"
@@ -366,7 +366,7 @@ class Context(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class CoordinateQueryIntent(DataClassORJSONMixin):
-    """Represents a CoordinateQueryIntent."""
+    """Represents a CoordinateQueryIntent"""
 
     lat: float
     lon: float
@@ -374,7 +374,7 @@ class CoordinateQueryIntent(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class CrossStreetLookupParams(BaseParams):
-    """Parameters for the get_cross_street_lookup method."""
+    """Parameters for the get_cross_street_lookup method"""
 
     # pylint: disable=invalid-name
     limit: int | None = None
@@ -385,7 +385,7 @@ class CrossStreetLookupParams(BaseParams):
 
 
 class CurrentType(Enum):
-    """Supported current types."""
+    """Supported current types"""
 
     AC1 = "AC1"
     AC3 = "AC3"
@@ -394,7 +394,7 @@ class CurrentType(Enum):
 
 @dataclass(kw_only=True)
 class DataSources(DataClassORJSONMixin):
-    """Represents a DataSources."""
+    """Represents a DataSources"""
 
     # pylint: disable=invalid-name
     chargingAvailability: IdString
@@ -416,7 +416,7 @@ class EntityType(Enum):
 
 @dataclass(kw_only=True)
 class EntryPoint(DataClassORJSONMixin):
-    """Represents a EntryPoint."""
+    """Represents a EntryPoint"""
 
     # pylint: disable=invalid-name
     type: EntryPointType
@@ -435,14 +435,14 @@ class EntryPointType(Enum):
 
 @dataclass(kw_only=True)
 class EvSearchByIdParams(BaseParams):
-    """Parameters for the get_ev_search_by_id method."""
+    """Parameters for the get_ev_search_by_id method"""
 
     id: str
 
 
 @dataclass(kw_only=True)
 class EvSearchNearbyParams(BaseParams):
-    """Parameters for the get_ev_search_nearby method."""
+    """Parameters for the get_ev_search_nearby method"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     lat: float
@@ -492,7 +492,7 @@ class FuelType(Enum):
 
 
 class FunctionType(Enum):
-    """Represents the type of access for the Address."""
+    """Represents the type of access for the Address"""
 
     MAIN = "Main"
     POSTAL = "Postal"
@@ -519,7 +519,7 @@ class GeoBias(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class GeocodeParams(BaseParams):
-    """Represents the parameters for get_geocode."""
+    """Represents the parameters for get_geocode"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     storeResult: bool | None = None  # Deprecated
@@ -551,7 +551,7 @@ class Geometry:
 
 @dataclass(kw_only=True)
 class GeometryFilterData(BasePostData):
-    """Data for the post geometry filter API."""
+    """Data for the post geometry filter API"""
 
     # pylint: disable=invalid-name
     geometryList: list[Geometry]
@@ -560,7 +560,7 @@ class GeometryFilterData(BasePostData):
 
 @dataclass(kw_only=True)
 class GeometryFilterResponse(DataClassORJSONMixin):
-    """Represents a Geometry Filter response."""
+    """Represents a Geometry Filter response"""
 
     summary: Summary
     results: list[GeometryPoi]
@@ -577,7 +577,7 @@ class GeometryPoi:
 
 @dataclass(kw_only=True)
 class GeometrySearchParams(BaseParams):
-    """Parameters for the get_geometry_search method."""
+    """Parameters for the get_geometry_search method"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     limit: int | None = None
@@ -603,14 +603,14 @@ class GeometrySearchParams(BaseParams):
 
 @dataclass(kw_only=True)
 class Id(DataClassORJSONMixin):
-    """Represents an Id."""
+    """Represents an Id"""
 
     id: int
 
 
 @dataclass(kw_only=True)
 class IdString(DataClassORJSONMixin):
-    """Represents an IdString."""
+    """Represents an IdString"""
 
     id: str
 
@@ -631,7 +631,7 @@ class IdxSetType(Enum):
 
 @dataclass(kw_only=True)
 class MapCode(DataClassORJSONMixin):
-    """Represents a MapCode."""
+    """Represents a MapCode"""
 
     # pylint: disable=invalid-name
     type: MapCodeType
@@ -677,7 +677,7 @@ class Matches(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Name(DataClassORJSONMixin):
-    """Represents a Name."""
+    """Represents a Name"""
 
     # pylint: disable=invalid-name
     nameLocale: str
@@ -686,7 +686,7 @@ class Name(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class NearbyQueryIntent(DataClassORJSONMixin):
-    """Represents a NearbyQueryIntent."""
+    """Represents a NearbyQueryIntent"""
 
     lat: float
     lon: float
@@ -696,7 +696,7 @@ class NearbyQueryIntent(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class NearbySearchParams(BaseParams):
-    """Parameters for the get_nearby_search method."""
+    """Parameters for the get_nearby_search method"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     limit: int | None = None
@@ -723,7 +723,7 @@ class NearbySearchParams(BaseParams):
 
 @dataclass(kw_only=True)
 class OpeningHour(DataClassORJSONMixin):
-    """Represents an OpeningHour."""
+    """Represents an OpeningHour"""
 
     # pylint: disable=invalid-name
     mode: str
@@ -746,7 +746,7 @@ class PathToNextType(Enum):
 
 @dataclass(kw_only=True)
 class PaymentOption(DataClassORJSONMixin):
-    """Represents a PaymentOption."""
+    """Represents a PaymentOption"""
 
     brands: list[Brand]
 
@@ -767,7 +767,7 @@ class PlaceByIdParams(BaseParams):
 
 @dataclass(kw_only=True)
 class PlaceByIdResponse(DataClassORJSONMixin):
-    """Represents a Place by Id response."""
+    """Represents a Place by Id response"""
 
     summary: Summary
     results: list[Result]
@@ -775,7 +775,7 @@ class PlaceByIdResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Poi(DataClassORJSONMixin):
-    """Represents a Result."""
+    """Represents a Result"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     name: str
@@ -791,14 +791,14 @@ class Poi(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class PoiCategoriesParams(BaseParams):
-    """Represents the parameters for get_poi_categories."""
+    """Represents the parameters for get_poi_categories"""
 
     language: Language | None = None
 
 
 @dataclass(kw_only=True)
 class PoiCategoriesResponse(DataClassORJSONMixin):
-    """Represents a Poi Categories response."""
+    """Represents a Poi Categories response"""
 
     # pylint: disable=invalid-name
     poiCategories: list[PoiCategory] | None = None
@@ -806,7 +806,7 @@ class PoiCategoriesResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class PoiCategory(DataClassORJSONMixin):
-    """Represents a PoiCategory."""
+    """Represents a PoiCategory"""
 
     # pylint: disable=invalid-name
     id: int
@@ -817,7 +817,7 @@ class PoiCategory(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class PoiSearchParams(BaseParams):
-    """Parameters for the get_poi_search method."""
+    """Parameters for the get_poi_search method"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     typeahead: bool | None = None
@@ -855,7 +855,7 @@ class Points:
 
 @dataclass(kw_only=True)
 class PremiumGeocodeParams(BaseParams):
-    """Parameters for the premium get_geocode method."""
+    """Parameters for the premium get_geocode method"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     unit: str | None = None
@@ -876,7 +876,7 @@ class PremiumGeocodeParams(BaseParams):
 
 @dataclass(kw_only=True)
 class QueryIntent(DataClassORJSONMixin):
-    """Represents a QueryIntent."""
+    """Represents a QueryIntent"""
 
     type: QueryIntentType
     details: CoordinateQueryIntent | NearbyQueryIntent | W3WQueryIntent | BookmarkQueryIntent
@@ -907,7 +907,7 @@ class RedirectModeType(Enum):
 
 @dataclass(kw_only=True)
 class RelatedPoi(DataClassORJSONMixin):
-    """Represents a RelatedPoi."""
+    """Represents a RelatedPoi"""
 
     # pylint: disable=invalid-name
     relationType: RelationType
@@ -932,7 +932,7 @@ class RelationType(Enum):
 
 @dataclass(kw_only=True)
 class Response(DataClassORJSONMixin):
-    """Represents a Batch Item Response."""
+    """Represents a Batch Item Response"""
 
     # pylint: disable=invalid-name
     summary: Summary | None = None
@@ -943,7 +943,7 @@ class Response(DataClassORJSONMixin):
 
 
 class RestrictionType(Enum):
-    """Supported parking restrictions."""
+    """Supported parking restrictions"""
 
     EV_ONLY = "evOnly"
     PLUGGED = "plugged"
@@ -954,7 +954,7 @@ class RestrictionType(Enum):
 
 @dataclass(kw_only=True)
 class Result(DataClassORJSONMixin):
-    """Represents a Result."""
+    """Represents a Result"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     type: ResultType | None = None
@@ -1007,7 +1007,7 @@ class ResultType(Enum):
 
 @dataclass(kw_only=True)
 class RevGeoBoundingBox(DataClassORJSONMixin):
-    """Represents a BoundingBox for reverse geocode."""
+    """Represents a BoundingBox for reverse geocode"""
 
     # pylint: disable=invalid-name
     northEast: str
@@ -1023,7 +1023,7 @@ class RevGeoEntityType(Enum):
 
 @dataclass(kw_only=True)
 class RevGeocodeAddress(DataClassORJSONMixin):
-    """Represents a Reverse Geocode Address."""
+    """Represents a Reverse Geocode Address"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     buildingNumber: str | None = None  # Deprecated
@@ -1058,7 +1058,7 @@ class RevGeocodeAddress(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class ReverseGeocodeParams(BaseParams):
-    """Parameters for the get_reverse_geocode method."""
+    """Parameters for the get_reverse_geocode method"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     returnSpeedLimit: bool | None = None
@@ -1079,7 +1079,7 @@ class ReverseGeocodeParams(BaseParams):
 
 @dataclass(kw_only=True)
 class ReverseGeocodeResponse(DataClassORJSONMixin):
-    """Represents a reverse geocode response."""
+    """Represents a reverse geocode response"""
 
     summary: Summary
     addresses: list[Addresses]
@@ -1106,7 +1106,7 @@ class RoadClassTypeValue(Enum):
 
 @dataclass(kw_only=True)
 class Roadclass(DataClassORJSONMixin):
-    """Represents Roadclass."""
+    """Represents Roadclass"""
 
     type: RoadClassType
     values: list[RoadClassTypeValue]
@@ -1114,21 +1114,21 @@ class Roadclass(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Route:
-    """Represents an Route."""
+    """Represents an Route"""
 
     points: list[LatLon]
 
 
 @dataclass(kw_only=True)
 class SearchAlongRouteData(BasePostData):
-    """Data for the post search along route API."""
+    """Data for the post search along route API"""
 
     route: Points
 
 
 @dataclass(kw_only=True)
 class SearchAlongRouteParams(BaseParams):
-    """Parameters for the post_search_along_route method."""
+    """Parameters for the post_search_along_route method"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     typeahead: bool | None = None
@@ -1153,7 +1153,7 @@ class SearchAlongRouteParams(BaseParams):
 
 @dataclass(kw_only=True)
 class SearchParams(BaseParams):
-    """Parameters for the get_search method."""
+    """Parameters for the get_search method"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     typeahead: bool | None = None
@@ -1188,7 +1188,7 @@ class SearchParams(BaseParams):
 
 @dataclass(kw_only=True)
 class SearchResponse(DataClassORJSONMixin):
-    """Represents a Search response."""
+    """Represents a Search response"""
 
     summary: Summary
     results: list[Result]
@@ -1214,7 +1214,7 @@ class SortByType(Enum):
 
 
 class StatusType(Enum):
-    """Supported current types."""
+    """Supported current types"""
 
     AVAILABLE = "Available"
     RESERVED = "Reserved"
@@ -1225,7 +1225,7 @@ class StatusType(Enum):
 
 @dataclass(kw_only=True)
 class StructuredGeocodeParams(BaseParams):
-    """Represents the parameters for get_structured_geocode."""
+    """Represents the parameters for get_structured_geocode"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     limit: int | None = None
@@ -1247,7 +1247,7 @@ class StructuredGeocodeParams(BaseParams):
 
 @dataclass(kw_only=True)
 class Summary(DataClassORJSONMixin):
-    """Represents a response Summary."""
+    """Represents a response Summary"""
 
     # pylint: disable=invalid-name, too-many-instance-attributes
     query: str | None = None
@@ -1263,7 +1263,7 @@ class Summary(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class SynchronousBatchPostReponse(DataClassORJSONMixin):
-    """Represents a Synchronous Batch Item response."""
+    """Represents a Synchronous Batch Item response"""
 
     # pylint: disable=invalid-name
     statusCode: int
@@ -1272,7 +1272,7 @@ class SynchronousBatchPostReponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Time(DataClassORJSONMixin):
-    """Represents a Time."""
+    """Represents a Time"""
 
     date: date
     hour: int
@@ -1281,7 +1281,7 @@ class Time(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class TimeRange(DataClassORJSONMixin):
-    """Represents a TimeRange."""
+    """Represents a TimeRange"""
 
     # pylint: disable=invalid-name
     startTime: Time
@@ -1290,7 +1290,7 @@ class TimeRange(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class TimeZone(DataClassORJSONMixin):
-    """Represents a TimeZone."""
+    """Represents a TimeZone"""
 
     # pylint: disable=invalid-name
     ianaId: str
@@ -1305,7 +1305,7 @@ class VehicleType(Enum):
 
 @dataclass(kw_only=True)
 class Viewport(DataClassORJSONMixin):
-    """Represents a Viewport."""
+    """Represents a Viewport"""
 
     # pylint: disable=invalid-name
     topLeftPoint: LatLon
@@ -1314,6 +1314,6 @@ class Viewport(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class W3WQueryIntent(DataClassORJSONMixin):
-    """Represents a W3WQueryIntent."""
+    """Represents a W3WQueryIntent"""
 
     address: str

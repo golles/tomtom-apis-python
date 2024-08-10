@@ -10,7 +10,7 @@ from tomtom_api.routing.models import WaypointOptimizationPostData
 
 @pytest.fixture(name="waypoint_optimization_api")
 async def fixture_waypoint_optimization_api():
-    """Fixture for WaypointOptimizationApi."""
+    """Fixture for WaypointOptimizationApi"""
     options = ApiOptions(api_key=API_KEY)
     async with WaypointOptimizationApi(options) as waypoint_optimization:
         yield waypoint_optimization
@@ -19,7 +19,7 @@ async def fixture_waypoint_optimization_api():
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["routing/waypoint_optimization/post_waypointoptimization.json"], indirect=True)
 async def test_deserialization_post_waypointoptimization(waypoint_optimization_api: WaypointOptimizationApi):
-    """Test the post_waypointoptimization method."""
+    """Test the post_waypointoptimization method"""
     response = await waypoint_optimization_api.post_waypointoptimization(
         data=WaypointOptimizationPostData.from_dict(
             {

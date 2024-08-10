@@ -1,4 +1,4 @@
-"""London traffic example."""
+"""London traffic example"""
 
 # pylint: disable=duplicate-code
 
@@ -74,7 +74,7 @@ async def download(api_key: str) -> None:
 
 
 def get_api_key() -> str:
-    """Get the API key or ask for user input."""
+    """Get the API key or ask for user input"""
     apik_key = os.getenv("TOMTOM_API_KEY")
 
     if apik_key:

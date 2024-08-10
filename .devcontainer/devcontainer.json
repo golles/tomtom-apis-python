@@ -4,7 +4,7 @@
   "postCreateCommand": "./scripts/setup_env.sh --devcontainer",
   "customizations": {
     "codespaces": {
-      "openFiles": ["README.md"]
+      "openFiles": ["README.md", "CONTRIBUTING.md"]
     },
     "vscode": {
       "extensions": [

@@ -1,17 +1,83 @@
+Yes, "API Coverage" is a good header for this section as it clearly indicates that the content provides information on which APIs have been implemented by the client and whether they are typed or not. Here's an improved version of the README with slight refinements:
+
 # TomTom API Python
 
-## More info
+Asynchronous Python client for the TomTom API
 
-TODO: This is work in progress.
+## API Coverage
 
-## Contribution
+This section provides an overview of the APIs implemented by the client and their typing status.
 
-We welcome contributions to the TomTom API Python project! If you would like to contribute, please follow these guidelines:
+### Automotive APIs
 
-1. **Use DevContainer or Codespace**: To ensure a consistent development environment, we recommend using DevContainer or Codespace. This will help maintain a standardized setup across contributors.
+| API                      | Notes           |
+| ------------------------ | --------------- |
+| Autostream               | Not implemented |
+| Fuel Prices API          | Typed           |
+| Parking Availability API | Typed           |
 
-2. **Add Tests**: When making changes or adding new features, it's important to include tests to ensure the stability and reliability of the codebase. Please write appropriate unit tests and integration tests for your changes.
+### Maps API
 
-3. **Pull Request**: When you're ready to submit your contribution, please create a pull request. Make sure to provide a clear description of the changes you've made and any relevant information for the reviewers.
+| API             | Notes                                             |
+| --------------- | ------------------------------------------------- |
+| Map Display API | Typed, `WMS` and `WMTS` have not been implemented |
 
-Thank you for considering contributing to the TomTom API Python project! We appreciate your efforts in making this project better for everyone.
+### Places APIs
+
+| API                   | Notes |
+| --------------------- | ----- |
+| Batch Search API      | Typed |
+| EV Search API         | Typed |
+| Geocoding API         | Typed |
+| Premium Geocoding API | Typed |
+| Reverse Geocoding API | Typed |
+| Search API            | Typed |
+
+### Routing APIs
+
+| API                          | Notes           |
+| ---------------------------- | --------------- |
+| Long Distance EV Routing API | Typed           |
+| Matrix Routing v2 API        | Not implemented |
+| Routing API                  | Typed           |
+| Waypoint Optimization API    | Typed           |
+
+### Tracking & Logistics APIs
+
+| API                  | Notes           |
+| -------------------- | --------------- |
+| Geofencing API       | Not implemented |
+| Location History API | Not implemented |
+| Notifications API    | Not implemented |
+| Snap to Roads API    | Not implemented |
+
+### Traffic APIs
+
+| API                      | Notes                  |
+| ------------------------ | ---------------------- |
+| Intermediate Traffic API | Not implemented        |
+| Junction Analytics API   | Not implemented        |
+| O/D Analytics API        | Not implemented        |
+| Route Monitoring API     | Not implemented        |
+| Traffic API              | Not typed, uses `dict` |
+| Traffic Stats API        | Not implemented        |
+
+## Installation
+
+You can install this package via your favorite package manager. For example, using pip:
+
+```sh
+pip install tomtom-api
+```
+
+## Examples
+
+You can find usage examples in the [examples directory](examples).
+
+## Contributing
+
+Your contributions are welcome! Please familiarize yourself with the [contribution guidelines](CONTRIBUTING.md). This document also helps you set up your development environment.
+
+---
+
+Thank you for your interest in the TomTom API Python client! If you have any questions or need further assistance, feel free to open an issue or submit a pull request.

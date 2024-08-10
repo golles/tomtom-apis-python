@@ -10,7 +10,7 @@ import pytest
 from aiohttp import ClientConnectionError, ClientError, ClientResponse, ClientResponseError, ClientSession
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
-from tomtom_api.api import ApiOptions, BaseApi, BasePostData, Response
+from tomtom_api.api import ApiOptions, BaseApi, BaseParams, BasePostData, Response
 from tomtom_api.const import TRACKING_ID
 from tomtom_api.exceptions import TomTomAPIClientError, TomTomAPIConnectionError, TomTomAPIError, TomTomAPIRequestTimeout, TomTomAPIServerError
 
@@ -29,7 +29,11 @@ def fixture_mock_response():
     """Fixture for mock response"""
     mock_resp = AsyncMock(spec=ClientResponse)
     mock_resp.status = 200
-    mock_resp.headers = {}
+    mock_resp.headers = {
+        "content-type": "application/json;charset=utf-8",
+        "Tracking-ID": "1234567890",
+        "x-tomtom-processed-by": "westeurope",
+    }
     mock_resp.text = AsyncMock(return_value='{"key": "value"}')
     return mock_resp
 
@@ -48,6 +52,80 @@ async def fixture_base_api(mock_session):
     options = ApiOptions(api_key=API_KEY)
     async with BaseApi(options, mock_session) as base:
         yield base
+
+
+def test_base_params_initialization():
+    """
+    Test that a BaseParams instance initializes with default values.
+    The key should be None initially.
+    """
+    params = BaseParams()
+    assert params.key is None
+
+
+def test_from_dict_basic():
+    """
+    Test that from_dict correctly assigns a single value from a dictionary
+    to the dataclass attribute.
+    """
+    params = BaseParams().from_dict({"key": "value"})
+    assert params.key == "value"
+
+
+def test_from_dict_with_extra_keys():
+    """
+    Test that from_dict can handle dictionaries with extra keys not present
+    in the dataclass. Only the relevant attributes should be set.
+    """
+    params = BaseParams().from_dict({"key": "value", "extra_key": "extra_value"})
+    assert params.key == "value"
+
+
+def test_from_dict_with_missing_attributes():
+    """
+    Test that from_dict handles cases where the dictionary has no keys
+    corresponding to the dataclass attributes. Attributes should remain
+    at their default values.
+    """
+    params = BaseParams().from_dict({})
+    assert params.key is None
+
+
+def test_from_dict_with_none_values():
+    """
+    Test that from_dict correctly assigns None as a value in the dictionary.
+    The attribute should be set to None.
+    """
+    params = BaseParams().from_dict({"key": None})
+    assert params.key is None
+
+
+def test_from_dict_with_incorrect_value_types():
+    """
+    Test the method’s behavior when the dictionary contains values of types
+    other than strings. The current implementation assigns the value as-is.
+    """
+    params = BaseParams().from_dict({"key": 123})
+    assert params.key == 123
+
+
+def test_from_dict_with_boolean_strings():
+    """
+    Test that from_dict correctly assigns boolean-like strings. Although the
+    docstring suggests booleans should be lowercase strings, this test checks
+    that such values are assigned as-is.
+    """
+    params = BaseParams().from_dict({"key": "true"})
+    assert params.key == "true"
+
+
+def test_from_dict_with_nested_dictionary():
+    """
+    Test how from_dict handles nested dictionaries. The nested dictionary
+    should be assigned as a value to the attribute.
+    """
+    params = BaseParams().from_dict({"key": {"nested_key": "nested_value"}})
+    assert params.key == {"nested_key": "nested_value"}
 
 
 async def test_deserialize_success(mock_response):

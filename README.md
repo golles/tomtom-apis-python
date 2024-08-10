@@ -1,5 +1,3 @@
-Yes, "API Coverage" is a good header for this section as it clearly indicates that the content provides information on which APIs have been implemented by the client and whether they are typed or not. Here's an improved version of the README with slight refinements:
-
 # TomTom API Python
 
 Asynchronous Python client for the TomTom API

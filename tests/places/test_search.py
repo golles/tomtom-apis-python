@@ -4,8 +4,9 @@ import pytest
 
 from tests.const import API_KEY
 from tomtom_api.api import ApiOptions, BaseParams, BasePostData
+from tomtom_api.models import Language, LatLon
 from tomtom_api.places import SearchApi
-from tomtom_api.places.models import PlaceByIdParams, PoiCategoriesParams
+from tomtom_api.places.models import Address, Geometry, GeometryFilterData, GeometryPoi, PlaceByIdParams, Poi, PoiCategoriesParams
 
 
 @pytest.fixture(name="search_api")
@@ -215,6 +216,97 @@ async def test_deserialization_get_place_by_id(search_api: SearchApi):
 
 
 @pytest.mark.usefixtures("json_response")
+@pytest.mark.parametrize("json_response", ["places/search/get_autocomplete.json"], indirect=True)
+async def test_deserialization_get_autocomplete(search_api: SearchApi):
+    """Test the get_autocomplete method."""
+    response = await search_api.get_autocomplete(query="pizza", language=Language.EN_US)
+
+    await search_api.close()
+
+    assert response
+    assert response.results
+    assert len(response.results) > 2
+
+
+@pytest.mark.usefixtures("json_response")
+@pytest.mark.parametrize("json_response", ["places/search/get_geometry_filter.json"], indirect=True)
+async def test_deserialization_get_geometry_filter(search_api: SearchApi):
+    """Test the get_geometry_filter method."""
+    response = await search_api.get_geometry_filter(
+        geometryList=[
+            Geometry(type="CIRCLE", position="40.80558, -73.96548", radius=100),
+            Geometry(
+                type="POLYGON",
+                vertices=[
+                    "37.7524152343544, -122.43576049804686",
+                    "37.70660472542312, -122.43301391601562",
+                    "37.712059855877314, -122.36434936523438",
+                    "37.75350561243041, -122.37396240234374",
+                ],
+            ),
+        ],
+        poiList=[
+            GeometryPoi(
+                poi=Poi(name="S Restaurant Toms"),
+                address=Address(freeformAddress="2880 Broadway, New York, NY 10025"),
+                position=LatLon(lat=40.80558, lon=-73.96548),
+            ),
+            GeometryPoi(
+                poi=Poi(name="Yasha Raman Corporation"),
+                address=Address(freeformAddress="940 Amsterdam Ave, New York, NY 10025"),
+                position=LatLon(lat=40.80076, lon=-73.96556),
+            ),
+        ],
+    )
+
+    await search_api.close()
+
+    assert response
+    assert response.results
+    assert len(response.results) > 0
+
+
+@pytest.mark.usefixtures("json_response")
+@pytest.mark.parametrize("json_response", ["places/search/post_geometry_filter.json"], indirect=True)
+async def test_deserialization_post_geometry_filter(search_api: SearchApi):
+    """Test the post_geometry_filter method."""
+    response = await search_api.post_geometry_filter(
+        data=GeometryFilterData(
+            geometryList=[
+                Geometry(type="CIRCLE", position="40.80558, -73.96548", radius=100),
+                Geometry(
+                    type="POLYGON",
+                    vertices=[
+                        "37.7524152343544, -122.43576049804686",
+                        "37.70660472542312, -122.43301391601562",
+                        "37.712059855877314, -122.36434936523438",
+                        "37.75350561243041, -122.37396240234374",
+                    ],
+                ),
+            ],
+            poiList=[
+                GeometryPoi(
+                    poi=Poi(name="S Restaurant Toms"),
+                    address=Address(freeformAddress="2880 Broadway, New York, NY 10025"),
+                    position=LatLon(lat=40.80558, lon=-73.96548),
+                ),
+                GeometryPoi(
+                    poi=Poi(name="Yasha Raman Corporation"),
+                    address=Address(freeformAddress="940 Amsterdam Ave, New York, NY 10025"),
+                    position=LatLon(lat=40.80076, lon=-73.96556),
+                ),
+            ],
+        )
+    )
+
+    await search_api.close()
+
+    assert response
+    assert response.results
+    assert len(response.results) > 0
+
+
+@pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_poi_categories.json"], indirect=True)
 async def test_deserialization_get_poi_categories(search_api: SearchApi):
     """Test the get_poi_categories method."""
@@ -227,3 +319,16 @@ async def test_deserialization_get_poi_categories(search_api: SearchApi):
     assert response
     assert response.poiCategories
     assert len(response.poiCategories) > 500
+
+
+@pytest.mark.usefixtures("json_response")
+@pytest.mark.parametrize("json_response", ["places/search/get_additional_data.json"], indirect=True)
+async def test_deserialization_get_additional_data(search_api: SearchApi):
+    """Test the get_additional_data method."""
+    response = await search_api.get_additional_data(
+        geometries=["00004631-3400-3c00-0000-0000673c4d2e", "00004631-3400-3c00-0000-0000673c42fe"],
+    )
+
+    await search_api.close()
+
+    assert response

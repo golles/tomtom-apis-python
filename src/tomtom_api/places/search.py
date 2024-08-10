@@ -1,7 +1,22 @@
 """Search API"""
 
 from tomtom_api.api import BaseApi, BaseParams, BasePostData
-from tomtom_api.places.models import PlaceByIdParams, PlaceByIdResponse, PoiCategoriesParams, PoiCategoriesResponse, SearchResponse
+from tomtom_api.models import Language
+from tomtom_api.places.models import (
+    AdditionalDataParams,
+    AdditionalDataResponse,
+    AutocompleteParams,
+    AutocompleteReponse,
+    Geometry,
+    GeometryFilterData,
+    GeometryFilterResponse,
+    GeometryPoi,
+    PlaceByIdParams,
+    PlaceByIdResponse,
+    PoiCategoriesParams,
+    PoiCategoriesResponse,
+    SearchResponse,
+)
 
 
 class SearchApi(BaseApi):
@@ -109,7 +124,7 @@ class SearchApi(BaseApi):
         self,
         *,
         query: str,
-        params: BaseParams,
+        params: BaseParams | None = None,
         data: BasePostData,
     ) -> SearchResponse:
         """
@@ -130,8 +145,9 @@ class SearchApi(BaseApi):
         self,
         *,
         query: str,
-        params: BaseParams | None = None,
-    ) -> dict:
+        language: Language,
+        params: AutocompleteParams | None = None,
+    ) -> AutocompleteReponse:
         """
         The Autocomplete API enables you to make a more meaningful Search API call by recognizing entities inside an input query and offering them as query terms.
 
@@ -139,17 +155,19 @@ class SearchApi(BaseApi):
         """
 
         reponse = await self.get(
-            endpoint=f"/search/2/autocomplete/{query}.json",
+            endpoint=f"/search/2/autocomplete/{query}.json?language={language}",
             params=params,
         )
 
-        return await reponse.dict()
+        return await reponse.deserialize(AutocompleteReponse)
 
     async def get_geometry_filter(
         self,
         *,
+        geometryList: list[Geometry],
+        poiList: list[GeometryPoi],
         params: BaseParams | None = None,
-    ) -> dict:
+    ) -> GeometryFilterResponse:
         """
         The Geometry Search endpoint allows you to perform a free form search inside a single geometry or many of them. The search results that fall inside the geometry/geometries will be returned. The service returns POI results by default. For other result types, the idxSet parameter should be used. To send the geometry you will use a POST or GET request with json as a string value for the geometryList parameter.
 
@@ -157,18 +175,18 @@ class SearchApi(BaseApi):
         """
 
         reponse = await self.get(
-            endpoint="/search/2/geometryFilter.json",
+            endpoint=f"/search/2/geometryFilter.json?geometryList={str(geometryList)}&poiList={str(poiList)}",
             params=params,
         )
 
-        return await reponse.dict()
+        return await reponse.deserialize(GeometryFilterResponse)
 
     async def post_geometry_filter(
         self,
         *,
-        params: BaseParams | None = None,
-        data: BasePostData,
-    ) -> dict:
+        params: BaseParams | None = None,  # No extra params.
+        data: GeometryFilterData,
+    ) -> GeometryFilterResponse:
         """
         The Geometry Search endpoint allows you to perform a free form search inside a single geometry or many of them. The search results that fall inside the geometry/geometries will be returned. The service returns POI results by default. For other result types, the idxSet parameter should be used. To send the geometry you will use a POST or GET request with json as a string value for the geometryList parameter.
 
@@ -181,13 +199,14 @@ class SearchApi(BaseApi):
             data=data,
         )
 
-        return await reponse.dict()
+        return await reponse.deserialize(GeometryFilterResponse)
 
     async def get_additional_data(
         self,
         *,
-        params: BaseParams | None = None,
-    ) -> dict:
+        geometries: list[str],
+        params: AdditionalDataParams | None = None,
+    ) -> AdditionalDataResponse:
         """
         The Geometries Data Provider returns sets of coordinates that represent the outline of a city, country, or land area. The service supports batch requests of up to 20 identifiers.
 
@@ -195,11 +214,11 @@ class SearchApi(BaseApi):
         """
 
         reponse = await self.get(
-            endpoint="/search/2/additionalData.json",
+            endpoint=f"/search/2/additionalData.json?geometries={",".join(geometries)}",
             params=params,
         )
 
-        return await reponse.dict()
+        return await reponse.deserialize(AdditionalDataResponse)
 
     async def get_place_by_id(
         self,

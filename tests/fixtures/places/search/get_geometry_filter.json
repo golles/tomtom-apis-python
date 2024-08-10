@@ -1,0 +1,10 @@
+{
+  "summary": { "numResults": 1, "queryTime": 3 },
+  "results": [
+    {
+      "poi": { "name": "S Restaurant Toms" },
+      "address": { "freeformAddress": "2880 Broadway, New York, NY 10025" },
+      "position": { "lat": 40.80558, "lon": -73.96548 }
+    }
+  ]
+}

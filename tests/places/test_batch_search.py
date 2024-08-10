@@ -7,7 +7,7 @@ from tests.const import API_KEY
 from tomtom_api.api import ApiOptions
 from tomtom_api.models import LatLon
 from tomtom_api.places import BatchSearchApi
-from tomtom_api.places.models import AsynchronousBatchDownloadParams, BatchItem, BatchPostData, GeometryList, Route
+from tomtom_api.places.models import AsynchronousBatchDownloadParams, BatchItem, BatchPostData, Geometry, Route
 
 
 @pytest.fixture(name="batch_search_api")
@@ -54,7 +54,7 @@ async def test_post_asynchronous_synchronous_batch(batch_search_api: BatchSearch
                 BatchItem(query='/geometrySearch/parking.json?geometryList=[{"type":"CIRCLE","position":"51.5123443,-0.0909851","radius":1000}]'),
                 BatchItem(
                     query="/geometrySearch/pizza.json",
-                    post=[GeometryList(type="CIRCLE", position="51.5123443,-0.0909851", radius=1000)],
+                    post=[Geometry(type="CIRCLE", position="51.5123443,-0.0909851", radius=1000)],
                 ),
                 BatchItem(
                     query="/searchAlongRoute/restaurant.json?maxDetourTime=300",

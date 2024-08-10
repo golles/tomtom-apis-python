@@ -27,6 +27,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 aiohttp = "^3.10.0"
+geojson = "^3.1.0"
 mashumaro = "^3.13"
 orjson = "^3.10.5"
 python = "^3.12"

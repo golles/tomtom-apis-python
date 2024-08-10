@@ -160,6 +160,58 @@
       },
       {
         "method": "GET",
+        "fixture": "places/search/get_autocomplete.json",
+        "url": "search/2/autocomplete/pizza.json?key={{TT_KEY}}&language=en-US"
+      },
+      {
+        "method": "GET",
+        "fixture": "places/search/get_geometry_filter.json",
+        "url": "search/2/geometryFilter.json?geometryList=%5B%7B%22type%22%3A%22CIRCLE%22%2C%20%22position%22%3A%2240.80558%2C%20-73.96548%22%2C%20%22radius%22%3A100%7D%2C%20%7B%22type%22%3A%22POLYGON%22%2C%20%22vertices%22%3A%5B%2237.7524152343544%2C%20-122.43576049804686%22%2C%20%2237.70660472542312%2C%20-122.43301391601562%22%2C%20%2237.712059855877314%2C%20-122.36434936523438%22%2C%20%2237.75350561243041%2C%20-122.37396240234374%22%5D%7D%5D&poiList=%5B%7B%22poi%22%3A%7B%22name%22%3A%22S%20Restaurant%20Toms%22%7D%2C%22address%22%3A%7B%22freeformAddress%22%3A%222880%20Broadway%2C%20New%20York%2C%20NY%2010025%22%7D%2C%22position%22%3A%7B%22lat%22%3A40.80558%2C%22lon%22%3A-73.96548%7D%7D%2C%7B%22poi%22%3A%7B%22name%22%3A%22Yasha%20Raman%20Corporation%22%7D%2C%22address%22%3A%7B%22freeformAddress%22%3A%22940%20Amsterdam%20Ave%2C%20New%20York%2C%20NY%2010025%22%7D%2C%22position%22%3A%7B%22lat%22%3A40.80076%2C%22lon%22%3A-73.96556%7D%7D%5D&key={{TT_KEY}}"
+      },
+      {
+        "method": "POST",
+        "fixture": "places/search/post_geometry_filter.json",
+        "url": "search/2/geometryFilter.json?key={{TT_KEY}}",
+        "data": {
+          "geometryList": [
+            {
+              "position": "40.80558,-73.96548",
+              "radius": 100,
+              "type": "CIRCLE"
+            },
+            {
+              "type": "POLYGON",
+              "vertices": [
+                "37.7524152343544,-122.43576049804686",
+                "37.70660472542312,-122.43301391601562",
+                "37.712059855877314,-122.36434936523438",
+                "37.75350561243041,-122.37396240234374"
+              ]
+            }
+          ],
+          "poiList": [
+            {
+              "address": {
+                "freeformAddress": "2880 Broadway, New York, NY 10025"
+              },
+              "poi": {
+                "name": "S Restaurant Tom's"
+              },
+              "position": {
+                "lat": 40.80558,
+                "lon": -73.96548
+              }
+            }
+          ]
+        }
+      },
+      {
+        "method": "GET",
+        "fixture": "places/search/get_additional_data.json",
+        "url": "search/2/additionalData.json?geometries=00004631-3400-3c00-0000-0000673c4d2e%2C00004631-3400-3c00-0000-0000673c42fe&key={{TT_KEY}}"
+      },
+      {
+        "method": "GET",
         "fixture": "places/search/get_place_by_id.json",
         "url": "search/2/place.json?entityId=528009004256119&key={{TT_KEY}}"
       },

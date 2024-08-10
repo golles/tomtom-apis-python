@@ -1,4 +1,5 @@
 """Models for the TomTom Places API."""
+# pylint: disable=too-many-lines
 
 from __future__ import annotations
 
@@ -6,6 +7,7 @@ from dataclasses import dataclass, field
 from datetime import date
 from enum import Enum
 
+from geojson import Feature, FeatureCollection, GeometryCollection, LineString, MultiLineString, MultiPoint, MultiPolygon, Point, Polygon
 from mashumaro import field_options
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
@@ -23,6 +25,34 @@ class AccessType(Enum):
 
 
 @dataclass(kw_only=True)
+class AdditionalDataItem:
+    """Represents an additional data response item"""
+
+    # pylint: disable=invalid-name
+    providerID: str
+    error: str | None = None
+    geometryData: (
+        Feature | FeatureCollection | GeometryCollection | LineString | MultiLineString | MultiPoint | MultiPolygon | Point | Polygon | None
+    ) = None
+
+
+@dataclass(kw_only=True)
+class AdditionalDataParams(BaseParams):
+    """Parameters for the get_additional_data method."""
+
+    # pylint: disable=invalid-name
+    geometriesZoom: int | None = None
+
+
+@dataclass(kw_only=True)
+class AdditionalDataResponse(DataClassORJSONMixin):
+    """Represents a Additional Data response."""
+
+    # pylint: disable=invalid-name
+    additionalData: list[AdditionalDataItem]
+
+
+@dataclass(kw_only=True)
 class Address(DataClassORJSONMixin):
     """Represents a Address."""
 
@@ -32,17 +62,17 @@ class Address(DataClassORJSONMixin):
     municipalitySubdivision: str | None = None
     municipalitySecondarySubdivision: str | None = None
     neighbourhood: str | None = None
-    municipality: str
+    municipality: str | None = None
     countrySecondarySubdivision: str | None = None
     countryTertiarySubdivision: str | None = None
     countrySubdivision: str | None = None
     postalCode: str | None = None
     postalName: str | None = None
     extendedPostalCode: str | None = None
-    countryCode: str
-    country: str
-    countryCodeISO3: str
-    freeformAddress: str
+    countryCode: str | None = None
+    country: str | None = None
+    countryCodeISO3: str | None = None
+    freeformAddress: str | None = None
     countrySubdivisionName: str | None = None
     countrySubdivisionCode: str | None = None
     localName: str | None = None
@@ -93,11 +123,39 @@ class AsynchronousSynchronousBatchParams(BaseParams):
 
 
 @dataclass(kw_only=True)
+class AutocompleteParams(BaseParams):
+    """Parameters for the get_autocomplete method."""
+
+    # pylint: disable=invalid-name
+    limit: int | None = None
+    lat: float | None = None
+    lon: float | None = None
+    radius: int | None = None
+    countrySet: list[str] | None = None
+    resultSet: list[ResultSetType] | None = None
+
+
+@dataclass(kw_only=True)
+class AutocompleteReponse(DataClassORJSONMixin):
+    """Represents an auto complete response"""
+
+    context: Context
+    results: list[AutocompleteResult]
+
+
+@dataclass(kw_only=True)
+class AutocompleteResult(DataClassORJSONMixin):
+    """Represents an auto complete result"""
+
+    segments: list[Segment]
+
+
+@dataclass(kw_only=True)
 class BatchItem:
     """Represents an BatchItem."""
 
     query: str
-    post: list[GeometryList | Route] | None = None
+    post: list[Geometry | Route] | None = None
 
 
 @dataclass(kw_only=True)
@@ -267,6 +325,15 @@ class ConnectorType(Enum):
 
 
 @dataclass(kw_only=True)
+class Context(DataClassORJSONMixin):
+    """Represents an auto complete context"""
+
+    # pylint: disable=invalid-name
+    inputQuery: str
+    geoBias: GeoBias | None = None
+
+
+@dataclass(kw_only=True)
 class CoordinateQueryIntent(DataClassORJSONMixin):
     """Represents a CoordinateQueryIntent."""
 
@@ -394,6 +461,14 @@ class FunctionType(Enum):
 
 
 @dataclass(kw_only=True)
+class GeoBias(DataClassORJSONMixin):
+    """Represents a geo bias"""
+
+    position: LatLon
+    radius: int
+
+
+@dataclass(kw_only=True)
 class GeocodeParams(BaseParams):
     """Represents the parameters for get_geocode."""
 
@@ -416,12 +491,39 @@ class GeocodeParams(BaseParams):
 
 
 @dataclass(kw_only=True)
-class GeometryList:
-    """Represents an GeometryList."""
+class Geometry:
+    """Represents an geometry"""
 
     type: str
-    position: str
-    radius: int
+    position: str | None = None
+    radius: int | None = None
+    vertices: list[str] | None = None
+
+
+@dataclass(kw_only=True)
+class GeometryFilterData(BasePostData):
+    """Data for the post geometry filter API."""
+
+    # pylint: disable=invalid-name
+    geometryList: list[Geometry]
+    poiList: list[GeometryPoi]
+
+
+@dataclass(kw_only=True)
+class GeometryFilterResponse(DataClassORJSONMixin):
+    """Represents a Geometry Filter response."""
+
+    summary: Summary
+    results: list[GeometryPoi]
+
+
+@dataclass(kw_only=True)
+class GeometryPoi:
+    """Represents an geometry poi"""
+
+    poi: Poi | None = None
+    address: Address | None = None
+    position: LatLon
 
 
 @dataclass(kw_only=True)
@@ -460,12 +562,28 @@ class MapCodeType(Enum):
     ALTERNATIVE = "Alternative"
 
 
+@dataclass(kw_only=True)
+class Match(DataClassORJSONMixin):
+    """Represents a match"""
+
+    offset: int
+    length: int
+
+
 class MatchType(Enum):
     """Supported match types"""
 
     ADDRESS_POINT = "AddressPoint"
     HOUSE_NUMBER_RANGE = "HouseNumberRange"
     STREET = "Street"
+
+
+@dataclass(kw_only=True)
+class Matches(DataClassORJSONMixin):
+    """Represents a matches"""
+
+    # pylint: disable=invalid-name
+    inputQuery: list[Match]
 
 
 @dataclass(kw_only=True)
@@ -519,7 +637,7 @@ class PaymentOption(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class PlaceByIdParams(BaseParams):
-    """Parameters for the get_place_by_id method."""
+    """Parameters for the get_place_by_id method"""
 
     # pylint: disable=invalid-name
     entityId: str
@@ -551,7 +669,7 @@ class Poi(DataClassORJSONMixin):
     # categories: list[str]  # Deprecated: Use classifications instead. As of May 1, 2018
     categorySet: list[Id] | None = None
     openingHours: list[OpeningHour] | None = None
-    classifications: list[Classification]
+    classifications: list[Classification] | None = None
     timeZone: TimeZone | None = None
 
 
@@ -714,6 +832,13 @@ class Result(DataClassORJSONMixin):
     accessType: AccessType | None = None
 
 
+class ResultSetType(Enum):
+    """Supported result set types"""
+
+    CATEGORY = "category"
+    BRAND = "brand"
+
+
 class ResultType(Enum):
     """Supported result types"""
 
@@ -846,6 +971,18 @@ class SearchResponse(DataClassORJSONMixin):
 
     summary: Summary
     results: list[Result]
+
+
+@dataclass(kw_only=True)
+class Segment(DataClassORJSONMixin):
+    """Represents an auto complete segment"""
+
+    # pylint: disable=invalid-name
+    type: str
+    value: str
+    matches: Matches
+    id: str | None = None
+    matchedAlternativeName: str | None = None
 
 
 class StatusType(Enum):

@@ -1,0 +1,52 @@
+{
+  "context": { "inputQuery": "pizza" },
+  "results": [
+    {
+      "segments": [
+        {
+          "type": "category",
+          "value": "Pizzeria",
+          "matches": { "inputQuery": [{ "offset": 0, "length": 5 }] },
+          "id": "7315036",
+          "matchedAlternativeName": "Pizza"
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "type": "brand",
+          "value": "Pizza Pizza",
+          "matches": { "inputQuery": [{ "offset": 0, "length": 5 }] }
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "type": "brand",
+          "value": "Debonairs Pizza",
+          "matches": { "inputQuery": [{ "offset": 0, "length": 5 }] }
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "type": "brand",
+          "value": "Domino's Pizza",
+          "matches": { "inputQuery": [{ "offset": 0, "length": 5 }] }
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "type": "brand",
+          "value": "Pizza Hut",
+          "matches": { "inputQuery": [{ "offset": 0, "length": 5 }] }
+        }
+      ]
+    }
+  ]
+}

@@ -47,13 +47,13 @@ class BaseParams:
 
         return self
 
-    def to_dict(self: Self) -> dict[str, str | int | float]:
+    def to_dict(self: Self) -> dict[str, str]:
         """
         Converts the dataclass to a dictionary, removing None values and empty lists,
         converting booleans to lowercase strings, and lists to comma-separated strings.
         """
 
-        def format_value(value: Any) -> str | int | float:
+        def format_value(value: Any) -> str:
             """Formats the value based on its type."""
             if isinstance(value, Enum):
                 return value.value
@@ -61,7 +61,7 @@ class BaseParams:
                 return str(value).lower()
             if isinstance(value, list):
                 return ",".join(map(str, value))
-            return value
+            return str(value)
 
         result = asdict(self)
         # The dictionary comprehension is used to filter out None values and empty lists before formatting.

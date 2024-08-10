@@ -1,4 +1,4 @@
-"""EV Search AP"""
+"""EV Search API"""
 
 from tomtom_api.api import BaseApi
 

@@ -1,4 +1,4 @@
-"""Asynchronous Python client for the TomTom API"""
+"""Asynchronous Python client for the TomTom API."""
 
 from .api import ApiOptions
 from .exceptions import TomTomAPIClientError, TomTomAPIConnectionError, TomTomAPIError, TomTomAPIRequestTimeout, TomTomAPIServerError

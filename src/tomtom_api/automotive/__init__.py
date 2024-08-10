@@ -1,4 +1,4 @@
-"""Automotive API"""
+"""Automotive APIs"""
 
 from .autostream import AutoStreamApi
 from .fuel_prices import FuelPricesApi

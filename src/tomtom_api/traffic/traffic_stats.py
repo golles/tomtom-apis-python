@@ -1,4 +1,4 @@
-"""Traffic Stats AP"""
+"""Traffic Stats API"""
 
 from tomtom_api.api import BaseApi
 

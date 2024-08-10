@@ -1,4 +1,4 @@
-"""Client for the TomTom API"""
+"""Client for the TomTom API."""
 
 from __future__ import annotations
 
@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 
 @dataclass(kw_only=True)
 class BaseParams:
-    """Base class for any params data class"""
+    """Base class for any params data class."""
 
     key: str | None = None
 
@@ -54,7 +54,7 @@ class BaseParams:
         """
 
         def format_value(value: Any) -> str:
-            """Formats the value based on its type"""
+            """Formats the value based on its type."""
             if isinstance(value, Enum):
                 return value.value
             if isinstance(value, bool):
@@ -72,11 +72,11 @@ class BaseParams:
 
 @dataclass
 class BasePostData(DataClassDictMixin):
-    """Base class for any post data class"""
+    """Base class for any post data class."""
 
 
 class Response:
-    """Response class for the TomTom API"""
+    """Response class for the TomTom API."""
 
     T = TypeVar("T", bound=DataClassORJSONMixin)
 
@@ -86,7 +86,7 @@ class Response:
         self.status = response.status
 
     async def deserialize(self, model: Type[T]) -> T:
-        """Deserialize the response using the provided model"""
+        """Deserialize the response using the provided model."""
         logger.info("Deserializing response to %s", model)
         try:
             text = await self.response.text()
@@ -96,7 +96,7 @@ class Response:
             raise
 
     async def dict(self) -> dict:
-        """Deserialize the response to a dictionary"""
+        """Deserialize the response to a dictionary."""
         logger.info("Deserializing response to dictionary")
         try:
             text = await self.response.text()
@@ -106,12 +106,12 @@ class Response:
             raise
 
     async def text(self) -> str:
-        """Return the response as text"""
+        """Return the response as text."""
         logger.info("Returning response as text")
         return await self.response.text()
 
     async def bytes(self) -> bytes:
-        """Return the response as bytes"""
+        """Return the response as bytes."""
         logger.info("Returning response as bytes")
         return await self.response.read()
 
@@ -183,7 +183,7 @@ class BaseApi:
         headers: dict[str, str] | None = None,
         data: dict | None = None,
     ) -> Response:
-        """Make a request to the TomTom API"""
+        """Make a request to the TomTom API."""
         request_params = {**self._default_params, **(params.to_dict() if params else {})}
         request_headers = {**self._default_headers, **(headers if headers else {})}
 
@@ -247,7 +247,7 @@ class BaseApi:
         params: BaseParams | None = None,
         headers: dict | None = None,
     ) -> Response:
-        """Make a DELETE request"""
+        """Make a DELETE request."""
         return await self._request(
             "DELETE",
             endpoint,
@@ -262,7 +262,7 @@ class BaseApi:
         params: BaseParams | None = None,
         headers: dict | None = None,
     ) -> Response:
-        """Make a GET request"""
+        """Make a GET request."""
         return await self._request(
             "GET",
             endpoint,
@@ -278,7 +278,7 @@ class BaseApi:
         headers: dict | None = None,
         data: BasePostData | None = None,
     ) -> Response:
-        """Make a POST request"""
+        """Make a POST request."""
         return await self._request(
             "POST",
             endpoint,
@@ -295,7 +295,7 @@ class BaseApi:
         headers: dict | None = None,
         data: BasePostData | None = None,
     ) -> Response:
-        """Make a PUT request"""
+        """Make a PUT request."""
         return await self._request(
             "PUT",
             endpoint,
@@ -313,7 +313,7 @@ class BaseApi:
             self.session = None
 
     async def close(self):
-        """Close the client"""
+        """Close the client."""
 
         if self.session:
             await self.session.close()  # Close the session if manually closing

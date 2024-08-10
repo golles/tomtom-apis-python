@@ -1,4 +1,4 @@
-"""Models for the TomTom Automotive API"""
+"""Models for the TomTom Automotive API."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ from tomtom_api.api import BaseParams
 
 @dataclass(kw_only=True)
 class Current(DataClassORJSONMixin):
-    """Represents a Current"""
+    """Represents a Current."""
 
     # pylint: disable=invalid-name
     available: bool
@@ -23,7 +23,7 @@ class Current(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Fuel(DataClassORJSONMixin):
-    """Represents a Fuel"""
+    """Represents a Fuel."""
 
     # pylint: disable=invalid-name
     type: list[str]
@@ -33,7 +33,7 @@ class Fuel(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class FuelPricesResponse(DataClassORJSONMixin):
-    """Represents a FuelPrices response"""
+    """Represents a FuelPrices response."""
 
     # pylint: disable=invalid-name
     fuelPrice: str
@@ -62,7 +62,7 @@ class ParkingAvailabilityParams(BaseParams):
 
 @dataclass(kw_only=True)
 class ParkingAvailabilityResponse(DataClassORJSONMixin):
-    """Represents a ParkingAvailability response"""
+    """Represents a ParkingAvailability response."""
 
     # pylint: disable=invalid-name
     parkingAvailability: str
@@ -71,7 +71,7 @@ class ParkingAvailabilityResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Price(DataClassORJSONMixin):
-    """Represents a Price"""
+    """Represents a Price."""
 
     # pylint: disable=invalid-name
     value: float
@@ -82,6 +82,6 @@ class Price(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Status(DataClassORJSONMixin):
-    """Represents a Status"""
+    """Represents a Status."""
 
     current: Current

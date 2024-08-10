@@ -1,4 +1,4 @@
-"""Geofencing AP"""
+"""Geofencing API"""
 
 from tomtom_api.api import BaseApi
 

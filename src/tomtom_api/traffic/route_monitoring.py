@@ -1,4 +1,4 @@
-"""Route Monitoring AP"""
+"""Route Monitoring API"""
 
 from tomtom_api.api import BaseApi
 

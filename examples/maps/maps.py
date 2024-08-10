@@ -1,4 +1,4 @@
-"""Exampels of some maps API calls"""
+"""Exampels of some maps API calls."""
 
 # pylint: disable=duplicate-code
 
@@ -10,7 +10,7 @@ from tomtom_api.maps.map_display import MapDisplayApi
 
 
 async def map_copyrights(api_key: str) -> None:
-    """Example for map_copyright"""
+    """Example for map_copyrights"""
     async with MapDisplayApi(ApiOptions(api_key=api_key, gzip_compression=True, tracking_id=True)) as map_display_api:
         response = await map_display_api.get_map_copyrights()
 
@@ -18,7 +18,7 @@ async def map_copyrights(api_key: str) -> None:
 
 
 async def get_map_service_copyrights(api_key: str) -> None:
-    """Example for get_map_service_copyright"""
+    """Example for get_map_service_copyrights"""
     async with MapDisplayApi(ApiOptions(api_key=api_key, gzip_compression=True, tracking_id=True)) as map_display_api:
         response = await map_display_api.get_map_service_copyrights()
 
@@ -26,7 +26,7 @@ async def get_map_service_copyrights(api_key: str) -> None:
 
 
 def get_api_key() -> str:
-    """Get the API key or ask for user input"""
+    """Get the API key or ask for user input."""
     apik_key = os.getenv("TOMTOM_API_KEY")
 
     if apik_key:

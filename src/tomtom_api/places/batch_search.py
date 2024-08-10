@@ -1,4 +1,4 @@
-"""Batch Search AP"""
+"""Batch Search API"""
 
 from tomtom_api.api import BaseApi, BaseParams
 from tomtom_api.places.models import (

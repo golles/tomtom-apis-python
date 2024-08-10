@@ -1,4 +1,4 @@
-"""Premium Geocoding test"""
+"""Premium Geocoding tests"""
 
 import pytest
 
@@ -10,7 +10,7 @@ from tomtom_api.places.models import ResultType
 
 @pytest.fixture(name="premium_geocoding_api")
 async def fixture_premium_geocoding_api():
-    """Fixture for PremiumGeocodingApi"""
+    """Fixture for PremiumGeocodingApi."""
     options = ApiOptions(api_key=API_KEY)
     async with PremiumGeocodingApi(options) as premium_geocoding:
         yield premium_geocoding
@@ -19,7 +19,7 @@ async def fixture_premium_geocoding_api():
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/premium_geocoding/get_geocode.json"], indirect=True)
 async def test_deserialization_get_geocode(premium_geocoding_api: PremiumGeocodingApi):
-    """Test the get_geocode method"""
+    """Test the get_geocode method."""
 
     response = await premium_geocoding_api.get_geocode(
         query="De Ruijterkade 154 Amsterdam",

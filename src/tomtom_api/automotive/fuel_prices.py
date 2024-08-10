@@ -1,4 +1,4 @@
-"""Fuel Prices AP"""
+"""Fuel Prices API"""
 
 from tomtom_api.api import BaseApi
 from tomtom_api.automotive.models import FuelPricesResponse, FuelPrizeParams

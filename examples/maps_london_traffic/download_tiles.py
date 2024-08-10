@@ -1,4 +1,4 @@
-"""London traffic example"""
+"""London traffic example."""
 
 # pylint: disable=duplicate-code
 
@@ -62,7 +62,7 @@ async def download_tiles(api: MapDisplayApi | TrafficApi, tiles: list[MapTile]) 
 
 
 async def download(api_key: str) -> None:
-    """Download tile"""
+    """Download tiles"""
 
     options = ApiOptions(api_key=api_key)
 
@@ -74,7 +74,7 @@ async def download(api_key: str) -> None:
 
 
 def get_api_key() -> str:
-    """Get the API key or ask for user input"""
+    """Get the API key or ask for user input."""
     apik_key = os.getenv("TOMTOM_API_KEY")
 
     if apik_key:

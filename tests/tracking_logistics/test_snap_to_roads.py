@@ -1,4 +1,4 @@
-"""Snap to Roads test"""
+"""Snap to Roads tests"""
 
 import pytest
 
@@ -6,6 +6,6 @@ from tomtom_api.tracking_logistics import SnapToRoadsApi
 
 
 def test_api_not_implemented():
-    """Test API not implemented ye"""
+    """Test API not implemented yet"""
     with pytest.raises(NotImplementedError):
         SnapToRoadsApi()

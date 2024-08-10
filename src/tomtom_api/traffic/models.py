@@ -1,4 +1,4 @@
-"""Models for the TomTom Traffic API"""
+"""Models for the TomTom Traffic API."""
 
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ from tomtom_api.models import Language, TileSizeType
 
 @dataclass(kw_only=True)
 class BBoxParam:
-    """bbox param"""
+    """bbox param."""
 
     # pylint: disable=invalid-name
     minLon: float
@@ -20,13 +20,13 @@ class BBoxParam:
     maxLat: float
 
     def to_comma_seperate(self) -> str:
-        """Turn the object into a comma seperated string"""
+        """Turn the object into a comma seperated string."""
         return f"{self.minLon},{self.minLat},{self.maxLon},{self.maxLat}"
 
 
 @dataclass(kw_only=True)
 class BoudingBoxParam:
-    """Boudingbox param"""
+    """Boudingbox param."""
 
     # pylint: disable=invalid-name
     minY: float
@@ -35,12 +35,12 @@ class BoudingBoxParam:
     maxX: float
 
     def to_comma_seperate(self) -> str:
-        """Turn the object into a comma seperated string"""
+        """Turn the object into a comma seperated string."""
         return f"{self.minY},{self.minX},{self.maxY},{self.maxX}"
 
 
 class IncidentStyleType(Enum):
-    """Supported incident tyle style type"""
+    """Supported incident tyle style types"""
 
     S0 = "s0"
     S0_DARK = "s0-dark"

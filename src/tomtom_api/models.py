@@ -1,4 +1,4 @@
-"""Generic model"""
+"""Generic models"""
 
 from __future__ import annotations
 
@@ -146,7 +146,7 @@ class MapTile:
 
 
 class TileSizeType(Enum):
-    """Supported tile size"""
+    """Supported tile sizes"""
 
     SIZE_256 = 256
     SIZE_512 = 512

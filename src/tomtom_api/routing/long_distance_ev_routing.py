@@ -1,4 +1,4 @@
-"""Long Distance EV Routing AP"""
+"""Long Distance EV Routing API"""
 
 from tomtom_api.api import BaseApi
 from tomtom_api.models import LatLonList

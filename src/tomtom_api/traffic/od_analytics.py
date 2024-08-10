@@ -1,4 +1,4 @@
-"""O/D Analysis AP"""
+"""O/D Analysis API"""
 
 from tomtom_api.api import BaseApi
 

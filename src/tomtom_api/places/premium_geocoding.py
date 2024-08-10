@@ -1,4 +1,4 @@
-"""Premium Geocode AP"""
+"""Premium Geocode API"""
 
 from tomtom_api.api import BaseApi
 

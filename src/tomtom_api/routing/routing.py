@@ -1,4 +1,4 @@
-"""Routing AP"""
+"""Routing API"""
 
 from tomtom_api.api import BaseApi
 from tomtom_api.models import LatLon, LatLonList

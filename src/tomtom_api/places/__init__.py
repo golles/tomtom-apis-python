@@ -1,4 +1,4 @@
-"""Places API"""
+"""Places APIs"""
 
 from .batch_search import BatchSearchApi
 from .ev_search import EVSearchApi

@@ -1,4 +1,4 @@
-"""Geocoding test"""
+"""Geocoding tests"""
 
 import pytest
 
@@ -10,7 +10,7 @@ from tomtom_api.places.models import ResultType, StructuredGeocodeParams
 
 @pytest.fixture(name="geocoding_api")
 async def fixture_geocoding_api():
-    """Fixture for GeocodingApi"""
+    """Fixture for GeocodingApi."""
     options = ApiOptions(api_key=API_KEY)
     async with GeocodingApi(options) as geocoding:
         yield geocoding
@@ -19,7 +19,7 @@ async def fixture_geocoding_api():
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/geocoding/get_geocode.json"], indirect=True)
 async def test_deserialization_get_geocode(geocoding_api: GeocodingApi):
-    """Test the get_geocode method"""
+    """Test the get_geocode method."""
     response = await geocoding_api.get_geocode(
         query="De Ruijterkade 154 Amsterdam",
     )
@@ -39,7 +39,7 @@ async def test_deserialization_get_geocode(geocoding_api: GeocodingApi):
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/geocoding/get_structured_geocode.json"], indirect=True)
 async def test_deserialization_get_structured_geocode(geocoding_api: GeocodingApi):
-    """Test the get_structured_geocode method"""
+    """Test the get_structured_geocode method."""
     response = await geocoding_api.get_structured_geocode(
         countryCode="NL",
         params=StructuredGeocodeParams(

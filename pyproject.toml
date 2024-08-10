@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tomtom-api"
-version = "0.1.0"
+version = "0.0.1"
 description = "Asynchronous Python client for the TomTom API"
 authors = ["Sander Gols <developer@golles.nl>"]
 license = "MIT"

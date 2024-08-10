@@ -82,7 +82,7 @@ class Response:
 
     def __init__(self, response: ClientResponse):
         self.response = response
-        self.headers = response.headers
+        self.headers: dict[str, str] = dict(response.headers)
         self.status = response.status
 
     async def deserialize(self, model: Type[T]) -> T:

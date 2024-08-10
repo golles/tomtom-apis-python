@@ -1,4 +1,4 @@
-"""Generic utils"""
+"""Generic util"""
 
 import math
 

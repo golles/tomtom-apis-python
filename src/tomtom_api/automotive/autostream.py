@@ -1,4 +1,4 @@
-"""Auto Stream API"""
+"""Auto Stream AP"""
 
 from tomtom_api.api import BaseApi
 

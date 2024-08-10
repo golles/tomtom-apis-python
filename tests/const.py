@@ -1,4 +1,4 @@
-"""Constants for testing"""
+"""Constants for testin"""
 
 from tomtom_api.models import LatLon
 

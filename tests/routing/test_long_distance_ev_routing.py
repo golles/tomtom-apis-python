@@ -1,6 +1,7 @@
-"""Long Distance EV Routing tests"""
+"""Long Distance EV Routing test"""
 
 from datetime import datetime
+
 import pytest
 
 from tests.const import API_KEY, LOC_AMSTERDAM
@@ -18,7 +19,7 @@ from tomtom_api.routing.models import (
 
 @pytest.fixture(name="long_distance_ev_routing_api")
 async def fixture_long_distance_ev_routing_api():
-    """Fixture for LongDistanceEVRoutingApi."""
+    """Fixture for LongDistanceEVRoutingApi"""
     options = ApiOptions(api_key=API_KEY)
     async with LongDistanceEVRoutingApi(options) as long_distance_ev_routing:
         yield long_distance_ev_routing
@@ -27,7 +28,7 @@ async def fixture_long_distance_ev_routing_api():
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["routing/long_distance_ev_routing/post_calculate_long_distance_ev_route.json"], indirect=True)
 async def test_deserialization_post_calculate_long_distance_ev_route(long_distance_ev_routing_api: LongDistanceEVRoutingApi):
-    """Test the post_calculate_long_distance_ev_route method."""
+    """Test the post_calculate_long_distance_ev_route method"""
     params = CalculateLongDistanceEVRouteParams(
         vehicleEngineType="electric",
         constantSpeedConsumptionInkWhPerHundredkm="50.0,6.5:100.0,8.5",

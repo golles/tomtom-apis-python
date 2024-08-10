@@ -1,4 +1,4 @@
-"""Notifications API"""
+"""Notifications AP"""
 
 from tomtom_api.api import BaseApi
 

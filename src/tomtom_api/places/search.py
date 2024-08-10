@@ -1,4 +1,4 @@
-"""Search API"""
+"""Search AP"""
 
 from tomtom_api.api import BaseApi, BaseParams
 from tomtom_api.models import Language

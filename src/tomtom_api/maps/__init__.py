@@ -1,4 +1,4 @@
-"""Maps APIs"""
+"""Maps API"""
 
 from .map_display import MapDisplayApi
 

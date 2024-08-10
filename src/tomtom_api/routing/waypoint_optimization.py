@@ -1,4 +1,4 @@
-"""Waypoint optimization API"""
+"""Waypoint optimization AP"""
 
 from tomtom_api.api import BaseApi, BaseParams
 from tomtom_api.routing.models import WaypointOptimizationPostData, WaypointOptimizedResponse

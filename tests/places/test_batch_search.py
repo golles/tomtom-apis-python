@@ -1,4 +1,4 @@
-"""EV Search test"""
+"""EV Search tes"""
 
 import pytest
 from aresponses import ResponsesMockServer
@@ -12,7 +12,7 @@ from tomtom_api.places.models import AsynchronousBatchDownloadParams, BatchItem,
 
 @pytest.fixture(name="batch_search_api")
 async def fixture_batch_search_api():
-    """Fixture for BatchSearchApi."""
+    """Fixture for BatchSearchApi"""
     options = ApiOptions(api_key=API_KEY)
     async with BatchSearchApi(options) as batch_search_api:
         yield batch_search_api
@@ -21,7 +21,7 @@ async def fixture_batch_search_api():
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/batch_search/post_synchronous_batch.json"], indirect=True)
 async def test_deserialization_post_synchronous_batch(batch_search_api: BatchSearchApi):
-    """Test the post_synchronous_batch method."""
+    """Test the post_synchronous_batch method"""
 
     response = await batch_search_api.post_synchronous_batch(
         data=BatchPostData(
@@ -39,7 +39,7 @@ async def test_deserialization_post_synchronous_batch(batch_search_api: BatchSea
 
 
 async def test_post_asynchronous_synchronous_batch(batch_search_api: BatchSearchApi, aresponses: ResponsesMockServer):
-    """Test the post_asynchronous_synchronous_batch method."""
+    """Test the post_asynchronous_synchronous_batch method"""
     aresponses.add(
         response=aresponses.Response(
             status=202,
@@ -83,7 +83,7 @@ async def test_post_asynchronous_synchronous_batch(batch_search_api: BatchSearch
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/batch_search/get_asynchronous_batch_download.json"], indirect=True)
 async def test_deserialization_get_asynchronous_batch_download(batch_search_api: BatchSearchApi):
-    """Test the get_asynchronous_batch_download method."""
+    """Test the get_asynchronous_batch_download method"""
     response = await batch_search_api.get_asynchronous_batch_download(
         batch_id="45e0909c-625a-4822-a060-8f7f88498c0e",
         params=AsynchronousBatchDownloadParams(

@@ -17,13 +17,13 @@ FIXTURE_PATH = "tests/fixtures"
 
 
 async def read_json(file_path: str):
-    """Read a json file and return its content as a dict."""
+    """Read a json file and return its content as a dict"""
     with open(file_path, "r", encoding="utf-8") as file:
         return json.load(file)
 
 
 async def make_request(session: aiohttp.ClientSession, method: str, url: str, data: dict | None = None) -> str | bytes | None:
-    """Make a request to the TomTom API."""
+    """Make a request to the TomTom API"""
     try:
         async with session.request(method.upper(), url, json=data) as response:
             response.raise_for_status()
@@ -36,7 +36,7 @@ async def make_request(session: aiohttp.ClientSession, method: str, url: str, da
 
 
 async def save_fixture(content: str | bytes, fixture_path: str):
-    """Save a fixture to the specified path."""
+    """Save a fixture to the specified path"""
     os.makedirs(os.path.dirname(fixture_path), exist_ok=True)
     if isinstance(content, str):
         mode = "w"
@@ -52,7 +52,7 @@ async def save_fixture(content: str | bytes, fixture_path: str):
 
 
 async def process_fixture(session: aiohttp.ClientSession, api_entry: dict, api_key: str):
-    """Process a single fixture."""
+    """Process a single fixture"""
     for fixture in api_entry["fixtures"]:
         method = fixture.get("method")
         url = fixture.get("url")
@@ -74,7 +74,7 @@ async def process_fixture(session: aiohttp.ClientSession, api_entry: dict, api_k
 
 
 async def process_fixtures(file_path: str, api_key: str):
-    """Process fixtures."""
+    """Process fixtures"""
     data = await read_json(file_path)
     async with aiohttp.ClientSession() as session:
         tasks = [process_fixture(session, api_entry, api_key) for api_entry in data]
@@ -82,7 +82,7 @@ async def process_fixtures(file_path: str, api_key: str):
 
 
 def get_api_key() -> str:
-    """Get the API key or ask for user input."""
+    """Get the API key or ask for user input"""
     apik_key = os.getenv("TOMTOM_API_KEY")
 
     if apik_key:

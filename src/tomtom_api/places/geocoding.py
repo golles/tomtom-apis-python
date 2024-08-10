@@ -1,4 +1,4 @@
-"""Geocode API"""
+"""Geocode AP"""
 
 from tomtom_api.api import BaseApi
 from tomtom_api.places.models import GeocodeParams, SearchResponse, StructuredGeocodeParams

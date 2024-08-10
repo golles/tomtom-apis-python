@@ -1,4 +1,4 @@
-"""Intermediate Traffic API"""
+"""Intermediate Traffic AP"""
 
 from tomtom_api.api import BaseApi
 

@@ -1,4 +1,4 @@
-"""Traffic API"""
+"""Traffic AP"""
 
 from tomtom_api.api import BaseApi, BaseParams, BasePostData
 

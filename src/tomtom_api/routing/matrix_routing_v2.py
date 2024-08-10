@@ -1,4 +1,4 @@
-"""Matrix Routing V2 API"""
+"""Matrix Routing V2 AP"""
 
 from tomtom_api.api import BaseApi
 

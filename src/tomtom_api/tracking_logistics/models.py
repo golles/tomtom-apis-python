@@ -1,1 +1,1 @@
-"""Models for the TomTom Tracking and Logistics API."""
+"""Models for the TomTom Tracking and Logistics API"""

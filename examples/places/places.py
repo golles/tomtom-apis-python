@@ -1,4 +1,4 @@
-"""Exampels of some places API calls."""
+"""Exampels of some places API calls"""
 
 # pylint: disable=duplicate-code
 
@@ -12,7 +12,7 @@ from tomtom_api.places.models import PlaceByIdParams, ReverseGeocodeParams
 
 
 async def get_place_by_id(api_key: str) -> None:
-    """Example for get_place_by_id"""
+    """Example for get_place_by_i"""
     search_id = "528009004256119"
     async with SearchApi(ApiOptions(api_key=api_key)) as search_api:
         response = await search_api.get_place_by_id(params=PlaceByIdParams(entityId=search_id))
@@ -21,7 +21,7 @@ async def get_place_by_id(api_key: str) -> None:
 
 
 async def get_geocode(api_key: str) -> None:
-    """Example for get_geocode"""
+    """Example for get_geocod"""
     query = "De Ruijterkade 154 Amsterdam"
     async with GeocodingApi(ApiOptions(api_key=api_key)) as geo_coding_api:
         response = await geo_coding_api.get_geocode(query=query)
@@ -30,7 +30,7 @@ async def get_geocode(api_key: str) -> None:
 
 
 async def get_reverse_geocode(api_key: str) -> None:
-    """Example for get_reverse_geocode"""
+    """Example for get_reverse_geocod"""
     position = LatLon(lat=48.858093, lon=2.294694)
     async with ReverseGeocodingApi(ApiOptions(api_key=api_key)) as geo_coding_api:
         response = await geo_coding_api.get_reverse_geocode(
@@ -42,7 +42,7 @@ async def get_reverse_geocode(api_key: str) -> None:
 
 
 def get_api_key() -> str:
-    """Get the API key or ask for user input."""
+    """Get the API key or ask for user input"""
     apik_key = os.getenv("TOMTOM_API_KEY")
 
     if apik_key:

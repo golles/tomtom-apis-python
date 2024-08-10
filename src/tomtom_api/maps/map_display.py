@@ -1,17 +1,17 @@
-"""Map Display API"""
+"""Map Display AP"""
 
 from tomtom_api.api import BaseApi, BaseParams
 
 from .models import (
+    LayerType,
+    LayerTypeWithPoiType,
     MapServiceCopyrightsResponse,
     MapTileParams,
     MapTileV1Params,
     MapTileV2Params,
     StaticImageParams,
-    TileFormatType,
-    LayerType,
-    LayerTypeWithPoiType,
     StyleType,
+    TileFormatType,
 )
 
 

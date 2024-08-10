@@ -1,4 +1,4 @@
-"""Utility to sort classes in a file"""
+"""Utility to sort classes in a fil"""
 
 import re
 import subprocess
@@ -7,7 +7,7 @@ from typing import List, Tuple
 
 
 def sort_classes_alphabetically(file_path: str) -> None:
-    """Sort classes alphabetically in a given file"""
+    """Sort classes alphabetically in a given fil"""
 
     with open(file_path, "r", encoding="UTF-8") as file:
         content = file.read()

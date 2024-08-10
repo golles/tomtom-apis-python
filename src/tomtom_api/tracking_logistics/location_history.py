@@ -1,4 +1,4 @@
-"""Location History API"""
+"""Location History AP"""
 
 from tomtom_api.api import BaseApi
 

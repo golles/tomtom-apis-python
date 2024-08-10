@@ -1,4 +1,4 @@
-"""Reverse Geocode API"""
+"""Reverse Geocode AP"""
 
 from tomtom_api.api import BaseApi
 from tomtom_api.models import LatLon

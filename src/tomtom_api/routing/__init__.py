@@ -1,4 +1,4 @@
-"""Routing APIs"""
+"""Routing API"""
 
 from .long_distance_ev_routing import LongDistanceEVRoutingApi
 from .matrix_routing_v2 import MatrixRoutingApiV2

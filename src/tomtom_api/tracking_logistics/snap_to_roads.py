@@ -1,4 +1,4 @@
-"""Snap to Roads API"""
+"""Snap to Roads AP"""
 
 from tomtom_api.api import BaseApi
 

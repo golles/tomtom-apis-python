@@ -1,4 +1,4 @@
-"""Constants for the TomTom API."""
+"""Constants for the TomTom API"""
 
 from typing import Final
 

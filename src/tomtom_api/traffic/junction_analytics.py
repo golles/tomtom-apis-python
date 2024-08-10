@@ -1,4 +1,4 @@
-"""Junction Analytics API"""
+"""Junction Analytics AP"""
 
 from tomtom_api.api import BaseApi
 

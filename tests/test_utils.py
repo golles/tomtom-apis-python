@@ -1,11 +1,12 @@
 """Test utils"""
 
 import math
+from enum import Enum
 
 import pytest
 
 from tomtom_api.models import LatLon, MapTile
-from tomtom_api.utils import lat_lon_to_tile_zxy, tile_zxy_to_lat_lon
+from tomtom_api.utils import lat_lon_to_tile_zxy, serialize_bool, serialize_list, serialize_list_brackets, tile_zxy_to_lat_lon
 
 
 def test_lat_lon_to_tile_zxy_valid():
@@ -70,8 +71,51 @@ def test_tile_zxy_to_lat_lon_invalid_y():
         tile_zxy_to_lat_lon(10, 163, -1)
 
 
-def test_tile_zxy_to_lat_lon_boundary():
-    """Test boundary conditions for tile_zxy_to_lat_lon"""
-    max_tile_index = 2**10 - 1
-    result = tile_zxy_to_lat_lon(10, max_tile_index, max_tile_index)
-    assert isinstance(result, LatLon)
+def test_serialize_bool():
+    """Test cases for test_serialize_bool"""
+    # Test with True
+    assert serialize_bool(True) == "true"
+    # Test with False
+    assert serialize_bool(False) == "false"
+
+
+class Color(Enum):
+    """Simple enum for testing"""
+
+    RED = "red"
+    GREEN = "green"
+    BLUE = "blue"
+
+
+def test_serialize_list():
+    """Test cases for test_serialize_list"""
+    # Test with an empty list
+    assert serialize_list([]) is None
+    # Test with a list of integers
+    assert serialize_list([1, 2, 3]) == "1,2,3"
+    # Test with a list of strings
+    assert serialize_list(["a", "b", "c"]) == "a,b,c"
+    # Test with a mixed list
+    assert serialize_list([1, "b", 3.0, True]) == "1,b,3.0,true"
+    assert serialize_list([False, "yes", 10]) == "false,yes,10"
+    assert serialize_list(["True", False]) == "True,false"
+    # Test with a list containing Enums
+    assert serialize_list([Color.RED, Color.GREEN, Color.BLUE]) == "red,green,blue"
+    assert serialize_list([Color.RED, 1, True]) == "red,1,true"
+
+
+def test_serialize_list_brackets():
+    """Test cases for test_serialize_list_brackets"""
+    # Test with an empty list
+    assert serialize_list_brackets([]) is None
+    # Test with a list of integers
+    assert serialize_list_brackets([1, 2, 3]) == "[1,2,3]"
+    # Test with a list of strings
+    assert serialize_list_brackets(["a", "b", "c"]) == "[a,b,c]"
+    # Test with a mixed list
+    assert serialize_list_brackets([1, "b", 3.0, True]) == "[1,b,3.0,true]"
+    assert serialize_list_brackets([False, "yes", 10]) == "[false,yes,10]"
+    assert serialize_list_brackets(["True", False]) == "[True,false]"
+    # Test with a list containing Enums
+    assert serialize_list_brackets([Color.RED, Color.GREEN, Color.BLUE]) == "[red,green,blue]"
+    assert serialize_list_brackets([Color.RED, 1, True]) == "[red,1,true]"

@@ -6,68 +6,56 @@ import asyncio
 import logging
 import socket
 import uuid
-from dataclasses import asdict, dataclass
-from enum import Enum
+from dataclasses import dataclass
 from importlib import metadata
-from typing import Any, Literal, Self, Type, TypeVar
+from typing import Any, Literal, Type, TypeVar
 
 import orjson
 from aiohttp import ClientResponse
 from aiohttp.client import ClientConnectionError, ClientError, ClientResponseError, ClientSession
 from aiohttp.hdrs import ACCEPT_ENCODING, CONTENT_TYPE, USER_AGENT
 from mashumaro import DataClassDictMixin
+from mashumaro.config import BaseConfig
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
 from tomtom_api.const import TRACKING_ID
 
 from .exceptions import TomTomAPIClientError, TomTomAPIConnectionError, TomTomAPIError, TomTomAPIRequestTimeout, TomTomAPIServerError
+from .utils import serialize_bool, serialize_list
 
 logger = logging.getLogger(__name__)
 
 
 @dataclass(kw_only=True)
-class BaseParams:
+class BaseParams(DataClassDictMixin):
     """Base class for any params data class"""
 
     key: str | None = None
 
-    def from_dict(self: Self, data: dict[str, str]) -> Self:
+    def __post_serialize__(self, d: dict[Any, Any]) -> dict[str, str]:
+        return {k: v for k, v in d.items() if v is not None}
+
+    class Config(BaseConfig):  # pylint: disable=too-few-public-methods
         """
-        Converts a dictionary to a dataclass, setting the values of the dataclass
-        to the values of the dictionary.
-
-        This method exists since not all api params have been created as dataclasses yet.
-        This function is limited to dictionaries with string values and it's your responibility to convert, note that booleans should be lowercase strings.
-
-        Once all params are dataclasses, this method will be removed.
-        """
-
-        for key, value in data.items():
-            setattr(self, key, value)
-
-        return self
-
-    def to_dict(self: Self) -> dict[str, str]:
-        """
-        Converts the dataclass to a dictionary, removing None values and empty lists,
-        converting booleans to lowercase strings, and lists to comma-separated strings.
+        Config for the BaseParams
+        Not setting omit_none=True, because that runs before serialization, while in serialization empty lists are set to None.
+        Manually omitting None values in __post_serialize__ to fix this.
         """
 
-        def format_value(value: Any) -> str:
-            """Formats the value based on its type"""
-            if isinstance(value, Enum):
-                return value.value
-            if isinstance(value, bool):
-                return str(value).lower()
-            if isinstance(value, list):
-                return ",".join(map(str, value))
-            return str(value)
-
-        result = asdict(self)
-        # The dictionary comprehension is used to filter out None values and empty lists before formatting.
-        formatted_result = {k: format_value(v) for k, v in result.items() if v is not None and (not isinstance(v, list) or v)}
-
-        return formatted_result
+        serialization_strategy = {
+            bool: {
+                "serialize": serialize_bool,
+            },
+            float: {
+                "serialize": str,
+            },
+            int: {
+                "serialize": str,
+            },
+            list: {
+                "serialize": serialize_list,
+            },
+        }
 
 
 @dataclass

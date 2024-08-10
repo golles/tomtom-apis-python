@@ -1,8 +1,9 @@
 """Generic utils"""
 
 import math
+from enum import Enum
 
-from tomtom_api.models import LatLon, MapTile
+from .models import LatLon, MapTile
 
 # Constants
 MIN_ZOOM_LEVEL = 0
@@ -82,3 +83,21 @@ def tile_zxy_to_lat_lon(zoom_level: int, x: int, y: int) -> LatLon:
     lat = (180.0 / math.pi) * math.atan(0.5 * (math.exp(n) - math.exp(-n)))
 
     return LatLon(lat=lat, lon=lon)
+
+
+def serialize_bool(x: bool) -> str:
+    """Serialize a bool to a lowercase string"""
+    return str(x).lower()
+
+
+def serialize_list(x: list[int | float | bool | str | Enum]) -> str | None:
+    """Serialize a list to a comma-separated string, converting booleans to lowercase strings and using Enum values."""
+    if not x:
+        return None
+    return ",".join(str(item).lower() if isinstance(item, bool) else item.value if isinstance(item, Enum) else str(item) for item in x)
+
+
+def serialize_list_brackets(x: list) -> str | None:
+    """Serialize a list to a comma-separated string within square brackets, converting booleans to lowercase strings"""
+    serialized_list = serialize_list(x)
+    return f"[{serialized_list}]" if serialized_list is not None else None

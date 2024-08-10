@@ -244,6 +244,37 @@ class CapabilitieType(Enum):
 
 
 @dataclass(kw_only=True)
+class CategorySearchParams(BaseParams):
+    """Parameters for the get_category_search method."""
+
+    # pylint: disable=invalid-name, too-many-instance-attributes
+    typeahead: bool | None = None
+    limit: int | None = None
+    ofs: int | None = None
+    countrySet: list[str] | None = None
+    lat: float | None = None
+    lon: float | None = None
+    radius: int | None = None
+    topLeft: str | None = None
+    btmRight: str | None = None
+    geoBias: str | None = None
+    language: Language | None = None
+    extendedPostalCodesFor: list[ExtendedPostalCodesForType] | None = None
+    categorySet: list[str] | None = None
+    brandSet: list[str] | None = None
+    connectorSet: list[ConnectorType] | None = None
+    minPowerKW: float | None = None
+    maxPowerKW: float | None = None
+    fuelSet: list[FuelType] | None = None
+    vehicleTypeSet: list[VehicleType] | None = None
+    view: ViewType | None = None
+    openingHours: OpeningHoursType | None = None
+    mapcodes: list[MapCodeType] | None = None
+    timeZone: str | None = None
+    relatedPois: RelatedPoisType | None = None
+
+
+@dataclass(kw_only=True)
 class ChargingPark(DataClassORJSONMixin):
     """Represents a ChargingPark."""
 
@@ -442,6 +473,24 @@ class FilterType(Enum):
     BACK_ROADS = "BackRoads"
 
 
+class FuelType(Enum):
+    """
+    Supported fuel types,
+    See: https://developer.tomtom.com/search-api/documentation/product-information/supported-fuel-types
+    """
+
+    PETROL = "Petrol"
+    LPG = "LPG"
+    DIESEL = "Diesel"
+    BIO_DIESEL = "Biodiesel"
+    DIESEL_FOR_COMMERCIAL_VEHICLES = "DieselForCommercialVehicles"
+    E85 = "E85"
+    LNG = "LNG"
+    CNG = "CNG"
+    HYDROGEN = "Hydrogen"
+    AD_BLUE = "AdBlue"
+
+
 class FunctionType(Enum):
     """Represents the type of access for the Address."""
 
@@ -527,6 +576,32 @@ class GeometryPoi:
 
 
 @dataclass(kw_only=True)
+class GeometrySearchParams(BaseParams):
+    """Parameters for the get_geometry_search method."""
+
+    # pylint: disable=invalid-name, too-many-instance-attributes
+    limit: int | None = None
+    language: Language | None = None
+    lat: float | None = None
+    lon: float | None = None
+    extendedPostalCodesFor: list[ExtendedPostalCodesForType] | None = None
+    idxSet: list[IdxSetType] | None = None
+    categorySet: list[str] | None = None
+    brandSet: list[str] | None = None
+    connectorSet: list[ConnectorType] | None = None
+    minPowerKW: float | None = None
+    maxPowerKW: float | None = None
+    fuelSet: list[FuelType] | None = None
+    vehicleTypeSet: list[VehicleType] | None = None
+    view: ViewType | None = None
+    openingHours: OpeningHoursType | None = None
+    timeZone: str | None = None
+    mapcodes: list[MapCodeType] | None = None
+    relatedPois: RelatedPoisType | None = None
+    entityTypeSet: list[EntityType] | None = None
+
+
+@dataclass(kw_only=True)
 class Id(DataClassORJSONMixin):
     """Represents an Id."""
 
@@ -538,6 +613,20 @@ class IdString(DataClassORJSONMixin):
     """Represents an IdString."""
 
     id: str
+
+
+class IdxSetType(Enum):
+    """
+    Supported IdxSet types.
+    See: https://developer.tomtom.com/search-api/documentation/search-service/fuzzy-search#indexes-abbreviation-values
+    """
+
+    GEO = "Geo"
+    PAD = "PAD"
+    ADDR = "Addr"
+    STR = "Str"
+    XSTR = "XStr"
+    POI = "POI"
 
 
 @dataclass(kw_only=True)
@@ -603,6 +692,33 @@ class NearbyQueryIntent(DataClassORJSONMixin):
     lon: float
     query: str
     text: str
+
+
+@dataclass(kw_only=True)
+class NearbySearchParams(BaseParams):
+    """Parameters for the get_nearby_search method."""
+
+    # pylint: disable=invalid-name, too-many-instance-attributes
+    limit: int | None = None
+    ofs: int | None = None
+    countrySet: list[str] | None = None
+    radius: int | None = None
+    topLeft: str | None = None
+    btmRight: str | None = None
+    language: Language | None = None
+    extendedPostalCodesFor: list[ExtendedPostalCodesForType] | None = None
+    categorySet: list[str] | None = None
+    brandSet: list[str] | None = None
+    connectorSet: list[ConnectorType] | None = None
+    minPowerKW: float | None = None
+    maxPowerKW: float | None = None
+    fuelSet: list[FuelType] | None = None
+    vehicleTypeSet: list[VehicleType] | None = None
+    view: ViewType | None = None
+    openingHours: OpeningHoursType | None = None
+    mapcodes: list[MapCodeType] | None = None
+    timeZone: str | None = None
+    relatedPois: RelatedPoisType | None = None
 
 
 @dataclass(kw_only=True)
@@ -697,6 +813,44 @@ class PoiCategory(DataClassORJSONMixin):
     name: str
     childCategoryIds: list[int]
     synonyms: list[str]
+
+
+@dataclass(kw_only=True)
+class PoiSearchParams(BaseParams):
+    """Parameters for the get_poi_search method."""
+
+    # pylint: disable=invalid-name, too-many-instance-attributes
+    typeahead: bool | None = None
+    limit: int | None = None
+    ofs: int | None = None
+    countrySet: list[str] | None = None
+    lat: float | None = None
+    lon: float | None = None
+    radius: int | None = None
+    topLeft: str | None = None
+    btmRight: str | None = None
+    geoBias: str | None = None
+    language: Language | None = None
+    extendedPostalCodesFor: list[ExtendedPostalCodesForType] | None = None
+    categorySet: list[str] | None = None
+    brandSet: list[str] | None = None
+    connectorSet: list[ConnectorType] | None = None
+    minPowerKW: float | None = None
+    maxPowerKW: float | None = None
+    fuelSet: list[FuelType] | None = None
+    vehicleTypeSet: list[VehicleType] | None = None
+    view: ViewType | None = None
+    openingHours: OpeningHoursType | None = None
+    mapcodes: list[MapCodeType] | None = None
+    timeZone: str | None = None
+    relatedPois: RelatedPoisType | None = None
+
+
+@dataclass(kw_only=True)
+class Points:
+    """Represents route points"""
+
+    points: list[LatLon]
 
 
 @dataclass(kw_only=True)
@@ -823,7 +977,7 @@ class Result(DataClassORJSONMixin):
     addressRanges: list[AddressRange] | None = None
     chargingPark: ChargingPark | None = None
     dataSources: DataSources | None = None
-    fuelTypes: list[str] | None = None
+    fuelTypes: list[FuelType] | None = None
     vehicleTypes: list[VehicleType] | None = None
     chargingStations: list[ChargingStation] | None = None
     openingHours: OpeningHour | None = None
@@ -966,6 +1120,73 @@ class Route:
 
 
 @dataclass(kw_only=True)
+class SearchAlongRouteData(BasePostData):
+    """Data for the post search along route API."""
+
+    route: Points
+
+
+@dataclass(kw_only=True)
+class SearchAlongRouteParams(BaseParams):
+    """Parameters for the post_search_along_route method."""
+
+    # pylint: disable=invalid-name, too-many-instance-attributes
+    typeahead: bool | None = None
+    limit: int | None = None
+    categorySet: list[str] | None = None
+    brandSet: list[str] | None = None
+    connectorSet: list[ConnectorType] | None = None
+    minPowerKW: float | None = None
+    maxPowerKW: float | None = None
+    fuelSet: list[FuelType] | None = None
+    vehicleTypeSet: list[VehicleType] | None = None
+    view: ViewType | None = None
+    detourOffset: bool | None = None
+    sortBy: SortByType | None = None
+    language: Language | None = None
+    openingHours: OpeningHoursType | None = None
+    spreadingMode: str | None = None
+    mapcodes: list[MapCodeType] | None = None
+    timeZone: str | None = None
+    relatedPois: RelatedPoisType | None = None
+
+
+@dataclass(kw_only=True)
+class SearchParams(BaseParams):
+    """Parameters for the get_search method."""
+
+    # pylint: disable=invalid-name, too-many-instance-attributes
+    typeahead: bool | None = None
+    limit: int | None = None
+    ofs: int | None = None
+    countrySet: list[str] | None = None
+    lat: float | None = None
+    lon: float | None = None
+    radius: int | None = None
+    topLeft: str | None = None
+    btmRight: str | None = None
+    geoBias: str | None = None
+    language: Language | None = None
+    extendedPostalCodesFor: list[ExtendedPostalCodesForType] | None = None
+    minFuzzyLevel: int | None = None
+    maxFuzzyLevel: int | None = None
+    idxSet: list[IdxSetType] | None = None
+    categorySet: list[str] | None = None
+    brandSet: list[str] | None = None
+    connectorSet: list[ConnectorType] | None = None
+    minPowerKW: float | None = None
+    maxPowerKW: float | None = None
+    fuelSet: list[FuelType] | None = None
+    vehicleTypeSet: list[VehicleType] | None = None
+    view: ViewType | None = None
+    openingHours: OpeningHoursType | None = None
+    timeZone: str | None = None
+    mapcodes: list[MapCodeType] | None = None
+    relatedPois: RelatedPoisType | None = None
+    entityTypeSet: list[EntityType] | None = None
+
+
+@dataclass(kw_only=True)
 class SearchResponse(DataClassORJSONMixin):
     """Represents a Search response."""
 
@@ -983,6 +1204,13 @@ class Segment(DataClassORJSONMixin):
     matches: Matches
     id: str | None = None
     matchedAlternativeName: str | None = None
+
+
+class SortByType(Enum):
+    """Supported sort by type"""
+
+    DETOUR_TIME = "detourTime"
+    DETOUR_OFFSET = "detourOffset"
 
 
 class StatusType(Enum):

@@ -1,20 +1,27 @@
 """Search API"""
 
-from tomtom_api.api import BaseApi, BaseParams, BasePostData
+from tomtom_api.api import BaseApi, BaseParams
 from tomtom_api.models import Language
 from tomtom_api.places.models import (
     AdditionalDataParams,
     AdditionalDataResponse,
     AutocompleteParams,
     AutocompleteReponse,
+    CategorySearchParams,
     Geometry,
     GeometryFilterData,
     GeometryFilterResponse,
     GeometryPoi,
+    GeometrySearchParams,
+    NearbySearchParams,
     PlaceByIdParams,
     PlaceByIdResponse,
     PoiCategoriesParams,
     PoiCategoriesResponse,
+    PoiSearchParams,
+    SearchAlongRouteData,
+    SearchAlongRouteParams,
+    SearchParams,
     SearchResponse,
 )
 
@@ -30,7 +37,7 @@ class SearchApi(BaseApi):
         self,
         *,
         query: str,
-        params: BaseParams | None = None,
+        params: SearchParams | None = None,
     ) -> SearchResponse:
         """
         The generic, default service is Fuzzy Search which handles the most fuzzy of inputs containing any combination of Indexes abbreviation values. See the Indexes abbreviation values section at the bottom of this page.
@@ -49,7 +56,7 @@ class SearchApi(BaseApi):
         self,
         *,
         query: str,
-        params: BaseParams | None = None,
+        params: PoiSearchParams | None = None,
     ) -> SearchResponse:
         """
         If your search use case only requires POI results, you may use the Points of Interest endpoint for searching. This endpoint will only return POI results.
@@ -68,7 +75,7 @@ class SearchApi(BaseApi):
         self,
         *,
         query: str,
-        params: BaseParams | None = None,
+        params: CategorySearchParams | None = None,
     ) -> SearchResponse:
         """
         If your search use case only requires POI (Points of Interest) results filtered by category, you may use the Category Search endpoint. This endpoint will only return POI results which are categorized as specified.
@@ -87,7 +94,8 @@ class SearchApi(BaseApi):
         self,
         *,
         query: str,
-        params: BaseParams | None = None,
+        geometryList: list[Geometry],
+        params: GeometrySearchParams | None = None,
     ) -> SearchResponse:
         """
         The Geometry Search endpoint allows you to perform a free form search inside a single geometry or many of them. The search results that fall inside the geometry/geometries will be returned. The service returns POI results by default. For other result types, the idxSet parameter should be used. To send the geometry you will use a POST or GET request with json as a string value for the geometryList parameter.
@@ -96,7 +104,7 @@ class SearchApi(BaseApi):
         """
 
         reponse = await self.get(
-            endpoint=f"/search/2/geometrySearch/{query}.json",
+            endpoint=f"/search/2/geometrySearch/{query}.json?geometryList={str(geometryList)}",
             params=params,
         )
 
@@ -105,7 +113,9 @@ class SearchApi(BaseApi):
     async def get_nearby_search(
         self,
         *,
-        params: BaseParams | None = None,
+        lat: float,
+        lon: float,
+        params: NearbySearchParams | None = None,
     ) -> SearchResponse:
         """
         If your use case is only retrieving POI (Points of Interest) results around a location, you may use the Nearby Search endpoint. This endpoint will only return POI results. It does not take in a search query parameter.
@@ -114,7 +124,7 @@ class SearchApi(BaseApi):
         """
 
         reponse = await self.get(
-            endpoint="/search/2/nearbySearch/.json",
+            endpoint=f"/search/2/nearbySearch/.json?lat={lat}&lon={lon}",
             params=params,
         )
 
@@ -124,8 +134,9 @@ class SearchApi(BaseApi):
         self,
         *,
         query: str,
-        params: BaseParams | None = None,
-        data: BasePostData,
+        maxDetourTime: int,
+        params: SearchAlongRouteParams | None = None,
+        data: SearchAlongRouteData,
     ) -> SearchResponse:
         """
         The Along Route Search endpoint allows you to perform a fuzzy search for POIs along a specified route. This search is constrained by specifying a detour time-limiting measure. To send the route points you will use a POST request whose body will contain the route parameter in JSON format. The minimum number of route points is 2.
@@ -134,7 +145,7 @@ class SearchApi(BaseApi):
         """
 
         reponse = await self.post(
-            endpoint=f"/search/2/searchAlongRoute/{query}.json",
+            endpoint=f"/search/2/searchAlongRoute/{query}.json?maxDetourTime={maxDetourTime}",
             params=params,
             data=data,
         )
@@ -166,7 +177,7 @@ class SearchApi(BaseApi):
         *,
         geometryList: list[Geometry],
         poiList: list[GeometryPoi],
-        params: BaseParams | None = None,
+        params: BaseParams | None = None,  # No extra params.
     ) -> GeometryFilterResponse:
         """
         The Geometry Search endpoint allows you to perform a free form search inside a single geometry or many of them. The search results that fall inside the geometry/geometries will be returned. The service returns POI results by default. For other result types, the idxSet parameter should be used. To send the geometry you will use a POST or GET request with json as a string value for the geometryList parameter.

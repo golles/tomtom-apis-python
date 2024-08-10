@@ -3,10 +3,28 @@
 import pytest
 
 from tests.const import API_KEY
-from tomtom_api.api import ApiOptions, BaseParams, BasePostData
-from tomtom_api.models import Language, LatLon
+from tomtom_api.api import ApiOptions
+from tomtom_api.models import Language, LatLon, ViewType
 from tomtom_api.places import SearchApi
-from tomtom_api.places.models import Address, Geometry, GeometryFilterData, GeometryPoi, PlaceByIdParams, Poi, PoiCategoriesParams
+from tomtom_api.places.models import (
+    Address,
+    CategorySearchParams,
+    Geometry,
+    GeometryFilterData,
+    GeometryPoi,
+    GeometrySearchParams,
+    NearbySearchParams,
+    PlaceByIdParams,
+    Poi,
+    PoiCategoriesParams,
+    Points,
+    PoiSearchParams,
+    RelatedPoisType,
+    SearchAlongRouteData,
+    SearchAlongRouteParams,
+    SearchParams,
+    SortByType,
+)
 
 
 @pytest.fixture(name="search_api")
@@ -21,21 +39,17 @@ async def fixture_search_api():
 @pytest.mark.parametrize("json_response", ["places/search/get_search.json"], indirect=True)
 async def test_deserialization_get_search(search_api: SearchApi):
     """Test the get_search method."""
-    params = BaseParams().from_dict(
-        {
-            "lat": "37.337",
-            "lon": "-121.89",
-            "categorySet": "7315",
-            "view": "Unified",
-            "relatedPois": "off",
-            "minFuzzyLevel": "1",
-            "maxFuzzyLevel": "2",
-        }
-    )
-
     response = await search_api.get_search(
         query="pizza",
-        params=params,
+        params=SearchParams(
+            lat=37.337,
+            lon=-121.89,
+            categorySet=["7315"],
+            view=ViewType.UNIFIED,
+            relatedPois=RelatedPoisType.OFF,
+            minFuzzyLevel=1,
+            maxFuzzyLevel=2,
+        ),
     )
 
     await search_api.close()
@@ -49,19 +63,14 @@ async def test_deserialization_get_search(search_api: SearchApi):
 @pytest.mark.parametrize("json_response", ["places/search/get_poi_search.json"], indirect=True)
 async def test_deserialization_get_poi_search(search_api: SearchApi):
     """Test the get_poi_search method."""
-    params = BaseParams().from_dict(
-        {
-            "lat": "37.337",
-            "lon": "-121.89",
-            "categorySet": "7315",
-            "view": "Unified",
-            "relatedPois": "off",
-        }
-    )
-
     response = await search_api.get_poi_search(
         query="pizza",
-        params=params,
+        params=PoiSearchParams(
+            lat=37.337,
+            lon=-121.89,
+            view=ViewType.UNIFIED,
+            relatedPois=RelatedPoisType.OFF,
+        ),
     )
 
     await search_api.close()
@@ -75,19 +84,15 @@ async def test_deserialization_get_poi_search(search_api: SearchApi):
 @pytest.mark.parametrize("json_response", ["places/search/get_category_search.json"], indirect=True)
 async def test_deserialization_get_category_search(search_api: SearchApi):
     """Test the get_category_search method."""
-    params = BaseParams().from_dict(
-        {
-            "lat": "37.337",
-            "lon": "-121.89",
-            "categorySet": "7315",
-            "view": "Unified",
-            "relatedPois": "off",
-        }
-    )
-
     response = await search_api.get_category_search(
         query="pizza",
-        params=params,
+        params=CategorySearchParams(
+            lat=37.337,
+            lon=-121.89,
+            categorySet=["7315"],
+            view=ViewType.UNIFIED,
+            relatedPois=RelatedPoisType.OFF,
+        ),
     )
 
     await search_api.close()
@@ -101,18 +106,34 @@ async def test_deserialization_get_category_search(search_api: SearchApi):
 @pytest.mark.parametrize("json_response", ["places/search/get_geometry_search.json"], indirect=True)
 async def test_deserialization_get_geometry_search(search_api: SearchApi):
     """Test the get_geometry_search method."""
-    params = BaseParams().from_dict(
-        {
-            "geometryList": '[{"type":"POLYGON", "vertices":["37.7524152343544, -122.43576049804686", "37.70660472542312, -122.43301391601562", "37.712059855877314, -122.36434936523438", "37.75350561243041, -122.37396240234374"]}, {"type":"CIRCLE", "position":"37.71205, -121.36434", "radius":6000}, {"type":"CIRCLE", "position":"37.31205, -121.36434", "radius":1000}]',
-            "categorySet": "7315",
-            "view": "Unified",
-            "relatedPois": "off",
-        }
-    )
-
     response = await search_api.get_geometry_search(
         query="pizza",
-        params=params,
+        geometryList=[
+            Geometry(
+                type="POLYGON",
+                vertices=[
+                    "37.7524152343544, -122.43576049804686",
+                    "37.70660472542312, -122.43301391601562",
+                    "37.712059855877314, -122.36434936523438",
+                    "37.75350561243041, -122.37396240234374",
+                ],
+            ),
+            Geometry(
+                type="CIRCLE",
+                position="37.71205, -121.36434",
+                radius=6000,
+            ),
+            Geometry(
+                type="CIRCLE",
+                position="37.31205, -121.36434",
+                radius=1000,
+            ),
+        ],
+        params=GeometrySearchParams(
+            categorySet=["7315"],
+            view=ViewType.UNIFIED,
+            relatedPois=RelatedPoisType.OFF,
+        ),
     )
 
     await search_api.close()
@@ -126,17 +147,10 @@ async def test_deserialization_get_geometry_search(search_api: SearchApi):
 @pytest.mark.parametrize("json_response", ["places/search/get_nearby_search.json"], indirect=True)
 async def test_deserialization_get_nearby_search(search_api: SearchApi):
     """Test the get_nearby_search method."""
-    params = BaseParams().from_dict(
-        {
-            "lat": "48.872263",
-            "lon": "2.299541",
-            "radius": "1000",
-            "limit": "100",
-        }
-    )
-
     response = await search_api.get_nearby_search(
-        params=params,
+        lat=48.872263,
+        lon=2.299541,
+        params=NearbySearchParams(radius=1000, limit=100),
     )
 
     await search_api.close()
@@ -150,44 +164,37 @@ async def test_deserialization_get_nearby_search(search_api: SearchApi):
 @pytest.mark.parametrize("json_response", ["places/search/post_search_along_route.json"], indirect=True)
 async def test_deserialization_post_search_along_route(search_api: SearchApi):
     """Test the post_search_along_route method."""
-    params = BaseParams().from_dict(
-        {
-            "maxDetourTime": "600",
-            "categorySet": "7315",
-            "view": "Unified",
-            "sortBy": "detourOffset",
-            "relatedPois": "off",
-        }
-    )
-    data = BasePostData().from_dict(
-        {
-            "route": {
-                "points": [
-                    {"lat": 37.52768, "lon": -122.30082},
-                    {"lat": 37.52952, "lon": -122.29365},
-                    {"lat": 37.52987, "lon": -122.2883},
-                    {"lat": 37.52561, "lon": -122.28219},
-                    {"lat": 37.52091, "lon": -122.27661},
-                    {"lat": 37.52277, "lon": -122.27334},
-                    {"lat": 37.52432, "lon": -122.26833},
-                    {"lat": 37.5139, "lon": -122.25621},
-                    {"lat": 37.49881, "lon": -122.2391},
-                    {"lat": 37.49426, "lon": -122.2262},
-                    {"lat": 37.48792, "lon": -122.20905},
-                    {"lat": 37.48425, "lon": -122.18374},
-                    {"lat": 37.47642, "lon": -122.1683},
-                    {"lat": 37.4686, "lon": -122.15644},
-                    {"lat": 37.46981, "lon": -122.15498},
-                    {"lat": 37.4718, "lon": -122.15149},
-                ]
-            }
-        }
-    )
-
     response = await search_api.post_search_along_route(
         query="pizza",
-        params=params,
-        data=data,
+        maxDetourTime=600,
+        params=SearchAlongRouteParams(
+            categorySet=["7315"],
+            view=ViewType.UNIFIED,
+            sortBy=SortByType.DETOUR_OFFSET,
+            relatedPois=RelatedPoisType.OFF,
+        ),
+        data=SearchAlongRouteData(
+            route=Points(
+                points=[
+                    LatLon(lat=37.52768, lon=-122.30082),
+                    LatLon(lat=37.52952, lon=-122.29365),
+                    LatLon(lat=37.52987, lon=-122.2883),
+                    LatLon(lat=37.52561, lon=-122.28219),
+                    LatLon(lat=37.52091, lon=-122.27661),
+                    LatLon(lat=37.52277, lon=-122.27334),
+                    LatLon(lat=37.52432, lon=-122.26833),
+                    LatLon(lat=37.5139, lon=-122.25621),
+                    LatLon(lat=37.49881, lon=-122.2391),
+                    LatLon(lat=37.49426, lon=-122.2262),
+                    LatLon(lat=37.48792, lon=-122.20905),
+                    LatLon(lat=37.48425, lon=-122.18374),
+                    LatLon(lat=37.47642, lon=-122.1683),
+                    LatLon(lat=37.4686, lon=-122.15644),
+                    LatLon(lat=37.46981, lon=-122.15498),
+                    LatLon(lat=37.4718, lon=-122.15149),
+                ]
+            ),
+        ),
     )
 
     await search_api.close()

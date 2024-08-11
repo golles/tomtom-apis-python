@@ -3,9 +3,9 @@
 import pytest
 
 from tests.const import API_KEY
-from tomtom_api.api import ApiOptions
-from tomtom_api.automotive import ParkingAvailabilityApi
-from tomtom_api.automotive.models import ParkingAvailabilityParams
+from tomtom_apis.api import ApiOptions
+from tomtom_apis.automotive import ParkingAvailabilityApi
+from tomtom_apis.automotive.models import ParkingAvailabilityParams
 
 
 @pytest.fixture(name="parking_availability_api")

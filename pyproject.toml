@@ -1,14 +1,14 @@
 [tool.poetry]
-name = "tomtom-api"
+name = "tomtom-apis"
 version = "0.0.1"
 description = "Asynchronous Python client for the TomTom API"
 authors = ["Sander Gols <developer@golles.nl>"]
 license = "MIT"
 readme = "README.md"
-documentation = "https://github.com/golles/tomtom-api-python"
-homepage = "https://github.com/golles/tomtom-api-python"
-repository = "https://github.com/golles/tomtom-api-python"
-packages = [{ include = "tomtom_api", from = "src" }]
+documentation = "https://github.com/golles/tomtom-apis-python"
+homepage = "https://github.com/golles/tomtom-apis-python"
+repository = "https://github.com/golles/tomtom-apis-python"
+packages = [{ include = "tomtom_apis", from = "src" }]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Framework :: AsyncIO",
@@ -23,7 +23,7 @@ classifiers = [
 ]
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/golles/tomtom-api-python/issues"
+"Bug Tracker" = "https://github.com/golles/tomtom-apis-python/issues"
 
 [tool.poetry.dependencies]
 aiohttp = "^3.10.0"
@@ -45,7 +45,7 @@ shellcheck-py = "^0.10.0.1"
 yamllint = "^1.35.1"
 
 [tool.coverage.run]
-source = ["tomtom_api"]
+source = ["tomtom_apis"]
 
 [tool.mypy]
 python_version = "3.12"
@@ -76,7 +76,7 @@ line-length = 150
 target-version = "py312"
 
 [tool.ruff.lint.isort]
-known-first-party = ["tomtom_api"]
+known-first-party = ["tomtom_apis"]
 
 [build-system]
 requires = ["poetry-core"]

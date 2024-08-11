@@ -3,10 +3,10 @@
 import pytest
 
 from tests.const import API_KEY
-from tomtom_api.api import ApiOptions
-from tomtom_api.models import LatLon, ViewType
-from tomtom_api.places import ReverseGeocodingApi
-from tomtom_api.places.models import CrossStreetLookupParams, ReverseGeocodeParams
+from tomtom_apis.api import ApiOptions
+from tomtom_apis.models import LatLon, ViewType
+from tomtom_apis.places import ReverseGeocodingApi
+from tomtom_apis.places.models import CrossStreetLookupParams, ReverseGeocodeParams
 
 
 @pytest.fixture(name="reverse_geocoding_api")

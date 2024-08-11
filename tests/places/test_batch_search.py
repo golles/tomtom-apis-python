@@ -4,10 +4,10 @@ import pytest
 from aresponses import ResponsesMockServer
 
 from tests.const import API_KEY
-from tomtom_api.api import ApiOptions
-from tomtom_api.models import LatLon
-from tomtom_api.places import BatchSearchApi
-from tomtom_api.places.models import AsynchronousBatchDownloadParams, BatchItem, BatchPostData, Geometry, Route
+from tomtom_apis.api import ApiOptions
+from tomtom_apis.models import LatLon
+from tomtom_apis.places import BatchSearchApi
+from tomtom_apis.places.models import AsynchronousBatchDownloadParams, BatchItem, BatchPostData, Geometry, Route
 
 
 @pytest.fixture(name="batch_search_api")

@@ -2,7 +2,7 @@
 
 import pytest
 
-from tomtom_api.tracking_logistics import GeofencingApi
+from tomtom_apis.tracking_logistics import GeofencingApi
 
 
 def test_api_not_implemented():

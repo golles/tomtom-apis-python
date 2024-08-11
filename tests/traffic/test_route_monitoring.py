@@ -2,7 +2,7 @@
 
 import pytest
 
-from tomtom_api.traffic import RouteMonitoringApi
+from tomtom_apis.traffic import RouteMonitoringApi
 
 
 def test_api_not_implemented():

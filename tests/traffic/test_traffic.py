@@ -3,10 +3,10 @@
 import pytest
 
 from tests.const import API_KEY
-from tomtom_api.api import ApiOptions
-from tomtom_api.models import Language, TileSizeType
-from tomtom_api.traffic import TrafficApi
-from tomtom_api.traffic.models import BoudingBoxParam, IncidentStyleType, RasterIncidentTilesParams, VectorIncidentTilesParams
+from tomtom_apis.api import ApiOptions
+from tomtom_apis.models import Language, TileSizeType
+from tomtom_apis.traffic import TrafficApi
+from tomtom_apis.traffic.models import BoudingBoxParam, IncidentStyleType, RasterIncidentTilesParams, VectorIncidentTilesParams
 
 
 @pytest.fixture(name="traffic_display")

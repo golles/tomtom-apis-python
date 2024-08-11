@@ -2,7 +2,7 @@
 
 import pytest
 
-from tomtom_api.tracking_logistics import NotificationsApi
+from tomtom_apis.tracking_logistics import NotificationsApi
 
 
 def test_api_not_implemented():

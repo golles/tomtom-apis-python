@@ -1,4 +1,4 @@
-# TomTom API Python
+# TomTom APIs Python
 
 Asynchronous Python client for the TomTom API
 
@@ -65,7 +65,7 @@ This section provides an overview of the APIs implemented by the client and thei
 You can install this package via your favorite package manager. For example, using pip:
 
 ```sh
-pip install tomtom-api
+pip install tomtom-apis
 ```
 
 ## Examples

@@ -3,10 +3,10 @@
 import pytest
 
 from tests.const import API_KEY
-from tomtom_api.api import ApiOptions
-from tomtom_api.models import Language, LatLon, ViewType
-from tomtom_api.places import SearchApi
-from tomtom_api.places.models import (
+from tomtom_apis.api import ApiOptions
+from tomtom_apis.models import Language, LatLon, ViewType
+from tomtom_apis.places import SearchApi
+from tomtom_apis.places.models import (
     Address,
     CategorySearchParams,
     Geometry,

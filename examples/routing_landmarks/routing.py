@@ -8,10 +8,10 @@ import os
 
 from attr import dataclass
 
-from tomtom_api import ApiOptions
-from tomtom_api.models import LatLon, LatLonList
-from tomtom_api.routing import RoutingApi
-from tomtom_api.routing.models import CalculateRouteParams
+from tomtom_apis import ApiOptions
+from tomtom_apis.models import LatLon, LatLonList
+from tomtom_apis.routing import RoutingApi
+from tomtom_apis.routing.models import CalculateRouteParams
 
 
 @dataclass(kw_only=True)

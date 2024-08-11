@@ -3,7 +3,7 @@
 from dataclasses import dataclass
 from enum import Enum
 
-from tomtom_api.api import BaseParams
+from tomtom_apis.api import BaseParams
 
 
 class Choice(Enum):

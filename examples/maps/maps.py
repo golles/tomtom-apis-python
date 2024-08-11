@@ -5,8 +5,8 @@
 import asyncio
 import os
 
-from tomtom_api import ApiOptions
-from tomtom_api.maps.map_display import MapDisplayApi
+from tomtom_apis import ApiOptions
+from tomtom_apis.maps.map_display import MapDisplayApi
 
 
 async def map_copyrights(api_key: str) -> None:

@@ -5,10 +5,10 @@ from datetime import datetime
 import pytest
 
 from tests.const import API_KEY
-from tomtom_api.api import ApiOptions
-from tomtom_api.models import LatLonList
-from tomtom_api.routing import RoutingApi
-from tomtom_api.routing.models import CalculateReachableRangePostData, CalculateReachableRouteParams, CalculateRouteParams, CalculateRoutePostData
+from tomtom_apis.api import ApiOptions
+from tomtom_apis.models import LatLonList
+from tomtom_apis.routing import RoutingApi
+from tomtom_apis.routing.models import CalculateReachableRangePostData, CalculateReachableRouteParams, CalculateRouteParams, CalculateRoutePostData
 
 from ..const import LOC_AMSTERDAM, LOC_ROTTERDAM
 

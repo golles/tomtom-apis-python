@@ -73,7 +73,7 @@ log_cli_level = "DEBUG"
 
 [tool.ruff]
 line-length = 150
-target-version = "py311"
+target-version = "py312"
 
 [tool.ruff.lint.isort]
 known-first-party = ["tomtom_api"]

@@ -1,8 +1,7 @@
 """Routing API"""
 
-from tomtom_api.api import BaseApi
-from tomtom_api.models import LatLon, LatLonList
-
+from ..api import BaseApi
+from ..models import LatLon, LatLonList
 from .models import (
     CalculatedReachableRangeResponse,
     CalculatedRouteResponse,

@@ -18,8 +18,7 @@ from mashumaro import DataClassDictMixin
 from mashumaro.config import BaseConfig
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
-from tomtom_api.const import TRACKING_ID
-
+from .const import TRACKING_ID
 from .exceptions import TomTomAPIClientError, TomTomAPIConnectionError, TomTomAPIError, TomTomAPIRequestTimeout, TomTomAPIServerError
 from .utils import serialize_bool, serialize_list
 

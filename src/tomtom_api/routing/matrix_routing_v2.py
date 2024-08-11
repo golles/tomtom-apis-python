@@ -1,6 +1,6 @@
 """Matrix Routing V2 API"""
 
-from tomtom_api.api import BaseApi
+from ..api import BaseApi
 
 
 class MatrixRoutingApiV2(BaseApi):

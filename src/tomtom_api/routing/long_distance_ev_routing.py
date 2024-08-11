@@ -1,8 +1,7 @@
 """Long Distance EV Routing API"""
 
-from tomtom_api.api import BaseApi
-from tomtom_api.models import LatLonList
-
+from ..api import BaseApi
+from ..models import LatLonList
 from .models import CalculatedLongDistanceEVRouteResponse, CalculateLongDistanceEVRouteParams, CalculateLongDistanceEVRoutePostData
 
 

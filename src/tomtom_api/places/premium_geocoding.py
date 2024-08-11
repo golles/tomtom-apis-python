@@ -1,7 +1,6 @@
 """Premium Geocode API"""
 
-from tomtom_api.api import BaseApi
-
+from ..api import BaseApi
 from .models import PremiumGeocodeParams, SearchResponse
 
 

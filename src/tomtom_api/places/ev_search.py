@@ -1,7 +1,6 @@
 """EV Search API"""
 
-from tomtom_api.api import BaseApi
-
+from ..api import BaseApi
 from .models import EvSearchByIdParams, EvSearchNearbyParams, SearchResponse
 
 

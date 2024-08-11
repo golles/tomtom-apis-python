@@ -1,8 +1,8 @@
 """Search API"""
 
-from tomtom_api.api import BaseApi, BaseParams
-from tomtom_api.models import Language
-from tomtom_api.places.models import (
+from ..api import BaseApi, BaseParams
+from ..models import Language
+from ..places.models import (
     AdditionalDataParams,
     AdditionalDataResponse,
     AutocompleteParams,

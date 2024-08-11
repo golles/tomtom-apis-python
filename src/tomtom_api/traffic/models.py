@@ -5,8 +5,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
 
-from tomtom_api.api import BaseParams
-from tomtom_api.models import Language, TileSizeType
+from ..api import BaseParams
+from ..models import Language, TileSizeType
 
 
 @dataclass(kw_only=True)

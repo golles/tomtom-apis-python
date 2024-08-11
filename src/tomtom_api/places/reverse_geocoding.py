@@ -1,8 +1,8 @@
 """Reverse Geocode API"""
 
-from tomtom_api.api import BaseApi
-from tomtom_api.models import LatLon
-from tomtom_api.places.models import CrossStreetLookupParams, ReverseGeocodeParams, ReverseGeocodeResponse
+from ..api import BaseApi
+from ..models import LatLon
+from ..places.models import CrossStreetLookupParams, ReverseGeocodeParams, ReverseGeocodeResponse
 
 
 class ReverseGeocodingApi(BaseApi):

@@ -1,7 +1,7 @@
 """Parking Availability API"""
 
-from tomtom_api.api import BaseApi
-from tomtom_api.automotive.models import ParkingAvailabilityParams, ParkingAvailabilityResponse
+from ..api import BaseApi
+from ..automotive.models import ParkingAvailabilityParams, ParkingAvailabilityResponse
 
 
 class ParkingAvailabilityApi(BaseApi):

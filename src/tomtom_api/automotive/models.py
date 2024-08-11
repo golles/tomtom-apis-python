@@ -7,7 +7,7 @@ from datetime import datetime
 
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
-from tomtom_api.api import BaseParams
+from ..api import BaseParams
 
 
 @dataclass(kw_only=True)

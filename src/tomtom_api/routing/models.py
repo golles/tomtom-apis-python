@@ -7,8 +7,8 @@ from datetime import datetime
 
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
-from tomtom_api.api import BaseParams, BasePostData
-from tomtom_api.models import Language, LatitudeLongitude
+from ..api import BaseParams, BasePostData
+from ..models import Language, LatitudeLongitude
 
 
 @dataclass(kw_only=True)

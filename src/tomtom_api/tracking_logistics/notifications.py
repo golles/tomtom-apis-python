@@ -1,6 +1,6 @@
 """Notifications API"""
 
-from tomtom_api.api import BaseApi
+from ..api import BaseApi
 
 
 class NotificationsApi(BaseApi):

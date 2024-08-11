@@ -1,7 +1,6 @@
 """Traffic API"""
 
-from tomtom_api.api import BaseApi, BaseParams, BasePostData
-
+from ..api import BaseApi, BaseParams, BasePostData
 from .models import BBoxParam, BoudingBoxParam, IncidentStyleType, RasterIncidentTilesParams, VectorIncidentTilesParams
 
 

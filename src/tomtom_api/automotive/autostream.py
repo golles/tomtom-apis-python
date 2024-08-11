@@ -1,6 +1,6 @@
 """Auto Stream API"""
 
-from tomtom_api.api import BaseApi
+from ..api import BaseApi
 
 
 class AutoStreamApi(BaseApi):

@@ -1,7 +1,7 @@
 """Batch Search API"""
 
-from tomtom_api.api import BaseApi, BaseParams
-from tomtom_api.places.models import (
+from ..api import BaseApi, BaseParams
+from ..places.models import (
     AsynchronousBatchDownloadParams,
     AsynchronousSynchronousBatchParams,
     BatchPostData,

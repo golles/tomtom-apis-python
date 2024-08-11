@@ -11,8 +11,8 @@ from geojson import Feature, FeatureCollection, GeometryCollection, LineString, 
 from mashumaro import field_options
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
-from tomtom_api.api import BaseParams, BasePostData
-from tomtom_api.models import Language, LatLon, ViewType
+from ..api import BaseParams, BasePostData
+from ..models import Language, LatLon, ViewType
 
 
 class AccessType(Enum):

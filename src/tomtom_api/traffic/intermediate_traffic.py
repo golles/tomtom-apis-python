@@ -1,6 +1,6 @@
 """Intermediate Traffic API"""
 
-from tomtom_api.api import BaseApi
+from ..api import BaseApi
 
 
 class IntermediateTrafficApi(BaseApi):

@@ -2,7 +2,7 @@
 Update test fixtures.
 
 This script downloads and replaces fixtures with the latest content from the real API.
-The idea is to do this reguraely to keep the fixtures up-to-date and detect breaking changes.
+The idea is to do this regularly to keep the fixtures up-to-date and detect breaking changes.
 """
 
 import asyncio

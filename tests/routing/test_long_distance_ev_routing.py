@@ -5,10 +5,10 @@ from datetime import datetime
 import pytest
 
 from tests.const import API_KEY, LOC_AMSTERDAM
-from tomtom_api.api import ApiOptions
-from tomtom_api.models import LatLonList
-from tomtom_api.routing import LongDistanceEVRoutingApi
-from tomtom_api.routing.models import (
+from tomtom_apis.api import ApiOptions
+from tomtom_apis.models import LatLonList
+from tomtom_apis.routing import LongDistanceEVRoutingApi
+from tomtom_apis.routing.models import (
     CalculateLongDistanceEVRouteParams,
     CalculateLongDistanceEVRoutePostData,
     ChargingConnection,

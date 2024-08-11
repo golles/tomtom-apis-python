@@ -1,6 +1,6 @@
 """Constants for testing"""
 
-from tomtom_api.models import LatLon
+from tomtom_apis.models import LatLon
 
 API_KEY: str = "abcdef123456"
 DEFAULT_HEADERS: dict[str, str] = {"Content-Type": "application/json", "User-Agent": "TomTomApiPython/0.0.0"}

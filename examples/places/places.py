@@ -5,10 +5,10 @@
 import asyncio
 import os
 
-from tomtom_api import ApiOptions
-from tomtom_api.models import Language, LatLon
-from tomtom_api.places import GeocodingApi, ReverseGeocodingApi, SearchApi
-from tomtom_api.places.models import NearbySearchParams, PlaceByIdParams, ReverseGeocodeParams
+from tomtom_apis import ApiOptions
+from tomtom_apis.models import Language, LatLon
+from tomtom_apis.places import GeocodingApi, ReverseGeocodingApi, SearchApi
+from tomtom_apis.places.models import NearbySearchParams, PlaceByIdParams, ReverseGeocodeParams
 
 
 async def get_place_by_id(api_key: str) -> None:

@@ -3,9 +3,9 @@
 import pytest
 
 from tests.const import API_KEY
-from tomtom_api.api import ApiOptions
-from tomtom_api.places import GeocodingApi
-from tomtom_api.places.models import ResultType, StructuredGeocodeParams
+from tomtom_apis.api import ApiOptions
+from tomtom_apis.places import GeocodingApi
+from tomtom_apis.places.models import ResultType, StructuredGeocodeParams
 
 
 @pytest.fixture(name="geocoding_api")

@@ -3,9 +3,9 @@
 import pytest
 
 from tests.const import API_KEY
-from tomtom_api.api import ApiOptions
-from tomtom_api.maps import MapDisplayApi
-from tomtom_api.maps.models import (
+from tomtom_apis.api import ApiOptions
+from tomtom_apis.maps import MapDisplayApi
+from tomtom_apis.maps.models import (
     AdrCategoryType,
     DangerousGoodsLoadType,
     EmissionClassType,
@@ -22,7 +22,7 @@ from tomtom_api.maps.models import (
     TravelModeType,
     ViewType,
 )
-from tomtom_api.models import Language
+from tomtom_apis.models import Language
 
 
 @pytest.fixture(name="map_display_api")

@@ -2,7 +2,7 @@
 
 import pytest
 
-from tomtom_api.automotive import AutoStreamApi
+from tomtom_apis.automotive import AutoStreamApi
 
 
 def test_api_not_implemented():

@@ -5,12 +5,12 @@
 import asyncio
 import os
 
-from tomtom_api import ApiOptions
-from tomtom_api.maps import MapDisplayApi
-from tomtom_api.maps.models import LayerType, StyleType, TileFormatType
-from tomtom_api.models import MapTile
-from tomtom_api.traffic import TrafficApi
-from tomtom_api.traffic.models import IncidentStyleType
+from tomtom_apis import ApiOptions
+from tomtom_apis.maps import MapDisplayApi
+from tomtom_apis.maps.models import LayerType, StyleType, TileFormatType
+from tomtom_apis.models import MapTile
+from tomtom_apis.traffic import TrafficApi
+from tomtom_apis.traffic.models import IncidentStyleType
 
 SCRIPT_DIR = os.path.dirname(__file__)
 TILES: list[MapTile] = [  # a 3x3 grid of London at zoom level 10.

@@ -2,7 +2,7 @@
 
 import pytest
 
-from tomtom_api.routing import MatrixRoutingApiV2
+from tomtom_apis.routing import MatrixRoutingApiV2
 
 
 def test_api_not_implemented():

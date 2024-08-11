@@ -10,9 +10,9 @@ import pytest
 from aiohttp import ClientConnectionError, ClientError, ClientResponse, ClientResponseError, ClientSession
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
-from tomtom_api.api import ApiOptions, BaseApi, BasePostData, Response
-from tomtom_api.const import TRACKING_ID
-from tomtom_api.exceptions import TomTomAPIClientError, TomTomAPIConnectionError, TomTomAPIError, TomTomAPIRequestTimeout, TomTomAPIServerError
+from tomtom_apis.api import ApiOptions, BaseApi, BasePostData, Response
+from tomtom_apis.const import TRACKING_ID
+from tomtom_apis.exceptions import TomTomAPIClientError, TomTomAPIConnectionError, TomTomAPIError, TomTomAPIRequestTimeout, TomTomAPIServerError
 
 from .const import API_KEY
 

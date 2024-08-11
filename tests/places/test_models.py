@@ -1,6 +1,6 @@
 """Test for places models"""
 
-from tomtom_api.places.models import Connector
+from tomtom_apis.places.models import Connector
 
 
 def test_connector_post_deserialize():

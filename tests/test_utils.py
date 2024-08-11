@@ -5,8 +5,8 @@ from enum import Enum
 
 import pytest
 
-from tomtom_api.models import LatLon, MapTile
-from tomtom_api.utils import lat_lon_to_tile_zxy, serialize_bool, serialize_list, serialize_list_brackets, tile_zxy_to_lat_lon
+from tomtom_apis.models import LatLon, MapTile
+from tomtom_apis.utils import lat_lon_to_tile_zxy, serialize_bool, serialize_list, serialize_list_brackets, tile_zxy_to_lat_lon
 
 
 def test_lat_lon_to_tile_zxy_valid():

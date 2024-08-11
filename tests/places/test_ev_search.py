@@ -3,9 +3,9 @@
 import pytest
 
 from tests.const import API_KEY
-from tomtom_api.api import ApiOptions
-from tomtom_api.places import EVSearchApi
-from tomtom_api.places.models import EvSearchByIdParams, EvSearchNearbyParams
+from tomtom_apis.api import ApiOptions
+from tomtom_apis.places import EVSearchApi
+from tomtom_apis.places.models import EvSearchByIdParams, EvSearchNearbyParams
 
 
 @pytest.fixture(name="ev_search_api")

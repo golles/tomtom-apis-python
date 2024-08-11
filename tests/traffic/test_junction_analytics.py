@@ -2,7 +2,7 @@
 
 import pytest
 
-from tomtom_api.traffic import JunctionAnalyticsApi
+from tomtom_apis.traffic import JunctionAnalyticsApi
 
 
 def test_api_not_implemented():

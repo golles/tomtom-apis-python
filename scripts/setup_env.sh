@@ -57,6 +57,9 @@ poetry install
 npm install -g prettier
 
 if [ "$CI" != "true" ]; then
+    # Trust the repo
+    git config --global --add safe.directory /workspaces/tomtom-api-python
+
     # Add the pre-commit hook if not on CI
     poetry run pre-commit install
 

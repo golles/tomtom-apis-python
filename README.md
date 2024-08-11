@@ -1,6 +1,6 @@
 # TomTom APIs Python
 
-Asynchronous Python client for the TomTom API
+Asynchronous Python client for the TomTom APIs
 
 ## API Coverage
 

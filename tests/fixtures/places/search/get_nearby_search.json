@@ -1,7 +1,7 @@
 {
   "summary": {
     "queryType": "NEARBY",
-    "queryTime": 54,
+    "queryTime": 57,
     "numResults": 10,
     "offset": 0,
     "totalResults": 100,
@@ -163,8 +163,8 @@
           {
             "code": "SHOP",
             "names": [
-              { "nameLocale": "en-US", "name": "shop" },
-              { "nameLocale": "en-US", "name": "real estate agents" }
+              { "nameLocale": "en-US", "name": "real estate agents" },
+              { "nameLocale": "en-US", "name": "shop" }
             ]
           }
         ]
@@ -210,8 +210,8 @@
           {
             "code": "SHOP",
             "names": [
-              { "nameLocale": "en-US", "name": "shop" },
-              { "nameLocale": "en-US", "name": "real estate agents" }
+              { "nameLocale": "en-US", "name": "real estate agents" },
+              { "nameLocale": "en-US", "name": "shop" }
             ]
           }
         ]
@@ -299,8 +299,8 @@
           {
             "code": "SHOP",
             "names": [
-              { "nameLocale": "en-US", "name": "shop" },
-              { "nameLocale": "en-US", "name": "real estate agents" }
+              { "nameLocale": "en-US", "name": "real estate agents" },
+              { "nameLocale": "en-US", "name": "shop" }
             ]
           }
         ]
@@ -345,8 +345,8 @@
           {
             "code": "SHOP",
             "names": [
-              { "nameLocale": "en-US", "name": "shop" },
-              { "nameLocale": "en-US", "name": "real estate agents" }
+              { "nameLocale": "en-US", "name": "real estate agents" },
+              { "nameLocale": "en-US", "name": "shop" }
             ]
           }
         ]

@@ -80,6 +80,34 @@
       },
       {
         "method": "GET",
+        "fixture": "places/search/post_geometry_search.json",
+        "url": "search/2/geometrySearch/pizza.json?categorySet=7315&view=Unified&relatedPois=off&key={{TT_KEY}}",
+        "data": {
+          "geometryList": [
+            {
+              "type": "POLYGON",
+              "vertices": [
+                "37.7524152343544,-122.43576049804686",
+                "37.70660472542312,-122.43301391601562",
+                "37.712059855877314,-122.36434936523438",
+                "37.75350561243041,-122.37396240234374"
+              ]
+            },
+            {
+              "position": "37.71205,-121.36434",
+              "radius": 6000,
+              "type": "CIRCLE"
+            },
+            {
+              "position": "37.31205,-121.36434",
+              "radius": 1000,
+              "type": "CIRCLE"
+            }
+          ]
+        }
+      },
+      {
+        "method": "GET",
         "fixture": "places/search/get_nearby_search.json",
         "url": "search/2/nearbySearch/.json?lat=48.872263&lon=2.299541&radius=1000&key={{TT_KEY}}&limit=10"
       },

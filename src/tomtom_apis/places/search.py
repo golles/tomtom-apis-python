@@ -13,6 +13,7 @@ from ..places.models import (
     GeometryFilterResponse,
     GeometryPoi,
     GeometrySearchParams,
+    GeometrySearchPostData,
     NearbySearchParams,
     PlaceByIdParams,
     PlaceByIdResponse,
@@ -106,6 +107,27 @@ class SearchApi(BaseApi):
         reponse = await self.get(
             endpoint=f"/search/2/geometrySearch/{query}.json?geometryList={str(geometryList)}",
             params=params,
+        )
+
+        return await reponse.deserialize(SearchResponse)
+
+    async def post_geometry_search(
+        self,
+        *,
+        query: str,
+        params: GeometrySearchParams | None = None,
+        data: GeometrySearchPostData,
+    ) -> SearchResponse:
+        """
+        The Geometry Search endpoint allows you to perform a free form search inside a single geometry or many of them. The search results that fall inside the geometry/geometries will be returned. The service returns POI results by default. For other result types, the idxSet parameter should be used. To send the geometry you will use a POST or GET request with json as a string value for the geometryList parameter.
+
+        See: https://developer.tomtom.com/search-api/documentation/search-service/geometry-search
+        """
+
+        reponse = await self.post(
+            endpoint=f"/search/2/geometrySearch/{query}.json",
+            params=params,
+            data=data,
         )
 
         return await reponse.deserialize(SearchResponse)

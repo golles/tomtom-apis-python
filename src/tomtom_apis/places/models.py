@@ -602,6 +602,14 @@ class GeometrySearchParams(BaseParams):
 
 
 @dataclass(kw_only=True)
+class GeometrySearchPostData(BasePostData):
+    """Data for the post geometry search API"""
+
+    # pylint: disable=invalid-name
+    geometryList: list[Geometry]
+
+
+@dataclass(kw_only=True)
 class Id(DataClassORJSONMixin):
     """Represents an Id"""
 

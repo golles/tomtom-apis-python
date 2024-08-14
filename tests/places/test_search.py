@@ -13,6 +13,7 @@ from tomtom_apis.places.models import (
     GeometryFilterData,
     GeometryPoi,
     GeometrySearchParams,
+    GeometrySearchPostData,
     NearbySearchParams,
     PlaceByIdParams,
     Poi,
@@ -133,6 +134,49 @@ async def test_deserialization_get_geometry_search(search_api: SearchApi):
             categorySet=["7315"],
             view=ViewType.UNIFIED,
             relatedPois=RelatedPoisType.OFF,
+        ),
+    )
+
+    await search_api.close()
+
+    assert response
+    assert response.results
+    assert len(response.results) > 5
+
+
+@pytest.mark.usefixtures("json_response")
+@pytest.mark.parametrize("json_response", ["places/search/post_geometry_search.json"], indirect=True)
+async def test_deserialization_post_geometry_search(search_api: SearchApi):
+    """Test the post_geometry_search method"""
+    response = await search_api.post_geometry_search(
+        query="pizza",
+        params=GeometrySearchParams(
+            categorySet=["7315"],
+            view=ViewType.UNIFIED,
+            relatedPois=RelatedPoisType.OFF,
+        ),
+        data=GeometrySearchPostData(
+            geometryList=[
+                Geometry(
+                    type="POLYGON",
+                    vertices=[
+                        "37.7524152343544, -122.43576049804686",
+                        "37.70660472542312, -122.43301391601562",
+                        "37.712059855877314, -122.36434936523438",
+                        "37.75350561243041, -122.37396240234374",
+                    ],
+                ),
+                Geometry(
+                    type="CIRCLE",
+                    position="37.71205, -121.36434",
+                    radius=6000,
+                ),
+                Geometry(
+                    type="CIRCLE",
+                    position="37.31205, -121.36434",
+                    radius=1000,
+                ),
+            ]
         ),
     )
 

@@ -18,7 +18,7 @@ from mashumaro import DataClassDictMixin
 from mashumaro.config import BaseConfig
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
-from .const import TRACKING_ID
+from .const import TOMTOM_HEADER_PREFIX, TRACKING_ID_HEADER
 from .exceptions import TomTomAPIClientError, TomTomAPIConnectionError, TomTomAPIError, TomTomAPIRequestTimeout, TomTomAPIServerError
 from .utils import serialize_bool, serialize_list
 
@@ -57,7 +57,7 @@ class BaseParams(DataClassDictMixin):
         }
 
 
-@dataclass
+@dataclass(kw_only=True)
 class BasePostData(DataClassDictMixin):
     """Base class for any post data class"""
 
@@ -68,7 +68,7 @@ class Response:
     T = TypeVar("T", bound=DataClassORJSONMixin)
 
     def __init__(self, response: ClientResponse):
-        self.response = response
+        self._response = response
         self.headers: dict[str, str] = dict(response.headers)
         self.status = response.status
 
@@ -76,7 +76,7 @@ class Response:
         """Deserialize the response using the provided model"""
         logger.info("Deserializing response to %s", model)
         try:
-            text = await self.response.text()
+            text = await self._response.text()
             return model.from_json(text)
         except Exception as e:
             logger.error("Failed to deserialize response: %s", e)
@@ -86,7 +86,7 @@ class Response:
         """Deserialize the response to a dictionary"""
         logger.info("Deserializing response to dictionary")
         try:
-            text = await self.response.text()
+            text = await self._response.text()
             return orjson.loads(text)  # pylint: disable=maybe-no-member
         except orjson.JSONDecodeError as e:  # pylint: disable=maybe-no-member
             logger.error("Failed to decode JSON response: %s", e)
@@ -95,12 +95,12 @@ class Response:
     async def text(self) -> str:
         """Return the response as text"""
         logger.info("Returning response as text")
-        return await self.response.text()
+        return await self._response.text()
 
     async def bytes(self) -> bytes:
         """Return the response as bytes"""
         logger.info("Returning response as bytes")
-        return await self.response.read()
+        return await self._response.read()
 
 
 @dataclass(kw_only=True)
@@ -168,17 +168,18 @@ class BaseApi:
         *,
         params: BaseParams | None = None,
         headers: dict[str, str] | None = None,
-        data: dict | None = None,
+        data: BasePostData | None = None,
     ) -> Response:
         """Make a request to the TomTom API"""
         request_params = {**self._default_params, **(params.to_dict() if params else {})}
         request_headers = {**self._default_headers, **(headers if headers else {})}
+        request_data = data.to_dict() if data else None
 
         if self.options.gzip_compression:
             request_headers[ACCEPT_ENCODING] = "gzip"
         if self.options.tracking_id:
             tracking_id = str(uuid.uuid4())
-            request_headers[TRACKING_ID] = tracking_id
+            request_headers[TRACKING_ID_HEADER] = tracking_id
         else:
             tracking_id = "not tracked"
 
@@ -190,15 +191,15 @@ class BaseApi:
                     method,
                     endpoint,
                     params=request_params,
-                    json=data,
+                    json=request_data,
                     headers=request_headers,
                 )
 
                 logger.info("%s %s returns: %s", method, endpoint, response.status)
 
-                # Log headers starting with 'x-tomtom' and the tracking id
+                # Log TomTom and the tracking id headers
                 for header, value in response.headers.items():
-                    if header.lower().startswith("x-tomtom") or header.lower() == TRACKING_ID.lower():
+                    if header.lower().startswith(TOMTOM_HEADER_PREFIX) or header.lower() == TRACKING_ID_HEADER.lower():
                         logger.info("Response header %s: %s", header, value)
 
                 response.raise_for_status()
@@ -232,7 +233,7 @@ class BaseApi:
         endpoint: str,
         *,
         params: BaseParams | None = None,
-        headers: dict | None = None,
+        headers: dict[str, str] | None = None,
     ) -> Response:
         """Make a DELETE request"""
         return await self._request(
@@ -247,7 +248,7 @@ class BaseApi:
         endpoint: str,
         *,
         params: BaseParams | None = None,
-        headers: dict | None = None,
+        headers: dict[str, str] | None = None,
     ) -> Response:
         """Make a GET request"""
         return await self._request(
@@ -262,15 +263,15 @@ class BaseApi:
         endpoint: str,
         *,
         params: BaseParams | None = None,
-        headers: dict | None = None,
-        data: BasePostData | None = None,
+        headers: dict[str, str] | None = None,
+        data: BasePostData,
     ) -> Response:
         """Make a POST request"""
         return await self._request(
             "POST",
             endpoint,
             params=params,
-            data=(data.to_dict() if data else None),
+            data=data,
             headers=headers,
         )
 
@@ -279,15 +280,15 @@ class BaseApi:
         endpoint: str,
         *,
         params: BaseParams | None = None,
-        headers: dict | None = None,
-        data: BasePostData | None = None,
+        headers: dict[str, str] | None = None,
+        data: BasePostData,
     ) -> Response:
         """Make a PUT request"""
         return await self._request(
             "PUT",
             endpoint,
             params=params,
-            data=(data.to_dict() if data else None),
+            data=data,
             headers=headers,
         )
 

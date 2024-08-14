@@ -11,7 +11,7 @@ from aiohttp import ClientConnectionError, ClientError, ClientResponse, ClientRe
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
 from tomtom_apis.api import ApiOptions, BaseApi, BasePostData, Response
-from tomtom_apis.const import TRACKING_ID
+from tomtom_apis.const import TRACKING_ID_HEADER
 from tomtom_apis.exceptions import TomTomAPIClientError, TomTomAPIConnectionError, TomTomAPIError, TomTomAPIRequestTimeout, TomTomAPIServerError
 
 from .const import API_KEY
@@ -265,6 +265,6 @@ async def test_tracking_id(base_api, mock_session):
         endpoint = "/test/endpoint"
         response = await base_api.get(endpoint)
 
-        assert mock_session.request.call_args[1]["headers"][TRACKING_ID] == "mock-uuid"
+        assert mock_session.request.call_args[1]["headers"][TRACKING_ID_HEADER] == "mock-uuid"
         assert isinstance(response, Response)
         assert response.status == 200

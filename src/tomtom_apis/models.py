@@ -71,7 +71,7 @@ class Language(Enum):
     VI_VN = "vi-VN"  # Vietnamese
 
 
-@dataclass
+@dataclass(kw_only=True)
 class LatLon(DataClassORJSONMixin):
     """
     Point location with abbreviated names.
@@ -94,7 +94,7 @@ class LatLon(DataClassORJSONMixin):
         return f"{self.lat},{self.lon}"
 
 
-@dataclass
+@dataclass(kw_only=True)
 class LatLonList(DataClassORJSONMixin):
     """
     Dataclass to handle a list of LatLon objects.
@@ -115,7 +115,7 @@ class LatLonList(DataClassORJSONMixin):
         return ":".join([loc.to_comma_seperate() for loc in self.locations])
 
 
-@dataclass
+@dataclass(kw_only=True)
 class LatitudeLongitude(DataClassORJSONMixin):
     """
     Point location with full names.

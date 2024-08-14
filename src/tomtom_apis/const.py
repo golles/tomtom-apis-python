@@ -2,4 +2,5 @@
 
 from typing import Final
 
-TRACKING_ID: Final[str] = "Tracking-ID"
+TRACKING_ID_HEADER: Final[str] = "Tracking-ID"
+TOMTOM_HEADER_PREFIX: Final[str] = "x-tomtom"

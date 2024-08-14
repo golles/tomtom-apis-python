@@ -1,5 +1,10 @@
 [
   {
+    "api": "automotive",
+    "fixtures": []
+  },
+
+  {
     "api": "maps",
     "fixtures": [
       {
@@ -24,16 +29,6 @@
       },
       {
         "method": "GET",
-        "fixture": "maps/get_map_copyrights.txt",
-        "url": "map/2/copyrights?key={{TT_KEY}}"
-      },
-      {
-        "method": "GET",
-        "fixture": "maps/get_map_service_copyrights.json",
-        "url": "map/2/copyrights/caption.json?key={{TT_KEY}}"
-      },
-      {
-        "method": "GET",
         "fixture": "maps/get_tile_v1.pbf",
         "url": "map/1/tile/basic/main/0/0/0.pbf?view=Unified&language=NGT&key={{TT_KEY}}"
       },
@@ -41,6 +36,16 @@
         "method": "GET",
         "fixture": "maps/get_tile_v2.pbf",
         "url": "map/2/tile/basic/0/0/0.pbf?view=Unified&include=%5Broad_restrictions%5D&vehicleWeight=2000&vehicleAxleWeight=1000&numberOfAxles=2&vehicleLength=2.5&vehicleWidth=2.5&vehicleHeight=2.5&generalLoadType=%5BGeneral_Hazardous_Materials%5D&dangerousGoodsLoadType=%5BGases%2CExplosives%5D&adrCategory=B&commercialVehicle=true&travelMode=Taxi&emissionClass=%5BEmissionClass5%5D&engineType=%5BDiesel%5D&travelModeProfile=0%2C1500%2C%2C%2C5.5%2C%2C2.2%2C%2C%2C%2C%2C%2C&key={{TT_KEY}}"
+      },
+      {
+        "method": "GET",
+        "fixture": "maps/get_map_copyrights.txt",
+        "url": "map/2/copyrights?key={{TT_KEY}}"
+      },
+      {
+        "method": "GET",
+        "fixture": "maps/get_map_service_copyrights.json",
+        "url": "map/2/copyrights/caption.json?key={{TT_KEY}}"
       }
     ]
   },
@@ -57,6 +62,16 @@
         "method": "GET",
         "fixture": "places/geocoding/get_structured_geocode.json",
         "url": "search/2/structuredGeocode.json?key={{TT_KEY}}&streetName=De+Ruijterkade&streetNumber=154&postalCode=1011+AC&municipality=Amsterdam&countryCode=NL"
+      },
+      {
+        "method": "GET",
+        "fixture": "places/reverse_geocoding/get_reverse_geocode.json",
+        "url": "search/2/reverseGeocode/37.8328%2C-122.27669.json?returnSpeedLimit=false&radius=10000&allowFreeformNewLine=false&returnMatchType=false&view=Unified&key={{TT_KEY}}"
+      },
+      {
+        "method": "GET",
+        "fixture": "places/reverse_geocoding/get_cross_street_lookup.json",
+        "url": "search/2/reverseGeocode/crossStreet/37.8328%2C-122.27669.json?limit=1&radius=10000&allowFreeformNewLine=false&view=Unified&key={{TT_KEY}}"
       },
       {
         "method": "GET",
@@ -247,16 +262,6 @@
         "method": "GET",
         "fixture": "places/search/get_poi_categories.json",
         "url": "search/2/poiCategories.json?key={{TT_KEY}}"
-      },
-      {
-        "method": "GET",
-        "fixture": "places/reverse_geocoding/get_reverse_geocode.json",
-        "url": "search/2/reverseGeocode/37.8328%2C-122.27669.json?returnSpeedLimit=false&radius=10000&allowFreeformNewLine=false&returnMatchType=false&view=Unified&key={{TT_KEY}}"
-      },
-      {
-        "method": "GET",
-        "fixture": "places/reverse_geocoding/get_cross_street_lookup.json",
-        "url": "search/2/reverseGeocode/crossStreet/37.8328%2C-122.27669.json?limit=1&radius=10000&allowFreeformNewLine=false&view=Unified&key={{TT_KEY}}"
       }
     ]
   },
@@ -264,33 +269,6 @@
   {
     "api": "routing",
     "fixtures": [
-      {
-        "method": "GET",
-        "fixture": "routing/routing/get_calculate_reachable_range.json",
-        "url": "routing/1/calculateReachableRange/52.50931%2C13.42936/json?energyBudgetInkWh=43&avoid=unpavedRoads&vehicleEngineType=electric&constantSpeedConsumptionInkWhPerHundredkm=50%2C8.2%3A130%2C21.3&key={{TT_KEY}}"
-      },
-      {
-        "method": "POST",
-        "fixture": "routing/routing/post_calculate_reachable_range.json",
-        "url": "routing/1/calculateReachableRange/52.50931%2C13.42936/json?energyBudgetInkWh=43&avoid=unpavedRoads&vehicleEngineType=electric&constantSpeedConsumptionInkWhPerHundredkm=50%2C8.2%3A130%2C21.3&key={{TT_KEY}}",
-        "data": {
-          "avoidVignette": ["AUS", "CHE"],
-          "avoidAreas": {
-            "rectangles": [
-              {
-                "southWestCorner": {
-                  "latitude": 48.81851,
-                  "longitude": 2.26593
-                },
-                "northEastCorner": {
-                  "latitude": 48.90309,
-                  "longitude": 2.41115
-                }
-              }
-            ]
-          }
-        }
-      },
       {
         "method": "GET",
         "fixture": "routing/routing/get_calculate_route.json",
@@ -327,8 +305,40 @@
             ]
           }
         }
+      },
+      {
+        "method": "GET",
+        "fixture": "routing/routing/get_calculate_reachable_range.json",
+        "url": "routing/1/calculateReachableRange/52.50931%2C13.42936/json?energyBudgetInkWh=43&avoid=unpavedRoads&vehicleEngineType=electric&constantSpeedConsumptionInkWhPerHundredkm=50%2C8.2%3A130%2C21.3&key={{TT_KEY}}"
+      },
+      {
+        "method": "POST",
+        "fixture": "routing/routing/post_calculate_reachable_range.json",
+        "url": "routing/1/calculateReachableRange/52.50931%2C13.42936/json?energyBudgetInkWh=43&avoid=unpavedRoads&vehicleEngineType=electric&constantSpeedConsumptionInkWhPerHundredkm=50%2C8.2%3A130%2C21.3&key={{TT_KEY}}",
+        "data": {
+          "avoidVignette": ["AUS", "CHE"],
+          "avoidAreas": {
+            "rectangles": [
+              {
+                "southWestCorner": {
+                  "latitude": 48.81851,
+                  "longitude": 2.26593
+                },
+                "northEastCorner": {
+                  "latitude": 48.90309,
+                  "longitude": 2.41115
+                }
+              }
+            ]
+          }
+        }
       }
     ]
+  },
+
+  {
+    "api": "tracking_logistics",
+    "fixtures": []
   },
 
   {

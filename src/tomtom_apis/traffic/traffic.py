@@ -1,7 +1,15 @@
 """Traffic API"""
 
 from ..api import BaseApi, BaseParams, BasePostData
-from .models import BBoxParam, BoudingBoxParam, IncidentStyleType, RasterIncidentTilesParams, VectorIncidentTilesParams
+from .models import (
+    BBoxParam,
+    BoudingBoxParam,
+    FlowStyleType,
+    FlowType,
+    IncidentStyleType,
+    RasterIncidentTilesParams,
+    VectorIncidentTilesParams,
+)
 
 
 class TrafficApi(BaseApi):
@@ -112,3 +120,65 @@ class TrafficApi(BaseApi):
         )
 
         return await response.bytes()
+
+    async def get_flow_segment_gata(
+        self,
+        *,
+        style: FlowStyleType,
+        zoom: int,
+        point: str,
+        params: BaseParams | None = None,  # unit, thickness, openLr
+    ) -> dict:
+        """
+        This service provides information about the speeds and travel times of the road fragment closest to the given coordinates. It is designed to work alongside the Flow Tiles to support clickable flow data visualizations. With this API, the client side can connect any place in the map with flow data on the closest road and present it to the user.
+
+        See: https://developer.tomtom.com/traffic-api/documentation/traffic-flow/flow-segment-data
+        """
+        response = await self.get(
+            endpoint=f"/traffic/services/4/flowSegmentData/{style}/{zoom}/json?point={point}",
+            params=params,
+        )
+
+        return await response.dict()
+
+    async def get_raster_flow_tiles(  # pylint: disable=too-many-arguments
+        self,
+        *,
+        style: FlowStyleType,
+        zoom: int,
+        x: int,
+        y: int,
+        params: BaseParams | None = None,  # thickness, tileSize
+    ) -> dict:
+        """
+        The TomTom Traffic Raster Flow Tile service serves 256 x 256 pixel or 512 x 512 pixel tiles showing traffic flow. All tiles use the same grid system. Because the traffic tiles use transparent images, they can be layered on top of map tiles to create a compound display. The Raster Flow tiles use colors to indicate either the speed of traffic on different road segments, or the difference between that speed and the free-flow speed on the road segment in question.
+
+        See: https://developer.tomtom.com/traffic-api/documentation/traffic-flow/raster-flow-tiles
+        """
+        response = await self.get(
+            endpoint=f"/traffic/map/4/tile/flow/{style}/{zoom}/{x}/{y}.png",
+            params=params,
+        )
+
+        return await response.dict()
+
+    async def get_vector_flow_tiles(  # pylint: disable=too-many-arguments
+        self,
+        *,
+        flow_type: FlowType,
+        zoom: int,
+        x: int,
+        y: int,
+        params: BaseParams | None = None,  # roadTypes, trafficLevelStep, margin, tags
+    ) -> dict:
+        """
+        The Traffic Vector Flow Tiles API endpoint provides data on zoom levels ranging from 0 to 22. For zoom level 0, the world is displayed on a single tile. At zoom level 22, the world is divided into 244 tiles. See the Zoom Levels and Tile Grid.
+
+        See: https://developer.tomtom.com/traffic-api/documentation/traffic-flow/vector-flow-tiles
+        """
+        response = await self.get(
+            endpoint=f"/traffic/map/4/tile/flow/{flow_type}/{zoom}/{x}/{y}.pbf",
+            params=params,
+        )
+
+        return await response.dict()

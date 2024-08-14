@@ -39,8 +39,39 @@ class BoudingBoxParam:
         return f"{self.minY},{self.minX},{self.maxY},{self.maxX}"
 
 
+class FlowStyleType(Enum):
+    """Supported flow style types"""
+
+    ABSOLUTE = "absolute"
+    RELATIVE = "relative"
+    RELATIVE0 = "relative0"
+    RELATIVE0_DARK = "relative0-dark"
+    RELATIVE_DELAY = "relative-delay"
+    REDUCED_SENSITIVITY = "reduced-sensitivity"
+
+
+class FlowTagType(Enum):
+    """Supported flow tag types"""
+
+    ROAD_TYPE = "road_type"
+    TRAFFIC_LEVEL = "traffic_level"
+    TRAFFIC_ROAD_COVERAGE = "traffic_road_coverage"
+    LEFT_HAND_TRAFFIC = "left_hand_traffic"
+    ROAD_CLOSURE = "road_closure"
+    ROAD_CATEGORY = "road_category"
+    ROAD_SUBCATEGORY = "road_subcategory"
+
+
+class FlowType(Enum):
+    """Supported flow types"""
+
+    ABSOLUTE = "absolute"
+    RELATIVE = "relative"
+    RELATIVE_DELAY = "relative-delay"
+
+
 class IncidentStyleType(Enum):
-    """Supported incident tyle style types"""
+    """Supported incident style types"""
 
     S0 = "s0"
     S0_DARK = "s0-dark"
@@ -48,6 +79,26 @@ class IncidentStyleType(Enum):
     S2 = "s2"
     S3 = "s3"
     NIGHT = "night"
+
+
+class IncidentTagType(Enum):
+    """Supported incident tag types"""
+
+    ICON_CATEGORY = "icon_category"
+    DESCRIPTION = "description"
+    DELAY = "delay"
+    ROAD_TYPE = "road_type"
+    LEFT_HAND_TRAFFIC = "left_hand_traffic"
+    MAGNITUDE = "magnitude"
+    TRAFFIC_ROAD_COVERAGE = "traffic_road_coverage"
+    CLUSTERED = "clustered"
+    PROBABILITY_OF_OCCURRENCE = "probability_of_occurrence"
+    NUMBER_OF_REPORTS = "number_of_reports"
+    LAST_REPORT_TIME = "last_report_time"
+    END_DATE = "end_date"
+    ID = "id"
+    ROAD_CATEGORY = "road_category"
+    ROAD_SUBCATEGORY = "road_subcategory"
 
 
 @dataclass(kw_only=True)
@@ -59,6 +110,27 @@ class RasterIncidentTilesParams(BaseParams):
     # pylint: disable=invalid-name
     t: str | None = None
     tileSize: TileSizeType | None = None
+
+
+class RoadType(Enum):
+    """Supported road types"""
+
+    MOTORWAY = 0
+    INTERNATIONAL_ROAD = 1
+    MAJOR_ROAD = 2
+    SECONDARY_ROAD = 3
+    CONNECTING_ROAD = 4
+    MAJOR_LOCAL_ROAD = 5
+    LOCAL_ROAD = 6
+    MINOR_LOCAL_ROAD = 7
+    OTHER_ROADS = 8  # Non public road, Parking road, etc.
+
+
+class SpeedUnitType(Enum):
+    """Supported speed unit types"""
+
+    KMPH = "kmph"
+    MPH = "mph"
 
 
 @dataclass(kw_only=True)

@@ -1,13 +1,18 @@
 """Traffic API"""
 
+from tomtom_apis.utils import serialize_list
+
 from ..api import BaseApi, BaseParams, BasePostData
 from .models import (
     BBoxParam,
     BoudingBoxParam,
+    FlowSegmentDataParams,
     FlowStyleType,
     FlowType,
     IncidentStyleType,
+    RasterFlowTilesParams,
     RasterIncidentTilesParams,
+    VectorFlowTilesParams,
     VectorIncidentTilesParams,
 )
 
@@ -22,7 +27,8 @@ class TrafficApi(BaseApi):
     async def get_incident_details(
         self,
         *,
-        bbox: BBoxParam,
+        bbox: BBoxParam | None = None,
+        ids: list[str] | None = None,
         params: BaseParams | None = None,  # fields, language, t, categoryFilter, timeValidityFilter
     ) -> dict:
         """
@@ -31,8 +37,15 @@ class TrafficApi(BaseApi):
         See: https://developer.tomtom.com/traffic-api/documentation/traffic-incidents/incident-details
         """
 
+        if bbox and not ids:
+            mutually_exclusive_parameters = f"bbox={bbox.to_comma_seperate()}"
+        elif ids and not bbox:
+            mutually_exclusive_parameters = f"ids={serialize_list(list(ids))}"
+        else:
+            raise ValueError("bbox and ids are mutually exclusive parameters")
+
         response = await self.get(
-            endpoint=f"/traffic/services/5/incidentDetails?bbox={bbox.to_comma_seperate()}",
+            endpoint=f"/traffic/services/5/incidentDetails?{mutually_exclusive_parameters}",
             params=params,
         )
 
@@ -121,13 +134,13 @@ class TrafficApi(BaseApi):
 
         return await response.bytes()
 
-    async def get_flow_segment_gata(
+    async def get_flow_segment_data(
         self,
         *,
         style: FlowStyleType,
         zoom: int,
         point: str,
-        params: BaseParams | None = None,  # unit, thickness, openLr
+        params: FlowSegmentDataParams | None = None,
     ) -> dict:
         """
         This service provides information about the speeds and travel times of the road fragment closest to the given coordinates. It is designed to work alongside the Flow Tiles to support clickable flow data visualizations. With this API, the client side can connect any place in the map with flow data on the closest road and present it to the user.
@@ -148,8 +161,8 @@ class TrafficApi(BaseApi):
         zoom: int,
         x: int,
         y: int,
-        params: BaseParams | None = None,  # thickness, tileSize
-    ) -> dict:
+        params: RasterFlowTilesParams | None = None,
+    ) -> bytes:
         """
         The TomTom Traffic Raster Flow Tile service serves 256 x 256 pixel or 512 x 512 pixel tiles showing traffic flow. All tiles use the same grid system. Because the traffic tiles use transparent images, they can be layered on top of map tiles to create a compound display. The Raster Flow tiles use colors to indicate either the speed of traffic on different road segments, or the difference between that speed and the free-flow speed on the road segment in question.
 
@@ -160,7 +173,7 @@ class TrafficApi(BaseApi):
             params=params,
         )
 
-        return await response.dict()
+        return await response.bytes()
 
     async def get_vector_flow_tiles(  # pylint: disable=too-many-arguments
         self,
@@ -169,8 +182,8 @@ class TrafficApi(BaseApi):
         zoom: int,
         x: int,
         y: int,
-        params: BaseParams | None = None,  # roadTypes, trafficLevelStep, margin, tags
-    ) -> dict:
+        params: VectorFlowTilesParams | None = None,
+    ) -> bytes:
         """
         The Traffic Vector Flow Tiles API endpoint provides data on zoom levels ranging from 0 to 22. For zoom level 0, the world is displayed on a single tile. At zoom level 22, the world is divided into 244 tiles. See the Zoom Levels and Tile Grid.
 
@@ -181,4 +194,4 @@ class TrafficApi(BaseApi):
             params=params,
         )
 
-        return await response.dict()
+        return await response.bytes()

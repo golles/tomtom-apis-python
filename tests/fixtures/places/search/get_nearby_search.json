@@ -1,7 +1,7 @@
 {
   "summary": {
     "queryType": "NEARBY",
-    "queryTime": 57,
+    "queryTime": 50,
     "numResults": 10,
     "offset": 0,
     "totalResults": 100,

@@ -2,7 +2,7 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 208,
+    "queryTime": 284,
     "numResults": 10,
     "offset": 0,
     "totalResults": 100,

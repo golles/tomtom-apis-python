@@ -39,6 +39,16 @@ class BoudingBoxParam:
         return f"{self.minY},{self.minX},{self.maxY},{self.maxX}"
 
 
+@dataclass(kw_only=True)
+class FlowSegmentDataParams(BaseParams):
+    """Parameters for the get_flow_segment_data method"""
+
+    # pylint: disable=invalid-name
+    unit: SpeedUnitType | None = None
+    thickness: ThicknessType | None = None
+    openLr: bool | None = None
+
+
 class FlowStyleType(Enum):
     """Supported flow style types"""
 
@@ -102,10 +112,17 @@ class IncidentTagType(Enum):
 
 
 @dataclass(kw_only=True)
+class RasterFlowTilesParams(BaseParams):
+    """Parameters for the get_raster_flow_tiles method"""
+
+    # pylint: disable=invalid-name
+    thickness: ThicknessType | None = None
+    tileSize: TileSizeType | None = None
+
+
+@dataclass(kw_only=True)
 class RasterIncidentTilesParams(BaseParams):
-    """
-    Parameters for the get_raster_incident_tile method.
-    """
+    """Parameters for the get_raster_incident_tile method"""
 
     # pylint: disable=invalid-name
     t: str | None = None
@@ -131,6 +148,26 @@ class SpeedUnitType(Enum):
 
     KMPH = "kmph"
     MPH = "mph"
+
+
+class ThicknessType(Enum):
+    """Supported thickness types"""
+
+    ABSOLUTE = "absolute"
+    RELATIVE = "relative"
+    RELATIVE_DELAY = "relative-delay"
+    REDUCED_SENSITIVITY = "reduced-sensitivity"
+
+
+@dataclass(kw_only=True)
+class VectorFlowTilesParams(BaseParams):
+    """Parameters for the get_vector_flow_tiles method"""
+
+    # pylint: disable=invalid-name
+    roadTypes: RoadType | None = None
+    trafficLevelStep: float | None = None
+    margin: float | None = None
+    tags: list[FlowTagType] | None = None
 
 
 @dataclass(kw_only=True)

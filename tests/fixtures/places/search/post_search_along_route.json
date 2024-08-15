@@ -2,7 +2,7 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 465,
+    "queryTime": 337,
     "numResults": 9,
     "offset": 0,
     "totalResults": 9,
@@ -59,7 +59,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.53139, "lon": -122.29053 } }
       ],
-      "detourTime": -41,
+      "detourTime": -48,
       "detourDistance": 50,
       "detourOffset": 0
     },
@@ -112,7 +112,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.52885, "lon": -122.2897 } }
       ],
-      "detourTime": 161,
+      "detourTime": 157,
       "detourDistance": 80,
       "detourOffset": 0
     },
@@ -164,7 +164,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.52945, "lon": -122.28816 } }
       ],
-      "detourTime": 17,
+      "detourTime": 18,
       "detourDistance": 26,
       "detourOffset": 665
     },
@@ -216,7 +216,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.53064, "lon": -122.28708 } }
       ],
-      "detourTime": 143,
+      "detourTime": 127,
       "detourDistance": 144,
       "detourOffset": 665
     },
@@ -269,7 +269,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.52709, "lon": -122.28429 } }
       ],
-      "detourTime": 100,
+      "detourTime": 96,
       "detourDistance": 116,
       "detourOffset": 665
     },
@@ -321,7 +321,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.51988, "lon": -122.27391 } }
       ],
-      "detourTime": 245,
+      "detourTime": 247,
       "detourDistance": 394,
       "detourOffset": 1856
     },
@@ -373,7 +373,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.51882, "lon": -122.2741 } }
       ],
-      "detourTime": 175,
+      "detourTime": 184,
       "detourDistance": 593,
       "detourOffset": 1856
     },
@@ -425,7 +425,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.4787, "lon": -122.18734 } }
       ],
-      "detourTime": 361,
+      "detourTime": 418,
       "detourDistance": 1416,
       "detourOffset": 8482
     },
@@ -477,7 +477,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.46571, "lon": -122.15709 } }
       ],
-      "detourTime": 211,
+      "detourTime": 227,
       "detourDistance": 858,
       "detourOffset": 12421
     }

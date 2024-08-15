@@ -358,6 +358,21 @@
         "method": "GET",
         "fixture": "traffic/traffic/get_vector_incident_tile.pbf",
         "url": "traffic/map/4/tile/incidents/12/1207/1539.pbf?t=-1&tags=%5Bicon_category%2Cdescription%2Cdelay%2Cleft_hand_traffic%2Cmagnitude%2Ctraffic_road_coverage%2Cend_date%2Cid%2Croad_category%2Croad_subcategory%5D&key={{TT_KEY}}"
+      },
+      {
+        "method": "GET",
+        "fixture": "traffic/traffic/get_flow_segment_data.json",
+        "url": "traffic/services/4/flowSegmentData/relative0/10/json?point=52.41072%2C4.84239&unit=KMPH&openLr=false&key={{TT_KEY}}"
+      },
+      {
+        "method": "GET",
+        "fixture": "traffic/traffic/get_raster_flow_tiles.pbf",
+        "url": "traffic/map/4/tile/flow/relative/12/1207/1539.pbf?margin=0.1&tags=%5Btraffic_level%2Ctraffic_road_coverage%2Cleft_hand_traffic%2Croad_closure%2Croad_category%2Croad_subcategory%5D&key={{TT_KEY}}"
+      },
+      {
+        "method": "GET",
+        "fixture": "traffic/traffic/get_vector_flow_tiles.pbf",
+        "url": "traffic/map/4/tile/flow/relative/12/1207/1539.pbf?margin=0.1&tags=%5Btraffic_level%2Ctraffic_road_coverage%2Cleft_hand_traffic%2Croad_closure%2Croad_category%2Croad_subcategory%5D&key={{TT_KEY}}"
       }
     ]
   }

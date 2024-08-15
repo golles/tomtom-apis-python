@@ -6,7 +6,19 @@ from tests.const import API_KEY
 from tomtom_apis.api import ApiOptions
 from tomtom_apis.models import Language, TileSizeType
 from tomtom_apis.traffic import TrafficApi
-from tomtom_apis.traffic.models import BoudingBoxParam, IncidentStyleType, RasterIncidentTilesParams, VectorIncidentTilesParams
+from tomtom_apis.traffic.models import (
+    BoudingBoxParam,
+    FlowSegmentDataParams,
+    FlowStyleType,
+    FlowTagType,
+    FlowType,
+    IncidentStyleType,
+    RasterFlowTilesParams,
+    RasterIncidentTilesParams,
+    SpeedUnitType,
+    VectorFlowTilesParams,
+    VectorIncidentTilesParams,
+)
 
 
 @pytest.fixture(name="traffic_display")
@@ -79,6 +91,71 @@ async def test_deserialization_get_tile_v1(traffic_display: TrafficApi):
                 "road_subcategory",
             ],
             language=Language.EN_GB,
+        ),
+    )
+
+    await traffic_display.close()
+
+    assert response
+
+
+@pytest.mark.usefixtures("image_response")
+@pytest.mark.parametrize("image_response", ["traffic/traffic/get_flow_segment_data.json"], indirect=True)
+async def test_deserialization_get_flow_segment_data(traffic_display: TrafficApi):
+    """Test the get_flow_segment_data method"""
+    response = await traffic_display.get_flow_segment_data(
+        style=FlowStyleType.RELATIVE0,
+        zoom=10,
+        point="52.41072,4.84239",
+        params=FlowSegmentDataParams(
+            unit=SpeedUnitType.KMPH,
+            openLr=False,
+        ),
+    )
+
+    await traffic_display.close()
+
+    assert response
+
+
+@pytest.mark.usefixtures("image_response")
+@pytest.mark.parametrize("image_response", ["traffic/traffic/get_raster_flow_tiles.pbf"], indirect=True)
+async def test_deserialization_get_raster_flow_tiles(traffic_display: TrafficApi):
+    """Test the get_raster_flow_tiles method"""
+    response = await traffic_display.get_raster_flow_tiles(
+        style=FlowStyleType.RELATIVE0,
+        x=1207,
+        y=1539,
+        zoom=12,
+        params=RasterFlowTilesParams(
+            tileSize=TileSizeType.SIZE_256,
+        ),
+    )
+
+    await traffic_display.close()
+
+    assert response
+
+
+@pytest.mark.usefixtures("image_response")
+@pytest.mark.parametrize("image_response", ["traffic/traffic/get_vector_flow_tiles.pbf"], indirect=True)
+async def test_deserialization_get_vector_flow_tiles(traffic_display: TrafficApi):
+    """Test the get_vector_flow_tiles method"""
+    response = await traffic_display.get_vector_flow_tiles(
+        flow_type=FlowType.RELATIVE,
+        x=1207,
+        y=1539,
+        zoom=12,
+        params=VectorFlowTilesParams(
+            margin=0.1,
+            tags=[
+                FlowTagType.TRAFFIC_LEVEL,
+                FlowTagType.TRAFFIC_ROAD_COVERAGE,
+                FlowTagType.LEFT_HAND_TRAFFIC,
+                FlowTagType.ROAD_CLOSURE,
+                FlowTagType.ROAD_CATEGORY,
+                FlowTagType.ROAD_SUBCATEGORY,
+            ],
         ),
     )
 

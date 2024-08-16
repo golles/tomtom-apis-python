@@ -9,6 +9,7 @@ from .models import (
     FlowSegmentDataParams,
     FlowStyleType,
     FlowType,
+    IncidentDetailsParams,
     IncidentStyleType,
     RasterFlowTilesParams,
     RasterIncidentTilesParams,
@@ -29,7 +30,7 @@ class TrafficApi(BaseApi):
         *,
         bbox: BBoxParam | None = None,
         ids: list[str] | None = None,
-        params: BaseParams | None = None,  # fields, language, t, categoryFilter, timeValidityFilter
+        params: IncidentDetailsParams | None = None,
     ) -> dict:
         """
         The Incident Details service provides information on traffic incidents which are inside a given bounding box or whose geometry intersects with it. The freshness of data is based on the provided Traffic Model ID (t). The data obtained from this service can be used as standalone or as an extension to other Traffic Incident services.

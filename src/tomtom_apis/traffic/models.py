@@ -39,6 +39,24 @@ class BoudingBoxParam:
         return f"{self.minY},{self.minX},{self.maxY},{self.maxX}"
 
 
+class CategoryFilterType(Enum):
+    """Supported category filter types"""
+
+    UNKNOWN = "Unknown"
+    ACCIDENT = "Accident"
+    FOG = "Fog"
+    DANGEROUS_CONDITIONS = "DangerousConditions"
+    RAIN = "Rain"
+    ICE = "Ice"
+    JAM = "Jam"
+    LANE_CLOSED = "LaneClosed"
+    ROAD_CLOSED = "RoadClosed"
+    ROAD_WORKS = "RoadWorks"
+    WIND = "Wind"
+    FLOODING = "Flooding"
+    BROKEN_DOWN_VEHICLE = "BrokenDownVehicle"
+
+
 @dataclass(kw_only=True)
 class FlowSegmentDataParams(BaseParams):
     """Parameters for the get_flow_segment_data method"""
@@ -78,6 +96,18 @@ class FlowType(Enum):
     ABSOLUTE = "absolute"
     RELATIVE = "relative"
     RELATIVE_DELAY = "relative-delay"
+
+
+@dataclass(kw_only=True)
+class IncidentDetailsParams(BaseParams):
+    """Parameters for the get_incident_details method"""
+
+    # pylint: disable=invalid-name
+    fields: str | None = None
+    language: Language | None = None
+    t: str | None = None
+    categoryFilter: list[CategoryFilterType] | None = None
+    timeValidityFilter: list[TimeValidityFilterType] | None = None
 
 
 class IncidentStyleType(Enum):
@@ -159,6 +189,13 @@ class ThicknessType(Enum):
     REDUCED_SENSITIVITY = "reduced-sensitivity"
 
 
+class TimeValidityFilterType(Enum):
+    """Supported time validity filter types"""
+
+    PRESENT = "present"
+    FUTURE = "future"
+
+
 @dataclass(kw_only=True)
 class VectorFlowTilesParams(BaseParams):
     """Parameters for the get_vector_flow_tiles method"""
@@ -172,9 +209,7 @@ class VectorFlowTilesParams(BaseParams):
 
 @dataclass(kw_only=True)
 class VectorIncidentTilesParams(BaseParams):
-    """
-    Parameters for the get_vector_incident_tile method.
-    """
+    """Parameters for the get_vector_incident_tile method"""
 
     t: str | None = None
     tags: list[str] | None = None

@@ -7,15 +7,19 @@ from tomtom_apis.api import ApiOptions
 from tomtom_apis.models import Language, TileSizeType
 from tomtom_apis.traffic import TrafficApi
 from tomtom_apis.traffic.models import (
+    BBoxParam,
     BoudingBoxParam,
+    CategoryFilterType,
     FlowSegmentDataParams,
     FlowStyleType,
     FlowTagType,
     FlowType,
+    IncidentDetailsParams,
     IncidentStyleType,
     RasterFlowTilesParams,
     RasterIncidentTilesParams,
     SpeedUnitType,
+    TimeValidityFilterType,
     VectorFlowTilesParams,
     VectorIncidentTilesParams,
 )
@@ -29,7 +33,43 @@ async def fixture_traffic_api():
         yield traffic_display
 
 
-# get_incident_details
+@pytest.mark.usefixtures("image_response")
+@pytest.mark.parametrize("image_response", ["traffic/traffic/get_incident_details.json"], indirect=True)
+async def test_deserialization_get_incident_details(traffic_display: TrafficApi):
+    """Test the get_incident_details method"""
+    response = await traffic_display.get_incident_details(
+        bbox=BBoxParam(
+            minLon=4.8854592519716675,
+            minLat=52.36934334773164,
+            maxLon=4.897883244144765,
+            maxLat=52.37496348620152,
+        ),
+        params=IncidentDetailsParams(
+            fields="{incidents{type,geometry{type,coordinates},properties{iconCategory}}}",
+            language=Language.EN_GB,
+            categoryFilter=[
+                CategoryFilterType.UNKNOWN,
+                CategoryFilterType.ACCIDENT,
+                CategoryFilterType.FOG,
+                CategoryFilterType.DANGEROUS_CONDITIONS,
+                CategoryFilterType.RAIN,
+                CategoryFilterType.ICE,
+                CategoryFilterType.JAM,
+                CategoryFilterType.LANE_CLOSED,
+                CategoryFilterType.ROAD_CLOSED,
+                CategoryFilterType.ROAD_WORKS,
+                CategoryFilterType.WIND,
+                CategoryFilterType.FLOODING,
+                CategoryFilterType.BROKEN_DOWN_VEHICLE,
+            ],
+            timeValidityFilter=[TimeValidityFilterType.PRESENT],
+        ),
+    )
+
+    await traffic_display.close()
+
+    assert response
+
 
 # post_incident_details
 

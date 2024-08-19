@@ -11,7 +11,7 @@ from importlib import metadata
 from typing import Any, Literal, Type, TypeVar
 
 import orjson
-from aiohttp import ClientResponse
+from aiohttp import ClientResponse, ClientTimeout
 from aiohttp.client import ClientConnectionError, ClientError, ClientResponseError, ClientSession
 from aiohttp.hdrs import ACCEPT_ENCODING, CONTENT_TYPE, USER_AGENT
 from mashumaro import DataClassDictMixin
@@ -116,8 +116,8 @@ class ApiOptions:
         The base URL for the TomTom API. Default is "https://api.tomtom.com".
     gzip_compression : bool, optional
         Enables response compression. Default is False.
-    request_timeout : int, optional
-        The timeout for the request in seconds. Default is 10.
+    timeout : ClientTimeout, optional
+        The timeout object for the request. Default is ClientTimeout(total=10).
     tracking_id : bool, optional
         Specifies an identifier for each request. Default is False.
     """
@@ -128,7 +128,7 @@ class ApiOptions:
         "https://kr-api.tomtom.com",
     ] = "https://api.tomtom.com"
     gzip_compression: bool = False
-    request_timeout: int = 10
+    timeout: ClientTimeout = ClientTimeout(total=10)
     tracking_id: bool = False
 
 
@@ -150,7 +150,7 @@ class BaseApi:
         session: ClientSession | None = None,
     ):
         self.options = options
-        self.session = ClientSession(options.base_url) if session is None else session
+        self.session = ClientSession(options.base_url, timeout=options.timeout) if session is None else session
 
         self._default_headers: dict[str, str] = {
             CONTENT_TYPE: "application/json",
@@ -158,7 +158,7 @@ class BaseApi:
         }
 
         self._default_params: dict[str, str] = {
-            "key": self.options.api_key,
+            "key": options.api_key,
         }
 
     async def _request(  # pylint: disable=too-many-arguments
@@ -186,23 +186,22 @@ class BaseApi:
         logger.info("%s %s (%s)", method, endpoint, tracking_id)
 
         try:
-            async with asyncio.timeout(self.options.request_timeout):
-                response = await self.session.request(
-                    method,
-                    endpoint,
-                    params=request_params,
-                    json=request_data,
-                    headers=request_headers,
-                )
+            response = await self.session.request(
+                method,
+                endpoint,
+                params=request_params,
+                json=request_data,
+                headers=request_headers,
+            )
 
-                logger.info("%s %s returns: %s", method, endpoint, response.status)
+            logger.info("%s %s returns: %s", method, endpoint, response.status)
 
-                # Log TomTom and the tracking id headers
-                for header, value in response.headers.items():
-                    if header.lower().startswith(TOMTOM_HEADER_PREFIX) or header.lower() == TRACKING_ID_HEADER.lower():
-                        logger.info("Response header %s: %s", header, value)
+            # Log TomTom and the tracking id headers
+            for header, value in response.headers.items():
+                if header.lower().startswith(TOMTOM_HEADER_PREFIX) or header.lower() == TRACKING_ID_HEADER.lower():
+                    logger.info("Response header %s: %s", header, value)
 
-                response.raise_for_status()
+            response.raise_for_status()
 
         except asyncio.TimeoutError as exception:
             msg = "Timeout occurred while connecting to the API"

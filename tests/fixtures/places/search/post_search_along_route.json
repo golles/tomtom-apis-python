@@ -2,7 +2,7 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 337,
+    "queryTime": 426,
     "numResults": 9,
     "offset": 0,
     "totalResults": 9,
@@ -28,8 +28,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -59,8 +59,8 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.53139, "lon": -122.29053 } }
       ],
-      "detourTime": -48,
-      "detourDistance": 50,
+      "detourTime": -32,
+      "detourDistance": 37,
       "detourOffset": 0
     },
     {
@@ -81,8 +81,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -112,8 +112,8 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.52885, "lon": -122.2897 } }
       ],
-      "detourTime": 157,
-      "detourDistance": 80,
+      "detourTime": 176,
+      "detourDistance": 67,
       "detourOffset": 0
     },
     {
@@ -133,8 +133,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -164,8 +164,8 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.52945, "lon": -122.28816 } }
       ],
-      "detourTime": 18,
-      "detourDistance": 26,
+      "detourTime": 29,
+      "detourDistance": 13,
       "detourOffset": 665
     },
     {
@@ -185,8 +185,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -216,8 +216,8 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.53064, "lon": -122.28708 } }
       ],
-      "detourTime": 127,
-      "detourDistance": 144,
+      "detourTime": 125,
+      "detourDistance": 131,
       "detourOffset": 665
     },
     {
@@ -238,8 +238,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -269,7 +269,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.52709, "lon": -122.28429 } }
       ],
-      "detourTime": 96,
+      "detourTime": 94,
       "detourDistance": 116,
       "detourOffset": 665
     },
@@ -290,8 +290,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -321,7 +321,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.51988, "lon": -122.27391 } }
       ],
-      "detourTime": 247,
+      "detourTime": 239,
       "detourDistance": 394,
       "detourOffset": 1856
     },
@@ -342,8 +342,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -373,7 +373,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.51882, "lon": -122.2741 } }
       ],
-      "detourTime": 184,
+      "detourTime": 153,
       "detourDistance": 593,
       "detourOffset": 1856
     },
@@ -394,8 +394,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -425,7 +425,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.4787, "lon": -122.18734 } }
       ],
-      "detourTime": 418,
+      "detourTime": 291,
       "detourDistance": 1416,
       "detourOffset": 8482
     },
@@ -446,8 +446,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -477,7 +477,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.46571, "lon": -122.15709 } }
       ],
-      "detourTime": 227,
+      "detourTime": 168,
       "detourDistance": 858,
       "detourOffset": 12421
     }

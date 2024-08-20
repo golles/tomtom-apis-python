@@ -1,7 +1,7 @@
 {
   "summary": {
     "queryType": "NEARBY",
-    "queryTime": 50,
+    "queryTime": 48,
     "numResults": 10,
     "offset": 0,
     "totalResults": 100,
@@ -163,8 +163,8 @@
           {
             "code": "SHOP",
             "names": [
-              { "nameLocale": "en-US", "name": "real estate agents" },
-              { "nameLocale": "en-US", "name": "shop" }
+              { "nameLocale": "en-US", "name": "shop" },
+              { "nameLocale": "en-US", "name": "real estate agents" }
             ]
           }
         ]
@@ -210,8 +210,8 @@
           {
             "code": "SHOP",
             "names": [
-              { "nameLocale": "en-US", "name": "real estate agents" },
-              { "nameLocale": "en-US", "name": "shop" }
+              { "nameLocale": "en-US", "name": "shop" },
+              { "nameLocale": "en-US", "name": "real estate agents" }
             ]
           }
         ]
@@ -287,20 +287,20 @@
     },
     {
       "type": "POI",
-      "id": "11gZ0mtEhLqy1zFY2BbLMQ",
+      "id": "jh6wv5JX4CjcCdUmv7Mwkw",
       "score": 99.9535522461,
       "dist": 46.45137,
-      "info": "search:ta:250009006825388-FR",
+      "info": "search:ta:250009006508633-FR",
       "poi": {
-        "name": "SC IMMOBILIERE HABITATION MODERN",
+        "name": "SOC CIVILE ROJEPA",
         "categorySet": [{ "id": 9361015 }],
         "categories": ["real estate agents", "shop"],
         "classifications": [
           {
             "code": "SHOP",
             "names": [
-              { "nameLocale": "en-US", "name": "real estate agents" },
-              { "nameLocale": "en-US", "name": "shop" }
+              { "nameLocale": "en-US", "name": "shop" },
+              { "nameLocale": "en-US", "name": "real estate agents" }
             ]
           }
         ]
@@ -333,20 +333,20 @@
     },
     {
       "type": "POI",
-      "id": "jh6wv5JX4CjcCdUmv7Mwkw",
+      "id": "11gZ0mtEhLqy1zFY2BbLMQ",
       "score": 99.9535522461,
       "dist": 46.45137,
-      "info": "search:ta:250009006508633-FR",
+      "info": "search:ta:250009006825388-FR",
       "poi": {
-        "name": "SOC CIVILE ROJEPA",
+        "name": "SC IMMOBILIERE HABITATION MODERN",
         "categorySet": [{ "id": 9361015 }],
         "categories": ["real estate agents", "shop"],
         "classifications": [
           {
             "code": "SHOP",
             "names": [
-              { "nameLocale": "en-US", "name": "real estate agents" },
-              { "nameLocale": "en-US", "name": "shop" }
+              { "nameLocale": "en-US", "name": "shop" },
+              { "nameLocale": "en-US", "name": "real estate agents" }
             ]
           }
         ]

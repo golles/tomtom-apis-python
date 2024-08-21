@@ -123,10 +123,7 @@ class ApiOptions:
     """
 
     api_key: str
-    base_url: Literal[
-        "https://api.tomtom.com",
-        "https://kr-api.tomtom.com",
-    ] = "https://api.tomtom.com"
+    base_url: str = "https://api.tomtom.com"
     gzip_compression: bool = False
     timeout: ClientTimeout = ClientTimeout(total=10)
     tracking_id: bool = False

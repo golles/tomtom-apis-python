@@ -44,9 +44,27 @@ logging.basicConfig(level=logging.WARNING)
 logging.getLogger("tomtom_apis").setLevel(logging.INFO)
 ```
 
+## Use custom ClientSession
+
+To use your custom defined `aiohttp.client.ClientSession` you can create your own and pass it to any API, the only requirement is to define a `base_url`.
+
+```python
+from aiohttp import ClientTimeout
+from aiohttp.client import ClientSession
+
+from tomtom_apis import ApiOptions
+from tomtom_apis.maps import MapDisplayApi
+
+options = ApiOptions(api_key="secret")
+session = ClientSession("https://api.tomtom.com", timeout=ClientTimeout(total=60, connect=10, sock_connect=10, sock_read=10, ceil_threshold=5))
+
+# Create an instance of MapDisplayApi
+map_display_api = MapDisplayApi(options, session)
+```
+
 ## Sharing ClientSession Between APIs
 
-To use the same `aiohttp.client.ClientSession` across multiple APIs, you can inject a session from one API into another:
+To use the same `aiohttp.client.ClientSession` across multiple APIs, you can pass a session from one API into another:
 
 ```python
 from tomtom_apis import ApiOptions

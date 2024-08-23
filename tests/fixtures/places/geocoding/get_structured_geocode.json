@@ -2,7 +2,7 @@
   "summary": {
     "query": "de ruijterkade 154 amsterdam 1011 ac",
     "queryType": "NON_NEAR",
-    "queryTime": 21,
+    "queryTime": 22,
     "numResults": 1,
     "offset": 0,
     "totalResults": 1,

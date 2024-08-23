@@ -2,7 +2,7 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 696,
+    "queryTime": 113,
     "numResults": 10,
     "offset": 0,
     "totalResults": 100,
@@ -108,54 +108,6 @@
     },
     {
       "type": "POI",
-      "id": "cDWm8p0nlLFIHUYCO6SAGg",
-      "score": 3.089413166,
-      "dist": 228.910864,
-      "info": "search:ta:840066000123350-US",
-      "poi": {
-        "name": "4th Street Pizza Company",
-        "phone": "+1 408-286-7500",
-        "categorySet": [{ "id": 7315036 }],
-        "url": "4thstpizzaco.com/",
-        "categories": ["pizza", "restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "150",
-        "streetName": "East Santa Clara Street",
-        "municipality": "San Jose",
-        "neighbourhood": "Downtown San Jose",
-        "countrySecondarySubdivision": "Santa Clara",
-        "countrySubdivision": "CA",
-        "countrySubdivisionName": "California",
-        "countrySubdivisionCode": "CA",
-        "postalCode": "95113",
-        "extendedPostalCode": "95113-1901",
-        "countryCode": "US",
-        "country": "United States",
-        "countryCodeISO3": "USA",
-        "freeformAddress": "150 East Santa Clara Street, San Jose, CA 95113",
-        "localName": "San Jose"
-      },
-      "position": { "lat": 37.337329, "lon": -121.887444 },
-      "viewport": {
-        "topLeftPoint": { "lat": 37.33823, "lon": -121.88858 },
-        "btmRightPoint": { "lat": 37.33643, "lon": -121.88631 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 37.33756, "lon": -121.88761 } }
-      ]
-    },
-    {
-      "type": "POI",
       "id": "wavFRX5fnoH8pXl6KAI85g",
       "score": 3.089413166,
       "dist": 228.910864,
@@ -203,15 +155,15 @@
     },
     {
       "type": "POI",
-      "id": "gfzlkgI16FU-xQNJZdyodA",
-      "score": 3.0894076824,
-      "dist": 256.950212,
-      "info": "search:ta:840069005515422-US",
+      "id": "cDWm8p0nlLFIHUYCO6SAGg",
+      "score": 3.089413166,
+      "dist": 228.910864,
+      "info": "search:ta:840066000123350-US",
       "poi": {
-        "name": "La Nostra Pizza & Ristorante",
-        "phone": "+1 408-995-0924",
+        "name": "4th Street Pizza Company",
+        "phone": "+1 408-286-7500",
         "categorySet": [{ "id": 7315036 }],
-        "url": "www.lanostrapizza.com",
+        "url": "4thstpizzaco.com/",
         "categories": ["pizza", "restaurant"],
         "classifications": [
           {
@@ -224,8 +176,8 @@
         ]
       },
       "address": {
-        "streetNumber": "80",
-        "streetName": "South 1st Street",
+        "streetNumber": "150",
+        "streetName": "East Santa Clara Street",
         "municipality": "San Jose",
         "neighbourhood": "Downtown San Jose",
         "countrySecondarySubdivision": "Santa Clara",
@@ -233,21 +185,20 @@
         "countrySubdivisionName": "California",
         "countrySubdivisionCode": "CA",
         "postalCode": "95113",
-        "extendedPostalCode": "95113-1241",
+        "extendedPostalCode": "95113-1901",
         "countryCode": "US",
         "country": "United States",
         "countryCodeISO3": "USA",
-        "freeformAddress": "80 South 1st Street, San Jose, CA 95113",
+        "freeformAddress": "150 East Santa Clara Street, San Jose, CA 95113",
         "localName": "San Jose"
       },
-      "position": { "lat": 37.334801, "lon": -121.889107 },
+      "position": { "lat": 37.337329, "lon": -121.887444 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.3357, "lon": -121.89024 },
-        "btmRightPoint": { "lat": 37.3339, "lon": -121.88798 }
+        "topLeftPoint": { "lat": 37.33823, "lon": -121.88858 },
+        "btmRightPoint": { "lat": 37.33643, "lon": -121.88631 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.33463, "lon": -121.88947 } },
-        { "type": "main", "position": { "lat": 37.33462, "lon": -121.88947 } }
+        { "type": "main", "position": { "lat": 37.33756, "lon": -121.88761 } }
       ]
     },
     {
@@ -297,6 +248,55 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.33463, "lon": -121.88947 } },
         { "type": "main", "position": { "lat": 37.33498, "lon": -121.88973 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "gfzlkgI16FU-xQNJZdyodA",
+      "score": 3.0894076824,
+      "dist": 256.950212,
+      "info": "search:ta:840069005515422-US",
+      "poi": {
+        "name": "La Nostra Pizza & Ristorante",
+        "phone": "+1 408-995-0924",
+        "categorySet": [{ "id": 7315036 }],
+        "url": "www.lanostrapizza.com",
+        "categories": ["pizza", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "80",
+        "streetName": "South 1st Street",
+        "municipality": "San Jose",
+        "neighbourhood": "Downtown San Jose",
+        "countrySecondarySubdivision": "Santa Clara",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "95113",
+        "extendedPostalCode": "95113-1241",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "80 South 1st Street, San Jose, CA 95113",
+        "localName": "San Jose"
+      },
+      "position": { "lat": 37.334801, "lon": -121.889107 },
+      "viewport": {
+        "topLeftPoint": { "lat": 37.3357, "lon": -121.89024 },
+        "btmRightPoint": { "lat": 37.3339, "lon": -121.88798 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 37.33463, "lon": -121.88947 } },
+        { "type": "main", "position": { "lat": 37.33462, "lon": -121.88947 } }
       ]
     },
     {

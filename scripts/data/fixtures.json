@@ -346,8 +346,21 @@
     "fixtures": [
       {
         "method": "GET",
-        "fixture": "traffic/traffic/get_incident_details.json",
+        "fixture": "traffic/traffic/get_incident_details_bbox.json",
         "url": "traffic/services/5/incidentDetails?bbox=4.8854592519716675%2C52.36934334773164%2C4.897883244144765%2C52.37496348620152&fields=%7Bincidents%7Btype%2Cgeometry%7Btype%2Ccoordinates%7D%2Cproperties%7BiconCategory%7D%7D%7D&language=en-GB&categoryFilter=0%2C1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C14&timeValidityFilter=present&key={{TT_KEY}}"
+      },
+      {
+        "method": "GET",
+        "fixture": "traffic/traffic/get_incident_details_ids.json",
+        "url": "traffic/services/5/incidentDetails?ids=string&fields=%7Bincidents%7Btype%2Cgeometry%7Btype%2Ccoordinates%7D%2Cproperties%7BiconCategory%7D%7D%7D&language=en-GB&categoryFilter=0%2C1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C14&timeValidityFilter=present&key={{TT_KEY}}"
+      },
+      {
+        "method": "POST",
+        "fixture": "traffic/traffic/post_incident_details.json",
+        "url": "traffic/services/5/incidentDetails?fields=%7Bincidents%7Btype%2Cgeometry%7Btype%2Ccoordinates%7D%2Cproperties%7BiconCategory%7D%7D%7D&language=en-GB&categoryFilter=0%2C1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C14&timeValidityFilter=present&key={{TT_KEY}}",
+        "data": {
+          "ids": ["string"]
+        }
       },
       {
         "method": "GET",

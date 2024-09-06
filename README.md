@@ -51,14 +51,14 @@ This section provides an overview of the APIs implemented by the client and thei
 
 ### Traffic APIs
 
-| API                      | Notes                                                                              |
-| ------------------------ | ---------------------------------------------------------------------------------- |
-| Intermediate Traffic API | Not implemented                                                                    |
-| Junction Analytics API   | Not implemented                                                                    |
-| O/D Analytics API        | Not implemented                                                                    |
-| Route Monitoring API     | Not implemented                                                                    |
-| Traffic API              | Not typed, uses `dict`. `Map Styles` and `Map Styles v2` have not been implemented |
-| Traffic Stats API        | Not implemented                                                                    |
+| API                      | Notes                                                             |
+| ------------------------ | ----------------------------------------------------------------- |
+| Intermediate Traffic API | Not implemented                                                   |
+| Junction Analytics API   | Not implemented                                                   |
+| O/D Analytics API        | Not implemented                                                   |
+| Route Monitoring API     | Not implemented                                                   |
+| Traffic API              | Typed, `Map Styles` and `Map Styles v2` have not been implemented |
+| Traffic Stats API        | Not implemented                                                   |
 
 ## Installation
 

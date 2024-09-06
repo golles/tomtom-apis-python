@@ -2,15 +2,19 @@
 
 from tomtom_apis.utils import serialize_list
 
-from ..api import BaseApi, BaseParams, BasePostData
+from ..api import BaseApi, BaseParams
 from .models import (
     BBoxParam,
     BoudingBoxParam,
     FlowSegmentDataParams,
+    FlowSegmentDataResponse,
     FlowStyleType,
     FlowType,
     IncidentDetailsParams,
+    IncidentDetailsPostData,
+    IncidentDetailsResponse,
     IncidentStyleType,
+    IncidentViewportResponse,
     RasterFlowTilesParams,
     RasterIncidentTilesParams,
     VectorFlowTilesParams,
@@ -31,7 +35,7 @@ class TrafficApi(BaseApi):
         bbox: BBoxParam | None = None,
         ids: list[str] | None = None,
         params: IncidentDetailsParams | None = None,
-    ) -> dict:
+    ) -> IncidentDetailsResponse:
         """
         The Incident Details service provides information on traffic incidents which are inside a given bounding box or whose geometry intersects with it. The freshness of data is based on the provided Traffic Model ID (t). The data obtained from this service can be used as standalone or as an extension to other Traffic Incident services.
 
@@ -50,14 +54,14 @@ class TrafficApi(BaseApi):
             params=params,
         )
 
-        return await response.dict()
+        return await response.deserialize(IncidentDetailsResponse)
 
     async def post_incident_details(
         self,
         *,
-        params: BaseParams | None = None,
-        data: BasePostData,
-    ) -> dict:
+        params: IncidentDetailsParams | None = None,
+        data: IncidentDetailsPostData,
+    ) -> IncidentDetailsResponse:
         """
         The Incident Details service provides information on traffic incidents which are inside a given bounding box or whose geometry intersects with it. The freshness of data is based on the provided Traffic Model ID (t). The data obtained from this service can be used as standalone or as an extension to other Traffic Incident services.
 
@@ -70,7 +74,7 @@ class TrafficApi(BaseApi):
             data=data,
         )
 
-        return await response.dict()
+        return await response.deserialize(IncidentDetailsResponse)
 
     async def get_incident_viewport(  # pylint: disable=too-many-arguments
         self,
@@ -81,7 +85,7 @@ class TrafficApi(BaseApi):
         overview_zoom: int,
         copyright_information: bool,
         params: BaseParams | None = None,  # No extra params.
-    ) -> dict:
+    ) -> IncidentViewportResponse:
         """
         This service returns legal and technical information for the viewport described in the request. It should be called by client applications whenever the viewport changes (for instance, through zooming, panning, going to a location, or displaying a route).
 
@@ -92,7 +96,7 @@ class TrafficApi(BaseApi):
             params=params,
         )
 
-        return await response.dict()
+        return await response.deserialize(IncidentViewportResponse)
 
     async def get_raster_incident_tile(  # pylint: disable=too-many-arguments
         self,
@@ -142,7 +146,7 @@ class TrafficApi(BaseApi):
         zoom: int,
         point: str,
         params: FlowSegmentDataParams | None = None,
-    ) -> dict:
+    ) -> FlowSegmentDataResponse:
         """
         This service provides information about the speeds and travel times of the road fragment closest to the given coordinates. It is designed to work alongside the Flow Tiles to support clickable flow data visualizations. With this API, the client side can connect any place in the map with flow data on the closest road and present it to the user.
 
@@ -153,7 +157,7 @@ class TrafficApi(BaseApi):
             params=params,
         )
 
-        return await response.dict()
+        return await response.deserialize(FlowSegmentDataResponse)
 
     async def get_raster_flow_tiles(  # pylint: disable=too-many-arguments
         self,

@@ -15,6 +15,7 @@ from tomtom_apis.traffic.models import (
     FlowTagType,
     FlowType,
     IncidentDetailsParams,
+    IncidentDetailsPostData,
     IncidentStyleType,
     RasterFlowTilesParams,
     RasterIncidentTilesParams,
@@ -33,9 +34,9 @@ async def fixture_traffic_api():
         yield traffic_display
 
 
-@pytest.mark.usefixtures("image_response")
-@pytest.mark.parametrize("image_response", ["traffic/traffic/get_incident_details.json"], indirect=True)
-async def test_deserialization_get_incident_details(traffic_display: TrafficApi):
+@pytest.mark.usefixtures("json_response")
+@pytest.mark.parametrize("json_response", ["traffic/traffic/get_incident_details_bbox.json"], indirect=True)
+async def test_deserialization_get_incident_details_bbox(traffic_display: TrafficApi):
     """Test the get_incident_details method"""
     response = await traffic_display.get_incident_details(
         bbox=BBoxParam(
@@ -66,16 +67,88 @@ async def test_deserialization_get_incident_details(traffic_display: TrafficApi)
         ),
     )
 
+    assert response
+
     await traffic_display.close()
+
+
+@pytest.mark.usefixtures("json_response")
+@pytest.mark.parametrize("json_response", ["traffic/traffic/get_incident_details_ids.json"], indirect=True)
+async def test_deserialization_get_incident_details_ids(traffic_display: TrafficApi):
+    """Test the get_incident_details method"""
+    response = await traffic_display.get_incident_details(
+        ids=["string"],
+        params=IncidentDetailsParams(
+            fields="{incidents{type,geometry{type,coordinates},properties{iconCategory}}}",
+            language=Language.EN_GB,
+            categoryFilter=[
+                CategoryFilterType.UNKNOWN,
+                CategoryFilterType.ACCIDENT,
+                CategoryFilterType.FOG,
+                CategoryFilterType.DANGEROUS_CONDITIONS,
+                CategoryFilterType.RAIN,
+                CategoryFilterType.ICE,
+                CategoryFilterType.JAM,
+                CategoryFilterType.LANE_CLOSED,
+                CategoryFilterType.ROAD_CLOSED,
+                CategoryFilterType.ROAD_WORKS,
+                CategoryFilterType.WIND,
+                CategoryFilterType.FLOODING,
+                CategoryFilterType.BROKEN_DOWN_VEHICLE,
+            ],
+            timeValidityFilter=[TimeValidityFilterType.PRESENT],
+        ),
+    )
 
     assert response
 
+    await traffic_display.close()
 
-# post_incident_details
+
+async def test_get_incident_details_mutually_exclusive_parameters(traffic_display: TrafficApi):
+    """Test the mutually exclusive parameters from the get_incident_details method"""
+
+    with pytest.raises(ValueError, match="bbox and ids are mutually exclusive parameters"):
+        await traffic_display.get_incident_details(
+            params=IncidentDetailsParams(),
+        )
 
 
-@pytest.mark.usefixtures("image_response")
-@pytest.mark.parametrize("image_response", ["traffic/traffic/get_incident_viewport.json"], indirect=True)
+@pytest.mark.usefixtures("json_response")
+@pytest.mark.parametrize("json_response", ["traffic/traffic/post_incident_details.json"], indirect=True)
+async def test_deserialization_post_incident_details(traffic_display: TrafficApi):
+    """Test the post_incident_details method"""
+    response = await traffic_display.post_incident_details(
+        params=IncidentDetailsParams(
+            fields="{incidents{type,geometry{type,coordinates},properties{iconCategory}}}",
+            language=Language.EN_GB,
+            categoryFilter=[
+                CategoryFilterType.UNKNOWN,
+                CategoryFilterType.ACCIDENT,
+                CategoryFilterType.FOG,
+                CategoryFilterType.DANGEROUS_CONDITIONS,
+                CategoryFilterType.RAIN,
+                CategoryFilterType.ICE,
+                CategoryFilterType.JAM,
+                CategoryFilterType.LANE_CLOSED,
+                CategoryFilterType.ROAD_CLOSED,
+                CategoryFilterType.ROAD_WORKS,
+                CategoryFilterType.WIND,
+                CategoryFilterType.FLOODING,
+                CategoryFilterType.BROKEN_DOWN_VEHICLE,
+            ],
+            timeValidityFilter=[TimeValidityFilterType.PRESENT],
+        ),
+        data=IncidentDetailsPostData(ids=["string"]),
+    )
+
+    assert response
+
+    await traffic_display.close()
+
+
+@pytest.mark.usefixtures("json_response")
+@pytest.mark.parametrize("json_response", ["traffic/traffic/get_incident_viewport.json"], indirect=True)
 async def test_deserialization_get_incident_viewport(traffic_display: TrafficApi):
     """Test the get_incident_viewport method"""
     response = await traffic_display.get_incident_viewport(
@@ -86,9 +159,9 @@ async def test_deserialization_get_incident_viewport(traffic_display: TrafficApi
         copyright_information=True,
     )
 
-    await traffic_display.close()
-
     assert response
+
+    await traffic_display.close()
 
 
 @pytest.mark.usefixtures("image_response")
@@ -103,9 +176,9 @@ async def test_deserialization_get_static_image(traffic_display: TrafficApi):
         params=RasterIncidentTilesParams(t="-1", tileSize=TileSizeType.SIZE_256),
     )
 
-    await traffic_display.close()
-
     assert response
+
+    await traffic_display.close()
 
 
 @pytest.mark.usefixtures("image_response")
@@ -134,13 +207,13 @@ async def test_deserialization_get_tile_v1(traffic_display: TrafficApi):
         ),
     )
 
-    await traffic_display.close()
-
     assert response
 
+    await traffic_display.close()
 
-@pytest.mark.usefixtures("image_response")
-@pytest.mark.parametrize("image_response", ["traffic/traffic/get_flow_segment_data.json"], indirect=True)
+
+@pytest.mark.usefixtures("json_response")
+@pytest.mark.parametrize("json_response", ["traffic/traffic/get_flow_segment_data.json"], indirect=True)
 async def test_deserialization_get_flow_segment_data(traffic_display: TrafficApi):
     """Test the get_flow_segment_data method"""
     response = await traffic_display.get_flow_segment_data(
@@ -153,9 +226,9 @@ async def test_deserialization_get_flow_segment_data(traffic_display: TrafficApi
         ),
     )
 
-    await traffic_display.close()
-
     assert response
+
+    await traffic_display.close()
 
 
 @pytest.mark.usefixtures("image_response")
@@ -172,9 +245,9 @@ async def test_deserialization_get_raster_flow_tiles(traffic_display: TrafficApi
         ),
     )
 
-    await traffic_display.close()
-
     assert response
+
+    await traffic_display.close()
 
 
 @pytest.mark.usefixtures("image_response")
@@ -199,6 +272,6 @@ async def test_deserialization_get_vector_flow_tiles(traffic_display: TrafficApi
         ),
     )
 
-    await traffic_display.close()
-
     assert response
+
+    await traffic_display.close()

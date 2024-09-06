@@ -28,7 +28,7 @@ TILES: list[MapTile] = [  # a 3x3 grid of London at zoom level 10.
 
 async def download_tiles(api: MapDisplayApi | TrafficApi, tiles: list[MapTile]) -> None:
     """
-    Download tiles
+    Download tiles for a given api.
 
     Args:
         api (MapDisplayApi | TrafficApi): The API to use for downloading tiles.
@@ -62,14 +62,12 @@ async def download_tiles(api: MapDisplayApi | TrafficApi, tiles: list[MapTile]) 
 
 
 async def download(api_key: str) -> None:
-    """Download tiles"""
+    """Download all tiles"""
 
     options = ApiOptions(api_key=api_key)
 
-    async with MapDisplayApi(options) as map_display_api:
+    async with MapDisplayApi(options) as map_display_api, TrafficApi(options) as traffic_api:
         await download_tiles(map_display_api, TILES)
-
-    async with TrafficApi(options) as traffic_api:
         await download_tiles(traffic_api, TILES)
 
 

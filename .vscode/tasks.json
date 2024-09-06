@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "pre-commit:all-files",
+      "type": "shell",
+      "command": "poetry run pre-commit run --all-files",
+      "problemMatcher": []
+    },
+    {
+      "label": "pre-commit:staged",
+      "type": "shell",
+      "command": "poetry run pre-commit run",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run all examples",
+      "type": "shell",
+      "command": "find examples -type f -name \"*.py\" -exec poetry run python {} \\;",
+      "problemMatcher": []
+    },
+    {
+      "label": "Sort all models.py files",
+      "type": "shell",
+      "command": "find src -name models.py -exec poetry run python scripts/sort_models.py {} \\;",
+      "problemMatcher": []
+    },
+    {
+      "label": "Update test fixtures",
+      "type": "shell",
+      "command": "poetry run python scripts/update_test_fixtures.py",
+      "problemMatcher": []
+    }
+  ]
+}

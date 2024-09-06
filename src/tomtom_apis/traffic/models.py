@@ -1,4 +1,5 @@
 """Models for the TomTom Traffic API"""
+# pylint: disable=invalid-name, too-many-instance-attributes, too-many-lines
 
 from __future__ import annotations
 
@@ -17,7 +18,6 @@ from ..models import Language, LatitudeLongitude, TileSizeType
 class Aci:
     """Represents an ACI item"""
 
-    # pylint: disable=invalid-name
     probabilityOfOccurrence: ProbabilityOfOccurrenceType
     numberOfReports: int
     lastReportTime: str
@@ -27,7 +27,6 @@ class Aci:
 class BBoxParam:
     """bbox param"""
 
-    # pylint: disable=invalid-name
     minLon: float
     minLat: float
     maxLon: float
@@ -42,7 +41,6 @@ class BBoxParam:
 class BoudingBoxParam:
     """Boudingbox param"""
 
-    # pylint: disable=invalid-name
     minY: float
     minX: float
     maxY: float
@@ -89,7 +87,6 @@ class DirectionType(Enum):
 class Event:
     """Represents an event item"""
 
-    # pylint: disable=invalid-name
     description: str
     code: int
     iconCategory: IconCategoryType
@@ -99,7 +96,6 @@ class Event:
 class FlowSegmentData:
     """Represents a flow segment data item"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     version: str = field(metadata=field_options(alias="@version"))
     frc: FrcType
     currentSpeed: int
@@ -116,7 +112,6 @@ class FlowSegmentData:
 class FlowSegmentDataParams(BaseParams):
     """Parameters for the get_flow_segment_data method"""
 
-    # pylint: disable=invalid-name
     unit: SpeedUnitType | None = None
     thickness: ThicknessType | None = None
     openLr: bool | None = None
@@ -126,7 +121,6 @@ class FlowSegmentDataParams(BaseParams):
 class FlowSegmentDataResponse(DataClassORJSONMixin):
     """Represents a flow segment data response"""
 
-    # pylint: disable=invalid-name
     flowSegmentData: FlowSegmentData
 
 
@@ -204,7 +198,6 @@ class Incident:
 class IncidentDetailsParams(BaseParams):
     """Parameters for the get_incident_details method"""
 
-    # pylint: disable=invalid-name
     fields: str | None = None
     language: Language | None = None
     t: str | None = None
@@ -223,7 +216,6 @@ class IncidentDetailsPostData(BasePostData):
 class IncidentDetailsResponse(DataClassORJSONMixin):
     """Represents an incident details response"""
 
-    # pylint: disable=invalid-name
     incidents: list[Incident | None]
 
 
@@ -231,7 +223,6 @@ class IncidentDetailsResponse(DataClassORJSONMixin):
 class IncidentProperties:
     """Represents an incidents properties item"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     id: str | None = None
     iconCategory: IconCategoryType
     magnitudeOfDelay: MagnitudeOfDelayType | None = None
@@ -286,7 +277,6 @@ class IncidentTagType(Enum):
 class IncidentViewportResponse(DataClassORJSONMixin):
     """Represents an incident viewport response"""
 
-    # pylint: disable=invalid-name
     viewpResp: ViewpResp
 
 
@@ -313,7 +303,6 @@ class ProbabilityOfOccurrenceType(Enum):
 class RasterFlowTilesParams(BaseParams):
     """Parameters for the get_raster_flow_tiles method"""
 
-    # pylint: disable=invalid-name
     thickness: ThicknessType | None = None
     tileSize: TileSizeType | None = None
 
@@ -322,7 +311,6 @@ class RasterFlowTilesParams(BaseParams):
 class RasterIncidentTilesParams(BaseParams):
     """Parameters for the get_raster_incident_tile method"""
 
-    # pylint: disable=invalid-name
     t: str | None = None
     tileSize: TileSizeType | None = None
 
@@ -352,7 +340,6 @@ class SpeedUnitType(Enum):
 class TMC:
     """Represents a Traffic Message Channel item"""
 
-    # pylint: disable=invalid-name
     countryCode: str | None = None
     tableNumber: str | None = None
     tableVersion: str | None = None
@@ -388,7 +375,6 @@ class TmcPoint:
 class TrafficState:
     """Represents a traffic state item"""
 
-    # pylint: disable=invalid-name
     trafficAge: str = field(metadata=field_options(alias="@trafficAge"))
     trafficModelId: str = field(metadata=field_options(alias="@trafficModelId"))
 
@@ -397,7 +383,6 @@ class TrafficState:
 class VectorFlowTilesParams(BaseParams):
     """Parameters for the get_vector_flow_tiles method"""
 
-    # pylint: disable=invalid-name
     roadTypes: RoadType | None = None
     trafficLevelStep: float | None = None
     margin: float | None = None
@@ -417,7 +402,6 @@ class VectorIncidentTilesParams(BaseParams):
 class ViewpResp:
     """Represents a view resp item"""
 
-    # pylint: disable=invalid-name
     trafficState: TrafficState
     copyrightIds: str
     version: str = field(metadata=field_options(alias="@version"))

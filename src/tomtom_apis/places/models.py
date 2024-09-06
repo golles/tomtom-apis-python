@@ -1,5 +1,5 @@
 """Models for the TomTom Places API"""
-# pylint: disable=too-many-lines
+# pylint: disable=invalid-name, too-many-instance-attributes, too-many-lines
 
 from __future__ import annotations
 
@@ -28,7 +28,6 @@ class AccessType(Enum):
 class AdditionalDataItem:
     """Represents an additional data response item"""
 
-    # pylint: disable=invalid-name
     providerID: str
     error: str | None = None
     geometryData: (
@@ -40,7 +39,6 @@ class AdditionalDataItem:
 class AdditionalDataParams(BaseParams):
     """Parameters for the get_additional_data method"""
 
-    # pylint: disable=invalid-name
     geometriesZoom: int | None = None
 
 
@@ -48,7 +46,6 @@ class AdditionalDataParams(BaseParams):
 class AdditionalDataResponse(DataClassORJSONMixin):
     """Represents a Additional Data response"""
 
-    # pylint: disable=invalid-name
     additionalData: list[AdditionalDataItem]
 
 
@@ -56,7 +53,6 @@ class AdditionalDataResponse(DataClassORJSONMixin):
 class Address(DataClassORJSONMixin):
     """Represents a Address"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     streetNumber: str | None = None
     streetName: str | None = None
     municipalitySubdivision: str | None = None
@@ -82,7 +78,6 @@ class Address(DataClassORJSONMixin):
 class AddressRange(DataClassORJSONMixin):
     """Represents a AddressRange"""
 
-    # pylint: disable=invalid-name
     rangeLeft: str
     rangeRight: str
     _from: LatLon = field(metadata=field_options(alias="from"))
@@ -93,7 +88,6 @@ class AddressRange(DataClassORJSONMixin):
 class Addresses(DataClassORJSONMixin):
     """Represents Addresses"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     address: RevGeocodeAddress
     position: str
     roadClass: list[Roadclass] | None = None
@@ -109,7 +103,6 @@ class Addresses(DataClassORJSONMixin):
 class AsynchronousBatchDownloadParams(BaseParams):
     """Parameters for the get_asynchronous_batch_download method"""
 
-    # pylint: disable=invalid-name
     waitTimeSeconds: int
 
 
@@ -117,7 +110,6 @@ class AsynchronousBatchDownloadParams(BaseParams):
 class AsynchronousSynchronousBatchParams(BaseParams):
     """Parameters for the post_asynchronous_synchronous_batch method"""
 
-    # pylint: disable=invalid-name
     redirectMode: RedirectModeType
     waitTimeSeconds: int
 
@@ -126,7 +118,6 @@ class AsynchronousSynchronousBatchParams(BaseParams):
 class AutocompleteParams(BaseParams):
     """Parameters for the get_autocomplete method"""
 
-    # pylint: disable=invalid-name
     limit: int | None = None
     lat: float | None = None
     lon: float | None = None
@@ -162,7 +153,6 @@ class BatchItem:
 class BatchItemResponse(DataClassORJSONMixin):
     """Represents a Batch Item response"""
 
-    # pylint: disable=invalid-name
     statusCode: int
     response: Response
 
@@ -171,7 +161,6 @@ class BatchItemResponse(DataClassORJSONMixin):
 class BatchPostData(BasePostData):
     """Data for the post Batch API"""
 
-    # pylint: disable=invalid-name
     batchItems: list[BatchItem]
 
 
@@ -179,7 +168,6 @@ class BatchPostData(BasePostData):
 class BatchResponse(DataClassORJSONMixin):
     """Represents a Batch response"""
 
-    # pylint: disable=invalid-name
     formatVersion: str
     batchItems: list[BatchItemResponse]
     summary: BatchResponseSummary
@@ -189,7 +177,6 @@ class BatchResponse(DataClassORJSONMixin):
 class BatchResponseSummary(DataClassORJSONMixin):
     """Represents a batch response summary"""
 
-    # pylint: disable=invalid-name
     successfulRequests: int
     totalRequests: int
 
@@ -212,7 +199,6 @@ class BookmarkType(Enum):
 class BoundingBox(DataClassORJSONMixin):
     """Represents a BoundingBox"""
 
-    # pylint: disable=invalid-name
     topLeftPoint: LatLon
     btmRightPoint: LatLon
 
@@ -247,7 +233,6 @@ class CapabilitieType(Enum):
 class CategorySearchParams(BaseParams):
     """Parameters for the get_category_search method"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     typeahead: bool | None = None
     limit: int | None = None
     ofs: int | None = None
@@ -285,7 +270,6 @@ class ChargingPark(DataClassORJSONMixin):
 class ChargingPoint(DataClassORJSONMixin):
     """Represents a ChargingPoint"""
 
-    # pylint: disable=invalid-name
     capabilities: list[CapabilitieType]
     connectors: list[Connector]
     evseId: str
@@ -297,7 +281,6 @@ class ChargingPoint(DataClassORJSONMixin):
 class ChargingStation(DataClassORJSONMixin):
     """Represents a ChargingStation"""
 
-    # pylint: disable=invalid-name
     id: str
     chargingPoints: list[ChargingPoint]
 
@@ -317,7 +300,6 @@ class Connector(DataClassORJSONMixin):
     Note that some API's use the field type while others use connectorType, after deserialization the values for both fields will be the same.
     """
 
-    # pylint: disable=invalid-name
     id: str | None = None
     type: ConnectorType | None = None  # In EV search.
     connectorType: ConnectorType | None = None  # In general search.
@@ -359,7 +341,6 @@ class ConnectorType(Enum):
 class Context(DataClassORJSONMixin):
     """Represents an auto complete context"""
 
-    # pylint: disable=invalid-name
     inputQuery: str
     geoBias: GeoBias | None = None
 
@@ -376,7 +357,6 @@ class CoordinateQueryIntent(DataClassORJSONMixin):
 class CrossStreetLookupParams(BaseParams):
     """Parameters for the get_cross_street_lookup method"""
 
-    # pylint: disable=invalid-name
     limit: int | None = None
     radius: int | None = None
     language: Language | None = None
@@ -396,7 +376,6 @@ class CurrentType(Enum):
 class DataSources(DataClassORJSONMixin):
     """Represents a DataSources"""
 
-    # pylint: disable=invalid-name
     chargingAvailability: IdString
 
 
@@ -418,7 +397,6 @@ class EntityType(Enum):
 class EntryPoint(DataClassORJSONMixin):
     """Represents a EntryPoint"""
 
-    # pylint: disable=invalid-name
     type: EntryPointType
     functions: list[FunctionType] | None = None
     pathToNext: PathToNextType | None = None
@@ -444,7 +422,6 @@ class EvSearchByIdParams(BaseParams):
 class EvSearchNearbyParams(BaseParams):
     """Parameters for the get_ev_search_nearby method"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     lat: float
     lon: float
     radius: int
@@ -521,7 +498,6 @@ class GeoBias(DataClassORJSONMixin):
 class GeocodeParams(BaseParams):
     """Represents the parameters for get_geocode"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     storeResult: bool | None = None  # Deprecated
     typeahead: bool | None = None  # Deprecated
     limit: int | None = None
@@ -553,7 +529,6 @@ class Geometry:
 class GeometryFilterData(BasePostData):
     """Data for the post geometry filter API"""
 
-    # pylint: disable=invalid-name
     geometryList: list[Geometry]
     poiList: list[GeometryPoi]
 
@@ -579,7 +554,6 @@ class GeometryPoi:
 class GeometrySearchParams(BaseParams):
     """Parameters for the get_geometry_search method"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     limit: int | None = None
     language: Language | None = None
     lat: float | None = None
@@ -605,7 +579,6 @@ class GeometrySearchParams(BaseParams):
 class GeometrySearchPostData(BasePostData):
     """Data for the post geometry search API"""
 
-    # pylint: disable=invalid-name
     geometryList: list[Geometry]
 
 
@@ -641,7 +614,6 @@ class IdxSetType(Enum):
 class MapCode(DataClassORJSONMixin):
     """Represents a MapCode"""
 
-    # pylint: disable=invalid-name
     type: MapCodeType
     fullMapcode: str
     territory: str
@@ -679,7 +651,6 @@ class MatchType(Enum):
 class Matches(DataClassORJSONMixin):
     """Represents a matches"""
 
-    # pylint: disable=invalid-name
     inputQuery: list[Match]
 
 
@@ -687,7 +658,6 @@ class Matches(DataClassORJSONMixin):
 class Name(DataClassORJSONMixin):
     """Represents a Name"""
 
-    # pylint: disable=invalid-name
     nameLocale: str
     name: str
 
@@ -706,7 +676,6 @@ class NearbyQueryIntent(DataClassORJSONMixin):
 class NearbySearchParams(BaseParams):
     """Parameters for the get_nearby_search method"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     limit: int | None = None
     ofs: int | None = None
     countrySet: list[str] | None = None
@@ -733,7 +702,6 @@ class NearbySearchParams(BaseParams):
 class OpeningHour(DataClassORJSONMixin):
     """Represents an OpeningHour"""
 
-    # pylint: disable=invalid-name
     mode: str
     timeRanges: list[TimeRange]
 
@@ -763,7 +731,6 @@ class PaymentOption(DataClassORJSONMixin):
 class PlaceByIdParams(BaseParams):
     """Parameters for the get_place_by_id method"""
 
-    # pylint: disable=invalid-name
     entityId: str
     language: Language | None = None
     openingHours: OpeningHoursType | None = None
@@ -785,7 +752,6 @@ class PlaceByIdResponse(DataClassORJSONMixin):
 class Poi(DataClassORJSONMixin):
     """Represents a Result"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     name: str
     phone: str | None = None
     brands: list[Brand] | None = None
@@ -808,7 +774,6 @@ class PoiCategoriesParams(BaseParams):
 class PoiCategoriesResponse(DataClassORJSONMixin):
     """Represents a Poi Categories response"""
 
-    # pylint: disable=invalid-name
     poiCategories: list[PoiCategory] | None = None
 
 
@@ -816,7 +781,6 @@ class PoiCategoriesResponse(DataClassORJSONMixin):
 class PoiCategory(DataClassORJSONMixin):
     """Represents a PoiCategory"""
 
-    # pylint: disable=invalid-name
     id: int
     name: str
     childCategoryIds: list[int]
@@ -827,7 +791,6 @@ class PoiCategory(DataClassORJSONMixin):
 class PoiSearchParams(BaseParams):
     """Parameters for the get_poi_search method"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     typeahead: bool | None = None
     limit: int | None = None
     ofs: int | None = None
@@ -865,7 +828,6 @@ class Points:
 class PremiumGeocodeParams(BaseParams):
     """Parameters for the premium get_geocode method"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     unit: str | None = None
     limit: int | None = None
     ofs: int | None = None
@@ -917,7 +879,6 @@ class RedirectModeType(Enum):
 class RelatedPoi(DataClassORJSONMixin):
     """Represents a RelatedPoi"""
 
-    # pylint: disable=invalid-name
     relationType: RelationType
     id: str
 
@@ -942,7 +903,6 @@ class RelationType(Enum):
 class Response(DataClassORJSONMixin):
     """Represents a Batch Item Response"""
 
-    # pylint: disable=invalid-name
     summary: Summary | None = None
     results: list[Result] | None = None
     errorText: str | None = None
@@ -964,7 +924,6 @@ class RestrictionType(Enum):
 class Result(DataClassORJSONMixin):
     """Represents a Result"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     type: ResultType | None = None
     id: str
     score: float | None = None
@@ -1017,7 +976,6 @@ class ResultType(Enum):
 class RevGeoBoundingBox(DataClassORJSONMixin):
     """Represents a BoundingBox for reverse geocode"""
 
-    # pylint: disable=invalid-name
     northEast: str
     southWest: str
     entity: RevGeoEntityType
@@ -1033,7 +991,6 @@ class RevGeoEntityType(Enum):
 class RevGeocodeAddress(DataClassORJSONMixin):
     """Represents a Reverse Geocode Address"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     buildingNumber: str | None = None  # Deprecated
     building: str | None = None
     streetNumber: str | None = None
@@ -1068,7 +1025,6 @@ class RevGeocodeAddress(DataClassORJSONMixin):
 class ReverseGeocodeParams(BaseParams):
     """Parameters for the get_reverse_geocode method"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     returnSpeedLimit: bool | None = None
     heading: float | None = None
     radius: int | None = None
@@ -1138,7 +1094,6 @@ class SearchAlongRouteData(BasePostData):
 class SearchAlongRouteParams(BaseParams):
     """Parameters for the post_search_along_route method"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     typeahead: bool | None = None
     limit: int | None = None
     categorySet: list[str] | None = None
@@ -1163,7 +1118,6 @@ class SearchAlongRouteParams(BaseParams):
 class SearchParams(BaseParams):
     """Parameters for the get_search method"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     typeahead: bool | None = None
     limit: int | None = None
     ofs: int | None = None
@@ -1206,7 +1160,6 @@ class SearchResponse(DataClassORJSONMixin):
 class Segment(DataClassORJSONMixin):
     """Represents an auto complete segment"""
 
-    # pylint: disable=invalid-name
     type: str
     value: str
     matches: Matches
@@ -1235,7 +1188,6 @@ class StatusType(Enum):
 class StructuredGeocodeParams(BaseParams):
     """Represents the parameters for get_structured_geocode"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     limit: int | None = None
     ofs: int | None = None
     streetNumber: str | None = None
@@ -1257,7 +1209,6 @@ class StructuredGeocodeParams(BaseParams):
 class Summary(DataClassORJSONMixin):
     """Represents a response Summary"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     query: str | None = None
     queryTime: int | None = None
     queryType: QueryType | None = None  # Deprecated
@@ -1273,7 +1224,6 @@ class Summary(DataClassORJSONMixin):
 class SynchronousBatchPostReponse(DataClassORJSONMixin):
     """Represents a Synchronous Batch Item response"""
 
-    # pylint: disable=invalid-name
     statusCode: int
     response: Response
 
@@ -1291,7 +1241,6 @@ class Time(DataClassORJSONMixin):
 class TimeRange(DataClassORJSONMixin):
     """Represents a TimeRange"""
 
-    # pylint: disable=invalid-name
     startTime: Time
     endTime: Time
 
@@ -1300,7 +1249,6 @@ class TimeRange(DataClassORJSONMixin):
 class TimeZone(DataClassORJSONMixin):
     """Represents a TimeZone"""
 
-    # pylint: disable=invalid-name
     ianaId: str
 
 
@@ -1315,7 +1263,6 @@ class VehicleType(Enum):
 class Viewport(DataClassORJSONMixin):
     """Represents a Viewport"""
 
-    # pylint: disable=invalid-name
     topLeftPoint: LatLon
     btmRightPoint: LatLon
 

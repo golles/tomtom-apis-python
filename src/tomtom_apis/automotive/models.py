@@ -1,4 +1,5 @@
 """Models for the TomTom Automotive API"""
+# pylint: disable=invalid-name, too-many-instance-attributes, too-many-lines
 
 from __future__ import annotations
 
@@ -14,7 +15,6 @@ from ..api import BaseParams
 class Current(DataClassORJSONMixin):
     """Represents a Current"""
 
-    # pylint: disable=invalid-name
     available: bool
     emptySpots: int
     availabilityTrend: str
@@ -25,7 +25,6 @@ class Current(DataClassORJSONMixin):
 class Fuel(DataClassORJSONMixin):
     """Represents a Fuel"""
 
-    # pylint: disable=invalid-name
     type: list[str]
     price: list[Price]
     updatedAt: datetime
@@ -35,7 +34,6 @@ class Fuel(DataClassORJSONMixin):
 class FuelPricesResponse(DataClassORJSONMixin):
     """Represents a FuelPrices response"""
 
-    # pylint: disable=invalid-name
     fuelPrice: str
     fuels: list[Fuel]
 
@@ -46,7 +44,6 @@ class FuelPrizeParams(BaseParams):
     Parameters for the get_fuel_prize method.
     """
 
-    # pylint: disable=invalid-name
     fuelPrice: str
 
 
@@ -56,7 +53,6 @@ class ParkingAvailabilityParams(BaseParams):
     Parameters for the get_parking_availability method.
     """
 
-    # pylint: disable=invalid-name
     parkingAvailability: str
 
 
@@ -64,7 +60,6 @@ class ParkingAvailabilityParams(BaseParams):
 class ParkingAvailabilityResponse(DataClassORJSONMixin):
     """Represents a ParkingAvailability response"""
 
-    # pylint: disable=invalid-name
     parkingAvailability: str
     statuses: list[Status]
 
@@ -73,7 +68,6 @@ class ParkingAvailabilityResponse(DataClassORJSONMixin):
 class Price(DataClassORJSONMixin):
     """Represents a Price"""
 
-    # pylint: disable=invalid-name
     value: float
     currency: str
     currencySymbol: str

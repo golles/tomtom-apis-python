@@ -1,4 +1,5 @@
 """Models for the TomTom Routing API"""
+# pylint: disable=invalid-name, too-many-instance-attributes, too-many-lines
 
 from __future__ import annotations
 
@@ -15,7 +16,6 @@ from ..models import Language, LatitudeLongitude
 class CalculateLongDistanceEVRouteParams(BaseParams):
     """Parameters for the calculate long distance EV route API"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     vehicleHeading: int | None = None
     sectionType: str | None = None
     report: str | None = None
@@ -53,7 +53,6 @@ class CalculateLongDistanceEVRouteParams(BaseParams):
 class CalculateLongDistanceEVRoutePostData(BasePostData):
     """Data for the post calculate long distance EV route API"""
 
-    # pylint: disable=invalid-name
     chargingModes: list[ChargingMode]
 
 
@@ -61,7 +60,6 @@ class CalculateLongDistanceEVRoutePostData(BasePostData):
 class CalculateReachableRangePostData(BasePostData):
     """Data for the post calculate reachable range API"""
 
-    # pylint: disable=invalid-name
     avoidVignette: list[str] | None = None
     allowVignette: list[str] | None = None
     avoidAreas: Rectangles | None = None
@@ -71,7 +69,6 @@ class CalculateReachableRangePostData(BasePostData):
 class CalculateReachableRouteParams(BaseParams):
     """Parameters for the calculate reachable route API"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     fuelBudgetInLiters: float | None = None
     energyBudgetInkWh: float | None = None
     timeBudgetInSec: float | None = None
@@ -115,7 +112,6 @@ class CalculateReachableRouteParams(BaseParams):
 class CalculateRouteParams(BaseParams):
     """Parameters for the calculate route API"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     maxAlternatives: int | None = None
     instructionsType: str | None = None
     language: Language | None = None
@@ -164,7 +160,6 @@ class CalculateRouteParams(BaseParams):
 class CalculateRoutePostData(BasePostData):
     """Data for the post calculate route API"""
 
-    # pylint: disable=invalid-name
     supportingPoints: list[LatitudeLongitude] | None = None
     avoidVignette: list[str] | None = None
     allowVignette: list[str] | None = None
@@ -175,7 +170,6 @@ class CalculateRoutePostData(BasePostData):
 class CalculatedLongDistanceEVRouteResponse(DataClassORJSONMixin):
     """Represents a calculated long distance EV route response"""
 
-    # pylint: disable=invalid-name
     formatVersion: str
     routes: list[EVRoute]
 
@@ -184,7 +178,6 @@ class CalculatedLongDistanceEVRouteResponse(DataClassORJSONMixin):
 class CalculatedReachableRangeResponse(DataClassORJSONMixin):
     """Represents a calculated reachable range response"""
 
-    # pylint: disable=invalid-name
     formatVersion: str
     reachableRange: ReachableRange
 
@@ -193,7 +186,6 @@ class CalculatedReachableRangeResponse(DataClassORJSONMixin):
 class CalculatedRouteResponse(DataClassORJSONMixin):
     """Represents a calculated route response"""
 
-    # pylint: disable=invalid-name
     formatVersion: str
     routes: list[Route]
 
@@ -202,7 +194,6 @@ class CalculatedRouteResponse(DataClassORJSONMixin):
 class ChargingConnection(DataClassORJSONMixin):
     """Represents a charging connection"""
 
-    # pylint: disable=invalid-name
     facilityType: str
     plugType: str
 
@@ -211,7 +202,6 @@ class ChargingConnection(DataClassORJSONMixin):
 class ChargingConnectionInfo(DataClassORJSONMixin):
     """Represents the charging connection info"""
 
-    # pylint: disable=invalid-name
     chargingVoltageInV: int
     chargingCurrentInA: int
     chargingCurrentType: str
@@ -223,7 +213,6 @@ class ChargingConnectionInfo(DataClassORJSONMixin):
 class ChargingCurve(DataClassORJSONMixin):
     """Represents a charging curve"""
 
-    # pylint: disable=invalid-name
     chargeInkWh: float
     timeToChargeInSeconds: int
 
@@ -232,7 +221,6 @@ class ChargingCurve(DataClassORJSONMixin):
 class ChargingInformationAtEndOfLeg(DataClassORJSONMixin):
     """Represents the charging information at the end of a leg"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     chargingConnections: list[ChargingConnection]
     chargingConnectionInfo: ChargingConnectionInfo
     targetChargeInkWh: float
@@ -251,7 +239,6 @@ class ChargingInformationAtEndOfLeg(DataClassORJSONMixin):
 class ChargingMode(DataClassORJSONMixin):
     """Represents a charging mode"""
 
-    # pylint: disable=invalid-name
     chargingConnections: list[ChargingConnection]
     chargingCurve: list[ChargingCurve]
 
@@ -260,7 +247,6 @@ class ChargingMode(DataClassORJSONMixin):
 class ChargingParkLocation(DataClassORJSONMixin):
     """Represents a charging park location"""
 
-    # pylint: disable=invalid-name
     coordinate: LatitudeLongitude
     street: str
     city: str
@@ -288,7 +274,6 @@ class EVLeg(DataClassORJSONMixin):
 class EVLegSummary(DataClassORJSONMixin):
     """Represents the summary of a EV leg"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     lengthInMeters: int
     travelTimeInSeconds: int
     trafficDelayInSeconds: int
@@ -313,7 +298,6 @@ class EVRoute(DataClassORJSONMixin):
 class EVSummary(DataClassORJSONMixin):
     """Represents the EV summary of a route"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     lengthInMeters: int
     travelTimeInSeconds: int
     trafficDelayInSeconds: int
@@ -345,7 +329,6 @@ class ReachableRange(DataClassORJSONMixin):
 class Rectangle:
     """A rectangle defined by its south-west and north-east corners"""
 
-    # pylint: disable=invalid-name
     southWestCorner: LatitudeLongitude
     northEastCorner: LatitudeLongitude
 
@@ -370,7 +353,6 @@ class Route(DataClassORJSONMixin):
 class Section(DataClassORJSONMixin):
     """Represents a section of a route"""
 
-    # pylint: disable=invalid-name
     startPointIndex: int
     endPointIndex: int
     sectionType: str
@@ -381,7 +363,6 @@ class Section(DataClassORJSONMixin):
 class Summary(DataClassORJSONMixin):
     """Represents the summary of a route"""
 
-    # pylint: disable=invalid-name
     lengthInMeters: int
     travelTimeInSeconds: int
     trafficDelayInSeconds: int
@@ -394,7 +375,6 @@ class Summary(DataClassORJSONMixin):
 class WaypointOptimizationOptions:
     """Options for the waypoint optimization API"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     travelMode: str
     vehicleMaxSpeed: int
     vehicleWeight: int
@@ -418,7 +398,6 @@ class WaypointOptimizationPoint:
 class WaypointOptimizationPostData(BasePostData):
     """Data for the post waypoint optimization API"""
 
-    # pylint: disable=invalid-name
     waypoints: list[WaypointOptimizationPoint]
     options: WaypointOptimizationOptions
 
@@ -427,5 +406,4 @@ class WaypointOptimizationPostData(BasePostData):
 class WaypointOptimizedResponse(DataClassORJSONMixin):
     """Represents a waypoint optimized response"""
 
-    # pylint: disable=invalid-name
     optimizedOrder: list[int]

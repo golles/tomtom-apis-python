@@ -1,4 +1,5 @@
 """Models for the TomTom Maps API"""
+# pylint: disable=invalid-name, too-many-instance-attributes, too-many-lines
 
 from __future__ import annotations
 
@@ -100,7 +101,6 @@ class LayerTypeWithPoiType(Enum):
 class MapServiceCopyrightsResponse(DataClassORJSONMixin):
     """Represents the map service copyrights response"""
 
-    # pylint: disable=invalid-name
     formatVersion: str
     copyrightsCaption: str
 
@@ -109,7 +109,6 @@ class MapServiceCopyrightsResponse(DataClassORJSONMixin):
 class MapTileParams(BaseParams):
     """Parameters for the map tile API"""
 
-    # pylint: disable=invalid-name
     tileSize: TileSizeType | None = None
     view: ViewType | None = None
     language: Language | None = None
@@ -127,7 +126,6 @@ class MapTileV1Params(BaseParams):
 class MapTileV2Params(BaseParams):
     """Parameters for the map tile API"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     view: ViewType | None = None
     include: list[IncludeType] | None = field(default=None, metadata={"serialize": serialize_list_brackets})
     vehicleWeight: int | None = None
@@ -150,7 +148,6 @@ class MapTileV2Params(BaseParams):
 class StaticImageParams(BaseParams):
     """Parameters for the map tile API"""
 
-    # pylint: disable=invalid-name, too-many-instance-attributes
     layer: LayerType | None = None
     style: StyleType | None = None
     x: int | None = None

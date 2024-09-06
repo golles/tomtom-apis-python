@@ -5,7 +5,7 @@ import pytest
 from tests.const import API_KEY
 from tomtom_apis.api import ApiOptions
 from tomtom_apis.places import EVSearchApi
-from tomtom_apis.places.models import EvSearchByIdParams, EvSearchNearbyParams
+from tomtom_apis.places.models import EvSearchByIdParams, EvSearchNearbyParams, SearchResponse
 
 
 @pytest.fixture(name="ev_search_api")
@@ -28,9 +28,8 @@ async def test_deserialization_get_ev_search_nearby(ev_search_api: EVSearchApi):
         )
     )
 
-    await ev_search_api.close()
-
     assert response
+    assert isinstance(response, SearchResponse)
 
     # Test that the fields Connector.type and Connector.connectorType are set the same after deserialization.
     assert response.results[0].chargingStations
@@ -44,9 +43,8 @@ async def test_deserialization_get_ev_search_by_id(ev_search_api: EVSearchApi):
     """Test the get_ev_search_by_id method"""
     response = await ev_search_api.get_ev_search_by_id(params=EvSearchByIdParams(id="RS*ORI*E1161"))
 
-    await ev_search_api.close()
-
     assert response
+    assert isinstance(response, SearchResponse)
 
     # Test that the fields Connector.type and Connector.connectorType are set the same after deserialization.
     assert response.results[0].chargingStations

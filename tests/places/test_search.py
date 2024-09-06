@@ -7,10 +7,13 @@ from tomtom_apis.api import ApiOptions
 from tomtom_apis.models import Language, LatLon, ViewType
 from tomtom_apis.places import SearchApi
 from tomtom_apis.places.models import (
+    AdditionalDataResponse,
     Address,
+    AutocompleteReponse,
     CategorySearchParams,
     Geometry,
     GeometryFilterData,
+    GeometryFilterResponse,
     GeometryPoi,
     GeometrySearchParams,
     GeometrySearchPostData,
@@ -18,12 +21,14 @@ from tomtom_apis.places.models import (
     PlaceByIdParams,
     Poi,
     PoiCategoriesParams,
+    PoiCategoriesResponse,
     Points,
     PoiSearchParams,
     RelatedPoisType,
     SearchAlongRouteData,
     SearchAlongRouteParams,
     SearchParams,
+    SearchResponse,
     SortByType,
 )
 
@@ -53,9 +58,8 @@ async def test_deserialization_get_search(search_api: SearchApi):
         ),
     )
 
-    await search_api.close()
-
     assert response
+    assert isinstance(response, SearchResponse)
     assert response.results
     assert len(response.results) > 5
 
@@ -74,9 +78,8 @@ async def test_deserialization_get_poi_search(search_api: SearchApi):
         ),
     )
 
-    await search_api.close()
-
     assert response
+    assert isinstance(response, SearchResponse)
     assert response.results
     assert len(response.results) > 5
 
@@ -96,9 +99,8 @@ async def test_deserialization_get_category_search(search_api: SearchApi):
         ),
     )
 
-    await search_api.close()
-
     assert response
+    assert isinstance(response, SearchResponse)
     assert response.results
     assert len(response.results) > 5
 
@@ -137,9 +139,8 @@ async def test_deserialization_get_geometry_search(search_api: SearchApi):
         ),
     )
 
-    await search_api.close()
-
     assert response
+    assert isinstance(response, SearchResponse)
     assert response.results
     assert len(response.results) > 5
 
@@ -180,9 +181,8 @@ async def test_deserialization_post_geometry_search(search_api: SearchApi):
         ),
     )
 
-    await search_api.close()
-
     assert response
+    assert isinstance(response, SearchResponse)
     assert response.results
     assert len(response.results) > 5
 
@@ -197,9 +197,8 @@ async def test_deserialization_get_nearby_search(search_api: SearchApi):
         params=NearbySearchParams(radius=1000, limit=100),
     )
 
-    await search_api.close()
-
     assert response
+    assert isinstance(response, SearchResponse)
     assert response.results
     assert len(response.results) > 5
 
@@ -241,9 +240,8 @@ async def test_deserialization_post_search_along_route(search_api: SearchApi):
         ),
     )
 
-    await search_api.close()
-
     assert response
+    assert isinstance(response, SearchResponse)
     assert response.results
     assert len(response.results) > 5
 
@@ -255,8 +253,6 @@ async def test_deserialization_get_place_by_id(search_api: SearchApi):
     response = await search_api.get_place_by_id(
         params=PlaceByIdParams(entityId="528009004256119"),
     )
-
-    await search_api.close()
 
     assert response
     assert response.results
@@ -272,9 +268,8 @@ async def test_deserialization_get_autocomplete(search_api: SearchApi):
     """Test the get_autocomplete method"""
     response = await search_api.get_autocomplete(query="pizza", language=Language.EN_US)
 
-    await search_api.close()
-
     assert response
+    assert isinstance(response, AutocompleteReponse)
     assert response.results
     assert len(response.results) > 2
 
@@ -310,9 +305,8 @@ async def test_deserialization_get_geometry_filter(search_api: SearchApi):
         ],
     )
 
-    await search_api.close()
-
     assert response
+    assert isinstance(response, GeometryFilterResponse)
     assert response.results
     assert len(response.results) > 0
 
@@ -350,9 +344,8 @@ async def test_deserialization_post_geometry_filter(search_api: SearchApi):
         )
     )
 
-    await search_api.close()
-
     assert response
+    assert isinstance(response, GeometryFilterResponse)
     assert response.results
     assert len(response.results) > 0
 
@@ -365,9 +358,8 @@ async def test_deserialization_get_poi_categories(search_api: SearchApi):
         params=PoiCategoriesParams(),
     )
 
-    await search_api.close()
-
     assert response
+    assert isinstance(response, PoiCategoriesResponse)
     assert response.poiCategories
     assert len(response.poiCategories) > 500
 
@@ -380,6 +372,5 @@ async def test_deserialization_get_additional_data(search_api: SearchApi):
         geometries=["00004631-3400-3c00-0000-0000673c4d2e", "00004631-3400-3c00-0000-0000673c42fe"],
     )
 
-    await search_api.close()
-
     assert response
+    assert isinstance(response, AdditionalDataResponse)

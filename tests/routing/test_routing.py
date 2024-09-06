@@ -8,7 +8,14 @@ from tests.const import API_KEY
 from tomtom_apis.api import ApiOptions
 from tomtom_apis.models import LatLonList
 from tomtom_apis.routing import RoutingApi
-from tomtom_apis.routing.models import CalculateReachableRangePostData, CalculateReachableRouteParams, CalculateRouteParams, CalculateRoutePostData
+from tomtom_apis.routing.models import (
+    CalculatedReachableRangeResponse,
+    CalculatedRouteResponse,
+    CalculateReachableRangePostData,
+    CalculateReachableRouteParams,
+    CalculateRouteParams,
+    CalculateRoutePostData,
+)
 
 from ..const import LOC_AMSTERDAM, LOC_ROTTERDAM
 
@@ -35,11 +42,10 @@ async def test_deserialization_get_calculate_route(routing_api: RoutingApi):
         ),
     )
 
-    await routing_api.close()
-
-    assert response is not None
+    assert response
+    assert isinstance(response, CalculatedRouteResponse)
     assert len(response.routes) == 1
-    assert response.routes[0].summary is not None
+    assert response.routes[0].summary
     assert response.routes[0].summary.lengthInMeters > 1000
     assert response.routes[0].summary.travelTimeInSeconds > 30
     assert isinstance(response.routes[0].summary.departureTime, datetime)
@@ -74,11 +80,10 @@ async def test_deserialization_post_calculate_route(routing_api: RoutingApi):
         ),
     )
 
-    await routing_api.close()
-
-    assert response is not None
+    assert response
+    assert isinstance(response, CalculatedRouteResponse)
     assert len(response.routes) == 1
-    assert response.routes[0].summary is not None
+    assert response.routes[0].summary
     assert response.routes[0].summary.lengthInMeters > 1000
     assert response.routes[0].summary.travelTimeInSeconds > 30
     assert isinstance(response.routes[0].summary.departureTime, datetime)
@@ -91,7 +96,7 @@ async def test_deserialization_post_calculate_route(routing_api: RoutingApi):
 @pytest.mark.parametrize("json_response", ["routing/routing/get_calculate_reachable_range.json"], indirect=True)
 async def test_deserialization_get_calculate_reachable_range(routing_api: RoutingApi):
     """Test the get_calculate_reachable_range method"""
-    reponse = await routing_api.get_calculate_reachable_range(
+    response = await routing_api.get_calculate_reachable_range(
         origin=LOC_AMSTERDAM,
         params=CalculateReachableRouteParams(
             energyBudgetInkWh=43,
@@ -101,21 +106,20 @@ async def test_deserialization_get_calculate_reachable_range(routing_api: Routin
         ),
     )
 
-    await routing_api.close()
-
-    assert reponse is not None
-    assert reponse.reachableRange is not None
-    assert reponse.reachableRange.center is not None
-    assert reponse.reachableRange.center.latitude == 52.50931
-    assert reponse.reachableRange.center.longitude == 13.42937
-    assert len(reponse.reachableRange.boundary) > 1
+    assert response
+    assert isinstance(response, CalculatedReachableRangeResponse)
+    assert response.reachableRange
+    assert response.reachableRange.center
+    assert response.reachableRange.center.latitude == 52.50931
+    assert response.reachableRange.center.longitude == 13.42937
+    assert len(response.reachableRange.boundary) > 1
 
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["routing/routing/post_calculate_reachable_range.json"], indirect=True)
 async def test_deserialization_post_calculate_reachable_range(routing_api: RoutingApi):
     """Test the post_calculate_reachable_range method"""
-    reponse = await routing_api.post_calculate_reachable_range(
+    response = await routing_api.post_calculate_reachable_range(
         origin=LOC_AMSTERDAM,
         params=CalculateReachableRouteParams(
             energyBudgetInkWh=43,
@@ -138,11 +142,10 @@ async def test_deserialization_post_calculate_reachable_range(routing_api: Routi
         ),
     )
 
-    await routing_api.close()
-
-    assert reponse is not None
-    assert reponse.reachableRange is not None
-    assert reponse.reachableRange.center is not None
-    assert reponse.reachableRange.center.latitude == 52.50931
-    assert reponse.reachableRange.center.longitude == 13.42937
-    assert len(reponse.reachableRange.boundary) > 1
+    assert response
+    assert isinstance(response, CalculatedReachableRangeResponse)
+    assert response.reachableRange
+    assert response.reachableRange.center
+    assert response.reachableRange.center.latitude == 52.50931
+    assert response.reachableRange.center.longitude == 13.42937
+    assert len(response.reachableRange.boundary) > 1

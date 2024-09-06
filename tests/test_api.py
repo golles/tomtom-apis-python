@@ -268,3 +268,12 @@ async def test_tracking_id(base_api, mock_session):
         assert mock_session.request.call_args[1]["headers"][TRACKING_ID_HEADER] == "mock-uuid"
         assert isinstance(response, Response)
         assert response.status == 200
+
+
+async def test_manual_session_close(mock_session):
+    """Test manual closing of the session"""
+    options = ApiOptions(api_key=API_KEY)
+    base_api = BaseApi(options, mock_session)
+    assert base_api.session is not None
+    await base_api.close()
+    assert base_api.session is None

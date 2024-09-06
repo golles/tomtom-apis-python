@@ -5,7 +5,7 @@ import pytest
 from tests.const import API_KEY
 from tomtom_apis.api import ApiOptions
 from tomtom_apis.routing import WaypointOptimizationApi
-from tomtom_apis.routing.models import WaypointOptimizationPostData
+from tomtom_apis.routing.models import WaypointOptimizationPostData, WaypointOptimizedResponse
 
 
 @pytest.fixture(name="waypoint_optimization_api")
@@ -48,8 +48,7 @@ async def test_deserialization_post_waypointoptimization(waypoint_optimization_a
         ),
     )
 
-    await waypoint_optimization_api.close()
-
-    assert response is not None
+    assert response
+    assert isinstance(response, WaypointOptimizedResponse)
     assert len(response.optimizedOrder) == 7
     assert response.optimizedOrder == [0, 5, 4, 2, 3, 1, 6]

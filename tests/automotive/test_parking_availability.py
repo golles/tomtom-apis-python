@@ -5,7 +5,7 @@ import pytest
 from tests.const import API_KEY
 from tomtom_apis.api import ApiOptions
 from tomtom_apis.automotive import ParkingAvailabilityApi
-from tomtom_apis.automotive.models import ParkingAvailabilityParams
+from tomtom_apis.automotive.models import ParkingAvailabilityParams, ParkingAvailabilityResponse
 
 
 @pytest.fixture(name="parking_availability_api")
@@ -24,9 +24,8 @@ async def test_deserialization_get_parking_availability(parking_availability_api
         params=ParkingAvailabilityParams(parkingAvailability="00000000-0003-1d9a-0009-20d4467654e2")
     )
 
-    await parking_availability_api.close()
-
     assert response
+    assert isinstance(response, ParkingAvailabilityResponse)
     assert response.statuses
     assert response.statuses[0]
     assert response.statuses[0].current

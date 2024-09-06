@@ -9,6 +9,7 @@ from tomtom_apis.api import ApiOptions
 from tomtom_apis.models import LatLonList
 from tomtom_apis.routing import LongDistanceEVRoutingApi
 from tomtom_apis.routing.models import (
+    CalculatedLongDistanceEVRouteResponse,
     CalculateLongDistanceEVRouteParams,
     CalculateLongDistanceEVRoutePostData,
     ChargingConnection,
@@ -69,11 +70,10 @@ async def test_deserialization_post_calculate_long_distance_ev_route(long_distan
         data=data,
     )
 
-    await long_distance_ev_routing_api.close()
-
-    assert response is not None
+    assert response
+    assert isinstance(response, CalculatedLongDistanceEVRouteResponse)
     assert len(response.routes) == 1
-    assert response.routes[0].summary is not None
+    assert response.routes[0].summary
     assert response.routes[0].summary.lengthInMeters > 500000
     assert response.routes[0].summary.travelTimeInSeconds > 10000
     assert response.routes[0].summary.batteryConsumptionInkWh > 30

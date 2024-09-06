@@ -11,12 +11,15 @@ from tomtom_apis.traffic.models import (
     BoudingBoxParam,
     CategoryFilterType,
     FlowSegmentDataParams,
+    FlowSegmentDataResponse,
     FlowStyleType,
     FlowTagType,
     FlowType,
     IncidentDetailsParams,
     IncidentDetailsPostData,
+    IncidentDetailsResponse,
     IncidentStyleType,
+    IncidentViewportResponse,
     RasterFlowTilesParams,
     RasterIncidentTilesParams,
     SpeedUnitType,
@@ -68,8 +71,7 @@ async def test_deserialization_get_incident_details_bbox(traffic_display: Traffi
     )
 
     assert response
-
-    await traffic_display.close()
+    assert isinstance(response, IncidentDetailsResponse)
 
 
 @pytest.mark.usefixtures("json_response")
@@ -101,8 +103,7 @@ async def test_deserialization_get_incident_details_ids(traffic_display: Traffic
     )
 
     assert response
-
-    await traffic_display.close()
+    assert isinstance(response, IncidentDetailsResponse)
 
 
 async def test_get_incident_details_mutually_exclusive_parameters(traffic_display: TrafficApi):
@@ -143,8 +144,7 @@ async def test_deserialization_post_incident_details(traffic_display: TrafficApi
     )
 
     assert response
-
-    await traffic_display.close()
+    assert isinstance(response, IncidentDetailsResponse)
 
 
 @pytest.mark.usefixtures("json_response")
@@ -160,8 +160,7 @@ async def test_deserialization_get_incident_viewport(traffic_display: TrafficApi
     )
 
     assert response
-
-    await traffic_display.close()
+    assert isinstance(response, IncidentViewportResponse)
 
 
 @pytest.mark.usefixtures("image_response")
@@ -177,8 +176,7 @@ async def test_deserialization_get_static_image(traffic_display: TrafficApi):
     )
 
     assert response
-
-    await traffic_display.close()
+    assert isinstance(response, bytes)
 
 
 @pytest.mark.usefixtures("image_response")
@@ -208,8 +206,7 @@ async def test_deserialization_get_tile_v1(traffic_display: TrafficApi):
     )
 
     assert response
-
-    await traffic_display.close()
+    assert isinstance(response, bytes)
 
 
 @pytest.mark.usefixtures("json_response")
@@ -227,8 +224,7 @@ async def test_deserialization_get_flow_segment_data(traffic_display: TrafficApi
     )
 
     assert response
-
-    await traffic_display.close()
+    assert isinstance(response, FlowSegmentDataResponse)
 
 
 @pytest.mark.usefixtures("image_response")
@@ -246,8 +242,7 @@ async def test_deserialization_get_raster_flow_tiles(traffic_display: TrafficApi
     )
 
     assert response
-
-    await traffic_display.close()
+    assert isinstance(response, bytes)
 
 
 @pytest.mark.usefixtures("image_response")
@@ -273,5 +268,4 @@ async def test_deserialization_get_vector_flow_tiles(traffic_display: TrafficApi
     )
 
     assert response
-
-    await traffic_display.close()
+    assert isinstance(response, bytes)

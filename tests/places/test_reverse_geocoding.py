@@ -6,7 +6,7 @@ from tests.const import API_KEY
 from tomtom_apis.api import ApiOptions
 from tomtom_apis.models import LatLon, ViewType
 from tomtom_apis.places import ReverseGeocodingApi
-from tomtom_apis.places.models import CrossStreetLookupParams, ReverseGeocodeParams
+from tomtom_apis.places.models import CrossStreetLookupParams, ReverseGeocodeParams, ReverseGeocodeResponse
 
 
 @pytest.fixture(name="reverse_geocoding_api")
@@ -36,9 +36,8 @@ async def test_deserialization_get_reverse_geocode(reverse_geocoding_api: Revers
         ),
     )
 
-    await reverse_geocoding_api.close()
-
     assert response
+    assert isinstance(response, ReverseGeocodeResponse)
     assert response.addresses
     assert response.addresses[0]
     assert response.addresses[0].address
@@ -64,9 +63,8 @@ async def test_deserialization_get_cross_street_lookup(reverse_geocoding_api: Re
         ),
     )
 
-    await reverse_geocoding_api.close()
-
     assert response
+    assert isinstance(response, ReverseGeocodeResponse)
     assert response.addresses
     assert response.addresses[0]
     assert response.addresses[0].address

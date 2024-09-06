@@ -5,7 +5,7 @@ import pytest
 from tests.const import API_KEY
 from tomtom_apis.api import ApiOptions
 from tomtom_apis.places import PremiumGeocodingApi
-from tomtom_apis.places.models import ResultType
+from tomtom_apis.places.models import ResultType, SearchResponse
 
 
 @pytest.fixture(name="premium_geocoding_api")
@@ -25,9 +25,8 @@ async def test_deserialization_get_geocode(premium_geocoding_api: PremiumGeocodi
         query="De Ruijterkade 154 Amsterdam",
     )
 
-    await premium_geocoding_api.close()
-
     assert response
+    assert isinstance(response, SearchResponse)
     assert len(response.results) == 2
     assert response.results[0]
     assert response.results[0].type

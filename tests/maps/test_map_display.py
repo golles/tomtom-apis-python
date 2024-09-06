@@ -14,6 +14,7 @@ from tomtom_apis.maps.models import (
     IncludeType,
     LayerType,
     LayerTypeWithPoiType,
+    MapServiceCopyrightsResponse,
     MapTileV1Params,
     MapTileV2Params,
     StaticImageParams,
@@ -46,9 +47,8 @@ async def test_deserialization_get_map_tile(map_display_api: MapDisplayApi):
         image_format=TileFormatType.PNG,
     )
 
-    await map_display_api.close()
-
     assert response
+    assert isinstance(response, bytes)
 
 
 @pytest.mark.usefixtures("image_response")
@@ -62,9 +62,8 @@ async def test_deserialization_get_satellite_tile(map_display_api: MapDisplayApi
         image_format=TileFormatType.PNG,
     )
 
-    await map_display_api.close()
-
     assert response
+    assert isinstance(response, bytes)
 
 
 @pytest.mark.usefixtures("image_response")
@@ -78,9 +77,8 @@ async def test_deserialization_get_hillshade_tile(map_display_api: MapDisplayApi
         image_format=TileFormatType.PNG,
     )
 
-    await map_display_api.close()
-
     assert response
+    assert isinstance(response, bytes)
 
 
 @pytest.mark.usefixtures("image_response")
@@ -100,9 +98,8 @@ async def test_deserialization_get_static_image(map_display_api: MapDisplayApi):
         ),
     )
 
-    await map_display_api.close()
-
     assert response
+    assert isinstance(response, bytes)
 
 
 @pytest.mark.usefixtures("image_response")
@@ -120,9 +117,8 @@ async def test_deserialization_get_tile_v1(map_display_api: MapDisplayApi):
         ),
     )
 
-    await map_display_api.close()
-
     assert response
+    assert isinstance(response, bytes)
 
 
 @pytest.mark.usefixtures("image_response")
@@ -154,9 +150,8 @@ async def test_deserialization_get_tile_v2(map_display_api: MapDisplayApi):
         ),
     )
 
-    await map_display_api.close()
-
     assert response
+    assert isinstance(response, bytes)
 
 
 @pytest.mark.usefixtures("json_response")
@@ -165,9 +160,8 @@ async def test_deserialization_get_map_copyrights(map_display_api: MapDisplayApi
     """Test the get_map_copyrights method"""
     response = await map_display_api.get_map_copyrights()
 
-    await map_display_api.close()
-
     assert response
+    assert isinstance(response, str)
     assert "TomTom. All rights reserved." in response
 
 
@@ -177,7 +171,6 @@ async def test_deserialization_get_map_service_copyrights(map_display_api: MapDi
     """Test the get_map_copyrights method"""
     response = await map_display_api.get_map_service_copyrights()
 
-    await map_display_api.close()
-
     assert response
+    assert isinstance(response, MapServiceCopyrightsResponse)
     assert "©TomTom" == response.copyrightsCaption

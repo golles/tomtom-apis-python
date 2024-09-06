@@ -7,7 +7,7 @@ from tests.const import API_KEY
 from tomtom_apis.api import ApiOptions
 from tomtom_apis.models import LatLon
 from tomtom_apis.places import BatchSearchApi
-from tomtom_apis.places.models import AsynchronousBatchDownloadParams, BatchItem, BatchPostData, Geometry, Route
+from tomtom_apis.places.models import AsynchronousBatchDownloadParams, BatchItem, BatchPostData, BatchResponse, Geometry, Route
 
 
 @pytest.fixture(name="batch_search_api")
@@ -33,9 +33,8 @@ async def test_deserialization_post_synchronous_batch(batch_search_api: BatchSea
         )
     )
 
-    await batch_search_api.close()
-
     assert response
+    assert isinstance(response, BatchResponse)
 
 
 async def test_post_asynchronous_synchronous_batch(batch_search_api: BatchSearchApi, aresponses: ResponsesMockServer):
@@ -75,9 +74,8 @@ async def test_post_asynchronous_synchronous_batch(batch_search_api: BatchSearch
         )
     )
 
-    await batch_search_api.close()
-
     assert response == "check-this-out"
+    assert isinstance(response, str)
 
 
 @pytest.mark.usefixtures("json_response")
@@ -91,6 +89,5 @@ async def test_deserialization_get_asynchronous_batch_download(batch_search_api:
         ),
     )
 
-    await batch_search_api.close()
-
     assert response
+    assert isinstance(response, BatchResponse)

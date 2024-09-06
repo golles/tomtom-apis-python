@@ -59,12 +59,6 @@ ignore_missing_imports = true
 [tool.pylint]
 max-line-length=150
 
-[tool.pylint."MESSAGES CONTROL"]
-disable = [
-    "fixme", # Since this is WIP project, some things need to happen later
-    "line-too-long", # Doesn't deal well with multiline docstrings
-]
-
 [tool.pytest.ini_options]
 addopts = "--cov --cov-report=term --cov-report=xml"
 asyncio_mode = "auto"

@@ -622,7 +622,8 @@ class MapCode(DataClassORJSONMixin):
 
 class MapCodeType(Enum):
     """
-    A mapcode represents a specific location to within a few meters. Every location on Earth can be represented by a mapcode. Mapcodes are designed to be short, easy to recognize, remember, and communicate. Visit the Mapcode project website for more information.
+    A mapcode represents a specific location to within a few meters. Every location on Earth can be represented by a mapcode. Mapcodes are designed
+    to be short, easy to recognize, remember, and communicate. Visit the Mapcode project website for more information.
     See: http://www.mapcode.com/
     """
 

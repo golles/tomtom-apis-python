@@ -154,7 +154,8 @@ class TileSizeType(Enum):
 
 class ViewType(Enum):
     """
-    Geopolitical View. The context used to resolve the handling of disputed territories. Views include Unified, along with AR IL, IN, MA, PK, RU, TR, and CN which are respectively tailored for Argentina, Israel, India, Morocco, Pakistan, Russia, Turkey, and China.
+    Geopolitical View. The context used to resolve the handling of disputed territories. Views include Unified, along with AR IL, IN, MA, PK, RU, TR,
+    and CN which are respectively tailored for Argentina, Israel, India, Morocco, Pakistan, Russia, Turkey, and China.
     """
 
     UNIFIED = "Unified"

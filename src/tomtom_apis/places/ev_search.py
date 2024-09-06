@@ -6,7 +6,11 @@ from .models import EvSearchByIdParams, EvSearchNearbyParams, SearchResponse
 
 class EVSearchApi(BaseApi):
     """
-    EV Search is a REST API limited to and optimized for electric vehicle station POI category. It provides complete EV POI data including static location information (lat/long), address, opening hours, access restrictions, technical specs of the charging station (connector type, voltage, power, current, current type), etc. as well as dynamic availability status. Wide range of EV specific filters (including dynamic availability) allows for narrowing the search results to match the personal preference (like charging power or access type) of the driver or the technical specification of the electric vehicle (connector type).
+    EV Search is a REST API limited to and optimized for electric vehicle station POI category. It provides complete EV POI data including static
+    location information (lat/long), address, opening hours, access restrictions, technical specs of the charging station (connector type, voltage,
+    power, current, current type), etc. as well as dynamic availability status. Wide range of EV specific filters (including dynamic availability)
+    allows for narrowing the search results to match the personal preference (like charging power or access type) of the driver or the technical
+    specification of the electric vehicle (connector type).
 
     See: https://developer.tomtom.com/ev-search-api/documentation/product-information/introduction
     """
@@ -17,7 +21,8 @@ class EVSearchApi(BaseApi):
         params: EvSearchNearbyParams | None = None,
     ) -> SearchResponse:
         """
-        The EV Search Nearby endpoint provides information about the nearest charging stations based on a given coordinate system and radius. If provided (using optional request parameters), the response can be filtered by connector type, availability status, etc.
+        The EV Search Nearby endpoint provides information about the nearest charging stations based on a given coordinate system and radius. If
+        provided (using optional request parameters), the response can be filtered by connector type, availability status, etc.
 
         See: https://developer.tomtom.com/ev-search-api/documentation/ev-search-api/ev-search-nearby
         """
@@ -35,7 +40,8 @@ class EVSearchApi(BaseApi):
         params: EvSearchByIdParams | None = None,
     ) -> SearchResponse:
         """
-        The EV Search by Id endpoint provides detailed information about a specific charging station, such as its location, availability status, and the attached connectors.
+        The EV Search by Id endpoint provides detailed information about a specific charging station, such as its location, availability status, and
+        the attached connectors.
 
         See: https://developer.tomtom.com/ev-search-api/documentation/ev-search-api/ev-search-by-id
         """

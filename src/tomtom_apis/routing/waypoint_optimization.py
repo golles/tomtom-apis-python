@@ -6,7 +6,8 @@ from ..routing.models import WaypointOptimizationPostData, WaypointOptimizedResp
 
 class WaypointOptimizationApi(BaseApi):
     """
-    TomTom's Waypoint Optimization service is intended to optimize the order of provided waypoints by fastest route. This service uses an heuristic algorithm to create an optimized sequence.
+    TomTom's Waypoint Optimization service is intended to optimize the order of provided waypoints by fastest route. This service uses an heuristic
+    algorithm to create an optimized sequence.
 
     See: https://developer.tomtom.com/waypoint-optimization/documentation/waypoint-optimization-service
     """
@@ -19,6 +20,7 @@ class WaypointOptimizationApi(BaseApi):
     ) -> WaypointOptimizedResponse:
         """
         This endpoint optimizes a provided waypoints sequence based on road network distances. Sequence is ordered to form the fastest route.
+
         See: https://developer.tomtom.com/waypoint-optimization/documentation/waypoint-optimization
         """
 

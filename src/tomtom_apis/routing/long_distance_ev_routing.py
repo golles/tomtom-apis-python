@@ -7,7 +7,8 @@ from .models import CalculatedLongDistanceEVRouteResponse, CalculateLongDistance
 
 class LongDistanceEVRoutingApi(BaseApi):
     """
-    The Long Distance EV Routing service endpoint calculates a route between a given origin and destination, passing through waypoints if they are specified. The route contains charging stops that have been added automatically based on the vehicle's consumption and charging model.
+    The Long Distance EV Routing service endpoint calculates a route between a given origin and destination, passing through waypoints if they are
+    specified. The route contains charging stops that have been added automatically based on the vehicle's consumption and charging model.
 
     See: https://developer.tomtom.com/long-distance-ev-routing-api/documentation/tomtom-maps/product-information/introduction
     """
@@ -20,7 +21,9 @@ class LongDistanceEVRoutingApi(BaseApi):
         data: CalculateLongDistanceEVRoutePostData,
     ) -> CalculatedLongDistanceEVRouteResponse:
         """
-        The Long Distance EV Routing service endpoint calculates a route between a given origin and destination, passing through waypoints if they are specified. The route contains charging stops that have been added automatically based on the vehicle's consumption and charging model.
+        The Long Distance EV Routing service endpoint calculates a route between a given origin and destination, passing through waypoints if they
+        are specified. The route contains charging stops that have been added automatically based on the vehicle's consumption and charging model.
+
         See: https://developer.tomtom.com/long-distance-ev-routing-api/documentation/tomtom-maps/product-information/introduction
         """
 

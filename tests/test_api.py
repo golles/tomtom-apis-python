@@ -1,6 +1,5 @@
 """Test for the Api"""
 
-import asyncio
 import socket
 from dataclasses import dataclass
 from unittest.mock import AsyncMock, patch
@@ -206,7 +205,7 @@ async def test_put_request(base_api, mock_session):
 
 async def test_request_timeout(base_api, mock_session):
     """Test the request method with a timeout"""
-    mock_session.request.side_effect = asyncio.TimeoutError()
+    mock_session.request.side_effect = TimeoutError()
     with pytest.raises(TomTomAPIRequestTimeout):
         await base_api.get("/timeout/endpoint")
 

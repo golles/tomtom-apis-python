@@ -18,7 +18,7 @@ FIXTURE_PATH = "tests/fixtures"
 
 async def read_json(file_path: str):
     """Read a json file and return its content as a dict"""
-    with open(file_path, "r", encoding="utf-8") as file:
+    with open(file_path, encoding="utf-8") as file:
         return json.load(file)
 
 

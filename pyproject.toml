@@ -69,6 +69,11 @@ log_cli_level = "DEBUG"
 line-length = 150
 target-version = "py312"
 
+[tool.ruff.lint]
+extend-select = [
+  "UP",  # pyupgrade
+]
+
 [tool.ruff.lint.isort]
 known-first-party = ["tomtom_apis"]
 

@@ -3,13 +3,12 @@
 import re
 import subprocess
 import sys
-from typing import List, Tuple
 
 
 def sort_classes_alphabetically(file_path: str) -> None:
     """Sort classes alphabetically in a given file"""
 
-    with open(file_path, "r", encoding="UTF-8") as file:
+    with open(file_path, encoding="UTF-8") as file:
         content = file.read()
 
     # Regular expression to match class definitions, including decorators and docstrings
@@ -20,10 +19,10 @@ def sort_classes_alphabetically(file_path: str) -> None:
     )
 
     # Find all classes
-    classes: List[Tuple[str, str, str]] = class_pattern.findall(content)
+    classes: list[tuple[str, str, str]] = class_pattern.findall(content)
 
     # Sort classes alphabetically by their class names
-    def get_class_name(class_match: Tuple[str, str, str]) -> str:
+    def get_class_name(class_match: tuple[str, str, str]) -> str:
         match = re.search(r"class\s+(\w+)", class_match[1])
         if match:
             return match.group(1)

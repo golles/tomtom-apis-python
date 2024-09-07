@@ -24,8 +24,8 @@ from ..const import LOC_AMSTERDAM, LOC_ROTTERDAM
 async def fixture_routing_api():
     """Fixture for RoutingApi"""
     options = ApiOptions(api_key=API_KEY)
-    async with RoutingApi(options) as long_distance_ev_routing:
-        yield long_distance_ev_routing
+    async with RoutingApi(options) as routing:
+        yield routing
 
 
 @pytest.mark.usefixtures("json_response")

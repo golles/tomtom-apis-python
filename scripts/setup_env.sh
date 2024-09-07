@@ -60,16 +60,17 @@ if [ "$CI" != "true" ]; then
     # Trust the repo
     git config --global --add safe.directory /workspaces/tomtom-api-python
 
-    # Add the pre-commit hook if not on CI
+    # Add the pre-commit hook
     poetry run pre-commit install
 
     # Install auto completions
     mkdir -p ~/.zfunc
     poetry completions zsh > ~/.zfunc/_poetry
+    ruff generate-shell-completion zsh > ~/.zfunc/_ruff
     grep -qxF 'fpath+=~/.zfunc' ~/.zshrc || echo 'fpath+=~/.zfunc' >> ~/.zshrc
     grep -qxF 'autoload -Uz compinit && compinit' ~/.zshrc || echo 'autoload -Uz compinit && compinit' >> ~/.zshrc
 
-    log_yellow "poetry auto completion has been added or updated, you need to reload your terminal"
+    log_yellow "auto completions have been added or updated, you need to reload your terminal"
 fi
 
 # Check for --devcontainer argument

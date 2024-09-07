@@ -2,13 +2,12 @@
 
 from __future__ import annotations
 
-import asyncio
 import logging
 import socket
 import uuid
 from dataclasses import dataclass
 from importlib import metadata
-from typing import Any, Literal, Type, TypeVar
+from typing import Any, Literal, TypeVar
 
 import orjson
 from aiohttp import ClientResponse, ClientTimeout
@@ -72,7 +71,7 @@ class Response:
         self.headers: dict[str, str] = dict(response.headers)
         self.status = response.status
 
-    async def deserialize(self, model: Type[T]) -> T:
+    async def deserialize(self, model: type[T]) -> T:
         """Deserialize the response using the provided model"""
         logger.info("Deserializing response to %s", model)
         try:
@@ -200,7 +199,7 @@ class BaseApi:
 
             response.raise_for_status()
 
-        except asyncio.TimeoutError as exception:
+        except TimeoutError as exception:
             msg = "Timeout occurred while connecting to the API"
             raise TomTomAPIRequestTimeout(msg) from exception
         except ClientConnectionError as exception:

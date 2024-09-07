@@ -309,7 +309,7 @@ class Connector(DataClassORJSONMixin):
     currentType: CurrentType
 
     @classmethod
-    def __post_deserialize__(cls, obj: "Connector") -> "Connector":
+    def __post_deserialize__(cls, obj: Connector) -> Connector:
         # Handle the discrepancy between general search and EV search on connector type.
         if obj.type is not None and obj.connectorType is None:
             obj.connectorType = obj.type

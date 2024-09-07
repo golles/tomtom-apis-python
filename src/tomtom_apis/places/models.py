@@ -80,7 +80,7 @@ class AddressRange(DataClassORJSONMixin):
 
     rangeLeft: str
     rangeRight: str
-    _from: LatLon = field(metadata=field_options(alias="from"))
+    from_: LatLon = field(metadata=field_options(alias="from"))
     to: LatLon
 
 

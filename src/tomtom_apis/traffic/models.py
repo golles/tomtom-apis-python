@@ -229,7 +229,7 @@ class IncidentProperties:
     events: list[Event] | None = None
     startTime: str | None = None
     endTime: str | None = None
-    _from: str | None = field(metadata=field_options(alias="from"), default=None)
+    from_: str | None = field(metadata=field_options(alias="from"), default=None)
     to: str | None = None
     length: float | None = None
     delay: int | None = None

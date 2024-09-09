@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import date
-from enum import Enum
+from enum import StrEnum
 
 from geojson import Feature, FeatureCollection, GeometryCollection, LineString, MultiLineString, MultiPoint, MultiPolygon, Point, Polygon
 from mashumaro import field_options
@@ -15,7 +15,7 @@ from ..api import BaseParams, BasePostData
 from ..models import Language, LatLon, ViewType
 
 
-class AccessType(Enum):
+class AccessType(StrEnum):
     """Supported access types"""
 
     PUBLIC = "Public"
@@ -188,7 +188,7 @@ class BookmarkQueryIntent(DataClassORJSONMixin):
     bookmark: BookmarkType
 
 
-class BookmarkType(Enum):
+class BookmarkType(StrEnum):
     """Supported bookmark types"""
 
     HOME = "HOME"
@@ -210,7 +210,7 @@ class Brand(DataClassORJSONMixin):
     name: str
 
 
-class CapabilitieType(Enum):
+class CapabilitieType(StrEnum):
     """Supported capabilities"""
 
     CHARGING_PROFILE_CAPABLE = "ChargingProfileCapable"
@@ -318,7 +318,7 @@ class Connector(DataClassORJSONMixin):
         return obj
 
 
-class ConnectorType(Enum):
+class ConnectorType(StrEnum):
     """Supported connector types"""
 
     STANDARD_HOUSEHOLD_COUNTRY_SPECIFIC = "StandardHouseholdCountrySpecific"
@@ -364,7 +364,7 @@ class CrossStreetLookupParams(BaseParams):
     view: ViewType | None = None
 
 
-class CurrentType(Enum):
+class CurrentType(StrEnum):
     """Supported current types"""
 
     AC1 = "AC1"
@@ -379,7 +379,7 @@ class DataSources(DataClassORJSONMixin):
     chargingAvailability: IdString
 
 
-class EntityType(Enum):
+class EntityType(StrEnum):
     """Supported entity types"""
 
     COUNTRY = "Country"
@@ -403,7 +403,7 @@ class EntryPoint(DataClassORJSONMixin):
     position: LatLon
 
 
-class EntryPointType(Enum):
+class EntryPointType(StrEnum):
     """Supported entry point types"""
 
     MAIN = "main"
@@ -435,7 +435,7 @@ class EvSearchNearbyParams(BaseParams):
     maxPowerKW: float | None = None
 
 
-class ExtendedPostalCodesForType(Enum):
+class ExtendedPostalCodesForType(StrEnum):
     """Supported extended postal codes"""
 
     ADDR = "Addr"
@@ -444,13 +444,13 @@ class ExtendedPostalCodesForType(Enum):
     NONE = "None"
 
 
-class FilterType(Enum):
+class FilterType(StrEnum):
     """Supported filter types"""
 
     BACK_ROADS = "BackRoads"
 
 
-class FuelType(Enum):
+class FuelType(StrEnum):
     """
     Supported fuel types,
     See: https://developer.tomtom.com/search-api/documentation/product-information/supported-fuel-types
@@ -468,7 +468,7 @@ class FuelType(Enum):
     AD_BLUE = "AdBlue"
 
 
-class FunctionType(Enum):
+class FunctionType(StrEnum):
     """Represents the type of access for the Address"""
 
     MAIN = "Main"
@@ -596,7 +596,7 @@ class IdString(DataClassORJSONMixin):
     id: str
 
 
-class IdxSetType(Enum):
+class IdxSetType(StrEnum):
     """
     Supported IdxSet types.
     See: https://developer.tomtom.com/search-api/documentation/search-service/fuzzy-search#indexes-abbreviation-values
@@ -620,7 +620,7 @@ class MapCode(DataClassORJSONMixin):
     code: str
 
 
-class MapCodeType(Enum):
+class MapCodeType(StrEnum):
     """
     A mapcode represents a specific location to within a few meters. Every location on Earth can be represented by a mapcode. Mapcodes are designed
     to be short, easy to recognize, remember, and communicate. Visit the Mapcode project website for more information.
@@ -640,7 +640,7 @@ class Match(DataClassORJSONMixin):
     length: int
 
 
-class MatchType(Enum):
+class MatchType(StrEnum):
     """Supported match types"""
 
     ADDRESS_POINT = "AddressPoint"
@@ -707,13 +707,13 @@ class OpeningHour(DataClassORJSONMixin):
     timeRanges: list[TimeRange]
 
 
-class OpeningHoursType(Enum):
+class OpeningHoursType(StrEnum):
     """Supported opening hours type"""
 
     NEXT_SEVEN_DAYS = "nextSevenDays"
 
 
-class PathToNextType(Enum):
+class PathToNextType(StrEnum):
     """Supported path to next types"""
 
     DRIVING = "DRIVING"
@@ -853,7 +853,7 @@ class QueryIntent(DataClassORJSONMixin):
     details: CoordinateQueryIntent | NearbyQueryIntent | W3WQueryIntent | BookmarkQueryIntent
 
 
-class QueryIntentType(Enum):
+class QueryIntentType(StrEnum):
     """Supported query intent types"""
 
     COORDINATE = "COORDINATE"
@@ -862,14 +862,14 @@ class QueryIntentType(Enum):
     BOOKMARK = "BOOKMARK"
 
 
-class QueryType(Enum):
+class QueryType(StrEnum):
     """Supported query types"""
 
     NEARBY = "NEARBY"
     NON_NEAR = "NON_NEAR"
 
 
-class RedirectModeType(Enum):
+class RedirectModeType(StrEnum):
     """Supported redirect mode types"""
 
     AUTO = "auto"
@@ -884,7 +884,7 @@ class RelatedPoi(DataClassORJSONMixin):
     id: str
 
 
-class RelatedPoisType(Enum):
+class RelatedPoisType(StrEnum):
     """Supported related pois type"""
 
     ALL = "all"
@@ -893,7 +893,7 @@ class RelatedPoisType(Enum):
     PARENT = "parent"
 
 
-class RelationType(Enum):
+class RelationType(StrEnum):
     """Supported relation types"""
 
     CHILD = "child"
@@ -911,7 +911,7 @@ class Response(DataClassORJSONMixin):
     httpStatusCode: int | None = None
 
 
-class RestrictionType(Enum):
+class RestrictionType(StrEnum):
     """Supported parking restrictions"""
 
     EV_ONLY = "evOnly"
@@ -954,14 +954,14 @@ class Result(DataClassORJSONMixin):
     accessType: AccessType | None = None
 
 
-class ResultSetType(Enum):
+class ResultSetType(StrEnum):
     """Supported result set types"""
 
     CATEGORY = "category"
     BRAND = "brand"
 
 
-class ResultType(Enum):
+class ResultType(StrEnum):
     """Supported result types"""
 
     POI = "POI"
@@ -982,7 +982,7 @@ class RevGeoBoundingBox(DataClassORJSONMixin):
     entity: RevGeoEntityType
 
 
-class RevGeoEntityType(Enum):
+class RevGeoEntityType(StrEnum):
     """Supported rev geo entity types"""
 
     POSITION = "position"
@@ -1050,13 +1050,13 @@ class ReverseGeocodeResponse(DataClassORJSONMixin):
     addresses: list[Addresses]
 
 
-class RoadClassType(Enum):
+class RoadClassType(StrEnum):
     """Supported road class types"""
 
     FUNCTIONAL = "Functional"
 
 
-class RoadClassTypeValue(Enum):
+class RoadClassTypeValue(StrEnum):
     """Represents a classification of roads"""
 
     MOTORWAY = "Motorway"
@@ -1168,14 +1168,14 @@ class Segment(DataClassORJSONMixin):
     matchedAlternativeName: str | None = None
 
 
-class SortByType(Enum):
+class SortByType(StrEnum):
     """Supported sort by type"""
 
     DETOUR_TIME = "detourTime"
     DETOUR_OFFSET = "detourOffset"
 
 
-class StatusType(Enum):
+class StatusType(StrEnum):
     """Supported current types"""
 
     AVAILABLE = "Available"
@@ -1253,7 +1253,7 @@ class TimeZone(DataClassORJSONMixin):
     ianaId: str
 
 
-class VehicleType(Enum):
+class VehicleType(StrEnum):
     """Supported vehicle types"""
 
     CAR = "Car"

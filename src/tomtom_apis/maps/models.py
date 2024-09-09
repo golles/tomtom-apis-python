@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from enum import Enum
+from enum import StrEnum
 
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
@@ -13,7 +13,7 @@ from ..models import Language, TileSizeType, ViewType
 from ..utils import serialize_list_brackets
 
 
-class AdrCategoryType(Enum):
+class AdrCategoryType(StrEnum):
     """Supported ADR category types"""
 
     B = "B"
@@ -22,7 +22,7 @@ class AdrCategoryType(Enum):
     E = "E"
 
 
-class DangerousGoodsLoadType(Enum):
+class DangerousGoodsLoadType(StrEnum):
     """Supported dangerous good types"""
 
     EXPLOSIVES = "Explosives"
@@ -36,7 +36,7 @@ class DangerousGoodsLoadType(Enum):
     MISCELLANEOUS_DANGEROUS_GOODS = "Miscellaneous_Dangerous_Goods"
 
 
-class EmissionClassType(Enum):
+class EmissionClassType(StrEnum):
     """Supported emission class types"""
 
     EMISSIONCLASS0 = "EmissionClass0"
@@ -52,7 +52,7 @@ class EmissionClassType(Enum):
     EMISSIONCLASS10 = "EmissionClass10"
 
 
-class EngineType(Enum):
+class EngineType(StrEnum):
     """Supported engine types"""
 
     LPG = "LPG"
@@ -66,7 +66,7 @@ class EngineType(Enum):
     PLUGIN_HYBRID = "Plugin_Hybrid"
 
 
-class GeneralLoadType(Enum):
+class GeneralLoadType(StrEnum):
     """Supported general load types"""
 
     GENERAL_HAZARDOUS_MATERIALS = "General_Hazardous_Materials"
@@ -74,13 +74,13 @@ class GeneralLoadType(Enum):
     GOODS_HARMFUL_TO_WATER = "Goods_Harmful_To_Water"
 
 
-class IncludeType(Enum):
+class IncludeType(StrEnum):
     """Supported include types"""
 
     ROAD_RESTRICTIONS = "road_restrictions"
 
 
-class LayerType(Enum):
+class LayerType(StrEnum):
     """Supported layer types"""
 
     BASIC = "basic"
@@ -88,7 +88,7 @@ class LayerType(Enum):
     LABELS = "labels"
 
 
-class LayerTypeWithPoiType(Enum):
+class LayerTypeWithPoiType(StrEnum):
     """Supported layer types"""
 
     BASIC = "basic"
@@ -161,21 +161,21 @@ class StaticImageParams(BaseParams):
     view: ViewType | None = None
 
 
-class StyleType(Enum):
+class StyleType(StrEnum):
     """Supported style types"""
 
     MAIN = "main"
     NIGHT = "night"
 
 
-class TileFormatType(Enum):
+class TileFormatType(StrEnum):
     """Supported tile formats"""
 
     PNG = "png"
     JPG = "jpg"
 
 
-class TravelModeType(Enum):
+class TravelModeType(StrEnum):
     """Supported travel mode types"""
 
     CAR = "Car"

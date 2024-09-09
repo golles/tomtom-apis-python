@@ -1,12 +1,12 @@
 """Test the models"""
 
 from dataclasses import dataclass
-from enum import Enum
+from enum import StrEnum
 
 from tomtom_apis.api import BaseParams
 
 
-class Choice(Enum):
+class Choice(StrEnum):
     """Test enum"""
 
     NO = "No"

@@ -1,12 +1,12 @@
 """Test utils"""
 
 import math
-from enum import Enum
+from enum import Enum, IntEnum, StrEnum
 
 import pytest
 
 from tomtom_apis.models import LatLon, MapTile
-from tomtom_apis.utils import lat_lon_to_tile_zxy, serialize_bool, serialize_list, serialize_list_brackets, tile_zxy_to_lat_lon
+from tomtom_apis.utils import lat_lon_to_tile_zxy, serialize_bool, serialize_enum, serialize_list, serialize_list_brackets, tile_zxy_to_lat_lon
 
 
 def test_lat_lon_to_tile_zxy_valid():
@@ -87,6 +87,29 @@ class Color(Enum):
     BLUE = "blue"
 
 
+class StrColor(StrEnum):
+    """Simple stringenum for testing"""
+
+    RED = "red"
+    GREEN = "green"
+    BLUE = "blue"
+
+
+class IntColor(IntEnum):
+    """Simple enum for testing"""
+
+    RED = 1
+    GREEN = 2
+    BLUE = 3
+
+
+def test_serialize_enum():
+    """Test cases for serialize_enum"""
+    assert serialize_enum(Color.RED) == "red"
+    assert serialize_enum(StrColor.RED) == "red"
+    assert serialize_enum(IntColor.RED) == "1"
+
+
 def test_serialize_list():
     """Test cases for test_serialize_list"""
     # Test with an empty list
@@ -101,7 +124,10 @@ def test_serialize_list():
     assert serialize_list(["True", False]) == "True,false"
     # Test with a list containing Enums
     assert serialize_list([Color.RED, Color.GREEN, Color.BLUE]) == "red,green,blue"
-    assert serialize_list([Color.RED, 1, True]) == "red,1,true"
+    assert serialize_list([StrColor.RED, StrColor.GREEN, StrColor.BLUE]) == "red,green,blue"
+    assert serialize_list([IntColor.RED, IntColor.GREEN, IntColor.BLUE]) == "1,2,3"
+    assert serialize_list([Color.RED, StrColor.GREEN, IntColor.BLUE]) == "red,green,3"
+    assert serialize_list([StrColor.RED, 1, True]) == "red,1,true"
 
 
 def test_serialize_list_brackets():
@@ -118,4 +144,7 @@ def test_serialize_list_brackets():
     assert serialize_list_brackets(["True", False]) == "[True,false]"
     # Test with a list containing Enums
     assert serialize_list_brackets([Color.RED, Color.GREEN, Color.BLUE]) == "[red,green,blue]"
-    assert serialize_list_brackets([Color.RED, 1, True]) == "[red,1,true]"
+    assert serialize_list_brackets([StrColor.RED, StrColor.GREEN, StrColor.BLUE]) == "[red,green,blue]"
+    assert serialize_list_brackets([IntColor.RED, IntColor.GREEN, IntColor.BLUE]) == "[1,2,3]"
+    assert serialize_list_brackets([Color.RED, StrColor.GREEN, IntColor.BLUE]) == "[red,green,3]"
+    assert serialize_list_brackets([StrColor.RED, 1, True]) == "[red,1,true]"

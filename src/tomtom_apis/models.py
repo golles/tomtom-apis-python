@@ -3,12 +3,12 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from enum import Enum
+from enum import IntEnum, StrEnum
 
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
 
-class Language(Enum):
+class Language(StrEnum):
     """
     Supported languages for the Places API.
     See: https://developer.tomtom.com/search-api/documentation/product-information/supported-languages
@@ -145,14 +145,14 @@ class MapTile:
     zoom: int
 
 
-class TileSizeType(Enum):
+class TileSizeType(IntEnum):
     """Supported tile sizes"""
 
     SIZE_256 = 256
     SIZE_512 = 512
 
 
-class ViewType(Enum):
+class ViewType(StrEnum):
     """
     Geopolitical View. The context used to resolve the handling of disputed territories. Views include Unified, along with AR IL, IN, MA, PK, RU, TR,
     and CN which are respectively tailored for Argentina, Israel, India, Morocco, Pakistan, Russia, Turkey, and China.

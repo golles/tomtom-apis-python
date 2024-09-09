@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from enum import Enum
+from enum import IntEnum, StrEnum
 
 from geojson import LineString, Point
 from mashumaro import field_options
@@ -51,7 +51,7 @@ class BoudingBoxParam:
         return f"{self.minY},{self.minX},{self.maxY},{self.maxX}"
 
 
-class CategoryFilterType(Enum):
+class CategoryFilterType(StrEnum):
     """Supported category filter types"""
 
     UNKNOWN = "Unknown"
@@ -76,7 +76,7 @@ class Coordinates:
     coordinate: list[LatitudeLongitude]
 
 
-class DirectionType(Enum):
+class DirectionType(StrEnum):
     """Supported direction types"""
 
     POSITIVE = "positive"
@@ -124,7 +124,7 @@ class FlowSegmentDataResponse(DataClassORJSONMixin):
     flowSegmentData: FlowSegmentData
 
 
-class FlowStyleType(Enum):
+class FlowStyleType(StrEnum):
     """Supported flow style types"""
 
     ABSOLUTE = "absolute"
@@ -135,7 +135,7 @@ class FlowStyleType(Enum):
     REDUCED_SENSITIVITY = "reduced-sensitivity"
 
 
-class FlowTagType(Enum):
+class FlowTagType(StrEnum):
     """Supported flow tag types"""
 
     ROAD_TYPE = "road_type"
@@ -147,7 +147,7 @@ class FlowTagType(Enum):
     ROAD_SUBCATEGORY = "road_subcategory"
 
 
-class FlowType(Enum):
+class FlowType(StrEnum):
     """Supported flow types"""
 
     ABSOLUTE = "absolute"
@@ -155,7 +155,7 @@ class FlowType(Enum):
     RELATIVE_DELAY = "relative-delay"
 
 
-class FrcType(Enum):
+class FrcType(StrEnum):
     """Supported Functional Road Class types. This indicates the road type"""
 
     FRC0 = "FRC0"  # Motorway, freeway or other major road
@@ -167,7 +167,7 @@ class FrcType(Enum):
     FRC6 = "FRC6"  # Local road
 
 
-class IconCategoryType(Enum):
+class IconCategoryType(IntEnum):
     """Supported icon category types"""
 
     UNKNOWN = 0
@@ -242,7 +242,7 @@ class IncidentProperties:
     aci: Aci | None = None
 
 
-class IncidentStyleType(Enum):
+class IncidentStyleType(StrEnum):
     """Supported incident style types"""
 
     S0 = "s0"
@@ -253,7 +253,7 @@ class IncidentStyleType(Enum):
     NIGHT = "night"
 
 
-class IncidentTagType(Enum):
+class IncidentTagType(StrEnum):
     """Supported incident tag types"""
 
     ICON_CATEGORY = "icon_category"
@@ -280,7 +280,7 @@ class IncidentViewportResponse(DataClassORJSONMixin):
     viewpResp: ViewpResp
 
 
-class MagnitudeOfDelayType(Enum):
+class MagnitudeOfDelayType(IntEnum):
     """Supported magnitude of delay types"""
 
     UNKNOWN = 0
@@ -290,7 +290,7 @@ class MagnitudeOfDelayType(Enum):
     UNDEFINED = 4
 
 
-class ProbabilityOfOccurrenceType(Enum):
+class ProbabilityOfOccurrenceType(StrEnum):
     """Supported probability of occurrence types"""
 
     CERTAIN = "certain"
@@ -315,7 +315,7 @@ class RasterIncidentTilesParams(BaseParams):
     tileSize: TileSizeType | None = None
 
 
-class RoadType(Enum):
+class RoadType(IntEnum):
     """Supported road types"""
 
     MOTORWAY = 0
@@ -329,7 +329,7 @@ class RoadType(Enum):
     OTHER_ROADS = 8  # Non public road, Parking road, etc.
 
 
-class SpeedUnitType(Enum):
+class SpeedUnitType(StrEnum):
     """Supported speed unit types"""
 
     KMPH = "kmph"
@@ -347,7 +347,7 @@ class TMC:
     points: list[TmcPoint] | None = None
 
 
-class ThicknessType(Enum):
+class ThicknessType(StrEnum):
     """Supported thickness types"""
 
     ABSOLUTE = "absolute"
@@ -356,7 +356,7 @@ class ThicknessType(Enum):
     REDUCED_SENSITIVITY = "reduced-sensitivity"
 
 
-class TimeValidityFilterType(Enum):
+class TimeValidityFilterType(StrEnum):
     """Supported time validity filter types"""
 
     PRESENT = "present"

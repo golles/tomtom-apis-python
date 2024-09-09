@@ -1,7 +1,7 @@
 """Generic utils"""
 
 import math
-from enum import Enum
+from enum import Enum, IntEnum, StrEnum
 
 from .models import LatLon, MapTile
 
@@ -90,14 +90,23 @@ def serialize_bool(x: bool) -> str:
     return str(x).lower()
 
 
+def serialize_enum(x: Enum) -> str:
+    """Serialize an enum"""
+    if isinstance(x, IntEnum):
+        return str(x)
+    if isinstance(x, StrEnum):
+        return x
+    return str(x.value)
+
+
 def serialize_list(x: list[int | float | bool | str | Enum]) -> str | None:
     """Serialize a list to a comma-separated string, converting booleans to lowercase strings and using Enum values."""
     if not x:
         return None
-    return ",".join(str(item).lower() if isinstance(item, bool) else item.value if isinstance(item, Enum) else str(item) for item in x)
+    return ",".join(serialize_bool(item) if isinstance(item, bool) else serialize_enum(item) if isinstance(item, Enum) else str(item) for item in x)
 
 
-def serialize_list_brackets(x: list) -> str | None:
+def serialize_list_brackets(x: list[int | float | bool | str | Enum]) -> str | None:
     """Serialize a list to a comma-separated string within square brackets, converting booleans to lowercase strings"""
     serialized_list = serialize_list(x)
     return f"[{serialized_list}]" if serialized_list is not None else None

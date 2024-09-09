@@ -84,14 +84,14 @@ class LatLon(DataClassORJSONMixin):
     lat: float
     lon: float
 
-    def to_comma_seperate(self) -> str:
+    def to_comma_separated(self) -> str:
         """
-        Return the lat, lon as a comma separated string.
+        Return the lat, lon as a comma-separated string.
 
         Returns:
-            str: The lat, lon as a comma separated string.
+            str: The lat, lon as a comma-separated string.
         """
-        return f"{self.lat},{self.lon}"
+        return ",".join(map(str, [self.lat, self.lon]))
 
 
 @dataclass(kw_only=True)
@@ -105,14 +105,14 @@ class LatLonList(DataClassORJSONMixin):
 
     locations: list[LatLon]
 
-    def to_colon_seperate(self) -> str:
+    def to_colon_separated(self) -> str:
         """
-        Return the list of lat, lon as a colon separated string.
+        Return the list of lat, lon as a colon-separated string.
 
         Returns:
-            str: The list of lat, lon as a colon separated string.
+            str: The list of lat, lon as a colon-separated string.
         """
-        return ":".join([loc.to_comma_seperate() for loc in self.locations])
+        return ":".join([loc.to_comma_separated() for loc in self.locations])
 
 
 @dataclass(kw_only=True)

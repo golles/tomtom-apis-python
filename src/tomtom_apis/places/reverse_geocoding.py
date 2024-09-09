@@ -29,7 +29,7 @@ class ReverseGeocodingApi(BaseApi):
         """
 
         reponse = await self.get(
-            endpoint=f"/search/2/reverseGeocode/{position.to_comma_seperate()}.json",
+            endpoint=f"/search/2/reverseGeocode/{position.to_comma_separated()}.json",
             params=params,
         )
 
@@ -51,7 +51,7 @@ class ReverseGeocodingApi(BaseApi):
         """
 
         reponse = await self.get(
-            endpoint=f"/search/2/reverseGeocode/crossStreet/{position.to_comma_seperate()}.json",
+            endpoint=f"/search/2/reverseGeocode/crossStreet/{position.to_comma_separated()}.json",
             params=params,
         )
 

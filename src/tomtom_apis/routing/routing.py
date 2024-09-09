@@ -34,7 +34,7 @@ class RoutingApi(BaseApi):
         """
 
         response = await self.get(
-            endpoint=f"/routing/1/calculateRoute/{locations.to_colon_seperate()}/json",
+            endpoint=f"/routing/1/calculateRoute/{locations.to_colon_separated()}/json",
             params=params,
         )
 
@@ -54,7 +54,7 @@ class RoutingApi(BaseApi):
         """
 
         response = await self.post(
-            endpoint=f"/routing/1/calculateRoute/{locations.to_colon_seperate()}/json",
+            endpoint=f"/routing/1/calculateRoute/{locations.to_colon_separated()}/json",
             params=params,
             data=data,
         )
@@ -74,7 +74,7 @@ class RoutingApi(BaseApi):
         """
 
         response = await self.get(
-            endpoint=f"/routing/1/calculateReachableRange/{origin.to_comma_seperate()}/json",
+            endpoint=f"/routing/1/calculateReachableRange/{origin.to_comma_separated()}/json",
             params=params,
         )
 
@@ -94,7 +94,7 @@ class RoutingApi(BaseApi):
         """
 
         response = await self.post(
-            endpoint=f"/routing/1/calculateReachableRange/{origin.to_comma_seperate()}/json",
+            endpoint=f"/routing/1/calculateReachableRange/{origin.to_comma_separated()}/json",
             params=params,
             data=data,
         )

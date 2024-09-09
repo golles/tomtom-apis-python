@@ -32,9 +32,9 @@ class BBoxParam:
     maxLon: float
     maxLat: float
 
-    def to_comma_seperate(self) -> str:
-        """Turn the object into a comma seperated string"""
-        return f"{self.minLon},{self.minLat},{self.maxLon},{self.maxLat}"
+    def to_comma_separated(self) -> str:
+        """Convert the object into a comma-separated string"""
+        return ",".join(map(str, [self.minLon, self.minLat, self.maxLon, self.maxLat]))
 
 
 @dataclass(kw_only=True)
@@ -46,9 +46,9 @@ class BoudingBoxParam:
     maxY: float
     maxX: float
 
-    def to_comma_seperate(self) -> str:
-        """Turn the object into a comma seperated string"""
-        return f"{self.minY},{self.minX},{self.maxY},{self.maxX}"
+    def to_comma_separated(self) -> str:
+        """Convert the object into a comma-separated string"""
+        return ",".join(map(str, [self.minY, self.minX, self.maxY, self.maxX]))
 
 
 class CategoryFilterType(StrEnum):

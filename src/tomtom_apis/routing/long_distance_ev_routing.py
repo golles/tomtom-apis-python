@@ -28,7 +28,7 @@ class LongDistanceEVRoutingApi(BaseApi):
         """
 
         response = await self.post(
-            endpoint=f"/routing/1/calculateLongDistanceEVRoute/{locations.to_colon_seperate()}/json",
+            endpoint=f"/routing/1/calculateLongDistanceEVRoute/{locations.to_colon_separated()}/json",
             params=params,
             data=data,
         )

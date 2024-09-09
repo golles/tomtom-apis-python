@@ -48,7 +48,7 @@ class TrafficApi(BaseApi):
         """
 
         if bbox and not ids:
-            mutually_exclusive_parameters = f"bbox={bbox.to_comma_seperate()}"
+            mutually_exclusive_parameters = f"bbox={bbox.to_comma_separated()}"
         elif ids and not bbox:
             mutually_exclusive_parameters = f"ids={serialize_list(list(ids))}"
         else:
@@ -101,8 +101,8 @@ class TrafficApi(BaseApi):
         """
         response = await self.get(
             endpoint=(
-                f"/traffic/services/4/incidentViewport/{bounding_box.to_comma_seperate()}/"
-                f"{bounding_zoom}/{overview_box.to_comma_seperate()}/"
+                f"/traffic/services/4/incidentViewport/{bounding_box.to_comma_separated()}/"
+                f"{bounding_zoom}/{overview_box.to_comma_separated()}/"
                 f"{overview_zoom}/{copyright_information}/json"
             ),
             params=params,

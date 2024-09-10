@@ -36,3 +36,7 @@ main_10_512_339.png
 main_10_512_340.png
 main_10_512_341.png
 ```
+
+Browser:
+
+<img src="example.png" alt="Example" width="885"/>

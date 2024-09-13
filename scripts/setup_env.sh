@@ -66,17 +66,15 @@ if [ "$CI" != "true" ]; then
     # Install auto completions
     mkdir -p ~/.zfunc
     poetry completions zsh > ~/.zfunc/_poetry
-    ruff generate-shell-completion zsh > ~/.zfunc/_ruff
+    poetry run ruff generate-shell-completion zsh > ~/.zfunc/_ruff
     grep -qxF 'fpath+=~/.zfunc' ~/.zshrc || echo 'fpath+=~/.zfunc' >> ~/.zshrc
     grep -qxF 'autoload -Uz compinit && compinit' ~/.zshrc || echo 'autoload -Uz compinit && compinit' >> ~/.zshrc
-
-    log_yellow "auto completions have been added or updated, you need to reload your terminal"
 fi
 
 # Check for --devcontainer argument
 if [ "$1" == "--devcontainer" ]; then
     log_yellow "\n\nThe dev container is ready"
-    log_yellow "Once all the extensions are installed, reload this window (CMD+P -> Developer: Reload Window) to make sure all extensions are activated!"
+    log_yellow "Once all the extensions are installed, reload the window (CMD+P -> Developer: Reload Window) to make sure all extensions are activated!"
 else
-    log_yellow "\nDone"
+    log_yellow "\nDone, you should reload your terminal"
 fi

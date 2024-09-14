@@ -1,4 +1,4 @@
-"""Test for the Api"""
+"""Test for the Api."""
 
 import socket
 from dataclasses import dataclass
@@ -18,14 +18,14 @@ from .const import API_KEY
 
 @dataclass(kw_only=True)
 class MockModel(DataClassORJSONMixin):
-    """Mock model"""
+    """Mock model."""
 
     key: str
 
 
 @pytest.fixture(name="mock_response")
 def fixture_mock_response():
-    """Fixture for mock response"""
+    """Fixture for mock response."""
     mock_resp = AsyncMock(spec=ClientResponse)
     mock_resp.status = 200
     mock_resp.headers = {
@@ -39,7 +39,7 @@ def fixture_mock_response():
 
 @pytest.fixture(name="mock_session")
 def fixture_mock_session(mock_response):
-    """Fixture for mock session"""
+    """Fixture for mock session."""
     session = AsyncMock(spec=ClientSession)
     session.request = AsyncMock(return_value=mock_response)
     return session
@@ -47,14 +47,14 @@ def fixture_mock_session(mock_response):
 
 @pytest.fixture(name="base_api")
 async def fixture_base_api(mock_session):
-    """Fixture for BaseApi"""
+    """Fixture for BaseApi."""
     options = ApiOptions(api_key=API_KEY)
     async with BaseApi(options, mock_session) as base:
         yield base
 
 
 async def test_deserialize_success(mock_response):
-    """Test the deserialize method"""
+    """Test the deserialize method."""
     response = Response(mock_response)
     result = await response.deserialize(MockModel)
 
@@ -64,7 +64,7 @@ async def test_deserialize_success(mock_response):
 
 
 async def test_deserialize_failure(mock_response):
-    """Test the deserialize method"""
+    """Test the deserialize method."""
     mock_response.text.side_effect = Exception("Deserialization error")
     response = Response(mock_response)
 
@@ -75,7 +75,7 @@ async def test_deserialize_failure(mock_response):
 
 
 async def test_dict_success(mock_response):
-    """Test the dict method"""
+    """Test the dict method."""
     response = Response(mock_response)
     result = await response.dict()
 
@@ -84,7 +84,7 @@ async def test_dict_success(mock_response):
 
 
 async def test_dict_json_decode_error(mock_response):
-    """Test the dict method"""
+    """Test the dict method."""
     mock_response.text.return_value = "invalid json"
     response = Response(mock_response)
 
@@ -95,7 +95,7 @@ async def test_dict_json_decode_error(mock_response):
 
 
 async def test_text(mock_response):
-    """Test the text method"""
+    """Test the text method."""
     mock_response.text.return_value = "response text"
     response = Response(mock_response)
     result = await response.text()
@@ -105,7 +105,7 @@ async def test_text(mock_response):
 
 
 async def test_get_request(base_api, mock_session):
-    """Test the get method"""
+    """Test the get method."""
     endpoint = "/test/endpoint"
     response = await base_api.get(endpoint)
 
@@ -124,7 +124,7 @@ async def test_get_request(base_api, mock_session):
 
 
 async def test_get_request_with_gzip(base_api, mock_session):
-    """Test the get method with gzip"""
+    """Test the get method with gzip."""
     endpoint = "/test/endpoint"
     base_api.options.gzip_compression = True
     response = await base_api.get(endpoint)
@@ -145,7 +145,7 @@ async def test_get_request_with_gzip(base_api, mock_session):
 
 
 async def test_post_request(base_api, mock_session):
-    """Test the post method"""
+    """Test the post method."""
     endpoint = "/test/endpoint"
     data = BasePostData()
     response = await base_api.post(endpoint, data=data)
@@ -165,7 +165,7 @@ async def test_post_request(base_api, mock_session):
 
 
 async def test_delete_request(base_api, mock_session):
-    """Test the delete method"""
+    """Test the delete method."""
     endpoint = "/test/endpoint"
     response = await base_api.delete(endpoint)
 
@@ -184,7 +184,7 @@ async def test_delete_request(base_api, mock_session):
 
 
 async def test_put_request(base_api, mock_session):
-    """Test the put method"""
+    """Test the put method."""
     endpoint = "/test/endpoint"
     data = BasePostData()
     response = await base_api.put(endpoint, data=data)
@@ -204,21 +204,21 @@ async def test_put_request(base_api, mock_session):
 
 
 async def test_request_timeout(base_api, mock_session):
-    """Test the request method with a timeout"""
+    """Test the request method with a timeout."""
     mock_session.request.side_effect = TimeoutError()
     with pytest.raises(TomTomAPIRequestTimeout):
         await base_api.get("/timeout/endpoint")
 
 
 async def test_request_connection_error(base_api, mock_session):
-    """Test the request method with a connection error"""
+    """Test the request method with a connection error."""
     mock_session.request.side_effect = ClientConnectionError()
     with pytest.raises(TomTomAPIConnectionError):
         await base_api.get("/connection/error")
 
 
-async def test_request_client_reponse_error(base_api, mock_session):
-    """Test the request method with a client response error"""
+async def test_request_client_response_error(base_api, mock_session):
+    """Test the request method with a client response error."""
     error = ClientResponseError(request_info=None, history=None, status=400)
     mock_session.request.side_effect = error
     with pytest.raises(TomTomAPIClientError):
@@ -226,7 +226,7 @@ async def test_request_client_reponse_error(base_api, mock_session):
 
 
 async def test_request_server_response_error(base_api, mock_session):
-    """Test the request method with a server response error"""
+    """Test the request method with a server response error."""
     error = ClientResponseError(request_info=None, history=None, status=500)
     mock_session.request.side_effect = error
     with pytest.raises(TomTomAPIServerError):
@@ -234,7 +234,7 @@ async def test_request_server_response_error(base_api, mock_session):
 
 
 async def test_request_unknown_response_error(base_api, mock_session):
-    """Test the request method with an unknown response error"""
+    """Test the request method with an unknown response error."""
     error = ClientResponseError(request_info=None, history=None, status=399)
     mock_session.request.side_effect = error
     with pytest.raises(TomTomAPIError):
@@ -242,7 +242,7 @@ async def test_request_unknown_response_error(base_api, mock_session):
 
 
 async def test_request_client_error(base_api, mock_session):
-    """Test the request method with a client error"""
+    """Test the request method with a client error."""
     error = ClientError()
     mock_session.request.side_effect = error
     with pytest.raises(TomTomAPIConnectionError):
@@ -250,7 +250,7 @@ async def test_request_client_error(base_api, mock_session):
 
 
 async def test_request_socket_error(base_api, mock_session):
-    """Test the request method with a socket error"""
+    """Test the request method with a socket error."""
     error = socket.gaierror()
     mock_session.request.side_effect = error
     with pytest.raises(TomTomAPIConnectionError):
@@ -258,7 +258,7 @@ async def test_request_socket_error(base_api, mock_session):
 
 
 async def test_tracking_id(base_api, mock_session):
-    """Test the tracking_id option"""
+    """Test the tracking_id option."""
     base_api.options.tracking_id = True
     with patch("uuid.uuid4", return_value="mock-uuid"):
         endpoint = "/test/endpoint"
@@ -270,7 +270,7 @@ async def test_tracking_id(base_api, mock_session):
 
 
 async def test_manual_session_close(mock_session):
-    """Test manual closing of the session"""
+    """Test manual closing of the session."""
     options = ApiOptions(api_key=API_KEY)
     base_api = BaseApi(options, mock_session)
     assert base_api.session is not None

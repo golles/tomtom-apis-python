@@ -1,4 +1,4 @@
-"""Tracking & Logistics APIs"""
+"""Tracking & Logistics APIs."""
 
 from .geofencing import GeofencingApi
 from .location_history import LocationHistoryApi

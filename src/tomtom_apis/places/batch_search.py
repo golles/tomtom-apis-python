@@ -1,4 +1,4 @@
-"""Batch Search API"""
+"""Batch Search API."""
 
 from ..api import BaseApi, BaseParams
 from ..places.models import (
@@ -10,11 +10,12 @@ from ..places.models import (
 
 
 class BatchSearchApi(BaseApi):
-    """
+    """Batch Search API.
+
     Batch Search sends batches of requests to supported endpoints with ease. You can call Batch Search APIs to run either asynchronously or
     synchronously. The Batch Search service consists of the following endpoints:
 
-    See: https://developer.tomtom.com/batch-search-api/documentation/product-information/introduction
+    For more information, see: https://developer.tomtom.com/batch-search-api/documentation/product-information/introduction
     """
 
     async def post_synchronous_batch(
@@ -23,41 +24,49 @@ class BatchSearchApi(BaseApi):
         params: BaseParams | None = None,  # No extra params.
         data: BatchPostData,
     ) -> BatchResponse:
-        """
-        This endpoint allows the submission of a new batch for synchronous processing. It responds with a batch processing result or an HTTP 408
-        request timeout error, if the processing time exceeds 60 seconds.
+        """Post synchronous batch.
 
-        See: https://developer.tomtom.com/batch-search-api/documentation/synchronous-batch
-        """
+        For more information, see: https://developer.tomtom.com/batch-search-api/documentation/synchronous-batch
 
-        reponse = await self.post(
+        Args:
+            params (BaseParams, optional): Query parameters for the request. Defaults to None.
+            data (BatchPostData): Data for the batch request.
+
+        Returns:
+            BatchResponse: The response object for the synchronous batch request.
+        """
+        response = await self.post(
             endpoint="/search/2/batch/sync.json",
             params=params,
             data=data,
         )
 
-        return await reponse.deserialize(BatchResponse)
+        return await response.deserialize(BatchResponse)
 
-    async def post_asynchronous_synchronous_batch(
+    async def post_asynchronous_batch_submission(
         self,
         *,
         params: AsynchronousSynchronousBatchParams | None = None,
         data: BatchPostData,
     ) -> str | None:
-        """
-        This endpoint allows the submission of a new batch for asynchronous processing. It responds with a redirect to the location at which the
-        batch results can be obtained when the batch processing has completed.
+        """Post Asynchronous Batch Submission.
 
-        See: https://developer.tomtom.com/batch-search-api/documentation/asynchronous-batch-submission
-        """
+        For more information, see: https://developer.tomtom.com/batch-search-api/documentation/asynchronous-batch-submission
 
-        reponse = await self.post(
+        Args:
+            params (AsynchronousSynchronousBatchParams, optional): Query parameters for the request. Defaults to None.
+            data (BatchPostData): Data for the batch request.
+
+        Returns:
+            str | None: The 'Location' header from the response, if available, otherwise None.
+        """
+        response = await self.post(
             endpoint="/search/2/batch.json",
             params=params,
             data=data,
         )
 
-        return reponse.headers.get("Location", None)
+        return response.headers.get("Location", None)
 
     async def get_asynchronous_batch_download(
         self,
@@ -65,18 +74,20 @@ class BatchSearchApi(BaseApi):
         batch_id: str,
         params: AsynchronousBatchDownloadParams | None = None,
     ) -> BatchResponse:
-        """
-        This endpoint fetches results of the Asynchronous Batch processing. It responds with HTTP 200 and the batch results assuming batch processing
-        has completed, or HTTP 202 Accepted if the batch is still being processed. HTTP 202 "Accepted" will be sent after 120 seconds by default.
-        This behavior can be overridden as needed by passing the waitTimeSeconds parameter with a desired value. The client should then retry the
-        request by following the Location header.
+        """Fetches the result of an asynchronous batch download.
 
-        See: https://developer.tomtom.com/batch-search-api/documentation/asynchronous-batch-download
-        """
+        For more information, see: https://developer.tomtom.com/batch-search-api/documentation/asynchronous-batch-download
 
-        reponse = await self.get(
+        Args:
+            batch_id (str): The ID of the batch to download.
+            params (AsynchronousBatchDownloadParams, optional): Optional parameters for the download request. Defaults to None.
+
+        Returns:
+            BatchResponse: The response object representing the downloaded batch.
+        """
+        response = await self.get(
             endpoint=f"/search/2/batch/{batch_id}",
             params=params,
         )
 
-        return await reponse.deserialize(BatchResponse)
+        return await response.deserialize(BatchResponse)

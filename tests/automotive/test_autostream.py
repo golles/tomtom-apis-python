@@ -1,4 +1,4 @@
-"""Auto Stream tests"""
+"""Auto Stream tests."""
 
 import pytest
 
@@ -6,6 +6,6 @@ from tomtom_apis.automotive import AutoStreamApi
 
 
 def test_api_not_implemented():
-    """Test API not implemented yet"""
+    """Test API not implemented yet."""
     with pytest.raises(NotImplementedError):
         AutoStreamApi()

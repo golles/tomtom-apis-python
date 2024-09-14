@@ -1,4 +1,4 @@
-"""Models for the TomTom Traffic API"""
+"""Models for the TomTom Traffic API."""
 # pylint: disable=invalid-name, too-many-instance-attributes, too-many-lines
 
 from __future__ import annotations
@@ -16,7 +16,7 @@ from ..models import Language, LatitudeLongitude, TileSizeType
 
 @dataclass(kw_only=True)
 class Aci:
-    """Represents an ACI item"""
+    """Represents an ACI item."""
 
     probabilityOfOccurrence: ProbabilityOfOccurrenceType
     numberOfReports: int
@@ -25,7 +25,7 @@ class Aci:
 
 @dataclass(kw_only=True)
 class BBoxParam:
-    """bbox param"""
+    """bbox param."""
 
     minLon: float
     minLat: float
@@ -33,13 +33,13 @@ class BBoxParam:
     maxLat: float
 
     def to_comma_separated(self) -> str:
-        """Convert the object into a comma-separated string"""
+        """Convert the object into a comma-separated string."""
         return ",".join(map(str, [self.minLon, self.minLat, self.maxLon, self.maxLat]))
 
 
 @dataclass(kw_only=True)
 class BoudingBoxParam:
-    """Boudingbox param"""
+    """Boudingbox param."""
 
     minY: float
     minX: float
@@ -47,12 +47,12 @@ class BoudingBoxParam:
     maxX: float
 
     def to_comma_separated(self) -> str:
-        """Convert the object into a comma-separated string"""
+        """Convert the object into a comma-separated string."""
         return ",".join(map(str, [self.minY, self.minX, self.maxY, self.maxX]))
 
 
 class CategoryFilterType(StrEnum):
-    """Supported category filter types"""
+    """Supported category filter types."""
 
     UNKNOWN = "Unknown"
     ACCIDENT = "Accident"
@@ -71,13 +71,13 @@ class CategoryFilterType(StrEnum):
 
 @dataclass(kw_only=True)
 class Coordinates:
-    """Represents a coordinate item"""
+    """Represents a coordinate item."""
 
     coordinate: list[LatitudeLongitude]
 
 
 class DirectionType(StrEnum):
-    """Supported direction types"""
+    """Supported direction types."""
 
     POSITIVE = "positive"
     NEGATIVE = "negative"
@@ -85,7 +85,7 @@ class DirectionType(StrEnum):
 
 @dataclass(kw_only=True)
 class Event:
-    """Represents an event item"""
+    """Represents an event item."""
 
     description: str
     code: int
@@ -94,7 +94,7 @@ class Event:
 
 @dataclass(kw_only=True)
 class FlowSegmentData:
-    """Represents a flow segment data item"""
+    """Represents a flow segment data item."""
 
     version: str = field(metadata=field_options(alias="@version"))
     frc: FrcType
@@ -110,7 +110,7 @@ class FlowSegmentData:
 
 @dataclass(kw_only=True)
 class FlowSegmentDataParams(BaseParams):
-    """Parameters for the get_flow_segment_data method"""
+    """Parameters for the get_flow_segment_data method."""
 
     unit: SpeedUnitType | None = None
     thickness: ThicknessType | None = None
@@ -119,13 +119,13 @@ class FlowSegmentDataParams(BaseParams):
 
 @dataclass(kw_only=True)
 class FlowSegmentDataResponse(DataClassORJSONMixin):
-    """Represents a flow segment data response"""
+    """Represents a flow segment data response."""
 
     flowSegmentData: FlowSegmentData
 
 
 class FlowStyleType(StrEnum):
-    """Supported flow style types"""
+    """Supported flow style types."""
 
     ABSOLUTE = "absolute"
     RELATIVE = "relative"
@@ -136,7 +136,7 @@ class FlowStyleType(StrEnum):
 
 
 class FlowTagType(StrEnum):
-    """Supported flow tag types"""
+    """Supported flow tag types."""
 
     ROAD_TYPE = "road_type"
     TRAFFIC_LEVEL = "traffic_level"
@@ -148,7 +148,7 @@ class FlowTagType(StrEnum):
 
 
 class FlowType(StrEnum):
-    """Supported flow types"""
+    """Supported flow types."""
 
     ABSOLUTE = "absolute"
     RELATIVE = "relative"
@@ -156,7 +156,7 @@ class FlowType(StrEnum):
 
 
 class FrcType(StrEnum):
-    """Supported Functional Road Class types. This indicates the road type"""
+    """Supported Functional Road Class types. This indicates the road type."""
 
     FRC0 = "FRC0"  # Motorway, freeway or other major road
     FRC1 = "FRC1"  # Major road, less important than a motorway
@@ -168,7 +168,7 @@ class FrcType(StrEnum):
 
 
 class IconCategoryType(IntEnum):
-    """Supported icon category types"""
+    """Supported icon category types."""
 
     UNKNOWN = 0
     ACCIDENT = 1
@@ -187,7 +187,7 @@ class IconCategoryType(IntEnum):
 
 @dataclass(kw_only=True)
 class Incident:
-    """Represents an incident item"""
+    """Represents an incident item."""
 
     type: str
     properties: IncidentProperties
@@ -196,7 +196,7 @@ class Incident:
 
 @dataclass(kw_only=True)
 class IncidentDetailsParams(BaseParams):
-    """Parameters for the get_incident_details method"""
+    """Parameters for the get_incident_details method."""
 
     fields: str | None = None
     language: Language | None = None
@@ -207,21 +207,21 @@ class IncidentDetailsParams(BaseParams):
 
 @dataclass(kw_only=True)
 class IncidentDetailsPostData(BasePostData):
-    """Data for the post incident details API"""
+    """Data for the post incident details API."""
 
     ids: list[str]
 
 
 @dataclass(kw_only=True)
 class IncidentDetailsResponse(DataClassORJSONMixin):
-    """Represents an incident details response"""
+    """Represents an incident details response."""
 
     incidents: list[Incident | None]
 
 
 @dataclass(kw_only=True)
 class IncidentProperties:
-    """Represents an incidents properties item"""
+    """Represents an incidents properties item."""
 
     id: str | None = None
     iconCategory: IconCategoryType
@@ -243,7 +243,7 @@ class IncidentProperties:
 
 
 class IncidentStyleType(StrEnum):
-    """Supported incident style types"""
+    """Supported incident style types."""
 
     S0 = "s0"
     S0_DARK = "s0-dark"
@@ -254,7 +254,7 @@ class IncidentStyleType(StrEnum):
 
 
 class IncidentTagType(StrEnum):
-    """Supported incident tag types"""
+    """Supported incident tag types."""
 
     ICON_CATEGORY = "icon_category"
     DESCRIPTION = "description"
@@ -273,15 +273,22 @@ class IncidentTagType(StrEnum):
     ROAD_SUBCATEGORY = "road_subcategory"
 
 
+class IncidentTileFormatType(StrEnum):
+    """Supported incident tile formats."""
+
+    GIF = "gif"
+    PNG = "png"
+
+
 @dataclass(kw_only=True)
 class IncidentViewportResponse(DataClassORJSONMixin):
-    """Represents an incident viewport response"""
+    """Represents an incident viewport response."""
 
     viewpResp: ViewpResp
 
 
 class MagnitudeOfDelayType(IntEnum):
-    """Supported magnitude of delay types"""
+    """Supported magnitude of delay types."""
 
     UNKNOWN = 0
     MINOR = 1
@@ -291,7 +298,7 @@ class MagnitudeOfDelayType(IntEnum):
 
 
 class ProbabilityOfOccurrenceType(StrEnum):
-    """Supported probability of occurrence types"""
+    """Supported probability of occurrence types."""
 
     CERTAIN = "certain"
     PROBABLE = "probable"
@@ -301,7 +308,7 @@ class ProbabilityOfOccurrenceType(StrEnum):
 
 @dataclass(kw_only=True)
 class RasterFlowTilesParams(BaseParams):
-    """Parameters for the get_raster_flow_tiles method"""
+    """Parameters for the get_raster_flow_tiles method."""
 
     thickness: ThicknessType | None = None
     tileSize: TileSizeType | None = None
@@ -309,14 +316,14 @@ class RasterFlowTilesParams(BaseParams):
 
 @dataclass(kw_only=True)
 class RasterIncidentTilesParams(BaseParams):
-    """Parameters for the get_raster_incident_tile method"""
+    """Parameters for the get_raster_incident_tile method."""
 
     t: str | None = None
     tileSize: TileSizeType | None = None
 
 
 class RoadType(IntEnum):
-    """Supported road types"""
+    """Supported road types."""
 
     MOTORWAY = 0
     INTERNATIONAL_ROAD = 1
@@ -330,7 +337,7 @@ class RoadType(IntEnum):
 
 
 class SpeedUnitType(StrEnum):
-    """Supported speed unit types"""
+    """Supported speed unit types."""
 
     KMPH = "kmph"
     MPH = "mph"
@@ -338,7 +345,7 @@ class SpeedUnitType(StrEnum):
 
 @dataclass(kw_only=True)
 class TMC:
-    """Represents a Traffic Message Channel item"""
+    """Represents a Traffic Message Channel item."""
 
     countryCode: str | None = None
     tableNumber: str | None = None
@@ -348,7 +355,7 @@ class TMC:
 
 
 class ThicknessType(StrEnum):
-    """Supported thickness types"""
+    """Supported thickness types."""
 
     ABSOLUTE = "absolute"
     RELATIVE = "relative"
@@ -357,7 +364,7 @@ class ThicknessType(StrEnum):
 
 
 class TimeValidityFilterType(StrEnum):
-    """Supported time validity filter types"""
+    """Supported time validity filter types."""
 
     PRESENT = "present"
     FUTURE = "future"
@@ -365,7 +372,7 @@ class TimeValidityFilterType(StrEnum):
 
 @dataclass(kw_only=True)
 class TmcPoint:
-    """Represents a TmcPoint item"""
+    """Represents a TmcPoint item."""
 
     location: int | None = None
     offset: int
@@ -373,7 +380,7 @@ class TmcPoint:
 
 @dataclass(kw_only=True)
 class TrafficState:
-    """Represents a traffic state item"""
+    """Represents a traffic state item."""
 
     trafficAge: str = field(metadata=field_options(alias="@trafficAge"))
     trafficModelId: str = field(metadata=field_options(alias="@trafficModelId"))
@@ -381,7 +388,7 @@ class TrafficState:
 
 @dataclass(kw_only=True)
 class VectorFlowTilesParams(BaseParams):
-    """Parameters for the get_vector_flow_tiles method"""
+    """Parameters for the get_vector_flow_tiles method."""
 
     roadTypes: RoadType | None = None
     trafficLevelStep: float | None = None
@@ -391,7 +398,7 @@ class VectorFlowTilesParams(BaseParams):
 
 @dataclass(kw_only=True)
 class VectorIncidentTilesParams(BaseParams):
-    """Parameters for the get_vector_incident_tile method"""
+    """Parameters for the get_vector_incident_tile method."""
 
     t: str | None = None
     tags: list[str] | None = None
@@ -400,7 +407,7 @@ class VectorIncidentTilesParams(BaseParams):
 
 @dataclass(kw_only=True)
 class ViewpResp:
-    """Represents a view resp item"""
+    """Represents a view resp item."""
 
     trafficState: TrafficState
     copyrightIds: str

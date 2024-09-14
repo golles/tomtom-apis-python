@@ -1,4 +1,4 @@
-"""Routing tests"""
+"""Routing tests."""
 
 import pytest
 
@@ -9,7 +9,7 @@ from tomtom_apis.places import SearchApi
 from tomtom_apis.places.models import (
     AdditionalDataResponse,
     Address,
-    AutocompleteReponse,
+    AutocompleteResponse,
     CategorySearchParams,
     Geometry,
     GeometryFilterData,
@@ -35,7 +35,7 @@ from tomtom_apis.places.models import (
 
 @pytest.fixture(name="search_api")
 async def fixture_search_api():
-    """Fixture for SearchApi"""
+    """Fixture for SearchApi."""
     options = ApiOptions(api_key=API_KEY)
     async with SearchApi(options) as search:
         yield search
@@ -44,7 +44,7 @@ async def fixture_search_api():
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_search.json"], indirect=True)
 async def test_deserialization_get_search(search_api: SearchApi):
-    """Test the get_search method"""
+    """Test the get_search method."""
     response = await search_api.get_search(
         query="pizza",
         params=SearchParams(
@@ -67,7 +67,7 @@ async def test_deserialization_get_search(search_api: SearchApi):
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_poi_search.json"], indirect=True)
 async def test_deserialization_get_poi_search(search_api: SearchApi):
-    """Test the get_poi_search method"""
+    """Test the get_poi_search method."""
     response = await search_api.get_poi_search(
         query="pizza",
         params=PoiSearchParams(
@@ -87,7 +87,7 @@ async def test_deserialization_get_poi_search(search_api: SearchApi):
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_category_search.json"], indirect=True)
 async def test_deserialization_get_category_search(search_api: SearchApi):
-    """Test the get_category_search method"""
+    """Test the get_category_search method."""
     response = await search_api.get_category_search(
         query="pizza",
         params=CategorySearchParams(
@@ -108,7 +108,7 @@ async def test_deserialization_get_category_search(search_api: SearchApi):
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_geometry_search.json"], indirect=True)
 async def test_deserialization_get_geometry_search(search_api: SearchApi):
-    """Test the get_geometry_search method"""
+    """Test the get_geometry_search method."""
     response = await search_api.get_geometry_search(
         query="pizza",
         geometryList=[
@@ -148,7 +148,7 @@ async def test_deserialization_get_geometry_search(search_api: SearchApi):
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/post_geometry_search.json"], indirect=True)
 async def test_deserialization_post_geometry_search(search_api: SearchApi):
-    """Test the post_geometry_search method"""
+    """Test the post_geometry_search method."""
     response = await search_api.post_geometry_search(
         query="pizza",
         params=GeometrySearchParams(
@@ -190,7 +190,7 @@ async def test_deserialization_post_geometry_search(search_api: SearchApi):
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_nearby_search.json"], indirect=True)
 async def test_deserialization_get_nearby_search(search_api: SearchApi):
-    """Test the get_nearby_search method"""
+    """Test the get_nearby_search method."""
     response = await search_api.get_nearby_search(
         lat=48.872263,
         lon=2.299541,
@@ -206,7 +206,7 @@ async def test_deserialization_get_nearby_search(search_api: SearchApi):
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/post_search_along_route.json"], indirect=True)
 async def test_deserialization_post_search_along_route(search_api: SearchApi):
-    """Test the post_search_along_route method"""
+    """Test the post_search_along_route method."""
     response = await search_api.post_search_along_route(
         query="pizza",
         maxDetourTime=600,
@@ -249,7 +249,7 @@ async def test_deserialization_post_search_along_route(search_api: SearchApi):
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_place_by_id.json"], indirect=True)
 async def test_deserialization_get_place_by_id(search_api: SearchApi):
-    """Test the test_get_place_by_id method"""
+    """Test the test_get_place_by_id method."""
     response = await search_api.get_place_by_id(
         params=PlaceByIdParams(entityId="528009004256119"),
     )
@@ -265,11 +265,11 @@ async def test_deserialization_get_place_by_id(search_api: SearchApi):
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_autocomplete.json"], indirect=True)
 async def test_deserialization_get_autocomplete(search_api: SearchApi):
-    """Test the get_autocomplete method"""
+    """Test the get_autocomplete method."""
     response = await search_api.get_autocomplete(query="pizza", language=Language.EN_US)
 
     assert response
-    assert isinstance(response, AutocompleteReponse)
+    assert isinstance(response, AutocompleteResponse)
     assert response.results
     assert len(response.results) > 2
 
@@ -277,7 +277,7 @@ async def test_deserialization_get_autocomplete(search_api: SearchApi):
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_geometry_filter.json"], indirect=True)
 async def test_deserialization_get_geometry_filter(search_api: SearchApi):
-    """Test the get_geometry_filter method"""
+    """Test the get_geometry_filter method."""
     response = await search_api.get_geometry_filter(
         geometryList=[
             Geometry(type="CIRCLE", position="40.80558, -73.96548", radius=100),
@@ -314,7 +314,7 @@ async def test_deserialization_get_geometry_filter(search_api: SearchApi):
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/post_geometry_filter.json"], indirect=True)
 async def test_deserialization_post_geometry_filter(search_api: SearchApi):
-    """Test the post_geometry_filter method"""
+    """Test the post_geometry_filter method."""
     response = await search_api.post_geometry_filter(
         data=GeometryFilterData(
             geometryList=[
@@ -353,7 +353,7 @@ async def test_deserialization_post_geometry_filter(search_api: SearchApi):
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_poi_categories.json"], indirect=True)
 async def test_deserialization_get_poi_categories(search_api: SearchApi):
-    """Test the get_poi_categories method"""
+    """Test the get_poi_categories method."""
     response = await search_api.get_poi_categories(
         params=PoiCategoriesParams(),
     )
@@ -367,7 +367,7 @@ async def test_deserialization_get_poi_categories(search_api: SearchApi):
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/search/get_additional_data.json"], indirect=True)
 async def test_deserialization_get_additional_data(search_api: SearchApi):
-    """Test the get_additional_data method"""
+    """Test the get_additional_data method."""
     response = await search_api.get_additional_data(
         geometries=["00004631-3400-3c00-0000-0000673c4d2e", "00004631-3400-3c00-0000-0000673c42fe"],
     )

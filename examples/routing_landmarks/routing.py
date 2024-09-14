@@ -1,4 +1,4 @@
-"""Landmark routing example"""
+"""Landmark routing example."""
 
 # pylint: disable=duplicate-code
 
@@ -16,7 +16,7 @@ from tomtom_apis.routing.models import CalculateRouteParams
 
 @dataclass(kw_only=True)
 class Landmark:
-    """Representation of a landmark location"""
+    """Representation of a landmark location."""
 
     name: str
     location: LatLon
@@ -33,19 +33,19 @@ LANDMARKS: list[Landmark] = [
 
 
 def meters_to_km(meters: int) -> int:
-    """Helper function for outputting kilometers"""
+    """Helper function for outputting kilometers."""
     kilometers = meters // 1000
     return int(kilometers)
 
 
 def seconds_to_minutes(seconds: int) -> int:
-    """Helper function for outputting minutes"""
+    """Helper function for outputting minutes."""
     minutes = round(seconds / 60)
     return int(minutes)
 
 
 def seconds_to_hours_minutes(seconds: int) -> str:
-    """Helper function for outputting travel time"""
+    """Helper function for outputting travel time."""
     total_minutes = round(seconds / 60)
     hours = total_minutes // 60
     minutes = total_minutes % 60
@@ -53,7 +53,7 @@ def seconds_to_hours_minutes(seconds: int) -> str:
 
 
 async def plan_route(routing_api: RoutingApi, start: Landmark, destination: Landmark) -> None:
-    """Plan a route from one landmark to another"""
+    """Plan a route from one landmark to another."""
     print(f"\nPlanning a route from {start.name} to {destination.name}:")
 
     response = await routing_api.get_calculate_route(
@@ -74,7 +74,7 @@ async def plan_route(routing_api: RoutingApi, start: Landmark, destination: Land
 
 
 async def routes(api_key: str) -> None:
-    """Generate all unique combinations of 2 landmarks and plan a route between them"""
+    """Generate all unique combinations of 2 landmarks and plan a route between them."""
     route_combinations = list(itertools.combinations(LANDMARKS, 2))
 
     options = ApiOptions(api_key=api_key)
@@ -84,7 +84,7 @@ async def routes(api_key: str) -> None:
 
 
 def get_api_key() -> str:
-    """Get the API key or ask for user input"""
+    """Get the API key or ask for user input."""
     apik_key = os.getenv("TOMTOM_API_KEY")
 
     if apik_key:

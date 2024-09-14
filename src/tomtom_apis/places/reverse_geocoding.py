@@ -1,4 +1,4 @@
-"""Reverse Geocode API"""
+"""Reverse Geocode API."""
 
 from ..api import BaseApi
 from ..models import LatLon
@@ -6,12 +6,13 @@ from ..places.models import CrossStreetLookupParams, ReverseGeocodeParams, Rever
 
 
 class ReverseGeocodingApi(BaseApi):
-    """
+    """Reverse Geocoding API.
+
     The TomTom Reverse Geocoding API gives users a tool to translate a coordinate (for example: 37.786505, -122.3862) into a human-understandable
     street address, street element, or geography. Most often, this is needed in tracking applications where you receive a GPS feed from the device or
     asset and you want to know the address.
 
-    See: https://developer.tomtom.com/reverse-geocoding-api/documentation/product-information/introduction
+    For more information, see: https://developer.tomtom.com/reverse-geocoding-api/documentation/product-information/introduction
     """
 
     async def get_reverse_geocode(
@@ -20,20 +21,23 @@ class ReverseGeocodingApi(BaseApi):
         position: LatLon,
         params: ReverseGeocodeParams | None = None,
     ) -> ReverseGeocodeResponse:
-        """
-        The TomTom Reverse Geocoding API gives users a tool to translate a coordinate (for example: 37.786505, -122.3862) into a human-understandable
-        street address, street element, or geography. Most often, this is needed in tracking applications where you receive a GPS feed from the
-        device or asset and you want to know the address.
+        """Get reverse geocode.
 
-        See: https://developer.tomtom.com/reverse-geocoding-api/documentation/reverse-geocode
-        """
+        For more information, see: https://developer.tomtom.com/reverse-geocoding-api/documentation/reverse-geocode
 
-        reponse = await self.get(
+        Args:
+            position (LatLon): The latitude and longitude of the location to reverse geocode.
+            params (ReverseGeocodeParams | None, optional): Additional parameters for the request. Defaults to None.
+
+        Returns:
+            ReverseGeocodeResponse: The response containing the reverse geocode results.
+        """
+        response = await self.get(
             endpoint=f"/search/2/reverseGeocode/{position.to_comma_separated()}.json",
             params=params,
         )
 
-        return await reponse.deserialize(ReverseGeocodeResponse)
+        return await response.deserialize(ReverseGeocodeResponse)
 
     async def get_cross_street_lookup(
         self,
@@ -41,18 +45,20 @@ class ReverseGeocodingApi(BaseApi):
         position: LatLon,
         params: CrossStreetLookupParams | None = None,
     ) -> ReverseGeocodeResponse:
-        """
-        This endpoint returns address information and coordinates for a position to the nearest intersection. There may be times when you need to
-        translate a coordinate (for example: 37.786505,-122.3862) into a human-understandable street address. Most often this is needed in tracking
-        applications where you receive a GPS feed from the device or an asset, and wish to know the position and address information of the nearest
-        intersection/crossroad to its initial position.
+        """Get cross street lookup.
 
-        See: https://developer.tomtom.com/reverse-geocoding-api/documentation/cross-street-lookup
-        """
+        For more information, see: https://developer.tomtom.com/reverse-geocoding-api/documentation/cross-street-lookup
 
-        reponse = await self.get(
+        Args:
+            position (LatLon): The latitude and longitude of the location for the cross street lookup.
+            params (CrossStreetLookupParams | None, optional): Additional parameters for the request. Defaults to None.
+
+        Returns:
+            ReverseGeocodeResponse: The response containing the cross street lookup results.
+        """
+        response = await self.get(
             endpoint=f"/search/2/reverseGeocode/crossStreet/{position.to_comma_separated()}.json",
             params=params,
         )
 
-        return await reponse.deserialize(ReverseGeocodeResponse)
+        return await response.deserialize(ReverseGeocodeResponse)

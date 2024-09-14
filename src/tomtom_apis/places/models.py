@@ -1,4 +1,4 @@
-"""Models for the TomTom Places API"""
+"""Models for the TomTom Places API."""
 # pylint: disable=invalid-name, too-many-instance-attributes, too-many-lines
 
 from __future__ import annotations
@@ -16,7 +16,7 @@ from ..models import Language, LatLon, ViewType
 
 
 class AccessType(StrEnum):
-    """Supported access types"""
+    """Supported access types."""
 
     PUBLIC = "Public"
     AUTHORIZED = "Authorized"
@@ -26,7 +26,7 @@ class AccessType(StrEnum):
 
 @dataclass(kw_only=True)
 class AdditionalDataItem:
-    """Represents an additional data response item"""
+    """Represents an additional data response item."""
 
     providerID: str
     error: str | None = None
@@ -37,21 +37,21 @@ class AdditionalDataItem:
 
 @dataclass(kw_only=True)
 class AdditionalDataParams(BaseParams):
-    """Parameters for the get_additional_data method"""
+    """Parameters for the get_additional_data method."""
 
     geometriesZoom: int | None = None
 
 
 @dataclass(kw_only=True)
 class AdditionalDataResponse(DataClassORJSONMixin):
-    """Represents a Additional Data response"""
+    """Represents a Additional Data response."""
 
     additionalData: list[AdditionalDataItem]
 
 
 @dataclass(kw_only=True)
 class Address(DataClassORJSONMixin):
-    """Represents a Address"""
+    """Represents a Address."""
 
     streetNumber: str | None = None
     streetName: str | None = None
@@ -76,7 +76,7 @@ class Address(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class AddressRange(DataClassORJSONMixin):
-    """Represents a AddressRange"""
+    """Represents a AddressRange."""
 
     rangeLeft: str
     rangeRight: str
@@ -86,7 +86,7 @@ class AddressRange(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Addresses(DataClassORJSONMixin):
-    """Represents Addresses"""
+    """Represents Addresses."""
 
     address: RevGeocodeAddress
     position: str
@@ -101,14 +101,14 @@ class Addresses(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class AsynchronousBatchDownloadParams(BaseParams):
-    """Parameters for the get_asynchronous_batch_download method"""
+    """Parameters for the get_asynchronous_batch_download method."""
 
     waitTimeSeconds: int
 
 
 @dataclass(kw_only=True)
 class AsynchronousSynchronousBatchParams(BaseParams):
-    """Parameters for the post_asynchronous_synchronous_batch method"""
+    """Parameters for the post_asynchronous_batch_submission method."""
 
     redirectMode: RedirectModeType
     waitTimeSeconds: int
@@ -116,7 +116,7 @@ class AsynchronousSynchronousBatchParams(BaseParams):
 
 @dataclass(kw_only=True)
 class AutocompleteParams(BaseParams):
-    """Parameters for the get_autocomplete method"""
+    """Parameters for the get_autocomplete method."""
 
     limit: int | None = None
     lat: float | None = None
@@ -127,8 +127,8 @@ class AutocompleteParams(BaseParams):
 
 
 @dataclass(kw_only=True)
-class AutocompleteReponse(DataClassORJSONMixin):
-    """Represents an auto complete response"""
+class AutocompleteResponse(DataClassORJSONMixin):
+    """Represents an auto complete response."""
 
     context: Context
     results: list[AutocompleteResult]
@@ -136,14 +136,14 @@ class AutocompleteReponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class AutocompleteResult(DataClassORJSONMixin):
-    """Represents an auto complete result"""
+    """Represents an auto complete result."""
 
     segments: list[Segment]
 
 
 @dataclass(kw_only=True)
 class BatchItem:
-    """Represents an BatchItem"""
+    """Represents an BatchItem."""
 
     query: str
     post: list[Geometry | Route] | None = None
@@ -151,7 +151,7 @@ class BatchItem:
 
 @dataclass(kw_only=True)
 class BatchItemResponse(DataClassORJSONMixin):
-    """Represents a Batch Item response"""
+    """Represents a Batch Item response."""
 
     statusCode: int
     response: Response
@@ -159,14 +159,14 @@ class BatchItemResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class BatchPostData(BasePostData):
-    """Data for the post Batch API"""
+    """Data for the post Batch API."""
 
     batchItems: list[BatchItem]
 
 
 @dataclass(kw_only=True)
 class BatchResponse(DataClassORJSONMixin):
-    """Represents a Batch response"""
+    """Represents a Batch response."""
 
     formatVersion: str
     batchItems: list[BatchItemResponse]
@@ -175,7 +175,7 @@ class BatchResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class BatchResponseSummary(DataClassORJSONMixin):
-    """Represents a batch response summary"""
+    """Represents a batch response summary."""
 
     successfulRequests: int
     totalRequests: int
@@ -183,13 +183,13 @@ class BatchResponseSummary(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class BookmarkQueryIntent(DataClassORJSONMixin):
-    """Represents a BookmarkQueryIntent"""
+    """Represents a BookmarkQueryIntent."""
 
     bookmark: BookmarkType
 
 
 class BookmarkType(StrEnum):
-    """Supported bookmark types"""
+    """Supported bookmark types."""
 
     HOME = "HOME"
     WORK = "WORK"
@@ -197,7 +197,7 @@ class BookmarkType(StrEnum):
 
 @dataclass(kw_only=True)
 class BoundingBox(DataClassORJSONMixin):
-    """Represents a BoundingBox"""
+    """Represents a BoundingBox."""
 
     topLeftPoint: LatLon
     btmRightPoint: LatLon
@@ -205,13 +205,13 @@ class BoundingBox(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Brand(DataClassORJSONMixin):
-    """Represents a Brand"""
+    """Represents a Brand."""
 
     name: str
 
 
 class CapabilitieType(StrEnum):
-    """Supported capabilities"""
+    """Supported capabilities."""
 
     CHARGING_PROFILE_CAPABLE = "ChargingProfileCapable"
     CHARGING_PREFERENCES_CAPABLE = "ChargingPreferencesCapable"
@@ -231,7 +231,7 @@ class CapabilitieType(StrEnum):
 
 @dataclass(kw_only=True)
 class CategorySearchParams(BaseParams):
-    """Parameters for the get_category_search method"""
+    """Parameters for the get_category_search method."""
 
     typeahead: bool | None = None
     limit: int | None = None
@@ -261,14 +261,14 @@ class CategorySearchParams(BaseParams):
 
 @dataclass(kw_only=True)
 class ChargingPark(DataClassORJSONMixin):
-    """Represents a ChargingPark"""
+    """Represents a ChargingPark."""
 
     connectors: list[Connector]
 
 
 @dataclass(kw_only=True)
 class ChargingPoint(DataClassORJSONMixin):
-    """Represents a ChargingPoint"""
+    """Represents a ChargingPoint."""
 
     capabilities: list[CapabilitieType]
     connectors: list[Connector]
@@ -279,7 +279,7 @@ class ChargingPoint(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class ChargingStation(DataClassORJSONMixin):
-    """Represents a ChargingStation"""
+    """Represents a ChargingStation."""
 
     id: str
     chargingPoints: list[ChargingPoint]
@@ -287,7 +287,7 @@ class ChargingStation(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Classification(DataClassORJSONMixin):
-    """Represents a Classification"""
+    """Represents a Classification."""
 
     code: str
     names: list[Name]
@@ -295,8 +295,8 @@ class Classification(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Connector(DataClassORJSONMixin):
-    """
-    Represents a Connector.
+    """Represents a Connector.
+
     Note that some API's use the field type while others use connectorType, after deserialization the values for both fields will be the same.
     """
 
@@ -310,7 +310,10 @@ class Connector(DataClassORJSONMixin):
 
     @classmethod
     def __post_deserialize__(cls, obj: Connector) -> Connector:
-        # Handle the discrepancy between general search and EV search on connector type.
+        """Connector post deserialize.
+
+        Handle the discrepancy between general search and EV search on connector type.
+        """
         if obj.type is not None and obj.connectorType is None:
             obj.connectorType = obj.type
         elif obj.connectorType is not None and obj.type is None:
@@ -319,7 +322,7 @@ class Connector(DataClassORJSONMixin):
 
 
 class ConnectorType(StrEnum):
-    """Supported connector types"""
+    """Supported connector types."""
 
     STANDARD_HOUSEHOLD_COUNTRY_SPECIFIC = "StandardHouseholdCountrySpecific"
     IEC62196_TYPE1 = "IEC62196Type1"
@@ -339,7 +342,7 @@ class ConnectorType(StrEnum):
 
 @dataclass(kw_only=True)
 class Context(DataClassORJSONMixin):
-    """Represents an auto complete context"""
+    """Represents an auto complete context."""
 
     inputQuery: str
     geoBias: GeoBias | None = None
@@ -347,7 +350,7 @@ class Context(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class CoordinateQueryIntent(DataClassORJSONMixin):
-    """Represents a CoordinateQueryIntent"""
+    """Represents a CoordinateQueryIntent."""
 
     lat: float
     lon: float
@@ -355,7 +358,7 @@ class CoordinateQueryIntent(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class CrossStreetLookupParams(BaseParams):
-    """Parameters for the get_cross_street_lookup method"""
+    """Parameters for the get_cross_street_lookup method."""
 
     limit: int | None = None
     radius: int | None = None
@@ -365,7 +368,7 @@ class CrossStreetLookupParams(BaseParams):
 
 
 class CurrentType(StrEnum):
-    """Supported current types"""
+    """Supported current types."""
 
     AC1 = "AC1"
     AC3 = "AC3"
@@ -374,13 +377,13 @@ class CurrentType(StrEnum):
 
 @dataclass(kw_only=True)
 class DataSources(DataClassORJSONMixin):
-    """Represents a DataSources"""
+    """Represents a DataSources."""
 
     chargingAvailability: IdString
 
 
 class EntityType(StrEnum):
-    """Supported entity types"""
+    """Supported entity types."""
 
     COUNTRY = "Country"
     COUNTRY_SUBDIVISION = "CountrySubdivision"
@@ -395,7 +398,7 @@ class EntityType(StrEnum):
 
 @dataclass(kw_only=True)
 class EntryPoint(DataClassORJSONMixin):
-    """Represents a EntryPoint"""
+    """Represents a EntryPoint."""
 
     type: EntryPointType
     functions: list[FunctionType] | None = None
@@ -404,7 +407,7 @@ class EntryPoint(DataClassORJSONMixin):
 
 
 class EntryPointType(StrEnum):
-    """Supported entry point types"""
+    """Supported entry point types."""
 
     MAIN = "main"
     MINOR = "minor"
@@ -413,14 +416,14 @@ class EntryPointType(StrEnum):
 
 @dataclass(kw_only=True)
 class EvSearchByIdParams(BaseParams):
-    """Parameters for the get_ev_search_by_id method"""
+    """Parameters for the get_ev_search_by_id method."""
 
     id: str
 
 
 @dataclass(kw_only=True)
 class EvSearchNearbyParams(BaseParams):
-    """Parameters for the get_ev_search_nearby method"""
+    """Parameters for the get_ev_search_nearby method."""
 
     lat: float
     lon: float
@@ -436,7 +439,7 @@ class EvSearchNearbyParams(BaseParams):
 
 
 class ExtendedPostalCodesForType(StrEnum):
-    """Supported extended postal codes"""
+    """Supported extended postal codes."""
 
     ADDR = "Addr"
     PAD = "PAD"
@@ -445,15 +448,15 @@ class ExtendedPostalCodesForType(StrEnum):
 
 
 class FilterType(StrEnum):
-    """Supported filter types"""
+    """Supported filter types."""
 
     BACK_ROADS = "BackRoads"
 
 
 class FuelType(StrEnum):
-    """
-    Supported fuel types,
-    See: https://developer.tomtom.com/search-api/documentation/product-information/supported-fuel-types
+    """Supported fuel types.
+
+    For more information, see: https://developer.tomtom.com/search-api/documentation/product-information/supported-fuel-types.
     """
 
     PETROL = "Petrol"
@@ -469,7 +472,7 @@ class FuelType(StrEnum):
 
 
 class FunctionType(StrEnum):
-    """Represents the type of access for the Address"""
+    """Represents the type of access for the Address."""
 
     MAIN = "Main"
     POSTAL = "Postal"
@@ -488,7 +491,7 @@ class FunctionType(StrEnum):
 
 @dataclass(kw_only=True)
 class GeoBias(DataClassORJSONMixin):
-    """Represents a geo bias"""
+    """Represents a geo bias."""
 
     position: LatLon
     radius: int
@@ -496,7 +499,7 @@ class GeoBias(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class GeocodeParams(BaseParams):
-    """Represents the parameters for get_geocode"""
+    """Represents the parameters for get_geocode."""
 
     storeResult: bool | None = None  # Deprecated
     typeahead: bool | None = None  # Deprecated
@@ -517,7 +520,7 @@ class GeocodeParams(BaseParams):
 
 @dataclass(kw_only=True)
 class Geometry:
-    """Represents an geometry"""
+    """Represents an geometry."""
 
     type: str
     position: str | None = None
@@ -527,7 +530,7 @@ class Geometry:
 
 @dataclass(kw_only=True)
 class GeometryFilterData(BasePostData):
-    """Data for the post geometry filter API"""
+    """Data for the post geometry filter API."""
 
     geometryList: list[Geometry]
     poiList: list[GeometryPoi]
@@ -535,7 +538,7 @@ class GeometryFilterData(BasePostData):
 
 @dataclass(kw_only=True)
 class GeometryFilterResponse(DataClassORJSONMixin):
-    """Represents a Geometry Filter response"""
+    """Represents a Geometry Filter response."""
 
     summary: Summary
     results: list[GeometryPoi]
@@ -543,7 +546,7 @@ class GeometryFilterResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class GeometryPoi:
-    """Represents an geometry poi"""
+    """Represents an geometry poi."""
 
     poi: Poi | None = None
     address: Address | None = None
@@ -552,7 +555,7 @@ class GeometryPoi:
 
 @dataclass(kw_only=True)
 class GeometrySearchParams(BaseParams):
-    """Parameters for the get_geometry_search method"""
+    """Parameters for the get_geometry_search method."""
 
     limit: int | None = None
     language: Language | None = None
@@ -577,29 +580,29 @@ class GeometrySearchParams(BaseParams):
 
 @dataclass(kw_only=True)
 class GeometrySearchPostData(BasePostData):
-    """Data for the post geometry search API"""
+    """Data for the post geometry search API."""
 
     geometryList: list[Geometry]
 
 
 @dataclass(kw_only=True)
 class Id(DataClassORJSONMixin):
-    """Represents an Id"""
+    """Represents an Id."""
 
     id: int
 
 
 @dataclass(kw_only=True)
 class IdString(DataClassORJSONMixin):
-    """Represents an IdString"""
+    """Represents an IdString."""
 
     id: str
 
 
 class IdxSetType(StrEnum):
-    """
-    Supported IdxSet types.
-    See: https://developer.tomtom.com/search-api/documentation/search-service/fuzzy-search#indexes-abbreviation-values
+    """Supported IdxSet types.
+
+    For more information, see: https://developer.tomtom.com/search-api/documentation/search-service/fuzzy-search#indexes-abbreviation-values.
     """
 
     GEO = "Geo"
@@ -612,7 +615,7 @@ class IdxSetType(StrEnum):
 
 @dataclass(kw_only=True)
 class MapCode(DataClassORJSONMixin):
-    """Represents a MapCode"""
+    """Represents a MapCode."""
 
     type: MapCodeType
     fullMapcode: str
@@ -621,10 +624,11 @@ class MapCode(DataClassORJSONMixin):
 
 
 class MapCodeType(StrEnum):
-    """
-    A mapcode represents a specific location to within a few meters. Every location on Earth can be represented by a mapcode. Mapcodes are designed
-    to be short, easy to recognize, remember, and communicate. Visit the Mapcode project website for more information.
-    See: http://www.mapcode.com/
+    """A mapcode represents a specific location to within a few meters.
+
+    Every location on Earth can be represented by a mapcode. Mapcodes are designed to be short, easy to recognize, remember, and communicate.
+    Visit the Mapcode project website for more information.
+    See: http://www.mapcode.com/.
     """
 
     LOCAL = "Local"
@@ -634,14 +638,14 @@ class MapCodeType(StrEnum):
 
 @dataclass(kw_only=True)
 class Match(DataClassORJSONMixin):
-    """Represents a match"""
+    """Represents a match."""
 
     offset: int
     length: int
 
 
 class MatchType(StrEnum):
-    """Supported match types"""
+    """Supported match types."""
 
     ADDRESS_POINT = "AddressPoint"
     HOUSE_NUMBER_RANGE = "HouseNumberRange"
@@ -650,14 +654,14 @@ class MatchType(StrEnum):
 
 @dataclass(kw_only=True)
 class Matches(DataClassORJSONMixin):
-    """Represents a matches"""
+    """Represents a matches."""
 
     inputQuery: list[Match]
 
 
 @dataclass(kw_only=True)
 class Name(DataClassORJSONMixin):
-    """Represents a Name"""
+    """Represents a Name."""
 
     nameLocale: str
     name: str
@@ -665,7 +669,7 @@ class Name(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class NearbyQueryIntent(DataClassORJSONMixin):
-    """Represents a NearbyQueryIntent"""
+    """Represents a NearbyQueryIntent."""
 
     lat: float
     lon: float
@@ -675,7 +679,7 @@ class NearbyQueryIntent(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class NearbySearchParams(BaseParams):
-    """Parameters for the get_nearby_search method"""
+    """Parameters for the get_nearby_search method."""
 
     limit: int | None = None
     ofs: int | None = None
@@ -701,20 +705,20 @@ class NearbySearchParams(BaseParams):
 
 @dataclass(kw_only=True)
 class OpeningHour(DataClassORJSONMixin):
-    """Represents an OpeningHour"""
+    """Represents an OpeningHour."""
 
     mode: str
     timeRanges: list[TimeRange]
 
 
 class OpeningHoursType(StrEnum):
-    """Supported opening hours type"""
+    """Supported opening hours type."""
 
     NEXT_SEVEN_DAYS = "nextSevenDays"
 
 
 class PathToNextType(StrEnum):
-    """Supported path to next types"""
+    """Supported path to next types."""
 
     DRIVING = "DRIVING"
     WALKING = "WALKING"
@@ -723,14 +727,14 @@ class PathToNextType(StrEnum):
 
 @dataclass(kw_only=True)
 class PaymentOption(DataClassORJSONMixin):
-    """Represents a PaymentOption"""
+    """Represents a PaymentOption."""
 
     brands: list[Brand]
 
 
 @dataclass(kw_only=True)
 class PlaceByIdParams(BaseParams):
-    """Parameters for the get_place_by_id method"""
+    """Parameters for the get_place_by_id method."""
 
     entityId: str
     language: Language | None = None
@@ -743,7 +747,7 @@ class PlaceByIdParams(BaseParams):
 
 @dataclass(kw_only=True)
 class PlaceByIdResponse(DataClassORJSONMixin):
-    """Represents a Place by Id response"""
+    """Represents a Place by Id response."""
 
     summary: Summary
     results: list[Result]
@@ -751,7 +755,7 @@ class PlaceByIdResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Poi(DataClassORJSONMixin):
-    """Represents a Result"""
+    """Represents a Result."""
 
     name: str
     phone: str | None = None
@@ -766,21 +770,21 @@ class Poi(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class PoiCategoriesParams(BaseParams):
-    """Represents the parameters for get_poi_categories"""
+    """Represents the parameters for get_poi_categories."""
 
     language: Language | None = None
 
 
 @dataclass(kw_only=True)
 class PoiCategoriesResponse(DataClassORJSONMixin):
-    """Represents a Poi Categories response"""
+    """Represents a Poi Categories response."""
 
     poiCategories: list[PoiCategory] | None = None
 
 
 @dataclass(kw_only=True)
 class PoiCategory(DataClassORJSONMixin):
-    """Represents a PoiCategory"""
+    """Represents a PoiCategory."""
 
     id: int
     name: str
@@ -790,7 +794,7 @@ class PoiCategory(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class PoiSearchParams(BaseParams):
-    """Parameters for the get_poi_search method"""
+    """Parameters for the get_poi_search method."""
 
     typeahead: bool | None = None
     limit: int | None = None
@@ -820,14 +824,14 @@ class PoiSearchParams(BaseParams):
 
 @dataclass(kw_only=True)
 class Points:
-    """Represents route points"""
+    """Represents route points."""
 
     points: list[LatLon]
 
 
 @dataclass(kw_only=True)
 class PremiumGeocodeParams(BaseParams):
-    """Parameters for the premium get_geocode method"""
+    """Parameters for the premium get_geocode method."""
 
     unit: str | None = None
     limit: int | None = None
@@ -847,14 +851,14 @@ class PremiumGeocodeParams(BaseParams):
 
 @dataclass(kw_only=True)
 class QueryIntent(DataClassORJSONMixin):
-    """Represents a QueryIntent"""
+    """Represents a QueryIntent."""
 
     type: QueryIntentType
     details: CoordinateQueryIntent | NearbyQueryIntent | W3WQueryIntent | BookmarkQueryIntent
 
 
 class QueryIntentType(StrEnum):
-    """Supported query intent types"""
+    """Supported query intent types."""
 
     COORDINATE = "COORDINATE"
     NEARBY = "NEARBY"
@@ -863,14 +867,14 @@ class QueryIntentType(StrEnum):
 
 
 class QueryType(StrEnum):
-    """Supported query types"""
+    """Supported query types."""
 
     NEARBY = "NEARBY"
     NON_NEAR = "NON_NEAR"
 
 
 class RedirectModeType(StrEnum):
-    """Supported redirect mode types"""
+    """Supported redirect mode types."""
 
     AUTO = "auto"
     MANUAL = "manual"
@@ -878,14 +882,14 @@ class RedirectModeType(StrEnum):
 
 @dataclass(kw_only=True)
 class RelatedPoi(DataClassORJSONMixin):
-    """Represents a RelatedPoi"""
+    """Represents a RelatedPoi."""
 
     relationType: RelationType
     id: str
 
 
 class RelatedPoisType(StrEnum):
-    """Supported related pois type"""
+    """Supported related pois type."""
 
     ALL = "all"
     CHILD = "child"
@@ -894,7 +898,7 @@ class RelatedPoisType(StrEnum):
 
 
 class RelationType(StrEnum):
-    """Supported relation types"""
+    """Supported relation types."""
 
     CHILD = "child"
     PARENT = "parent"
@@ -902,7 +906,7 @@ class RelationType(StrEnum):
 
 @dataclass(kw_only=True)
 class Response(DataClassORJSONMixin):
-    """Represents a Batch Item Response"""
+    """Represents a Batch Item Response."""
 
     summary: Summary | None = None
     results: list[Result] | None = None
@@ -912,7 +916,7 @@ class Response(DataClassORJSONMixin):
 
 
 class RestrictionType(StrEnum):
-    """Supported parking restrictions"""
+    """Supported parking restrictions."""
 
     EV_ONLY = "evOnly"
     PLUGGED = "plugged"
@@ -923,7 +927,7 @@ class RestrictionType(StrEnum):
 
 @dataclass(kw_only=True)
 class Result(DataClassORJSONMixin):
-    """Represents a Result"""
+    """Represents a Result."""
 
     type: ResultType | None = None
     id: str
@@ -955,14 +959,14 @@ class Result(DataClassORJSONMixin):
 
 
 class ResultSetType(StrEnum):
-    """Supported result set types"""
+    """Supported result set types."""
 
     CATEGORY = "category"
     BRAND = "brand"
 
 
 class ResultType(StrEnum):
-    """Supported result types"""
+    """Supported result types."""
 
     POI = "POI"
     STREET = "Street"
@@ -975,7 +979,7 @@ class ResultType(StrEnum):
 
 @dataclass(kw_only=True)
 class RevGeoBoundingBox(DataClassORJSONMixin):
-    """Represents a BoundingBox for reverse geocode"""
+    """Represents a BoundingBox for reverse geocode."""
 
     northEast: str
     southWest: str
@@ -983,14 +987,14 @@ class RevGeoBoundingBox(DataClassORJSONMixin):
 
 
 class RevGeoEntityType(StrEnum):
-    """Supported rev geo entity types"""
+    """Supported rev geo entity types."""
 
     POSITION = "position"
 
 
 @dataclass(kw_only=True)
 class RevGeocodeAddress(DataClassORJSONMixin):
-    """Represents a Reverse Geocode Address"""
+    """Represents a Reverse Geocode Address."""
 
     buildingNumber: str | None = None  # Deprecated
     building: str | None = None
@@ -1024,7 +1028,7 @@ class RevGeocodeAddress(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class ReverseGeocodeParams(BaseParams):
-    """Parameters for the get_reverse_geocode method"""
+    """Parameters for the get_reverse_geocode method."""
 
     returnSpeedLimit: bool | None = None
     heading: float | None = None
@@ -1044,20 +1048,20 @@ class ReverseGeocodeParams(BaseParams):
 
 @dataclass(kw_only=True)
 class ReverseGeocodeResponse(DataClassORJSONMixin):
-    """Represents a reverse geocode response"""
+    """Represents a reverse geocode response."""
 
     summary: Summary
     addresses: list[Addresses]
 
 
 class RoadClassType(StrEnum):
-    """Supported road class types"""
+    """Supported road class types."""
 
     FUNCTIONAL = "Functional"
 
 
 class RoadClassTypeValue(StrEnum):
-    """Represents a classification of roads"""
+    """Represents a classification of roads."""
 
     MOTORWAY = "Motorway"
     TRUNK = "Trunk"
@@ -1071,7 +1075,7 @@ class RoadClassTypeValue(StrEnum):
 
 @dataclass(kw_only=True)
 class Roadclass(DataClassORJSONMixin):
-    """Represents Roadclass"""
+    """Represents Roadclass."""
 
     type: RoadClassType
     values: list[RoadClassTypeValue]
@@ -1079,21 +1083,21 @@ class Roadclass(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Route:
-    """Represents an Route"""
+    """Represents an Route."""
 
     points: list[LatLon]
 
 
 @dataclass(kw_only=True)
 class SearchAlongRouteData(BasePostData):
-    """Data for the post search along route API"""
+    """Data for the post search along route API."""
 
     route: Points
 
 
 @dataclass(kw_only=True)
 class SearchAlongRouteParams(BaseParams):
-    """Parameters for the post_search_along_route method"""
+    """Parameters for the post_search_along_route method."""
 
     typeahead: bool | None = None
     limit: int | None = None
@@ -1117,7 +1121,7 @@ class SearchAlongRouteParams(BaseParams):
 
 @dataclass(kw_only=True)
 class SearchParams(BaseParams):
-    """Parameters for the get_search method"""
+    """Parameters for the get_search method."""
 
     typeahead: bool | None = None
     limit: int | None = None
@@ -1151,7 +1155,7 @@ class SearchParams(BaseParams):
 
 @dataclass(kw_only=True)
 class SearchResponse(DataClassORJSONMixin):
-    """Represents a Search response"""
+    """Represents a Search response."""
 
     summary: Summary
     results: list[Result]
@@ -1159,7 +1163,7 @@ class SearchResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Segment(DataClassORJSONMixin):
-    """Represents an auto complete segment"""
+    """Represents an auto complete segment."""
 
     type: str
     value: str
@@ -1169,14 +1173,14 @@ class Segment(DataClassORJSONMixin):
 
 
 class SortByType(StrEnum):
-    """Supported sort by type"""
+    """Supported sort by type."""
 
     DETOUR_TIME = "detourTime"
     DETOUR_OFFSET = "detourOffset"
 
 
 class StatusType(StrEnum):
-    """Supported current types"""
+    """Supported current types."""
 
     AVAILABLE = "Available"
     RESERVED = "Reserved"
@@ -1187,7 +1191,7 @@ class StatusType(StrEnum):
 
 @dataclass(kw_only=True)
 class StructuredGeocodeParams(BaseParams):
-    """Represents the parameters for get_structured_geocode"""
+    """Represents the parameters for get_structured_geocode."""
 
     limit: int | None = None
     ofs: int | None = None
@@ -1208,7 +1212,7 @@ class StructuredGeocodeParams(BaseParams):
 
 @dataclass(kw_only=True)
 class Summary(DataClassORJSONMixin):
-    """Represents a response Summary"""
+    """Represents a response Summary."""
 
     query: str | None = None
     queryTime: int | None = None
@@ -1222,16 +1226,8 @@ class Summary(DataClassORJSONMixin):
 
 
 @dataclass(kw_only=True)
-class SynchronousBatchPostReponse(DataClassORJSONMixin):
-    """Represents a Synchronous Batch Item response"""
-
-    statusCode: int
-    response: Response
-
-
-@dataclass(kw_only=True)
 class Time(DataClassORJSONMixin):
-    """Represents a Time"""
+    """Represents a Time."""
 
     date: date
     hour: int
@@ -1240,7 +1236,7 @@ class Time(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class TimeRange(DataClassORJSONMixin):
-    """Represents a TimeRange"""
+    """Represents a TimeRange."""
 
     startTime: Time
     endTime: Time
@@ -1248,13 +1244,13 @@ class TimeRange(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class TimeZone(DataClassORJSONMixin):
-    """Represents a TimeZone"""
+    """Represents a TimeZone."""
 
     ianaId: str
 
 
 class VehicleType(StrEnum):
-    """Supported vehicle types"""
+    """Supported vehicle types."""
 
     CAR = "Car"
     TRUCK = "Truck"
@@ -1262,7 +1258,7 @@ class VehicleType(StrEnum):
 
 @dataclass(kw_only=True)
 class Viewport(DataClassORJSONMixin):
-    """Represents a Viewport"""
+    """Represents a Viewport."""
 
     topLeftPoint: LatLon
     btmRightPoint: LatLon
@@ -1270,6 +1266,6 @@ class Viewport(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class W3WQueryIntent(DataClassORJSONMixin):
-    """Represents a W3WQueryIntent"""
+    """Represents a W3WQueryIntent."""
 
     address: str

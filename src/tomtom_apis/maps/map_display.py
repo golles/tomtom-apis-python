@@ -1,4 +1,4 @@
-"""Map Display API"""
+"""Map Display API."""
 
 from ..api import BaseApi, BaseParams
 from .models import (
@@ -15,11 +15,11 @@ from .models import (
 
 
 class MapDisplayApi(BaseApi):
-    """
-    The Map Display API is a suite of web services designed for developers to create web and mobile applications around mapping. These web services
-    can be used via RESTful APIs.
+    """Map Display API.
 
-    See: https://developer.tomtom.com/map-display-api/documentation/product-information/introduction
+    The Map Display API is a suite of web services designed for developers to create web and mobile applications around mapping.
+
+    For more information, see: https://developer.tomtom.com/map-display-api/documentation/product-information/introduction
     """
 
     async def get_map_tile(  # pylint: disable=too-many-arguments
@@ -33,16 +33,24 @@ class MapDisplayApi(BaseApi):
         image_format: TileFormatType,
         params: MapTileParams | None = None,
     ) -> bytes:
-        """
-        The Maps Raster Tile API endpoint renders map data that is divided into gridded sections called tiles. Tiles are square images in various
-        sizes which are available at 23 different zoom levels, ranging from 0 to 22. For zoom level 0, the entire earth is displayed on one single
-        tile, while at zoom level 22, the world is divided into 244 tiles. See the Zoom Levels and Tile Grid.
+        """Get map tile.
 
-        See: https://developer.tomtom.com/map-display-api/documentation/raster/map-tile
-        """
+        For more information, see: https://developer.tomtom.com/map-display-api/documentation/raster/map-tile
 
+        Args:
+            layer (LayerType): The type of layer for the map tile.
+            style (StyleType): The style of the map tile.
+            x (int): The x-coordinate of the tile.
+            y (int): The y-coordinate of the tile.
+            zoom (int): The zoom level of the tile.
+            image_format (TileFormatType): The format of the image.
+            params (MapTileParams | None, optional): Additional parameters for the map tile. Defaults to None.
+
+        Returns:
+            bytes: The map tile image data.
+        """
         response = await self.get(
-            endpoint=f"/map/1/tile/{layer.value}/{style.value}/{zoom}/{x}/{y}.{image_format.value}",
+            endpoint=f"/map/1/tile/{layer}/{style}/{zoom}/{x}/{y}.{image_format}",
             params=params,
         )
 
@@ -57,16 +65,22 @@ class MapDisplayApi(BaseApi):
         image_format: TileFormatType,
         params: BaseParams | None = None,  # No extra params.
     ) -> bytes:
-        """
-        The Maps Raster Satellite Tile API endpoint provides satellite map data that is divided into gridded sections called tiles. Tiles are square
-        images with a size of: 256 x 256 pixels. The tiles are available at 20 different zoom levels, ranging from 0 to 19. For zoom level 0, the
-        entire earth is displayed on one single tile, while at zoom level 19, the world is divided into 238 tiles. See the: Zoom Levels and Tile Grid.
+        """Get satellite tile.
 
-        See: https://developer.tomtom.com/map-display-api/documentation/raster/satellite-tile
-        """
+        For more information, see: https://developer.tomtom.com/map-display-api/documentation/raster/satellite-tile
 
+        Args:
+            x (int): The x-coordinate of the tile.
+            y (int): The y-coordinate of the tile.
+            zoom (int): The zoom level of the tile.
+            image_format (TileFormatType): The format of the image.
+            params (BaseParams | None, optional): Additional parameters for the tile. Defaults to None.
+
+        Returns:
+            bytes: The satellite tile image data.
+        """
         response = await self.get(
-            endpoint=f"/map/1/tile/sat/main/{zoom}/{x}/{y}.{image_format.value}",
+            endpoint=f"/map/1/tile/sat/main/{zoom}/{x}/{y}.{image_format}",
             params=params,
         )
 
@@ -81,16 +95,22 @@ class MapDisplayApi(BaseApi):
         image_format: TileFormatType,
         params: BaseParams | None = None,  # No extra params.
     ) -> bytes:
-        """
-        The Maps Raster Hillshade Tile API endpoint provides terrain elevation data that is divided into gridded sections called tiles. It can be
-        used for rendering hillshade that shows the topographical shape of hills and mountains. Tiles are square images with a size of: 514 x 514
-        pixels. The tiles are available at 14 different zoom levels, ranging from 0 to 13. See the: Zoom Levels and Tile Grid.
+        """Get hillshade tile.
 
-        See: https://developer.tomtom.com/map-display-api/documentation/raster/hillshade-tile
-        """
+        For more information, see: https://developer.tomtom.com/map-display-api/documentation/raster/hillshade-tile
 
+        Args:
+            x (int): The x-coordinate of the tile.
+            y (int): The y-coordinate of the tile.
+            zoom (int): The zoom level of the tile.
+            image_format (TileFormatType): The format of the image.
+            params (BaseParams | None, optional): Additional parameters for the hillshade tile. Defaults to None.
+
+        Returns:
+            bytes: The hillshade tile image data.
+        """
         response = await self.get(
-            endpoint=f"/map/1/tile/hill/main/{zoom}/{x}/{y}.{image_format.value}",
+            endpoint=f"/map/1/tile/hill/main/{zoom}/{x}/{y}.{image_format}",
             params=params,
         )
 
@@ -101,13 +121,22 @@ class MapDisplayApi(BaseApi):
         *,
         params: StaticImageParams | None = None,
     ) -> bytes:
-        """
-        The Static Image service renders a user-defined, rectangular image containing a map section. A user can select one of 23 zoom levels ranging
-        from 0 to 22 for it.
+        """Get static image.
 
-        See: https://developer.tomtom.com/map-display-api/documentation/raster/static-image
-        """
+        For more information, see: https://developer.tomtom.com/map-display-api/documentation/raster/static-image
 
+        Args:
+            layer (LayerType): The type of layer for the map tile.
+            style (StyleType): The style of the map tile.
+            x (int): The x-coordinate of the tile.
+            y (int): The y-coordinate of the tile.
+            zoom (int): The zoom level of the tile.
+            image_format (TileFormatType): The format of the image.
+            params (MapTileParams | None, optional): Additional parameters for the map tile. Defaults to None.
+
+        Returns:
+            bytes: The map tile image data.
+        """
         response = await self.get(
             endpoint="/map/1/staticimage",
             params=params,
@@ -124,15 +153,22 @@ class MapDisplayApi(BaseApi):
         zoom: int,
         params: MapTileV1Params | None = None,
     ) -> bytes:
-        """
-        The Maps Vector Service delivers geographic map data packaged in a vector representation of squared sections called vector tiles. Each tile
-        includes pre-defined collections of map features (points, lines, road shapes, water polygons, building footprints, etc.) delivered in one of
-        the specified vector formats.
+        """Get tile version 1.
 
-        See: https://developer.tomtom.com/map-display-api/documentation/vector/tile
+        For more information, see: https://developer.tomtom.com/map-display-api/documentation/vector/tile
+
+        Args:
+            layer (LayerTypeWithPoiType): The type of layer for the map tile.
+            x (int): The x-coordinate of the tile.
+            y (int): The y-coordinate of the tile.
+            zoom (int): The zoom level of the tile.
+            params (MapTileV1Params | None, optional): Additional parameters for the map tile. Defaults to None.
+
+        Returns:
+            bytes: The map tile data in bytes format.
         """
         response = await self.get(
-            endpoint=f"/map/1/tile/{layer.value}/main/{zoom}/{x}/{y}.pbf",
+            endpoint=f"/map/1/tile/{layer}/main/{zoom}/{x}/{y}.pbf",
             params=params,
         )
 
@@ -147,13 +183,22 @@ class MapDisplayApi(BaseApi):
         zoom: int,
         params: MapTileV2Params | None = None,
     ) -> bytes:
-        """
-        The Maps Vector Service delivers geographic map data packaged in a vector representation of squared sections called vector tiles.
+        """Get tile version 2.
 
-        See: https://developer.tomtom.com/map-display-api/documentation/vector/tile-v2
+        For more information, see: https://developer.tomtom.com/map-display-api/documentation/vector/tile-v2
+
+        Args:
+            layer (LayerTypeWithPoiType): The type of layer for the map tile.
+            x (int): The x-coordinate of the tile.
+            y (int): The y-coordinate of the tile.
+            zoom (int): The zoom level of the tile.
+            params (MapTileV2Params | None, optional): Additional parameters for the map tile. Defaults to None.
+
+        Returns:
+            bytes: The map tile data in bytes format.
         """
         response = await self.get(
-            endpoint=f"/map/1/tile/{layer.value}/{zoom}/{x}/{y}.pbf",
+            endpoint=f"/map/1/tile/{layer}/{zoom}/{x}/{y}.pbf",
             params=params,
         )
 
@@ -164,13 +209,16 @@ class MapDisplayApi(BaseApi):
         *,
         params: BaseParams | None = None,  # No extra params.
     ) -> str:
-        """
-        The Copyrights API is designed to serve copyright information for the Map Display services. As an alternative to copyrights for map request,
-        you can receive copyrights for the map service called captions.
+        """Get map copyrights.
 
-        See: https://developer.tomtom.com/map-display-api/documentation/copyrights
-        """
+        For more information, see: https://developer.tomtom.com/map-display-api/documentation/copyrights
 
+        Args:
+            params (BaseParams | None, optional): Additional parameters for the request. Defaults to None.
+
+        Returns:
+            str: The copyright information as a string.
+        """
         response = await self.get(
             endpoint="/map/2/copyrights",
             params=params,
@@ -183,13 +231,16 @@ class MapDisplayApi(BaseApi):
         *,
         params: BaseParams | None = None,  # No extra params.
     ) -> MapServiceCopyrightsResponse:
-        """
-        The Copyrights API is designed to serve copyright information for the Map Display services. As an alternative to copyrights for map request,
-        you can receive copyrights for the map service called captions.
+        """Get map service copyrights.
 
-        See: https://developer.tomtom.com/map-display-api/documentation/copyrights
-        """
+        For more information, see: https://developer.tomtom.com/map-display-api/documentation/copyrights
 
+        Args:
+            params (BaseParams | None, optional): Additional parameters for the request. Defaults to None.
+
+        Returns:
+            MapServiceCopyrightsResponse: The copyright information response object.
+        """
         response = await self.get(
             endpoint="/map/2/copyrights/caption.json",
             params=params,

@@ -1,4 +1,4 @@
-"""Exampels of search API calls"""
+"""Examples of search API calls."""
 
 # pylint: disable=duplicate-code
 
@@ -12,7 +12,7 @@ from tomtom_apis.places.models import Geometry, GeometrySearchParams, GeometrySe
 
 
 async def get_place_by_id(api_key: str) -> None:
-    """Example for get_place_by_id"""
+    """Example for get_place_by_id."""
     search_id = "528009004256119"
     async with SearchApi(ApiOptions(api_key=api_key)) as search_api:
         response = await search_api.get_place_by_id(params=PlaceByIdParams(entityId=search_id))
@@ -21,7 +21,7 @@ async def get_place_by_id(api_key: str) -> None:
 
 
 async def get_nearby_search(api_key: str) -> None:
-    """Example for get_nearby_search"""
+    """Example for get_nearby_search."""
     async with SearchApi(ApiOptions(api_key=api_key)) as search_api:
         radius = 10000
         response = await search_api.get_nearby_search(
@@ -37,7 +37,7 @@ async def get_nearby_search(api_key: str) -> None:
 
 
 async def post_geometry_search(api_key: str) -> None:
-    """Example for post_geometry_search"""
+    """Example for post_geometry_search."""
     async with SearchApi(ApiOptions(api_key=api_key)) as search_api:
         response = await search_api.post_geometry_search(
             query="pizza",
@@ -75,7 +75,7 @@ async def post_geometry_search(api_key: str) -> None:
 
 
 def get_api_key() -> str:
-    """Get the API key or ask for user input"""
+    """Get the API key or ask for user input."""
     apik_key = os.getenv("TOMTOM_API_KEY")
 
     if apik_key:

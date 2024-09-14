@@ -1,4 +1,4 @@
-"""Routing API"""
+"""Routing API."""
 
 from ..api import BaseApi
 from ..models import LatLon, LatLonList
@@ -13,12 +13,11 @@ from .models import (
 
 
 class RoutingApi(BaseApi):
-    """
-    TomTom Routing is a suite of web services designed for developers to use our latest scalable routing engine.
-    - Independent tests have established that the TomTom routing engine is the best in the industry.
-    - Our routing engine uses IQ Routes™ and TomTom Traffic™.
+    """Routing API.
 
-    See: https://developer.tomtom.com/routing-api/documentation/tomtom-maps/routing-service
+    TomTom Routing is a suite of web services designed for developers to use our latest scalable routing engine.
+
+    For more information, see: https://developer.tomtom.com/routing-api/documentation/tomtom-maps/routing-service
     """
 
     async def get_calculate_route(
@@ -27,12 +26,10 @@ class RoutingApi(BaseApi):
         locations: LatLonList,
         params: CalculateRouteParams | None = None,
     ) -> CalculatedRouteResponse:
-        """
-        The Calculate Route service calculates a route between an origin and a destination, passing through waypoints if they are specified.
+        """Get calculate route.
 
-        See: https://developer.tomtom.com/routing-api/documentation/tomtom-maps/calculate-route
+        For more information, see: https://developer.tomtom.com/routing-api/documentation/tomtom-maps/calculate-route
         """
-
         response = await self.get(
             endpoint=f"/routing/1/calculateRoute/{locations.to_colon_separated()}/json",
             params=params,
@@ -47,12 +44,18 @@ class RoutingApi(BaseApi):
         params: CalculateRouteParams | None = None,
         data: CalculateRoutePostData,
     ) -> CalculatedRouteResponse:
-        """
-        The Calculate Route service calculates a route between an origin and a destination, passing through waypoints if they are specified.
+        """Post calculate route.
 
-        See: https://developer.tomtom.com/routing-api/documentation/tomtom-maps/calculate-route
-        """
+        For more information, see: https://developer.tomtom.com/routing-api/documentation/tomtom-maps/calculate-route
 
+        Args:
+            locations (LatLonList): A list of locations to include in the route.
+            params (CalculateRouteParams | None, optional): Additional parameters for route calculation. Defaults to None.
+            data (CalculateRoutePostData): Data specifying route details and constraints.
+
+        Returns:
+            CalculatedRouteResponse: The response containing the calculated route details.
+        """
         response = await self.post(
             endpoint=f"/routing/1/calculateRoute/{locations.to_colon_separated()}/json",
             params=params,
@@ -67,12 +70,17 @@ class RoutingApi(BaseApi):
         origin: LatLon,
         params: CalculateReachableRouteParams | None = None,
     ) -> CalculatedReachableRangeResponse:
-        """
-        Calculates a set of locations that can be reached from the origin point.
+        """Get calculate reachable range.
 
-        See: https://developer.tomtom.com/routing-api/documentation/tomtom-maps/calculate-reachable-range
-        """
+        For more information, see: https://developer.tomtom.com/routing-api/documentation/tomtom-maps/calculate-reachable-range
 
+        Args:
+            origin (LatLon): The origin point from which the reachable range is calculated.
+            params (CalculateReachableRouteParams | None, optional): Additional parameters for the calculation. Defaults to None.
+
+        Returns:
+            CalculatedReachableRangeResponse: The response containing the details of the reachable range from the origin.
+        """
         response = await self.get(
             endpoint=f"/routing/1/calculateReachableRange/{origin.to_comma_separated()}/json",
             params=params,
@@ -87,12 +95,18 @@ class RoutingApi(BaseApi):
         params: CalculateReachableRouteParams | None = None,
         data: CalculateReachableRangePostData,
     ) -> CalculatedReachableRangeResponse:
-        """
-        Calculates a set of locations that can be reached from the origin point.
+        """Post calculate reachable range.
 
-        See: https://developer.tomtom.com/routing-api/documentation/tomtom-maps/calculate-reachable-range
-        """
+        For more information, see: https://developer.tomtom.com/routing-api/documentation/tomtom-maps/calculate-reachable-range
 
+        Args:
+            origin (LatLon): The origin point from which the reachable range is calculated.
+            params (CalculateReachableRouteParams | None, optional): Additional parameters for the calculation. Defaults to None.
+            data (CalculateReachableRangePostData): Data specifying details for the reachable range calculation.
+
+        Returns:
+            CalculatedReachableRangeResponse: The response containing the details of the reachable range from the origin.
+        """
         response = await self.post(
             endpoint=f"/routing/1/calculateReachableRange/{origin.to_comma_separated()}/json",
             params=params,

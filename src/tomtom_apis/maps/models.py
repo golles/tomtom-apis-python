@@ -1,4 +1,4 @@
-"""Models for the TomTom Maps API"""
+"""Models for the TomTom Maps API."""
 # pylint: disable=invalid-name, too-many-instance-attributes, too-many-lines
 
 from __future__ import annotations
@@ -14,7 +14,7 @@ from ..utils import serialize_list_brackets
 
 
 class AdrCategoryType(StrEnum):
-    """Supported ADR category types"""
+    """Supported ADR category types."""
 
     B = "B"
     C = "C"
@@ -23,7 +23,7 @@ class AdrCategoryType(StrEnum):
 
 
 class DangerousGoodsLoadType(StrEnum):
-    """Supported dangerous good types"""
+    """Supported dangerous good types."""
 
     EXPLOSIVES = "Explosives"
     GASES = "Gases"
@@ -37,7 +37,7 @@ class DangerousGoodsLoadType(StrEnum):
 
 
 class EmissionClassType(StrEnum):
-    """Supported emission class types"""
+    """Supported emission class types."""
 
     EMISSIONCLASS0 = "EmissionClass0"
     EMISSIONCLASS1 = "EmissionClass1"
@@ -53,7 +53,7 @@ class EmissionClassType(StrEnum):
 
 
 class EngineType(StrEnum):
-    """Supported engine types"""
+    """Supported engine types."""
 
     LPG = "LPG"
     CNG = "CNG"
@@ -67,7 +67,7 @@ class EngineType(StrEnum):
 
 
 class GeneralLoadType(StrEnum):
-    """Supported general load types"""
+    """Supported general load types."""
 
     GENERAL_HAZARDOUS_MATERIALS = "General_Hazardous_Materials"
     EXPLOSIVE_MATERIALS = "Explosive_Materials"
@@ -75,13 +75,13 @@ class GeneralLoadType(StrEnum):
 
 
 class IncludeType(StrEnum):
-    """Supported include types"""
+    """Supported include types."""
 
     ROAD_RESTRICTIONS = "road_restrictions"
 
 
 class LayerType(StrEnum):
-    """Supported layer types"""
+    """Supported layer types."""
 
     BASIC = "basic"
     HYBRID = "hybrid"
@@ -89,7 +89,7 @@ class LayerType(StrEnum):
 
 
 class LayerTypeWithPoiType(StrEnum):
-    """Supported layer types"""
+    """Supported layer types."""
 
     BASIC = "basic"
     HYBRID = "hybrid"
@@ -99,7 +99,7 @@ class LayerTypeWithPoiType(StrEnum):
 
 @dataclass(kw_only=True)
 class MapServiceCopyrightsResponse(DataClassORJSONMixin):
-    """Represents the map service copyrights response"""
+    """Represents the map service copyrights response."""
 
     formatVersion: str
     copyrightsCaption: str
@@ -107,7 +107,7 @@ class MapServiceCopyrightsResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class MapTileParams(BaseParams):
-    """Parameters for the map tile API"""
+    """Parameters for the map tile API."""
 
     tileSize: TileSizeType | None = None
     view: ViewType | None = None
@@ -116,7 +116,7 @@ class MapTileParams(BaseParams):
 
 @dataclass(kw_only=True)
 class MapTileV1Params(BaseParams):
-    """Parameters for the map tile API"""
+    """Parameters for the map tile API."""
 
     view: ViewType | None = None
     language: Language | None = None
@@ -124,7 +124,7 @@ class MapTileV1Params(BaseParams):
 
 @dataclass(kw_only=True)
 class MapTileV2Params(BaseParams):
-    """Parameters for the map tile API"""
+    """Parameters for the map tile API."""
 
     view: ViewType | None = None
     include: list[IncludeType] | None = field(default=None, metadata={"serialize": serialize_list_brackets})
@@ -146,7 +146,7 @@ class MapTileV2Params(BaseParams):
 
 @dataclass(kw_only=True)
 class StaticImageParams(BaseParams):
-    """Parameters for the map tile API"""
+    """Parameters for the map tile API."""
 
     layer: LayerType | None = None
     style: StyleType | None = None
@@ -162,21 +162,21 @@ class StaticImageParams(BaseParams):
 
 
 class StyleType(StrEnum):
-    """Supported style types"""
+    """Supported style types."""
 
     MAIN = "main"
     NIGHT = "night"
 
 
 class TileFormatType(StrEnum):
-    """Supported tile formats"""
+    """Supported tile formats."""
 
     PNG = "png"
     JPG = "jpg"
 
 
 class TravelModeType(StrEnum):
-    """Supported travel mode types"""
+    """Supported travel mode types."""
 
     CAR = "Car"
     TRUCK = "Truck"

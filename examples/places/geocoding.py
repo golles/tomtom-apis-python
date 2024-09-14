@@ -1,4 +1,4 @@
-"""Exampels of geocoding API calls."""
+"""Examples of geocoding API calls."""
 
 # pylint: disable=duplicate-code
 

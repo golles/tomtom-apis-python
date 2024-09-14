@@ -1,4 +1,4 @@
-"""Exampels of search API calls."""
+"""Examples of search API calls."""
 
 # pylint: disable=duplicate-code
 

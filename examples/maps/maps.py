@@ -1,4 +1,4 @@
-"""Exampels of some maps API calls."""
+"""Examples of some maps API calls."""
 
 # pylint: disable=duplicate-code
 

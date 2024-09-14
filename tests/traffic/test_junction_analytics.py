@@ -1,4 +1,4 @@
-"""Junction Analytics tests"""
+"""Junction Analytics tests."""
 
 import pytest
 
@@ -6,6 +6,6 @@ from tomtom_apis.traffic import JunctionAnalyticsApi
 
 
 def test_api_not_implemented():
-    """Test API not implemented yet"""
+    """Test API not implemented yet."""
     with pytest.raises(NotImplementedError):
         JunctionAnalyticsApi()

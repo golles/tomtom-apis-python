@@ -1,4 +1,4 @@
-"""Generic utils"""
+"""Generic utils."""
 
 import math
 from enum import Enum, IntEnum, StrEnum
@@ -15,10 +15,9 @@ MAX_LON = 180.0
 
 
 def lat_lon_to_tile_zxy(lat: float, lon: float, zoom_level: int) -> MapTile:
-    """
-    Convert a location to a map tile for a given zoom level.
+    """Convert a location to a map tile for a given zoom level.
 
-    See: https://developer.tomtom.com/map-display-api/documentation/zoom-levels-and-tile-grid
+    For more information, see: https://developer.tomtom.com/map-display-api/documentation/zoom-levels-and-tile-grid
 
     Args:
         lat (float): The latitude of the location.
@@ -30,6 +29,7 @@ def lat_lon_to_tile_zxy(lat: float, lon: float, zoom_level: int) -> MapTile:
 
     Raises:
         ValueError: If latitude, longitude, or zoom level are out of range.
+
     """
     if not MIN_ZOOM_LEVEL <= zoom_level <= MAX_ZOOM_LEVEL:
         raise ValueError(f"Zoom level value is out of range [{MIN_ZOOM_LEVEL}, {MAX_ZOOM_LEVEL}]")
@@ -49,10 +49,9 @@ def lat_lon_to_tile_zxy(lat: float, lon: float, zoom_level: int) -> MapTile:
 
 
 def tile_zxy_to_lat_lon(zoom_level: int, x: int, y: int) -> LatLon:
-    """
-    Convert a map tile to a location for a given zoom level.
+    """Convert a map tile to a location for a given zoom level.
 
-    See: https://developer.tomtom.com/map-display-api/documentation/zoom-levels-and-tile-grid
+    For more information, see: https://developer.tomtom.com/map-display-api/documentation/zoom-levels-and-tile-grid
 
     Args:
         zoom_level (int): The zoom level.
@@ -64,6 +63,7 @@ def tile_zxy_to_lat_lon(zoom_level: int, x: int, y: int) -> LatLon:
 
     Raises:
         ValueError: If the zoom level or tile coordinates are out of range.
+
     """
     if not MIN_ZOOM_LEVEL <= zoom_level <= MAX_ZOOM_LEVEL:
         raise ValueError(f"Zoom level value is out of range [{MIN_ZOOM_LEVEL}, {MAX_ZOOM_LEVEL}]")
@@ -86,12 +86,24 @@ def tile_zxy_to_lat_lon(zoom_level: int, x: int, y: int) -> LatLon:
 
 
 def serialize_bool(x: bool) -> str:
-    """Serialize a bool to a lowercase string"""
+    """Serialize a boolean as a lowercase string.
+
+    Args:
+        x (bool): The boolean to serialize.
+
+    Returns:
+        str: The serialized boolean as a lowercase string.
+    """
     return str(x).lower()
 
 
 def serialize_enum(x: Enum) -> str:
-    """Serialize an enum"""
+    """Serialize an Enum as a string.
+
+    If the Enum is an IntEnum, serialize it as a string.
+    If the Enum is a StrEnum, serialize it as itself.
+    Otherwise, serialize it as its value.
+    """
     if isinstance(x, IntEnum):
         return str(x)
     if isinstance(x, StrEnum):
@@ -100,13 +112,27 @@ def serialize_enum(x: Enum) -> str:
 
 
 def serialize_list(x: list[int | float | bool | str | Enum]) -> str | None:
-    """Serialize a list to a comma-separated string, converting booleans to lowercase strings and using Enum values."""
+    """Serialize a list to a comma-separated string, converting booleans to lowercase strings.
+
+    Args:
+        x (list[int | float | bool | str | Enum]): The list to serialize.
+
+    Returns:
+        str | None: The serialized list as a comma-separated string, or None if the list was empty.
+    """
     if not x:
         return None
     return ",".join(serialize_bool(item) if isinstance(item, bool) else serialize_enum(item) if isinstance(item, Enum) else str(item) for item in x)
 
 
 def serialize_list_brackets(x: list[int | float | bool | str | Enum]) -> str | None:
-    """Serialize a list to a comma-separated string within square brackets, converting booleans to lowercase strings"""
+    """Serialize a list to a comma-separated string, converting booleans to lowercase strings, and surround with square brackets.
+
+    Args:
+        x (list[int | float | bool | str | Enum]): The list to serialize.
+
+    Returns:
+        str | None: The serialized list as a comma-separated string, or None if the list was empty.
+    """
     serialized_list = serialize_list(x)
     return f"[{serialized_list}]" if serialized_list is not None else None

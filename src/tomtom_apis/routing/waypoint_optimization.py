@@ -1,15 +1,16 @@
-"""Waypoint optimization API"""
+"""Waypoint optimization API."""
 
 from ..api import BaseApi, BaseParams
 from ..routing.models import WaypointOptimizationPostData, WaypointOptimizedResponse
 
 
 class WaypointOptimizationApi(BaseApi):
-    """
+    """Waypoint optimization API.
+
     TomTom's Waypoint Optimization service is intended to optimize the order of provided waypoints by fastest route. This service uses an heuristic
     algorithm to create an optimized sequence.
 
-    See: https://developer.tomtom.com/waypoint-optimization/documentation/waypoint-optimization-service
+    For more information, see: https://developer.tomtom.com/waypoint-optimization/documentation/waypoint-optimization-service
     """
 
     async def post_waypointoptimization(
@@ -18,12 +19,17 @@ class WaypointOptimizationApi(BaseApi):
         params: BaseParams | None = None,  # No extra params.
         data: WaypointOptimizationPostData,
     ) -> WaypointOptimizedResponse:
-        """
-        This endpoint optimizes a provided waypoints sequence based on road network distances. Sequence is ordered to form the fastest route.
+        """Post waypointoptimization.
 
-        See: https://developer.tomtom.com/waypoint-optimization/documentation/waypoint-optimization
-        """
+        For more information, see: https://developer.tomtom.com/waypoint-optimization/documentation/waypoint-optimization
 
+        Args:
+            params (BaseParams | None, optional): Optional parameters for the request. Defaults to None.
+            data (WaypointOptimizationPostData): Data specifying the waypoints and any optimization criteria.
+
+        Returns:
+            WaypointOptimizedResponse: The response containing the optimized order of waypoints.
+        """
         response = await self.post(
             endpoint="/routing/waypointoptimization/1",
             params=params,

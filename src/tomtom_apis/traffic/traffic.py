@@ -1,4 +1,4 @@
-"""Traffic API"""
+"""Traffic API."""
 
 from tomtom_apis.utils import serialize_list
 
@@ -14,6 +14,7 @@ from .models import (
     IncidentDetailsPostData,
     IncidentDetailsResponse,
     IncidentStyleType,
+    IncidentTileFormatType,
     IncidentViewportResponse,
     RasterFlowTilesParams,
     RasterIncidentTilesParams,
@@ -23,13 +24,14 @@ from .models import (
 
 
 class TrafficApi(BaseApi):
-    """
+    """Traffic API.
+
     The Traffic API is a suite of web services designed for developers to create web and mobile applications around real-time traffic. These web
     services can be used via RESTful APIs. The TomTom Traffic team offers a wide range of solutions to enable you to get the most out of your
     applications. Make use of the real-time traffic products or the historical traffic analytics to create applications and analysis that fits the
     needs of your end-users.
 
-    See: https://developer.tomtom.com/traffic-api/documentation/product-information/introduction
+    For more information, see: https://developer.tomtom.com/traffic-api/documentation/product-information/introduction
     """
 
     async def get_incident_details(
@@ -39,14 +41,21 @@ class TrafficApi(BaseApi):
         ids: list[str] | None = None,
         params: IncidentDetailsParams | None = None,
     ) -> IncidentDetailsResponse:
-        """
-        The Incident Details service provides information on traffic incidents which are inside a given bounding box or whose geometry intersects
-        with it. The freshness of data is based on the provided Traffic Model ID (t). The data obtained from this service can be used as standalone
-        or as an extension to other Traffic Incident services.
+        """Get incident details.
 
-        See: https://developer.tomtom.com/traffic-api/documentation/traffic-incidents/incident-details
-        """
+        For more information, see: https://developer.tomtom.com/traffic-api/documentation/traffic-incidents/incident-details
 
+        Args:
+            bbox (BBoxParam | None, optional): The bounding box to filter incidents by location. Defaults to None.
+            ids (list[str] | None, optional): A list of incident IDs to retrieve details for. Defaults to None.
+            params (IncidentDetailsParams | None, optional): Additional parameters for the request. Defaults to None.
+
+        Returns:
+            IncidentDetailsResponse: The response containing details of the traffic incidents.
+
+        Raises:
+            ValueError: If both `bbox` and `ids` are provided or neither is provided.
+        """
         if bbox and not ids:
             mutually_exclusive_parameters = f"bbox={bbox.to_comma_separated()}"
         elif ids and not bbox:
@@ -67,14 +76,17 @@ class TrafficApi(BaseApi):
         params: IncidentDetailsParams | None = None,
         data: IncidentDetailsPostData,
     ) -> IncidentDetailsResponse:
-        """
-        The Incident Details service provides information on traffic incidents which are inside a given bounding box or whose geometry intersects
-        with it. The freshness of data is based on the provided Traffic Model ID (t). The data obtained from this service can be used as standalone
-        or as an extension to other Traffic Incident services.
+        """Post incident details.
 
-        See: https://developer.tomtom.com/traffic-api/documentation/traffic-incidents/incident-details
-        """
+        For more information, see: https://developer.tomtom.com/traffic-api/documentation/traffic-incidents/incident-details
 
+        Args:
+            params (IncidentDetailsParams | None, optional): Additional parameters for the request. Defaults to None.
+            data (IncidentDetailsPostData): Data containing the incident details to be posted.
+
+        Returns:
+            IncidentDetailsResponse: The response containing the result of the posted incident details.
+        """
         response = await self.post(
             endpoint="/traffic/services/5/incidentDetails",
             params=params,
@@ -93,11 +105,20 @@ class TrafficApi(BaseApi):
         copyright_information: bool,
         params: BaseParams | None = None,  # No extra params.
     ) -> IncidentViewportResponse:
-        """
-        This service returns legal and technical information for the viewport described in the request. It should be called by client applications
-        whenever the viewport changes (for instance, through zooming, panning, going to a location, or displaying a route).
+        """Get incident viewport.
 
-        See: https://developer.tomtom.com/traffic-api/documentation/traffic-incidents/incident-viewport
+        For more information, see: https://developer.tomtom.com/traffic-api/documentation/traffic-incidents/incident-viewport
+
+        Args:
+            bounding_box (BoudingBoxParam): The bounding box defining the primary viewport for incidents.
+            bounding_zoom (int): The zoom level for the primary viewport.
+            overview_box (BoudingBoxParam): The bounding box defining the overview viewport.
+            overview_zoom (int): The zoom level for the overview viewport.
+            copyright_information (bool): Flag to include copyright information in the response.
+            params (BaseParams | None, optional): Optional parameters for the request. Defaults to None.
+
+        Returns:
+            IncidentViewportResponse: The response containing details of traffic incidents within the defined viewport.
         """
         response = await self.get(
             endpoint=(
@@ -117,19 +138,26 @@ class TrafficApi(BaseApi):
         x: int,
         y: int,
         zoom: int,
+        image_format: IncidentTileFormatType,
         params: RasterIncidentTilesParams | None = None,
     ) -> bytes:
-        """
-        The TomTom Traffic Tile service serves 256 x 256 pixel or 512 x 512 pixel tiles showing traffic incidents. All tiles use the same grid
-        system. Because the traffic tiles use transparent images, they can be layered on top of map tiles to create a compound display. Traffic tiles
-        render graphics to indicate traffic on the roads in the specified area. The Traffic incidents tiles use colors to indicate the magnitude of
-        delay associated with the particular incident on a road segment. The magnitude of delay is determined based on the severity of traffic
-        congestion associated with the particular incident.
+        """Get raster incident tile.
 
-        See: https://developer.tomtom.com/traffic-api/documentation/traffic-incidents/raster-incident-tiles
+        For more information, see: https://developer.tomtom.com/traffic-api/documentation/traffic-incidents/raster-incident-tiles
+
+        Args:
+            style (IncidentStyleType): The style of the incident tile (e.g., default or custom style).
+            x (int): The x-coordinate of the tile.
+            y (int): The y-coordinate of the tile.
+            zoom (int): The zoom level of the tile.
+            image_format (IncidentTileFormatType): The format of the image.
+            params (RasterIncidentTilesParams | None, optional): Optional parameters for the request. Defaults to None.
+
+        Returns:
+            bytes: The raster image tile in PNG format.
         """
         response = await self.get(
-            endpoint=f"/traffic/map/4/tile/incidents/{style.value}/{zoom}/{x}/{y}.png",
+            endpoint=f"/traffic/map/4/tile/incidents/{style}/{zoom}/{x}/{y}.{image_format}",
             params=params,
         )
 
@@ -143,11 +171,18 @@ class TrafficApi(BaseApi):
         zoom: int,
         params: VectorIncidentTilesParams | None = None,
     ) -> bytes:
-        """
-        The Traffic Vector Incidents Tiles API provides data on zoom levels ranging from 0 to 22. For zoom level 0, the world is displayed on a
-        single tile, while at zoom level 22, the world is divided into 244 tiles. See: Zoom Levels and Tile Grid.
+        """Get vector incident tile.
 
-        See: https://developer.tomtom.com/traffic-api/documentation/traffic-incidents/vector-incident-tiles
+        For more information, see: https://developer.tomtom.com/traffic-api/documentation/traffic-incidents/vector-incident-tiles
+
+        Args:
+            x (int): The x-coordinate of the tile.
+            y (int): The y-coordinate of the tile.
+            zoom (int): The zoom level of the tile.
+            params (VectorIncidentTilesParams | None, optional): Optional parameters for the request. Defaults to None.
+
+        Returns:
+            bytes: The vector tile in PBF format.
         """
         response = await self.get(
             endpoint=f"/traffic/map/4/tile/incidents/{zoom}/{x}/{y}.pbf",
@@ -164,12 +199,18 @@ class TrafficApi(BaseApi):
         point: str,
         params: FlowSegmentDataParams | None = None,
     ) -> FlowSegmentDataResponse:
-        """
-        This service provides information about the speeds and travel times of the road fragment closest to the given coordinates. It is designed to
-        work alongside the Flow Tiles to support clickable flow data visualizations. With this API, the client side can connect any place in the map
-        with flow data on the closest road and present it to the user.
+        """Get flow segment data.
 
-        See: https://developer.tomtom.com/traffic-api/documentation/traffic-flow/flow-segment-data
+        For more information, see: https://developer.tomtom.com/traffic-api/documentation/traffic-flow/flow-segment-data
+
+        Args:
+            style (FlowStyleType): The style of the flow segment data (e.g., default or custom style).
+            zoom (int): The zoom level for the flow segment data.
+            point (str): The coordinates of the point of interest, specified as a string.
+            params (FlowSegmentDataParams | None, optional): Optional parameters for the request. Defaults to None.
+
+        Returns:
+            FlowSegmentDataResponse: The response containing traffic flow segment data.
         """
         response = await self.get(
             endpoint=f"/traffic/services/4/flowSegmentData/{style}/{zoom}/json?point={point}",
@@ -187,13 +228,19 @@ class TrafficApi(BaseApi):
         y: int,
         params: RasterFlowTilesParams | None = None,
     ) -> bytes:
-        """
-        The TomTom Traffic Raster Flow Tile service serves 256 x 256 pixel or 512 x 512 pixel tiles showing traffic flow. All tiles use the same grid
-        system. Because the traffic tiles use transparent images, they can be layered on top of map tiles to create a compound display. The Raster
-        Flow tiles use colors to indicate either the speed of traffic on different road segments, or the difference between that speed and the
-        free-flow speed on the road segment in question.
+        """Get raster flow tiles.
 
-        See: https://developer.tomtom.com/traffic-api/documentation/traffic-flow/raster-flow-tiles
+        For more information, see: https://developer.tomtom.com/traffic-api/documentation/traffic-flow/raster-flow-tiles
+
+        Args:
+            style (FlowStyleType): The style of the flow tile (e.g., default or custom style).
+            zoom (int): The zoom level of the tile.
+            x (int): The x-coordinate of the tile.
+            y (int): The y-coordinate of the tile.
+            params (RasterFlowTilesParams | None, optional): Optional parameters for the request. Defaults to None.
+
+        Returns:
+            bytes: The raster image tile in PNG format.
         """
         response = await self.get(
             endpoint=f"/traffic/map/4/tile/flow/{style}/{zoom}/{x}/{y}.png",
@@ -211,11 +258,19 @@ class TrafficApi(BaseApi):
         y: int,
         params: VectorFlowTilesParams | None = None,
     ) -> bytes:
-        """
-        The Traffic Vector Flow Tiles API endpoint provides data on zoom levels ranging from 0 to 22. For zoom level 0, the world is displayed on a
-        single tile. At zoom level 22, the world is divided into 244 tiles. See the Zoom Levels and Tile Grid.
+        """Get vector flow tiles.
 
-        See: https://developer.tomtom.com/traffic-api/documentation/traffic-flow/vector-flow-tiles
+        For more information, see: https://developer.tomtom.com/traffic-api/documentation/traffic-flow/vector-flow-tiles
+
+        Args:
+            flow_type (FlowType): The type of flow data to retrieve (e.g., current or historical flow).
+            zoom (int): The zoom level of the tile.
+            x (int): The x-coordinate of the tile.
+            y (int): The y-coordinate of the tile.
+            params (VectorFlowTilesParams | None, optional): Optional parameters for the request. Defaults to None.
+
+        Returns:
+            bytes: The vector tile in PBF format.
         """
         response = await self.get(
             endpoint=f"/traffic/map/4/tile/flow/{flow_type}/{zoom}/{x}/{y}.pbf",

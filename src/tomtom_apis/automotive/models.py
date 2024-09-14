@@ -1,4 +1,4 @@
-"""Models for the TomTom Automotive API"""
+"""Models for the TomTom Automotive API."""
 # pylint: disable=invalid-name, too-many-instance-attributes, too-many-lines
 
 from __future__ import annotations
@@ -13,7 +13,7 @@ from ..api import BaseParams
 
 @dataclass(kw_only=True)
 class Current(DataClassORJSONMixin):
-    """Represents a Current"""
+    """Represents a Current."""
 
     available: bool
     emptySpots: int
@@ -23,7 +23,7 @@ class Current(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Fuel(DataClassORJSONMixin):
-    """Represents a Fuel"""
+    """Represents a Fuel."""
 
     type: list[str]
     price: list[Price]
@@ -32,7 +32,7 @@ class Fuel(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class FuelPricesResponse(DataClassORJSONMixin):
-    """Represents a FuelPrices response"""
+    """Represents a FuelPrices response."""
 
     fuelPrice: str
     fuels: list[Fuel]
@@ -40,25 +40,21 @@ class FuelPricesResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class FuelPrizeParams(BaseParams):
-    """
-    Parameters for the get_fuel_prize method.
-    """
+    """Parameters for the get_fuel_prize method."""
 
     fuelPrice: str
 
 
 @dataclass(kw_only=True)
 class ParkingAvailabilityParams(BaseParams):
-    """
-    Parameters for the get_parking_availability method.
-    """
+    """Parameters for the get_parking_availability method."""
 
     parkingAvailability: str
 
 
 @dataclass(kw_only=True)
 class ParkingAvailabilityResponse(DataClassORJSONMixin):
-    """Represents a ParkingAvailability response"""
+    """Represents a ParkingAvailability response."""
 
     parkingAvailability: str
     statuses: list[Status]
@@ -66,7 +62,7 @@ class ParkingAvailabilityResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Price(DataClassORJSONMixin):
-    """Represents a Price"""
+    """Represents a Price."""
 
     value: float
     currency: str
@@ -76,6 +72,6 @@ class Price(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Status(DataClassORJSONMixin):
-    """Represents a Status"""
+    """Represents a Status."""
 
     current: Current

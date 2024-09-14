@@ -1,4 +1,4 @@
-"""Client for the TomTom API"""
+"""Client for the TomTom API."""
 
 from __future__ import annotations
 
@@ -26,16 +26,28 @@ logger = logging.getLogger(__name__)
 
 @dataclass(kw_only=True)
 class BaseParams(DataClassDictMixin):
-    """Base class for any params data class"""
+    """Base class for any params data class.
+
+    Attributes:
+        key (str | None): The api key attribute, defaults to None, can override the key from ApiOptions.
+    """
 
     key: str | None = None
 
     def __post_serialize__(self, d: dict[Any, Any]) -> dict[str, str]:
+        """Removes keys with None values from the serialized dictionary.
+
+        Args:
+            d: The dictionary to be processed.
+
+        Returns:
+            A new dictionary without keys that have a value of None.
+        """
         return {k: v for k, v in d.items() if v is not None}
 
     class Config(BaseConfig):  # pylint: disable=too-few-public-methods
-        """
-        Config for the BaseParams
+        """Config for the BaseParams.
+
         Not setting omit_none=True, because that runs before serialization, while in serialization empty lists are set to None.
         Manually omitting None values in __post_serialize__ to fix this.
         """
@@ -58,21 +70,50 @@ class BaseParams(DataClassDictMixin):
 
 @dataclass(kw_only=True)
 class BasePostData(DataClassDictMixin):
-    """Base class for any post data class"""
+    """Base class for any post data class.
+
+    Attributes:
+        DataClassDictMixin: Mixin for converting data classes to dictionaries.
+    """
 
 
 class Response:
-    """Response class for the TomTom API"""
+    """Response class for the TomTom API.
+
+    Args:
+        response: The aiohttp ClientResponse object.
+
+    Methods:
+        deserialize(model: type[T]) -> T: Deserialize the response to the given model.
+        dict() -> dict: Deserialize the response to a dictionary.
+        text() -> str: Return the response as text.
+        bytes() -> bytes: Return the response as bytes.
+    """
 
     T = TypeVar("T", bound=DataClassORJSONMixin)
 
     def __init__(self, response: ClientResponse):
+        """Initialize the Response object.
+
+        Args:
+            response: The aiohttp ClientResponse object.
+        """
         self._response = response
         self.headers: dict[str, str] = dict(response.headers)
         self.status = response.status
 
     async def deserialize(self, model: type[T]) -> T:
-        """Deserialize the response using the provided model"""
+        """Deserialize the response to the given model.
+
+        Args:
+            model: The model class to deserialize the response to.
+
+        Returns:
+            An instance of the given model class.
+
+        Raises:
+            Exception: If the deserialization fails.
+        """
         logger.info("Deserializing response to %s", model)
         try:
             text = await self._response.text()
@@ -82,7 +123,14 @@ class Response:
             raise
 
     async def dict(self) -> dict:
-        """Deserialize the response to a dictionary"""
+        """Deserialize the response to a dictionary.
+
+        Returns:
+            A dictionary representation of the response.
+
+        Raises:
+            orjson.JSONDecodeError: If the response is not valid JSON.
+        """
         logger.info("Deserializing response to dictionary")
         try:
             text = await self._response.text()
@@ -92,33 +140,39 @@ class Response:
             raise
 
     async def text(self) -> str:
-        """Return the response as text"""
+        """Return the response as text.
+
+        Returns:
+            The response as a string.
+        """
         logger.info("Returning response as text")
         return await self._response.text()
 
     async def bytes(self) -> bytes:
-        """Return the response as bytes"""
+        """Return the response as bytes.
+
+        Returns:
+            The response as a bytes object.
+        """
         logger.info("Returning response as bytes")
         return await self._response.read()
 
 
 @dataclass(kw_only=True)
 class ApiOptions:
-    """
-    Options to configure the TomTom API client.
+    """Options to configure the TomTom API client.
 
-    Attributes
-    ----------
-    api_key : str
-        An API key valid for the requested service.
-    base_url : str
-        The base URL for the TomTom API. Default is "https://api.tomtom.com".
-    gzip_compression : bool, optional
-        Enables response compression. Default is False.
-    timeout : ClientTimeout, optional
-        The timeout object for the request. Default is ClientTimeout(total=10).
-    tracking_id : bool, optional
-        Specifies an identifier for each request. Default is False.
+    Attributes:
+        api_key: str
+            An API key valid for the requested service.
+        base_url: str
+            The base URL for the TomTom API. Default is "https://api.tomtom.com".
+        gzip_compression: bool, optional
+            Enables response compression. Default is False.
+        timeout: ClientTimeout, optional
+            The timeout object for the request. Default is ClientTimeout(total=10).
+        tracking_id: bool, optional
+            Specifies an identifier for each request. Default is False.
     """
 
     api_key: str
@@ -129,13 +183,11 @@ class ApiOptions:
 
 
 class BaseApi:
-    """
-    Client for the TomTom API.
+    """Client for the TomTom API.
 
-    Attributes
-    ----------
-    options : ApiOptions
-        The options for the client.
+    Attributes:
+        options : ApiOptions
+            The options for the client.
     """
 
     _version: str = metadata.version(__package__)
@@ -145,6 +197,14 @@ class BaseApi:
         options: ApiOptions,
         session: ClientSession | None = None,
     ):
+        """Initializes the BaseApi object.
+
+        Args:
+            options: ApiOptions
+                The options for the client.
+            session: ClientSession, optional
+                The client session to use for requests. If not provided, a new session is created.
+        """
         self.options = options
         self.session = ClientSession(options.base_url, timeout=options.timeout) if session is None else session
 
@@ -162,11 +222,35 @@ class BaseApi:
         method: Literal["DELETE", "GET", "POST", "PUT"],
         endpoint: str,
         *,
-        params: BaseParams | None = None,
         headers: dict[str, str] | None = None,
+        params: BaseParams | None = None,
         data: BasePostData | None = None,
     ) -> Response:
-        """Make a request to the TomTom API"""
+        """Make a request to the TomTom API.
+
+        Args:
+            method: Literal["DELETE", "GET", "POST", "PUT"]
+                The HTTP method for the request.
+            endpoint: str
+                The endpoint to send the request to.
+            headers: dict[str, str] | None, optional
+                The headers for the request.
+            params: BaseParams | None, optional
+                The parameters for the request.
+            data: BasePostData | None, optional
+                The data to be sent in the request body.
+
+        Returns:
+            Response
+                The response object from the API.
+
+        Raises:
+            TomTomAPIRequestTimeout: If a timeout occurs while connecting to the API.
+            TomTomAPIConnectionError: If a connection error occurs.
+            TomTomAPIClientError: If a client-side error (4xx) occurs.
+            TomTomAPIServerError: If a server-side error (5xx) occurs.
+            TomTomAPIError: For other errors raised by the TomTom SDK.
+        """
         request_params = {**self._default_params, **(params.to_dict() if params else {})}
         request_headers = {**self._default_headers, **(headers if headers else {})}
         request_data = data.to_dict() if data else None
@@ -227,77 +311,154 @@ class BaseApi:
         self,
         endpoint: str,
         *,
-        params: BaseParams | None = None,
         headers: dict[str, str] | None = None,
+        params: BaseParams | None = None,
     ) -> Response:
-        """Make a DELETE request"""
+        """Make a DELETE request.
+
+        Args:
+            endpoint: str
+                The endpoint to send the DELETE request to.
+            headers: dict[str, str] | None, optional
+                The headers for the request.
+            params: BaseParams | None, optional
+                The parameters for the request.
+
+        Returns:
+            Response
+                The response object from the API.
+        """
         return await self._request(
             "DELETE",
             endpoint,
-            params=params,
             headers=headers,
+            params=params,
         )
 
     async def get(
         self,
         endpoint: str,
         *,
-        params: BaseParams | None = None,
         headers: dict[str, str] | None = None,
+        params: BaseParams | None = None,
     ) -> Response:
-        """Make a GET request"""
+        """Make a GET request.
+
+        Args:
+            endpoint: str
+                The endpoint to send the GET request to.
+            headers: dict[str, str] | None, optional
+                The headers for the request.
+            params: BaseParams | None, optional
+                The parameters for the request.
+
+        Returns:
+            Response
+                The response object from the API.
+        """
         return await self._request(
             "GET",
             endpoint,
-            params=params,
             headers=headers,
+            params=params,
         )
 
     async def post(  # pylint: disable=too-many-arguments
         self,
         endpoint: str,
         *,
-        params: BaseParams | None = None,
         headers: dict[str, str] | None = None,
+        params: BaseParams | None = None,
         data: BasePostData,
     ) -> Response:
-        """Make a POST request"""
+        """Make a POST request.
+
+        Args:
+            endpoint: str
+                The endpoint to send the POST request to.
+            headers: dict[str, str] | None, optional
+                The headers for the request.
+            params: BaseParams | None, optional
+                The parameters for the request.
+            data: BasePostData
+                The data to be sent in the request body.
+
+        Returns:
+            Response
+                The response object from the API.
+        """
         return await self._request(
             "POST",
             endpoint,
+            headers=headers,
             params=params,
             data=data,
-            headers=headers,
         )
 
     async def put(  # pylint: disable=too-many-arguments
         self,
         endpoint: str,
         *,
-        params: BaseParams | None = None,
         headers: dict[str, str] | None = None,
+        params: BaseParams | None = None,
         data: BasePostData,
     ) -> Response:
-        """Make a PUT request"""
+        """Make a PUT request.
+
+        Args:
+            endpoint: str
+                The endpoint to send the PUT request to.
+            headers: dict[str, str] | None, optional
+                The headers for the request.
+            params: BaseParams | None, optional
+                The parameters for the request.
+            data: BasePostData
+                The data to be sent in the request body.
+
+        Returns:
+            Response
+                The response object from the API.
+        """
         return await self._request(
             "PUT",
             endpoint,
+            headers=headers,
             params=params,
             data=data,
-            headers=headers,
         )
 
     async def __aenter__(self):
+        """Enter the runtime context related to this object.
+
+        The session used to make requests is created upon entering the context and closed upon exiting.
+
+        Returns:
+            self
+        """
         return self
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):
+        """Exit the runtime context related to this object.
+
+        The session used for making requests is closed upon exiting the context.
+
+        Args:
+            exc_type: The type of the exception raised in the context.
+            exc_val: The value of the exception raised in the context.
+            exc_tb: The traceback of the exception raised in the context.
+        """
         if self.session:
             await self.session.close()  # Close the session when exiting the context
             self.session = None
 
     async def close(self):
-        """Close the client"""
+        """Close the session.
 
+        Manually closes the session. If the session is not closed, it will be closed when exiting the context.
+
+        Note:
+            Does not raise an exception if the session is already closed.
+        """
         if self.session:
             await self.session.close()  # Close the session if manually closing
             self.session = None

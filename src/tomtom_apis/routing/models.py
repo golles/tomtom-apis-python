@@ -1,4 +1,4 @@
-"""Models for the TomTom Routing API"""
+"""Models for the TomTom Routing API."""
 # pylint: disable=invalid-name, too-many-instance-attributes, too-many-lines
 
 from __future__ import annotations
@@ -14,7 +14,7 @@ from ..models import Language, LatitudeLongitude
 
 @dataclass(kw_only=True)
 class CalculateLongDistanceEVRouteParams(BaseParams):
-    """Parameters for the calculate long distance EV route API"""
+    """Parameters for the calculate long distance EV route API."""
 
     vehicleHeading: int | None = None
     sectionType: str | None = None
@@ -51,14 +51,14 @@ class CalculateLongDistanceEVRouteParams(BaseParams):
 
 @dataclass(kw_only=True)
 class CalculateLongDistanceEVRoutePostData(BasePostData):
-    """Data for the post calculate long distance EV route API"""
+    """Data for the post calculate long distance EV route API."""
 
     chargingModes: list[ChargingMode]
 
 
 @dataclass(kw_only=True)
 class CalculateReachableRangePostData(BasePostData):
-    """Data for the post calculate reachable range API"""
+    """Data for the post calculate reachable range API."""
 
     avoidVignette: list[str] | None = None
     allowVignette: list[str] | None = None
@@ -67,7 +67,7 @@ class CalculateReachableRangePostData(BasePostData):
 
 @dataclass(kw_only=True)
 class CalculateReachableRouteParams(BaseParams):
-    """Parameters for the calculate reachable route API"""
+    """Parameters for the calculate reachable route API."""
 
     fuelBudgetInLiters: float | None = None
     energyBudgetInkWh: float | None = None
@@ -110,7 +110,7 @@ class CalculateReachableRouteParams(BaseParams):
 
 @dataclass(kw_only=True)
 class CalculateRouteParams(BaseParams):
-    """Parameters for the calculate route API"""
+    """Parameters for the calculate route API."""
 
     maxAlternatives: int | None = None
     instructionsType: str | None = None
@@ -158,7 +158,7 @@ class CalculateRouteParams(BaseParams):
 
 @dataclass(kw_only=True)
 class CalculateRoutePostData(BasePostData):
-    """Data for the post calculate route API"""
+    """Data for the post calculate route API."""
 
     supportingPoints: list[LatitudeLongitude] | None = None
     avoidVignette: list[str] | None = None
@@ -168,7 +168,7 @@ class CalculateRoutePostData(BasePostData):
 
 @dataclass(kw_only=True)
 class CalculatedLongDistanceEVRouteResponse(DataClassORJSONMixin):
-    """Represents a calculated long distance EV route response"""
+    """Represents a calculated long distance EV route response."""
 
     formatVersion: str
     routes: list[EVRoute]
@@ -176,7 +176,7 @@ class CalculatedLongDistanceEVRouteResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class CalculatedReachableRangeResponse(DataClassORJSONMixin):
-    """Represents a calculated reachable range response"""
+    """Represents a calculated reachable range response."""
 
     formatVersion: str
     reachableRange: ReachableRange
@@ -184,7 +184,7 @@ class CalculatedReachableRangeResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class CalculatedRouteResponse(DataClassORJSONMixin):
-    """Represents a calculated route response"""
+    """Represents a calculated route response."""
 
     formatVersion: str
     routes: list[Route]
@@ -192,7 +192,7 @@ class CalculatedRouteResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class ChargingConnection(DataClassORJSONMixin):
-    """Represents a charging connection"""
+    """Represents a charging connection."""
 
     facilityType: str
     plugType: str
@@ -200,7 +200,7 @@ class ChargingConnection(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class ChargingConnectionInfo(DataClassORJSONMixin):
-    """Represents the charging connection info"""
+    """Represents the charging connection info."""
 
     chargingVoltageInV: int
     chargingCurrentInA: int
@@ -211,7 +211,7 @@ class ChargingConnectionInfo(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class ChargingCurve(DataClassORJSONMixin):
-    """Represents a charging curve"""
+    """Represents a charging curve."""
 
     chargeInkWh: float
     timeToChargeInSeconds: int
@@ -219,7 +219,7 @@ class ChargingCurve(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class ChargingInformationAtEndOfLeg(DataClassORJSONMixin):
-    """Represents the charging information at the end of a leg"""
+    """Represents the charging information at the end of a leg."""
 
     chargingConnections: list[ChargingConnection]
     chargingConnectionInfo: ChargingConnectionInfo
@@ -237,7 +237,7 @@ class ChargingInformationAtEndOfLeg(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class ChargingMode(DataClassORJSONMixin):
-    """Represents a charging mode"""
+    """Represents a charging mode."""
 
     chargingConnections: list[ChargingConnection]
     chargingCurve: list[ChargingCurve]
@@ -245,7 +245,7 @@ class ChargingMode(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class ChargingParkLocation(DataClassORJSONMixin):
-    """Represents a charging park location"""
+    """Represents a charging park location."""
 
     coordinate: LatitudeLongitude
     street: str
@@ -256,7 +256,7 @@ class ChargingParkLocation(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class ChargingParkPaymentOption(DataClassORJSONMixin):
-    """Represents a charging park payment option"""
+    """Represents a charging park payment option."""
 
     method: str
     brands: list[str]
@@ -264,7 +264,7 @@ class ChargingParkPaymentOption(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class EVLeg(DataClassORJSONMixin):
-    """Represents a leg of a EV route"""
+    """Represents a leg of a EV route."""
 
     summary: EVLegSummary | Summary
     points: list[LatitudeLongitude]
@@ -272,7 +272,7 @@ class EVLeg(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class EVLegSummary(DataClassORJSONMixin):
-    """Represents the summary of a EV leg"""
+    """Represents the summary of a EV leg."""
 
     lengthInMeters: int
     travelTimeInSeconds: int
@@ -287,7 +287,7 @@ class EVLegSummary(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class EVRoute(DataClassORJSONMixin):
-    """Represents a EV route"""
+    """Represents a EV route."""
 
     summary: EVSummary
     legs: list[EVLeg]
@@ -296,7 +296,7 @@ class EVRoute(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class EVSummary(DataClassORJSONMixin):
-    """Represents the EV summary of a route"""
+    """Represents the EV summary of a route."""
 
     lengthInMeters: int
     travelTimeInSeconds: int
@@ -311,7 +311,7 @@ class EVSummary(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Leg(DataClassORJSONMixin):
-    """Represents a leg of a route"""
+    """Represents a leg of a route."""
 
     summary: Summary
     points: list[LatitudeLongitude]
@@ -319,7 +319,7 @@ class Leg(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class ReachableRange(DataClassORJSONMixin):
-    """Represents a reachable range"""
+    """Represents a reachable range."""
 
     center: LatitudeLongitude
     boundary: list[LatitudeLongitude]
@@ -327,7 +327,7 @@ class ReachableRange(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Rectangle:
-    """A rectangle defined by its south-west and north-east corners"""
+    """A rectangle defined by its south-west and north-east corners."""
 
     southWestCorner: LatitudeLongitude
     northEastCorner: LatitudeLongitude
@@ -335,14 +335,14 @@ class Rectangle:
 
 @dataclass(kw_only=True)
 class Rectangles:
-    """A list of rectangles"""
+    """A list of rectangles."""
 
     rectangles: list[Rectangle]
 
 
 @dataclass(kw_only=True)
 class Route(DataClassORJSONMixin):
-    """Represents a route"""
+    """Represents a route."""
 
     summary: Summary
     legs: list[Leg]
@@ -351,7 +351,7 @@ class Route(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Section(DataClassORJSONMixin):
-    """Represents a section of a route"""
+    """Represents a section of a route."""
 
     startPointIndex: int
     endPointIndex: int
@@ -361,7 +361,7 @@ class Section(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Summary(DataClassORJSONMixin):
-    """Represents the summary of a route"""
+    """Represents the summary of a route."""
 
     lengthInMeters: int
     travelTimeInSeconds: int
@@ -373,7 +373,7 @@ class Summary(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class WaypointOptimizationOptions:
-    """Options for the waypoint optimization API"""
+    """Options for the waypoint optimization API."""
 
     travelMode: str
     vehicleMaxSpeed: int
@@ -389,14 +389,14 @@ class WaypointOptimizationOptions:
 
 @dataclass(kw_only=True)
 class WaypointOptimizationPoint:
-    """A waypoint optimization point"""
+    """A waypoint optimization point."""
 
     point: LatitudeLongitude
 
 
 @dataclass(kw_only=True)
 class WaypointOptimizationPostData(BasePostData):
-    """Data for the post waypoint optimization API"""
+    """Data for the post waypoint optimization API."""
 
     waypoints: list[WaypointOptimizationPoint]
     options: WaypointOptimizationOptions
@@ -404,6 +404,6 @@ class WaypointOptimizationPostData(BasePostData):
 
 @dataclass(kw_only=True)
 class WaypointOptimizedResponse(DataClassORJSONMixin):
-    """Represents a waypoint optimized response"""
+    """Represents a waypoint optimized response."""
 
     optimizedOrder: list[int]

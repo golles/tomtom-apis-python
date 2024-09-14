@@ -1,4 +1,4 @@
-"""Routing tests"""
+"""Routing tests."""
 
 from datetime import datetime
 
@@ -22,7 +22,7 @@ from ..const import LOC_AMSTERDAM, LOC_ROTTERDAM
 
 @pytest.fixture(name="routing_api")
 async def fixture_routing_api():
-    """Fixture for RoutingApi"""
+    """Fixture for RoutingApi."""
     options = ApiOptions(api_key=API_KEY)
     async with RoutingApi(options) as routing:
         yield routing
@@ -31,7 +31,7 @@ async def fixture_routing_api():
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["routing/routing/get_calculate_route.json"], indirect=True)
 async def test_deserialization_get_calculate_route(routing_api: RoutingApi):
-    """Test the get_calculate_route method"""
+    """Test the get_calculate_route method."""
     response = await routing_api.get_calculate_route(
         locations=LatLonList(locations=[LOC_AMSTERDAM, LOC_ROTTERDAM]),
         params=CalculateRouteParams(
@@ -55,7 +55,7 @@ async def test_deserialization_get_calculate_route(routing_api: RoutingApi):
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["routing/routing/post_calculate_route.json"], indirect=True)
 async def test_deserialization_post_calculate_route(routing_api: RoutingApi):
-    """Test the post_calculate_route method"""
+    """Test the post_calculate_route method."""
     response = await routing_api.post_calculate_route(
         locations=LatLonList(locations=[LOC_AMSTERDAM, LOC_ROTTERDAM]),
         params=CalculateRouteParams(
@@ -95,7 +95,7 @@ async def test_deserialization_post_calculate_route(routing_api: RoutingApi):
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["routing/routing/get_calculate_reachable_range.json"], indirect=True)
 async def test_deserialization_get_calculate_reachable_range(routing_api: RoutingApi):
-    """Test the get_calculate_reachable_range method"""
+    """Test the get_calculate_reachable_range method."""
     response = await routing_api.get_calculate_reachable_range(
         origin=LOC_AMSTERDAM,
         params=CalculateReachableRouteParams(
@@ -118,7 +118,7 @@ async def test_deserialization_get_calculate_reachable_range(routing_api: Routin
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["routing/routing/post_calculate_reachable_range.json"], indirect=True)
 async def test_deserialization_post_calculate_reachable_range(routing_api: RoutingApi):
-    """Test the post_calculate_reachable_range method"""
+    """Test the post_calculate_reachable_range method."""
     response = await routing_api.post_calculate_reachable_range(
         origin=LOC_AMSTERDAM,
         params=CalculateReachableRouteParams(

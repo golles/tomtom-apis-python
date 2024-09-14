@@ -1,4 +1,4 @@
-"""London traffic example"""
+"""London traffic example."""
 
 # pylint: disable=duplicate-code
 
@@ -10,7 +10,7 @@ from tomtom_apis.maps import MapDisplayApi
 from tomtom_apis.maps.models import LayerType, StyleType, TileFormatType
 from tomtom_apis.models import MapTile
 from tomtom_apis.traffic import TrafficApi
-from tomtom_apis.traffic.models import IncidentStyleType
+from tomtom_apis.traffic.models import IncidentStyleType, IncidentTileFormatType
 
 SCRIPT_DIR = os.path.dirname(__file__)
 TILES: list[MapTile] = [  # a 3x3 grid of London at zoom level 10.
@@ -27,14 +27,13 @@ TILES: list[MapTile] = [  # a 3x3 grid of London at zoom level 10.
 
 
 async def download_tiles(api: MapDisplayApi | TrafficApi, tiles: list[MapTile]) -> None:
-    """
-    Download tiles for a given api.
+    """Download tiles for a given api.
 
     Args:
         api (MapDisplayApi | TrafficApi): The API to use for downloading tiles.
         tiles (list[MapTile]): The tiles to download.
-    """
 
+    """
     for tile in tiles:
         if isinstance(api, MapDisplayApi):
             image_bytes = await api.get_map_tile(
@@ -52,6 +51,7 @@ async def download_tiles(api: MapDisplayApi | TrafficApi, tiles: list[MapTile]) 
                 x=tile.x,
                 y=tile.y,
                 zoom=tile.zoom,
+                image_format=IncidentTileFormatType.PNG,
             )
             file_path = os.path.join(SCRIPT_DIR, "tiles", f"incidents_{tile.zoom}_{tile.x}_{tile.y}.png")
         else:
@@ -62,8 +62,7 @@ async def download_tiles(api: MapDisplayApi | TrafficApi, tiles: list[MapTile]) 
 
 
 async def download(api_key: str) -> None:
-    """Download all tiles"""
-
+    """Download all tiles."""
     options = ApiOptions(api_key=api_key)
 
     async with MapDisplayApi(options) as map_display_api, TrafficApi(options) as traffic_api:
@@ -72,7 +71,7 @@ async def download(api_key: str) -> None:
 
 
 def get_api_key() -> str:
-    """Get the API key or ask for user input"""
+    """Get the API key or ask for user input."""
     apik_key = os.getenv("TOMTOM_API_KEY")
 
     if apik_key:

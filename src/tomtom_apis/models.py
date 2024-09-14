@@ -1,4 +1,4 @@
-"""Generic models"""
+"""Generic models."""
 
 from __future__ import annotations
 
@@ -9,9 +9,9 @@ from mashumaro.mixins.orjson import DataClassORJSONMixin
 
 
 class Language(StrEnum):
-    """
-    Supported languages for the Places API.
-    See: https://developer.tomtom.com/search-api/documentation/product-information/supported-languages
+    """Supported languages for the Places API.
+
+    For more information, see: https://developer.tomtom.com/search-api/documentation/product-information/supported-languages.
     """
 
     NGT = "NGT"  # Neutral Ground Truth, Official languages for all regions in local scripts if available.
@@ -73,56 +73,56 @@ class Language(StrEnum):
 
 @dataclass(kw_only=True)
 class LatLon(DataClassORJSONMixin):
-    """
-    Point location with abbreviated names.
+    """Point location with abbreviated names.
 
     Attributes:
         lat (float): The latitude of the point.
         lon (float): The longitude of the point.
+
     """
 
     lat: float
     lon: float
 
     def to_comma_separated(self) -> str:
-        """
-        Return the lat, lon as a comma-separated string.
+        """Return the lat, lon as a comma-separated string.
 
         Returns:
             str: The lat, lon as a comma-separated string.
+
         """
         return ",".join(map(str, [self.lat, self.lon]))
 
 
 @dataclass(kw_only=True)
 class LatLonList(DataClassORJSONMixin):
-    """
-    Dataclass to handle a list of LatLon objects.
+    """Dataclass to handle a list of LatLon objects.
 
     Attributes:
         locations (list[LatLon]): The list of LatLon objects.
+
     """
 
     locations: list[LatLon]
 
     def to_colon_separated(self) -> str:
-        """
-        Return the list of lat, lon as a colon-separated string.
+        """Return the list of lat, lon as a colon-separated string.
 
         Returns:
             str: The list of lat, lon as a colon-separated string.
+
         """
         return ":".join([loc.to_comma_separated() for loc in self.locations])
 
 
 @dataclass(kw_only=True)
 class LatitudeLongitude(DataClassORJSONMixin):
-    """
-    Point location with full names.
+    """Point location with full names.
 
     Attributes:
         latitude (float): The latitude of the point.
         longitude (float): The longitude of the point.
+
     """
 
     latitude: float
@@ -131,13 +131,13 @@ class LatitudeLongitude(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class MapTile:
-    """
-    Map tile representation.
+    """Map tile representation.
 
     Attributes:
         x (int): The x coordinate.
         y (int): The y coordinate.
         zoom (int): The zoom level
+
     """
 
     x: int
@@ -146,16 +146,17 @@ class MapTile:
 
 
 class TileSizeType(IntEnum):
-    """Supported tile sizes"""
+    """Supported tile sizes."""
 
     SIZE_256 = 256
     SIZE_512 = 512
 
 
 class ViewType(StrEnum):
-    """
-    Geopolitical View. The context used to resolve the handling of disputed territories. Views include Unified, along with AR IL, IN, MA, PK, RU, TR,
-    and CN which are respectively tailored for Argentina, Israel, India, Morocco, Pakistan, Russia, Turkey, and China.
+    """Geopolitical View.
+
+    The context used to resolve the handling of disputed territories. Views include Unified, along with AR IL, IN, MA, PK, RU, TR, and CN which are
+    respectively tailored for Argentina, Israel, India, Morocco, Pakistan, Russia, Turkey, and China.
     """
 
     UNIFIED = "Unified"

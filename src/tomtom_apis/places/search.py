@@ -1,4 +1,4 @@
-"""Search API"""
+"""Search API."""
 
 from ..api import BaseApi, BaseParams
 from ..models import Language
@@ -6,7 +6,7 @@ from ..places.models import (
     AdditionalDataParams,
     AdditionalDataResponse,
     AutocompleteParams,
-    AutocompleteReponse,
+    AutocompleteResponse,
     CategorySearchParams,
     Geometry,
     GeometryFilterData,
@@ -28,10 +28,11 @@ from ..places.models import (
 
 
 class SearchApi(BaseApi):
-    """
-    The Search service of the Search API consists of the several endpoints
+    """Search API.
 
-    See: https://developer.tomtom.com/search-api/documentation/search-service/search-service
+    The Search service of the Search API consists of the following endpoints:
+
+    For more information, see: https://developer.tomtom.com/search-api/documentation/search-service/search-service
     """
 
     async def get_search(
@@ -40,19 +41,23 @@ class SearchApi(BaseApi):
         query: str,
         params: SearchParams | None = None,
     ) -> SearchResponse:
-        """
-        The generic, default service is Fuzzy Search which handles the most fuzzy of inputs containing any combination of Indexes abbreviation
-        values. See the Indexes abbreviation values section at the bottom of this page.
+        """Get search.
 
-        See: https://developer.tomtom.com/search-api/documentation/search-service/fuzzy-search
-        """
+        For more information, see: https://developer.tomtom.com/search-api/documentation/search-service/fuzzy-search
 
-        reponse = await self.get(
+        Args:
+            query (str): The query string representing the address or place to geocode.
+            params (SearchParams | None, optional): Additional parameters for the request. Defaults to None.
+
+        Returns:
+            SearchResponse: Response containing search results.
+        """
+        response = await self.get(
             endpoint=f"/search/2/search/{query}.json",
             params=params,
         )
 
-        return await reponse.deserialize(SearchResponse)
+        return await response.deserialize(SearchResponse)
 
     async def get_poi_search(
         self,
@@ -60,19 +65,23 @@ class SearchApi(BaseApi):
         query: str,
         params: PoiSearchParams | None = None,
     ) -> SearchResponse:
-        """
-        If your search use case only requires POI results, you may use the Points of Interest endpoint for searching. This endpoint will only return
-        POI results.
+        """Get POI search.
 
-        See: https://developer.tomtom.com/search-api/documentation/search-service/points-of-interest-search
-        """
+        For more information, see: https://developer.tomtom.com/search-api/documentation/search-service/points-of-interest-search
 
-        reponse = await self.get(
+        Args:
+            query (str): The query string representing the address or place to geocode.
+            params (PoiSearchParams | None, optional): Additional parameters for the request. Defaults to None.
+
+        Returns:
+            SearchResponse: Response containing search results.
+        """
+        response = await self.get(
             endpoint=f"/search/2/poiSearch/{query}.json",
             params=params,
         )
 
-        return await reponse.deserialize(SearchResponse)
+        return await response.deserialize(SearchResponse)
 
     async def get_category_search(
         self,
@@ -80,19 +89,23 @@ class SearchApi(BaseApi):
         query: str,
         params: CategorySearchParams | None = None,
     ) -> SearchResponse:
-        """
-        If your search use case only requires POI (Points of Interest) results filtered by category, you may use the Category Search endpoint. This
-        endpoint will only return POI results which are categorized as specified.
+        """Get category search.
 
-        See: https://developer.tomtom.com/search-api/documentation/search-service/category-search
-        """
+        For more information, see: https://developer.tomtom.com/search-api/documentation/search-service/category-search
 
-        reponse = await self.get(
+        Args:
+            query (str): The category or search term to look for (e.g., "restaurant", "hospital").
+            params (CategorySearchParams | None, optional): Additional parameters for the category search. Defaults to None.
+
+        Returns:
+            SearchResponse: The response containing the category-based search results.
+        """
+        response = await self.get(
             endpoint=f"/search/2/categorySearch/{query}.json",
             params=params,
         )
 
-        return await reponse.deserialize(SearchResponse)
+        return await response.deserialize(SearchResponse)
 
     async def get_geometry_search(
         self,
@@ -101,20 +114,24 @@ class SearchApi(BaseApi):
         geometryList: list[Geometry],
         params: GeometrySearchParams | None = None,
     ) -> SearchResponse:
-        """
-        The Geometry Search endpoint allows you to perform a free form search inside a single geometry or many of them. The search results that fall
-        inside the geometry/geometries will be returned. The service returns POI results by default. For other result types, the idxSet parameter
-        should be used. To send the geometry you will use a POST or GET request with json as a string value for the geometryList parameter.
+        """Get category search.
 
-        See: https://developer.tomtom.com/search-api/documentation/search-service/geometry-search
-        """
+        For more information, see: https://developer.tomtom.com/search-api/documentation/search-service/geometry-search
 
-        reponse = await self.get(
+        Args:
+            query (str): The query string representing the address, category, or place to search for.
+            geometryList (list[Geometry]): A list of geometric shapes defining the search area.
+            params (GeometrySearchParams | None, optional): Additional parameters for the request. Defaults to None.
+
+        Returns:
+            SearchResponse: The response containing search results within the specified geometry.
+        """
+        response = await self.get(
             endpoint=f"/search/2/geometrySearch/{query}.json?geometryList={str(geometryList)}",
             params=params,
         )
 
-        return await reponse.deserialize(SearchResponse)
+        return await response.deserialize(SearchResponse)
 
     async def post_geometry_search(
         self,
@@ -123,21 +140,25 @@ class SearchApi(BaseApi):
         params: GeometrySearchParams | None = None,
         data: GeometrySearchPostData,
     ) -> SearchResponse:
-        """
-        The Geometry Search endpoint allows you to perform a free form search inside a single geometry or many of them. The search results that fall
-        inside the geometry/geometries will be returned. The service returns POI results by default. For other result types, the idxSet parameter
-        should be used. To send the geometry you will use a POST or GET request with json as a string value for the geometryList parameter.
+        """Post category search.
 
-        See: https://developer.tomtom.com/search-api/documentation/search-service/geometry-search
-        """
+        For more information, see: https://developer.tomtom.com/search-api/documentation/search-service/geometry-search
 
-        reponse = await self.post(
+        Args:
+            query (str): The query string representing the address, category, or place to search for.
+            params (GeometrySearchParams | None, optional): Additional parameters for the geometry search. Defaults to None.
+            data (GeometrySearchPostData): The geometric data (e.g., polygons, circles) that defines the search area.
+
+        Returns:
+            SearchResponse: The response containing search results within the specified geometry.
+        """
+        response = await self.post(
             endpoint=f"/search/2/geometrySearch/{query}.json",
             params=params,
             data=data,
         )
 
-        return await reponse.deserialize(SearchResponse)
+        return await response.deserialize(SearchResponse)
 
     async def get_nearby_search(
         self,
@@ -146,19 +167,24 @@ class SearchApi(BaseApi):
         lon: float,
         params: NearbySearchParams | None = None,
     ) -> SearchResponse:
-        """
-        If your use case is only retrieving POI (Points of Interest) results around a location, you may use the Nearby Search endpoint. This endpoint
-        will only return POI results. It does not take in a search query parameter.
+        """Get nearby search.
 
-        See: https://developer.tomtom.com/search-api/documentation/search-service/nearby-search
-        """
+        For more information, see: https://developer.tomtom.com/search-api/documentation/search-service/nearby-search
 
-        reponse = await self.get(
+        Args:
+            lat (float): The latitude of the location to search around.
+            lon (float): The longitude of the location to search around.
+            params (NearbySearchParams | None, optional): Additional parameters for the nearby search. Defaults to None.
+
+        Returns:
+            SearchResponse: The response containing the search results for nearby places.
+        """
+        response = await self.get(
             endpoint=f"/search/2/nearbySearch/.json?lat={lat}&lon={lon}",
             params=params,
         )
 
-        return await reponse.deserialize(SearchResponse)
+        return await response.deserialize(SearchResponse)
 
     async def post_search_along_route(
         self,
@@ -168,21 +194,26 @@ class SearchApi(BaseApi):
         params: SearchAlongRouteParams | None = None,
         data: SearchAlongRouteData,
     ) -> SearchResponse:
-        """
-        The Along Route Search endpoint allows you to perform a fuzzy search for POIs along a specified route. This search is constrained by
-        specifying a detour time-limiting measure. To send the route points you will use a POST request whose body will contain the route parameter
-        in JSON format. The minimum number of route points is 2.
+        """Post search along route.
 
-        See: https://developer.tomtom.com/search-api/documentation/search-service/along-route-search
-        """
+        For more information, see: https://developer.tomtom.com/search-api/documentation/search-service/along-route-search
 
-        reponse = await self.post(
+        Args:
+            query (str): The query string representing the category, address, or place to search for along the route.
+            maxDetourTime (int): The maximum allowable detour time (in seconds) from the route.
+            params (SearchAlongRouteParams | None, optional): Additional parameters for the search along the route. Defaults to None.
+            data (SearchAlongRouteData): Data defining the route and other search criteria.
+
+        Returns:
+            SearchResponse: The response containing search results along the specified route.
+        """
+        response = await self.post(
             endpoint=f"/search/2/searchAlongRoute/{query}.json?maxDetourTime={maxDetourTime}",
             params=params,
             data=data,
         )
 
-        return await reponse.deserialize(SearchResponse)
+        return await response.deserialize(SearchResponse)
 
     async def get_autocomplete(
         self,
@@ -190,20 +221,25 @@ class SearchApi(BaseApi):
         query: str,
         language: Language,
         params: AutocompleteParams | None = None,
-    ) -> AutocompleteReponse:
-        """
-        The Autocomplete API enables you to make a more meaningful Search API call by recognizing entities inside an input query and offering them as
-        query terms.
+    ) -> AutocompleteResponse:
+        """Get autocomplete.
 
-        See: https://developer.tomtom.com/search-api/documentation/autocomplete-service/autocomplete
-        """
+        For more information, see: https://developer.tomtom.com/search-api/documentation/autocomplete-service/autocomplete
 
-        reponse = await self.get(
+        Args:
+            query (str): The query string for which to get autocomplete suggestions.
+            language (Language): The language in which to return the autocomplete suggestions.
+            params (AutocompleteParams | None, optional): Additional parameters for the autocomplete request. Defaults to None.
+
+        Returns:
+            AutocompleteResponse: The response containing autocomplete suggestions based on the query.
+        """
+        response = await self.get(
             endpoint=f"/search/2/autocomplete/{query}.json?language={language}",
             params=params,
         )
 
-        return await reponse.deserialize(AutocompleteReponse)
+        return await response.deserialize(AutocompleteResponse)
 
     async def get_geometry_filter(
         self,
@@ -212,20 +248,24 @@ class SearchApi(BaseApi):
         poiList: list[GeometryPoi],
         params: BaseParams | None = None,  # No extra params.
     ) -> GeometryFilterResponse:
-        """
-        The Geometry Search endpoint allows you to perform a free form search inside a single geometry or many of them. The search results that fall
-        inside the geometry/geometries will be returned. The service returns POI results by default. For other result types, the idxSet parameter
-        should be used. To send the geometry you will use a POST or GET request with json as a string value for the geometryList parameter.
+        """Get geometry filter.
 
-        See: https://developer.tomtom.com/search-api/documentation/search-service/geometry-search
-        """
+        For more information, see: https://developer.tomtom.com/search-api/documentation/filters-service/geometry-filter
 
-        reponse = await self.get(
+        Args:
+            geometryList (list[Geometry]): A list of geometric shapes (e.g., polygons, circles) used for filtering the results.
+            poiList (list[GeometryPoi]): A list of points of interest (POIs) used for filtering the results.
+            params (BaseParams | None, optional): Additional parameters for the request. Defaults to None.
+
+        Returns:
+            GeometryFilterResponse: The response containing the results filtered by the provided geometry and POIs.
+        """
+        response = await self.get(
             endpoint=f"/search/2/geometryFilter.json?geometryList={str(geometryList)}&poiList={str(poiList)}",
             params=params,
         )
 
-        return await reponse.deserialize(GeometryFilterResponse)
+        return await response.deserialize(GeometryFilterResponse)
 
     async def post_geometry_filter(
         self,
@@ -233,21 +273,24 @@ class SearchApi(BaseApi):
         params: BaseParams | None = None,  # No extra params.
         data: GeometryFilterData,
     ) -> GeometryFilterResponse:
-        """
-        The Geometry Search endpoint allows you to perform a free form search inside a single geometry or many of them. The search results that fall
-        inside the geometry/geometries will be returned. The service returns POI results by default. For other result types, the idxSet parameter
-        should be used. To send the geometry you will use a POST or GET request with json as a string value for the geometryList parameter.
+        """Post geometry filter.
 
-        See: https://developer.tomtom.com/search-api/documentation/search-service/geometry-search
-        """
+        For more information, see: https://developer.tomtom.com/search-api/documentation/filters-service/geometry-filter
 
-        reponse = await self.post(
+        Args:
+            params (BaseParams | None, optional): Additional parameters for the request. Defaults to None.
+            data (GeometryFilterData): Data defining the geometric shapes and POIs for the filter.
+
+        Returns:
+            GeometryFilterResponse: The response containing the filtered results based on the provided geometry and POIs.
+        """
+        response = await self.post(
             endpoint="/search/2/geometryFilter.json",
             params=params,
             data=data,
         )
 
-        return await reponse.deserialize(GeometryFilterResponse)
+        return await response.deserialize(GeometryFilterResponse)
 
     async def get_additional_data(
         self,
@@ -255,53 +298,64 @@ class SearchApi(BaseApi):
         geometries: list[str],
         params: AdditionalDataParams | None = None,
     ) -> AdditionalDataResponse:
-        """
-        The Geometries Data Provider returns sets of coordinates that represent the outline of a city, country, or land area. The service supports
-        batch requests of up to 20 identifiers.
+        """Get additional data.
 
-        See: https://developer.tomtom.com/search-api/documentation/additional-data-service/additional-data
-        """
+        For more information, see: https://developer.tomtom.com/search-api/documentation/additional-data-service/additional-data
 
-        reponse = await self.get(
+        Args:
+            geometries (list[str]): A list of geometry identifiers for which to retrieve additional data.
+            params (AdditionalDataParams | None, optional): Additional parameters for the request. Defaults to None.
+
+        Returns:
+            AdditionalDataResponse: The response containing the additional data for the specified geometries.
+        """
+        response = await self.get(
             endpoint=f"/search/2/additionalData.json?geometries={",".join(geometries)}",
             params=params,
         )
 
-        return await reponse.deserialize(AdditionalDataResponse)
+        return await response.deserialize(AdditionalDataResponse)
 
     async def get_place_by_id(
         self,
         *,
         params: PlaceByIdParams | None = None,
     ) -> PlaceByIdResponse:
-        """
-        The Place by Id service endpoint provides detailed information about the Place found by its identifier (entityId). Currently, Place by Id
-        supports all types by ids.
+        """Get place by id.
 
-        See: https://developer.tomtom.com/search-api/documentation/place-by-id-service/place-by-id
-        """
+        For more information, see: https://developer.tomtom.com/search-api/documentation/place-by-id-service/place-by-id
 
-        reponse = await self.get(
+        Args:
+            params (PlaceByIdParams | None, optional): Parameters including the place ID for the request. Defaults to None.
+
+        Returns:
+            PlaceByIdResponse: The response containing details of the place identified by the provided ID.
+        """
+        response = await self.get(
             endpoint="/search/2/place.json",
             params=params,
         )
 
-        return await reponse.deserialize(PlaceByIdResponse)
+        return await response.deserialize(PlaceByIdResponse)
 
     async def get_poi_categories(
         self,
         *,
         params: PoiCategoriesParams | None = None,
     ) -> PoiCategoriesResponse:
-        """
-        The POI Categories service endpoint provides a full list of POI categories and subcategories together with their translations and synonyms.
+        """Get poi categories.
 
-        See: https://developer.tomtom.com/search-api/documentation/poi-categories-service/poi-categories
-        """
+        For more information, see: https://developer.tomtom.com/search-api/documentation/poi-categories-service/poi-categories
 
-        reponse = await self.get(
+        Args:
+            params (PoiCategoriesParams | None, optional): Optional parameters for the request. Defaults to None.
+
+        Returns:
+            PoiCategoriesResponse: The response containing the list of POI categories.
+        """
+        response = await self.get(
             endpoint="/search/2/poiCategories.json",
             params=params,
         )
 
-        return await reponse.deserialize(PoiCategoriesResponse)
+        return await response.deserialize(PoiCategoriesResponse)

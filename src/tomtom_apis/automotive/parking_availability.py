@@ -1,16 +1,13 @@
-"""Parking Availability API"""
+"""Parking Availability API."""
 
 from ..api import BaseApi
 from ..automotive.models import ParkingAvailabilityParams, ParkingAvailabilityResponse
 
 
 class ParkingAvailabilityApi(BaseApi):
-    """
-    The Parking Availability API provides information about the current availability status of parking sites. The data is refreshed every 10 minutes
-    and is therefore close to real time. Using this API makes it possible to make better off-street parking decisions based on actual parking
-    availability (including the number of free spaces).
+    """Parking Availability API.
 
-    See: https://developer.tomtom.com/parking-availability-api/documentation/product-information/introduction
+    For more information, see: https://developer.tomtom.com/parking-availability-api/documentation/product-information/introduction
     """
 
     async def get_parking_availability(
@@ -18,15 +15,19 @@ class ParkingAvailabilityApi(BaseApi):
         *,
         params: ParkingAvailabilityParams | None = None,
     ) -> ParkingAvailabilityResponse:
-        """
-        The Parking Availability service provides information about the current availability status of parking sites.
+        """Get parking availability.
 
-        See: https://developer.tomtom.com/parking-availability-api/documentation/parking-availability-api/parking-availability
-        """
+        For more information, see: https://developer.tomtom.com/parking-availability-api/documentation/parking-availability-api/parking-availability
 
-        reponse = await self.get(
+        Args:
+            params (ParkingAvailabilityParams | None, optional): Additional parameters for the parking availability. Defaults to None.
+
+        Returns:
+            ParkingAvailabilityResponse: Response containing parking availability data.
+        """
+        response = await self.get(
             endpoint="/search/2/parkingAvailability.json",
             params=params,
         )
 
-        return await reponse.deserialize(ParkingAvailabilityResponse)
+        return await response.deserialize(ParkingAvailabilityResponse)

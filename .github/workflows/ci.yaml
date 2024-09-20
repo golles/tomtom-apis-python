@@ -35,7 +35,7 @@ jobs:
           - name: ShellCheck
             command: poetry run shellcheck scripts/*.sh
           - name: YamlLint
-            command: poetry run yamllint .
+            command: poetry run yamllint --format github .
     runs-on: ubuntu-latest
     name: ${{ matrix.name }}
     steps:

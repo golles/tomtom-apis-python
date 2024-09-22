@@ -5,20 +5,31 @@ from __future__ import annotations
 import logging
 import socket
 import uuid
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from importlib import metadata
 from typing import Any, Literal, TypeVar
 
 import orjson
 from aiohttp import ClientResponse, ClientTimeout
-from aiohttp.client import ClientConnectionError, ClientError, ClientResponseError, ClientSession
+from aiohttp.client import (
+    ClientConnectionError,
+    ClientError,
+    ClientResponseError,
+    ClientSession,
+)
 from aiohttp.hdrs import ACCEPT_ENCODING, CONTENT_TYPE, USER_AGENT
 from mashumaro import DataClassDictMixin
 from mashumaro.config import BaseConfig
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
 from .const import TOMTOM_HEADER_PREFIX, TRACKING_ID_HEADER
-from .exceptions import TomTomAPIClientError, TomTomAPIConnectionError, TomTomAPIError, TomTomAPIRequestTimeout, TomTomAPIServerError
+from .exceptions import (
+    TomTomAPIClientError,
+    TomTomAPIConnectionError,
+    TomTomAPIError,
+    TomTomAPIRequestTimeout,
+    TomTomAPIServerError,
+)
 from .utils import serialize_bool, serialize_list
 
 logger = logging.getLogger(__name__)
@@ -178,7 +189,7 @@ class ApiOptions:
     api_key: str
     base_url: str = "https://api.tomtom.com"
     gzip_compression: bool = False
-    timeout: ClientTimeout = ClientTimeout(total=10)
+    timeout: ClientTimeout = field(default_factory=lambda: ClientTimeout(total=10))
     tracking_id: bool = False
 
 
@@ -251,7 +262,10 @@ class BaseApi:
             TomTomAPIServerError: If a server-side error (5xx) occurs.
             TomTomAPIError: For other errors raised by the TomTom SDK.
         """
-        request_params = {**self._default_params, **(params.to_dict() if params else {})}
+        request_params = {
+            **self._default_params,
+            **(params.to_dict() if params else {}),
+        }
         request_headers = {**self._default_headers, **(headers if headers else {})}
         request_data = data.to_dict() if data else None
 

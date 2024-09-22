@@ -6,15 +6,18 @@ import pytest
 
 from tests.const import API_KEY
 from tomtom_apis.api import ApiOptions
-from tomtom_apis.models import LatLonList
+from tomtom_apis.models import LatLonList, TravelModeType
 from tomtom_apis.routing import RoutingApi
 from tomtom_apis.routing.models import (
+    AvoidType,
     CalculatedReachableRangeResponse,
     CalculatedRouteResponse,
     CalculateReachableRangePostData,
     CalculateReachableRouteParams,
     CalculateRouteParams,
     CalculateRoutePostData,
+    RouteType,
+    VehicleEngineType,
 )
 
 from ..const import LOC_AMSTERDAM, LOC_ROTTERDAM
@@ -36,9 +39,9 @@ async def test_deserialization_get_calculate_route(routing_api: RoutingApi):
         locations=LatLonList(locations=[LOC_AMSTERDAM, LOC_ROTTERDAM]),
         params=CalculateRouteParams(
             maxAlternatives=0,
-            routeType="fastest",
+            routeType=RouteType.FASTEST,
             traffic=True,
-            travelMode="car",
+            travelMode=TravelModeType.CAR,
         ),
     )
 
@@ -60,9 +63,9 @@ async def test_deserialization_post_calculate_route(routing_api: RoutingApi):
         locations=LatLonList(locations=[LOC_AMSTERDAM, LOC_ROTTERDAM]),
         params=CalculateRouteParams(
             maxAlternatives=0,
-            routeType="fastest",
+            routeType=RouteType.FASTEST,
             traffic=True,
-            travelMode="car",
+            travelMode=TravelModeType.CAR,
         ),
         data=CalculateRoutePostData.from_dict(
             {
@@ -100,8 +103,8 @@ async def test_deserialization_get_calculate_reachable_range(routing_api: Routin
         origin=LOC_AMSTERDAM,
         params=CalculateReachableRouteParams(
             energyBudgetInkWh=43,
-            avoid="unpavedRoads",
-            vehicleEngineType="electric",
+            avoid=AvoidType.UNPAVED_ROADS,
+            vehicleEngineType=VehicleEngineType.ELECTRIC,
             constantSpeedConsumptionInkWhPerHundredkm="50,8.2:130,21.3",
         ),
     )
@@ -123,8 +126,8 @@ async def test_deserialization_post_calculate_reachable_range(routing_api: Routi
         origin=LOC_AMSTERDAM,
         params=CalculateReachableRouteParams(
             energyBudgetInkWh=43,
-            avoid="unpavedRoads",
-            vehicleEngineType="electric",
+            avoid=AvoidType.UNPAVED_ROADS,
+            vehicleEngineType=VehicleEngineType.ELECTRIC,
             constantSpeedConsumptionInkWhPerHundredkm="50,8.2:130,21.3",
         ),
         data=CalculateReachableRangePostData.from_dict(

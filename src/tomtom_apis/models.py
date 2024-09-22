@@ -8,6 +8,15 @@ from enum import IntEnum, StrEnum
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
 
+class AdrCategoryType(StrEnum):
+    """Supported ADR category types."""
+
+    B = "B"
+    C = "C"
+    D = "D"
+    E = "E"
+
+
 class Language(StrEnum):
     """Supported languages for the Places API.
 
@@ -150,6 +159,20 @@ class TileSizeType(IntEnum):
 
     SIZE_256 = 256
     SIZE_512 = 512
+
+
+class TravelModeType(StrEnum):
+    """Supported travel mode types."""
+
+    CAR = "car"
+    TRUCK = "truck"
+    TAXI = "taxi"
+    BUS = "bus"
+    VAN = "van"
+    MOTORCYCLE = "motorcycle"
+    BICYCLE = "bicycle"
+    PEDESTRIAN = "pedestrian"
+    OTHER = "other"
 
 
 class ViewType(StrEnum):

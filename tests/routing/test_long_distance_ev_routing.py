@@ -15,6 +15,9 @@ from tomtom_apis.routing.models import (
     ChargingConnection,
     ChargingCurve,
     ChargingMode,
+    FacilityType,
+    PlugType,
+    VehicleEngineType,
 )
 
 
@@ -31,7 +34,7 @@ async def fixture_long_distance_ev_routing_api():
 async def test_deserialization_post_calculate_long_distance_ev_route(long_distance_ev_routing_api: LongDistanceEVRoutingApi):
     """Test the post_calculate_long_distance_ev_route method."""
     params = CalculateLongDistanceEVRouteParams(
-        vehicleEngineType="electric",
+        vehicleEngineType=VehicleEngineType.ELECTRIC,
         constantSpeedConsumptionInkWhPerHundredkm="50.0,6.5:100.0,8.5",
         currentChargeInkWh=10,
         maxChargeInkWh=40,
@@ -42,7 +45,12 @@ async def test_deserialization_post_calculate_long_distance_ev_route(long_distan
     data = CalculateLongDistanceEVRoutePostData(
         chargingModes=[
             ChargingMode(
-                chargingConnections=[ChargingConnection(facilityType="Charge_380_to_480V_3_Phase_at_32A", plugType="IEC_62196_Type_2_Outlet")],
+                chargingConnections=[
+                    ChargingConnection(
+                        facilityType=FacilityType.CHARGE_380_TO_480V_3_PHASE_AT_32A,
+                        plugType=PlugType.IEC_62196_TYPE_2_OUTLET,
+                    )
+                ],
                 chargingCurve=[
                     ChargingCurve(chargeInkWh=6, timeToChargeInSeconds=360),
                     ChargingCurve(chargeInkWh=12, timeToChargeInSeconds=720),
@@ -52,7 +60,10 @@ async def test_deserialization_post_calculate_long_distance_ev_route(long_distan
             ),
             ChargingMode(
                 chargingConnections=[
-                    ChargingConnection(facilityType="Charge_200_to_240V_1_Phase_at_10A", plugType="Standard_Household_Country_Specific")
+                    ChargingConnection(
+                        facilityType=FacilityType.CHARGE_200_TO_240V_1_PHASE_AT_10A,
+                        plugType=PlugType.STANDARD_HOUSEHOLD_COUNTRY_SPECIFIC,
+                    )
                 ],
                 chargingCurve=[
                     ChargingCurve(chargeInkWh=6, timeToChargeInSeconds=15624),

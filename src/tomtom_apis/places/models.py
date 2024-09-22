@@ -707,7 +707,7 @@ class NearbySearchParams(BaseParams):
 class OpeningHour(DataClassORJSONMixin):
     """Represents an OpeningHour."""
 
-    mode: str
+    mode: OpeningHoursType
     timeRanges: list[TimeRange]
 
 
@@ -1113,7 +1113,7 @@ class SearchAlongRouteParams(BaseParams):
     sortBy: SortByType | None = None
     language: Language | None = None
     openingHours: OpeningHoursType | None = None
-    spreadingMode: str | None = None
+    spreadingMode: SpreadingMode | None = None
     mapcodes: list[MapCodeType] | None = None
     timeZone: str | None = None
     relatedPois: RelatedPoisType | None = None
@@ -1177,6 +1177,12 @@ class SortByType(StrEnum):
 
     DETOUR_TIME = "detourTime"
     DETOUR_OFFSET = "detourOffset"
+
+
+class SpreadingMode(StrEnum):
+    """Supported spreading mode types."""
+
+    AUTO = "auto"
 
 
 class StatusType(StrEnum):

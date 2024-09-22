@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import datetime
+from enum import StrEnum
 
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
@@ -25,7 +26,7 @@ class Current(DataClassORJSONMixin):
 class Fuel(DataClassORJSONMixin):
     """Represents a Fuel."""
 
-    type: list[str]
+    type: FuelType
     price: list[Price]
     updatedAt: datetime
 
@@ -43,6 +44,37 @@ class FuelPrizeParams(BaseParams):
     """Parameters for the get_fuel_prize method."""
 
     fuelPrice: str
+
+
+class FuelType(StrEnum):
+    """Supported fuel types."""
+
+    BIODIESEL = "biodiesel"
+    CNG = "cng"
+    DIESEL = "diesel"
+    DIESEL_PLUS = "dieselPlus"
+    DIESEL_PLUS_WITHOUT_ADDITIVES = "dieselPlusWithoutAdditives"
+    DIESEL_WITHOUT_ADDITIVES = "dieselWithoutAdditives"
+    E100 = "e100"
+    E80 = "e80"
+    E85 = "e85"
+    ETHANOL_WITHOUT_ADDITIVES = "ethanolWithoutAdditives"
+    LPG = "lpg"
+    REGULAR = "regular"
+    SP100 = "sp100"
+    SP91 = "sp91"
+    SP91_E10 = "sp91_e10"
+    SP92 = "sp92"
+    SP92_PLUS = "sp92Plus"
+    SP93 = "sp93"
+    SP95 = "sp95"
+    SP95_E10 = "sp95_e10"
+    SP95_PLUS = "sp95Plus"
+    SP95_WITHOUT_ADDITIVES = "sp95WithoutAdditives"
+    SP97 = "sp97"
+    SP98 = "sp98"
+    SP98_PLUS = "sp98Plus"
+    SP99 = "sp99"
 
 
 @dataclass(kw_only=True)

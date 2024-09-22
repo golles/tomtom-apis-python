@@ -9,17 +9,8 @@ from enum import StrEnum
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
 from ..api import BaseParams
-from ..models import Language, TileSizeType, ViewType
+from ..models import AdrCategoryType, Language, TileSizeType, TravelModeType, ViewType
 from ..utils import serialize_list_brackets
-
-
-class AdrCategoryType(StrEnum):
-    """Supported ADR category types."""
-
-    B = "B"
-    C = "C"
-    D = "D"
-    E = "E"
 
 
 class DangerousGoodsLoadType(StrEnum):
@@ -173,17 +164,3 @@ class TileFormatType(StrEnum):
 
     PNG = "png"
     JPG = "jpg"
-
-
-class TravelModeType(StrEnum):
-    """Supported travel mode types."""
-
-    CAR = "Car"
-    TRUCK = "Truck"
-    TAXI = "Taxi"
-    BUS = "Bus"
-    VAN = "Van"
-    MOTORCYCLE = "Motorcycle"
-    BICYCLE = "Bicycle"
-    PEDESTRIAN = "Pedestrian"
-    OTHER = "Other"

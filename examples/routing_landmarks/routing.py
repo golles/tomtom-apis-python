@@ -9,9 +9,9 @@ import os
 from attr import dataclass
 
 from tomtom_apis import ApiOptions
-from tomtom_apis.models import LatLon, LatLonList
+from tomtom_apis.models import LatLon, LatLonList, TravelModeType
 from tomtom_apis.routing import RoutingApi
-from tomtom_apis.routing.models import CalculateRouteParams
+from tomtom_apis.routing.models import CalculateRouteParams, RouteType
 
 
 @dataclass(kw_only=True)
@@ -60,9 +60,9 @@ async def plan_route(routing_api: RoutingApi, start: Landmark, destination: Land
         locations=LatLonList(locations=[start.location, destination.location]),
         params=CalculateRouteParams(
             maxAlternatives=0,
-            routeType="fastest",
+            routeType=RouteType.FASTEST,
             traffic=True,
-            travelMode="car",
+            travelMode=TravelModeType.CAR,
         ),
     )
 

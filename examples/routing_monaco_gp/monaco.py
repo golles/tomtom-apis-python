@@ -4,9 +4,9 @@ import asyncio
 import os
 
 from tomtom_apis import ApiOptions
-from tomtom_apis.models import LatLon, LatLonList
+from tomtom_apis.models import LatLon, LatLonList, TravelModeType
 from tomtom_apis.routing import RoutingApi
-from tomtom_apis.routing.models import CalculateRouteParams
+from tomtom_apis.routing.models import CalculateRouteParams, RouteType
 
 
 async def plan_monaco_gp_route(api_key: str) -> None:
@@ -36,8 +36,8 @@ async def plan_monaco_gp_route(api_key: str) -> None:
             ),
             params=CalculateRouteParams(
                 maxAlternatives=0,
-                routeType="fastest",
-                travelMode="car",
+                routeType=RouteType.FASTEST,
+                travelMode=TravelModeType.CAR,
             ),
         )
 

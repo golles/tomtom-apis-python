@@ -17,8 +17,8 @@ Output:
 
 🏁 Official F1 Track Length:  3,337 meters
 🚗 Street Driving Length:     3,364 meters
-⏱️  Estimated Driving Time:    12 minutes 32seconds (752 seconds)
-🏎️  F1 Lap Record:             1:12.909 (73 seconds)
+⏱️ Estimated Driving Time:    13 minutes 6seconds (786 seconds)
+🏎️ F1 Lap Record:             1:12.909 (73 seconds)
 
 Can you beat the record? Give it a try and see how close you can get!
 ```

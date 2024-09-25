@@ -31,6 +31,7 @@
         "files.eol": "\n",
         "files.trimTrailingWhitespace": true,
         "mypy-type-checker.importStrategy": "fromEnvironment",
+        "pylint.importStrategy": "fromEnvironment",
         "python.analysis.extraPaths": ["${workspaceFolder}/src"],
         "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
         "python.testing.cwd": "${workspaceFolder}",

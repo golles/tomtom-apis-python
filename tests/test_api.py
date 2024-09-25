@@ -67,14 +67,6 @@ async def fixture_base_api(mock_session: AsyncMock) -> AsyncGenerator[BaseApi, N
         yield base
 
 
-# mock_request_info = RequestInfo(
-#     url=URL("http://example.com"),
-#     method="GET",
-#     headers=CIMultiDictProxy(CIMultiDict({})),
-#     real_url=URL("http://example.com"),
-# )
-
-
 async def test_deserialize_success(mock_response: AsyncMock) -> None:
     """Test the deserialize method."""
     response = Response(mock_response)

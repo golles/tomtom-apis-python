@@ -1,5 +1,7 @@
 """Map Display API."""
 
+from typing import Self
+
 from ..api import BaseApi, BaseParams
 from .models import (
     LayerType,
@@ -23,7 +25,7 @@ class MapDisplayApi(BaseApi):
     """
 
     async def get_map_tile(  # pylint: disable=too-many-arguments
-        self,
+        self: Self,
         *,
         layer: LayerType,
         style: StyleType,
@@ -57,7 +59,7 @@ class MapDisplayApi(BaseApi):
         return await response.bytes()
 
     async def get_satellite_tile(  # pylint: disable=too-many-arguments
-        self,
+        self: Self,
         *,
         x: int,
         y: int,
@@ -87,7 +89,7 @@ class MapDisplayApi(BaseApi):
         return await response.bytes()
 
     async def get_hillshade_tile(  # pylint: disable=too-many-arguments
-        self,
+        self: Self,
         *,
         x: int,
         y: int,
@@ -117,7 +119,7 @@ class MapDisplayApi(BaseApi):
         return await response.bytes()
 
     async def get_static_image(  # pylint: disable=too-many-arguments
-        self,
+        self: Self,
         *,
         params: StaticImageParams | None = None,
     ) -> bytes:
@@ -145,7 +147,7 @@ class MapDisplayApi(BaseApi):
         return await response.bytes()
 
     async def get_tile_v1(  # pylint: disable=too-many-arguments
-        self,
+        self: Self,
         *,
         layer: LayerTypeWithPoiType,
         x: int,
@@ -175,7 +177,7 @@ class MapDisplayApi(BaseApi):
         return await response.bytes()
 
     async def get_tile_v2(  # pylint: disable=too-many-arguments
-        self,
+        self: Self,
         *,
         layer: LayerTypeWithPoiType,
         x: int,
@@ -205,7 +207,7 @@ class MapDisplayApi(BaseApi):
         return await response.bytes()
 
     async def get_map_copyrights(
-        self,
+        self: Self,
         *,
         params: BaseParams | None = None,  # No extra params.
     ) -> str:
@@ -227,7 +229,7 @@ class MapDisplayApi(BaseApi):
         return await response.text()
 
     async def get_map_service_copyrights(
-        self,
+        self: Self,
         *,
         params: BaseParams | None = None,  # No extra params.
     ) -> MapServiceCopyrightsResponse:

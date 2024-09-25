@@ -1,5 +1,7 @@
 """Matrix Routing V2 API."""
 
+from typing import Self
+
 from ..api import BaseApi
 
 
@@ -14,7 +16,7 @@ class MatrixRoutingApiV2(BaseApi):
     For more information, see: https://developer.tomtom.com/routing-api/documentation/tomtom-maps/matrix-routing-v2/matrix-routing-v2-service
     """
 
-    def __init__(self):  # pylint: disable=super-init-not-called
+    def __init__(self: Self) -> None:  # pylint: disable=super-init-not-called
         """Not implemented.
 
         Raises:

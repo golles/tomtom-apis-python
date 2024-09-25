@@ -1,5 +1,7 @@
 """Routing API."""
 
+from typing import Self
+
 from ..api import BaseApi
 from ..models import LatLon, LatLonList
 from .models import (
@@ -21,7 +23,7 @@ class RoutingApi(BaseApi):
     """
 
     async def get_calculate_route(
-        self,
+        self: Self,
         *,
         locations: LatLonList,
         params: CalculateRouteParams | None = None,
@@ -38,7 +40,7 @@ class RoutingApi(BaseApi):
         return await response.deserialize(CalculatedRouteResponse)
 
     async def post_calculate_route(
-        self,
+        self: Self,
         *,
         locations: LatLonList,
         params: CalculateRouteParams | None = None,
@@ -65,7 +67,7 @@ class RoutingApi(BaseApi):
         return await response.deserialize(CalculatedRouteResponse)
 
     async def get_calculate_reachable_range(
-        self,
+        self: Self,
         *,
         origin: LatLon,
         params: CalculateReachableRouteParams | None = None,
@@ -89,7 +91,7 @@ class RoutingApi(BaseApi):
         return await response.deserialize(CalculatedReachableRangeResponse)
 
     async def post_calculate_reachable_range(
-        self,
+        self: Self,
         *,
         origin: LatLon,
         params: CalculateReachableRouteParams | None = None,

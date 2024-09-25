@@ -1,5 +1,7 @@
 """Parking Availability API."""
 
+from typing import Self
+
 from ..api import BaseApi
 from ..automotive.models import ParkingAvailabilityParams, ParkingAvailabilityResponse
 
@@ -11,7 +13,7 @@ class ParkingAvailabilityApi(BaseApi):
     """
 
     async def get_parking_availability(
-        self,
+        self: Self,
         *,
         params: ParkingAvailabilityParams | None = None,
     ) -> ParkingAvailabilityResponse:

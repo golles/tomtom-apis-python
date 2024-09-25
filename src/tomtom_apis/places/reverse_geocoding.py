@@ -1,5 +1,7 @@
 """Reverse Geocode API."""
 
+from typing import Self
+
 from ..api import BaseApi
 from ..models import LatLon
 from ..places.models import CrossStreetLookupParams, ReverseGeocodeParams, ReverseGeocodeResponse
@@ -16,7 +18,7 @@ class ReverseGeocodingApi(BaseApi):
     """
 
     async def get_reverse_geocode(
-        self,
+        self: Self,
         *,
         position: LatLon,
         params: ReverseGeocodeParams | None = None,
@@ -40,7 +42,7 @@ class ReverseGeocodingApi(BaseApi):
         return await response.deserialize(ReverseGeocodeResponse)
 
     async def get_cross_street_lookup(
-        self,
+        self: Self,
         *,
         position: LatLon,
         params: CrossStreetLookupParams | None = None,

@@ -1,5 +1,7 @@
 """Monaco GP routing example."""
 
+# pylint: disable=duplicate-code
+
 import asyncio
 import os
 

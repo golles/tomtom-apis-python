@@ -1,5 +1,7 @@
 """Fuel prices test."""
 
+from collections.abc import AsyncGenerator
+
 import pytest
 
 from tests.const import API_KEY
@@ -9,7 +11,7 @@ from tomtom_apis.automotive.models import FuelPricesResponse, FuelPrizeParams
 
 
 @pytest.fixture(name="fuel_prizes_api")
-async def fixture_fuel_prizes_api():
+async def fixture_fuel_prizes_api() -> AsyncGenerator[FuelPricesApi, None]:
     """Fixture for FuelPricesApi."""
     options = ApiOptions(api_key=API_KEY)
     async with FuelPricesApi(options) as fuel_prizes:
@@ -18,7 +20,7 @@ async def fixture_fuel_prizes_api():
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["automotive/get_fuel_prize.json"], indirect=True)
-async def test_deserialization_get_fuel_prize(fuel_prizes_api: FuelPricesApi):
+async def test_deserialization_get_fuel_prize(fuel_prizes_api: FuelPricesApi) -> None:
     """Test the get_fuel_prize method."""
     response = await fuel_prizes_api.get_fuel_prize(params=FuelPrizeParams(fuelPrice="1:2622f89a-6300-11ec-8d12-a0423f39b5a2"))
 

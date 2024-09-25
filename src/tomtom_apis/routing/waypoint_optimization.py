@@ -1,5 +1,7 @@
 """Waypoint optimization API."""
 
+from typing import Self
+
 from ..api import BaseApi, BaseParams
 from ..routing.models import WaypointOptimizationPostData, WaypointOptimizedResponse
 
@@ -14,7 +16,7 @@ class WaypointOptimizationApi(BaseApi):
     """
 
     async def post_waypointoptimization(
-        self,
+        self: Self,
         *,
         params: BaseParams | None = None,  # No extra params.
         data: WaypointOptimizationPostData,

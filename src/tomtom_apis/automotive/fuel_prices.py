@@ -1,5 +1,7 @@
 """Fuel Prices API."""
 
+from typing import Self
+
 from ..api import BaseApi
 from ..automotive.models import FuelPricesResponse, FuelPrizeParams
 
@@ -11,7 +13,7 @@ class FuelPricesApi(BaseApi):
     """
 
     async def get_fuel_prize(
-        self,
+        self: Self,
         *,
         params: FuelPrizeParams | None = None,
     ) -> FuelPricesResponse:

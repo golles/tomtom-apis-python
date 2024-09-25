@@ -21,7 +21,7 @@ def load_png(filename: str) -> bytes:
 
 
 @pytest.fixture(name="json_response")
-def fixture_json_response(request, aresponses: ResponsesMockServer):
+def fixture_json_response(request: pytest.FixtureRequest, aresponses: ResponsesMockServer) -> None:
     """Fixture for adding the aresponses response with a configurable JSON file."""
     fixture_filename = request.param
     aresponses.add(
@@ -34,7 +34,7 @@ def fixture_json_response(request, aresponses: ResponsesMockServer):
 
 
 @pytest.fixture(name="image_response")
-def fixture_image_response(request, aresponses: ResponsesMockServer):
+def fixture_image_response(request: pytest.FixtureRequest, aresponses: ResponsesMockServer) -> None:
     """Fixture for adding the aresponses response with a configurable image file."""
     fixture_filename = request.param
     aresponses.add(

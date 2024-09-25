@@ -1,5 +1,7 @@
 """Premium Geocode API."""
 
+from typing import Self
+
 from ..api import BaseApi
 from .models import PremiumGeocodeParams, SearchResponse
 
@@ -17,7 +19,7 @@ class PremiumGeocodingApi(BaseApi):
     """
 
     async def get_geocode(
-        self,
+        self: Self,
         *,
         query: str,
         params: PremiumGeocodeParams | None = None,

@@ -73,6 +73,7 @@ target-version = "py312"
 extend-select = [
   "UP",  # pyupgrade
   "D",  # pydocstyle
+  "ANN",  # flake8-annotations
 ]
 
 [tool.ruff.lint.pydocstyle]

@@ -1,5 +1,7 @@
 """EV Search API."""
 
+from typing import Self
+
 from ..api import BaseApi
 from .models import EvSearchByIdParams, EvSearchNearbyParams, SearchResponse
 
@@ -17,7 +19,7 @@ class EVSearchApi(BaseApi):
     """
 
     async def get_ev_search_nearby(
-        self,
+        self: Self,
         *,
         params: EvSearchNearbyParams | None = None,
     ) -> SearchResponse:
@@ -39,7 +41,7 @@ class EVSearchApi(BaseApi):
         return await response.deserialize(SearchResponse)
 
     async def get_ev_search_by_id(
-        self,
+        self: Self,
         *,
         params: EvSearchByIdParams | None = None,
     ) -> SearchResponse:

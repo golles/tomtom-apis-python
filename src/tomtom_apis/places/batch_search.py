@@ -1,5 +1,7 @@
 """Batch Search API."""
 
+from typing import Self
+
 from ..api import BaseApi, BaseParams
 from ..places.models import (
     AsynchronousBatchDownloadParams,
@@ -19,7 +21,7 @@ class BatchSearchApi(BaseApi):
     """
 
     async def post_synchronous_batch(
-        self,
+        self: Self,
         *,
         params: BaseParams | None = None,  # No extra params.
         data: BatchPostData,
@@ -44,7 +46,7 @@ class BatchSearchApi(BaseApi):
         return await response.deserialize(BatchResponse)
 
     async def post_asynchronous_batch_submission(
-        self,
+        self: Self,
         *,
         params: AsynchronousSynchronousBatchParams | None = None,
         data: BatchPostData,
@@ -69,7 +71,7 @@ class BatchSearchApi(BaseApi):
         return response.headers.get("Location", None)
 
     async def get_asynchronous_batch_download(
-        self,
+        self: Self,
         *,
         batch_id: str,
         params: AsynchronousBatchDownloadParams | None = None,

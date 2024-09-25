@@ -7,7 +7,8 @@ import socket
 import uuid
 from dataclasses import dataclass, field
 from importlib import metadata
-from typing import Any, Literal, TypeVar
+from types import TracebackType
+from typing import Any, Literal, Self, TypeVar
 
 import orjson
 from aiohttp import ClientResponse, ClientTimeout
@@ -45,7 +46,7 @@ class BaseParams(DataClassDictMixin):
 
     key: str | None = None
 
-    def __post_serialize__(self, d: dict[Any, Any]) -> dict[str, str]:
+    def __post_serialize__(self: Self, d: dict[Any, Any]) -> dict[str, str]:
         """Removes keys with None values from the serialized dictionary.
 
         Args:
@@ -103,7 +104,7 @@ class Response:
 
     T = TypeVar("T", bound=DataClassORJSONMixin)
 
-    def __init__(self, response: ClientResponse):
+    def __init__(self: Self, response: ClientResponse) -> None:
         """Initialize the Response object.
 
         Args:
@@ -113,7 +114,7 @@ class Response:
         self.headers: dict[str, str] = dict(response.headers)
         self.status = response.status
 
-    async def deserialize(self, model: type[T]) -> T:
+    async def deserialize(self: Self, model: type[T]) -> T:
         """Deserialize the response to the given model.
 
         Args:
@@ -133,7 +134,7 @@ class Response:
             logger.error("Failed to deserialize response: %s", e)
             raise
 
-    async def dict(self) -> dict:
+    async def dict(self: Self) -> dict:
         """Deserialize the response to a dictionary.
 
         Returns:
@@ -150,7 +151,7 @@ class Response:
             logger.error("Failed to decode JSON response: %s", e)
             raise
 
-    async def text(self) -> str:
+    async def text(self: Self) -> str:
         """Return the response as text.
 
         Returns:
@@ -159,7 +160,7 @@ class Response:
         logger.info("Returning response as text")
         return await self._response.text()
 
-    async def bytes(self) -> bytes:
+    async def bytes(self: Self) -> bytes:
         """Return the response as bytes.
 
         Returns:
@@ -204,10 +205,10 @@ class BaseApi:
     _version: str = metadata.version(__package__)
 
     def __init__(
-        self,
+        self: Self,
         options: ApiOptions,
         session: ClientSession | None = None,
-    ):
+    ) -> None:
         """Initializes the BaseApi object.
 
         Args:
@@ -229,7 +230,7 @@ class BaseApi:
         }
 
     async def _request(  # pylint: disable=too-many-arguments
-        self,
+        self: Self,
         method: Literal["DELETE", "GET", "POST", "PUT"],
         endpoint: str,
         *,
@@ -322,7 +323,7 @@ class BaseApi:
         return Response(response)
 
     async def delete(
-        self,
+        self: Self,
         endpoint: str,
         *,
         headers: dict[str, str] | None = None,
@@ -350,7 +351,7 @@ class BaseApi:
         )
 
     async def get(
-        self,
+        self: Self,
         endpoint: str,
         *,
         headers: dict[str, str] | None = None,
@@ -378,7 +379,7 @@ class BaseApi:
         )
 
     async def post(  # pylint: disable=too-many-arguments
-        self,
+        self: Self,
         endpoint: str,
         *,
         headers: dict[str, str] | None = None,
@@ -410,7 +411,7 @@ class BaseApi:
         )
 
     async def put(  # pylint: disable=too-many-arguments
-        self,
+        self: Self,
         endpoint: str,
         *,
         headers: dict[str, str] | None = None,
@@ -441,7 +442,7 @@ class BaseApi:
             data=data,
         )
 
-    async def __aenter__(self):
+    async def __aenter__(self: Self) -> Self:
         """Enter the runtime context related to this object.
 
         The session used to make requests is created upon entering the context and closed upon exiting.
@@ -451,7 +452,7 @@ class BaseApi:
         """
         return self
 
-    async def __aexit__(self, exc_type, exc_val, exc_tb):
+    async def __aexit__(self: Self, exc_type: type[BaseException] | None, exc_val: BaseException | None, exc_tb: TracebackType) -> None:
         """Exit the runtime context related to this object.
 
         The session used for making requests is closed upon exiting the context.
@@ -461,11 +462,9 @@ class BaseApi:
             exc_val: The value of the exception raised in the context.
             exc_tb: The traceback of the exception raised in the context.
         """
-        if self.session:
-            await self.session.close()  # Close the session when exiting the context
-            self.session = None
+        await self.session.close()
 
-    async def close(self):
+    async def close(self: Self) -> None:
         """Close the session.
 
         Manually closes the session. If the session is not closed, it will be closed when exiting the context.
@@ -473,6 +472,4 @@ class BaseApi:
         Note:
             Does not raise an exception if the session is already closed.
         """
-        if self.session:
-            await self.session.close()  # Close the session if manually closing
-            self.session = None
+        await self.session.close()

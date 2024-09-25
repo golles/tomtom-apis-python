@@ -17,7 +17,10 @@ async def get_place_by_id(api_key: str) -> None:
     async with SearchApi(ApiOptions(api_key=api_key)) as search_api:
         response = await search_api.get_place_by_id(params=PlaceByIdParams(entityId=search_id))
 
-        print(f"\nPlace by id: '{search_id}' = {response.results[0].poi.name}")
+        if response.results and response.results[0].poi is not None:
+            print(f"\nPlace by id: '{search_id}' = {response.results[0].poi.name}")
+        else:
+            print(f"No POI data found for place id: {search_id}")
 
 
 async def get_nearby_search(api_key: str) -> None:

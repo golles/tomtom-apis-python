@@ -1,5 +1,7 @@
 """Traffic API."""
 
+from typing import Self
+
 from tomtom_apis.utils import serialize_list
 
 from ..api import BaseApi, BaseParams
@@ -35,7 +37,7 @@ class TrafficApi(BaseApi):
     """
 
     async def get_incident_details(
-        self,
+        self: Self,
         *,
         bbox: BBoxParam | None = None,
         ids: list[str] | None = None,
@@ -71,7 +73,7 @@ class TrafficApi(BaseApi):
         return await response.deserialize(IncidentDetailsResponse)
 
     async def post_incident_details(
-        self,
+        self: Self,
         *,
         params: IncidentDetailsParams | None = None,
         data: IncidentDetailsPostData,
@@ -96,7 +98,7 @@ class TrafficApi(BaseApi):
         return await response.deserialize(IncidentDetailsResponse)
 
     async def get_incident_viewport(  # pylint: disable=too-many-arguments
-        self,
+        self: Self,
         *,
         bounding_box: BoudingBoxParam,
         bounding_zoom: int,
@@ -132,7 +134,7 @@ class TrafficApi(BaseApi):
         return await response.deserialize(IncidentViewportResponse)
 
     async def get_raster_incident_tile(  # pylint: disable=too-many-arguments
-        self,
+        self: Self,
         *,
         style: IncidentStyleType,
         x: int,
@@ -164,7 +166,7 @@ class TrafficApi(BaseApi):
         return await response.bytes()
 
     async def get_vector_incident_tile(
-        self,
+        self: Self,
         *,
         x: int,
         y: int,
@@ -192,7 +194,7 @@ class TrafficApi(BaseApi):
         return await response.bytes()
 
     async def get_flow_segment_data(
-        self,
+        self: Self,
         *,
         style: FlowStyleType,
         zoom: int,
@@ -220,7 +222,7 @@ class TrafficApi(BaseApi):
         return await response.deserialize(FlowSegmentDataResponse)
 
     async def get_raster_flow_tiles(  # pylint: disable=too-many-arguments
-        self,
+        self: Self,
         *,
         style: FlowStyleType,
         zoom: int,
@@ -250,7 +252,7 @@ class TrafficApi(BaseApi):
         return await response.bytes()
 
     async def get_vector_flow_tiles(  # pylint: disable=too-many-arguments
-        self,
+        self: Self,
         *,
         flow_type: FlowType,
         zoom: int,

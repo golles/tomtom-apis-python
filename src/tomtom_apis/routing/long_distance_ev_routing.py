@@ -1,5 +1,7 @@
 """Long Distance EV Routing API."""
 
+from typing import Self
+
 from ..api import BaseApi
 from ..models import LatLonList
 from .models import CalculatedLongDistanceEVRouteResponse, CalculateLongDistanceEVRouteParams, CalculateLongDistanceEVRoutePostData
@@ -15,7 +17,7 @@ class LongDistanceEVRoutingApi(BaseApi):
     """
 
     async def post_calculate_long_distance_ev_route(
-        self,
+        self: Self,
         *,
         locations: LatLonList,
         params: CalculateLongDistanceEVRouteParams | None = None,

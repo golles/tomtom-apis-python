@@ -1,5 +1,7 @@
 """EV Search test."""
 
+from collections.abc import AsyncGenerator
+
 import pytest
 from aresponses import ResponsesMockServer
 
@@ -11,7 +13,7 @@ from tomtom_apis.places.models import AsynchronousBatchDownloadParams, BatchItem
 
 
 @pytest.fixture(name="batch_search_api")
-async def fixture_batch_search_api():
+async def fixture_batch_search_api() -> AsyncGenerator[BatchSearchApi, None]:
     """Fixture for BatchSearchApi."""
     options = ApiOptions(api_key=API_KEY)
     async with BatchSearchApi(options) as batch_search:
@@ -20,7 +22,7 @@ async def fixture_batch_search_api():
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/batch_search/post_synchronous_batch.json"], indirect=True)
-async def test_deserialization_post_synchronous_batch(batch_search_api: BatchSearchApi):
+async def test_deserialization_post_synchronous_batch(batch_search_api: BatchSearchApi) -> None:
     """Test the post_synchronous_batch method."""
     response = await batch_search_api.post_synchronous_batch(
         data=BatchPostData(
@@ -36,7 +38,7 @@ async def test_deserialization_post_synchronous_batch(batch_search_api: BatchSea
     assert isinstance(response, BatchResponse)
 
 
-async def test_post_asynchronous_batch_submission(batch_search_api: BatchSearchApi, aresponses: ResponsesMockServer):
+async def test_post_asynchronous_batch_submission(batch_search_api: BatchSearchApi, aresponses: ResponsesMockServer) -> None:
     """Test the post_asynchronous_batch_submission method."""
     aresponses.add(
         response=aresponses.Response(
@@ -79,7 +81,7 @@ async def test_post_asynchronous_batch_submission(batch_search_api: BatchSearchA
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/batch_search/get_asynchronous_batch_download.json"], indirect=True)
-async def test_deserialization_get_asynchronous_batch_download(batch_search_api: BatchSearchApi):
+async def test_deserialization_get_asynchronous_batch_download(batch_search_api: BatchSearchApi) -> None:
     """Test the get_asynchronous_batch_download method."""
     response = await batch_search_api.get_asynchronous_batch_download(
         batch_id="45e0909c-625a-4822-a060-8f7f88498c0e",

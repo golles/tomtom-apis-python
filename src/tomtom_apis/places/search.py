@@ -1,5 +1,7 @@
 """Search API."""
 
+from typing import Self
+
 from ..api import BaseApi, BaseParams
 from ..models import Language
 from ..places.models import (
@@ -36,7 +38,7 @@ class SearchApi(BaseApi):
     """
 
     async def get_search(
-        self,
+        self: Self,
         *,
         query: str,
         params: SearchParams | None = None,
@@ -60,7 +62,7 @@ class SearchApi(BaseApi):
         return await response.deserialize(SearchResponse)
 
     async def get_poi_search(
-        self,
+        self: Self,
         *,
         query: str,
         params: PoiSearchParams | None = None,
@@ -84,7 +86,7 @@ class SearchApi(BaseApi):
         return await response.deserialize(SearchResponse)
 
     async def get_category_search(
-        self,
+        self: Self,
         *,
         query: str,
         params: CategorySearchParams | None = None,
@@ -108,7 +110,7 @@ class SearchApi(BaseApi):
         return await response.deserialize(SearchResponse)
 
     async def get_geometry_search(
-        self,
+        self: Self,
         *,
         query: str,
         geometryList: list[Geometry],
@@ -134,7 +136,7 @@ class SearchApi(BaseApi):
         return await response.deserialize(SearchResponse)
 
     async def post_geometry_search(
-        self,
+        self: Self,
         *,
         query: str,
         params: GeometrySearchParams | None = None,
@@ -161,7 +163,7 @@ class SearchApi(BaseApi):
         return await response.deserialize(SearchResponse)
 
     async def get_nearby_search(
-        self,
+        self: Self,
         *,
         lat: float,
         lon: float,
@@ -187,7 +189,7 @@ class SearchApi(BaseApi):
         return await response.deserialize(SearchResponse)
 
     async def post_search_along_route(
-        self,
+        self: Self,
         *,
         query: str,
         maxDetourTime: int,
@@ -216,7 +218,7 @@ class SearchApi(BaseApi):
         return await response.deserialize(SearchResponse)
 
     async def get_autocomplete(
-        self,
+        self: Self,
         *,
         query: str,
         language: Language,
@@ -242,7 +244,7 @@ class SearchApi(BaseApi):
         return await response.deserialize(AutocompleteResponse)
 
     async def get_geometry_filter(
-        self,
+        self: Self,
         *,
         geometryList: list[Geometry],
         poiList: list[GeometryPoi],
@@ -268,7 +270,7 @@ class SearchApi(BaseApi):
         return await response.deserialize(GeometryFilterResponse)
 
     async def post_geometry_filter(
-        self,
+        self: Self,
         *,
         params: BaseParams | None = None,  # No extra params.
         data: GeometryFilterData,
@@ -293,7 +295,7 @@ class SearchApi(BaseApi):
         return await response.deserialize(GeometryFilterResponse)
 
     async def get_additional_data(
-        self,
+        self: Self,
         *,
         geometries: list[str],
         params: AdditionalDataParams | None = None,
@@ -317,7 +319,7 @@ class SearchApi(BaseApi):
         return await response.deserialize(AdditionalDataResponse)
 
     async def get_place_by_id(
-        self,
+        self: Self,
         *,
         params: PlaceByIdParams | None = None,
     ) -> PlaceByIdResponse:
@@ -339,7 +341,7 @@ class SearchApi(BaseApi):
         return await response.deserialize(PlaceByIdResponse)
 
     async def get_poi_categories(
-        self,
+        self: Self,
         *,
         params: PoiCategoriesParams | None = None,
     ) -> PoiCategoriesResponse:

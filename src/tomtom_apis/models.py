@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import IntEnum, StrEnum
+from typing import Self
 
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
@@ -93,7 +94,7 @@ class LatLon(DataClassORJSONMixin):
     lat: float
     lon: float
 
-    def to_comma_separated(self) -> str:
+    def to_comma_separated(self: Self) -> str:
         """Return the lat, lon as a comma-separated string.
 
         Returns:
@@ -114,7 +115,7 @@ class LatLonList(DataClassORJSONMixin):
 
     locations: list[LatLon]
 
-    def to_colon_separated(self) -> str:
+    def to_colon_separated(self: Self) -> str:
         """Return the list of lat, lon as a colon-separated string.
 
         Returns:

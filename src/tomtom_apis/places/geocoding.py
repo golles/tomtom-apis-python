@@ -1,5 +1,7 @@
 """Geocode API."""
 
+from typing import Self
+
 from ..api import BaseApi
 from ..places.models import GeocodeParams, SearchResponse, StructuredGeocodeParams
 
@@ -15,7 +17,7 @@ class GeocodingApi(BaseApi):
     """
 
     async def get_geocode(
-        self,
+        self: Self,
         *,
         query: str,
         params: GeocodeParams | None = None,
@@ -39,7 +41,7 @@ class GeocodingApi(BaseApi):
         return await response.deserialize(SearchResponse)
 
     async def get_structured_geocode(
-        self,
+        self: Self,
         *,
         countryCode: str,
         params: StructuredGeocodeParams | None = None,

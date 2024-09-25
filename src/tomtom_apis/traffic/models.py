@@ -5,6 +5,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from enum import IntEnum, StrEnum
+from typing import Self
 
 from geojson import LineString, Point
 from mashumaro import field_options
@@ -32,7 +33,7 @@ class BBoxParam:
     maxLon: float
     maxLat: float
 
-    def to_comma_separated(self) -> str:
+    def to_comma_separated(self: Self) -> str:
         """Convert the object into a comma-separated string."""
         return ",".join(map(str, [self.minLon, self.minLat, self.maxLon, self.maxLat]))
 
@@ -46,7 +47,7 @@ class BoudingBoxParam:
     maxY: float
     maxX: float
 
-    def to_comma_separated(self) -> str:
+    def to_comma_separated(self: Self) -> str:
         """Convert the object into a comma-separated string."""
         return ",".join(map(str, [self.minY, self.minX, self.maxY, self.maxX]))
 

@@ -1,5 +1,7 @@
 """Junction Analytics API."""
 
+from typing import Self
+
 from ..api import BaseApi
 
 
@@ -13,7 +15,7 @@ class JunctionAnalyticsApi(BaseApi):
     For more information, see: https://developer.tomtom.com/junction-analytics/documentation/product-information/introduction
     """
 
-    def __init__(self):  # pylint: disable=super-init-not-called
+    def __init__(self: Self) -> None:  # pylint: disable=super-init-not-called
         """Not implemented.
 
         Raises:

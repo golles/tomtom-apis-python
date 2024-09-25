@@ -1,5 +1,7 @@
 """O/D Analysis API."""
 
+from typing import Self
+
 from ..api import BaseApi
 
 
@@ -13,7 +15,7 @@ class ODAnalysisApi(BaseApi):
     For more information, see: https://developer.tomtom.com/od-analysis/documentation/product-information/introduction
     """
 
-    def __init__(self):  # pylint: disable=super-init-not-called
+    def __init__(self: Self) -> None:  # pylint: disable=super-init-not-called
         """Not implemented.
 
         Raises:

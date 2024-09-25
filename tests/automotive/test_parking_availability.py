@@ -1,5 +1,7 @@
 """Parking Availability test."""
 
+from collections.abc import AsyncGenerator
+
 import pytest
 
 from tests.const import API_KEY
@@ -9,7 +11,7 @@ from tomtom_apis.automotive.models import ParkingAvailabilityParams, ParkingAvai
 
 
 @pytest.fixture(name="parking_availability_api")
-async def fixture_parking_availability_api():
+async def fixture_parking_availability_api() -> AsyncGenerator[ParkingAvailabilityApi, None]:
     """Fixture for ParkingAvailabilityApi."""
     options = ApiOptions(api_key=API_KEY)
     async with ParkingAvailabilityApi(options) as fuel_prizes:
@@ -18,7 +20,7 @@ async def fixture_parking_availability_api():
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["automotive/get_parking_availability.json"], indirect=True)
-async def test_deserialization_get_parking_availability(parking_availability_api: ParkingAvailabilityApi):
+async def test_deserialization_get_parking_availability(parking_availability_api: ParkingAvailabilityApi) -> None:
     """Test the get_fuel_prize method."""
     response = await parking_availability_api.get_parking_availability(
         params=ParkingAvailabilityParams(parkingAvailability="00000000-0003-1d9a-0009-20d4467654e2")

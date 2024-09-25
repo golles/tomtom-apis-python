@@ -301,7 +301,7 @@ class Connector(DataClassORJSONMixin):
     """
 
     id: str | None = None
-    type: ConnectorType | None = None  # In EV search.
+    type_: ConnectorType | None = field(metadata=field_options(alias="type"), default=None)  # In EV search.
     connectorType: ConnectorType | None = None  # In general search.
     ratedPowerKW: float
     voltageV: int | None = None
@@ -309,15 +309,15 @@ class Connector(DataClassORJSONMixin):
     currentType: CurrentType
 
     @classmethod
-    def __post_deserialize__(cls, obj: Connector) -> Connector:
+    def __post_deserialize__(cls: type[Connector], obj: Connector) -> Connector:
         """Connector post deserialize.
 
         Handle the discrepancy between general search and EV search on connector type.
         """
-        if obj.type is not None and obj.connectorType is None:
-            obj.connectorType = obj.type
-        elif obj.connectorType is not None and obj.type is None:
-            obj.type = obj.connectorType
+        if obj.type_ is not None and obj.connectorType is None:
+            obj.connectorType = obj.type_
+        elif obj.connectorType is not None and obj.type_ is None:
+            obj.type_ = obj.connectorType
         return obj
 
 

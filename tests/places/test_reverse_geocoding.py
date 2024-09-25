@@ -1,5 +1,7 @@
 """Reverse Geocoding tests."""
 
+from collections.abc import AsyncGenerator
+
 import pytest
 
 from tests.const import API_KEY
@@ -10,7 +12,7 @@ from tomtom_apis.places.models import CrossStreetLookupParams, ReverseGeocodePar
 
 
 @pytest.fixture(name="reverse_geocoding_api")
-async def fixture_reverse_geocoding_api():
+async def fixture_reverse_geocoding_api() -> AsyncGenerator[ReverseGeocodingApi, None]:
     """Fixture for ReverseGeocodingApi."""
     options = ApiOptions(api_key=API_KEY)
     async with ReverseGeocodingApi(options) as reverse_geocoding:
@@ -19,7 +21,7 @@ async def fixture_reverse_geocoding_api():
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/reverse_geocoding/get_reverse_geocode.json"], indirect=True)
-async def test_deserialization_get_reverse_geocode(reverse_geocoding_api: ReverseGeocodingApi):
+async def test_deserialization_get_reverse_geocode(reverse_geocoding_api: ReverseGeocodingApi) -> None:
     """Test the get_reverse_geocode method."""
     response = await reverse_geocoding_api.get_reverse_geocode(
         position=LatLon(
@@ -46,7 +48,7 @@ async def test_deserialization_get_reverse_geocode(reverse_geocoding_api: Revers
 
 @pytest.mark.usefixtures("json_response")
 @pytest.mark.parametrize("json_response", ["places/reverse_geocoding/get_cross_street_lookup.json"], indirect=True)
-async def test_deserialization_get_cross_street_lookup(reverse_geocoding_api: ReverseGeocodingApi):
+async def test_deserialization_get_cross_street_lookup(reverse_geocoding_api: ReverseGeocodingApi) -> None:
     """Test the get_cross_street_lookup method."""
     response = await reverse_geocoding_api.get_cross_street_lookup(
         position=LatLon(

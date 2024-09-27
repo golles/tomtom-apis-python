@@ -263,22 +263,11 @@ class BaseApi:
             TomTomAPIServerError: If a server-side error (5xx) occurs.
             TomTomAPIError: For other errors raised by the TomTom SDK.
         """
-        request_params = {
-            **self._default_params,
-            **(params.to_dict() if params else {}),
-        }
-        request_headers = {**self._default_headers, **(headers if headers else {})}
-        request_data = data.to_dict() if data else None
+        request_params = self._prepare_params(params=params)
+        request_headers = self._prepare_headers(headers=headers, options=self.options)
+        request_data = self._prepare_data(data=data)
 
-        if self.options.gzip_compression:
-            request_headers[ACCEPT_ENCODING] = "gzip"
-        if self.options.tracking_id:
-            tracking_id = str(uuid.uuid4())
-            request_headers[TRACKING_ID_HEADER] = tracking_id
-        else:
-            tracking_id = "not tracked"
-
-        logger.info("%s %s (%s)", method, endpoint, tracking_id)
+        logger.info("%s %s (%s)", method, endpoint, request_headers.get(TRACKING_ID_HEADER, "not tracked"))
 
         try:
             response = await self.session.request(
@@ -321,6 +310,55 @@ class BaseApi:
             raise TomTomAPIConnectionError(exception) from exception
 
         return Response(response)
+
+    def _prepare_params(self: Self, params: BaseParams | None) -> dict:
+        """Prepare the request parameters by merging default and provided parameters.
+
+        Args:
+            params: BaseParams | None
+                The parameters to include in the request, if any.
+
+        Returns:
+            dict:
+                The merged dictionary of default and provided parameters.
+        """
+        return {**self._default_params, **(params.to_dict() if params else {})}
+
+    def _prepare_headers(self: Self, headers: dict[str, str] | None, options: ApiOptions) -> dict:
+        """Prepare the request headers, adds extra headers if specified in options.
+
+        Args:
+            headers: dict[str, str] | None
+                Custom headers to include in the request, if any.
+            options: ApiOptions
+                API options that control gzip compression and tracking ID.
+
+        Returns:
+            dict:
+                The merged dictionary of headers with additional compression and tracking ID if applicable.
+        """
+        request_headers = {**self._default_headers, **(headers if headers else {})}
+
+        if options.gzip_compression:
+            request_headers[ACCEPT_ENCODING] = "gzip"
+        if options.tracking_id:
+            tracking_id = str(uuid.uuid4())
+            request_headers[TRACKING_ID_HEADER] = tracking_id
+
+        return request_headers
+
+    def _prepare_data(self: Self, data: BasePostData | None) -> dict | None:
+        """Prepare the request data by converting the provided data object to a dictionary, if it exists.
+
+        Args:
+            data: BasePostData | None
+                The data to include in the request body, if any.
+
+        Returns:
+            dict | None
+                The dictionary representation of the data, or None if no data is provided.
+        """
+        return data.to_dict() if data else None
 
     async def delete(
         self: Self,

@@ -2,10 +2,10 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 297,
-    "numResults": 9,
+    "queryTime": 232,
+    "numResults": 10,
     "offset": 0,
-    "totalResults": 9,
+    "totalResults": 10,
     "fuzzyLevel": 1,
     "geobiasCountry": "US"
   },
@@ -28,8 +28,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -59,8 +59,8 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.53139, "lon": -122.29053 } }
       ],
-      "detourTime": -30,
-      "detourDistance": 37,
+      "detourTime": -85,
+      "detourDistance": -53,
       "detourOffset": 0
     },
     {
@@ -81,8 +81,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -112,8 +112,8 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.52885, "lon": -122.2897 } }
       ],
-      "detourTime": 173,
-      "detourDistance": 67,
+      "detourTime": -24,
+      "detourDistance": 78,
       "detourOffset": 0
     },
     {
@@ -133,8 +133,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -164,8 +164,8 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.52945, "lon": -122.28816 } }
       ],
-      "detourTime": 26,
-      "detourDistance": 13,
+      "detourTime": -19,
+      "detourDistance": 51,
       "detourOffset": 665
     },
     {
@@ -185,8 +185,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -216,8 +216,8 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.53064, "lon": -122.28708 } }
       ],
-      "detourTime": 123,
-      "detourDistance": 131,
+      "detourTime": -52,
+      "detourDistance": -78,
       "detourOffset": 665
     },
     {
@@ -238,8 +238,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -269,8 +269,8 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.52709, "lon": -122.28429 } }
       ],
-      "detourTime": 93,
-      "detourDistance": 116,
+      "detourTime": -14,
+      "detourDistance": 110,
       "detourOffset": 665
     },
     {
@@ -290,8 +290,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -321,8 +321,8 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.51988, "lon": -122.27391 } }
       ],
-      "detourTime": 235,
-      "detourDistance": 394,
+      "detourTime": 330,
+      "detourDistance": 1185,
       "detourOffset": 1856
     },
     {
@@ -342,8 +342,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -373,61 +373,116 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.51882, "lon": -122.2741 } }
       ],
-      "detourTime": 146,
-      "detourDistance": 593,
+      "detourTime": 301,
+      "detourDistance": 1002,
       "detourOffset": 1856
     },
     {
       "type": "POI",
-      "id": "HQVoBNQdQJAAFoExVOMI6g",
-      "score": 3.5126521587,
-      "dist": 13748.23943,
+      "id": "cICnS0qFHk4q9pRuPlzfLQ",
+      "score": 3.543977499,
+      "dist": 9398.82454,
       "query": "pizza",
-      "info": "search:ta:840066000186580-US",
+      "info": "search:ta:840069019237028-US",
       "poi": {
-        "name": "State of Mind Public House & Pizzeria-Marsh Manor",
-        "phone": "+1 650-995-7478",
+        "name": "Vesta",
         "categorySet": [{ "id": 7315036 }],
-        "url": "www.stateofmindpublichouse.com",
+        "url": "www.vestarwc.com",
         "categories": ["pizza", "restaurant"],
         "classifications": [
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
       },
       "address": {
-        "streetNumber": "3710",
-        "streetName": "Florence Street",
+        "streetNumber": "2022",
+        "streetName": "Broadway Street",
         "municipality": "Redwood City",
-        "neighbourhood": "Friendly Acres",
+        "neighbourhood": "Downtown Redwood City",
         "countrySecondarySubdivision": "San Mateo",
         "countrySubdivision": "CA",
         "countrySubdivisionName": "California",
         "countrySubdivisionCode": "CA",
         "postalCode": "94063",
-        "extendedPostalCode": "94063-4418",
+        "extendedPostalCode": "94063-1843",
         "countryCode": "US",
         "country": "United States",
         "countryCodeISO3": "USA",
-        "freeformAddress": "3710 Florence Street, Redwood City, CA 94063",
+        "freeformAddress": "2022 Broadway Street, Redwood City, CA 94063",
         "localName": "Redwood City"
       },
-      "position": { "lat": 37.478608, "lon": -122.18733 },
+      "position": { "lat": 37.486829, "lon": -122.226816 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.47951, "lon": -122.18846 },
-        "btmRightPoint": { "lat": 37.47771, "lon": -122.1862 }
+        "topLeftPoint": { "lat": 37.48773, "lon": -122.22795 },
+        "btmRightPoint": { "lat": 37.48593, "lon": -122.22568 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.4787, "lon": -122.18734 } }
+        { "type": "main", "position": { "lat": 37.48661, "lon": -122.22675 } },
+        { "type": "main", "position": { "lat": 37.4866, "lon": -122.22681 } }
       ],
-      "detourTime": 280,
-      "detourDistance": 1416,
-      "detourOffset": 8482
+      "detourTime": 0,
+      "detourDistance": 0,
+      "detourOffset": 7236
+    },
+    {
+      "type": "POI",
+      "id": "5dUk9U4o3PdCjHdtADEXeQ",
+      "score": 3.5425708294,
+      "dist": 9608.260888,
+      "query": "pizza",
+      "info": "search:ta:840069019266487-US",
+      "poi": {
+        "name": "Little Caesars",
+        "phone": "+1 650-364-5792",
+        "brands": [{ "name": "Little Caesars" }],
+        "categorySet": [{ "id": 7315036 }],
+        "url": "www.littlecaesars.com",
+        "categories": ["pizza", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "1155",
+        "streetName": "Veterans Boulevard",
+        "municipality": "Redwood City",
+        "neighbourhood": "Downtown Redwood City",
+        "countrySecondarySubdivision": "San Mateo",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "94063",
+        "extendedPostalCode": "94063-2036",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "1155 Veterans Boulevard, Redwood City, CA 94063",
+        "localName": "Redwood City"
+      },
+      "position": { "lat": 37.490637, "lon": -122.222749 },
+      "viewport": {
+        "topLeftPoint": { "lat": 37.49167, "lon": -122.22405 },
+        "btmRightPoint": { "lat": 37.48961, "lon": -122.22145 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 37.48962, "lon": -122.22295 } },
+        { "type": "minor", "position": { "lat": 37.49069, "lon": -122.22274 } },
+        { "type": "main", "position": { "lat": 37.49068, "lon": -122.22264 } }
+      ],
+      "detourTime": 0,
+      "detourDistance": 0,
+      "detourOffset": 7236
     },
     {
       "type": "POI",
@@ -446,8 +501,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
+              { "nameLocale": "en-US", "name": "pizza" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]
@@ -477,8 +532,8 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.46571, "lon": -122.15709 } }
       ],
-      "detourTime": 163,
-      "detourDistance": 858,
+      "detourTime": 0,
+      "detourDistance": 0,
       "detourOffset": 12421
     }
   ]

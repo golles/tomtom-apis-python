@@ -286,6 +286,23 @@ class ChargingStation(DataClassORJSONMixin):
 
 
 @dataclass(kw_only=True)
+class ChargingStationsAvailability(DataClassORJSONMixin):
+    """Represents a charging stations availability."""
+
+    current: Current
+    perPowerLevel: list[PerPowerLevel]
+
+
+@dataclass(kw_only=True)
+class ChargingStationsAvailabilityConnector(DataClassORJSONMixin):
+    """Represents a charging stations availability connector."""
+
+    type_: ConnectorType | None = field(metadata=field_options(alias="type"))
+    total: int
+    availability: ChargingStationsAvailability
+
+
+@dataclass(kw_only=True)
 class Classification(DataClassORJSONMixin):
     """Represents a Classification."""
 
@@ -367,6 +384,17 @@ class CrossStreetLookupParams(BaseParams):
     view: ViewType | None = None
 
 
+@dataclass(kw_only=True)
+class Current(DataClassORJSONMixin):
+    """Represents a current."""
+
+    available: int
+    occupied: int
+    reserved: int
+    unknown: int
+    outOfService: int
+
+
 class CurrentType(StrEnum):
     """Supported current types."""
 
@@ -380,6 +408,23 @@ class DataSources(DataClassORJSONMixin):
     """Represents a DataSources."""
 
     chargingAvailability: IdString
+
+
+@dataclass(kw_only=True)
+class EVChargingStationsAvailabilityParams(BaseParams):
+    """Parameters for the get_ev_charging_stations_availability method."""
+
+    connectorSet: list[ConnectorType] | None = None
+    minPowerKW: float | None = None
+    maxPowerKW: float | None = None
+
+
+@dataclass(kw_only=True)
+class EVChargingStationsAvailabilityResponse(DataClassORJSONMixin):
+    """Represents an EV Charging Stations Availability response."""
+
+    connectors: list[ChargingStationsAvailabilityConnector]
+    chargingAvailability: str
 
 
 class EntityType(StrEnum):
@@ -730,6 +775,18 @@ class PaymentOption(DataClassORJSONMixin):
     """Represents a PaymentOption."""
 
     brands: list[Brand]
+
+
+@dataclass(kw_only=True)
+class PerPowerLevel(DataClassORJSONMixin):
+    """Represents a per power level."""
+
+    powerKW: float
+    available: int
+    occupied: int
+    reserved: int
+    unknown: int
+    outOfService: int
 
 
 @dataclass(kw_only=True)
@@ -1186,7 +1243,7 @@ class SpreadingMode(StrEnum):
 
 
 class StatusType(StrEnum):
-    """Supported current types."""
+    """Supported status types."""
 
     AVAILABLE = "Available"
     RESERVED = "Reserved"

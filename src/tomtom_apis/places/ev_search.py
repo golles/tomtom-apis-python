@@ -3,7 +3,13 @@
 from typing import Self
 
 from ..api import BaseApi
-from .models import EvSearchByIdParams, EvSearchNearbyParams, SearchResponse
+from .models import (
+    EVChargingStationsAvailabilityParams,
+    EVChargingStationsAvailabilityResponse,
+    EvSearchByIdParams,
+    EvSearchNearbyParams,
+    SearchResponse,
+)
 
 
 class EVSearchApi(BaseApi):
@@ -61,3 +67,27 @@ class EVSearchApi(BaseApi):
         )
 
         return await response.deserialize(SearchResponse)
+
+    async def get_ev_charging_stations_availability(
+        self: Self,
+        *,
+        chargingAvailability: str,
+        params: EVChargingStationsAvailabilityParams | None = None,
+    ) -> EVChargingStationsAvailabilityResponse:
+        """Get EV Charging Stations Availability.
+
+        For more information, see: https://developer.tomtom.com/ev-charging-stations-availability-api/documentation/ev-charging-stations-availability-api/ev-charging-stations-availability  # pylint: disable=line-too-long
+
+        Args:
+            chargingAvailability (str): The chargingAvailability ID, previously retrieved from a Search request.
+            params (EVChargingStationsAvailabilityParams | None, optional): Additional parameters for the request. Defaults to None.
+
+        Returns:
+            SearchResponse: Response containing search results.
+        """
+        response = await self.get(
+            endpoint=f"/search/2/chargingAvailability.json?chargingAvailability={chargingAvailability}",
+            params=params,
+        )
+
+        return await response.deserialize(EVChargingStationsAvailabilityResponse)

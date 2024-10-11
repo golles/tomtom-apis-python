@@ -49,6 +49,8 @@ jobs:
         with:
           token: ${{ steps.generate-token.outputs.token }}
           commit-message: Update fixtures
+          committer: pr-2d2[bot] <184697184+pr-2d2[bot]@users.noreply.github.com>
+          author: pr-2d2[bot] <184697184+pr-2d2[bot]@users.noreply.github.com>
           branch: ci/update_fixtures
           delete-branch: true
           title: Update fixtures

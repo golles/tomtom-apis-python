@@ -1,7 +1,7 @@
 {
   "summary": {
     "queryType": "NEARBY",
-    "queryTime": 46,
+    "queryTime": 56,
     "numResults": 10,
     "offset": 0,
     "totalResults": 100,
@@ -151,13 +151,12 @@
     },
     {
       "type": "POI",
-      "id": "3eIRO-qlIwXjIPjGZ5Hmeg",
+      "id": "0Gp0tlrq4pfzl2eTETpCug",
       "score": 99.9695358276,
       "dist": 30.462307,
-      "info": "search:ta:250009005513622-FR",
+      "info": "search:ta:250009005071887-FR",
       "poi": {
-        "name": "YPSIS",
-        "phone": "+33 1 41 31 32 72",
+        "name": "VALORINVEST CONSEIL",
         "categorySet": [{ "id": 9361015 }],
         "categories": ["real estate agents", "shop"],
         "classifications": [
@@ -198,12 +197,13 @@
     },
     {
       "type": "POI",
-      "id": "0Gp0tlrq4pfzl2eTETpCug",
+      "id": "3eIRO-qlIwXjIPjGZ5Hmeg",
       "score": 99.9695358276,
       "dist": 30.462307,
-      "info": "search:ta:250009005071887-FR",
+      "info": "search:ta:250009005513622-FR",
       "poi": {
-        "name": "VALORINVEST CONSEIL",
+        "name": "YPSIS",
+        "phone": "+33 1 41 31 32 72",
         "categorySet": [{ "id": 9361015 }],
         "categories": ["real estate agents", "shop"],
         "classifications": [
@@ -287,12 +287,12 @@
     },
     {
       "type": "POI",
-      "id": "11gZ0mtEhLqy1zFY2BbLMQ",
+      "id": "jh6wv5JX4CjcCdUmv7Mwkw",
       "score": 99.9535522461,
       "dist": 46.45137,
-      "info": "search:ta:250009006825388-FR",
+      "info": "search:ta:250009006508633-FR",
       "poi": {
-        "name": "SC IMMOBILIERE HABITATION MODERN",
+        "name": "SOC CIVILE ROJEPA",
         "categorySet": [{ "id": 9361015 }],
         "categories": ["real estate agents", "shop"],
         "classifications": [
@@ -333,12 +333,12 @@
     },
     {
       "type": "POI",
-      "id": "jh6wv5JX4CjcCdUmv7Mwkw",
+      "id": "11gZ0mtEhLqy1zFY2BbLMQ",
       "score": 99.9535522461,
       "dist": 46.45137,
-      "info": "search:ta:250009006508633-FR",
+      "info": "search:ta:250009006825388-FR",
       "poi": {
-        "name": "SOC CIVILE ROJEPA",
+        "name": "SC IMMOBILIERE HABITATION MODERN",
         "categorySet": [{ "id": 9361015 }],
         "categories": ["real estate agents", "shop"],
         "classifications": [

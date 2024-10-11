@@ -2,8 +2,8 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 147,
-    "numResults": 10,
+    "queryTime": 151,
+    "numResults": 9,
     "offset": 0,
     "totalResults": 100,
     "fuzzyLevel": 1,
@@ -25,8 +25,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -74,8 +74,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -108,53 +108,6 @@
     },
     {
       "type": "POI",
-      "id": "wavFRX5fnoH8pXl6KAI85g",
-      "score": 3.3983545563,
-      "dist": 228.910864,
-      "info": "search:ta:840067000130738-US",
-      "poi": {
-        "name": "4th Street Pizza Company",
-        "categorySet": [{ "id": 7315036 }],
-        "url": "www.4thstpizzaco.com/",
-        "categories": ["pizza", "restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "150",
-        "streetName": "East Santa Clara Street",
-        "municipality": "San Jose",
-        "neighbourhood": "Downtown San Jose",
-        "countrySecondarySubdivision": "Santa Clara",
-        "countrySubdivision": "CA",
-        "countrySubdivisionName": "California",
-        "countrySubdivisionCode": "CA",
-        "postalCode": "95113",
-        "extendedPostalCode": "95113-1901",
-        "countryCode": "US",
-        "country": "United States",
-        "countryCodeISO3": "USA",
-        "freeformAddress": "150 East Santa Clara Street, San Jose, CA 95113",
-        "localName": "San Jose"
-      },
-      "position": { "lat": 37.337329, "lon": -121.887444 },
-      "viewport": {
-        "topLeftPoint": { "lat": 37.33823, "lon": -121.88858 },
-        "btmRightPoint": { "lat": 37.33643, "lon": -121.88631 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 37.33756, "lon": -121.88761 } }
-      ]
-    },
-    {
-      "type": "POI",
       "id": "cDWm8p0nlLFIHUYCO6SAGg",
       "score": 3.3983545563,
       "dist": 228.910864,
@@ -169,8 +122,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -217,8 +170,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -266,8 +219,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -314,8 +267,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -361,8 +314,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -409,8 +362,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -456,8 +409,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]

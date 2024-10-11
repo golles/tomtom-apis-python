@@ -1,0 +1,36 @@
+{
+  "connectors": [
+    {
+      "type": "IEC62196Type2Outlet",
+      "total": 2,
+      "availability": {
+        "current": {
+          "available": 1,
+          "occupied": 1,
+          "reserved": 0,
+          "unknown": 0,
+          "outOfService": 0
+        },
+        "perPowerLevel": [
+          {
+            "powerKW": 22.2,
+            "available": 1,
+            "occupied": 0,
+            "reserved": 0,
+            "unknown": 0,
+            "outOfService": 0
+          },
+          {
+            "powerKW": 50.0,
+            "available": 0,
+            "occupied": 1,
+            "reserved": 0,
+            "unknown": 0,
+            "outOfService": 0
+          }
+        ]
+      }
+    }
+  ],
+  "chargingAvailability": "75502858-a491-36fe-7128-23d400153b86"
+}

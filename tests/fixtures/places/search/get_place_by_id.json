@@ -2,7 +2,7 @@
   "summary": {
     "query": "",
     "queryType": "NON_NEAR",
-    "queryTime": 26,
+    "queryTime": 161,
     "numResults": 1,
     "offset": 0,
     "totalResults": 1,
@@ -23,8 +23,8 @@
           {
             "code": "RAILWAY_STATION",
             "names": [
-              { "nameLocale": "en-US", "name": "international" },
-              { "nameLocale": "en-US", "name": "railway station" }
+              { "nameLocale": "en-US", "name": "railway station" },
+              { "nameLocale": "en-US", "name": "international" }
             ]
           }
         ]

@@ -3,39 +3,31 @@
   "routes": [
     {
       "summary": {
-        "lengthInMeters": 1350,
-        "travelTimeInSeconds": 228,
+        "lengthInMeters": 1147,
+        "travelTimeInSeconds": 133,
         "trafficDelayInSeconds": 0,
         "trafficLengthInMeters": 0,
-        "departureTime": "2024-08-23T09:42:57+02:00",
-        "arrivalTime": "2024-08-23T09:46:44+02:00"
+        "departureTime": "2024-10-12T00:19:09+02:00",
+        "arrivalTime": "2024-10-12T00:21:22+02:00"
       },
       "legs": [
         {
           "summary": {
-            "lengthInMeters": 1350,
-            "travelTimeInSeconds": 228,
+            "lengthInMeters": 1147,
+            "travelTimeInSeconds": 133,
             "trafficDelayInSeconds": 0,
             "trafficLengthInMeters": 0,
-            "departureTime": "2024-08-23T09:42:57+02:00",
-            "arrivalTime": "2024-08-23T09:46:44+02:00"
+            "departureTime": "2024-10-12T00:19:09+02:00",
+            "arrivalTime": "2024-10-12T00:21:22+02:00"
           },
           "points": [
             { "latitude": 52.50931, "longitude": 13.42937 },
             { "latitude": 52.50904, "longitude": 13.42913 },
             { "latitude": 52.50895, "longitude": 13.42904 },
             { "latitude": 52.50868, "longitude": 13.4288 },
-            { "latitude": 52.50875, "longitude": 13.42867 },
-            { "latitude": 52.50903, "longitude": 13.42821 },
-            { "latitude": 52.5093, "longitude": 13.42777 },
-            { "latitude": 52.50931, "longitude": 13.42772 },
-            { "latitude": 52.50931, "longitude": 13.42768 },
-            { "latitude": 52.50929, "longitude": 13.42764 },
-            { "latitude": 52.50927, "longitude": 13.42761 },
-            { "latitude": 52.50918, "longitude": 13.42753 },
-            { "latitude": 52.50869, "longitude": 13.42715 },
-            { "latitude": 52.50802, "longitude": 13.42669 },
-            { "latitude": 52.50774, "longitude": 13.42731 },
+            { "latitude": 52.5084, "longitude": 13.42857 },
+            { "latitude": 52.50816, "longitude": 13.42839 },
+            { "latitude": 52.50791, "longitude": 13.42825 },
             { "latitude": 52.50757, "longitude": 13.42772 },
             { "latitude": 52.50752, "longitude": 13.42785 },
             { "latitude": 52.50742, "longitude": 13.42809 },
@@ -65,13 +57,7 @@
       "sections": [
         {
           "startPointIndex": 0,
-          "endPointIndex": 3,
-          "sectionType": "TRAVEL_MODE",
-          "travelMode": "other"
-        },
-        {
-          "startPointIndex": 3,
-          "endPointIndex": 37,
+          "endPointIndex": 29,
           "sectionType": "TRAVEL_MODE",
           "travelMode": "car"
         }

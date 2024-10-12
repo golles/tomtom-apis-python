@@ -2,7 +2,7 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 49,
+    "queryTime": 44,
     "numResults": 10,
     "offset": 0,
     "totalResults": 40,
@@ -23,8 +23,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -70,8 +70,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -117,8 +117,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -162,8 +162,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -209,8 +209,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -256,8 +256,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -302,8 +302,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -347,8 +347,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -390,8 +390,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -436,8 +436,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]

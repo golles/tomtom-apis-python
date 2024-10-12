@@ -42,4 +42,4 @@ runs:
     - name: Get email
       id: email
       shell: bash
-      run: echo "string=${{ steps.app-id.outputs.id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com>" >> "$GITHUB_OUTPUT"
+      run: echo "string=${{ steps.app-id.outputs.id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com" >> "$GITHUB_OUTPUT"

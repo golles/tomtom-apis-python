@@ -23,6 +23,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Update fixtures
     steps:
+      - name: Check out code from GitHub
+        uses: actions/checkout@v4
+
       - name: Setup app
         id: app
         if: github.event.inputs.create_pr == 'true'
@@ -30,9 +33,6 @@ jobs:
         with:
           app-id: ${{ secrets.PR2D2_APP_ID }}
           private-key: ${{ secrets.PR2D2_APP_PRIVATE_KEY }}
-
-      - name: Check out code from GitHub
-        uses: actions/checkout@v4
 
       - name: Setup environment
         uses: ./.github/actions/setup-env

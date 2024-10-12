@@ -23,8 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Update fixtures
     steps:
-      - uses: actions/create-github-app-token@v1
-        id: generate-token
+      - name: Setup app
+        id: app
+        if: github.event.inputs.create_pr == 'true'
+        uses: ./.github/actions/setup-app
         with:
           app-id: ${{ secrets.PR2D2_APP_ID }}
           private-key: ${{ secrets.PR2D2_APP_PRIVATE_KEY }}
@@ -47,10 +49,10 @@ jobs:
         if: github.event.inputs.create_pr == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ steps.generate-token.outputs.token }}
+          token: ${{ steps.app.outputs.token }}
           commit-message: Update fixtures
-          committer: pr-2d2[bot] <184697184+pr-2d2[bot]@users.noreply.github.com>
-          author: pr-2d2[bot] <184697184+pr-2d2[bot]@users.noreply.github.com>
+          committer: ${{ steps.app.outputs.name }} <${{ steps.app.outputs.email }}>
+          author: ${{ steps.app.outputs.name }} <${{ steps.app.outputs.email }}>
           branch: ci/update_fixtures
           delete-branch: true
           title: Update fixtures

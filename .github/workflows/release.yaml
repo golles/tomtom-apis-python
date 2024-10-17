@@ -10,8 +10,8 @@ env:
   DEFAULT_NODE: "20"
 
 jobs:
-  pypi-publish:
-    name: Upload release to PyPI
+  release:
+    name: Release to PyPI
     runs-on: ubuntu-latest
     environment:
       name: pypi
@@ -29,7 +29,7 @@ jobs:
           python-version: ${{ env.DEFAULT_PYTHON }}
           node-version: ${{ env.DEFAULT_NODE }}
 
-      - name: Set version
+      - name: Set version from tag
         run: |
           version="${{ github.ref_name }}"
           version=${version#v}
@@ -38,12 +38,20 @@ jobs:
       - name: Build project
         run: poetry build
 
-      - name: Publish distribution to PyPI
+      - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
 
-      - name: Release
+      - name: Setup app
+        id: app
+        uses: ./.github/actions/setup-app
+        with:
+          app-id: ${{ secrets.PR2D2_APP_ID }}
+          private-key: ${{ secrets.PR2D2_APP_PRIVATE_KEY }}
+
+      - name: Make Github release
         uses: softprops/action-gh-release@v2
         with:
+          token: ${{ steps.app.outputs.token }}
           generate_release_notes: true
           files: |
             dist/*.tar.gz

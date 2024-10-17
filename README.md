@@ -7,45 +7,49 @@
 [![GitHub repo stars][stars_badge]][stars_link]
 [![Buy me a coffee][buymecoffee_badge]][buymecoffee_link]
 
-Asynchronous Python client for the TomTom APIs
+An asynchronous Python client for accessing TomTom APIs with full type support.
 
-## API Coverage
+Easily integrate TomTom's services into your Python application using this client, and enjoy enhanced type safety and autocomplete support.
 
-This section provides an overview of the APIs implemented by the client and their typing status.
+For more details about the APIs, visit the [TomTom Developer Portal](https://developer.tomtom.com), where you can sign up and get your API key.
+
+## Supported APIs
+
+The following section outlines the APIs currently supported by this client.
 
 ### Automotive APIs
 
 | API                      | Notes           |
 | ------------------------ | --------------- |
 | Autostream               | Not implemented |
-| Fuel Prices API          | Typed           |
-| Parking Availability API | Typed           |
+| Fuel Prices API          |                 |
+| Parking Availability API |                 |
 
 ### Maps API
 
-| API             | Notes                                                                            |
-| --------------- | -------------------------------------------------------------------------------- |
-| Map Display API | Typed, `WMS`, `WMTS`, `Map Styles` and `Map Styles v2` have not been implemented |
+| API             | Notes                                                                     |
+| --------------- | ------------------------------------------------------------------------- |
+| Map Display API | `WMS`, `WMTS`, `Map Styles` and `Map Styles v2` have not been implemented |
 
 ### Places APIs
 
 | API                   | Notes |
 | --------------------- | ----- |
-| Batch Search API      | Typed |
-| EV Search API         | Typed |
-| Geocoding API         | Typed |
-| Premium Geocoding API | Typed |
-| Reverse Geocoding API | Typed |
-| Search API            | Typed |
+| Batch Search API      |       |
+| EV Search API         |       |
+| Geocoding API         |       |
+| Premium Geocoding API |       |
+| Reverse Geocoding API |       |
+| Search API            |       |
 
 ### Routing APIs
 
 | API                          | Notes           |
 | ---------------------------- | --------------- |
-| Long Distance EV Routing API | Typed           |
+| Long Distance EV Routing API |                 |
 | Matrix Routing v2 API        | Not implemented |
-| Routing API                  | Typed           |
-| Waypoint Optimization API    | Typed           |
+| Routing API                  |                 |
+| Waypoint Optimization API    |                 |
 
 ### Tracking & Logistics APIs
 
@@ -58,14 +62,14 @@ This section provides an overview of the APIs implemented by the client and thei
 
 ### Traffic APIs
 
-| API                      | Notes                                                             |
-| ------------------------ | ----------------------------------------------------------------- |
-| Intermediate Traffic API | Not implemented                                                   |
-| Junction Analytics API   | Not implemented                                                   |
-| O/D Analytics API        | Not implemented                                                   |
-| Route Monitoring API     | Not implemented                                                   |
-| Traffic API              | Typed, `Map Styles` and `Map Styles v2` have not been implemented |
-| Traffic Stats API        | Not implemented                                                   |
+| API                      | Notes                                                      |
+| ------------------------ | ---------------------------------------------------------- |
+| Intermediate Traffic API | Not implemented                                            |
+| Junction Analytics API   | Not implemented                                            |
+| O/D Analytics API        | Not implemented                                            |
+| Route Monitoring API     | Not implemented                                            |
+| Traffic API              | `Map Styles` and `Map Styles v2` have not been implemented |
+| Traffic Stats API        | Not implemented                                            |
 
 ## Installation
 

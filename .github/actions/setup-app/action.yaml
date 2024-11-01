@@ -1,0 +1,45 @@
+name: Setup app
+description: This action sets up an app for the given id and private key and returns id, name, email and token
+
+inputs:
+  app-id:
+    description: GitHub app ID.
+    required: true
+  private-key:
+    description: GitHub app private key.
+    required: true
+
+outputs:
+  id:
+    description: App user id
+    value: ${{ steps.app-id.outputs.id }}
+  name:
+    description: App name
+    value: ${{ steps.app-token.outputs.app-slug }}[bot]
+  email:
+    description: App email
+    value: ${{ steps.email.outputs.string }}
+  token:
+    description: App token
+    value: ${{ steps.app-token.outputs.token }}
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/create-github-app-token@v1
+      id: app-token
+      with:
+        app-id: ${{ inputs.app-id }}
+        private-key: ${{ inputs.private-key }}
+
+    - name: Get app id
+      id: app-id
+      shell: bash
+      run: echo "id=$(gh api "/users/${{ steps.app-token.outputs.app-slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
+      env:
+        GH_TOKEN: ${{ steps.app-token.outputs.token }}
+
+    - name: Get email
+      id: email
+      shell: bash
+      run: echo "string=${{ steps.app-id.outputs.id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com" >> "$GITHUB_OUTPUT"

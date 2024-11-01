@@ -26,6 +26,14 @@ jobs:
       - name: Check out code from GitHub
         uses: actions/checkout@v4
 
+      - name: Setup app
+        id: app
+        if: github.event.inputs.create_pr == 'true'
+        uses: ./.github/actions/setup-app
+        with:
+          app-id: ${{ secrets.PR2D2_APP_ID }}
+          private-key: ${{ secrets.PR2D2_APP_PRIVATE_KEY }}
+
       - name: Setup environment
         uses: ./.github/actions/setup-env
         with:
@@ -41,9 +49,10 @@ jobs:
         if: github.event.inputs.create_pr == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
+          token: ${{ steps.app.outputs.token }}
           commit-message: Update fixtures
-          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          committer: ${{ steps.app.outputs.name }} <${{ steps.app.outputs.email }}>
+          author: ${{ steps.app.outputs.name }} <${{ steps.app.outputs.email }}>
           branch: ci/update_fixtures
           delete-branch: true
           title: Update fixtures

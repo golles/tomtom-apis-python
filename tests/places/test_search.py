@@ -245,7 +245,7 @@ async def test_deserialization_post_search_along_route(search_api: SearchApi) ->
     assert response
     assert isinstance(response, SearchResponse)
     assert response.results
-    assert len(response.results) > 5
+    assert len(response.results) > 3
 
 
 @pytest.mark.usefixtures("json_response")

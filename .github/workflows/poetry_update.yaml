@@ -1,0 +1,64 @@
+name: Update dependecies
+
+on: # yamllint disable-line rule:truthy
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 1" # Every monday at UTC midnight.
+
+env:
+  DEFAULT_PYTHON: "3.12"
+  DEFAULT_NODE: "20"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update_dependecies:
+    runs-on: ubuntu-latest
+    name: Update dependecies with Poetry
+    steps:
+      - name: Check out code from GitHub
+        uses: actions/checkout@v4
+
+      - name: Setup app
+        id: app
+        uses: ./.github/actions/setup-app
+        with:
+          app-id: ${{ secrets.PR2D2_APP_ID }}
+          private-key: ${{ secrets.PR2D2_APP_PRIVATE_KEY }}
+
+      - name: Setup environment
+        uses: ./.github/actions/setup-env
+        with:
+          python-version: ${{ env.DEFAULT_PYTHON }}
+          node-version: ${{ env.DEFAULT_NODE }}
+
+      - name: Run Poetry update and create PR body
+        run: |
+          # Capture the output of `poetry update` and process it.
+          poetry update | tee pr_body.md
+
+          # Remove the first two lines and the last line, and save back to the same file.
+          sed -i '1,2d;$d' pr_body.md
+
+          # Prepend the title to the file.
+          sed -i '1i# Dependency Updates' pr_body.md
+
+          # Append the Full log link to the file.
+          echo "Full log: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> pr_body.md
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ steps.app.outputs.token }}
+          commit-message: Update dependecies
+          committer: ${{ steps.app.outputs.name }} <${{ steps.app.outputs.email }}>
+          author: ${{ steps.app.outputs.name }} <${{ steps.app.outputs.email }}>
+          branch: ci/dependecies
+          delete-branch: true
+          title: Update dependecies
+          body-path: pr_body.md
+          labels: |
+            dependencies
+            python

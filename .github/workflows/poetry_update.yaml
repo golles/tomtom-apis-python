@@ -37,16 +37,16 @@ jobs:
       - name: Run Poetry update and create PR body
         run: |
           # Capture the output of `poetry update` and process it.
-          poetry update | tee pr_body.md
+          poetry update | tee /tmp/pr_body.md
 
           # Remove the first two lines and the last line, and save back to the same file.
-          sed -i '1,2d;$d' pr_body.md
+          sed -i '1,2d;$d' /tmp/pr_body.md
 
           # Prepend the title to the file.
-          sed -i '1i# Dependency Updates' pr_body.md
+          sed -i '1i# Dependency Updates' /tmp/pr_body.md
 
           # Append the Full log link to the file.
-          echo "Full log: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> pr_body.md
+          echo "Full log: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> /tmp/pr_body.md
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v7
@@ -58,7 +58,7 @@ jobs:
           branch: ci/dependecies
           delete-branch: true
           title: Update dependecies
-          body-path: pr_body.md
+          body-path: /tmp/pr_body.md
           labels: |
             dependencies
             python

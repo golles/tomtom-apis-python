@@ -8,7 +8,7 @@ import uuid
 from dataclasses import dataclass, field
 from importlib import metadata
 from types import TracebackType
-from typing import Any, Literal, Self, TypeVar
+from typing import Any, Literal, Self
 
 import orjson
 from aiohttp import ClientResponse, ClientTimeout
@@ -102,8 +102,6 @@ class Response:
         bytes() -> bytes: Return the response as bytes.
     """
 
-    T = TypeVar("T", bound=DataClassORJSONMixin)
-
     def __init__(self: Self, response: ClientResponse) -> None:
         """Initialize the Response object.
 
@@ -114,7 +112,7 @@ class Response:
         self.headers: dict[str, str] = dict(response.headers)
         self.status = response.status
 
-    async def deserialize(self: Self, model: type[T]) -> T:
+    async def deserialize[T: DataClassORJSONMixin](self: Self, model: type[T]) -> T:
         """Deserialize the response to the given model.
 
         Args:

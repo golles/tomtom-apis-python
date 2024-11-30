@@ -33,8 +33,8 @@ async def test_deserialization_get_geocode(geocoding_api: GeocodingApi) -> None:
     assert response.results[0].type
     assert response.results[0].type == ResultType.POINT_ADDRESS
     assert response.results[0].position
-    assert response.results[0].position.lat == 52.37727
-    assert response.results[0].position.lon == 4.90943
+    assert round(response.results[0].position.lat, 5) == 52.37727
+    assert round(response.results[0].position.lon, 5) == 4.90943
 
 
 @pytest.mark.usefixtures("json_response")
@@ -58,5 +58,5 @@ async def test_deserialization_get_structured_geocode(geocoding_api: GeocodingAp
     assert response.results[0].type
     assert response.results[0].type == ResultType.POINT_ADDRESS
     assert response.results[0].position
-    assert response.results[0].position.lat == 52.37727
-    assert response.results[0].position.lon == 4.90943
+    assert round(response.results[0].position.lat, 5) == 52.37727
+    assert round(response.results[0].position.lon, 5) == 4.90943

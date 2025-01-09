@@ -60,7 +60,7 @@ async def process_fixture(session: aiohttp.ClientSession, api_entry: dict, api_k
         post_data = fixture.get("data")
 
         fixture_path = f"{FIXTURE_PATH}/{fixture_path}"
-        full_url = f"{BASE_URL}/{url.replace("{{TT_KEY}}", api_key)}"
+        full_url = f"{BASE_URL}/{url.replace('{{TT_KEY}}', api_key)}"
 
         if method and url and fixture_path:
             content = await make_request(session, method, full_url, post_data)

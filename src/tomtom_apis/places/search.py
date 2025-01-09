@@ -312,7 +312,7 @@ class SearchApi(BaseApi):
             AdditionalDataResponse: The response containing the additional data for the specified geometries.
         """
         response = await self.get(
-            endpoint=f"/search/2/additionalData.json?geometries={",".join(geometries)}",
+            endpoint=f"/search/2/additionalData.json?geometries={','.join(geometries)}",
             params=params,
         )
 

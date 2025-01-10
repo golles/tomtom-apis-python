@@ -64,6 +64,10 @@
   "remoteUser": "vscode",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/devcontainers-contrib/features/poetry:2": {}
+    "ghcr.io/devcontainers-contrib/features/poetry:2": {},
+    "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {
+      "jqVersion": "latest",
+      "yqVersion": "latest"
+    }
   }
 }

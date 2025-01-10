@@ -30,6 +30,12 @@
       "type": "shell",
       "command": "poetry run python scripts/update_test_fixtures.py",
       "problemMatcher": []
+    },
+    {
+      "label": "Run CI checks",
+      "type": "shell",
+      "command": "poetry run ./scripts/ci_checks_local.sh",
+      "problemMatcher": []
     }
   ]
 }

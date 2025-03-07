@@ -14,15 +14,11 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Setup Poetry
-      shell: bash
-      run: pipx install poetry
-
-    - name: Setup Python
-      uses: actions/setup-python@v5
+    - name: Setup Python and uv
+      uses: astral-sh/setup-uv@v5
       with:
         python-version: ${{ inputs.python-version }}
-        cache: poetry
+        enable-cache: true
 
     - name: Setup Node
       uses: actions/setup-node@v4

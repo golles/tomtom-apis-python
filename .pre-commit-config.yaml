@@ -30,7 +30,7 @@ repos:
       - id: sort-models
         name: sort project model files
         language: system
-        entry: find src -name models.py -exec poetry run python scripts/sort_models.py {} \;
+        entry: find src -name models.py -exec uv run scripts/sort_models.py {} \;
         pass_filenames: false
 
   # CI checks
@@ -40,56 +40,50 @@ repos:
     hooks:
       - id: mypy
         name: mypy
-        entry: poetry run mypy
+        entry: uv run mypy
         language: system
         types: [python]
         require_serial: true
 
-      - id: poetry-check
-        name: poetry check
-        entry: poetry check
-        language: system
-        pass_filenames: false
-
-      - id: poetry-install
-        name: poetry install
-        entry: poetry install
-        language: system
-        pass_filenames: false
-
       - id: prettier
         name: prettier
-        entry: prettier --write .
+        entry: npm run prettier -- --write .
         language: system
         pass_filenames: false
 
       - id: pylint
         name: pylint
-        entry: poetry run pylint src tests
+        entry: uv run pylint src tests
         language: system
         types: [python]
         require_serial: true
 
       - id: ruff-check
         name: ruff linter
-        entry: poetry run ruff check --fix
+        entry: uv run ruff check --fix
         language: system
         types: [python]
 
       - id: ruff-lint
         name: ruff formatter
-        entry: poetry run ruff format --check .
+        entry: uv run ruff format --check .
         language: system
         types: [python]
 
       - id: shellcheck
         name: shellcheck
-        entry: poetry run shellcheck
+        entry: uv run shellcheck
         language: system
         types: [shell]
 
+      - id: uv-lock
+        name: uv lock
+        entry: uv lock --check
+        language: system
+        pass_filenames: false
+
       - id: yamllint
         name: yamllint
-        entry: poetry run yamllint
+        entry: uv run yamllint
         language: system
         types: [yaml]

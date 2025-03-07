@@ -2,20 +2,114 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 58,
+    "queryTime": 72,
     "numResults": 10,
     "offset": 0,
-    "totalResults": 40,
+    "totalResults": 19,
     "fuzzyLevel": 1
   },
   "results": [
     {
       "type": "POI",
+      "id": "cfzndTesY-5igm8OO1xHmw",
+      "score": 2.5746314526,
+      "info": "search:ta:840069005708438-US",
+      "poi": {
+        "name": "Mama Mia Pizza",
+        "phone": "+1 415-400-4900",
+        "categorySet": [{ "id": 7315036 }],
+        "url": "mamamiapizzas.com/",
+        "categories": ["pizza", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "3839",
+        "streetName": "Mission Street",
+        "municipality": "San Francisco",
+        "neighbourhood": "Bernal Heights",
+        "countrySecondarySubdivision": "San Francisco",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "94110",
+        "extendedPostalCode": "94110-5831",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "3839 Mission Street, San Francisco, CA 94110",
+        "localName": "San Francisco"
+      },
+      "position": { "lat": 37.73552, "lon": -122.42436 },
+      "viewport": {
+        "topLeftPoint": { "lat": 37.73642, "lon": -122.4255 },
+        "btmRightPoint": { "lat": 37.73462, "lon": -122.42322 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 37.73561, "lon": -122.42462 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "52uKasgC7hfhm84D9UQPZg",
+      "score": 2.5746164322,
+      "info": "search:ta:840066001074442-US",
+      "poi": {
+        "name": "Golden State Pizza & Grill",
+        "phone": "+1 415-780-0778",
+        "categorySet": [{ "id": 7315036 }],
+        "categories": ["pizza", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "3349",
+        "streetName": "Mission Street",
+        "municipality": "San Francisco",
+        "neighbourhood": "Bernal Heights",
+        "countrySecondarySubdivision": "San Francisco",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "94110",
+        "extendedPostalCode": "94110-5008",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "3349 Mission Street, San Francisco, CA 94110",
+        "localName": "San Francisco"
+      },
+      "position": { "lat": 37.743181, "lon": -122.421133 },
+      "viewport": {
+        "topLeftPoint": { "lat": 37.74408, "lon": -122.42227 },
+        "btmRightPoint": { "lat": 37.74228, "lon": -122.42 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 37.74317, "lon": -122.42144 } }
+      ]
+    },
+    {
+      "type": "POI",
       "id": "Ef5UiuhYePfTZ_N-VkjpyA",
-      "score": 2.5747096539,
+      "score": 2.5746016502,
       "info": "search:ta:840069019717341-US",
       "poi": {
         "name": "All Good Pizza",
+        "phone": "+1 415-933-9384",
         "categorySet": [{ "id": 7315036 }],
         "url": "www.allgoodpizza.com",
         "categories": ["pizza", "restaurant"],
@@ -23,8 +117,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -46,208 +140,23 @@
         "freeformAddress": "1605 Jerrold Avenue, San Francisco, CA 94124",
         "localName": "San Francisco"
       },
-      "position": { "lat": 37.738844, "lon": -122.389794 },
+      "position": { "lat": 37.738645, "lon": -122.38978 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.73974, "lon": -122.39093 },
-        "btmRightPoint": { "lat": 37.73794, "lon": -122.38866 }
+        "topLeftPoint": { "lat": 37.73954, "lon": -122.39092 },
+        "btmRightPoint": { "lat": 37.73775, "lon": -122.38864 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.73897, "lon": -122.3897 } },
-        { "type": "main", "position": { "lat": 37.73896, "lon": -122.38969 } }
-      ]
-    },
-    {
-      "type": "POI",
-      "id": "GSGED_9NUKNFcyZAe4zNrA",
-      "score": 2.5746400356,
-      "info": "search:ta:840069006941877-US",
-      "poi": {
-        "name": "Cecilia's Pizza & Restaurant",
-        "phone": "+1 415-821-5852",
-        "categorySet": [{ "id": 7315036 }],
-        "categories": ["pizza", "restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "3515",
-        "streetName": "Mission Street",
-        "municipality": "San Francisco",
-        "neighbourhood": "Bernal Heights",
-        "countrySecondarySubdivision": "San Francisco",
-        "countrySubdivision": "CA",
-        "countrySubdivisionName": "California",
-        "countrySubdivisionCode": "CA",
-        "postalCode": "94110",
-        "extendedPostalCode": "94110-5429",
-        "countryCode": "US",
-        "country": "United States",
-        "countryCodeISO3": "USA",
-        "freeformAddress": "3515 Mission Street, San Francisco, CA 94110",
-        "localName": "San Francisco"
-      },
-      "position": { "lat": 37.740686, "lon": -122.422692 },
-      "viewport": {
-        "topLeftPoint": { "lat": 37.74159, "lon": -122.42383 },
-        "btmRightPoint": { "lat": 37.73979, "lon": -122.42155 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 37.7408, "lon": -122.42298 } }
-      ]
-    },
-    {
-      "type": "POI",
-      "id": "wF7rhG2fTOsZKZBkZAkXqg",
-      "score": 2.5745954514,
-      "info": "search:ta:840067000013676-US",
-      "poi": {
-        "name": "Vega",
-        "phone": "+1 415-285-6000",
-        "categorySet": [{ "id": 7315036 }],
-        "url": "www.vegapizzasf.com",
-        "categories": ["pizza", "restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "419",
-        "streetName": "Cortland Avenue",
-        "municipality": "San Francisco",
-        "neighbourhood": "Bernal Heights",
-        "countrySecondarySubdivision": "San Francisco",
-        "countrySubdivision": "CA",
-        "countrySubdivisionName": "California",
-        "countrySubdivisionCode": "CA",
-        "postalCode": "94110",
-        "extendedPostalCode": "94110-5537",
-        "countryCode": "US",
-        "country": "United States",
-        "countryCodeISO3": "USA",
-        "freeformAddress": "419 Cortland Avenue, San Francisco, CA 94110",
-        "localName": "San Francisco"
-      },
-      "position": { "lat": 37.73934, "lon": -122.41742 },
-      "viewport": {
-        "topLeftPoint": { "lat": 37.74024, "lon": -122.41856 },
-        "btmRightPoint": { "lat": 37.73844, "lon": -122.41628 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 37.73916, "lon": -122.41744 } }
-      ]
-    },
-    {
-      "type": "POI",
-      "id": "lpf_ODjDWlWKfksCf0lmTQ",
-      "score": 2.5745911598,
-      "info": "search:ta:840067000481387-US",
-      "poi": {
-        "name": "All Nite Pizza",
-        "categorySet": [{ "id": 7315036 }],
-        "categories": ["pizza", "restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "5155",
-        "streetName": "3rd Street",
-        "municipality": "San Francisco",
-        "neighbourhood": "Bayview",
-        "countrySecondarySubdivision": "San Francisco",
-        "countrySubdivision": "CA",
-        "countrySubdivisionName": "California",
-        "countrySubdivisionCode": "CA",
-        "postalCode": "94124",
-        "extendedPostalCode": "94124-2355",
-        "countryCode": "US",
-        "country": "United States",
-        "countryCodeISO3": "USA",
-        "freeformAddress": "5155 3rd Street, San Francisco, CA 94124",
-        "localName": "San Francisco"
-      },
-      "position": { "lat": 37.731375, "lon": -122.391656 },
-      "viewport": {
-        "topLeftPoint": { "lat": 37.73227, "lon": -122.39279 },
-        "btmRightPoint": { "lat": 37.73048, "lon": -122.39052 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 37.73135, "lon": -122.39182 } }
-      ]
-    },
-    {
-      "type": "POI",
-      "id": "gs7iUaeuAJ77e9CgSmrrbA",
-      "score": 2.5745904446,
-      "info": "search:ta:840061002443585-US",
-      "poi": {
-        "name": "Cybelle's Pizza Restaurant",
-        "phone": "+1 415-285-3211",
-        "categorySet": [{ "id": 7315036 }],
-        "url": "cybellespizzasf.com",
-        "categories": ["pizza", "restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "3782",
-        "streetName": "24th Street",
-        "municipality": "San Francisco",
-        "neighbourhood": "Noe Valley",
-        "countrySecondarySubdivision": "San Francisco",
-        "countrySubdivision": "CA",
-        "countrySubdivisionName": "California",
-        "countrySubdivisionCode": "CA",
-        "postalCode": "94114",
-        "extendedPostalCode": "94114-3922",
-        "countryCode": "US",
-        "country": "United States",
-        "countryCodeISO3": "USA",
-        "freeformAddress": "3782 24th Street, San Francisco, CA 94114",
-        "localName": "San Francisco"
-      },
-      "position": { "lat": 37.751835, "lon": -122.427146 },
-      "viewport": {
-        "topLeftPoint": { "lat": 37.75273, "lon": -122.42828 },
-        "btmRightPoint": { "lat": 37.75094, "lon": -122.42601 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 37.75171, "lon": -122.42713 } }
+        { "type": "main", "position": { "lat": 37.73893, "lon": -122.38962 } }
       ]
     },
     {
       "type": "POI",
       "id": "Jdg53M_n2zMX4H9_JMUTsA",
-      "score": 2.574575901,
+      "score": 2.5745644569,
       "info": "search:ta:840069002602194-US",
       "poi": {
-        "name": "Round Table Pizza Mission Street",
+        "name": "Round Table Pizza",
+        "phone": "+1 415-586-1200",
         "brands": [{ "name": "Round Table Pizza" }],
         "categorySet": [{ "id": 7315036 }],
         "url": "www.roundtablepizza.com/RTP/HI/",
@@ -256,8 +165,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -279,37 +188,39 @@
         "freeformAddress": "4523 Mission Street, San Francisco, CA 94112",
         "localName": "San Francisco"
       },
-      "position": { "lat": 37.725725, "lon": -122.433676 },
+      "position": { "lat": 37.72577, "lon": -122.43376 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.72662, "lon": -122.43481 },
-        "btmRightPoint": { "lat": 37.72483, "lon": -122.43254 }
+        "topLeftPoint": { "lat": 37.72667, "lon": -122.4349 },
+        "btmRightPoint": { "lat": 37.72487, "lon": -122.43262 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.72585, "lon": -122.43393 } }
+        { "type": "main", "position": { "lat": 37.72588, "lon": -122.4339 } }
       ]
     },
     {
       "type": "POI",
-      "id": "pxoZLWa4_0bEfZK55cjiIw",
-      "score": 2.5745744705,
-      "info": "search:ta:840067000190627-US",
+      "id": "ydTaTOxT--eNCMzX-6aJKQ",
+      "score": 2.5745351315,
+      "info": "search:ta:840067000482396-US",
       "poi": {
-        "name": "Golden State Pizza & Grill",
+        "name": "Round Table Pizza",
+        "phone": "+1 415-468-7100",
+        "brands": [{ "name": "Round Table Pizza" }],
         "categorySet": [{ "id": 7315036 }],
-        "url": "orderpizzajoint.com/",
+        "url": "ordering.roundtablepizza.com/site/rt488",
         "categories": ["pizza", "restaurant"],
         "classifications": [
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
       },
       "address": {
-        "streetNumber": "2414",
+        "streetNumber": "2660",
         "streetName": "San Bruno Avenue",
         "municipality": "San Francisco",
         "neighbourhood": "Portola",
@@ -318,132 +229,93 @@
         "countrySubdivisionName": "California",
         "countrySubdivisionCode": "CA",
         "postalCode": "94134",
-        "extendedPostalCode": "94134-1503",
+        "extendedPostalCode": "94134-1500",
         "countryCode": "US",
         "country": "United States",
         "countryCodeISO3": "USA",
-        "freeformAddress": "2414 San Bruno Avenue, San Francisco, CA 94134",
+        "freeformAddress": "2660 San Bruno Avenue, San Francisco, CA 94134",
         "localName": "San Francisco"
       },
-      "position": { "lat": 37.731941, "lon": -122.405756 },
+      "position": { "lat": 37.72801, "lon": -122.403917 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.73284, "lon": -122.40689 },
-        "btmRightPoint": { "lat": 37.73104, "lon": -122.40462 }
+        "topLeftPoint": { "lat": 37.72891, "lon": -122.40505 },
+        "btmRightPoint": { "lat": 37.72711, "lon": -122.40278 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.73203, "lon": -122.40543 } }
+        { "type": "main", "position": { "lat": 37.72798, "lon": -122.40375 } },
+        { "type": "main", "position": { "lat": 37.72807, "lon": -122.40378 } }
       ]
     },
     {
       "type": "POI",
-      "id": "XD9hG78RKCE82R0cScieZA",
-      "score": 2.5745704174,
-      "info": "search:ta:840067000524400-US",
+      "id": "lpf_ODjDWlWKfksCf0lmTQ",
+      "score": 2.5745270252,
+      "info": "search:ta:840067000481387-US",
       "poi": {
-        "name": "Toto's Pizzeria & Restaurant",
+        "name": "All Nite Pizza",
+        "phone": "+1 415-855-7010",
         "categorySet": [{ "id": 7315036 }],
         "categories": ["pizza", "restaurant"],
         "classifications": [
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
       },
       "address": {
+        "streetNumber": "5155",
+        "streetName": "3rd Street",
         "municipality": "San Francisco",
-        "neighbourhood": "Silver Terrace",
+        "neighbourhood": "Bayview",
         "countrySecondarySubdivision": "San Francisco",
         "countrySubdivision": "CA",
         "countrySubdivisionName": "California",
         "countrySubdivisionCode": "CA",
         "postalCode": "94124",
+        "extendedPostalCode": "94124-2355",
         "countryCode": "US",
         "country": "United States",
         "countryCodeISO3": "USA",
-        "freeformAddress": "San Francisco, CA 94124",
+        "freeformAddress": "5155 3rd Street, San Francisco, CA 94124",
         "localName": "San Francisco"
       },
-      "position": { "lat": 37.736819, "lon": -122.405298 },
+      "position": { "lat": 37.731398, "lon": -122.391689 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.73772, "lon": -122.40644 },
-        "btmRightPoint": { "lat": 37.73592, "lon": -122.40416 }
+        "topLeftPoint": { "lat": 37.7323, "lon": -122.39283 },
+        "btmRightPoint": { "lat": 37.7305, "lon": -122.39055 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.73703, "lon": -122.40525 } }
+        { "type": "main", "position": { "lat": 37.73143, "lon": -122.39179 } },
+        { "type": "main", "position": { "lat": 37.73135, "lon": -122.39182 } }
       ]
     },
     {
       "type": "POI",
-      "id": "qcDeakqKFX1QqiUMX_KdRg",
-      "score": 2.5745666027,
-      "info": "search:ta:840069005734516-US",
+      "id": "CdNa38eCRJrLbzRtnPPwjA",
+      "score": 2.57452631,
+      "info": "search:ta:840067000481909-US",
       "poi": {
-        "name": "Montella Pizzeria",
-        "phone": "+1 415-642-1160",
+        "name": "Pizzahacker",
+        "phone": "+1 415-759-3060",
         "categorySet": [{ "id": 7315036 }],
+        "url": "www.thepizzahacker.com/",
         "categories": ["pizza", "restaurant"],
         "classifications": [
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
       },
       "address": {
-        "streetNumber": "3161",
-        "streetName": "24th Street",
-        "municipality": "San Francisco",
-        "neighbourhood": "Mission",
-        "countrySecondarySubdivision": "San Francisco",
-        "countrySubdivision": "CA",
-        "countrySubdivisionName": "California",
-        "countrySubdivisionCode": "CA",
-        "postalCode": "94110",
-        "extendedPostalCode": "94110-4034",
-        "countryCode": "US",
-        "country": "United States",
-        "countryCodeISO3": "USA",
-        "freeformAddress": "3161 24th Street, San Francisco, CA 94110",
-        "localName": "San Francisco"
-      },
-      "position": { "lat": 37.752335, "lon": -122.415303 },
-      "viewport": {
-        "topLeftPoint": { "lat": 37.75323, "lon": -122.41644 },
-        "btmRightPoint": { "lat": 37.75144, "lon": -122.41417 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 37.75243, "lon": -122.41531 } }
-      ]
-    },
-    {
-      "type": "POI",
-      "id": "Ngde8QWEaKjBi3hTbghrHg",
-      "score": 2.5745649338,
-      "info": "search:ta:840067000482771-US",
-      "poi": {
-        "name": "Zante's Indin Pizza & Indian Cuisine",
-        "categorySet": [{ "id": 7315036 }],
-        "url": "orderzantepizzanindiancuisine.com",
-        "categories": ["pizza", "restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "3489",
+        "streetNumber": "3299",
         "streetName": "Mission Street",
         "municipality": "San Francisco",
         "neighbourhood": "Bernal Heights",
@@ -452,20 +324,163 @@
         "countrySubdivisionName": "California",
         "countrySubdivisionCode": "CA",
         "postalCode": "94110",
-        "extendedPostalCode": "94110-5438",
+        "extendedPostalCode": "94110-5006",
         "countryCode": "US",
         "country": "United States",
         "countryCodeISO3": "USA",
-        "freeformAddress": "3489 Mission Street, San Francisco, CA 94110",
+        "freeformAddress": "3299 Mission Street, San Francisco, CA 94110",
         "localName": "San Francisco"
       },
-      "position": { "lat": 37.741087, "lon": -122.422538 },
+      "position": { "lat": 37.744136, "lon": -122.420647 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.74199, "lon": -122.42368 },
-        "btmRightPoint": { "lat": 37.74019, "lon": -122.4214 }
+        "topLeftPoint": { "lat": 37.74504, "lon": -122.42178 },
+        "btmRightPoint": { "lat": 37.74324, "lon": -122.41951 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.74116, "lon": -122.42274 } }
+        { "type": "main", "position": { "lat": 37.74417, "lon": -122.42081 } },
+        { "type": "main", "position": { "lat": 37.74419, "lon": -122.42079 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "Q3uDm6y47Hmh0wJC-wuBJA",
+      "score": 2.5745136738,
+      "info": "search:ta:840067000481891-US",
+      "poi": {
+        "name": "Cellarmaker House of Pizza",
+        "phone": "+1 415-296-6351",
+        "categorySet": [{ "id": 7315036 }],
+        "url": "www.cellarmakerbrewing.com/house-of-pizza/",
+        "categories": ["pizza", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "3193",
+        "streetName": "Mission Street",
+        "municipality": "San Francisco",
+        "neighbourhood": "Bernal Heights",
+        "countrySecondarySubdivision": "San Francisco",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "94110",
+        "extendedPostalCode": "94110-4515",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "3193 Mission Street, San Francisco, CA 94110",
+        "localName": "San Francisco"
+      },
+      "position": { "lat": 37.74569, "lon": -122.4195 },
+      "viewport": {
+        "topLeftPoint": { "lat": 37.74659, "lon": -122.42064 },
+        "btmRightPoint": { "lat": 37.74479, "lon": -122.41836 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 37.74583, "lon": -122.41974 } },
+        { "type": "main", "position": { "lat": 37.74584, "lon": -122.41973 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "0XCxQcsFKRG5RgiDrclJaA",
+      "score": 2.574504137,
+      "info": "search:ta:840067000481885-US",
+      "poi": {
+        "name": "Pizza Zone 'N Grill",
+        "phone": "+1 415-282-6000",
+        "categorySet": [{ "id": 7315036 }],
+        "url": "www.pizzazoneandgrill.com",
+        "categories": ["pizza", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "4404",
+        "streetName": "3rd Street",
+        "municipality": "San Francisco",
+        "neighbourhood": "Bayview",
+        "countrySecondarySubdivision": "San Francisco",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "94124",
+        "extendedPostalCode": "94124-2104",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "4404 3rd Street, San Francisco, CA 94124",
+        "localName": "San Francisco"
+      },
+      "position": { "lat": 37.73789, "lon": -122.389848 },
+      "viewport": {
+        "topLeftPoint": { "lat": 37.73879, "lon": -122.39099 },
+        "btmRightPoint": { "lat": 37.73699, "lon": -122.38871 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 37.73789, "lon": -122.3897 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "Tx-2M7NBbFo28CLu8sTfJg",
+      "score": 2.5745027065,
+      "info": "search:ta:840067000481899-US",
+      "poi": {
+        "name": "Pizza Express",
+        "phone": "+1 415-282-2333",
+        "categorySet": [{ "id": 7315036 }],
+        "url": "sfpizzarestaurant.business.site/",
+        "categories": ["pizza", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "813",
+        "streetName": "Cortland Avenue",
+        "municipality": "San Francisco",
+        "neighbourhood": "Bernal Heights",
+        "countrySecondarySubdivision": "San Francisco",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "94110",
+        "extendedPostalCode": "94110-5630",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "813 Cortland Avenue, San Francisco, CA 94110",
+        "localName": "San Francisco"
+      },
+      "position": { "lat": 37.739004, "lon": -122.414408 },
+      "viewport": {
+        "topLeftPoint": { "lat": 37.7399, "lon": -122.41555 },
+        "btmRightPoint": { "lat": 37.7381, "lon": -122.41327 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 37.7389, "lon": -122.4144 } }
       ]
     }
   ]

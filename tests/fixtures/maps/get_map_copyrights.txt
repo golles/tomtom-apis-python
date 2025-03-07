@@ -1,5 +1,5 @@
-© 1992 - 2024 TomTom. All rights reserved. This material is proprietary and the subject of copyright protection, database right protection and other intellectual property rights owned by TomTom or its suppliers. The use of this material is subject to the terms of a license agreement. Any unauthorized copying or disclosure of this material will lead to criminal and civil liabilities.
+© 1992 - 2025 TomTom. All rights reserved. This material is proprietary and the subject of copyright protection, database right protection and other intellectual property rights owned by TomTom or its suppliers. The use of this material is subject to the terms of a license agreement. Any unauthorized copying or disclosure of this material will lead to criminal and civil liabilities.
 
-Data Source © 2024 TomTom
+Data Source © 2025 TomTom
 
 Based on https://www.tomtom.com/en_gb/thirdpartyproductterms/

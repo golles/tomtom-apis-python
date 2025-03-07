@@ -25,6 +25,15 @@
       "segments": [
         {
           "type": "brand",
+          "value": "Pizza",
+          "matches": { "inputQuery": [{ "offset": 0, "length": 5 }] }
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "type": "brand",
           "value": "Debonairs Pizza",
           "matches": { "inputQuery": [{ "offset": 0, "length": 5 }] }
         }
@@ -35,15 +44,6 @@
         {
           "type": "brand",
           "value": "Domino's Pizza",
-          "matches": { "inputQuery": [{ "offset": 0, "length": 5 }] }
-        }
-      ]
-    },
-    {
-      "segments": [
-        {
-          "type": "brand",
-          "value": "Pizza Hut",
           "matches": { "inputQuery": [{ "offset": 0, "length": 5 }] }
         }
       ]

@@ -1,10 +1,10 @@
 {
   "flowSegmentData": {
     "frc": "FRC3",
-    "currentSpeed": 62,
-    "freeFlowSpeed": 62,
-    "currentTravelTime": 150,
-    "freeFlowTravelTime": 150,
+    "currentSpeed": 61,
+    "freeFlowSpeed": 61,
+    "currentTravelTime": 153,
+    "freeFlowTravelTime": 153,
     "confidence": 1,
     "roadClosure": false,
     "coordinates": {
@@ -110,6 +110,6 @@
         { "latitude": 52.417953471148103, "longitude": 4.826903302415019 }
       ]
     },
-    "@version": "traffic-service-flow 1.0.118"
+    "@version": "traffic-service-flow 1.0.133"
   }
 }

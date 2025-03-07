@@ -2,7 +2,7 @@
   "summary": {
     "query": "de ruijterkade 154 amsterdam 1011 ac",
     "queryType": "NON_NEAR",
-    "queryTime": 21,
+    "queryTime": 31,
     "numResults": 1,
     "offset": 0,
     "totalResults": 1,
@@ -12,7 +12,7 @@
     {
       "type": "Point Address",
       "id": "rqmZlYjBsGCl_TRdSbsD3g",
-      "score": 12.7420902252,
+      "score": 11.4885292053,
       "matchConfidence": { "score": 1 },
       "address": {
         "streetNumber": "154",
@@ -30,7 +30,7 @@
         "freeformAddress": "De Ruijterkade 154, 1011 AC Amsterdam",
         "localName": "Amsterdam"
       },
-      "position": { "lat": 52.37727, "lon": 4.90943 },
+      "position": { "lat": 52.3772689, "lon": 4.9094297 },
       "viewport": {
         "topLeftPoint": { "lat": 52.37817, "lon": 4.90796 },
         "btmRightPoint": { "lat": 52.37637, "lon": 4.9109 }

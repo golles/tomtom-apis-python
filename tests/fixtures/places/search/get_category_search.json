@@ -2,8 +2,8 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 125,
-    "numResults": 9,
+    "queryTime": 112,
+    "numResults": 10,
     "offset": 0,
     "totalResults": 100,
     "fuzzyLevel": 1,
@@ -12,61 +12,14 @@
   "results": [
     {
       "type": "POI",
-      "id": "LSoKbDw2ssSvOlxQ4-_ieA",
-      "score": 3.089420557,
-      "dist": 182.565675,
-      "info": "search:ta:840061002057977-US",
+      "id": "TN2fBC1dFFOCMcgrl-lTiA",
+      "score": 3.0894138813,
+      "dist": 225.374849,
+      "info": "search:ta:840066000511436-US",
       "poi": {
-        "name": "Pizza 1",
-        "phone": "+1 408-298-6789",
-        "categorySet": [{ "id": 7315036 }],
-        "categories": ["pizza", "restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "33",
-        "streetName": "South 1st Street",
-        "municipality": "San Jose",
-        "neighbourhood": "Downtown San Jose",
-        "countrySecondarySubdivision": "Santa Clara",
-        "countrySubdivision": "CA",
-        "countrySubdivisionName": "California",
-        "countrySubdivisionCode": "CA",
-        "postalCode": "95113",
-        "extendedPostalCode": "95113-2402",
-        "countryCode": "US",
-        "country": "United States",
-        "countryCodeISO3": "USA",
-        "freeformAddress": "33 South 1st Street, San Jose, CA 95113",
-        "localName": "San Jose"
-      },
-      "position": { "lat": 37.335388, "lon": -121.890393 },
-      "viewport": {
-        "topLeftPoint": { "lat": 37.33629, "lon": -121.89152 },
-        "btmRightPoint": { "lat": 37.33449, "lon": -121.88926 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 37.33551, "lon": -121.89011 } }
-      ]
-    },
-    {
-      "type": "POI",
-      "id": "DEZ_yDu1YtNRNnsGD1pMmg",
-      "score": 3.0894188881,
-      "dist": 192.993038,
-      "info": "search:ta:840066000129987-US",
-      "poi": {
-        "name": "Mountain Mike's Pizza",
+        "name": "Mountain Mike's",
         "phone": "+1 669-499-4800",
-        "brands": [{ "name": "Mountain Mike's Pizza" }],
+        "brands": [{ "name": "Mountain Mike's" }],
         "categorySet": [{ "id": 7315036 }],
         "url": "www.mountainmikespizza.com/locations/san-jose-29-s-3rd-st/",
         "categories": ["pizza", "restaurant"],
@@ -74,8 +27,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -97,159 +50,13 @@
         "freeformAddress": "29 South 3rd Street, San Jose, CA 95113",
         "localName": "San Jose"
       },
-      "position": { "lat": 37.336261, "lon": -121.888025 },
+      "position": { "lat": 37.335961, "lon": -121.887811 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.33716, "lon": -121.88916 },
-        "btmRightPoint": { "lat": 37.33536, "lon": -121.88689 }
+        "topLeftPoint": { "lat": 37.33686, "lon": -121.88894 },
+        "btmRightPoint": { "lat": 37.33506, "lon": -121.88668 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.33635, "lon": -121.88784 } }
-      ]
-    },
-    {
-      "type": "POI",
-      "id": "cDWm8p0nlLFIHUYCO6SAGg",
-      "score": 3.089413166,
-      "dist": 228.910864,
-      "info": "search:ta:840066000123350-US",
-      "poi": {
-        "name": "4th Street Pizza Company",
-        "phone": "+1 408-286-7500",
-        "categorySet": [{ "id": 7315036 }],
-        "url": "4thstpizzaco.com/",
-        "categories": ["pizza", "restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "150",
-        "streetName": "East Santa Clara Street",
-        "municipality": "San Jose",
-        "neighbourhood": "Downtown San Jose",
-        "countrySecondarySubdivision": "Santa Clara",
-        "countrySubdivision": "CA",
-        "countrySubdivisionName": "California",
-        "countrySubdivisionCode": "CA",
-        "postalCode": "95113",
-        "extendedPostalCode": "95113-1901",
-        "countryCode": "US",
-        "country": "United States",
-        "countryCodeISO3": "USA",
-        "freeformAddress": "150 East Santa Clara Street, San Jose, CA 95113",
-        "localName": "San Jose"
-      },
-      "position": { "lat": 37.337329, "lon": -121.887444 },
-      "viewport": {
-        "topLeftPoint": { "lat": 37.33823, "lon": -121.88858 },
-        "btmRightPoint": { "lat": 37.33643, "lon": -121.88631 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 37.33756, "lon": -121.88761 } }
-      ]
-    },
-    {
-      "type": "POI",
-      "id": "FIXKMHXSK5CtcB7Ld09QAw",
-      "score": 3.0894076824,
-      "dist": 256.921453,
-      "info": "search:ta:840067000497841-US",
-      "poi": {
-        "name": "Pizza Flora",
-        "phone": "+1 408-560-5065",
-        "categorySet": [{ "id": 7315036 }],
-        "url": "pizzaflorasj.com/",
-        "categories": ["pizza", "restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "78",
-        "streetName": "South 1st Street",
-        "municipality": "San Jose",
-        "neighbourhood": "Downtown San Jose",
-        "countrySecondarySubdivision": "Santa Clara",
-        "countrySubdivision": "CA",
-        "countrySubdivisionName": "California",
-        "countrySubdivisionCode": "CA",
-        "postalCode": "95113",
-        "extendedPostalCode": "95113-1241",
-        "countryCode": "US",
-        "country": "United States",
-        "countryCodeISO3": "USA",
-        "freeformAddress": "78 South 1st Street, San Jose, CA 95113",
-        "localName": "San Jose"
-      },
-      "position": { "lat": 37.334801, "lon": -121.889107 },
-      "viewport": {
-        "topLeftPoint": { "lat": 37.3357, "lon": -121.89024 },
-        "btmRightPoint": { "lat": 37.3339, "lon": -121.88798 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 37.33463, "lon": -121.88947 } },
-        { "type": "main", "position": { "lat": 37.33498, "lon": -121.88973 } }
-      ]
-    },
-    {
-      "type": "POI",
-      "id": "gfzlkgI16FU-xQNJZdyodA",
-      "score": 3.0894076824,
-      "dist": 256.950212,
-      "info": "search:ta:840069005515422-US",
-      "poi": {
-        "name": "La Nostra Pizza & Ristorante",
-        "phone": "+1 408-995-0924",
-        "categorySet": [{ "id": 7315036 }],
-        "url": "www.lanostrapizza.com",
-        "categories": ["pizza", "restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "80",
-        "streetName": "South 1st Street",
-        "municipality": "San Jose",
-        "neighbourhood": "Downtown San Jose",
-        "countrySecondarySubdivision": "Santa Clara",
-        "countrySubdivision": "CA",
-        "countrySubdivisionName": "California",
-        "countrySubdivisionCode": "CA",
-        "postalCode": "95113",
-        "extendedPostalCode": "95113-1241",
-        "countryCode": "US",
-        "country": "United States",
-        "countryCodeISO3": "USA",
-        "freeformAddress": "80 South 1st Street, San Jose, CA 95113",
-        "localName": "San Jose"
-      },
-      "position": { "lat": 37.334801, "lon": -121.889107 },
-      "viewport": {
-        "topLeftPoint": { "lat": 37.3357, "lon": -121.89024 },
-        "btmRightPoint": { "lat": 37.3339, "lon": -121.88798 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 37.33463, "lon": -121.88947 } },
-        { "type": "main", "position": { "lat": 37.33462, "lon": -121.88947 } }
+        { "type": "main", "position": { "lat": 37.33663, "lon": -121.88804 } }
       ]
     },
     {
@@ -260,6 +67,7 @@
       "info": "search:ta:840067000211385-US",
       "poi": {
         "name": "Sf Pizza Co",
+        "phone": "+1 408-777-6007",
         "categorySet": [{ "id": 7315036 }],
         "url": "www.sfpizza.co",
         "categories": ["pizza", "restaurant"],
@@ -267,8 +75,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -281,12 +89,11 @@
         "countrySubdivision": "CA",
         "countrySubdivisionName": "California",
         "countrySubdivisionCode": "CA",
-        "postalCode": "95112",
-        "extendedPostalCode": "95112-5417",
+        "postalCode": "95122",
         "countryCode": "US",
         "country": "United States",
         "countryCodeISO3": "USA",
-        "freeformAddress": "North 5th Street, San Jose, CA 95112",
+        "freeformAddress": "North 5th Street, San Jose, CA 95122",
         "localName": "San Jose"
       },
       "position": { "lat": 37.338308, "lon": -121.886269 },
@@ -300,145 +107,386 @@
     },
     {
       "type": "POI",
-      "id": "MH49Cx_hTN3xsUuDjuKhvw",
-      "score": 3.0893757343,
-      "dist": 385.511907,
-      "info": "search:ta:840067000499964-US",
+      "id": "t99RZmybV98HeO_tYsCzxA",
+      "score": 3.0893797874,
+      "dist": 371.687523,
+      "info": "search:ta:840066000509343-US",
       "poi": {
-        "name": "Pizza Bocca Lupo",
-        "phone": "+1 408-289-1775",
+        "name": "Slice of Homage Pizza",
+        "phone": "+1 408-490-4477",
         "categorySet": [{ "id": 7315036 }],
-        "url": "pizzaboccalupo.com",
+        "url": "sohpizza.com",
         "categories": ["pizza", "restaurant"],
         "classifications": [
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
       },
       "address": {
-        "streetNumber": "87",
-        "streetName": "North San Pedro Street",
+        "streetNumber": "163",
+        "streetName": "West Santa Clara Street",
         "municipality": "San Jose",
         "neighbourhood": "Downtown San Jose",
+        "countrySecondarySubdivision": "Santa Clara",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "95113",
+        "extendedPostalCode": "95113-1720",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "163 West Santa Clara Street, San Jose, CA 95113",
+        "localName": "San Jose"
+      },
+      "position": { "lat": 37.335034, "lon": -121.8934 },
+      "viewport": {
+        "topLeftPoint": { "lat": 37.33593, "lon": -121.89453 },
+        "btmRightPoint": { "lat": 37.33413, "lon": -121.89227 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 37.33486, "lon": -121.89332 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "RTEk1nQHbKvXnkRhsbE9lA",
+      "score": 3.0892634392,
+      "dist": 662.401431,
+      "info": "search:ta:840069019186290-US",
+      "poi": {
+        "name": "Pizza My Heart",
+        "phone": "+1 408-280-0707",
+        "categorySet": [{ "id": 7315036 }],
+        "url": "pizzamyheart.com",
+        "categories": ["pizza", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "117",
+        "streetName": "East San Carlos Street",
+        "municipality": "San Jose",
+        "neighbourhood": "Paseo",
+        "countrySecondarySubdivision": "Santa Clara",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "95112",
+        "extendedPostalCode": "95112-3680",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "117 East San Carlos Street, San Jose, CA 95112",
+        "localName": "San Jose"
+      },
+      "position": { "lat": 37.332873, "lon": -121.884597 },
+      "viewport": {
+        "topLeftPoint": { "lat": 37.33377, "lon": -121.88573 },
+        "btmRightPoint": { "lat": 37.33197, "lon": -121.88347 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 37.33277, "lon": -121.88455 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "UV7JVLzsI4RpTWk058diUQ",
+      "score": 3.0892474651,
+      "dist": 692.733004,
+      "info": "search:ta:840066000122306-US",
+      "poi": {
+        "name": "The Last Round Tavern",
+        "phone": "+1 408-286-9710",
+        "categorySet": [{ "id": 7315036 }],
+        "url": "www.lastroundtavern.com",
+        "categories": ["pizza", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "354",
+        "streetName": "East Santa Clara Street",
+        "municipality": "San Jose",
+        "neighbourhood": "Horrace Mann",
+        "countrySecondarySubdivision": "Santa Clara",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "95113",
+        "extendedPostalCode": "95113-1911",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "354 East Santa Clara Street, San Jose, CA 95113",
+        "localName": "San Jose"
+      },
+      "position": { "lat": 37.339627, "lon": -121.882895 },
+      "viewport": {
+        "topLeftPoint": { "lat": 37.34053, "lon": -121.88403 },
+        "btmRightPoint": { "lat": 37.33873, "lon": -121.88176 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 37.33978, "lon": -121.88297 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "L-Tfit4bG4cZf0U6v1-0-w",
+      "score": 3.0890145302,
+      "dist": 1039.711164,
+      "info": "search:ta:840066000508382-US",
+      "poi": {
+        "name": "Blue Line Pizza",
+        "categorySet": [{ "id": 7315036 }],
+        "categories": ["pizza", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetName": "West San Fernando Street",
+        "municipality": "San Jose",
         "countrySecondarySubdivision": "Santa Clara",
         "countrySubdivision": "CA",
         "countrySubdivisionName": "California",
         "countrySubdivisionCode": "CA",
         "postalCode": "95110",
-        "extendedPostalCode": "95110-2400",
+        "extendedPostalCode": "95110-2526",
         "countryCode": "US",
         "country": "United States",
         "countryCodeISO3": "USA",
-        "freeformAddress": "87 North San Pedro Street, San Jose, CA 95110",
+        "freeformAddress": "West San Fernando Street, San Jose, CA 95110",
         "localName": "San Jose"
       },
-      "position": { "lat": 37.336523, "lon": -121.894319 },
+      "position": { "lat": 37.3333, "lon": -121.9008 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.33742, "lon": -121.89545 },
-        "btmRightPoint": { "lat": 37.33562, "lon": -121.89319 }
+        "topLeftPoint": { "lat": 37.3342, "lon": -121.90193 },
+        "btmRightPoint": { "lat": 37.3324, "lon": -121.89967 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.33665, "lon": -121.89405 } }
+        { "type": "main", "position": { "lat": 37.33333, "lon": -121.9003 } }
       ]
     },
     {
       "type": "POI",
-      "id": "mzd_GB6kqMvRzjYVRbe39g",
-      "score": 3.0893669128,
-      "dist": 414.458079,
-      "info": "search:ta:840066000129488-US",
+      "id": "AKPizbnu_fkSb7S9QdQomg",
+      "score": 3.0889220238,
+      "dist": 1148.862839,
+      "info": "search:ta:840067000500214-US",
       "poi": {
-        "name": "Mas Pizza",
-        "phone": "+1 408-459-7667",
+        "name": "Sammy G's",
+        "phone": "+1 408-638-7076",
         "categorySet": [{ "id": 7315036 }],
-        "url": "www.maspizza.com/",
+        "url": "www.sammygspizza.com",
         "categories": ["pizza", "restaurant"],
         "classifications": [
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
       },
       "address": {
-        "streetNumber": "150",
-        "streetName": "South 1st Street",
+        "streetNumber": "330",
+        "streetName": "South 10th Street",
         "municipality": "San Jose",
-        "neighbourhood": "Downtown San Jose",
+        "neighbourhood": "South University",
         "countrySecondarySubdivision": "Santa Clara",
         "countrySubdivision": "CA",
         "countrySubdivisionName": "California",
         "countrySubdivisionCode": "CA",
-        "postalCode": "95113",
-        "extendedPostalCode": "95113-2600",
+        "postalCode": "95112",
+        "extendedPostalCode": "95112-3628",
         "countryCode": "US",
         "country": "United States",
         "countryCodeISO3": "USA",
-        "freeformAddress": "150 South 1st Street, San Jose, CA 95113",
+        "freeformAddress": "330 South 10th Street, San Jose, CA 95112",
         "localName": "San Jose"
       },
-      "position": { "lat": 37.333638, "lon": -121.887976 },
+      "position": { "lat": 37.33575, "lon": -121.877101 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.33454, "lon": -121.88911 },
-        "btmRightPoint": { "lat": 37.33274, "lon": -121.88684 }
+        "topLeftPoint": { "lat": 37.33665, "lon": -121.87823 },
+        "btmRightPoint": { "lat": 37.33485, "lon": -121.87597 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.33337, "lon": -121.88854 } }
+        { "type": "main", "position": { "lat": 37.3356, "lon": -121.87725 } },
+        { "type": "main", "position": { "lat": 37.33559, "lon": -121.87724 } }
       ]
     },
     {
       "type": "POI",
-      "id": "Ae1skNPZLln-pgagMnwBjQ",
-      "score": 3.0893597603,
-      "dist": 435.795558,
-      "info": "search:ta:840067000130817-US",
+      "id": "S9mCC_9GGa9ZTCICw2Tp9w",
+      "score": 3.0888893604,
+      "dist": 1185.288166,
+      "info": "search:ta:840067000499214-US",
       "poi": {
-        "name": "Tony Dimaggio's Stromboli & Pizza",
-        "phone": "+1 669-342-7155",
+        "name": "Kukar's House of Pizza",
+        "phone": "+1 408-292-6882",
         "categorySet": [{ "id": 7315036 }],
         "categories": ["pizza", "restaurant"],
         "classifications": [
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
       },
       "address": {
-        "streetNumber": "155",
-        "streetName": "West San Fernando Street",
+        "streetNumber": "527",
+        "streetName": "South Almaden Avenue",
         "municipality": "San Jose",
-        "neighbourhood": "Downtown San Jose",
+        "neighbourhood": "Market Almaden",
         "countrySecondarySubdivision": "Santa Clara",
         "countrySubdivision": "CA",
         "countrySubdivisionName": "California",
         "countrySubdivisionCode": "CA",
-        "postalCode": "95113",
-        "extendedPostalCode": "95113-2108",
+        "postalCode": "95110",
+        "extendedPostalCode": "95110-2717",
         "countryCode": "US",
         "country": "United States",
         "countryCodeISO3": "USA",
-        "freeformAddress": "155 West San Fernando Street, San Jose, CA 95113",
+        "freeformAddress": "527 South Almaden Avenue, San Jose, CA 95110",
         "localName": "San Jose"
       },
-      "position": { "lat": 37.333332, "lon": -121.891736 },
+      "position": { "lat": 37.326443, "lon": -121.888145 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.33423, "lon": -121.89287 },
-        "btmRightPoint": { "lat": 37.33243, "lon": -121.8906 }
+        "topLeftPoint": { "lat": 37.32734, "lon": -121.88928 },
+        "btmRightPoint": { "lat": 37.32554, "lon": -121.88701 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.33318, "lon": -121.89162 } }
+        { "type": "main", "position": { "lat": 37.3266, "lon": -121.88793 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "EqzY1Rzq5bV9vLxxtCTHuA",
+      "score": 3.0887799263,
+      "dist": 1298.767799,
+      "info": "search:ta:840067000030549-US",
+      "poi": {
+        "name": "Pizza Hut Express",
+        "phone": "+1 408-346-2022",
+        "brands": [{ "name": "Pizza Hut" }],
+        "categorySet": [{ "id": 7315036 }],
+        "url": "locations.pizzahut.com/ca/san-jose/533-coleman-ave",
+        "categories": ["pizza", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "533",
+        "streetName": "Coleman Avenue",
+        "municipality": "San Jose",
+        "countrySecondarySubdivision": "Santa Clara",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "95110",
+        "extendedPostalCode": "95110-2007",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "533 Coleman Avenue, San Jose, CA 95110",
+        "localName": "San Jose"
+      },
+      "position": { "lat": 37.339057, "lon": -121.904461 },
+      "viewport": {
+        "topLeftPoint": { "lat": 37.34071, "lon": -121.90654 },
+        "btmRightPoint": { "lat": 37.3374, "lon": -121.90238 }
+      },
+      "entryPoints": [
+        { "type": "minor", "position": { "lat": 37.33833, "lon": -121.90335 } },
+        { "type": "minor", "position": { "lat": 37.34049, "lon": -121.9055 } },
+        { "type": "main", "position": { "lat": 37.34068, "lon": -121.90469 } },
+        { "type": "minor", "position": { "lat": 37.34003, "lon": -121.90361 } },
+        { "type": "minor", "position": { "lat": 37.33916, "lon": -121.90524 } },
+        { "type": "minor", "position": { "lat": 37.33911, "lon": -121.90351 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "t_rjRsSs4ordGCdMzTE19g",
+      "score": 3.0883803368,
+      "dist": 1649.297429,
+      "info": "search:ta:840069020860621-US",
+      "poi": {
+        "name": "Fast Pizza",
+        "phone": "+1 408-975-0234",
+        "categorySet": [{ "id": 7315036 }],
+        "categories": ["pizza", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "797",
+        "streetName": "East Julian Street",
+        "municipality": "San Jose",
+        "neighbourhood": "East Northside",
+        "countrySecondarySubdivision": "Santa Clara",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "95112",
+        "extendedPostalCode": "95112-1808",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "797 East Julian Street, San Jose, CA 95112",
+        "localName": "San Jose"
+      },
+      "position": { "lat": 37.34829, "lon": -121.8779 },
+      "viewport": {
+        "topLeftPoint": { "lat": 37.34919, "lon": -121.87903 },
+        "btmRightPoint": { "lat": 37.34739, "lon": -121.87677 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 37.34813, "lon": -121.87782 } }
       ]
     }
   ]

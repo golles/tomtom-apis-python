@@ -2,7 +2,7 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 197,
+    "queryTime": 267,
     "numResults": 5,
     "offset": 0,
     "totalResults": 5,
@@ -59,7 +59,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.5289, "lon": -122.2896 } }
       ],
-      "detourTime": 3,
+      "detourTime": -22,
       "detourDistance": 47,
       "detourOffset": 0
     },
@@ -112,8 +112,8 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.52716, "lon": -122.28438 } }
       ],
-      "detourTime": 57,
-      "detourDistance": 228,
+      "detourTime": 50,
+      "detourDistance": 193,
       "detourOffset": 665
     },
     {
@@ -164,7 +164,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.53062, "lon": -122.28711 } }
       ],
-      "detourTime": 90,
+      "detourTime": 65,
       "detourDistance": 76,
       "detourOffset": 665
     },
@@ -216,7 +216,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.49375, "lon": -122.23572 } }
       ],
-      "detourTime": 373,
+      "detourTime": 325,
       "detourDistance": 685,
       "detourOffset": 4979
     },
@@ -267,8 +267,8 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.46569, "lon": -122.15711 } }
       ],
-      "detourTime": 522,
-      "detourDistance": 1393,
+      "detourTime": 345,
+      "detourDistance": 655,
       "detourOffset": 12421
     }
   ]

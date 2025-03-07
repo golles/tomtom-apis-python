@@ -5,16 +5,11 @@
 
 set -e
 
-# List of required commands.
-required_commands=("jq" "yq")
+# shellcheck source=/dev/null
+source "$(dirname "$0")/utils.sh"
 
-# Check if required commands are installed.
-for cmd in "${required_commands[@]}"; do
-  if ! command -v "$cmd" &>/dev/null; then
-    echo "Error: $cmd is not installed." >&2
-    exit 1
-  fi
-done
+# Ensure required commands are installed
+command_exists jq yq
 
 cd "$(dirname "$0")/.."
 
@@ -26,7 +21,7 @@ echo "$entries" | jq -c '.[]' | while IFS= read -r entry; do
   name=$(echo "$entry" | jq -r '.name')
   command=$(echo "$entry" | jq -r '.command')
 
-  echo "Run $name"
+  log_yellow "Run $name"
   eval "$command"
-  echo
+  log_empty_line 1
 done

@@ -21,21 +21,21 @@ jobs:
       matrix:
         include:
           - name: mypy
-            command: poetry run mypy .
-          - name: Poetry
-            command: poetry check
+            command: uv run mypy .
           - name: Prettier
-            command: prettier --check .
+            command: npm run prettier -- --check .
           - name: Pylint
-            command: poetry run pylint src tests
+            command: uv run pylint src tests
           - name: Ruff linter
-            command: poetry run ruff check --output-format=github .
+            command: uv run ruff check --output-format=github .
           - name: Ruff formatter
-            command: poetry run ruff format --check .
+            command: uv run ruff format --check .
           - name: ShellCheck
-            command: poetry run shellcheck scripts/*.sh
+            command: uv run shellcheck scripts/*.sh
+          - name: uv lock
+            command: uv lock --check
           - name: YamlLint
-            command: poetry run yamllint --format github .
+            command: uv run yamllint --format github .
     runs-on: ubuntu-latest
     name: ${{ matrix.name }}
     steps:
@@ -69,10 +69,10 @@ jobs:
           node-version: ${{ env.DEFAULT_NODE }}
 
       - name: Run tests
-        run: poetry run pytest
+        run: uv run pytest
 
       - name: Make coverage XML report
-        run: poetry run coverage xml
+        run: uv run coverage xml
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5

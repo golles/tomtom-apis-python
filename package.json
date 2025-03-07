@@ -1,0 +1,13 @@
+{
+  "name": "tomtom-api-python",
+  "version": "0.0.1",
+  "description": "Asynchronous Python client for the TomTom APIs",
+  "author": "Sander Gols <developer@golles.nl>",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "3.5.3"
+  },
+  "scripts": {
+    "prettier": "prettier"
+  }
+}

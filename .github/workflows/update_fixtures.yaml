@@ -43,7 +43,7 @@ jobs:
       - name: Update fixtures script
         env:
           TOMTOM_API_KEY: ${{ secrets.TOMTOM_API_KEY }}
-        run: poetry run python scripts/update_test_fixtures.py
+        run: uv run scripts/update_test_fixtures.py
 
       - name: Create pull request
         if: github.event.inputs.create_pr == 'true'
@@ -63,7 +63,7 @@ jobs:
             automated pr
 
       - name: Run tests
-        run: poetry run pytest
+        run: uv run pytest
 
       - name: Upload fixtures for failed test
         if: failure()

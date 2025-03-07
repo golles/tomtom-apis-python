@@ -16,7 +16,7 @@ permissions:
 jobs:
   update_dependecies:
     runs-on: ubuntu-latest
-    name: Update dependecies with Poetry
+    name: Update dependecies
     steps:
       - name: Check out code from GitHub
         uses: actions/checkout@v4
@@ -34,13 +34,13 @@ jobs:
           python-version: ${{ env.DEFAULT_PYTHON }}
           node-version: ${{ env.DEFAULT_NODE }}
 
-      - name: Run Poetry update and create PR body
+      - name: Update dependecies and create PR body
         run: |
-          # Capture the output of `poetry update` and process it.
-          poetry update | tee /tmp/pr_body.md
+          # Capture the output of the update command.
+          uv lock --upgrade 2>&1 | tee /tmp/pr_body.md
 
-          # Remove the first two lines and the last line, and save back to the same file.
-          sed -i '1,2d;$d' /tmp/pr_body.md
+          # Remove the first line.
+          sed -i '1d' /tmp/pr_body.md
 
           # Prepend the title to the file.
           sed -i '1i# Dependency Updates' /tmp/pr_body.md

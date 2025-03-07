@@ -33,10 +33,10 @@ jobs:
         run: |
           version="${{ github.ref_name }}"
           version=${version#v}
-          poetry version ${{ github.ref_name }}
+          uvx --from=toml-cli toml set --toml-path=pyproject.toml project.version "$version"
 
       - name: Build project
-        run: poetry build
+        run: uv build
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1

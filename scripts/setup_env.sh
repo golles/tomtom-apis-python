@@ -2,17 +2,13 @@
 
 set -e
 
+# shellcheck source=/dev/null
+source "$(dirname "$0")/utils.sh"
+
+# Ensure required commands are installed
+command_exists uv npm
+
 cd "$(dirname "$0")/.."
-
-# Function to log messages in yellow color
-log_yellow() {
-    echo -e "\e[33m$1\e[0m"
-}
-
-# Function to log error messages in red color
-log_error() {
-    echo -e "\e[31m$1\e[0m" >&2
-}
 
 # Error handling
 error_exit() {
@@ -23,58 +19,30 @@ error_exit() {
 # Trap any error and execute the error_exit function
 trap error_exit ERR
 
-# Check if a command exists
-command_exists() {
-    command -v "$1" >/dev/null 2>&1
-}
-
-# Ensure Poetry is installed
-if ! command_exists poetry; then
-    log_yellow "Poetry is not installed. Checking for pipx..."
-    if command_exists pipx; then
-        log_yellow "pipx is installed. Installing Poetry using pipx..."
-        pipx install poetry
-    else
-        log_error "Neither Poetry nor pipx is installed. Please install pipx or Poetry manually."
-        exit 1
-    fi
-fi
-
-# Ensure npm is installed
-if ! command_exists npm; then
-    log_error "npm is not installed. Please install npm manually."
-    exit 1
-fi
-
-# Configure venv with Poetry
-poetry config virtualenvs.create true
-poetry config virtualenvs.in-project true
-
 # Install project dependencies
-poetry install
+uv sync
 
-# Install other programs
-npm install -g prettier
+# Install npm dependencies
+npm install
 
 if [ "$CI" != "true" ]; then
     # Trust the repo
     git config --global --add safe.directory /workspaces/tomtom-api-python
 
-    # Add the pre-commit hook
-    poetry run pre-commit install
-
     # Install auto completions
     mkdir -p ~/.zfunc
-    poetry completions zsh > ~/.zfunc/_poetry
-    poetry run ruff generate-shell-completion zsh > ~/.zfunc/_ruff
+    uv generate-shell-completion zsh > ~/.zfunc/_uv
+    uv run ruff generate-shell-completion zsh > ~/.zfunc/_ruff
     grep -qxF 'fpath+=~/.zfunc' ~/.zshrc || echo 'fpath+=~/.zfunc' >> ~/.zshrc
     grep -qxF 'autoload -Uz compinit && compinit' ~/.zshrc || echo 'autoload -Uz compinit && compinit' >> ~/.zshrc
 fi
 
 # Check for --devcontainer argument
 if [ "$1" == "--devcontainer" ]; then
-    log_yellow "\n\nThe dev container is ready"
+    log_empty_line 2
+    log_yellow "The dev container is ready"
     log_yellow "Once all the extensions are installed, reload the window (CMD+P -> Developer: Reload Window) to make sure all extensions are activated!"
 else
-    log_yellow "\nDone, you should reload your terminal"
+    log_empty_line 1
+    log_yellow "Done, you should reload your terminal"
 fi

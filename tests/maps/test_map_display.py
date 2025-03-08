@@ -29,7 +29,7 @@ from tomtom_apis.models import Language
 
 
 @pytest.fixture(name="map_display_api")
-async def fixture_map_display_api() -> AsyncGenerator[MapDisplayApi, None]:
+async def fixture_map_display_api() -> AsyncGenerator[MapDisplayApi]:
     """Fixture for MapDisplayApi."""
     options = ApiOptions(api_key=API_KEY)
     async with MapDisplayApi(options) as map_display:

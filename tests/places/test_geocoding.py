@@ -11,7 +11,7 @@ from tomtom_apis.places.models import ResultType, SearchResponse, StructuredGeoc
 
 
 @pytest.fixture(name="geocoding_api")
-async def fixture_geocoding_api() -> AsyncGenerator[GeocodingApi, None]:
+async def fixture_geocoding_api() -> AsyncGenerator[GeocodingApi]:
     """Fixture for GeocodingApi."""
     options = ApiOptions(api_key=API_KEY)
     async with GeocodingApi(options) as geocoding:

@@ -3,7 +3,7 @@ name = "tomtom-apis"
 version = "0.0.1"
 description = "Asynchronous Python client for the TomTom APIs"
 authors = [{ name = "Sander Gols", email = "developer@golles.nl" }]
-requires-python = ">=3.12.0"
+requires-python = ">=3.13.0"
 readme = "README.md"
 license = "MIT"
 classifiers = [
@@ -14,6 +14,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3",
     "Topic :: Software Development :: Libraries :: Python Modules",
@@ -56,8 +57,7 @@ source = ["tomtom_apis"]
 packages = ["src/tomtom_apis"]
 
 [tool.mypy]
-python_version = "3.12"
-enable_incomplete_feature = ["NewGenericSyntax"]
+python_version = "3.13"
 ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
@@ -70,12 +70,13 @@ max-line-length=150
 [tool.pytest.ini_options]
 addopts = "--cov --cov-report=term --cov-report=xml"
 asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope="function"
 log_cli = true
 log_cli_level = "DEBUG"
 
 [tool.ruff]
 line-length = 150
-target-version = "py312"
+target-version = "py313"
 
 [tool.ruff.lint]
 extend-select = [

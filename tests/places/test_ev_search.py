@@ -11,7 +11,7 @@ from tomtom_apis.places.models import EVChargingStationsAvailabilityResponse, Ev
 
 
 @pytest.fixture(name="ev_search_api")
-async def fixture_ev_search_api() -> AsyncGenerator[EVSearchApi, None]:
+async def fixture_ev_search_api() -> AsyncGenerator[EVSearchApi]:
     """Fixture for EVSearchApi."""
     options = ApiOptions(api_key=API_KEY)
     async with EVSearchApi(options) as ev_search:

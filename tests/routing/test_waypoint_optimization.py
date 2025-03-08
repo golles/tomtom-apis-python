@@ -11,7 +11,7 @@ from tomtom_apis.routing.models import WaypointOptimizationPostData, WaypointOpt
 
 
 @pytest.fixture(name="waypoint_optimization_api")
-async def fixture_waypoint_optimization_api() -> AsyncGenerator[WaypointOptimizationApi, None]:
+async def fixture_waypoint_optimization_api() -> AsyncGenerator[WaypointOptimizationApi]:
     """Fixture for WaypointOptimizationApi."""
     options = ApiOptions(api_key=API_KEY)
     async with WaypointOptimizationApi(options) as waypoint_optimization:

@@ -12,7 +12,7 @@ from tomtom_apis.places.models import CrossStreetLookupParams, ReverseGeocodePar
 
 
 @pytest.fixture(name="reverse_geocoding_api")
-async def fixture_reverse_geocoding_api() -> AsyncGenerator[ReverseGeocodingApi, None]:
+async def fixture_reverse_geocoding_api() -> AsyncGenerator[ReverseGeocodingApi]:
     """Fixture for ReverseGeocodingApi."""
     options = ApiOptions(api_key=API_KEY)
     async with ReverseGeocodingApi(options) as reverse_geocoding:

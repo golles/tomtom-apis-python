@@ -13,7 +13,7 @@ from tomtom_apis.places.models import AsynchronousBatchDownloadParams, BatchItem
 
 
 @pytest.fixture(name="batch_search_api")
-async def fixture_batch_search_api() -> AsyncGenerator[BatchSearchApi, None]:
+async def fixture_batch_search_api() -> AsyncGenerator[BatchSearchApi]:
     """Fixture for BatchSearchApi."""
     options = ApiOptions(api_key=API_KEY)
     async with BatchSearchApi(options) as batch_search:

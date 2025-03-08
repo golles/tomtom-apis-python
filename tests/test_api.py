@@ -60,7 +60,7 @@ def fixture_mock_request_info() -> RequestInfo:
 
 
 @pytest.fixture(name="base_api")
-async def fixture_base_api(mock_session: AsyncMock) -> AsyncGenerator[BaseApi, None]:
+async def fixture_base_api(mock_session: AsyncMock) -> AsyncGenerator[BaseApi]:
     """Fixture for BaseApi."""
     options = ApiOptions(api_key=API_KEY)
     async with BaseApi(options, mock_session) as base:

@@ -25,7 +25,7 @@ from ..const import LOC_AMSTERDAM, LOC_ROTTERDAM
 
 
 @pytest.fixture(name="routing_api")
-async def fixture_routing_api() -> AsyncGenerator[RoutingApi, None]:
+async def fixture_routing_api() -> AsyncGenerator[RoutingApi]:
     """Fixture for RoutingApi."""
     options = ApiOptions(api_key=API_KEY)
     async with RoutingApi(options) as routing:

@@ -11,7 +11,7 @@ from tomtom_apis.automotive.models import ParkingAvailabilityParams, ParkingAvai
 
 
 @pytest.fixture(name="parking_availability_api")
-async def fixture_parking_availability_api() -> AsyncGenerator[ParkingAvailabilityApi, None]:
+async def fixture_parking_availability_api() -> AsyncGenerator[ParkingAvailabilityApi]:
     """Fixture for ParkingAvailabilityApi."""
     options = ApiOptions(api_key=API_KEY)
     async with ParkingAvailabilityApi(options) as fuel_prizes:

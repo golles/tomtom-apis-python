@@ -11,7 +11,7 @@ from tomtom_apis.automotive.models import FuelPricesResponse, FuelPrizeParams
 
 
 @pytest.fixture(name="fuel_prizes_api")
-async def fixture_fuel_prizes_api() -> AsyncGenerator[FuelPricesApi, None]:
+async def fixture_fuel_prizes_api() -> AsyncGenerator[FuelPricesApi]:
     """Fixture for FuelPricesApi."""
     options = ApiOptions(api_key=API_KEY)
     async with FuelPricesApi(options) as fuel_prizes:

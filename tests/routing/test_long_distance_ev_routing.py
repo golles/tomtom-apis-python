@@ -23,7 +23,7 @@ from tomtom_apis.routing.models import (
 
 
 @pytest.fixture(name="long_distance_ev_routing_api")
-async def fixture_long_distance_ev_routing_api() -> AsyncGenerator[LongDistanceEVRoutingApi, None]:
+async def fixture_long_distance_ev_routing_api() -> AsyncGenerator[LongDistanceEVRoutingApi]:
     """Fixture for LongDistanceEVRoutingApi."""
     options = ApiOptions(api_key=API_KEY)
     async with LongDistanceEVRoutingApi(options) as long_distance_ev_routing:

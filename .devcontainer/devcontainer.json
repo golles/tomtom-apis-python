@@ -1,6 +1,6 @@
 {
   "name": "TomTom APIs Python",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/python:3.13-bookworm",
   "postCreateCommand": "./scripts/setup_env.sh --devcontainer",
   "customizations": {
     "codespaces": {
@@ -63,7 +63,9 @@
   },
   "remoteUser": "vscode",
   "features": {
-    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": 22
+    },
     "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {
       "jqVersion": "latest",
       "yqVersion": "latest"

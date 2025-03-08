@@ -33,7 +33,7 @@ from tomtom_apis.traffic.models import (
 
 
 @pytest.fixture(name="traffic_api")
-async def fixture_traffic_api() -> AsyncGenerator[TrafficApi, None]:
+async def fixture_traffic_api() -> AsyncGenerator[TrafficApi]:
     """Fixture for TrafficApi."""
     options = ApiOptions(api_key=API_KEY)
     async with TrafficApi(options) as traffic:

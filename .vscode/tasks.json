@@ -20,6 +20,18 @@
       "problemMatcher": []
     },
     {
+      "label": "Run CI checks",
+      "type": "shell",
+      "command": "uv run ./scripts/local_ci_checks.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run tests",
+      "type": "shell",
+      "command": "uv run pytest",
+      "problemMatcher": []
+    },
+    {
       "label": "Sort all models.py files",
       "type": "shell",
       "command": "find src -name models.py -exec uv run scripts/sort_models.py {} \\;",
@@ -29,12 +41,6 @@
       "label": "Update test fixtures",
       "type": "shell",
       "command": "uv run scripts/update_test_fixtures.py",
-      "problemMatcher": []
-    },
-    {
-      "label": "Run CI checks",
-      "type": "shell",
-      "command": "uv run ./scripts/ci_checks_local.sh",
       "problemMatcher": []
     }
   ]

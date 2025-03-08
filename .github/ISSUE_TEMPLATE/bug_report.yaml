@@ -41,7 +41,7 @@ body:
       required: true
     attributes:
       label: Python version
-      placeholder: "3.12"
+      placeholder: "3.13"
 
   - type: markdown
     attributes:

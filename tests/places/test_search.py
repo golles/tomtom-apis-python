@@ -36,7 +36,7 @@ from tomtom_apis.places.models import (
 
 
 @pytest.fixture(name="search_api")
-async def fixture_search_api() -> AsyncGenerator[SearchApi, None]:
+async def fixture_search_api() -> AsyncGenerator[SearchApi]:
     """Fixture for SearchApi."""
     options = ApiOptions(api_key=API_KEY)
     async with SearchApi(options) as search:

@@ -5,11 +5,11 @@ inputs:
   python-version:
     description: The version of Python to use.
     required: true
-    default: "3.12"
+    default: "3.13"
   node-version:
     description: The version of Python to use.
     required: true
-    default: "20"
+    default: "22"
 
 runs:
   using: composite

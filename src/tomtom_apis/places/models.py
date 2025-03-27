@@ -6,6 +6,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import date
 from enum import StrEnum
+from typing import Any
 
 from geojson import Feature, FeatureCollection, GeometryCollection, LineString, MultiLineString, MultiPoint, MultiPolygon, Point, Polygon
 from mashumaro import field_options
@@ -363,6 +364,16 @@ class Context(DataClassORJSONMixin):
 
     inputQuery: str
     geoBias: GeoBias | None = None
+
+    @classmethod
+    def __pre_deserialize__(cls, d: dict[Any, Any]) -> dict[Any, Any]:
+        """Connector pre deserialize.
+
+        Handle the discrepancy that geoBias only has an empty position.
+        """
+        if d.get("geoBias") == {"position": {}}:
+            d["geoBias"] = None
+        return d
 
 
 @dataclass(kw_only=True)

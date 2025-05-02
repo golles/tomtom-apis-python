@@ -1,6 +1,6 @@
 version = 1
 revision = 2
-requires-python = ">=3.13.0"
+requires-python = "==3.13.3"
 
 [[package]]
 name = "aiohappyeyeballs"
@@ -614,24 +614,24 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "aiohttp", specifier = ">=3.10.0" },
-    { name = "geojson", specifier = ">=3.1.0" },
-    { name = "mashumaro", specifier = ">=3.13" },
-    { name = "orjson", specifier = ">=3.10.5" },
+    { name = "aiohttp", specifier = "==3.11.18" },
+    { name = "geojson", specifier = "==3.2.0" },
+    { name = "mashumaro", specifier = "==3.15" },
+    { name = "orjson", specifier = "==3.10.18" },
 ]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "aresponses", specifier = ">=3.0.0,<4" },
-    { name = "mypy", specifier = ">=1.14.0,<2" },
-    { name = "pre-commit", specifier = ">=4.0.1,<5" },
-    { name = "pylint", specifier = ">=3.3.3,<4" },
-    { name = "pytest", specifier = ">=8.3.4,<9" },
-    { name = "pytest-asyncio", specifier = ">=0.25.2,<0.26" },
-    { name = "pytest-cov", specifier = ">=6.0.0,<7" },
-    { name = "ruff", specifier = ">=0.9.0,<0.10" },
-    { name = "shellcheck-py", specifier = ">=0.10.0.1,<0.11" },
-    { name = "yamllint", specifier = ">=1.35.1,<2" },
+    { name = "aresponses", specifier = "==3.0.0" },
+    { name = "mypy", specifier = "==1.15.0" },
+    { name = "pre-commit", specifier = "==4.2.0" },
+    { name = "pylint", specifier = "==3.3.6" },
+    { name = "pytest", specifier = "==8.3.5" },
+    { name = "pytest-asyncio", specifier = "==0.25.3" },
+    { name = "pytest-cov", specifier = "==6.1.1" },
+    { name = "ruff", specifier = "==0.9.10" },
+    { name = "shellcheck-py", specifier = "==0.10.0.1" },
+    { name = "yamllint", specifier = "==1.37.0" },
 ]
 
 [[package]]

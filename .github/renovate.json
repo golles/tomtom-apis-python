@@ -27,7 +27,7 @@
     },
     {
       "description": "Python dependencies",
-      "matchManagers": ["uv"],
+      "matchManagers": ["pep621"],
       "addLabels": ["python"],
       "rangeStrategy": "pin"
     },

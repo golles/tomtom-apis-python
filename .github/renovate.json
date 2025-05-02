@@ -7,6 +7,9 @@
     "enabled": true,
     "automerge": true
   },
+  "pre-commit": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "description": "Devcontainer updates",
@@ -30,6 +33,12 @@
       "matchManagers": ["pep621"],
       "addLabels": ["python"],
       "rangeStrategy": "pin"
+    },
+    {
+      "description": "Pre-commit hooks",
+      "matchManagers": ["pre-commit"],
+      "addLabels": ["pre-commit"],
+      "automerge": true
     },
     {
       "description": "Automerge non-major updates",

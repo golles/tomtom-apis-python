@@ -41,13 +41,16 @@
         "ruff.interpreter": ["${workspaceFolder}/.venv/bin/python"],
         "terminal.integrated.defaultProfile.linux": "zsh",
         "[html]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.tabSize": 2
         },
         "[json]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.tabSize": 2
         },
         "[jsonc]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.tabSize": 2
         },
         "[markdown]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -56,7 +59,8 @@
           "editor.defaultFormatter": "charliermarsh.ruff"
         },
         "[yaml]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.tabSize": 2
         }
       }
     }

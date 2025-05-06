@@ -1,4 +1,4 @@
-name: PR checks
+name: PR
 
 on: # yamllint disable-line rule:truthy
   pull_request:
@@ -10,8 +10,8 @@ on: # yamllint disable-line rule:truthy
       - unlabeled
 
 jobs:
-  check-pr:
-    name: Check PR
+  labels:
+    name: Check labels
     runs-on: ubuntu-latest
     steps:
       - name: Check if PR has a required label

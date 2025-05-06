@@ -1,4 +1,4 @@
-name: Update copyright year(s) in license file
+name: License
 
 on: # yamllint disable-line rule:truthy
   schedule:
@@ -6,12 +6,20 @@ on: # yamllint disable-line rule:truthy
 
 jobs:
   update-license-year:
+    name: Update license year
     runs-on: ubuntu-latest
     steps:
       - name: Check out code from GitHub
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Setup app
+        id: app
+        uses: ./.github/actions/setup-app
+        with:
+          app-id: ${{ secrets.PR2D2_APP_ID }}
+          private-key: ${{ secrets.PR2D2_APP_PRIVATE_KEY }}
 
       - name: Update license
         uses: FantasticFiasco/action-update-license-year@v3

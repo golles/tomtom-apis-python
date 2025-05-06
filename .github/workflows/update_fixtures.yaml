@@ -61,6 +61,7 @@ jobs:
             Full log: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
           labels: |
             automated pr
+            enhancement
 
       - name: Run tests
         run: uv run pytest

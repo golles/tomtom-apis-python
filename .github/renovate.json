@@ -48,7 +48,7 @@
     },
     {
       "description": "Automerge dev dependencies",
-      "matchDepTypes": ["devDependencies"],
+      "matchDepTypes": ["devDependencies", "dev-dependencies", "dev"],
       "automerge": true
     }
   ]

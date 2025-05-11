@@ -56,11 +56,11 @@ async def plan_monaco_gp_route(api_key: str) -> None:
 
         # Enhanced output
         print("=== Monaco Grand Prix Route Stats ===\n")
-        print(f"🏁 Official F1 Track Length:  {official_track_length:,} meters")
-        print(f"🚗 Street Driving Length:     {public_route_length:,} meters")
+        print(f"🏁 Official F1 Track Length:  {official_track_length:,}".replace(",", ".") + " meters")
+        print(f"🚗 Street Driving Length:     {public_route_length:,}".replace(",", ".") + " meters")
         print(
             f"⏱️  Estimated Driving Time:    {int(driving_time_minutes)} minutes {int(driving_time_remaining_seconds)}"
-            f"seconds ({driving_time_seconds:,} seconds)"
+            f" seconds ({driving_time_seconds} seconds)"
         )
         print(f"🏎️  F1 Lap Record:             {lap_record_time} ({lap_record_seconds} seconds)\n")
         print("Can you beat the record? Give it a try and see how close you can get!")

@@ -9,6 +9,9 @@ on: # yamllint disable-line rule:truthy
       - synchronize
       - unlabeled
 
+permissions:
+  contents: read
+
 jobs:
   labels:
     name: Check labels

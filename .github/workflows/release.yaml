@@ -9,6 +9,9 @@ env:
   DEFAULT_PYTHON: "3.13"
   DEFAULT_NODE: "22"
 
+permissions:
+  contents: read
+
 jobs:
   release:
     name: Build and publish

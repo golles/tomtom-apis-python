@@ -5,6 +5,9 @@ on: # yamllint disable-line rule:truthy
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
   update_release_draft:
     name: Update release draft

@@ -2,7 +2,7 @@
   "summary": {
     "query": "",
     "queryType": "NON_NEAR",
-    "queryTime": 93,
+    "queryTime": 16,
     "numResults": 1,
     "offset": 0,
     "totalResults": 1,
@@ -44,10 +44,10 @@
         "freeformAddress": "Stationsplein 15, 1012 AB Amsterdam",
         "localName": "Amsterdam"
       },
-      "position": { "lat": 52.378977, "lon": 4.900847 },
+      "position": { "lat": 52.378263, "lon": 4.900183 },
       "viewport": {
-        "topLeftPoint": { "lat": 52.38, "lon": 4.89917 },
-        "btmRightPoint": { "lat": 52.37796, "lon": 4.90252 }
+        "topLeftPoint": { "lat": 52.37977, "lon": 4.89771 },
+        "btmRightPoint": { "lat": 52.37675, "lon": 4.90266 }
       },
       "entryPoints": [
         { "type": "main", "position": { "lat": 52.37947, "lon": 4.90167 } },

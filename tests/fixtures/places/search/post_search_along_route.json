@@ -2,10 +2,10 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 586,
-    "numResults": 6,
+    "queryTime": 248,
+    "numResults": 5,
     "offset": 0,
-    "totalResults": 6,
+    "totalResults": 5,
     "fuzzyLevel": 1,
     "geobiasCountry": "US"
   },
@@ -59,7 +59,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.5289, "lon": -122.2896 } }
       ],
-      "detourTime": -27,
+      "detourTime": -55,
       "detourDistance": 47,
       "detourOffset": 0
     },
@@ -112,7 +112,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.52716, "lon": -122.28438 } }
       ],
-      "detourTime": 38,
+      "detourTime": 51,
       "detourDistance": 193,
       "detourOffset": 665
     },
@@ -164,7 +164,7 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.53062, "lon": -122.28711 } }
       ],
-      "detourTime": 44,
+      "detourTime": 66,
       "detourDistance": 75,
       "detourOffset": 665
     },
@@ -216,67 +216,15 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.49375, "lon": -122.23572 } }
       ],
-      "detourTime": 234,
+      "detourTime": 424,
       "detourDistance": 685,
       "detourOffset": 4979
     },
     {
       "type": "POI",
-      "id": "HQVoBNQdQJAAFoExVOMI6g",
-      "score": 3.5126402378,
-      "dist": 13749.76986,
-      "query": "pizza",
-      "info": "search:ta:840066000186580-US",
-      "poi": {
-        "name": "State of Mind Public House & Pizzeria-Marsh Manor",
-        "phone": "+1 650-995-7478",
-        "categorySet": [{ "id": 7315036 }],
-        "url": "www.stateofmindpublichouse.com",
-        "categories": ["pizza", "restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "pizza" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "3710",
-        "streetName": "Florence Street",
-        "municipality": "Redwood City",
-        "neighbourhood": "Friendly Acres",
-        "countrySecondarySubdivision": "San Mateo",
-        "countrySubdivision": "CA",
-        "countrySubdivisionName": "California",
-        "countrySubdivisionCode": "CA",
-        "postalCode": "94063",
-        "extendedPostalCode": "94063-4418",
-        "countryCode": "US",
-        "country": "United States",
-        "countryCodeISO3": "USA",
-        "freeformAddress": "3710 Florence Street, Redwood City, CA 94063",
-        "localName": "Redwood City"
-      },
-      "position": { "lat": 37.47832, "lon": -122.18744 },
-      "viewport": {
-        "topLeftPoint": { "lat": 37.47922, "lon": -122.18857 },
-        "btmRightPoint": { "lat": 37.47742, "lon": -122.18631 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 37.4787, "lon": -122.18736 } }
-      ],
-      "detourTime": 573,
-      "detourDistance": 1991,
-      "detourOffset": 8482
-    },
-    {
-      "type": "POI",
       "id": "HlIw-j9jPIbgn5gi_KKHPA",
-      "score": 3.4823601246,
-      "dist": 17432.943693,
+      "score": 3.4824399948,
+      "dist": 17423.791091,
       "query": "pizza",
       "info": "search:ta:840069019784532-US",
       "poi": {
@@ -311,16 +259,16 @@
         "freeformAddress": "820 Willow Road, Menlo Park, CA 94025",
         "localName": "Menlo Park"
       },
-      "position": { "lat": 37.465524, "lon": -122.156885 },
+      "position": { "lat": 37.465532, "lon": -122.156971 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.46642, "lon": -122.15802 },
-        "btmRightPoint": { "lat": 37.46462, "lon": -122.15575 }
+        "topLeftPoint": { "lat": 37.46643, "lon": -122.1581 },
+        "btmRightPoint": { "lat": 37.46463, "lon": -122.15584 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.46569, "lon": -122.15711 } }
+        { "type": "main", "position": { "lat": 37.46564, "lon": -122.15714 } }
       ],
-      "detourTime": 286,
-      "detourDistance": 655,
+      "detourTime": 354,
+      "detourDistance": 858,
       "detourOffset": 12421
     }
   ]

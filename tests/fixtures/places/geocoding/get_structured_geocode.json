@@ -2,7 +2,7 @@
   "summary": {
     "query": "de ruijterkade 154 amsterdam 1011 ac",
     "queryType": "NON_NEAR",
-    "queryTime": 18,
+    "queryTime": 17,
     "numResults": 1,
     "offset": 0,
     "totalResults": 1,
@@ -12,7 +12,7 @@
     {
       "type": "Point Address",
       "id": "rqmZlYjBsGCl_TRdSbsD3g",
-      "score": 11.4885292053,
+      "score": 12.4234685898,
       "matchConfidence": { "score": 1 },
       "address": {
         "streetNumber": "154",

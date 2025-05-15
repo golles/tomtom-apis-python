@@ -110,6 +110,6 @@
         { "latitude": 52.417953471148103, "longitude": 4.826903302415019 }
       ]
     },
-    "@version": "traffic-service-flow 1.0.133"
+    "@version": "traffic-service-flow 1.0.140"
   }
 }

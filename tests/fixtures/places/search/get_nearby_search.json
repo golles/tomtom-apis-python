@@ -1,7 +1,7 @@
 {
   "summary": {
     "queryType": "NEARBY",
-    "queryTime": 47,
+    "queryTime": 43,
     "numResults": 10,
     "offset": 0,
     "totalResults": 100,
@@ -166,8 +166,8 @@
           {
             "code": "COMPANY",
             "names": [
-              { "nameLocale": "en-US", "name": "computer software" },
-              { "nameLocale": "en-US", "name": "company" }
+              { "nameLocale": "en-US", "name": "company" },
+              { "nameLocale": "en-US", "name": "computer software" }
             ]
           }
         ]
@@ -248,72 +248,26 @@
     },
     {
       "type": "POI",
-      "id": "tUXhRnKM10QUSHXM_He3TQ",
-      "score": 99.9560852051,
-      "dist": 43.911559,
-      "info": "search:ta:250006002045997-FR",
-      "poi": {
-        "name": "Bistro Romain-Ponthieu",
-        "categorySet": [{ "id": 7315 }],
-        "url": "www.bistroromain.fr/",
-        "categories": ["restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [{ "nameLocale": "en-US", "name": "restaurant" }]
-          }
-        ]
-      },
-      "address": {
-        "streetName": "Avenue des Champs-Élysées",
-        "municipalitySubdivision": "8ème Arrondissement",
-        "municipality": "Paris",
-        "neighbourhood": "Hoche-Friedland",
-        "countrySecondarySubdivision": "Paris",
-        "countrySubdivision": "Île-de-France",
-        "countrySubdivisionName": "Île-de-France",
-        "countrySubdivisionCode": "IDF",
-        "postalCode": "75008",
-        "countryCode": "FR",
-        "country": "France",
-        "countryCodeISO3": "FRA",
-        "freeformAddress": "Avenue des Champs-Élysées, 75008 Paris",
-        "localName": "Paris"
-      },
-      "position": { "lat": 48.872451, "lon": 2.300069 },
-      "viewport": {
-        "topLeftPoint": { "lat": 48.87335, "lon": 2.2987 },
-        "btmRightPoint": { "lat": 48.87155, "lon": 2.30144 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 48.87226, "lon": 2.29992 } }
-      ]
-    },
-    {
-      "type": "POI",
-      "id": "2twqOori6TEWLoiNvpxTVQ",
-      "score": 99.9504241943,
-      "dist": 49.575868,
-      "info": "search:ta:250006002090259-FR",
+      "id": "OyoXzK-_cl0CjXF4ZSh5fw",
+      "score": 99.9508132935,
+      "dist": 49.189733,
+      "info": "search:ta:250006002854759-FR",
       "poi": {
         "name": "Wash",
-        "phone": "+33 1 56 52 00 01",
-        "categorySet": [{ "id": 9361006 }],
-        "url": "washyshop.com/",
-        "categories": ["clothing accessories: general", "shop"],
+        "phone": "+33 1 40 70 96 31",
+        "brands": [{ "name": "Wash" }],
+        "categorySet": [{ "id": 9155002 }],
+        "categories": ["car wash"],
         "classifications": [
           {
-            "code": "SHOP",
-            "names": [
-              { "nameLocale": "en-US", "name": "clothing accessories: general" },
-              { "nameLocale": "en-US", "name": "shop" }
-            ]
+            "code": "CAR_WASH",
+            "names": [{ "nameLocale": "en-US", "name": "car wash" }]
           }
         ]
       },
       "address": {
         "streetNumber": "115",
-        "streetName": "Avenue Des Champs-Élysées",
+        "streetName": "Avenue des Champs-Élysées",
         "municipalitySubdivision": "8ème Arrondissement",
         "municipality": "Paris",
         "neighbourhood": "Triangle d'Or",
@@ -325,16 +279,16 @@
         "countryCode": "FR",
         "country": "France",
         "countryCodeISO3": "FRA",
-        "freeformAddress": "115 Avenue Des Champs-Élysées, 75008 Paris",
+        "freeformAddress": "115 Avenue des Champs-Élysées, 75008 Paris",
         "localName": "Paris"
       },
-      "position": { "lat": 48.8722, "lon": 2.29887 },
+      "position": { "lat": 48.872168, "lon": 2.298884 },
       "viewport": {
-        "topLeftPoint": { "lat": 48.8731, "lon": 2.2975 },
-        "btmRightPoint": { "lat": 48.8713, "lon": 2.30024 }
+        "topLeftPoint": { "lat": 48.87307, "lon": 2.29752 },
+        "btmRightPoint": { "lat": 48.87127, "lon": 2.30025 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 48.87206, "lon": 2.29909 } }
+        { "type": "main", "position": { "lat": 48.8724, "lon": 2.29904 } }
       ]
     },
     {
@@ -380,49 +334,6 @@
     },
     {
       "type": "POI",
-      "id": "Sd9YWtP68KEIs1KUIIGkQg",
-      "score": 99.9477844238,
-      "dist": 52.217131,
-      "info": "search:ta:250009011376737-FR",
-      "poi": {
-        "name": "Biasutto Aldo",
-        "phone": "+33 1 71 60 10 68",
-        "categorySet": [{ "id": 9361 }],
-        "url": "www.grandoptical.fr",
-        "categories": ["shop"],
-        "classifications": [
-          { "code": "SHOP", "names": [{ "nameLocale": "en-US", "name": "shop" }] }
-        ]
-      },
-      "address": {
-        "streetNumber": "138",
-        "streetName": "Avenue des Champs-Élysées",
-        "municipalitySubdivision": "8ème Arrondissement",
-        "municipality": "Paris",
-        "neighbourhood": "Hoche-Friedland",
-        "countrySecondarySubdivision": "Paris",
-        "countrySubdivision": "Île-de-France",
-        "countrySubdivisionName": "Île-de-France",
-        "countrySubdivisionCode": "IDF",
-        "postalCode": "75008",
-        "countryCode": "FR",
-        "country": "France",
-        "countryCodeISO3": "FRA",
-        "freeformAddress": "138 Avenue des Champs-Élysées, 75008 Paris",
-        "localName": "Paris"
-      },
-      "position": { "lat": 48.872623, "lon": 2.299082 },
-      "viewport": {
-        "topLeftPoint": { "lat": 48.87352, "lon": 2.29771 },
-        "btmRightPoint": { "lat": 48.87172, "lon": 2.30045 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 48.87254, "lon": 2.29903 } },
-        { "type": "main", "position": { "lat": 48.87253, "lon": 2.29908 } }
-      ]
-    },
-    {
-      "type": "POI",
       "id": "FW3Pf8hxgdDoqCaTM-kQHw",
       "score": 99.9477310181,
       "dist": 52.265171,
@@ -461,6 +372,102 @@
         "localName": "Paris"
       },
       "position": { "lat": 48.872509, "lon": 2.30015 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.87341, "lon": 2.29878 },
+        "btmRightPoint": { "lat": 48.87161, "lon": 2.30152 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.87225, "lon": 2.29995 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "1XdsN-jE4FILtH_DKJ2lIQ",
+      "score": 99.9476699829,
+      "dist": 52.323768,
+      "info": "search:ta:250006002059275-FR",
+      "poi": {
+        "name": "Brasserie des Champs",
+        "phone": "+33 1 43 59 93 31",
+        "categorySet": [{ "id": 7315017 }],
+        "categories": ["french", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "french" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "122",
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Hoche-Friedland",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "122 Avenue des Champs-Élysées, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.87251, "lon": 2.30015 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.87341, "lon": 2.29878 },
+        "btmRightPoint": { "lat": 48.87161, "lon": 2.30152 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.87225, "lon": 2.29995 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "SdLeN5AusAEq3Ma9aFOFhw",
+      "score": 99.9476699829,
+      "dist": 52.323768,
+      "info": "search:ta:250006002054497-FR",
+      "poi": {
+        "name": "Quick",
+        "phone": "+33 1 53 75 38 49",
+        "brands": [{ "name": "Quick" }],
+        "categorySet": [{ "id": 7315015 }],
+        "url": "www.quick.fr",
+        "categories": ["fast food", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "fast food" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "122",
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Hoche-Friedland",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "122 Avenue des Champs-Élysées, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.87251, "lon": 2.30015 },
       "viewport": {
         "topLeftPoint": { "lat": 48.87341, "lon": 2.29878 },
         "btmRightPoint": { "lat": 48.87161, "lon": 2.30152 }

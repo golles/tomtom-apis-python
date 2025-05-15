@@ -1,5 +1,5 @@
 {
-  "context": { "inputQuery": "pizza", "geoBias": { "position": {} } },
+  "context": { "inputQuery": "pizza" },
   "results": [
     {
       "segments": [

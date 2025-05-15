@@ -2,7 +2,7 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 555,
+    "queryTime": 272,
     "numResults": 10,
     "offset": 0,
     "totalResults": 100,
@@ -13,8 +13,8 @@
     {
       "type": "POI",
       "id": "TN2fBC1dFFOCMcgrl-lTiA",
-      "score": 3.3983553431,
-      "dist": 225.374849,
+      "score": 3.3983608506,
+      "dist": 192.991339,
       "info": "search:ta:840066000511436-US",
       "poi": {
         "name": "Mountain Mike's",
@@ -50,10 +50,10 @@
         "freeformAddress": "29 South 3rd Street, San Jose, CA 95113",
         "localName": "San Jose"
       },
-      "position": { "lat": 37.335961, "lon": -121.887811 },
+      "position": { "lat": 37.336264, "lon": -121.888023 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.33686, "lon": -121.88894 },
-        "btmRightPoint": { "lat": 37.33506, "lon": -121.88668 }
+        "topLeftPoint": { "lat": 37.33716, "lon": -121.88915 },
+        "btmRightPoint": { "lat": 37.33536, "lon": -121.88689 }
       },
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.33663, "lon": -121.88804 } }
@@ -156,8 +156,8 @@
     {
       "type": "POI",
       "id": "RTEk1nQHbKvXnkRhsbE9lA",
-      "score": 3.3981898568,
-      "dist": 662.401431,
+      "score": 3.3981924794,
+      "dist": 657.581427,
       "info": "search:ta:840069019186290-US",
       "poi": {
         "name": "Pizza My Heart",
@@ -192,13 +192,13 @@
         "freeformAddress": "117 East San Carlos Street, San Jose, CA 95112",
         "localName": "San Jose"
       },
-      "position": { "lat": 37.332873, "lon": -121.884597 },
+      "position": { "lat": 37.332855, "lon": -121.884695 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.33377, "lon": -121.88573 },
-        "btmRightPoint": { "lat": 37.33197, "lon": -121.88347 }
+        "topLeftPoint": { "lat": 37.33375, "lon": -121.88583 },
+        "btmRightPoint": { "lat": 37.33196, "lon": -121.88356 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.33277, "lon": -121.88455 } }
+        { "type": "main", "position": { "lat": 37.33273, "lon": -121.88464 } }
       ]
     },
     {
@@ -211,7 +211,7 @@
         "name": "The Last Round Tavern",
         "phone": "+1 408-286-9710",
         "categorySet": [{ "id": 7315036 }],
-        "url": "www.lastroundtavern.com",
+        "url": "lastroundtavern.com",
         "categories": ["pizza", "restaurant"],
         "classifications": [
           {
@@ -270,27 +270,26 @@
         ]
       },
       "address": {
-        "streetName": "West San Fernando Street",
+        "streetName": "West Santa Clara Street",
         "municipality": "San Jose",
         "countrySecondarySubdivision": "Santa Clara",
         "countrySubdivision": "CA",
         "countrySubdivisionName": "California",
         "countrySubdivisionCode": "CA",
-        "postalCode": "95110",
-        "extendedPostalCode": "95110-2526",
+        "postalCode": "95113",
         "countryCode": "US",
         "country": "United States",
         "countryCodeISO3": "USA",
-        "freeformAddress": "West San Fernando Street, San Jose, CA 95110",
+        "freeformAddress": "West Santa Clara Street, San Jose, CA 95113",
         "localName": "San Jose"
       },
       "position": { "lat": 37.3333, "lon": -121.9008 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.3342, "lon": -121.90193 },
-        "btmRightPoint": { "lat": 37.3324, "lon": -121.89967 }
+        "topLeftPoint": { "lat": 37.33454, "lon": -121.90236 },
+        "btmRightPoint": { "lat": 37.33206, "lon": -121.89924 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.33333, "lon": -121.9003 } }
+        { "type": "main", "position": { "lat": 37.33206, "lon": -121.90075 } }
       ]
     },
     {
@@ -445,8 +444,8 @@
     {
       "type": "POI",
       "id": "t_rjRsSs4ordGCdMzTE19g",
-      "score": 3.3972184441,
-      "dist": 1649.297429,
+      "score": 3.3972229025,
+      "dist": 1645.98796,
       "info": "search:ta:840069020860621-US",
       "poi": {
         "name": "Fast Pizza",
@@ -480,13 +479,13 @@
         "freeformAddress": "797 East Julian Street, San Jose, CA 95112",
         "localName": "San Jose"
       },
-      "position": { "lat": 37.34829, "lon": -121.8779 },
+      "position": { "lat": 37.348244, "lon": -121.87789 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.34919, "lon": -121.87903 },
-        "btmRightPoint": { "lat": 37.34739, "lon": -121.87677 }
+        "topLeftPoint": { "lat": 37.34914, "lon": -121.87902 },
+        "btmRightPoint": { "lat": 37.34734, "lon": -121.87676 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.34813, "lon": -121.87782 } }
+        { "type": "main", "position": { "lat": 37.34813, "lon": -121.87783 } }
       ]
     }
   ]

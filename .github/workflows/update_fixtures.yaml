@@ -15,13 +15,15 @@ env:
   DEFAULT_NODE: "22"
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
   update_fixtures:
     runs-on: ubuntu-latest
     name: Update fixtures
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Check out code from GitHub
         uses: actions/checkout@v4

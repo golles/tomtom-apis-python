@@ -99,6 +99,7 @@ extend-select = [
   "N",
   "I",
   "E",
+  "T",
 ]
 ignore = [
   "COM812",  # Cause conflicts when used with the formatter.
@@ -110,10 +111,12 @@ ignore = [
 [tool.ruff.lint.per-file-ignores]
 "examples/**/*.py" = [
   "INP001",  # These are individual examples that are not part of the package
+  "T201",  # Allow prints.
 ]
 "scripts/*.py" = [
   "INP001",  # These are individual scripts that are not part of the package
   "S603",  # Allow subprocess calls.
+  "T201",  # Allow prints.
 ]
 "tests/**/*.py" = [
   "S101",  # Allow assertions in tests.

@@ -20,5 +20,6 @@ class HttpStatus(IntEnum):
     """HTTP status codes used in TomTom API responses."""
 
     OK = 200
+    UNASSIGNED = 399
     BAD_REQUEST = 400
     INTERNAL_SERVER_ERROR = 500

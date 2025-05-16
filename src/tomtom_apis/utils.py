@@ -85,7 +85,7 @@ def tile_zxy_to_lat_lon(zoom_level: int, x: int, y: int) -> LatLon:
     return LatLon(lat=lat, lon=lon)
 
 
-def serialize_bool(*, x: bool) -> str:
+def serialize_bool(x: bool) -> str:  # noqa: FBT001
     """Serialize a boolean as a lowercase string.
 
     Args:

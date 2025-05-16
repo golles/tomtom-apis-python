@@ -64,6 +64,7 @@ class BaseParams(DataClassDictMixin):
         Manually omitting None values in __post_serialize__ to fix this.
         """
 
+        # ruff: noqa: RUF012
         serialization_strategy = {
             bool: {
                 "serialize": serialize_bool,

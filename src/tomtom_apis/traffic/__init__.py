@@ -12,6 +12,6 @@ __all__ = [
     "JunctionAnalyticsApi",
     "ODAnalysisApi",
     "RouteMonitoringApi",
-    "TrafficStatsApi",
     "TrafficApi",
+    "TrafficStatsApi",
 ]

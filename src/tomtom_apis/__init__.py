@@ -6,11 +6,11 @@ from .utils import lat_lon_to_tile_zxy, tile_zxy_to_lat_lon
 
 __all__ = [
     "ApiOptions",
-    "TomTomAPIError",
     "TomTomAPIClientError",
-    "TomTomAPIServerError",
     "TomTomAPIConnectionError",
+    "TomTomAPIError",
     "TomTomAPIRequestTimeout",
+    "TomTomAPIServerError",
     "lat_lon_to_tile_zxy",
     "tile_zxy_to_lat_lon",
 ]

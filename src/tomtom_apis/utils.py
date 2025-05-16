@@ -33,13 +33,16 @@ def lat_lon_to_tile_zxy(lat: float, lon: float, zoom_level: int) -> MapTile:
 
     """
     if not MIN_ZOOM_LEVEL <= zoom_level <= MAX_ZOOM_LEVEL:
-        raise RangeException("zoom_level", MIN_ZOOM_LEVEL, MAX_ZOOM_LEVEL)
+        field = "zoom_level"
+        raise RangeException(field, MIN_ZOOM_LEVEL, MAX_ZOOM_LEVEL)
 
     if not MIN_LAT <= lat <= MAX_LAT:
-        raise RangeException("lat", MIN_LAT, MAX_LAT)
+        field = "lat"
+        raise RangeException(field, MIN_LAT, MAX_LAT)
 
     if not MIN_LON <= lon <= MAX_LON:
-        raise RangeException("lon", MIN_LON, MAX_LON)
+        field = "lon"
+        raise RangeException(field, MIN_LON, MAX_LON)
 
     z = zoom_level
     xy_tiles_count = 2**z
@@ -67,16 +70,19 @@ def tile_zxy_to_lat_lon(zoom_level: int, x: int, y: int) -> LatLon:
 
     """
     if not MIN_ZOOM_LEVEL <= zoom_level <= MAX_ZOOM_LEVEL:
-        raise RangeException("zoom_level", MIN_ZOOM_LEVEL, MAX_ZOOM_LEVEL)
+        field = "zoom_level"
+        raise RangeException(field, MIN_ZOOM_LEVEL, MAX_ZOOM_LEVEL)
 
     z = zoom_level
     max_xy = 2**z - 1
 
     if not 0 <= x <= max_xy:
-        raise RangeException("x", 0, max_xy)
+        field = "x"
+        raise RangeException(field, 0, max_xy)
 
     if not 0 <= y <= max_xy:
-        raise RangeException("y", 0, max_xy)
+        field = "y"
+        raise RangeException(field, 0, max_xy)
 
     lon = (x / 2**z) * 360.0 - 180.0
 

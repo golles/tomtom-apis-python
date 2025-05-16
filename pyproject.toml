@@ -101,6 +101,7 @@ extend-select = [
   "E",
   "T",
   "RSE",
+  "PLR",
 ]
 ignore = [
   "COM812",  # Cause conflicts when used with the formatter.
@@ -121,6 +122,7 @@ ignore = [
 ]
 "tests/**/*.py" = [
   "S101",  # Allow assertions in tests.
+  "PLR2004",  # Allow magic numbers in tests.
 ]
 
 [tool.ruff.lint.pydocstyle]

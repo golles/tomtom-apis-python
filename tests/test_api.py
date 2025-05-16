@@ -13,7 +13,7 @@ from multidict import CIMultiDict, CIMultiDictProxy
 from yarl import URL
 
 from tomtom_apis.api import ApiOptions, BaseApi, BasePostData, Response
-from tomtom_apis.const import TRACKING_ID_HEADER
+from tomtom_apis.const import TRACKING_ID_HEADER, HttpMethod, HttpStatus
 from tomtom_apis.exceptions import TomTomAPIClientError, TomTomAPIConnectionError, TomTomAPIError, TomTomAPIRequestTimeoutError, TomTomAPIServerError
 
 from .const import API_KEY
@@ -30,7 +30,7 @@ class MockModel(DataClassORJSONMixin):
 def fixture_mock_response() -> AsyncMock:
     """Fixture for mock response."""
     mock_resp = AsyncMock(spec=ClientResponse)
-    mock_resp.status = 200
+    mock_resp.status = HttpStatus.OK
     mock_resp.headers = {
         "content-type": "application/json;charset=utf-8",
         "Tracking-ID": "1234567890",
@@ -53,7 +53,7 @@ def fixture_mock_request_info() -> RequestInfo:
     """Fixture for request info."""
     return RequestInfo(
         url=URL("http://example.com"),
-        method="GET",
+        method=HttpMethod.GET,
         headers=CIMultiDictProxy(CIMultiDict({})),
         real_url=URL("http://example.com"),
     )
@@ -124,7 +124,7 @@ async def test_get_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
     response = await base_api.get(endpoint)
 
     mock_session.request.assert_called_once_with(
-        "GET",
+        HttpMethod.GET,
         endpoint,
         params={"key": API_KEY},
         json=None,
@@ -134,7 +134,7 @@ async def test_get_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
         },
     )
     assert isinstance(response, Response)
-    assert response.status == 200
+    assert response.status == HttpStatus.OK
 
 
 async def test_get_request_with_gzip(base_api: BaseApi, mock_session: AsyncMock) -> None:
@@ -144,7 +144,7 @@ async def test_get_request_with_gzip(base_api: BaseApi, mock_session: AsyncMock)
     response = await base_api.get(endpoint)
 
     mock_session.request.assert_called_once_with(
-        "GET",
+        HttpMethod.GET,
         endpoint,
         params={"key": API_KEY},
         json=None,
@@ -155,7 +155,7 @@ async def test_get_request_with_gzip(base_api: BaseApi, mock_session: AsyncMock)
         },
     )
     assert isinstance(response, Response)
-    assert response.status == 200
+    assert response.status == HttpStatus.OK
 
 
 async def test_post_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
@@ -165,7 +165,7 @@ async def test_post_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
     response = await base_api.post(endpoint, data=data)
 
     mock_session.request.assert_called_once_with(
-        "POST",
+        HttpMethod.POST,
         endpoint,
         params={"key": API_KEY},
         json=data.to_dict(),
@@ -175,7 +175,7 @@ async def test_post_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
         },
     )
     assert isinstance(response, Response)
-    assert response.status == 200
+    assert response.status == HttpStatus.OK
 
 
 async def test_delete_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
@@ -184,7 +184,7 @@ async def test_delete_request(base_api: BaseApi, mock_session: AsyncMock) -> Non
     response = await base_api.delete(endpoint)
 
     mock_session.request.assert_called_once_with(
-        "DELETE",
+        HttpMethod.DELETE,
         endpoint,
         params={"key": API_KEY},
         json=None,
@@ -194,7 +194,7 @@ async def test_delete_request(base_api: BaseApi, mock_session: AsyncMock) -> Non
         },
     )
     assert isinstance(response, Response)
-    assert response.status == 200
+    assert response.status == HttpStatus.OK
 
 
 async def test_put_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
@@ -204,7 +204,7 @@ async def test_put_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
     response = await base_api.put(endpoint, data=data)
 
     mock_session.request.assert_called_once_with(
-        "PUT",
+        HttpMethod.PUT,
         endpoint,
         params={"key": API_KEY},
         json=data.to_dict(),
@@ -214,7 +214,7 @@ async def test_put_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
         },
     )
     assert isinstance(response, Response)
-    assert response.status == 200
+    assert response.status == HttpStatus.OK
 
 
 async def test_request_timeout(base_api: BaseApi, mock_session: AsyncMock) -> None:
@@ -280,7 +280,7 @@ async def test_tracking_id(base_api: BaseApi, mock_session: AsyncMock) -> None:
 
         assert mock_session.request.call_args[1]["headers"][TRACKING_ID_HEADER] == "mock-uuid"
         assert isinstance(response, Response)
-        assert response.status == 200
+        assert response.status == HttpStatus.OK
 
 
 async def test_manual_session_close(mock_session: AsyncMock) -> None:

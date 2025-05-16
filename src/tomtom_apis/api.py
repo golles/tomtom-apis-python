@@ -8,7 +8,7 @@ import uuid
 from dataclasses import dataclass, field
 from importlib import metadata
 from types import TracebackType
-from typing import Any, Literal, Self
+from typing import Any, Self
 
 import orjson
 from aiohttp import ClientResponse, ClientTimeout
@@ -23,7 +23,7 @@ from mashumaro import DataClassDictMixin
 from mashumaro.config import BaseConfig
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
-from .const import TOMTOM_HEADER_PREFIX, TRACKING_ID_HEADER
+from .const import TOMTOM_HEADER_PREFIX, TRACKING_ID_HEADER, HttpMethod, HttpStatus
 from .exceptions import (
     TomTomAPIClientError,
     TomTomAPIConnectionError,
@@ -234,7 +234,7 @@ class BaseApi:
 
     async def _request(  # pylint: disable=too-many-arguments
         self: Self,
-        method: Literal["DELETE", "GET", "POST", "PUT"],
+        method: HttpMethod,
         endpoint: str,
         *,
         headers: dict[str, str] | None = None,
@@ -244,7 +244,7 @@ class BaseApi:
         """Make a request to the TomTom API.
 
         Args:
-            method: Literal["DELETE", "GET", "POST", "PUT"]
+            method: HttpMethod
                 The HTTP method for the request.
             endpoint: str
                 The endpoint to send the request to.
@@ -297,10 +297,10 @@ class BaseApi:
             msg = "Connection error"
             raise TomTomAPIConnectionError(msg) from exception
         except ClientResponseError as exception:
-            if 400 <= exception.status < 500:
+            if HttpStatus.BAD_REQUEST <= exception.status < HttpStatus.INTERNAL_SERVER_ERROR:
                 msg = "Client error"
                 raise TomTomAPIClientError(msg) from exception
-            if exception.status >= 500:
+            if exception.status >= HttpStatus.INTERNAL_SERVER_ERROR:
                 msg = "Server error"
                 raise TomTomAPIServerError(msg) from exception
             msg = "Response error"
@@ -385,7 +385,7 @@ class BaseApi:
                 The response object from the API.
         """
         return await self._request(
-            "DELETE",
+            HttpMethod.DELETE,
             endpoint,
             headers=headers,
             params=params,
@@ -413,7 +413,7 @@ class BaseApi:
                 The response object from the API.
         """
         return await self._request(
-            "GET",
+            HttpMethod.GET,
             endpoint,
             headers=headers,
             params=params,
@@ -444,7 +444,7 @@ class BaseApi:
                 The response object from the API.
         """
         return await self._request(
-            "POST",
+            HttpMethod.POST,
             endpoint,
             headers=headers,
             params=params,
@@ -476,7 +476,7 @@ class BaseApi:
                 The response object from the API.
         """
         return await self._request(
-            "PUT",
+            HttpMethod.PUT,
             endpoint,
             headers=headers,
             params=params,

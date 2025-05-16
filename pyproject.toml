@@ -86,7 +86,8 @@ extend-select = [
   "RUF",
   "PTH",
   "COM",
-  "ERA"
+  "ERA",
+  "FBT",
 ]
 
 [tool.ruff.lint.pydocstyle]

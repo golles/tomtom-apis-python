@@ -74,9 +74,9 @@ def test_tile_zxy_to_lat_lon_invalid_y() -> None:
 def test_serialize_bool() -> None:
     """Test cases for test_serialize_bool."""
     # Test with True
-    assert serialize_bool(True) == "true"
+    assert serialize_bool(x=True) == "true"
     # Test with False
-    assert serialize_bool(False) == "false"
+    assert serialize_bool(x=False) == "false"
 
 
 class Color(Enum):

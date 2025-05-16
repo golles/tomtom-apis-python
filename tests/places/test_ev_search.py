@@ -27,7 +27,7 @@ async def test_deserialization_get_ev_search_nearby(ev_search_api: EVSearchApi) 
             lat=52.364941,
             lon=4.8935986,
             radius=10,
-        )
+        ),
     )
 
     assert response

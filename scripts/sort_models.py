@@ -15,7 +15,7 @@ def sort_classes_alphabetically(file_path: str) -> None:
     class_pattern = re.compile(
         r"(@[^\n]+\n)*"  # Match decorators
         r"(class\s+\w+.*?:\n)"  # Match class definition line
-        r"((?:\s{4}.*\n)*)"  # Match class content (indented lines)
+        r"((?:\s{4}.*\n)*)",  # Match class content (indented lines)
     )
 
     # Find all classes

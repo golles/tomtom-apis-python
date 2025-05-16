@@ -34,7 +34,7 @@ async def plan_monaco_gp_route(api_key: str) -> None:
                     LatLon(lat=43.73259432495, lon=7.4234801530838),
                     LatLon(lat=43.732390824682, lon=7.4230295419693),
                     LatLon(lat=43.73454595431, lon=7.4213665723801),
-                ]
+                ],
             ),
             params=CalculateRouteParams(
                 maxAlternatives=0,
@@ -60,7 +60,7 @@ async def plan_monaco_gp_route(api_key: str) -> None:
         print(f"🚗 Street Driving Length:     {public_route_length:,}".replace(",", ".") + " meters")
         print(
             f"⏱️  Estimated Driving Time:    {int(driving_time_minutes)} minutes {int(driving_time_remaining_seconds)}"
-            f" seconds ({driving_time_seconds} seconds)"
+            f" seconds ({driving_time_seconds} seconds)",
         )
         print(f"🏎️  F1 Lap Record:             {lap_record_time} ({lap_record_seconds} seconds)\n")
         print("Can you beat the record? Give it a try and see how close you can get!")

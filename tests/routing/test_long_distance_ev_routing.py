@@ -50,7 +50,7 @@ async def test_deserialization_post_calculate_long_distance_ev_route(long_distan
                     ChargingConnection(
                         facilityType=FacilityType.CHARGE_380_TO_480V_3_PHASE_AT_32A,
                         plugType=PlugType.IEC_62196_TYPE_2_OUTLET,
-                    )
+                    ),
                 ],
                 chargingCurve=[
                     ChargingCurve(chargeInkWh=6, timeToChargeInSeconds=360),
@@ -64,7 +64,7 @@ async def test_deserialization_post_calculate_long_distance_ev_route(long_distan
                     ChargingConnection(
                         facilityType=FacilityType.CHARGE_200_TO_240V_1_PHASE_AT_10A,
                         plugType=PlugType.STANDARD_HOUSEHOLD_COUNTRY_SPECIFIC,
-                    )
+                    ),
                 ],
                 chargingCurve=[
                     ChargingCurve(chargeInkWh=6, timeToChargeInSeconds=15624),
@@ -73,7 +73,7 @@ async def test_deserialization_post_calculate_long_distance_ev_route(long_distan
                     ChargingCurve(chargeInkWh=40, timeToChargeInSeconds=109080),
                 ],
             ),
-        ]
+        ],
     )
 
     response = await long_distance_ev_routing_api.post_calculate_long_distance_ev_route(

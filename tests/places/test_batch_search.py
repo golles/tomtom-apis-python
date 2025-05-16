@@ -31,7 +31,7 @@ async def test_deserialization_post_synchronous_batch(batch_search_api: BatchSea
                 BatchItem(query="/search/wroclaw.json?limit=10&idxSet=POI,PAD,Str,Xstr,Geo,Addr"),
                 BatchItem(query="/search/berlin.json?limit=10&idxSet=POI,PAD,Str,Xstr,Geo,Addr"),
             ],
-        )
+        ),
     )
 
     assert response
@@ -65,14 +65,14 @@ async def test_post_asynchronous_batch_submission(batch_search_api: BatchSearchA
                                 LatLon(lat=37.7066047, lon=-122.4330139),
                                 LatLon(lat=37.7120598, lon=-122.3643493),
                                 LatLon(lat=37.7535056, lon=-122.3739624),
-                            ]
-                        )
+                            ],
+                        ),
                     ],
                 ),
                 BatchItem(query="/reverseGeocode/crossStreet/52.4829893,4.9247074.json"),
                 BatchItem(query="/search/lodz.json?limit=10&idxSet=POI,PAD,Str,Xstr,Geo,Addr&maxFuzzyLevel=2"),
             ],
-        )
+        ),
     )
 
     assert response == "check-this-out"

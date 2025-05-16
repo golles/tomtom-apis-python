@@ -46,7 +46,7 @@ async def test_deserialization_post_waypointoptimization(waypoint_optimization_a
                     "vehicleLoadType": ["USHazmatClass3", "otherHazmatExplosive"],
                     "vehicleAdrTunnelRestrictionCode": "B",
                 },
-            }
+            },
         ),
     )
 

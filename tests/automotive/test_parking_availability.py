@@ -23,7 +23,7 @@ async def fixture_parking_availability_api() -> AsyncGenerator[ParkingAvailabili
 async def test_deserialization_get_parking_availability(parking_availability_api: ParkingAvailabilityApi) -> None:
     """Test the get_fuel_prize method."""
     response = await parking_availability_api.get_parking_availability(
-        params=ParkingAvailabilityParams(parkingAvailability="00000000-0003-1d9a-0009-20d4467654e2")
+        params=ParkingAvailabilityParams(parkingAvailability="00000000-0003-1d9a-0009-20d4467654e2"),
     )
 
     assert response

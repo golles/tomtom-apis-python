@@ -3,7 +3,7 @@
 import math
 from enum import Enum, IntEnum, StrEnum
 
-from .exceptions import RangeException
+from .exceptions import RangeExceptionError
 from .models import LatLon, MapTile
 
 # Constants
@@ -29,20 +29,20 @@ def lat_lon_to_tile_zxy(lat: float, lon: float, zoom_level: int) -> MapTile:
         MapTile: The corresponding map tile.
 
     Raises:
-        RangeException: If latitude, longitude, or zoom level are out of range.
+        RangeExceptionError: If latitude, longitude, or zoom level are out of range.
 
     """
     if not MIN_ZOOM_LEVEL <= zoom_level <= MAX_ZOOM_LEVEL:
         field = "zoom_level"
-        raise RangeException(field, MIN_ZOOM_LEVEL, MAX_ZOOM_LEVEL)
+        raise RangeExceptionError(field, MIN_ZOOM_LEVEL, MAX_ZOOM_LEVEL)
 
     if not MIN_LAT <= lat <= MAX_LAT:
         field = "lat"
-        raise RangeException(field, MIN_LAT, MAX_LAT)
+        raise RangeExceptionError(field, MIN_LAT, MAX_LAT)
 
     if not MIN_LON <= lon <= MAX_LON:
         field = "lon"
-        raise RangeException(field, MIN_LON, MAX_LON)
+        raise RangeExceptionError(field, MIN_LON, MAX_LON)
 
     z = zoom_level
     xy_tiles_count = 2**z
@@ -66,23 +66,23 @@ def tile_zxy_to_lat_lon(zoom_level: int, x: int, y: int) -> LatLon:
         LatLon: The corresponding latitude and longitude.
 
     Raises:
-        RangeException: If the zoom level or tile coordinates are out of range.
+        RangeExceptionError: If the zoom level or tile coordinates are out of range.
 
     """
     if not MIN_ZOOM_LEVEL <= zoom_level <= MAX_ZOOM_LEVEL:
         field = "zoom_level"
-        raise RangeException(field, MIN_ZOOM_LEVEL, MAX_ZOOM_LEVEL)
+        raise RangeExceptionError(field, MIN_ZOOM_LEVEL, MAX_ZOOM_LEVEL)
 
     z = zoom_level
     max_xy = 2**z - 1
 
     if not 0 <= x <= max_xy:
         field = "x"
-        raise RangeException(field, 0, max_xy)
+        raise RangeExceptionError(field, 0, max_xy)
 
     if not 0 <= y <= max_xy:
         field = "y"
-        raise RangeException(field, 0, max_xy)
+        raise RangeExceptionError(field, 0, max_xy)
 
     lon = (x / 2**z) * 360.0 - 180.0
 

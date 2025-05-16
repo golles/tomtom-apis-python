@@ -14,7 +14,7 @@ from yarl import URL
 
 from tomtom_apis.api import ApiOptions, BaseApi, BasePostData, Response
 from tomtom_apis.const import TRACKING_ID_HEADER
-from tomtom_apis.exceptions import TomTomAPIClientError, TomTomAPIConnectionError, TomTomAPIError, TomTomAPIRequestTimeout, TomTomAPIServerError
+from tomtom_apis.exceptions import TomTomAPIClientError, TomTomAPIConnectionError, TomTomAPIError, TomTomAPIRequestTimeoutError, TomTomAPIServerError
 
 from .const import API_KEY
 
@@ -220,7 +220,7 @@ async def test_put_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
 async def test_request_timeout(base_api: BaseApi, mock_session: AsyncMock) -> None:
     """Test the request method with a timeout."""
     mock_session.request.side_effect = TimeoutError()
-    with pytest.raises(TomTomAPIRequestTimeout):
+    with pytest.raises(TomTomAPIRequestTimeoutError):
         await base_api.get("/timeout/endpoint")
 
 

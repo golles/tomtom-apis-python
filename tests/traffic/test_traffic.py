@@ -6,7 +6,7 @@ import pytest
 
 from tests.const import API_KEY
 from tomtom_apis.api import ApiOptions
-from tomtom_apis.exceptions import MutualExclusiveParamsException
+from tomtom_apis.exceptions import MutualExclusiveParamsError
 from tomtom_apis.models import Language, TileSizeType
 from tomtom_apis.traffic import TrafficApi
 from tomtom_apis.traffic.models import (
@@ -112,7 +112,7 @@ async def test_deserialization_get_incident_details_ids(traffic_api: TrafficApi)
 
 async def test_get_incident_details_mutually_exclusive_parameters(traffic_api: TrafficApi) -> None:
     """Test the mutually exclusive parameters from the get_incident_details method."""
-    with pytest.raises(MutualExclusiveParamsException, match="Mutually exclusive parameters provided: bbox, ids"):
+    with pytest.raises(MutualExclusiveParamsError, match="Mutually exclusive parameters provided: bbox, ids"):
         await traffic_api.get_incident_details(
             params=IncidentDetailsParams(),
         )

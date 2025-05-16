@@ -3,11 +3,12 @@
 import re
 import subprocess
 import sys
+from pathlib import Path
 
 
 def sort_classes_alphabetically(file_path: str) -> None:
     """Sort classes alphabetically in a given file."""
-    with open(file_path, encoding="UTF-8") as file:
+    with Path(file_path).open(encoding="UTF-8") as file:
         content = file.read()
 
     # Regular expression to match class definitions, including decorators and docstrings
@@ -36,7 +37,7 @@ def sort_classes_alphabetically(file_path: str) -> None:
     new_content = non_class_content + "\n\n\n" + "\n\n".join(sorted_classes_content)
 
     # Write the new content back to the file
-    with open(file_path, "w", encoding="UTF-8") as file:
+    with Path(file_path).open(mode="w", encoding="UTF-8") as file:
         file.write(new_content)
 
 

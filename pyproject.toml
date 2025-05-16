@@ -84,6 +84,7 @@ extend-select = [
   "D",  # pydocstyle
   "ANN",  # flake8-annotations
   "RUF",
+  "PTH",
 ]
 
 [tool.ruff.lint.pydocstyle]

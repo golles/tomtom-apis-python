@@ -83,6 +83,7 @@ extend-select = [
   "UP",  # pyupgrade
   "D",  # pydocstyle
   "ANN",  # flake8-annotations
+  "RUF",
 ]
 
 [tool.ruff.lint.pydocstyle]

@@ -129,7 +129,7 @@ class SearchApi(BaseApi):
             SearchResponse: The response containing search results within the specified geometry.
         """
         response = await self.get(
-            endpoint=f"/search/2/geometrySearch/{query}.json?geometryList={str(geometryList)}",
+            endpoint=f"/search/2/geometrySearch/{query}.json?geometryList={geometryList!s}",
             params=params,
         )
 
@@ -263,7 +263,7 @@ class SearchApi(BaseApi):
             GeometryFilterResponse: The response containing the results filtered by the provided geometry and POIs.
         """
         response = await self.get(
-            endpoint=f"/search/2/geometryFilter.json?geometryList={str(geometryList)}&poiList={str(poiList)}",
+            endpoint=f"/search/2/geometryFilter.json?geometryList={geometryList!s}&poiList={poiList!s}",
             params=params,
         )
 

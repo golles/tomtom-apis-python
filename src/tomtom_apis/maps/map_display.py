@@ -3,6 +3,7 @@
 from typing import Self
 
 from tomtom_apis.api import BaseApi, BaseParams
+
 from .models import (
     LayerType,
     LayerTypeWithPoiType,

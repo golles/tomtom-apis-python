@@ -3,6 +3,7 @@
 from typing import Self
 
 from tomtom_apis.api import BaseApi
+
 from .models import PremiumGeocodeParams, SearchResponse
 
 

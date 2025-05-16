@@ -97,6 +97,7 @@ extend-select = [
   "TID",
   "S",
   "N",
+  "I",
 ]
 ignore = [
   "COM812",  # Cause conflicts when used with the formatter.

@@ -107,4 +107,7 @@ if __name__ == "__main__":
     asyncio.run(process_fixtures(fixtures_path, user_api_key))
 
     # Make all fixture files prettier
-    subprocess.run(["npm", "run", "prettier", "--", "--log-level", "silent", "--write", FIXTURE_PATH], check=True)
+    subprocess.run(
+        ["/workspaces/tomtom-api-python/node_modules/.bin/prettier", "--log-level", "silent", "--write", FIXTURE_PATH],
+        check=True,
+    )

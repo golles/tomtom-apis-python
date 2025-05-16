@@ -95,17 +95,23 @@ extend-select = [
   "EM",
   "INP",
   "TID",
+  "S",
 ]
 ignore = [
+  "COM812",  # Cause conflicts when used with the formatter.
   "TC",  # Runtime (de)serialization requires types to be available at runtime.
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"scripts/*.py" = [
-  "INP001",  # These are individual scripts that are not part of the package
-]
 "examples/**/*.py" = [
   "INP001",  # These are individual examples that are not part of the package
+]
+"scripts/*.py" = [
+  "INP001",  # These are individual scripts that are not part of the package
+  "S603",  # Allow subprocess calls.
+]
+"tests/**/*.py" = [
+  "S101",
 ]
 
 [tool.ruff.lint.pydocstyle]

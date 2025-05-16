@@ -225,7 +225,7 @@ class CapabilitieType(StrEnum):
     RESERVABLE = "Reservable"
     RFID_READER = "RfidReader"
     START_SESSION_CONNECTOR_REQUIRED = "StartSessionConnectorRequired"
-    TOKEN_GROUP_CAPABLE = "TokenGroupCapable"
+    TOKEN_GROUP_CAPABLE = "TokenGroupCapable"  # noqa: S105
     UNLOCK_CAPABLE = "UnlockCapable"
     PLUG_AND_CHARGE = "PlugAndCharge"
 

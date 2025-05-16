@@ -4,6 +4,7 @@
 
 import asyncio
 import os
+from pathlib import Path
 
 from tomtom_apis import ApiOptions
 from tomtom_apis.maps import MapDisplayApi
@@ -12,7 +13,7 @@ from tomtom_apis.models import MapTile
 from tomtom_apis.traffic import TrafficApi
 from tomtom_apis.traffic.models import IncidentStyleType, IncidentTileFormatType
 
-SCRIPT_DIR = os.path.dirname(__file__)
+SCRIPT_DIR = Path(__file__).parent
 TILES: list[MapTile] = [  # a 3x3 grid of London at zoom level 10.
     MapTile(x=510, y=339, zoom=10),
     MapTile(x=511, y=339, zoom=10),
@@ -44,7 +45,7 @@ async def download_tiles(api: MapDisplayApi | TrafficApi, tiles: list[MapTile]) 
                 zoom=tile.zoom,
                 image_format=TileFormatType.PNG,
             )
-            file_path = os.path.join(SCRIPT_DIR, "tiles", f"main_{tile.zoom}_{tile.x}_{tile.y}.png")
+            file_path = SCRIPT_DIR / "tiles" / f"main_{tile.zoom}_{tile.x}_{tile.y}.png"
         elif isinstance(api, TrafficApi):
             image_bytes = await api.get_raster_incident_tile(
                 style=IncidentStyleType.S1,
@@ -53,11 +54,11 @@ async def download_tiles(api: MapDisplayApi | TrafficApi, tiles: list[MapTile]) 
                 zoom=tile.zoom,
                 image_format=IncidentTileFormatType.PNG,
             )
-            file_path = os.path.join(SCRIPT_DIR, "tiles", f"incidents_{tile.zoom}_{tile.x}_{tile.y}.png")
+            file_path = SCRIPT_DIR / "tiles" / f"incidents_{tile.zoom}_{tile.x}_{tile.y}.png"
         else:
             raise ValueError("Invalid API type provided.")
 
-        with open(file_path, "wb") as file:
+        with file_path.open("wb") as file:
             file.write(image_bytes)
 
 

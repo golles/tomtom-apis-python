@@ -111,7 +111,7 @@ ignore = [
   "S603",  # Allow subprocess calls.
 ]
 "tests/**/*.py" = [
-  "S101",
+  "S101",  # Allow assertions in tests.
 ]
 
 [tool.ruff.lint.pydocstyle]

@@ -98,7 +98,7 @@ class TrafficApi(BaseApi):
 
         return await response.deserialize(IncidentDetailsResponse)
 
-    async def get_incident_viewport(  # pylint: disable=too-many-arguments
+    async def get_incident_viewport(  # pylint: disable=too-many-arguments  # noqa: PLR0913
         self: Self,
         *,
         bounding_box: BoudingBoxParam,
@@ -134,7 +134,7 @@ class TrafficApi(BaseApi):
 
         return await response.deserialize(IncidentViewportResponse)
 
-    async def get_raster_incident_tile(  # pylint: disable=too-many-arguments
+    async def get_raster_incident_tile(  # pylint: disable=too-many-arguments  # noqa: PLR0913
         self: Self,
         *,
         style: IncidentStyleType,

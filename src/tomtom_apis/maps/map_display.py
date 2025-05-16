@@ -25,7 +25,7 @@ class MapDisplayApi(BaseApi):
     For more information, see: https://developer.tomtom.com/map-display-api/documentation/product-information/introduction
     """
 
-    async def get_map_tile(  # pylint: disable=too-many-arguments
+    async def get_map_tile(  # pylint: disable=too-many-arguments  # noqa: PLR0913
         self: Self,
         *,
         layer: LayerType,

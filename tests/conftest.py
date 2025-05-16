@@ -5,6 +5,8 @@ from pathlib import Path
 import pytest
 from aresponses import ResponsesMockServer
 
+from tomtom_apis.const import HttpStatus
+
 from .const import DEFAULT_HEADERS
 
 
@@ -26,7 +28,7 @@ def fixture_json_response(request: pytest.FixtureRequest, aresponses: ResponsesM
     fixture_filename = request.param
     aresponses.add(
         response=aresponses.Response(
-            status=200,
+            status=HttpStatus.OK,
             headers=DEFAULT_HEADERS,
             text=load_json(fixture_filename),
         ),
@@ -39,7 +41,7 @@ def fixture_image_response(request: pytest.FixtureRequest, aresponses: Responses
     fixture_filename = request.param
     aresponses.add(
         response=aresponses.Response(
-            status=200,
+            status=HttpStatus.OK,
             content_type="image/png",
             text=load_png(fixture_filename).decode("latin1"),
         ),

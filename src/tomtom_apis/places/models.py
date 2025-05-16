@@ -829,7 +829,6 @@ class Poi(DataClassORJSONMixin):
     phone: str | None = None
     brands: list[Brand] | None = None
     url: str | None = None
-    # categories: list[str]  # Deprecated: Use classifications instead. As of May 1, 2018
     categorySet: list[Id] | None = None
     openingHours: list[OpeningHour] | None = None
     classifications: list[Classification] | None = None

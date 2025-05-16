@@ -69,6 +69,7 @@ class EVSearchApi(BaseApi):
 
         return await response.deserialize(SearchResponse)
 
+    # pylint: disable=line-too-long
     async def get_ev_charging_stations_availability(
         self: Self,
         *,
@@ -77,7 +78,7 @@ class EVSearchApi(BaseApi):
     ) -> EVChargingStationsAvailabilityResponse:
         """Get EV Charging Stations Availability.
 
-        For more information, see: https://developer.tomtom.com/ev-charging-stations-availability-api/documentation/ev-charging-stations-availability-api/ev-charging-stations-availability  # pylint: disable=line-too-long
+        For more information, see: https://developer.tomtom.com/ev-charging-stations-availability-api/documentation/ev-charging-stations-availability-api/ev-charging-stations-availability
 
         Args:
             chargingAvailability (str): The chargingAvailability ID, previously retrieved from a Search request.

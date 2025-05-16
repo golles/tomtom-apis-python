@@ -64,7 +64,7 @@ async def download_tiles(api: MapDisplayApi | TrafficApi, tiles: list[MapTile]) 
             )
             file_path = SCRIPT_DIR / "tiles" / f"incidents_{tile.zoom}_{tile.x}_{tile.y}.png"
         else:
-            raise TileTypeExceptionError()
+            raise TileTypeExceptionError
 
         with file_path.open("wb") as file:
             file.write(image_bytes)

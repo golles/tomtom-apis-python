@@ -54,7 +54,7 @@ async def save_fixture(content: str | bytes, fixture_path: Path) -> None:
         mode = "wb"
         encoding = None
     else:
-        raise ContentExceptionError()
+        raise ContentExceptionError
 
     with fixture_path.open(mode=mode, encoding=encoding) as file:
         file.write(content)

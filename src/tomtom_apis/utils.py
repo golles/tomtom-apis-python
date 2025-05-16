@@ -85,7 +85,7 @@ def tile_zxy_to_lat_lon(zoom_level: int, x: int, y: int) -> LatLon:
     return LatLon(lat=lat, lon=lon)
 
 
-def serialize_bool(x: bool) -> str:
+def serialize_bool(*, x: bool) -> str:
     """Serialize a boolean as a lowercase string.
 
     Args:
@@ -122,7 +122,7 @@ def serialize_list(x: list[int | float | bool | str | Enum]) -> str | None:
     """
     if not x:
         return None
-    return ",".join(serialize_bool(item) if isinstance(item, bool) else serialize_enum(item) if isinstance(item, Enum) else str(item) for item in x)
+    return ",".join(serialize_bool(x=item) if isinstance(item, bool) else serialize_enum(item) if isinstance(item, Enum) else str(item) for item in x)
 
 
 def serialize_list_brackets(x: list[int | float | bool | str | Enum]) -> str | None:

@@ -2,8 +2,8 @@
 
 from typing import Self
 
-from ..api import BaseApi
-from ..models import LatLon, LatLonList
+from tomtom_apis.api import BaseApi
+from tomtom_apis.models import LatLon, LatLonList
 from .models import (
     CalculatedReachableRangeResponse,
     CalculatedRouteResponse,

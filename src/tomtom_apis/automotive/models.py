@@ -9,7 +9,7 @@ from enum import StrEnum
 
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
-from ..api import BaseParams
+from tomtom_apis.api import BaseParams
 
 
 @dataclass(kw_only=True)

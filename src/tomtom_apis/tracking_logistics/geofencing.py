@@ -2,7 +2,7 @@
 
 from typing import Self
 
-from ..api import BaseApi
+from tomtom_apis.api import BaseApi
 
 
 class GeofencingApi(BaseApi):

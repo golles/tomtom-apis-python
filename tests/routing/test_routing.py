@@ -5,7 +5,7 @@ from datetime import datetime
 
 import pytest
 
-from tests.const import API_KEY
+from tests.const import API_KEY, LOC_AMSTERDAM, LOC_ROTTERDAM
 from tomtom_apis.api import ApiOptions
 from tomtom_apis.models import LatLonList, TravelModeType
 from tomtom_apis.routing import RoutingApi
@@ -20,8 +20,6 @@ from tomtom_apis.routing.models import (
     RouteType,
     VehicleEngineType,
 )
-
-from ..const import LOC_AMSTERDAM, LOC_ROTTERDAM
 
 
 @pytest.fixture(name="routing_api")

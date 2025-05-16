@@ -2,8 +2,8 @@
 
 from typing import Self
 
-from ..api import BaseApi
-from ..places.models import GeocodeParams, SearchResponse, StructuredGeocodeParams
+from tomtom_apis.api import BaseApi
+from tomtom_apis.places.models import GeocodeParams, SearchResponse, StructuredGeocodeParams
 
 
 class GeocodingApi(BaseApi):

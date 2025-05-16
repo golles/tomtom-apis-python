@@ -2,9 +2,9 @@
 
 from typing import Self
 
-from ..api import BaseApi
-from ..models import LatLon
-from ..places.models import CrossStreetLookupParams, ReverseGeocodeParams, ReverseGeocodeResponse
+from tomtom_apis.api import BaseApi
+from tomtom_apis.models import LatLon
+from tomtom_apis.places.models import CrossStreetLookupParams, ReverseGeocodeParams, ReverseGeocodeResponse
 
 
 class ReverseGeocodingApi(BaseApi):

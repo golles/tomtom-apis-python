@@ -2,8 +2,8 @@
 
 from typing import Self
 
-from ..api import BaseApi, BaseParams
-from ..routing.models import WaypointOptimizationPostData, WaypointOptimizedResponse
+from tomtom_apis.api import BaseApi, BaseParams
+from tomtom_apis.routing.models import WaypointOptimizationPostData, WaypointOptimizedResponse
 
 
 class WaypointOptimizationApi(BaseApi):

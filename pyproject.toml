@@ -94,6 +94,7 @@ extend-select = [
   "TRY",
   "EM",
   "INP",
+  "TID",
 ]
 ignore = [
   "TC",  # Runtime (de)serialization requires types to be available at runtime.

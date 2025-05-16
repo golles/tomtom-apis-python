@@ -2,8 +2,8 @@
 
 from typing import Self
 
-from ..api import BaseApi
-from ..automotive.models import FuelPricesResponse, FuelPrizeParams
+from tomtom_apis.api import BaseApi
+from tomtom_apis.automotive.models import FuelPricesResponse, FuelPrizeParams
 
 
 class FuelPricesApi(BaseApi):

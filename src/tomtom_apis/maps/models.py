@@ -8,9 +8,9 @@ from enum import StrEnum
 
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
-from ..api import BaseParams
-from ..models import AdrCategoryType, Language, TileSizeType, TravelModeType, ViewType
-from ..utils import serialize_list_brackets
+from tomtom_apis.api import BaseParams
+from tomtom_apis.models import AdrCategoryType, Language, TileSizeType, TravelModeType, ViewType
+from tomtom_apis.utils import serialize_list_brackets
 
 
 class DangerousGoodsLoadType(StrEnum):

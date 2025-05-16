@@ -2,7 +2,7 @@
 
 from typing import Self
 
-from ..api import BaseApi, BaseParams
+from tomtom_apis.api import BaseApi, BaseParams
 from .models import (
     LayerType,
     LayerTypeWithPoiType,

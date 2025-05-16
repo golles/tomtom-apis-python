@@ -11,8 +11,8 @@ from geojson import LineString, Point
 from mashumaro import field_options
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
-from ..api import BaseParams, BasePostData
-from ..models import Language, LatitudeLongitude, TileSizeType
+from tomtom_apis.api import BaseParams, BasePostData
+from tomtom_apis.models import Language, LatitudeLongitude, TileSizeType
 
 
 @dataclass(kw_only=True)

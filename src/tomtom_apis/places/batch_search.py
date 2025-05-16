@@ -2,13 +2,8 @@
 
 from typing import Self
 
-from ..api import BaseApi, BaseParams
-from ..places.models import (
-    AsynchronousBatchDownloadParams,
-    AsynchronousSynchronousBatchParams,
-    BatchPostData,
-    BatchResponse,
-)
+from tomtom_apis.api import BaseApi, BaseParams
+from tomtom_apis.places.models import AsynchronousBatchDownloadParams, AsynchronousSynchronousBatchParams, BatchPostData, BatchResponse
 
 
 class BatchSearchApi(BaseApi):

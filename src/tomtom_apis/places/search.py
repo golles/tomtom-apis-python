@@ -2,9 +2,9 @@
 
 from typing import Self
 
-from ..api import BaseApi, BaseParams
-from ..models import Language
-from ..places.models import (
+from tomtom_apis.api import BaseApi, BaseParams
+from tomtom_apis.models import Language
+from tomtom_apis.places.models import (
     AdditionalDataParams,
     AdditionalDataResponse,
     AutocompleteParams,

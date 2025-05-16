@@ -9,8 +9,8 @@ from enum import StrEnum
 
 from mashumaro.mixins.orjson import DataClassORJSONMixin
 
-from ..api import BaseParams, BasePostData
-from ..models import AdrCategoryType, Language, LatitudeLongitude, TravelModeType
+from tomtom_apis.api import BaseParams, BasePostData
+from tomtom_apis.models import AdrCategoryType, Language, LatitudeLongitude, TravelModeType
 
 
 class AvoidType(StrEnum):

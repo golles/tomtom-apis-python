@@ -4,8 +4,8 @@ from typing import Self
 
 from tomtom_apis.utils import serialize_list
 
-from ..exceptions import MutualExclusiveParamsException
-from ..api import BaseApi, BaseParams
+from tomtom_apis.exceptions import MutualExclusiveParamsException
+from tomtom_apis.api import BaseApi, BaseParams
 from .models import (
     BBoxParam,
     BoudingBoxParam,

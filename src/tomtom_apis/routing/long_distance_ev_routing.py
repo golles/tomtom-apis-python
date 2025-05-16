@@ -2,8 +2,8 @@
 
 from typing import Self
 
-from ..api import BaseApi
-from ..models import LatLonList
+from tomtom_apis.api import BaseApi
+from tomtom_apis.models import LatLonList
 from .models import CalculatedLongDistanceEVRouteResponse, CalculateLongDistanceEVRouteParams, CalculateLongDistanceEVRoutePostData
 
 

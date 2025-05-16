@@ -91,6 +91,7 @@ extend-select = [
   "PYI",
   "SIM",
   "SLF",
+  "TRY",
 ]
 
 [tool.ruff.lint.pydocstyle]

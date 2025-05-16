@@ -96,9 +96,12 @@ extend-select = [
   "INP",
   "TID",
   "S",
+  "N",
 ]
 ignore = [
   "COM812",  # Cause conflicts when used with the formatter.
+  "N803",  # Allow non-lowercase names, for API fields.
+  "N815",  # Allow mixedCase names, for API fields.
   "TC",  # Runtime (de)serialization requires types to be available at runtime.
 ]
 

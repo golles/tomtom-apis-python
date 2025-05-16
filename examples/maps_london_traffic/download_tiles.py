@@ -27,7 +27,7 @@ TILES: list[MapTile] = [  # a 3x3 grid of London at zoom level 10.
 ]
 
 
-class TileTypeException(Exception):
+class TileTypeExceptionError(Exception):
     """Exception raised when the tile type is not as expected."""
 
     def __init__(self) -> None:
@@ -64,7 +64,7 @@ async def download_tiles(api: MapDisplayApi | TrafficApi, tiles: list[MapTile]) 
             )
             file_path = SCRIPT_DIR / "tiles" / f"incidents_{tile.zoom}_{tile.x}_{tile.y}.png"
         else:
-            raise TileTypeException()
+            raise TileTypeExceptionError()
 
         with file_path.open("wb") as file:
             file.write(image_bytes)

@@ -28,7 +28,7 @@ from .exceptions import (
     TomTomAPIClientError,
     TomTomAPIConnectionError,
     TomTomAPIError,
-    TomTomAPIRequestTimeout,
+    TomTomAPIRequestTimeoutError,
     TomTomAPIServerError,
 )
 from .utils import serialize_bool, serialize_list
@@ -260,7 +260,7 @@ class BaseApi:
                 The response object from the API.
 
         Raises:
-            TomTomAPIRequestTimeout: If a timeout occurs while connecting to the API.
+            TomTomAPIRequestTimeoutError: If a timeout occurs while connecting to the API.
             TomTomAPIConnectionError: If a connection error occurs.
             TomTomAPIClientError: If a client-side error (4xx) occurs.
             TomTomAPIServerError: If a server-side error (5xx) occurs.
@@ -292,7 +292,7 @@ class BaseApi:
 
         except TimeoutError as exception:
             msg = "Timeout occurred while connecting to the API"
-            raise TomTomAPIRequestTimeout(msg) from exception
+            raise TomTomAPIRequestTimeoutError(msg) from exception
         except ClientConnectionError as exception:
             msg = "Connection error"
             raise TomTomAPIConnectionError(msg) from exception

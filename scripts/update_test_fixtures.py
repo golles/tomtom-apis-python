@@ -17,7 +17,7 @@ BASE_URL = "https://api.tomtom.com"
 FIXTURE_PATH = "tests/fixtures"
 
 
-class ContentException(Exception):
+class ContentExceptionError(Exception):
     """Exception raised when the content is not as expected."""
 
     def __init__(self) -> None:
@@ -54,7 +54,7 @@ async def save_fixture(content: str | bytes, fixture_path: Path) -> None:
         mode = "wb"
         encoding = None
     else:
-        raise ContentException()
+        raise ContentExceptionError()
 
     with fixture_path.open(mode=mode, encoding=encoding) as file:
         file.write(content)

@@ -179,7 +179,7 @@ async def test_deserialization_post_geometry_search(search_api: SearchApi) -> No
                     position="37.31205, -121.36434",
                     radius=1000,
                 ),
-            ]
+            ],
         ),
     )
 
@@ -237,7 +237,7 @@ async def test_deserialization_post_search_along_route(search_api: SearchApi) ->
                     LatLon(lat=37.4686, lon=-122.15644),
                     LatLon(lat=37.46981, lon=-122.15498),
                     LatLon(lat=37.4718, lon=-122.15149),
-                ]
+                ],
             ),
         ),
     )
@@ -343,7 +343,7 @@ async def test_deserialization_post_geometry_filter(search_api: SearchApi) -> No
                     position=LatLon(lat=40.80076, lon=-73.96556),
                 ),
             ],
-        )
+        ),
     )
 
     assert response

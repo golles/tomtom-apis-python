@@ -77,10 +77,10 @@ async def test_deserialization_post_calculate_route(routing_api: RoutingApi) -> 
                         {
                             "southWestCorner": {"latitude": 48.81851, "longitude": 2.26593},
                             "northEastCorner": {"latitude": 48.90309, "longitude": 2.41115},
-                        }
-                    ]
+                        },
+                    ],
                 },
-            }
+            },
         ),
     )
 
@@ -139,10 +139,10 @@ async def test_deserialization_post_calculate_reachable_range(routing_api: Routi
                         {
                             "southWestCorner": {"latitude": 48.81851, "longitude": 2.26593},
                             "northEastCorner": {"latitude": 48.90309, "longitude": 2.41115},
-                        }
-                    ]
+                        },
+                    ],
                 },
-            }
+            },
         ),
     )
 

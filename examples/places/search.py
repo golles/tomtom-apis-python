@@ -70,7 +70,7 @@ async def post_geometry_search(api_key: str) -> None:
                         position="37.31205, -121.36434",
                         radius=1000,
                     ),
-                ]
+                ],
             ),
         )
 

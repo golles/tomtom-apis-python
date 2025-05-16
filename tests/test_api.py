@@ -233,7 +233,7 @@ async def test_request_connection_error(base_api: BaseApi, mock_session: AsyncMo
 
 async def test_request_client_response_error(base_api: BaseApi, mock_session: AsyncMock, mock_request_info: RequestInfo) -> None:
     """Test the request method with a client response error."""
-    error = ClientResponseError(request_info=mock_request_info, history=(), status=400)
+    error = ClientResponseError(request_info=mock_request_info, history=(), status=HttpStatus.BAD_REQUEST)
     mock_session.request.side_effect = error
     with pytest.raises(TomTomAPIClientError):
         await base_api.get("/client/error")
@@ -241,7 +241,7 @@ async def test_request_client_response_error(base_api: BaseApi, mock_session: As
 
 async def test_request_server_response_error(base_api: BaseApi, mock_session: AsyncMock, mock_request_info: RequestInfo) -> None:
     """Test the request method with a server response error."""
-    error = ClientResponseError(request_info=mock_request_info, history=(), status=500)
+    error = ClientResponseError(request_info=mock_request_info, history=(), status=HttpStatus.INTERNAL_SERVER_ERROR)
     mock_session.request.side_effect = error
     with pytest.raises(TomTomAPIServerError):
         await base_api.get("/server/error")
@@ -249,7 +249,7 @@ async def test_request_server_response_error(base_api: BaseApi, mock_session: As
 
 async def test_request_unknown_response_error(base_api: BaseApi, mock_session: AsyncMock, mock_request_info: RequestInfo) -> None:
     """Test the request method with an unknown response error."""
-    error = ClientResponseError(request_info=mock_request_info, history=(), status=399)
+    error = ClientResponseError(request_info=mock_request_info, history=(), status=HttpStatus.UNASSIGNED)
     mock_session.request.side_effect = error
     with pytest.raises(TomTomAPIError):
         await base_api.get("/server/error")

@@ -3,6 +3,7 @@
 import math
 from enum import Enum, IntEnum, StrEnum
 
+from .exceptions import RangeException
 from .models import LatLon, MapTile
 
 # Constants
@@ -28,17 +29,17 @@ def lat_lon_to_tile_zxy(lat: float, lon: float, zoom_level: int) -> MapTile:
         MapTile: The corresponding map tile.
 
     Raises:
-        ValueError: If latitude, longitude, or zoom level are out of range.
+        RangeException: If latitude, longitude, or zoom level are out of range.
 
     """
     if not MIN_ZOOM_LEVEL <= zoom_level <= MAX_ZOOM_LEVEL:
-        raise ValueError(f"Zoom level value is out of range [{MIN_ZOOM_LEVEL}, {MAX_ZOOM_LEVEL}]")
+        raise RangeException("zoom_level", MIN_ZOOM_LEVEL, MAX_ZOOM_LEVEL)
 
     if not MIN_LAT <= lat <= MAX_LAT:
-        raise ValueError(f"Latitude value is out of range [{MIN_LAT}, {MAX_LAT}]")
+        raise RangeException("lat", MIN_LAT, MAX_LAT)
 
     if not MIN_LON <= lon <= MAX_LON:
-        raise ValueError(f"Longitude value is out of range [{MIN_LON}, {MAX_LON}]")
+        raise RangeException("lon", MIN_LON, MAX_LON)
 
     z = zoom_level
     xy_tiles_count = 2**z
@@ -62,20 +63,20 @@ def tile_zxy_to_lat_lon(zoom_level: int, x: int, y: int) -> LatLon:
         LatLon: The corresponding latitude and longitude.
 
     Raises:
-        ValueError: If the zoom level or tile coordinates are out of range.
+        RangeException: If the zoom level or tile coordinates are out of range.
 
     """
     if not MIN_ZOOM_LEVEL <= zoom_level <= MAX_ZOOM_LEVEL:
-        raise ValueError(f"Zoom level value is out of range [{MIN_ZOOM_LEVEL}, {MAX_ZOOM_LEVEL}]")
+        raise RangeException("zoom_level", MIN_ZOOM_LEVEL, MAX_ZOOM_LEVEL)
 
     z = zoom_level
     max_xy = 2**z - 1
 
     if not 0 <= x <= max_xy:
-        raise ValueError(f"Tile x value is out of range [0, {max_xy}]")
+        raise RangeException("x", 0, max_xy)
 
     if not 0 <= y <= max_xy:
-        raise ValueError(f"Tile y value is out of range [0, {max_xy}]")
+        raise RangeException("y", 0, max_xy)
 
     lon = (x / 2**z) * 360.0 - 180.0
 

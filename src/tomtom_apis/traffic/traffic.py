@@ -4,6 +4,7 @@ from typing import Self
 
 from tomtom_apis.utils import serialize_list
 
+from ..exceptions import MutualExclusiveParamsException
 from ..api import BaseApi, BaseParams
 from .models import (
     BBoxParam,
@@ -63,7 +64,7 @@ class TrafficApi(BaseApi):
         elif ids and not bbox:
             mutually_exclusive_parameters = f"ids={serialize_list(list(ids))}"
         else:
-            raise ValueError("bbox and ids are mutually exclusive parameters")
+            raise MutualExclusiveParamsException(["bbox", "ids"])
 
         response = await self.get(
             endpoint=f"/traffic/services/5/incidentDetails?{mutually_exclusive_parameters}",

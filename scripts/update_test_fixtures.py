@@ -17,6 +17,14 @@ BASE_URL = "https://api.tomtom.com"
 FIXTURE_PATH = "tests/fixtures"
 
 
+class ContentException(Exception):
+    """Exception raised when the content is not as expected."""
+
+    def __init__(self) -> None:
+        """Initialize the ContentException."""
+        super().__init__("Content must be either a string or bytes")
+
+
 async def read_json(file_path: Path) -> list[dict[str, Any]]:
     """Read a json file and return its content as a dict."""
     with file_path.open(encoding="UTF-8") as file:
@@ -46,7 +54,7 @@ async def save_fixture(content: str | bytes, fixture_path: Path) -> None:
         mode = "wb"
         encoding = None
     else:
-        raise ValueError("content must be either a string or bytes")
+        raise ContentException()
 
     with fixture_path.open(mode=mode, encoding=encoding) as file:
         file.write(content)

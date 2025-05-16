@@ -1,10 +1,12 @@
 """Test utils."""
 
 import math
+import re
 from enum import Enum, IntEnum, StrEnum
 
 import pytest
 
+from tomtom_apis.exceptions import RangeException
 from tomtom_apis.models import LatLon, MapTile
 from tomtom_apis.utils import lat_lon_to_tile_zxy, serialize_bool, serialize_enum, serialize_list, serialize_list_brackets, tile_zxy_to_lat_lon
 
@@ -29,19 +31,19 @@ def test_lat_lon_to_tile_zxy_boundary() -> None:
 
 def test_lat_lon_to_tile_zxy_invalid_zoom_level() -> None:
     """Test invalid zoom level for lat_lon_to_tile_zxy."""
-    with pytest.raises(ValueError, match="Zoom level value is out of range"):
+    with pytest.raises(RangeException, match=re.escape("zoom_level value is out of range [0, 22]")):
         lat_lon_to_tile_zxy(37.7749, -122.4194, 23)
 
 
 def test_lat_lon_to_tile_zxy_invalid_latitude() -> None:
     """Test invalid latitude for lat_lon_to_tile_zxy."""
-    with pytest.raises(ValueError, match="Latitude value is out of range"):
+    with pytest.raises(RangeException, match=re.escape("lat value is out of range [-85.051128779807, 85.051128779806]")):
         lat_lon_to_tile_zxy(90.0, -122.4194, 10)
 
 
 def test_lat_lon_to_tile_zxy_invalid_longitude() -> None:
     """Test invalid longitude for lat_lon_to_tile_zxy."""
-    with pytest.raises(ValueError, match="Longitude value is out of range"):
+    with pytest.raises(RangeException, match=re.escape("lon value is out of range [-180.0, 180.0]")):
         lat_lon_to_tile_zxy(37.7749, -200.0, 10)
 
 
@@ -55,19 +57,19 @@ def test_tile_zxy_to_lat_lon_valid() -> None:
 
 def test_tile_zxy_to_lat_lon_invalid_zoom_level() -> None:
     """Test invalid zoom level for tile_zxy_to_lat_lon."""
-    with pytest.raises(ValueError, match="Zoom level value is out of range"):
+    with pytest.raises(RangeException, match=re.escape("zoom_level value is out of range [0, 22]")):
         tile_zxy_to_lat_lon(23, 163, 395)
 
 
 def test_tile_zxy_to_lat_lon_invalid_x() -> None:
     """Test invalid x coordinate for tile_zxy_to_lat_lon."""
-    with pytest.raises(ValueError, match="Tile x value is out of range"):
+    with pytest.raises(RangeException, match=re.escape("x value is out of range [0, 1023]")):
         tile_zxy_to_lat_lon(10, -1, 395)
 
 
 def test_tile_zxy_to_lat_lon_invalid_y() -> None:
     """Test invalid y coordinate for tile_zxy_to_lat_lon."""
-    with pytest.raises(ValueError, match="Tile y value is out of range"):
+    with pytest.raises(RangeException, match=re.escape("y value is out of range [0, 1023]")):
         tile_zxy_to_lat_lon(10, 163, -1)
 
 

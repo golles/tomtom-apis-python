@@ -129,8 +129,8 @@ class Response:
         try:
             text = await self._response.text()
             return model.from_json(text)
-        except Exception as e:
-            logger.error("Failed to deserialize response: %s", e)
+        except Exception:
+            logger.exception("Failed to deserialize response")
             raise
 
     async def dict(self: Self) -> dict:
@@ -146,8 +146,8 @@ class Response:
         try:
             text = await self._response.text()
             return orjson.loads(text)  # pylint: disable=maybe-no-member
-        except orjson.JSONDecodeError as e:  # pylint: disable=maybe-no-member
-            logger.error("Failed to decode JSON response: %s", e)
+        except orjson.JSONDecodeError:  # pylint: disable=maybe-no-member
+            logger.exception("Failed to decode JSON response")
             raise
 
     async def text(self: Self) -> str:

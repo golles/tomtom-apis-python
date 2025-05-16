@@ -201,8 +201,6 @@ class BaseApi:
             The options for the client.
     """
 
-    _version: str = metadata.version(__package__)
-
     def __init__(
         self: Self,
         options: ApiOptions,
@@ -218,6 +216,7 @@ class BaseApi:
         """
         self.options = options
         self.session = ClientSession(options.base_url, timeout=options.timeout) if session is None else session
+        self._version: str = metadata.version(__package__)
 
         self._default_headers: dict[str, str] = {
             CONTENT_TYPE: "application/json",
@@ -227,6 +226,11 @@ class BaseApi:
         self._default_params: dict[str, str] = {
             "key": options.api_key,
         }
+
+    @property
+    def version(self) -> str:
+        """Get the version of the TomTom API client."""
+        return self._version
 
     async def _request(  # pylint: disable=too-many-arguments
         self: Self,

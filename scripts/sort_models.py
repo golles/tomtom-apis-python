@@ -51,4 +51,8 @@ if __name__ == "__main__":
     print(f"Classes in '{file_to_sort}' have been sorted alphabetically")
 
     # Format the file
-    subprocess.run(["ruff", "format", file_to_sort], check=True, stdout=subprocess.DEVNULL)
+    subprocess.run(
+        ["/workspaces/tomtom-api-python/.venv/bin/ruff", "format", file_to_sort],
+        check=True,
+        stdout=subprocess.DEVNULL,
+    )

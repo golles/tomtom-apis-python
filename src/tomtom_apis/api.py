@@ -489,7 +489,7 @@ class BaseApi:
         """
         return self
 
-    async def __aexit__(self: Self, exc_type: type[BaseException] | None, exc_val: BaseException | None, exc_tb: TracebackType) -> None:
+    async def __aexit__(self: Self, exc_type: type[BaseException] | None, exc_val: BaseException | None, exc_tb: TracebackType | None) -> None:
         """Exit the runtime context related to this object.
 
         The session used for making requests is closed upon exiting the context.

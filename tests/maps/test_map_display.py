@@ -175,4 +175,4 @@ async def test_deserialization_get_map_service_copyrights(map_display_api: MapDi
 
     assert response
     assert isinstance(response, MapServiceCopyrightsResponse)
-    assert "©TomTom" == response.copyrightsCaption
+    assert response.copyrightsCaption == "©TomTom"

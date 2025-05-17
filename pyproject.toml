@@ -79,30 +79,7 @@ line-length = 150
 target-version = "py313"
 
 [tool.ruff.lint]
-extend-select = [
-  "UP",  # pyupgrade
-  "D",  # pydocstyle
-  "ANN",  # flake8-annotations
-  "RUF",
-  "PTH",
-  "COM",
-  "ERA",
-  "FBT",
-  "PYI",
-  "SIM",
-  "SLF",
-  "TRY",
-  "EM",
-  "INP",
-  "TID",
-  "S",
-  "N",
-  "I",
-  "E",
-  "T",
-  "RSE",
-  "PLR",
-]
+select = ["ALL"]
 ignore = [
   "COM812",  # Cause conflicts when used with the formatter.
   "N803",  # Allow non-lowercase names, for API fields.

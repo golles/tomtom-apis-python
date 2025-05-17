@@ -14,7 +14,9 @@ from typing import Any
 import aiohttp
 
 BASE_URL = "https://api.tomtom.com"
-FIXTURE_PATH = "tests/fixtures"
+PROJECT_ROOT = Path(__file__).parent.parent
+FIXTURES_PATH = Path(PROJECT_ROOT) / "tests" / "fixtures"
+FIXTURE_FILE_PATH = Path(PROJECT_ROOT) / "scripts" / "data" / "fixtures.json"
 
 
 class ContentExceptionError(Exception):
@@ -68,7 +70,7 @@ async def process_fixture(session: aiohttp.ClientSession, api_entry: dict, api_k
         fixture_filename = fixture.get("fixture")
         post_data = fixture.get("data")
 
-        fixture_path = Path(FIXTURE_PATH) / fixture_filename
+        fixture_path = FIXTURES_PATH / fixture_filename
         full_url = f"{BASE_URL}/{url.replace('{{TT_KEY}}', api_key)}"
 
         if method and url and fixture_path:
@@ -101,13 +103,11 @@ def get_api_key() -> str:
 
 
 if __name__ == "__main__":
-    script_dir = Path(__file__).parent
-    fixtures_path = Path(script_dir) / "data" / "fixtures.json"
-    user_api_key = get_api_key()  # Prompt the user for the API key
-    asyncio.run(process_fixtures(fixtures_path, user_api_key))
+    user_api_key = get_api_key()
+    asyncio.run(process_fixtures(FIXTURE_FILE_PATH, user_api_key))
 
     # Make all fixture files prettier
     subprocess.run(
-        ["/workspaces/tomtom-api-python/node_modules/.bin/prettier", "--log-level", "silent", "--write", FIXTURE_PATH],
+        [f"{PROJECT_ROOT}/node_modules/.bin/prettier", "--log-level", "silent", "--write", FIXTURES_PATH],
         check=True,
     )

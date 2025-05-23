@@ -33,6 +33,9 @@ if [ "$CI" != "true" ]; then
     mkdir -p ~/.zfunc
     uv generate-shell-completion zsh > ~/.zfunc/_uv
     uv run ruff generate-shell-completion zsh > ~/.zfunc/_ruff
+    if command -v gh &> /dev/null; then
+        gh completion -s zsh > ~/.zfunc/_gh
+    fi
     grep -qxF 'fpath+=~/.zfunc' ~/.zshrc || echo 'fpath+=~/.zfunc' >> ~/.zshrc
     grep -qxF 'autoload -Uz compinit && compinit' ~/.zshrc || echo 'autoload -Uz compinit && compinit' >> ~/.zshrc
 fi

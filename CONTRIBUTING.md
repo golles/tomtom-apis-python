@@ -10,7 +10,7 @@ Before you start contributing, it's essential to familiarize yourself with the c
 
 To ensure a consistent development environment, we recommend using the [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers) or a [GitHub Codespace](https://github.com/codespaces). These tools will provide you with a standardized setup that matches the project's requirements.
 
-If you prefer using a local development environment, you can create a Python virtual environment using the `scripts/setup_env.sh` script. This script uses [uv](https://docs.astral.sh/uv) to manage dependencies and environment settings. It will also install required `npm` tools.
+If you prefer using a local development environment, you can create a Python virtual environment using the `scripts/setup_env.sh` script. This script uses [uv](https://docs.astral.sh/uv) to manage dependencies and environment settings. It will also install required `npm` tools and autocompletions.
 
 ```sh
 ./scripts/setup_env.sh

@@ -47,7 +47,7 @@ dev = [
 ]
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling==1.14.1"]
 build-backend = "hatchling.build"
 
 [tool.coverage.run]

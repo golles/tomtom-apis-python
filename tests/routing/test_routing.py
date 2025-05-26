@@ -102,7 +102,7 @@ async def test_deserialization_get_calculate_reachable_range(routing_api: Routin
         origin=LOC_AMSTERDAM,
         params=CalculateReachableRouteParams(
             energyBudgetInkWh=43,
-            avoid=AvoidType.UNPAVED_ROADS,
+            avoid=[AvoidType.UNPAVED_ROADS],
             vehicleEngineType=VehicleEngineType.ELECTRIC,
             constantSpeedConsumptionInkWhPerHundredkm="50,8.2:130,21.3",
         ),
@@ -125,7 +125,7 @@ async def test_deserialization_post_calculate_reachable_range(routing_api: Routi
         origin=LOC_AMSTERDAM,
         params=CalculateReachableRouteParams(
             energyBudgetInkWh=43,
-            avoid=AvoidType.UNPAVED_ROADS,
+            avoid=[AvoidType.UNPAVED_ROADS],
             vehicleEngineType=VehicleEngineType.ELECTRIC,
             constantSpeedConsumptionInkWhPerHundredkm="50,8.2:130,21.3",
         ),

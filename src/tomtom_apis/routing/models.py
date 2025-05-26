@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime
 from enum import StrEnum
 
@@ -33,12 +33,12 @@ class CalculateLongDistanceEVRouteParams(BaseParams):
     """Parameters for the calculate long distance EV route API."""
 
     vehicleHeading: int | None = None
-    sectionType: SectionType | None = None
+    sectionType: list[SectionType] | None = field(default=None, metadata={"serialize": list})  # serialize as list, so the field repeats.
     report: str | None = None
     departAt: str | None = None
     routeType: RouteType | None = None
     traffic: bool | None = None
-    avoid: AvoidType | None = None
+    avoid: list[AvoidType] | None = field(default=None, metadata={"serialize": list})  # serialize as list, so the field repeats.
     travelMode: TravelModeType | None = None
     vehicleMaxSpeed: int | None = None
     vehicleWeight: int | None = None
@@ -48,7 +48,7 @@ class CalculateLongDistanceEVRouteParams(BaseParams):
     vehicleWidth: float | None = None
     vehicleHeight: float | None = None
     vehicleCommercial: bool | None = None
-    vehicleLoadType: VehicleLoadType | None = None
+    vehicleLoadType: list[VehicleLoadType] | None = field(default=None, metadata={"serialize": list})  # serialize as list, so the field repeats.
     vehicleAdrTunnelRestrictionCode: AdrCategoryType | None = None
     vehicleEngineType: VehicleEngineType
     accelerationEfficiency: float | None = None
@@ -93,7 +93,7 @@ class CalculateReachableRouteParams(BaseParams):
     arriveAt: str | None = None
     routeType: RouteType | None = None
     traffic: bool | None = None
-    avoid: AvoidType | None = None
+    avoid: list[AvoidType] | None = field(default=None, metadata={"serialize": list})  # serialize as list, so the field repeats.
     travelMode: TravelModeType | None = None
     hilliness: HillinessType | None = None
     windingness: WindingnessType | None = None
@@ -105,7 +105,7 @@ class CalculateReachableRouteParams(BaseParams):
     vehicleWidth: float | None = None
     vehicleHeight: float | None = None
     vehicleCommercial: bool | None = None
-    vehicleLoadType: VehicleLoadType | None = None
+    vehicleLoadType: list[VehicleLoadType] | None = field(default=None, metadata={"serialize": list})  # serialize as list, so the field repeats.
     vehicleAdrTunnelRestrictionCode: AdrCategoryType | None = None
     constantSpeedConsumptionInLitersPerHundredkm: str | None = None
     currentFuelInLiters: float | None = None
@@ -135,13 +135,13 @@ class CalculateRouteParams(BaseParams):
     routeRepresentation: str | None = None
     computeTravelTimeFor: str | None = None
     vehicleHeading: int | None = None
-    sectionType: SectionType | None = None
+    sectionType: list[SectionType] | None = field(default=None, metadata={"serialize": list})  # serialize as list, so the field repeats.
     report: str | None = None
     departAt: str | None = None
     arriveAt: str | None = None
     routeType: RouteType | None = None
     traffic: bool | None = None
-    avoid: AvoidType | None = None
+    avoid: list[AvoidType] | None = field(default=None, metadata={"serialize": list})  # serialize as list, so the field repeats.
     travelMode: TravelModeType | None = None
     hilliness: HillinessType | None = None
     windingness: WindingnessType | None = None
@@ -153,7 +153,7 @@ class CalculateRouteParams(BaseParams):
     vehicleWidth: float | None = None
     vehicleHeight: float | None = None
     vehicleCommercial: bool | None = None
-    vehicleLoadType: VehicleLoadType | None = None
+    vehicleLoadType: list[VehicleLoadType] | None = field(default=None, metadata={"serialize": list})  # serialize as list, so the field repeats.
     vehicleAdrTunnelRestrictionCode: AdrCategoryType | None = None
     vehicleEngineType: VehicleEngineType | None = None
     constantSpeedConsumptionInLitersPerHundredkm: str | None = None

@@ -418,7 +418,10 @@ class CurrentType(StrEnum):
 class DataSources(DataClassORJSONMixin):
     """Represents a DataSources."""
 
-    chargingAvailability: IdString
+    chargingAvailability: IdString | None = None
+    parkingAvailability: IdString | None = None
+    fuelPrice: IdString | None = None
+    geometry: IdString | None = None
 
 
 @dataclass(kw_only=True)

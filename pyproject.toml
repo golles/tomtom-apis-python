@@ -20,7 +20,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
-    "aiohttp==3.12.2",
+    "aiohttp==3.12.3",
     "geojson==3.2.0",
     "mashumaro==3.16",
     "orjson==3.10.18",

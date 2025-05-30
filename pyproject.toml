@@ -35,7 +35,7 @@ Issues = "https://github.com/golles/tomtom-apis-python/issues"
 [dependency-groups]
 dev = [
     "aresponses==3.0.0",
-    "mypy==1.15.0",
+    "mypy==1.16.0",
     "pre-commit==4.2.0",
     "pylint==3.3.7",
     "pytest==8.3.5",

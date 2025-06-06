@@ -44,7 +44,14 @@ def fixture_mock_response() -> AsyncMock:
 def fixture_mock_session(mock_response: AsyncMock) -> AsyncMock:
     """Fixture for mock session."""
     session = AsyncMock(spec=ClientSession)
+    session.closed = False
+
+    async def close_mock() -> None:
+        session.closed = True
+
+    session.close = AsyncMock(side_effect=close_mock)
     session.request = AsyncMock(return_value=mock_response)
+
     return session
 
 
@@ -284,9 +291,21 @@ async def test_tracking_id(base_api: BaseApi, mock_session: AsyncMock) -> None:
 
 
 async def test_manual_session_close(mock_session: AsyncMock) -> None:
-    """Test manual closing of the session."""
+    """Test manual closing of the provided session."""
     options = ApiOptions(api_key=API_KEY)
-    base_api = BaseApi(options, mock_session)
-    assert base_api.session is not None
+    async with BaseApi(options, mock_session) as base_api:
+        assert not base_api._close_session  # pylint: disable=protected-access
+        assert not base_api.session.closed
+
     await base_api.close()
+    assert base_api.session.closed
+
+
+async def test_auto_session_close() -> None:
+    """Test auto closing of the default session."""
+    options = ApiOptions(api_key=API_KEY)
+    async with BaseApi(options) as base_api:
+        assert base_api._close_session  # pylint: disable=protected-access
+        assert not base_api.session.closed
+
     assert base_api.session.closed

@@ -212,10 +212,11 @@ class BaseApi:
             options: ApiOptions
                 The options for the client.
             session: ClientSession, optional
-                The client session to use for requests. If not provided, a new session is created.
+                The client session to use for requests. If not provided, a new session is created and will be closed when exiting the context.
         """
         self.options = options
         self.session = ClientSession(options.base_url, timeout=options.timeout) if session is None else session
+        self._close_session = session is None
         self._version: str = metadata.version(__package__)
 
         self._default_headers: dict[str, str] = {
@@ -503,12 +504,13 @@ class BaseApi:
             exc_val: The value of the exception raised in the context.
             exc_tb: The traceback of the exception raised in the context.
         """
-        await self.session.close()
+        if self.session and self._close_session:
+            await self.session.close()
 
     async def close(self: Self) -> None:
         """Close the session.
 
-        Manually closes the session. If the session is not closed, it will be closed when exiting the context.
+        Manually closes the session.
 
         Note:
             Does not raise an exception if the session is already closed.

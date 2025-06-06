@@ -60,6 +60,12 @@ session = ClientSession("https://api.tomtom.com", timeout=ClientTimeout(total=60
 
 # Create an instance of MapDisplayApi
 map_display_api = MapDisplayApi(options, session)
+
+# Use the API
+map_display_api.get_map_tile(...)
+
+# Close the session when done
+map_display_api.close()
 ```
 
 ## Sharing ClientSession Between APIs

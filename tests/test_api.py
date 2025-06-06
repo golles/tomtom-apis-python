@@ -294,7 +294,7 @@ async def test_manual_session_close(mock_session: AsyncMock) -> None:
     """Test manual closing of the provided session."""
     options = ApiOptions(api_key=API_KEY)
     async with BaseApi(options, mock_session) as base_api:
-        assert base_api._close_session  # pylint: disable=protected-access
+        assert not base_api._close_session  # pylint: disable=protected-access
         assert not base_api.session.closed
 
     await base_api.close()

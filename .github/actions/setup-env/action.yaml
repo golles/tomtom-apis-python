@@ -1,29 +1,19 @@
 name: Setup environment
 description: This action sets up the environment for the project.
 
-inputs:
-  python-version:
-    description: The version of Python to use.
-    required: true
-    default: "3.13"
-  node-version:
-    description: The version of Python to use.
-    required: true
-    default: "22"
-
 runs:
   using: composite
   steps:
     - name: Setup Python and uv
       uses: astral-sh/setup-uv@v6
       with:
-        python-version: ${{ inputs.python-version }}
         enable-cache: true
 
     - name: Setup Node
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ inputs.node-version }}
+        node-version-file: package.json
+        cache: npm
 
     - name: Run setup_env script
       shell: bash

@@ -4,6 +4,9 @@
   "description": "Asynchronous Python client for the TomTom APIs",
   "author": "Sander Gols <developer@golles.nl>",
   "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "devDependencies": {
     "prettier": "3.5.3"
   },

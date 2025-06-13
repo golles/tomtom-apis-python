@@ -10,10 +10,6 @@ on: # yamllint disable-line rule:truthy
   schedule:
     - cron: "0 0 * * *" # Every day at UTC midnight.
 
-env:
-  DEFAULT_PYTHON: "3.13"
-  DEFAULT_NODE: "22"
-
 permissions:
   contents: read
 
@@ -38,9 +34,6 @@ jobs:
 
       - name: Setup environment
         uses: ./.github/actions/setup-env
-        with:
-          python-version: ${{ env.DEFAULT_PYTHON }}
-          node-version: ${{ env.DEFAULT_NODE }}
 
       - name: Update fixtures script
         env:

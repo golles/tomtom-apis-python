@@ -3,7 +3,7 @@ name = "tomtom-apis"
 version = "0.0.1"
 description = "Asynchronous Python client for the TomTom APIs"
 authors = [{ name = "Sander Gols", email = "developer@golles.nl" }]
-requires-python = "==3.13.4"
+requires-python = "==3.13.5"
 readme = "README.md"
 license = "MIT"
 classifiers = [

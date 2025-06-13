@@ -6,10 +6,6 @@ on: # yamllint disable-line rule:truthy
       - main
   pull_request: ~
 
-env:
-  DEFAULT_PYTHON: "3.13"
-  DEFAULT_NODE: "22"
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
@@ -47,9 +43,6 @@ jobs:
 
       - name: Setup environment
         uses: ./.github/actions/setup-env
-        with:
-          python-version: ${{ env.DEFAULT_PYTHON }}
-          node-version: ${{ env.DEFAULT_NODE }}
 
       - name: Run ${{ matrix.name }}
         run: ${{ matrix.command }}
@@ -67,9 +60,6 @@ jobs:
 
       - name: Setup environment
         uses: ./.github/actions/setup-env
-        with:
-          python-version: ${{ env.DEFAULT_PYTHON }}
-          node-version: ${{ env.DEFAULT_NODE }}
 
       - name: Run tests
         run: uv run pytest

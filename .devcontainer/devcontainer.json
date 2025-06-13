@@ -71,7 +71,7 @@
       "version": "latest"
     },
     "ghcr.io/devcontainers/features/node:1": {
-      "version": 22
+      "version": 24
     },
     "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {
       "jqVersion": "latest",

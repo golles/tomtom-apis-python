@@ -23,28 +23,15 @@
       "rangeStrategy": "pin"
     },
     {
-      "description": "Javascript dependencies ignore node engine",
-      "matchManagers": ["npm"],
-      "matchDepNames": ["node"],
-      "enabled": false
-    },
-    {
       "description": "Javascript dependencies",
       "matchManagers": ["npm"],
       "addLabels": ["javascript"],
       "rangeStrategy": "pin"
     },
     {
-      "description": "Python ignore requires-python",
-      "matchManagers": ["pep621"],
-      "matchDepNames": ["python"],
-      "enabled": false
-    },
-    {
       "description": "Python dependencies",
       "matchManagers": ["pep621"],
-      "addLabels": ["python"],
-      "rangeStrategy": "pin"
+      "addLabels": ["python"]
     },
     {
       "description": "Pre-commit hooks",
@@ -59,9 +46,10 @@
       "automerge": true
     },
     {
-      "description": "Automerge dev dependencies",
+      "description": "Automerge and pin dev dependencies",
       "matchDepTypes": ["devDependencies", "dev-dependencies", "dev"],
-      "automerge": true
+      "automerge": true,
+      "rangeStrategy": "pin"
     }
   ]
 }

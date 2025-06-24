@@ -217,20 +217,13 @@ class BaseApi:
         self.options = options
         self.session = ClientSession(options.base_url, timeout=options.timeout) if session is None else session
         self._close_session = session is None
-        self._version: str = metadata.version(__package__)
-
-        self._default_headers: dict[str, str] = {
-            CONTENT_TYPE: "application/json",
-            USER_AGENT: f"TomTomApiPython/{self._version}",
-        }
-
-        self._default_params: dict[str, str] = {
-            "key": options.api_key,
-        }
+        self._version: str | None = None
 
     @property
     def version(self) -> str:
         """Get the version of the TomTom API client."""
+        if self._version is None:
+            self._version = metadata.version(__package__)
         return self._version
 
     async def _request(  # pylint: disable=too-many-arguments
@@ -326,7 +319,10 @@ class BaseApi:
             dict:
                 The merged dictionary of default and provided parameters.
         """
-        return {**self._default_params, **(params.to_dict() if params else {})}
+        default_params: dict[str, str] = {
+            "key": self.options.api_key,
+        }
+        return {**default_params, **(params.to_dict() if params else {})}
 
     def _prepare_headers(self: Self, headers: dict[str, str] | None, options: ApiOptions) -> dict:
         """Prepare the request headers, adds extra headers if specified in options.
@@ -341,15 +337,19 @@ class BaseApi:
             dict:
                 The merged dictionary of headers with additional compression and tracking ID if applicable.
         """
-        request_headers = {**self._default_headers, **(headers if headers else {})}
+        merged_headers = {
+            CONTENT_TYPE: "application/json",
+            USER_AGENT: f"TomTomApiPython/{self.version}",
+            **(headers or {}),
+        }
 
         if options.gzip_compression:
-            request_headers[ACCEPT_ENCODING] = "gzip"
+            merged_headers[ACCEPT_ENCODING] = "gzip"
         if options.tracking_id:
             tracking_id = str(uuid.uuid4())
-            request_headers[TRACKING_ID_HEADER] = tracking_id
+            merged_headers[TRACKING_ID_HEADER] = tracking_id
 
-        return request_headers
+        return merged_headers
 
     def _prepare_data(self: Self, data: BasePostData | None) -> dict | None:
         """Prepare the request data by converting the provided data object to a dictionary, if it exists.

@@ -137,7 +137,7 @@ async def test_get_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
         json=None,
         headers={
             "Content-Type": "application/json",
-            "User-Agent": f"TomTomApiPython/{base_api.version}",
+            "User-Agent": "python/tomtom_apis",
         },
     )
     assert isinstance(response, Response)
@@ -157,7 +157,7 @@ async def test_get_request_with_gzip(base_api: BaseApi, mock_session: AsyncMock)
         json=None,
         headers={
             "Content-Type": "application/json",
-            "User-Agent": f"TomTomApiPython/{base_api.version}",
+            "User-Agent": "python/tomtom_apis",
             "Accept-Encoding": "gzip",
         },
     )
@@ -178,7 +178,7 @@ async def test_post_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
         json=data.to_dict(),
         headers={
             "Content-Type": "application/json",
-            "User-Agent": f"TomTomApiPython/{base_api.version}",
+            "User-Agent": "python/tomtom_apis",
         },
     )
     assert isinstance(response, Response)
@@ -197,7 +197,7 @@ async def test_delete_request(base_api: BaseApi, mock_session: AsyncMock) -> Non
         json=None,
         headers={
             "Content-Type": "application/json",
-            "User-Agent": f"TomTomApiPython/{base_api.version}",
+            "User-Agent": "python/tomtom_apis",
         },
     )
     assert isinstance(response, Response)
@@ -217,7 +217,7 @@ async def test_put_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
         json=data.to_dict(),
         headers={
             "Content-Type": "application/json",
-            "User-Agent": f"TomTomApiPython/{base_api.version}",
+            "User-Agent": "python/tomtom_apis",
         },
     )
     assert isinstance(response, Response)

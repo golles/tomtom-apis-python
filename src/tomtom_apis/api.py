@@ -6,7 +6,6 @@ import logging
 import socket
 import uuid
 from dataclasses import dataclass, field
-from importlib import metadata
 from types import TracebackType
 from typing import Any, Self
 
@@ -217,14 +216,6 @@ class BaseApi:
         self.options = options
         self.session = ClientSession(options.base_url, timeout=options.timeout) if session is None else session
         self._close_session = session is None
-        self._version: str | None = None
-
-    @property
-    def version(self) -> str:
-        """Get the version of the TomTom API client."""
-        if self._version is None:
-            self._version = metadata.version(__package__)
-        return self._version
 
     async def _request(  # pylint: disable=too-many-arguments
         self: Self,
@@ -339,7 +330,7 @@ class BaseApi:
         """
         merged_headers = {
             CONTENT_TYPE: "application/json",
-            USER_AGENT: f"TomTomApiPython/{self.version}",
+            USER_AGENT: "python/tomtom_apis",
             **(headers or {}),
         }
 

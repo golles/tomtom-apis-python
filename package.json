@@ -5,7 +5,7 @@
   "author": "Sander Gols <developer@golles.nl>",
   "license": "MIT",
   "engines": {
-    "node": ">=24.0.0"
+    "node": "24.3.0"
   },
   "devDependencies": {
     "prettier": "3.6.2"

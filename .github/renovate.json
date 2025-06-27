@@ -23,6 +23,12 @@
       "rangeStrategy": "pin"
     },
     {
+      "description": "Javascript dependencies ignore node engine",
+      "matchManagers": ["npm"],
+      "matchDepNames": ["node"],
+      "enabled": false
+    },
+    {
       "description": "Javascript dependencies",
       "matchManagers": ["npm"],
       "addLabels": ["javascript"],

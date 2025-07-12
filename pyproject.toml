@@ -40,7 +40,7 @@ dev = [
     "pytest==8.4.1",
     "pytest-asyncio==1.0.0",
     "pytest-cov==6.2.1",
-    "ruff==0.12.2",
+    "ruff==0.12.3",
     "shellcheck-py==0.10.0.1",
     "yamllint==1.37.1",
 ]

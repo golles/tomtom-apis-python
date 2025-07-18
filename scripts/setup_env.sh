@@ -29,11 +29,16 @@ if [ "$CI" != "true" ]; then
     # Trust the repo
     git config --global --add safe.directory /workspaces/tomtom-api-python
 
+    # Install pre-commit when available
+    if command_exists pre-commit &> /dev/null && [ -f .pre-commit-config.yaml ]; then
+        pre-commit install
+    fi
+
     # Install auto completions
     mkdir -p ~/.zfunc
     uv generate-shell-completion zsh > ~/.zfunc/_uv
     uv run ruff generate-shell-completion zsh > ~/.zfunc/_ruff
-    if command -v gh &> /dev/null; then
+    if command_exists gh &> /dev/null; then
         gh completion -s zsh > ~/.zfunc/_gh
     fi
     grep -qxF 'fpath+=~/.zfunc' ~/.zshrc || echo 'fpath+=~/.zfunc' >> ~/.zshrc

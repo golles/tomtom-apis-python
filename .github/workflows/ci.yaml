@@ -39,7 +39,7 @@ jobs:
     name: ${{ matrix.name }}
     steps:
       - name: Check out code from GitHub
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup environment
         uses: ./.github/actions/setup-env
@@ -54,7 +54,7 @@ jobs:
     name: Tests
     steps:
       - name: Check out code from GitHub
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0 # Fetch full history for all SonarCloud features.
 

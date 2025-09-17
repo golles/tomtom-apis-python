@@ -11,25 +11,15 @@ from typing import Any, Self
 
 import orjson
 from aiohttp import ClientResponse, ClientTimeout
-from aiohttp.client import (
-    ClientConnectionError,
-    ClientError,
-    ClientResponseError,
-    ClientSession,
-)
+from aiohttp.client import ClientConnectionError, ClientError, ClientResponseError, ClientSession
 from aiohttp.hdrs import ACCEPT_ENCODING, CONTENT_TYPE, USER_AGENT
 from mashumaro import DataClassDictMixin
 from mashumaro.config import BaseConfig
 from mashumaro.mixins.orjson import DataClassORJSONMixin
+from yarl import URL
 
 from .const import TOMTOM_HEADER_PREFIX, TRACKING_ID_HEADER, HttpMethod, HttpStatus
-from .exceptions import (
-    TomTomAPIClientError,
-    TomTomAPIConnectionError,
-    TomTomAPIError,
-    TomTomAPIRequestTimeoutError,
-    TomTomAPIServerError,
-)
+from .exceptions import TomTomAPIClientError, TomTomAPIConnectionError, TomTomAPIError, TomTomAPIRequestTimeoutError, TomTomAPIServerError
 from .utils import serialize_bool, serialize_list
 
 logger = logging.getLogger(__name__)
@@ -214,7 +204,7 @@ class BaseApi:
                 The client session to use for requests. If not provided, a new session is created and will be closed when exiting the context.
         """
         self.options = options
-        self.session = ClientSession(options.base_url, timeout=options.timeout) if session is None else session
+        self.session = ClientSession(timeout=options.timeout) if session is None else session
         self._close_session = session is None
 
     async def _request(  # pylint: disable=too-many-arguments
@@ -251,16 +241,17 @@ class BaseApi:
             TomTomAPIServerError: If a server-side error (5xx) occurs.
             TomTomAPIError: For other errors raised by the TomTom SDK.
         """
+        url = URL(self.options.base_url).join(URL(endpoint))
         request_params = self._prepare_params(params=params)
         request_headers = self._prepare_headers(headers=headers, options=self.options)
         request_data = self._prepare_data(data=data)
 
-        logger.info("%s %s (%s)", method, endpoint, request_headers.get(TRACKING_ID_HEADER, "not tracked"))
+        logger.info("%s %s (%s)", method, url, request_headers.get(TRACKING_ID_HEADER, "not tracked"))
 
         try:
             response = await self.session.request(
                 method,
-                endpoint,
+                url,
                 params=request_params,
                 json=request_data,
                 headers=request_headers,

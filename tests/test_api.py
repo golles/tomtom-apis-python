@@ -69,7 +69,7 @@ def fixture_mock_request_info() -> RequestInfo:
 @pytest.fixture(name="base_api")
 async def fixture_base_api(mock_session: AsyncMock) -> AsyncGenerator[BaseApi]:
     """Fixture for BaseApi."""
-    options = ApiOptions(api_key=API_KEY)
+    options = ApiOptions(api_key=API_KEY, base_url="http://example.com")
     async with BaseApi(options, mock_session) as base:
         yield base
 
@@ -132,7 +132,7 @@ async def test_get_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
 
     mock_session.request.assert_called_once_with(
         HttpMethod.GET,
-        endpoint,
+        URL(base_api.options.base_url).join(URL(endpoint)),
         params={"key": API_KEY},
         json=None,
         headers={
@@ -152,7 +152,7 @@ async def test_get_request_with_gzip(base_api: BaseApi, mock_session: AsyncMock)
 
     mock_session.request.assert_called_once_with(
         HttpMethod.GET,
-        endpoint,
+        URL(base_api.options.base_url).join(URL(endpoint)),
         params={"key": API_KEY},
         json=None,
         headers={
@@ -173,7 +173,7 @@ async def test_post_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
 
     mock_session.request.assert_called_once_with(
         HttpMethod.POST,
-        endpoint,
+        URL(base_api.options.base_url).join(URL(endpoint)),
         params={"key": API_KEY},
         json=data.to_dict(),
         headers={
@@ -192,7 +192,7 @@ async def test_delete_request(base_api: BaseApi, mock_session: AsyncMock) -> Non
 
     mock_session.request.assert_called_once_with(
         HttpMethod.DELETE,
-        endpoint,
+        URL(base_api.options.base_url).join(URL(endpoint)),
         params={"key": API_KEY},
         json=None,
         headers={
@@ -212,7 +212,7 @@ async def test_put_request(base_api: BaseApi, mock_session: AsyncMock) -> None:
 
     mock_session.request.assert_called_once_with(
         HttpMethod.PUT,
-        endpoint,
+        URL(base_api.options.base_url).join(URL(endpoint)),
         params={"key": API_KEY},
         json=data.to_dict(),
         headers={

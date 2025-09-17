@@ -16,7 +16,7 @@
     {
       "label": "Run all examples",
       "type": "shell",
-      "command": "find examples -type f -name \"*.py\" -exec uv run {} \\;",
+      "command": "./scripts/run_all_examples.sh",
       "problemMatcher": []
     },
     {
@@ -40,7 +40,7 @@
     {
       "label": "Update test fixtures",
       "type": "shell",
-      "command": "uv run scripts/update_test_fixtures.py",
+      "command": "[ -f .env ] && export $(< .env); uv run scripts/update_test_fixtures.py",
       "problemMatcher": []
     }
   ]

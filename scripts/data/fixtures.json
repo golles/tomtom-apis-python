@@ -256,7 +256,7 @@
       {
         "method": "GET",
         "fixture": "places/search/get_place_by_id.json",
-        "url": "search/2/place.json?entityId=528009004256119&key={{TT_KEY}}"
+        "url": "search/2/place.json?entityId=528009004256119&key={{TT_KEY}}&language=en-US"
       },
       {
         "method": "GET",

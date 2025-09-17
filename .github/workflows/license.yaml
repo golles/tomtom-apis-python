@@ -23,7 +23,7 @@ jobs:
 
       - name: Setup app
         id: app
-        uses: ./.github/actions/setup-app
+        uses: golles/github-workflows/actions/setup-app@main
         with:
           app-id: ${{ secrets.PR2D2_APP_ID }}
           private-key: ${{ secrets.PR2D2_APP_PRIVATE_KEY }}

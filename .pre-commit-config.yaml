@@ -25,11 +25,6 @@ repos:
         exclude: const.py
       - id: trailing-whitespace
 
-  - repo: https://github.com/renovatebot/pre-commit-hooks
-    rev: 41.135.4
-    hooks:
-      - id: renovate-config-validator
-
   - repo: local
     hooks:
       - id: sort-models

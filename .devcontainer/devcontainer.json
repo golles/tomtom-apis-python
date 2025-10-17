@@ -1,6 +1,6 @@
 {
   "name": "TomTom APIs Python",
-  "image": "mcr.microsoft.com/devcontainers/python:3.13-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/python:3.14-bookworm",
   "postCreateCommand": "./scripts/setup_env.sh --devcontainer",
   "customizations": {
     "codespaces": {

@@ -2,10 +2,10 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 248,
-    "numResults": 5,
+    "queryTime": 634,
+    "numResults": 6,
     "offset": 0,
-    "totalResults": 5,
+    "totalResults": 6,
     "fuzzyLevel": 1,
     "geobiasCountry": "US"
   },
@@ -13,9 +13,11 @@
     {
       "type": "POI",
       "id": "m17itHqfsLnTuk2cnDZmtQ",
-      "score": 3.5917301178,
+      "score": 2.8942797184,
       "dist": 1259.834324,
       "query": "pizza",
+      "externalId": "840069002608477",
+      "aliasIds": ["00005543-3300-2800-0000-00000c56a18f"],
       "info": "search:ta:840069002608477-US",
       "poi": {
         "name": "Round Table Pizza",
@@ -57,18 +59,128 @@
         "btmRightPoint": { "lat": 37.52788, "lon": -122.28841 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.5289, "lon": -122.2896 } }
+        { "type": "main", "position": { "lat": 37.52889, "lon": -122.28962 } }
       ],
-      "detourTime": -55,
+      "detourTime": -18,
       "detourDistance": 47,
       "detourOffset": 0
     },
     {
       "type": "POI",
-      "id": "NJWtAU0dc-tZ_O9yOOHjHg",
-      "score": 3.5888473988,
-      "dist": 1817.871616,
+      "id": "7CqZaDnGb4Ew71vaKFXo9A",
+      "score": 2.7973890305,
+      "dist": 910.492865,
       "query": "pizza",
+      "externalId": "840068000824684",
+      "aliasIds": ["a4d4c2b4-cf94-4e6f-bb38-aa0e8329555a"],
+      "info": "search:ta:840068000824684-US",
+      "poi": {
+        "name": "Yaksi Pizza",
+        "phone": "+1 530-325-9994",
+        "categorySet": [{ "id": 7315015 }],
+        "url": "order.online/business/yaksi-pizza-14063255",
+        "categories": ["fast food", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "fast food" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "33",
+        "streetName": "37th Avenue",
+        "municipality": "San Mateo",
+        "neighbourhood": "Southeast Hillsdale",
+        "countrySecondarySubdivision": "San Mateo",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "94403",
+        "extendedPostalCode": "94403-4404",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "33 37th Avenue, San Mateo, CA 94403",
+        "localName": "San Mateo"
+      },
+      "position": { "lat": 37.53379, "lon": -122.29538 },
+      "viewport": {
+        "topLeftPoint": { "lat": 37.53469, "lon": -122.29651 },
+        "btmRightPoint": { "lat": 37.53289, "lon": -122.29425 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 37.53397, "lon": -122.2955 } }
+      ],
+      "detourTime": 35,
+      "detourDistance": 670,
+      "detourOffset": 0
+    },
+    {
+      "type": "POI",
+      "id": "tPw2uwxWpqPWQmwemyygmg",
+      "score": 2.7948937416,
+      "dist": 1537.233436,
+      "query": "pizza",
+      "externalId": "840066000061509",
+      "aliasIds": ["95cc991c-3b90-4c46-bc84-643fc62ed870"],
+      "info": "search:ta:840066000061509-US",
+      "poi": {
+        "name": "Aldo's Pizza",
+        "phone": "+1 650-572-1797",
+        "categorySet": [{ "id": 7315025 }],
+        "url": "www.aldospizza.com/",
+        "categories": ["italian", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "italian" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "35",
+        "streetName": "Laurie Meadows Drive",
+        "municipality": "San Mateo",
+        "neighbourhood": "Lauriedale",
+        "countrySecondarySubdivision": "San Mateo",
+        "countrySubdivision": "CA",
+        "countrySubdivisionName": "California",
+        "countrySubdivisionCode": "CA",
+        "postalCode": "94403",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "35 Laurie Meadows Drive, San Mateo, CA 94403",
+        "localName": "San Mateo"
+      },
+      "position": { "lat": 37.53095, "lon": -122.28739 },
+      "viewport": {
+        "topLeftPoint": { "lat": 37.53185, "lon": -122.28852 },
+        "btmRightPoint": { "lat": 37.53005, "lon": -122.28626 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 37.53068, "lon": -122.28703 } },
+        { "type": "minor", "position": { "lat": 37.53082, "lon": -122.28717 } }
+      ],
+      "detourTime": 69,
+      "detourDistance": 75,
+      "detourOffset": 665
+    },
+    {
+      "type": "POI",
+      "id": "NJWtAU0dc-tZ_O9yOOHjHg",
+      "score": 2.6283142567,
+      "dist": 1815.278486,
+      "query": "pizza",
+      "externalId": "840066000289419",
+      "aliasIds": ["981520e4-93d9-40f6-b1b1-90dd985c5cc2"],
       "info": "search:ta:840066000289419-US",
       "poi": {
         "name": "Mountain Mike's",
@@ -104,76 +216,26 @@
         "freeformAddress": "390 El Camino Real, Belmont, CA 94002",
         "localName": "Belmont"
       },
-      "position": { "lat": 37.527004, "lon": -122.284485 },
+      "position": { "lat": 37.526965, "lon": -122.28451 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.5279, "lon": -122.28562 },
-        "btmRightPoint": { "lat": 37.5261, "lon": -122.28335 }
+        "topLeftPoint": { "lat": 37.52786, "lon": -122.28564 },
+        "btmRightPoint": { "lat": 37.52607, "lon": -122.28338 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.52716, "lon": -122.28438 } }
+        { "type": "main", "position": { "lat": 37.52713, "lon": -122.28434 } }
       ],
-      "detourTime": 51,
+      "detourTime": 41,
       "detourDistance": 193,
       "detourOffset": 665
     },
     {
       "type": "POI",
-      "id": "tPw2uwxWpqPWQmwemyygmg",
-      "score": 2.7948937416,
-      "dist": 1537.233436,
-      "query": "pizza",
-      "info": "search:ta:840066000061509-US",
-      "poi": {
-        "name": "Aldo's Pizza",
-        "phone": "+1 650-572-1797",
-        "categorySet": [{ "id": 7315025 }],
-        "url": "www.aldospizza.com/",
-        "categories": ["italian", "restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "italian" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "35",
-        "streetName": "Laurie Meadows Drive",
-        "municipality": "San Mateo",
-        "neighbourhood": "Lauriedale",
-        "countrySecondarySubdivision": "San Mateo",
-        "countrySubdivision": "CA",
-        "countrySubdivisionName": "California",
-        "countrySubdivisionCode": "CA",
-        "postalCode": "94403",
-        "extendedPostalCode": "94403-4610",
-        "countryCode": "US",
-        "country": "United States",
-        "countryCodeISO3": "USA",
-        "freeformAddress": "35 Laurie Meadows Drive, San Mateo, CA 94403",
-        "localName": "San Mateo"
-      },
-      "position": { "lat": 37.53095, "lon": -122.28739 },
-      "viewport": {
-        "topLeftPoint": { "lat": 37.53185, "lon": -122.28852 },
-        "btmRightPoint": { "lat": 37.53005, "lon": -122.28626 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 37.53062, "lon": -122.28711 } }
-      ],
-      "detourTime": 66,
-      "detourDistance": 75,
-      "detourOffset": 665
-    },
-    {
-      "type": "POI",
       "id": "aOKfQ8KxZ2Jr3gs_iL9MtA",
-      "score": 3.552341938,
-      "dist": 8122.361734,
+      "score": 2.8625235558,
+      "dist": 8125.532732,
       "query": "pizza",
+      "externalId": "840069019274195",
+      "aliasIds": ["00005543-3300-2800-0000-00000c577b74"],
       "info": "search:ta:840069019274195-US",
       "poi": {
         "name": "Pizza Hut",
@@ -208,29 +270,32 @@
         "freeformAddress": "600 Whipple Avenue, Redwood City, CA 94063",
         "localName": "Redwood City"
       },
-      "position": { "lat": 37.493982, "lon": -122.236006 },
+      "position": { "lat": 37.494012, "lon": -122.235958 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.49488, "lon": -122.23714 },
-        "btmRightPoint": { "lat": 37.49308, "lon": -122.23487 }
+        "topLeftPoint": { "lat": 37.49491, "lon": -122.23709 },
+        "btmRightPoint": { "lat": 37.49311, "lon": -122.23482 }
       },
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.49375, "lon": -122.23572 } }
       ],
-      "detourTime": 424,
+      "detourTime": 274,
       "detourDistance": 685,
       "detourOffset": 4979
     },
     {
       "type": "POI",
       "id": "HlIw-j9jPIbgn5gi_KKHPA",
-      "score": 3.4824399948,
-      "dist": 17423.791091,
+      "score": 2.7109262943,
+      "dist": 17423.833872,
       "query": "pizza",
+      "externalId": "840069019784532",
+      "aliasIds": ["00005543-3300-2800-0000-00000c5bdefc"],
       "info": "search:ta:840069019784532-US",
       "poi": {
         "name": "Tony's Pizza",
         "phone": "+1 650-853-0860",
         "categorySet": [{ "id": 7315036 }],
+        "url": "www.toasttab.com/local/order/tonys-pizza-820-willow-rd/r-a6cdee06-01c3-489a-9443-45ead0475bd5",
         "categories": ["pizza", "restaurant"],
         "classifications": [
           {
@@ -265,10 +330,10 @@
         "btmRightPoint": { "lat": 37.46463, "lon": -122.15584 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.46564, "lon": -122.15714 } }
+        { "type": "main", "position": { "lat": 37.4656, "lon": -122.15717 } }
       ],
-      "detourTime": 354,
-      "detourDistance": 858,
+      "detourTime": 169,
+      "detourDistance": 882,
       "detourOffset": 12421
     }
   ]

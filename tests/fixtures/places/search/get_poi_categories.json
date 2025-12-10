@@ -36,7 +36,7 @@
         7315059, 7315145, 7315076, 7315121, 7315048, 7315122, 7315123, 7315049, 7315124,
         7315050, 7315125, 7315051, 7315126, 7315060, 7315149
       ],
-      "synonyms": ["Dining", "Eatery", "Eating Place", "Eating House"]
+      "synonyms": ["Eating Place", "Dining", "Eating House", "Eatery"]
     },
     {
       "id": 9376,
@@ -54,18 +54,18 @@
       "id": 7321,
       "name": "Hospital",
       "childCategoryIds": [7321005, 7321004, 7321003, 7321002],
-      "synonyms": ["Clinic", "Polyclinic", "Hospital/Polyclinic"]
+      "synonyms": ["Hospital/Polyclinic", "Polyclinic", "Clinic"]
     },
     {
       "id": 9373,
       "name": "Doctor",
       "childCategoryIds": [9373002, 9373003],
       "synonyms": [
-        "MD",
-        "Medical Office",
         "Medical Practitioner",
-        "Doctor's Office",
-        "Doc"
+        "Medical Office",
+        "MD",
+        "Doc",
+        "Doctor's Office"
       ]
     },
     {
@@ -107,25 +107,25 @@
       "id": 7301,
       "name": "Road Traffic Control Center",
       "childCategoryIds": [7301002],
-      "synonyms": ["Traffic Service Center", "Traffic Service Centre"]
+      "synonyms": ["Traffic Service Centre", "Traffic Service Center"]
     },
     {
       "id": 7324,
       "name": "Post Office",
       "childCategoryIds": [7324002, 7324003],
-      "synonyms": ["Postal Service", "Post"]
+      "synonyms": ["Post", "Postal Service"]
     },
     {
       "id": 7377,
       "name": "College/University",
       "childCategoryIds": [7377002, 7377003],
-      "synonyms": ["College", "Uni", "Tertiary Education", "University"]
+      "synonyms": ["University", "College", "Tertiary Education", "Uni"]
     },
     {
       "id": 7369,
       "name": "Open Parking Area",
       "childCategoryIds": [7369002, 7369003, 7369004],
-      "synonyms": ["Open Parking", "Outdoor Parking", "Outdoor Lot", "Parking Lot"]
+      "synonyms": ["Parking Lot", "Outdoor Lot", "Open Parking", "Outdoor Parking"]
     },
     {
       "id": 9937,
@@ -138,13 +138,13 @@
       "name": "Campground",
       "childCategoryIds": [7360003, 7360002],
       "synonyms": [
-        "Camping Site",
-        "Camp Ground",
+        "Camping",
+        "Camping Area",
         "Campsite",
         "Camp Site",
-        "Camping",
         "Camping Ground",
-        "Camping Area"
+        "Camping Site",
+        "Camp Ground"
       ]
     },
     {
@@ -188,14 +188,14 @@
         9352010, 9352002, 9352022, 9352026, 9352020, 9352024, 9352046, 9352015
       ],
       "synonyms": [
-        "Employment",
-        "Corporation",
         "Firm",
-        "Organization",
-        "Establishment",
-        "Organisation",
         "Institution",
-        "Enterprise"
+        "Corporation",
+        "Establishment",
+        "Employment",
+        "Enterprise",
+        "Organization",
+        "Organisation"
       ]
     },
     {
@@ -213,20 +213,20 @@
         7310002, 7310003, 7310004, 7310008, 7310005, 7310006, 7310009, 7310007
       ],
       "synonyms": [
-        "MOT",
         "Car Workshop",
-        "Servicing",
         "Car Repair",
-        "Mechanic",
+        "Servicing",
         "Car Mechanic",
-        "Service Department",
-        "Workshop",
-        "Mechanic Shop",
-        "Repair Facility",
         "Service Centre",
+        "Mechanic",
         "Garage",
+        "Repair Facility",
+        "Vehicle Repair",
         "Car Servicing",
-        "Vehicle Repair"
+        "Workshop",
+        "Service Department",
+        "Mechanic Shop",
+        "MOT"
       ]
     },
     {
@@ -252,7 +252,7 @@
       "childCategoryIds": [
         9910009, 9910004, 9910008, 9910002, 9910003, 9910005, 9910006, 9910007
       ],
-      "synonyms": ["Dealership", "Vehicle Sales", "Auto Dealer", "Dealer"]
+      "synonyms": ["Dealership", "Dealer", "Vehicle Sales", "Auto Dealer"]
     },
     {
       "id": 9927,
@@ -265,20 +265,20 @@
       "name": "Movie Theater",
       "childCategoryIds": [7342002, 7342003],
       "synonyms": [
-        "Picture Theater",
-        "Picture Theatre",
-        "The Movies",
         "Movie House",
-        "Movies",
-        "Cinema Hall",
-        "Silver Screen",
-        "Film House",
         "Movie Hall",
-        "Movie Theatre",
-        "Big Screen",
-        "Picture House",
+        "Picture Theatre",
+        "Film House",
+        "The Pictures",
         "Cinema",
-        "The Pictures"
+        "Cinema Hall",
+        "Movie Theatre",
+        "The Movies",
+        "Picture House",
+        "Big Screen",
+        "Picture Theater",
+        "Movies",
+        "Silver Screen"
       ]
     },
     {
@@ -305,7 +305,7 @@
       "childCategoryIds": [
         7339007, 7339002, 7339006, 7339003, 7339008, 7339004, 7339005
       ],
-      "synonyms": ["Prayer Hall", "House of Worship", "House of God", "House of Prayer"]
+      "synonyms": ["House of Prayer", "House of God", "House of Worship", "Prayer Hall"]
     },
     {
       "id": 7376,
@@ -315,11 +315,11 @@
         7376009, 7376008, 7376014, 7376004
       ],
       "synonyms": [
-        "Tourist Place",
-        "Sight Seeing Place",
-        "Local Attraction",
         "Important Tourist Attraction",
-        "Place of Interest"
+        "Place of Interest",
+        "Sight Seeing Place",
+        "Tourist Place",
+        "Local Attraction"
       ]
     },
     {
@@ -333,11 +333,11 @@
       "name": "Railroad Station",
       "childCategoryIds": [7380004, 7380002, 7380005, 7380003, 7380006],
       "synonyms": [
-        "Train Station",
-        "Station",
+        "Train Stop",
         "Rail Station",
-        "Railway Station",
-        "Train Stop"
+        "Station",
+        "Train Station",
+        "Railway Station"
       ]
     },
     {
@@ -347,8 +347,8 @@
       "synonyms": [
         "Public Transport Stop",
         "Public Transport",
-        "Public Transport Terminus",
         "Public Transit",
+        "Public Transport Terminus",
         "Public Transit Stop",
         "Public Transport Station"
       ]
@@ -411,11 +411,11 @@
       "name": "Advertising Company",
       "childCategoryIds": [],
       "synonyms": [
-        "Marketing Company",
-        "Advert Agency",
         "Marketing",
-        "Advertising Agency",
-        "Ad Agency"
+        "Advert Agency",
+        "Marketing Company",
+        "Ad Agency",
+        "Advertising Agency"
       ]
     },
     {
@@ -458,7 +458,7 @@
       "id": 7389002,
       "name": "Airline Access",
       "childCategoryIds": [],
-      "synonyms": ["Terminal", "Airport Terminal"]
+      "synonyms": ["Airport Terminal", "Terminal"]
     },
     {
       "id": 7315082,
@@ -471,7 +471,7 @@
       "id": 7315003,
       "name": "American Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["American Cuisine", "American Food"]
+      "synonyms": ["American Food", "American Cuisine"]
     },
     {
       "id": 7318007,
@@ -483,7 +483,7 @@
       "id": 9902002,
       "name": "Amusement Arcade",
       "childCategoryIds": [],
-      "synonyms": ["Video Arcade", "Video Games Parlour", "Video Games"]
+      "synonyms": ["Video Games Parlour", "Video Arcade", "Video Games"]
     },
     { "id": 9902003, "name": "Amusement Park", "childCategoryIds": [], "synonyms": [] },
     {
@@ -502,7 +502,7 @@
       "id": 9352045,
       "name": "Animal Shelter",
       "childCategoryIds": [],
-      "synonyms": ["Animal Rescue", "Animal Sanctuary"]
+      "synonyms": ["Animal Sanctuary", "Animal Rescue"]
     },
     {
       "id": 9361049,
@@ -527,11 +527,11 @@
       "name": "Arabian Restaurant",
       "childCategoryIds": [],
       "synonyms": [
-        "Arabian Food",
-        "Arab Cuisine",
-        "Arab Restaurant",
         "Arabian Cuisine",
-        "Arab Food"
+        "Arabian Food",
+        "Arab Restaurant",
+        "Arab Food",
+        "Arab Cuisine"
       ]
     },
     {
@@ -546,11 +546,11 @@
       "name": "Argentinian Restaurant",
       "childCategoryIds": [],
       "synonyms": [
+        "Argentine Cuisine",
         "Argentinian Cuisine",
         "Argentine Restaurant",
-        "Argentine Cuisine",
-        "Argentine Food",
-        "Argentinian Food"
+        "Argentinian Food",
+        "Argentine Food"
       ]
     },
     {
@@ -565,13 +565,13 @@
       "id": 7315062,
       "name": "Asian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Asian Cuisine", "Asian Food"]
+      "synonyms": ["Asian Food", "Asian Cuisine"]
     },
     {
       "id": 7374002,
       "name": "Athletics Track",
       "childCategoryIds": [],
-      "synonyms": ["Athletics Ground", "Athletic Stadium", "Running Track"]
+      "synonyms": ["Athletics Ground", "Running Track", "Athletic Stadium"]
     },
     {
       "id": 9910009,
@@ -593,18 +593,18 @@
       "id": 7315004,
       "name": "Austrian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Austrian Food", "Austrian Cuisine"]
+      "synonyms": ["Austrian Cuisine", "Austrian Food"]
     },
     {
       "id": 9352013,
       "name": "Automobile Company",
       "childCategoryIds": [],
       "synonyms": [
-        "Car Distribution Centre",
         "Motor Car Company",
+        "Car Distribution Center",
         "Car Company",
-        "Automobile Factory",
-        "Car Distribution Center"
+        "Car Distribution Centre",
+        "Automobile Factory"
       ]
     },
     {
@@ -612,12 +612,12 @@
       "name": "Automobile Manufacturing",
       "childCategoryIds": [],
       "synonyms": [
-        "Automotive Manufacturer",
-        "Car Manufacturer",
-        "Car Factory",
-        "Automobile Factory",
         "Automobile Manufacturer",
-        "Motor Car Manufacturer"
+        "Car Factory",
+        "Motor Car Manufacturer",
+        "Car Manufacturer",
+        "Automobile Factory",
+        "Automotive Manufacturer"
       ]
     },
     {
@@ -631,11 +631,11 @@
       "name": "Banquet Rooms",
       "childCategoryIds": [],
       "synonyms": [
-        "Banqueting Room",
-        "Banquet Hall",
         "Banquet Restaurant",
         "Function Hall",
-        "Function Room"
+        "Banquet Hall",
+        "Function Room",
+        "Banqueting Room"
       ]
     },
     { "id": 9379004, "name": "Bar", "childCategoryIds": [], "synonyms": [] },
@@ -644,11 +644,11 @@
       "name": "Barbecue Restaurant",
       "childCategoryIds": [],
       "synonyms": [
-        "BBQ Restaurant",
         "Barbecue Cuisine",
-        "Barbecue",
+        "BBQ Restaurant",
         "Barbecue Food",
-        "BBQ"
+        "BBQ",
+        "Barbecue"
       ]
     },
     {
@@ -657,10 +657,10 @@
       "childCategoryIds": [],
       "synonyms": [
         "Baseball",
-        "Ball Park",
-        "Ballpark",
         "Baseball Field",
-        "Baseball Stadium"
+        "Ballpark",
+        "Baseball Stadium",
+        "Ball Park"
       ]
     },
     {
@@ -688,44 +688,44 @@
       "name": "Beauty Salon",
       "childCategoryIds": [],
       "synonyms": [
-        "Beautician",
+        "Beauty Shop",
         "Beauty Parlour",
-        "Beauty Center",
         "Beauty Centre",
-        "Beauty Shop"
+        "Beautician",
+        "Beauty Center"
       ]
     },
     {
       "id": 9361050,
       "name": "Beauty Supplies",
       "childCategoryIds": [],
-      "synonyms": ["Beauty Store", "Beauty Shop"]
+      "synonyms": ["Beauty Shop", "Beauty Store"]
     },
     {
       "id": 7314002,
       "name": "B&B/Guest House",
       "childCategoryIds": [],
       "synonyms": [
-        "Guesthouse",
-        "Bed & Breakfast",
         "B & B",
-        "Bed and Breakfast",
-        "B and B",
         "B&B",
-        "Guest House"
+        "Guest House",
+        "Bed & Breakfast",
+        "Bed and Breakfast",
+        "Guesthouse",
+        "B and B"
       ]
     },
     {
       "id": 7315006,
       "name": "Belgian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Belgian Cuisine", "Belgian Food"]
+      "synonyms": ["Belgian Food", "Belgian Cuisine"]
     },
     {
       "id": 9361072,
       "name": "Betting Station",
       "childCategoryIds": [],
-      "synonyms": ["Bookmaker", "Bookie"]
+      "synonyms": ["Bookie", "Bookmaker"]
     },
     { "id": 7315007, "name": "Bistro", "childCategoryIds": [], "synonyms": [] },
     { "id": 9663004, "name": "Blood Bank", "childCategoryIds": [], "synonyms": [] },
@@ -745,37 +745,37 @@
       "id": 9361083,
       "name": "Boating Equipment & Accessories",
       "childCategoryIds": [],
-      "synonyms": ["Boating Equipment", "Boating Accessories"]
+      "synonyms": ["Boating Accessories", "Boating Equipment"]
     },
     {
       "id": 7310002,
       "name": "Bodyshop",
       "childCategoryIds": [],
       "synonyms": [
-        "Car Bodyshop",
-        "Panelbeaters",
-        "Panel Beater",
         "Car Body Shop",
-        "Body Shop"
+        "Panel Beater",
+        "Body Shop",
+        "Car Bodyshop",
+        "Panelbeaters"
       ]
     },
     {
       "id": 7315088,
       "name": "Bolivian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Bolivian Food", "Bolivian Cuisine"]
+      "synonyms": ["Bolivian Cuisine", "Bolivian Food"]
     },
     {
       "id": 9361002,
       "name": "Book Shop",
       "childCategoryIds": [],
-      "synonyms": ["Book Seller", "Book Store"]
+      "synonyms": ["Book Store", "Book Seller"]
     },
     {
       "id": 7315089,
       "name": "Bosnian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Bosnian Cuisine", "Bosnian Food"]
+      "synonyms": ["Bosnian Food", "Bosnian Cuisine"]
     },
     {
       "id": 9378002,
@@ -787,7 +787,7 @@
       "id": 7315072,
       "name": "Brazilian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Brazilian Cuisine", "Brazilian Food"]
+      "synonyms": ["Brazilian Food", "Brazilian Cuisine"]
     },
     { "id": 7376010, "name": "Bridge", "childCategoryIds": [], "synonyms": [] },
     {
@@ -800,7 +800,7 @@
       "id": 7315008,
       "name": "British Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["British Cuisine", "British Food"]
+      "synonyms": ["British Food", "British Cuisine"]
     },
     {
       "id": 7315142,
@@ -813,7 +813,7 @@
       "id": 7315090,
       "name": "Bulgarian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Bulgarian Food", "Bulgarian Cuisine"]
+      "synonyms": ["Bulgarian Cuisine", "Bulgarian Food"]
     },
     {
       "id": 7304004,
@@ -825,31 +825,31 @@
       "id": 7315091,
       "name": "Burmese Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Burmese Cuisine", "Burmese Food"]
+      "synonyms": ["Burmese Food", "Burmese Cuisine"]
     },
     {
       "id": 9910008,
       "name": "Bus Dealer",
       "childCategoryIds": [],
-      "synonyms": ["Bus Sales", "Coach Dealer"]
+      "synonyms": ["Coach Dealer", "Bus Sales"]
     },
     {
       "id": 9352025,
       "name": "Bus Charter Company",
       "childCategoryIds": [],
       "synonyms": [
-        "Bus Hire Company",
         "Bus Rental",
-        "Bus Hire",
+        "Bus Charter",
         "Bus Rental Company",
-        "Bus Charter"
+        "Bus Hire Company",
+        "Bus Hire"
       ]
     },
     {
       "id": 9352027,
       "name": "Bus Lines",
       "childCategoryIds": [],
-      "synonyms": ["Local Buses", "Local Bus Services", "Bus Route", "Bus Services"]
+      "synonyms": ["Bus Route", "Local Buses", "Local Bus Services", "Bus Services"]
     },
     { "id": 9942002, "name": "Bus Stop", "childCategoryIds": [], "synonyms": [] },
     {
@@ -868,17 +868,17 @@
       "id": 7314007,
       "name": "Cabins & Lodges",
       "childCategoryIds": [],
-      "synonyms": ["Lodges", "Cabins", "Cabin", "Lodge", "Hut"]
+      "synonyms": ["Hut", "Cabin", "Lodge", "Cabins", "Lodges"]
     },
     {
       "id": 9352040,
       "name": "Cable & Telephone Company",
       "childCategoryIds": [],
       "synonyms": [
-        "Telephone Company",
-        "Telecommunications Company",
         "Cable Company",
-        "Telecoms Company"
+        "Telephone Company",
+        "Telecoms Company",
+        "Telecommunications Company"
       ]
     },
     { "id": 9376002, "name": "Café", "childCategoryIds": [], "synonyms": ["Cafe"] },
@@ -892,13 +892,13 @@
       "id": 7315009,
       "name": "Californian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Californian Cuisine", "Californian Food"]
+      "synonyms": ["Californian Food", "Californian Cuisine"]
     },
     {
       "id": 7315092,
       "name": "Cambodian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Cambodian Food", "Cambodian Cuisine"]
+      "synonyms": ["Cambodian Cuisine", "Cambodian Food"]
     },
     {
       "id": 7315010,
@@ -918,13 +918,13 @@
       "name": "Car Glass Replacement Shop",
       "childCategoryIds": [],
       "synonyms": [
-        "Window Replacement",
-        "Car Glass Repair",
-        "Windshield Repair",
-        "Auto Glass Replacement",
-        "Car Glass Replacement",
         "Windscreen Repair",
-        "Auto Glass Repair"
+        "Auto Glass Replacement",
+        "Auto Glass Repair",
+        "Car Glass Repair",
+        "Car Glass Replacement",
+        "Windshield Repair",
+        "Window Replacement"
       ]
     },
     {
@@ -938,19 +938,19 @@
       "name": "Caravan Site",
       "childCategoryIds": [],
       "synonyms": [
-        "Trailer Park",
         "Caravan Park",
-        "Camper Van",
-        "Mobile Home Park",
+        "Mobile Park",
         "RV Park",
-        "Mobile Park"
+        "Trailer Park",
+        "Mobile Home Park",
+        "Camper Van"
       ]
     },
     {
       "id": 7315011,
       "name": "Caribbean Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Caribbean Food", "Caribbean Cuisine"]
+      "synonyms": ["Caribbean Cuisine", "Caribbean Food"]
     },
     {
       "id": 9352043,
@@ -964,13 +964,13 @@
       "name": "CDs, DVD & Videos",
       "childCategoryIds": [],
       "synonyms": [
-        "CD Shop",
-        "Video Shop",
-        "CD Store",
-        "DVD Shop",
         "Video Centre",
+        "DVD Shop",
+        "CD Store",
+        "CD Shop",
+        "Video Store",
         "DVD Store",
-        "Video Store"
+        "Video Shop"
       ]
     },
     {
@@ -978,12 +978,12 @@
       "name": "Video Rental Shop",
       "childCategoryIds": [],
       "synonyms": [
+        "Video & Game Rental",
         "Video Parlour",
-        "Video Store",
-        "Video Rental",
-        "Video and Game Rental",
         "Video Rental Store",
-        "Video & Game Rental"
+        "Video and Game Rental",
+        "Video Store",
+        "Video Rental"
       ]
     },
     { "id": 9362003, "name": "Cemetery", "childCategoryIds": [], "synonyms": [] },
@@ -992,7 +992,7 @@
       "id": 9352014,
       "name": "Chemical Company",
       "childCategoryIds": [],
-      "synonyms": ["Chemical Supplier", "Chemical Plant"]
+      "synonyms": ["Chemical Plant", "Chemical Supplier"]
     },
     {
       "id": 7315070,
@@ -1005,14 +1005,14 @@
       "name": "Child Care Facility",
       "childCategoryIds": [],
       "synonyms": [
+        "Day Nursery",
+        "Play School",
         "Nursery School",
         "Daycare",
-        "Nursery",
-        "Day Nursery",
-        "Daycare Center",
-        "Play School",
+        "Crèche",
         "Day Care",
-        "Crèche"
+        "Nursery",
+        "Daycare Center"
       ]
     },
     {
@@ -1032,15 +1032,15 @@
       "name": "Christmas/Holiday Shop",
       "childCategoryIds": [],
       "synonyms": [
-        "Vacation Store",
+        "Xmas Store",
+        "Chrismas Store",
         "Christmas/Holiday Store",
         "Holiday Shop",
-        "Xmas Store",
-        "Christmas/Vacation Store",
-        "Chrismas Store",
-        "Holiday Store",
+        "Vacation Store",
         "Christmas Store",
-        "Christmas Shop"
+        "Christmas Shop",
+        "Holiday Store",
+        "Christmas/Vacation Store"
       ]
     },
     { "id": 7339002, "name": "Church", "childCategoryIds": [], "synonyms": [] },
@@ -1049,20 +1049,20 @@
       "name": "Movie Theater",
       "childCategoryIds": [],
       "synonyms": [
-        "Picture Theater",
-        "Picture Theatre",
-        "The Movies",
         "Movie House",
-        "Movies",
-        "Cinema Hall",
-        "Silver Screen",
         "Movie Hall",
+        "Picture Theatre",
         "Film House",
-        "Movie Theatre",
-        "Big Screen",
-        "Picture House",
+        "The Pictures",
         "Cinema",
-        "The Pictures"
+        "Movie Theatre",
+        "Cinema Hall",
+        "The Movies",
+        "Picture House",
+        "Big Screen",
+        "Picture Theater",
+        "Movies",
+        "Silver Screen"
       ]
     },
     {
@@ -1088,20 +1088,20 @@
       "name": "Clothing Shop",
       "childCategoryIds": [],
       "synonyms": [
-        "Clothes Store",
+        "Apparel Store",
+        "Apparel",
+        "Clothing Store",
         "Clothes Shop",
         "Clothing hop",
-        "Clothing Store",
-        "Apparel Store",
-        "Clothes",
-        "Apparel"
+        "Clothes Store",
+        "Clothes"
       ]
     },
     {
       "id": 9361007,
       "name": "Men's Clothing",
       "childCategoryIds": [],
-      "synonyms": ["Men's Clothes", "Menswear"]
+      "synonyms": ["Menswear", "Men's Clothes"]
     },
     {
       "id": 9361079,
@@ -1131,7 +1131,7 @@
       "id": 9376006,
       "name": "Coffee Shop",
       "childCategoryIds": [],
-      "synonyms": ["Coffeeshop", "Coffee House", "Coffeehouse"]
+      "synonyms": ["Coffee House", "Coffeeshop", "Coffeehouse"]
     },
     {
       "id": 7377002,
@@ -1155,7 +1155,7 @@
       "id": 9352004,
       "name": "Computer & Data Services",
       "childCategoryIds": [],
-      "synonyms": ["IT Services", "Data Services", "Computer Services"]
+      "synonyms": ["Computer Services", "Data Services", "IT Services"]
     },
     {
       "id": 9352005,
@@ -1173,7 +1173,7 @@
       "id": 7303006,
       "name": "Condominium Complex",
       "childCategoryIds": [],
-      "synonyms": ["Condo", "Condominium Block", "Condominium"]
+      "synonyms": ["Condominium", "Condo", "Condominium Block"]
     },
     {
       "id": 9352032,
@@ -1186,24 +1186,24 @@
       "name": "Construction Material & Equipment",
       "childCategoryIds": [],
       "synonyms": [
-        "Construction Equipment",
         "Construction Supplies",
-        "Construction Material",
+        "Builders Merchant",
         "Building Supplies",
-        "Builders Merchant"
+        "Construction Equipment",
+        "Construction Material"
       ]
     },
     {
       "id": 9361009,
       "name": "Convenience Store",
       "childCategoryIds": [],
-      "synonyms": ["Corner Store", "Dairy", "General Store", "Superette", "Corner Shop"]
+      "synonyms": ["General Store", "Superette", "Corner Store", "Dairy", "Corner Shop"]
     },
     {
       "id": 7315095,
       "name": "Corsican Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Corsican Food", "Corsican Cuisine"]
+      "synonyms": ["Corsican Cuisine", "Corsican Food"]
     },
     { "id": 7304002, "name": "Cottage Rental", "childCategoryIds": [], "synonyms": [] },
     { "id": 8099017, "name": "Cove", "childCategoryIds": [], "synonyms": [] },
@@ -1211,7 +1211,7 @@
       "id": 7315063,
       "name": "Creole Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Creole Food", "Creole Cuisine"]
+      "synonyms": ["Creole Cuisine", "Creole Food"]
     },
     {
       "id": 7315013,
@@ -1223,7 +1223,7 @@
       "id": 7374003,
       "name": "Cricket Ground",
       "childCategoryIds": [],
-      "synonyms": ["Cricket Green", "Cricket Pitch", "Cricket Field", "Cricket Oval"]
+      "synonyms": ["Cricket Green", "Cricket Pitch", "Cricket Oval", "Cricket Field"]
     },
     {
       "id": 7315096,
@@ -1235,7 +1235,7 @@
       "id": 7372015,
       "name": "Culinary School",
       "childCategoryIds": [],
-      "synonyms": ["Hotel Management Institute", "Catering School"]
+      "synonyms": ["Catering School", "Hotel Management Institute"]
     },
     {
       "id": 9160004,
@@ -1253,14 +1253,14 @@
       "id": 7315068,
       "name": "Czech Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Czech Food", "Czech Cuisine"]
+      "synonyms": ["Czech Cuisine", "Czech Food"]
     },
     { "id": 7376007, "name": "Dam", "childCategoryIds": [], "synonyms": [] },
     {
       "id": 9378003,
       "name": "Dance Studio & School",
       "childCategoryIds": [],
-      "synonyms": ["Dance School", "Dance Academy", "Dance Studio"]
+      "synonyms": ["Dance Studio", "Dance School", "Dance Academy"]
     },
     {
       "id": 7315098,
@@ -1272,7 +1272,7 @@
       "id": 9361060,
       "name": "Delicatessen",
       "childCategoryIds": [],
-      "synonyms": ["Deli", "Delicacies"]
+      "synonyms": ["Delicacies", "Deli"]
     },
     {
       "id": 7318008,
@@ -1284,7 +1284,7 @@
       "id": 9379002,
       "name": "Disco Club",
       "childCategoryIds": [],
-      "synonyms": ["Nightclub", "Dance Hall", "Discotheque", "Club", "Disco"]
+      "synonyms": ["Disco", "Club", "Nightclub", "Dance Hall", "Discotheque"]
     },
     {
       "id": 9352006,
@@ -1302,13 +1302,13 @@
       "id": 7315057,
       "name": "Dongbei Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Dongbei Cuisine", "Dongbei Food"]
+      "synonyms": ["Dongbei Food", "Dongbei Cuisine"]
     },
     {
       "id": 7315079,
       "name": "Doughnut Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Doughnuts", "Donut Restaurant", "Donuts", "Doughnut Shop"]
+      "synonyms": ["Donuts", "Donut Restaurant", "Doughnuts", "Doughnut Shop"]
     },
     {
       "id": 9361076,
@@ -1321,10 +1321,10 @@
       "name": "Drive-In Movies",
       "childCategoryIds": [],
       "synonyms": [
+        "Drive-in Theatre",
         "Drive-In Cinema",
-        "Drive-In",
         "Drive-In Theater",
-        "Drive-in Theatre"
+        "Drive-In"
       ]
     },
     {
@@ -1332,10 +1332,10 @@
       "name": "Driving School",
       "childCategoryIds": [],
       "synonyms": [
-        "Driver's Ed",
-        "Driver's Education",
+        "Driving Academy",
         "Driving Tuition",
-        "Driving Academy"
+        "Driver's Education",
+        "Driver's Ed"
       ]
     },
     {
@@ -1361,7 +1361,7 @@
       "id": 7315100,
       "name": "Egyptian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Egyptian Cuisine", "Egyptian Food"]
+      "synonyms": ["Egyptian Food", "Egyptian Cuisine"]
     },
     {
       "id": 9361052,
@@ -1373,19 +1373,19 @@
       "id": 9361011,
       "name": "Cameras & Photography",
       "childCategoryIds": [],
-      "synonyms": ["Photography", "Camera Store", "Cameras", "Photography Store"]
+      "synonyms": ["Camera Store", "Photography", "Cameras", "Photography Store"]
     },
     {
       "id": 9361012,
       "name": "Computer & Computer Supplies",
       "childCategoryIds": [],
-      "synonyms": ["Computer Store", "Computer Shop", "Computer Supplies", "Computer"]
+      "synonyms": ["Computer Shop", "Computer Store", "Computer", "Computer Supplies"]
     },
     {
       "id": 9361013,
       "name": "Consumer Electronics",
       "childCategoryIds": [],
-      "synonyms": ["Electronics", "Electronics Store", "Electronics Shop"]
+      "synonyms": ["Electronics", "Electronics Shop", "Electronics Store"]
     },
     {
       "id": 9361014,
@@ -1421,7 +1421,7 @@
       "id": 7315133,
       "name": "Exotic Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Exotic Food", "Exotic Cuisine"]
+      "synonyms": ["Exotic Cuisine", "Exotic Food"]
     },
     {
       "id": 9361016,
@@ -1442,7 +1442,7 @@
       "id": 7315016,
       "name": "Philippine Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Philippine Food", "Philippine Cuisine"]
+      "synonyms": ["Philippine Cuisine", "Philippine Food"]
     },
     {
       "id": 7315104,
@@ -1461,12 +1461,12 @@
       "name": "Fitness Club & Center",
       "childCategoryIds": [],
       "synonyms": [
-        "Gym",
-        "Fitness Club",
         "Fitness Club & Centre",
+        "Gymnasium",
         "Fitness Center",
         "Fitness Centre",
-        "Gymnasium"
+        "Gym",
+        "Fitness Club"
       ]
     },
     {
@@ -1474,18 +1474,18 @@
       "name": "Flats/Apartment Complex",
       "childCategoryIds": [],
       "synonyms": [
-        "Apartment Block",
-        "Apartment Building",
-        "Flats Complex",
         "Apartment Complex",
-        "Block of Flats"
+        "Apartment Building",
+        "Apartment Block",
+        "Block of Flats",
+        "Flats Complex"
       ]
     },
     {
       "id": 9361017,
       "name": "Florists",
       "childCategoryIds": [],
-      "synonyms": ["Florist", "Flowers", "Flower Shop"]
+      "synonyms": ["Florist", "Flower Shop", "Flowers"]
     },
     { "id": 9378004, "name": "Flying Club", "childCategoryIds": [], "synonyms": [] },
     {
@@ -1498,7 +1498,7 @@
       "id": 9361018,
       "name": "Bakery",
       "childCategoryIds": [],
-      "synonyms": ["Baker", "Bakers", "Baker's"]
+      "synonyms": ["Baker", "Baker's", "Bakers"]
     },
     {
       "id": 9361019,
@@ -1523,7 +1523,7 @@
       "id": 9361023,
       "name": "Grocery Store",
       "childCategoryIds": [],
-      "synonyms": ["Grocery", "Groceries"]
+      "synonyms": ["Groceries", "Grocery"]
     },
     {
       "id": 9361024,
@@ -1536,15 +1536,15 @@
       "name": "Wine & Spirits",
       "childCategoryIds": [],
       "synonyms": [
-        "Liquor Outlet",
+        "Wholesale Liquor",
         "Liquor Store",
         "Spirits",
-        "Wholesale Liquor",
+        "Liquor Outlet",
         "Off License",
         "Alcohol",
-        "Off Licence",
         "Bottle Store",
-        "Liquor"
+        "Liquor",
+        "Off Licence"
       ]
     },
     {
@@ -1552,10 +1552,10 @@
       "name": "Football Stadium",
       "childCategoryIds": [],
       "synonyms": [
-        "Football Field",
         "American Football Stadium",
-        "Football Ground",
-        "Football Arena"
+        "Football Field",
+        "Football Arena",
+        "Football Ground"
       ]
     },
     {
@@ -1575,15 +1575,15 @@
       "name": "Funeral Service & Mortuaries",
       "childCategoryIds": [],
       "synonyms": [
-        "Funeral Service",
-        "Undertaker",
         "Funeral Home",
-        "Mortuaries",
-        "Morgue",
         "Funeral Parlour",
-        "Funeral Parlor",
+        "Undertaker",
+        "Mortuary",
         "Mortician",
-        "Mortuary"
+        "Funeral Parlor",
+        "Morgue",
+        "Mortuaries",
+        "Funeral Service"
       ]
     },
     {
@@ -1591,25 +1591,25 @@
       "name": "Furniture/Home Furnishings",
       "childCategoryIds": [],
       "synonyms": [
-        "Furniture Showroom",
         "Furniture & Fittings",
         "Furnishings",
+        "Furniture Showroom",
+        "Home Furnishings",
         "House Fittings",
-        "Furniture",
-        "Home Furnishings"
+        "Furniture"
       ]
     },
     {
       "id": 7315071,
       "name": "Fusion Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Fusion Food", "Fusion Cuisine"]
+      "synonyms": ["Fusion Cuisine", "Fusion Food"]
     },
     {
       "id": 7324002,
       "name": "Post Office",
       "childCategoryIds": [],
-      "synonyms": ["Postal Service", "Post"]
+      "synonyms": ["Post", "Postal Service"]
     },
     {
       "id": 7310004,
@@ -1621,13 +1621,13 @@
       "id": 9373002,
       "name": "General Practitioner",
       "childCategoryIds": [],
-      "synonyms": ["MD", "Medical Practitioner", "Physician", "GP"]
+      "synonyms": ["Medical Practitioner", "GP", "MD", "Physician"]
     },
     {
       "id": 7315018,
       "name": "German Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["German Food", "German Cuisine"]
+      "synonyms": ["German Cuisine", "German Food"]
     },
     {
       "id": 9361026,
@@ -1646,24 +1646,24 @@
       "id": 7315019,
       "name": "Greek Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Greek Food", "Greek Cuisine"]
+      "synonyms": ["Greek Cuisine", "Greek Food"]
     },
     {
       "id": 7315020,
       "name": "Grill Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Grill Food", "Grill Cuisine", "Grill", "Tandoor Shop"]
+      "synonyms": ["Tandoor Shop", "Grill Cuisine", "Grill Food", "Grill"]
     },
     {
       "id": 7315054,
       "name": "Guangdong Restaurant",
       "childCategoryIds": [],
       "synonyms": [
-        "Guangdong Cuisine",
-        "Guangdong Food",
-        "Cantonese Restaurant",
         "Cantonese Food",
-        "Cantonese Cuisine"
+        "Guangdong Food",
+        "Guangdong Cuisine",
+        "Cantonese Cuisine",
+        "Cantonese Restaurant"
       ]
     },
     { "id": 7339006, "name": "Gurudwara", "childCategoryIds": [], "synonyms": [] },
@@ -1671,7 +1671,7 @@
       "id": 9361027,
       "name": "Hairdresser",
       "childCategoryIds": [],
-      "synonyms": ["Hair Saloon", "Hair Styling", "Hair Stylist", "Hair Salon"]
+      "synonyms": ["Hair Styling", "Hair Salon", "Hair Stylist", "Hair Saloon"]
     },
     {
       "id": 7315069,
@@ -1683,7 +1683,7 @@
       "id": 8099018,
       "name": "Harbor",
       "childCategoryIds": [],
-      "synonyms": ["Harbour", "Haven"]
+      "synonyms": ["Haven", "Harbour"]
     },
     {
       "id": 9361069,
@@ -1695,7 +1695,7 @@
       "id": 7315021,
       "name": "Hawaiian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Hawaiian Cuisine", "Hawaiian Food"]
+      "synonyms": ["Hawaiian Food", "Hawaiian Cuisine"]
     },
     {
       "id": 7372006,
@@ -1722,12 +1722,12 @@
       "name": "Hobby Shop",
       "childCategoryIds": [],
       "synonyms": [
-        "Hobby/Free Time Shop",
+        "Craft Shop",
         "Hobby Store",
-        "Free Time Store",
-        "Craft Store",
+        "Hobby/Free Time Shop",
         "Free Time Shop",
-        "Craft Shop"
+        "Craft Store",
+        "Free Time Store"
       ]
     },
     { "id": 9937003, "name": "Hockey Club", "childCategoryIds": [], "synonyms": [] },
@@ -1736,9 +1736,9 @@
       "name": "Home Appliance Repair",
       "childCategoryIds": [],
       "synonyms": [
-        "Appliance Repair",
         "Electrical Appliance Repair",
-        "Domestic Appliance Repair"
+        "Domestic Appliance Repair",
+        "Appliance Repair"
       ]
     },
     {
@@ -1746,11 +1746,11 @@
       "name": "Horse Racing Track",
       "childCategoryIds": [],
       "synonyms": [
-        "Race Track",
         "Race Course",
-        "Horse Race Track",
+        "Horse Racing Stadium",
+        "Race Track",
         "Horse Racing",
-        "Horse Racing Stadium"
+        "Horse Race Track"
       ]
     },
     {
@@ -1758,8 +1758,8 @@
       "name": "Horse Riding Center",
       "childCategoryIds": [],
       "synonyms": [
-        "Equestrian Centre",
         "Horse Riding Centre",
+        "Equestrian Centre",
         "Equestrian Center",
         "Horse Riding"
       ]
@@ -1806,7 +1806,7 @@
       "id": 9361030,
       "name": "Do-It-Yourself Centers",
       "childCategoryIds": [],
-      "synonyms": ["DIY Store", "DIY", "Do-It-Yourself", "Do-It-Yourself Centres"]
+      "synonyms": ["Do-It-Yourself", "Do-It-Yourself Centres", "DIY", "DIY Store"]
     },
     {
       "id": 9361031,
@@ -1819,10 +1819,10 @@
       "name": "Garden Centers & Services",
       "childCategoryIds": [],
       "synonyms": [
-        "Garden Centre",
         "Garden Centres & Services",
         "Garden Center",
         "Garden Services",
+        "Garden Centre",
         "Garden Centers"
       ]
     },
@@ -1849,11 +1849,11 @@
       "name": "Lighting Shops",
       "childCategoryIds": [],
       "synonyms": [
+        "Lights",
+        "Light Shop",
+        "Lighting Store",
         "Lighting Stores",
         "Lamps",
-        "Lighting Store",
-        "Light Shop",
-        "Lights",
         "Lighting"
       ]
     },
@@ -1868,18 +1868,18 @@
       "name": "Hunan Restaurant",
       "childCategoryIds": [],
       "synonyms": [
-        "Hunan Food",
-        "Xiang Cuisine",
-        "Xiang Food",
         "Hunan Cuisine",
-        "Xiang Restaurant"
+        "Xiang Food",
+        "Xiang Restaurant",
+        "Xiang Cuisine",
+        "Hunan Food"
       ]
     },
     {
       "id": 7315022,
       "name": "Hungarian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Hungarian Cuisine", "Hungarian Food"]
+      "synonyms": ["Hungarian Food", "Hungarian Cuisine"]
     },
     {
       "id": 7315078,
@@ -1891,7 +1891,7 @@
       "id": 7374008,
       "name": "Ice Hockey Arena",
       "childCategoryIds": [],
-      "synonyms": ["Ice Hockey Stadium", "Ice Rink", "Ice Hockey"]
+      "synonyms": ["Ice Rink", "Ice Hockey", "Ice Hockey Stadium"]
     },
     {
       "id": 9352042,
@@ -1903,7 +1903,7 @@
       "id": 7315023,
       "name": "Indian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Indian Cuisine", "Indian Food"]
+      "synonyms": ["Indian Food", "Indian Cuisine"]
     },
     {
       "id": 7315024,
@@ -1922,17 +1922,17 @@
       "name": "Insurance Company",
       "childCategoryIds": [],
       "synonyms": [
-        "Insurance Agency",
-        "Insurance",
+        "Insurance Broker",
         "Insurance Agent",
-        "Insurance Broker"
+        "Insurance Agency",
+        "Insurance"
       ]
     },
     {
       "id": 7315073,
       "name": "International Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["International Food", "International Cuisine"]
+      "synonyms": ["International Cuisine", "International Food"]
     },
     {
       "id": 7380002,
@@ -1951,13 +1951,13 @@
       "id": 7315105,
       "name": "Iranian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Iranian Food", "Iranian Cuisine"]
+      "synonyms": ["Iranian Cuisine", "Iranian Food"]
     },
     {
       "id": 7315065,
       "name": "Irish Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Irish Cuisine", "Irish Food"]
+      "synonyms": ["Irish Food", "Irish Cuisine"]
     },
     { "id": 8099022, "name": "Island", "childCategoryIds": [], "synonyms": [] },
     {
@@ -1970,13 +1970,13 @@
       "id": 7315025,
       "name": "Italian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Italian Food", "Italian Cuisine"]
+      "synonyms": ["Italian Cuisine", "Italian Food"]
     },
     {
       "id": 7315066,
       "name": "Jamaican Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Jamaican Cuisine", "Jamaican Food"]
+      "synonyms": ["Jamaican Food", "Jamaican Cuisine"]
     },
     {
       "id": 7315026,
@@ -2000,17 +2000,17 @@
       "id": 7315027,
       "name": "Jewish Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Jewish Food", "Jewish Cuisine"]
+      "synonyms": ["Jewish Cuisine", "Jewish Food"]
     },
     {
       "id": 7377003,
       "name": "Junior College/Community College",
       "childCategoryIds": [],
       "synonyms": [
-        "TAFE College",
-        "Polytech",
         "Technical and Further Education College",
         "Sixth Form College",
+        "Polytech",
+        "TAFE College",
         "Polytechnic"
       ]
     },
@@ -2018,19 +2018,19 @@
       "id": 9379010,
       "name": "Karaoke Club",
       "childCategoryIds": [],
-      "synonyms": ["Karaoke", "Karaoke Bar"]
+      "synonyms": ["Karaoke Bar", "Karaoke"]
     },
     {
       "id": 7315028,
       "name": "Korean Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Korean Food", "Korean Cuisine"]
+      "synonyms": ["Korean Cuisine", "Korean Food"]
     },
     {
       "id": 7315067,
       "name": "Kosher Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Kosher Cuisine", "Kosher Food"]
+      "synonyms": ["Kosher Food", "Kosher Cuisine"]
     },
     { "id": 8099019, "name": "Lagoon", "childCategoryIds": [], "synonyms": [] },
     {
@@ -2049,13 +2049,13 @@
       "id": 7315029,
       "name": "Latin American Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Latin American Food", "Latin American Cuisine"]
+      "synonyms": ["Latin American Cuisine", "Latin American Food"]
     },
     {
       "id": 9361045,
       "name": "Laundry",
       "childCategoryIds": [],
-      "synonyms": ["Launderette", "Laundromat", "Laundry Store", "Laundrette"]
+      "synonyms": ["Laundry Store", "Launderette", "Laundromat", "Laundrette"]
     },
     {
       "id": 7315030,
@@ -2067,7 +2067,7 @@
       "id": 9352023,
       "name": "Legal Services",
       "childCategoryIds": [],
-      "synonyms": ["Law Office", "Law", "Law Service"]
+      "synonyms": ["Law Office", "Law Service", "Law"]
     },
     {
       "id": 7324003,
@@ -2086,28 +2086,28 @@
       "id": 9361071,
       "name": "Lottery Shop",
       "childCategoryIds": [],
-      "synonyms": ["Lotto", "Lotto Store", "Lottery Store"]
+      "synonyms": ["Lotto", "Lottery Store", "Lotto Store"]
     },
     {
       "id": 7315107,
       "name": "Luxembourgian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Luxembourgian Cuisine", "Luxembourgian Food"]
+      "synonyms": ["Luxembourgian Food", "Luxembourgian Cuisine"]
     },
     {
       "id": 7315135,
       "name": "Macrobiotic Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Macrobiotic Cuisine", "Macrobiotic Food"]
+      "synonyms": ["Macrobiotic Food", "Macrobiotic Cuisine"]
     },
     {
       "id": 7315108,
       "name": "Maghrib Restaurant",
       "childCategoryIds": [],
       "synonyms": [
-        "Maghreb Food",
         "Maghreb Restaurant",
         "Maghreb Cuisine",
+        "Maghreb Food",
         "Maghrib Cuisine",
         "Maghrib Food"
       ]
@@ -2122,7 +2122,7 @@
       "id": 7315031,
       "name": "Maltese Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Maltese Food", "Maltese Cuisine"]
+      "synonyms": ["Maltese Cuisine", "Maltese Food"]
     },
     {
       "id": 9352011,
@@ -2170,13 +2170,13 @@
       "id": 9361043,
       "name": "Medical Supplies & Equipment",
       "childCategoryIds": [],
-      "synonyms": ["Medical Equipment", "Medical Supplies", "Medical Distributor"]
+      "synonyms": ["Medical Distributor", "Medical Supplies", "Medical Equipment"]
     },
     {
       "id": 7315032,
       "name": "Mediterranean Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Mediterranean Food", "Mediterranean Cuisine"]
+      "synonyms": ["Mediterranean Cuisine", "Mediterranean Food"]
     },
     { "id": 9362007, "name": "Memorial", "childCategoryIds": [], "synonyms": [] },
     {
@@ -2184,19 +2184,19 @@
       "name": "Subway Station",
       "childCategoryIds": [],
       "synonyms": [
-        "Metro",
-        "Underground Station",
         "Underground",
+        "Metro Station",
         "Subway",
+        "Underground Station",
         "Tube",
-        "Metro Station"
+        "Metro"
       ]
     },
     {
       "id": 7315033,
       "name": "Mexican Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Mexican Cuisine", "Mexican Food"]
+      "synonyms": ["Mexican Food", "Mexican Cuisine"]
     },
     {
       "id": 9376007,
@@ -2208,19 +2208,19 @@
       "id": 7315034,
       "name": "Middle Eastern Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Middle Eastern Cuisine", "Middle Eastern Food"]
+      "synonyms": ["Middle Eastern Food", "Middle Eastern Cuisine"]
     },
     {
       "id": 7372014,
       "name": "Middle School",
       "childCategoryIds": [],
-      "synonyms": ["Intermediate School", "Junior High"]
+      "synonyms": ["Junior High", "Intermediate School"]
     },
     {
       "id": 7383004,
       "name": "Military Airport",
       "childCategoryIds": [],
-      "synonyms": ["Defence Airport", "Air Force Base"]
+      "synonyms": ["Air Force Base", "Defence Airport"]
     },
     {
       "id": 8099021,
@@ -2238,13 +2238,13 @@
       "id": 9361075,
       "name": "Mobile Phone Shop",
       "childCategoryIds": [],
-      "synonyms": ["Smart Phones", "Cell Phone Shop", "Cell Phone Store", "Cell Phones"]
+      "synonyms": ["Cell Phones", "Smart Phones", "Cell Phone Store", "Cell Phone Shop"]
     },
     {
       "id": 7315110,
       "name": "Mongolian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Mongolian Cuisine", "Mongolian Food"]
+      "synonyms": ["Mongolian Food", "Mongolian Cuisine"]
     },
     { "id": 7376003, "name": "Monument", "childCategoryIds": [], "synonyms": [] },
     {
@@ -2260,12 +2260,12 @@
       "name": "Motor Racing Stadium",
       "childCategoryIds": [],
       "synonyms": [
-        "Motor Sport",
         "Motorsport Circuit",
-        "Motor Racing",
         "Motor Racing Track",
+        "Motor Racing Circuit",
         "Motorsport",
-        "Motor Racing Circuit"
+        "Motor Racing",
+        "Motor Sport"
       ]
     },
     {
@@ -2273,19 +2273,19 @@
       "name": "Motorcycle Dealer",
       "childCategoryIds": [],
       "synonyms": [
-        "Scooter Dealer",
-        "Motor Cycle Dealer",
-        "Motorbike Sales",
-        "Motorcycle Sales",
         "Bike Dealer",
-        "Motorbike Dealer"
+        "Motorcycle Sales",
+        "Motorbike Sales",
+        "Motorbike Dealer",
+        "Scooter Dealer",
+        "Motor Cycle Dealer"
       ]
     },
     {
       "id": 7310008,
       "name": "Motorcycle Repair",
       "childCategoryIds": [],
-      "synonyms": ["Motorbike Repair", "Motorbike Servicing", "Motorcycle Servicing"]
+      "synonyms": ["Motorbike Servicing", "Motorcycle Servicing", "Motorbike Repair"]
     },
     {
       "id": 7302002,
@@ -2298,11 +2298,11 @@
       "name": "Mountain Peak",
       "childCategoryIds": [],
       "synonyms": [
-        "Mountain Top",
-        "Mountain Crown",
+        "Mountain Tip",
         "Mountain Summit",
-        "Mountain Crest",
-        "Mountain Tip"
+        "Mountain Crown",
+        "Mountain Top",
+        "Mountain Crest"
       ]
     },
     {
@@ -2328,9 +2328,9 @@
       "name": "Music Instruments Store",
       "childCategoryIds": [],
       "synonyms": [
+        "Musical Instruments Shop",
         "Music Instruments Shop",
-        "Musical Instruments Store",
-        "Musical Instruments Shop"
+        "Musical Instruments Store"
       ]
     },
     {
@@ -2343,7 +2343,7 @@
       "id": 9361068,
       "name": "Nail Salon",
       "childCategoryIds": [],
-      "synonyms": ["Nail Bar", "Nails", "Pedicure", "Manicure"]
+      "synonyms": ["Pedicure", "Manicure", "Nails", "Nail Bar"]
     },
     {
       "id": 7380003,
@@ -2361,13 +2361,13 @@
       "id": 7315111,
       "name": "Nepalese Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Nepalese Cuisine", "Nepalese Food"]
+      "synonyms": ["Nepalese Food", "Nepalese Cuisine"]
     },
     {
       "id": 7374014,
       "name": "Netball Stadium",
       "childCategoryIds": [],
-      "synonyms": ["Netball Arena", "Netball Ground", "Netball Court"]
+      "synonyms": ["Netball Court", "Netball Ground", "Netball Arena"]
     },
     {
       "id": 9361037,
@@ -2379,7 +2379,7 @@
       "id": 7315112,
       "name": "Norwegian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Norwegian Food", "Norwegian Cuisine"]
+      "synonyms": ["Norwegian Cuisine", "Norwegian Food"]
     },
     { "id": 8099011, "name": "Oasis", "childCategoryIds": [], "synonyms": [] },
     { "id": 7376005, "name": "Observatory", "childCategoryIds": [], "synonyms": [] },
@@ -2393,7 +2393,7 @@
       "id": 9352030,
       "name": "Oil & Natural Gas",
       "childCategoryIds": [],
-      "synonyms": ["Oil Company", "Oil & Natural Gas Company"]
+      "synonyms": ["Oil & Natural Gas Company", "Oil Company"]
     },
     {
       "id": 7318004,
@@ -2411,7 +2411,7 @@
       "id": 7315075,
       "name": "Organic Food Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Organic Cuisine", "Organic Food", "Organic Restaurant"]
+      "synonyms": ["Organic Restaurant", "Organic Food", "Organic Cuisine"]
     },
     {
       "id": 7315035,
@@ -2457,7 +2457,7 @@
       "id": 9932003,
       "name": "Pedestrian Subway",
       "childCategoryIds": [],
-      "synonyms": ["Underpass", "Subway"]
+      "synonyms": ["Subway", "Underpass"]
     },
     {
       "id": 9663003,
@@ -2481,7 +2481,7 @@
       "id": 9361064,
       "name": "Pet Supplies",
       "childCategoryIds": [],
-      "synonyms": ["Pet Store", "Pet Shop"]
+      "synonyms": ["Pet Shop", "Pet Store"]
     },
     {
       "id": 9352018,
@@ -2494,11 +2494,11 @@
       "name": "Photo Lab/Development",
       "childCategoryIds": [],
       "synonyms": [
-        "Photo Developers",
-        "Photo Lab",
         "Photo Studio",
-        "Photo Development",
-        "Photo Developing"
+        "Photo Developers",
+        "Photo Developing",
+        "Photo Lab",
+        "Photo Development"
       ]
     },
     {
@@ -2506,12 +2506,12 @@
       "name": "Photocopy Shop",
       "childCategoryIds": [],
       "synonyms": [
-        "Photocopiers",
-        "Photocopying Shop",
         "Copy Shop",
         "Copiers",
+        "Photocopying Shop",
         "Photocopying",
-        "Xerox Shop"
+        "Xerox Shop",
+        "Photocopiers"
       ]
     },
     {
@@ -2525,11 +2525,11 @@
       "name": "Pizzeria",
       "childCategoryIds": [],
       "synonyms": [
-        "Pizza",
+        "Pizza Restaurant",
         "Pizzaria",
-        "Pizza Shop",
+        "Pizza",
         "Pizza Parlor",
-        "Pizza Restaurant"
+        "Pizza Shop"
       ]
     },
     { "id": 8099007, "name": "Plain/Flat", "childCategoryIds": [], "synonyms": [] },
@@ -2545,19 +2545,19 @@
       "id": 7315129,
       "name": "Polynesian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Polynesian Cuisine", "Polynesian Food"]
+      "synonyms": ["Polynesian Food", "Polynesian Cuisine"]
     },
     {
       "id": 7315038,
       "name": "Portuguese Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Portuguese Food", "Portuguese Cuisine"]
+      "synonyms": ["Portuguese Cuisine", "Portuguese Food"]
     },
     {
       "id": 7372004,
       "name": "Pre School",
       "childCategoryIds": [],
-      "synonyms": ["Nursery School", "Pre-School", "Kindergarten", "Preschool"]
+      "synonyms": ["Pre-School", "Nursery School", "Preschool", "Kindergarten"]
     },
     { "id": 9362010, "name": "Preserve", "childCategoryIds": [], "synonyms": [] },
     {
@@ -2570,7 +2570,7 @@
       "id": 7372005,
       "name": "Primary School",
       "childCategoryIds": [],
-      "synonyms": ["Junior School", "Elementary School"]
+      "synonyms": ["Elementary School", "Junior School"]
     },
     {
       "id": 7383003,
@@ -2600,7 +2600,7 @@
       "id": 7315039,
       "name": "Pub Food",
       "childCategoryIds": [],
-      "synonyms": ["Bar Food", "Bar Snacks"]
+      "synonyms": ["Bar Snacks", "Bar Food"]
     },
     { "id": 7332003, "name": "Public Market", "childCategoryIds": [], "synonyms": [] },
     { "id": 7383002, "name": "Public Airport", "childCategoryIds": [], "synonyms": [] },
@@ -2609,14 +2609,14 @@
       "name": "Public Call Box",
       "childCategoryIds": [],
       "synonyms": [
-        "Public Telephone Box",
-        "Call Box",
-        "Public Phone",
-        "Telephone Box",
-        "Phone Box",
-        "Payphone",
         "PCO",
-        "Phone Booth"
+        "Telephone Box",
+        "Public Phone",
+        "Phone Booth",
+        "Payphone",
+        "Public Telephone Box",
+        "Phone Box",
+        "Call Box"
       ]
     },
     {
@@ -2637,12 +2637,12 @@
       "name": "Race Track",
       "childCategoryIds": [],
       "synonyms": [
-        "Racing Track",
-        "Racing",
-        "Raceway",
-        "Racecourse",
+        "Racing Circuit",
         "Racetrack",
-        "Racing Circuit"
+        "Racecourse",
+        "Racing Track",
+        "Raceway",
+        "Racing"
       ]
     },
     {
@@ -2657,14 +2657,14 @@
       "name": "Real Estate Company",
       "childCategoryIds": [],
       "synonyms": [
-        "Estate Agent",
-        "Real Estate Agents",
-        "Real Estate Broker",
-        "Real Estate",
-        "Commercial Property Agent",
         "Land Agent",
         "Real Estate Agent",
-        "Real Estate Agency"
+        "Real Estate Agency",
+        "Estate Agent",
+        "Commercial Property Agent",
+        "Real Estate",
+        "Real Estate Agents",
+        "Real Estate Broker"
       ]
     },
     {
@@ -2672,11 +2672,11 @@
       "name": "Real Estate Agent",
       "childCategoryIds": [],
       "synonyms": [
+        "Land Agent",
+        "Realtor",
         "Estate Agent",
         "Real Estate Broker",
-        "Commercial Property Agent",
-        "Land Agent",
-        "Realtor"
+        "Commercial Property Agent"
       ]
     },
     {
@@ -2696,13 +2696,13 @@
       "name": "Recreational Vehicle Dealer",
       "childCategoryIds": [],
       "synonyms": [
-        "Motorhome Sales",
-        "Camper Van Dealer",
         "RV Dealer",
-        "Recreational Vehicle Sales",
-        "RV Sales",
+        "Camper Van Dealer",
+        "Caravan Dealer",
         "Motorhome Dealer",
-        "Caravan Dealer"
+        "Motorhome Sales",
+        "RV Sales",
+        "Recreational Vehicle Sales"
       ]
     },
     {
@@ -2728,9 +2728,9 @@
       "childCategoryIds": [],
       "synonyms": [
         "Retirement Village",
-        "Nursing Home",
         "Old Age Home",
-        "Retirement Home"
+        "Retirement Home",
+        "Nursing Home"
       ]
     },
     { "id": 8099004, "name": "Ridge", "childCategoryIds": [], "synonyms": [] },
@@ -2745,21 +2745,21 @@
       "name": "Road Rescue",
       "childCategoryIds": [],
       "synonyms": [
-        "Breakdown Assistance",
-        "Road Assistance",
-        "Vehicle Assistance",
-        "AAA",
         "Tow Truck",
         "Breakdown Service",
+        "AAA",
+        "Road Assistance",
+        "Roadside Assistance",
+        "Breakdown Assistance",
         "Breakdown Rescue",
-        "Roadside Assistance"
+        "Vehicle Assistance"
       ]
     },
     {
       "id": 7315041,
       "name": "Roadside Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Roadhouse", "Road House", "Food Joint", "Diner"]
+      "synonyms": ["Diner", "Roadhouse", "Road House", "Food Joint"]
     },
     {
       "id": 7302006,
@@ -2772,17 +2772,17 @@
       "id": 7374007,
       "name": "Rugby Ground",
       "childCategoryIds": [],
-      "synonyms": ["Rugby Stadium", "Rugby Pitch"]
+      "synonyms": ["Rugby Pitch", "Rugby Stadium"]
     },
     {
       "id": 7315131,
       "name": "Romanian Restaurant",
       "childCategoryIds": [],
       "synonyms": [
+        "Rumanian Cuisine",
         "Romanian Cuisine",
-        "Romanian Food",
         "Rumanian Food",
-        "Rumanian Cuisine"
+        "Romanian Food"
       ]
     },
     {
@@ -2808,21 +2808,21 @@
       "name": "Sandwich Restaurant",
       "childCategoryIds": [],
       "synonyms": [
-        "Sandwiches",
         "Sandwich",
-        "Sandwich Corner",
-        "Sandwich Bar",
         "Sub Shop",
-        "Submarine Sandwich",
+        "Sandwich Shop",
         "Subs",
-        "Sandwich Shop"
+        "Sandwiches",
+        "Submarine Sandwich",
+        "Sandwich Bar",
+        "Sandwich Corner"
       ]
     },
     {
       "id": 9378005,
       "name": "Sauna, Solarium & Massage",
       "childCategoryIds": [],
-      "synonyms": ["Wellness", "Spa"]
+      "synonyms": ["Spa", "Wellness"]
     },
     {
       "id": 9352010,
@@ -2840,7 +2840,7 @@
       "id": 7315114,
       "name": "Scandinavian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Scandinavian Cuisine", "Scandinavian Food"]
+      "synonyms": ["Scandinavian Food", "Scandinavian Cuisine"]
     },
     {
       "id": 7372002,
@@ -2852,7 +2852,7 @@
       "id": 7315115,
       "name": "Scottish Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Scottish Cuisine", "Scottish Food"]
+      "synonyms": ["Scottish Food", "Scottish Cuisine"]
     },
     {
       "id": 7315043,
@@ -2889,13 +2889,13 @@
       "id": 7315053,
       "name": "Shandong Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Shandong Food", "Lu Cuisine", "Shandong Cuisine"]
+      "synonyms": ["Shandong Food", "Shandong Cuisine", "Lu Cuisine"]
     },
     {
       "id": 7315055,
       "name": "Shanghai Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Shanghai Cuisine", "Hu Cuisine", "Shanghai Food"]
+      "synonyms": ["Hu Cuisine", "Shanghai Food", "Shanghai Cuisine"]
     },
     {
       "id": 9361062,
@@ -2908,12 +2908,12 @@
       "name": "Sichuan Restaurant",
       "childCategoryIds": [],
       "synonyms": [
-        "Szechuan Cuisine",
-        "Szechuan Food",
-        "Sichuan Food",
-        "Szechuan Restaurant",
         "Sichuan Cuisine",
-        "Szechwan Cuisine"
+        "Szechuan Cuisine",
+        "Sichuan Food",
+        "Szechwan Cuisine",
+        "Szechuan Food",
+        "Szechuan Restaurant"
       ]
     },
     {
@@ -2938,7 +2938,7 @@
       "id": 7315080,
       "name": "Slovak Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Slovak Cuisine", "Slovak Food"]
+      "synonyms": ["Slovak Food", "Slovak Cuisine"]
     },
     {
       "id": 7315139,
@@ -2958,16 +2958,16 @@
       "childCategoryIds": [],
       "synonyms": [
         "Football Stadium",
-        "Football Ground",
+        "Soccer Field",
         "Soccer Arena",
-        "Soccer Field"
+        "Football Ground"
       ]
     },
     {
       "id": 7315064,
       "name": "Soul Food",
       "childCategoryIds": [],
-      "synonyms": ["Southern Food", "Southern Restaurant", "Southern Cuisine"]
+      "synonyms": ["Southern Food", "Southern Cuisine", "Southern Restaurant"]
     },
     {
       "id": 7315140,
@@ -3026,24 +3026,24 @@
       "id": 7315045,
       "name": "Steak House",
       "childCategoryIds": [],
-      "synonyms": ["Steak Restaurant", "Steakhouse"]
+      "synonyms": ["Steakhouse", "Steak Restaurant"]
     },
     { "id": 9160002, "name": "Stock Exchange", "childCategoryIds": [], "synonyms": [] },
     {
       "id": 7315118,
       "name": "Sudanese Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Sudanese Food", "Sudanese Cuisine"]
+      "synonyms": ["Sudanese Cuisine", "Sudanese Food"]
     },
     {
       "id": 7332005,
       "name": "Supermarkets & Hypermarkets",
       "childCategoryIds": [],
       "synonyms": [
+        "Supermarket",
+        "Hypermarkets",
         "Supermarkets",
         "Hypermarket",
-        "Hypermarkets",
-        "Supermarket",
         "Superstore"
       ]
     },
@@ -3051,25 +3051,25 @@
       "id": 7315046,
       "name": "Surinamese Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Surinamese Food", "Surinamese Cuisine"]
+      "synonyms": ["Surinamese Cuisine", "Surinamese Food"]
     },
     {
       "id": 7315148,
       "name": "Sushi Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Sushi House", "Sushi Bar"]
+      "synonyms": ["Sushi Bar", "Sushi House"]
     },
     {
       "id": 7315119,
       "name": "Swedish Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Swedish Cuisine", "Swedish Food"]
+      "synonyms": ["Swedish Food", "Swedish Cuisine"]
     },
     {
       "id": 7315047,
       "name": "Swiss Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Swiss Cuisine", "Swiss Food"]
+      "synonyms": ["Swiss Food", "Swiss Cuisine"]
     },
     {
       "id": 7339004,
@@ -3087,7 +3087,7 @@
       "id": 9361077,
       "name": "Tailor Shop",
       "childCategoryIds": [],
-      "synonyms": ["Tailors", "Tailor"]
+      "synonyms": ["Tailor", "Tailors"]
     },
     {
       "id": 7315059,
@@ -3100,16 +3100,16 @@
       "name": "Takeout Food",
       "childCategoryIds": [],
       "synonyms": [
-        "Take Out",
-        "To Go",
-        "Take-out",
-        "Take Away Food",
-        "Carry-out",
-        "Takeaway Food",
-        "Takeaway",
         "Takeout Restaurant",
+        "Take Out",
+        "Takeaway Food",
+        "Take Away Food",
+        "Takeout",
+        "Takeaway",
+        "Carry-out",
         "Take Away",
-        "Takeout"
+        "To Go",
+        "Take-out"
       ]
     },
     {
@@ -3123,18 +3123,18 @@
       "name": "Tax Services",
       "childCategoryIds": [],
       "synonyms": [
-        "Tax Agent",
+        "Tax Broker",
+        "Tax Accountant",
         "Tax Consultants",
         "Chartered Accountant",
-        "Tax Accountant",
-        "Tax Broker"
+        "Tax Agent"
       ]
     },
     {
       "id": 9942003,
       "name": "Taxi Stand",
       "childCategoryIds": [],
-      "synonyms": ["Taxi", "Taxi Rank", "Cab Stand", "Cab", "Cab Rank"]
+      "synonyms": ["Cab Stand", "Taxi Rank", "Cab Rank", "Taxi", "Cab"]
     },
     {
       "id": 9352026,
@@ -3158,20 +3158,20 @@
       "id": 9352020,
       "name": "Telecommunications",
       "childCategoryIds": [],
-      "synonyms": ["Telecom", "Telecoms"]
+      "synonyms": ["Telecoms", "Telecom"]
     },
     { "id": 7339005, "name": "Temple", "childCategoryIds": [], "synonyms": ["Mandir"] },
     {
       "id": 7315121,
       "name": "Teppanyaki Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Teppanyaki Cuisine", "Teppanyaki Food"]
+      "synonyms": ["Teppanyaki Food", "Teppanyaki Cuisine"]
     },
     {
       "id": 7315048,
       "name": "Thai Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Thai Cuisine", "Thai Food"]
+      "synonyms": ["Thai Food", "Thai Cuisine"]
     },
     {
       "id": 7318005,
@@ -3189,7 +3189,7 @@
       "id": 7315122,
       "name": "Tibetan Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Tibetan Cuisine", "Tibetan Food"]
+      "synonyms": ["Tibetan Food", "Tibetan Cuisine"]
     },
     {
       "id": 9932005,
@@ -3215,26 +3215,26 @@
       "name": "Toys & Games Shop",
       "childCategoryIds": [],
       "synonyms": [
+        "Gameshop",
+        "Toy Store",
         "Toy Stores",
         "Games Shop",
-        "Game Shop",
-        "Games Shops",
-        "Gameshop",
         "Toy Shop",
-        "Toy Store"
+        "Game Shop",
+        "Games Shops"
       ]
     },
     {
       "id": 7301002,
       "name": "Traffic Control Department",
       "childCategoryIds": [],
-      "synonyms": ["Traffic Management Department", "RTO"]
+      "synonyms": ["RTO", "Traffic Management Department"]
     },
     {
       "id": 9942004,
       "name": "Streetcar Stop",
       "childCategoryIds": [],
-      "synonyms": ["Tram Stop", "Cable Car Stop", "Streetcar"]
+      "synonyms": ["Cable Car Stop", "Streetcar", "Tram Stop"]
     },
     {
       "id": 9352024,
@@ -3246,7 +3246,7 @@
       "id": 9361041,
       "name": "Travel Agent",
       "childCategoryIds": [],
-      "synonyms": ["Travel Bureau", "Travel Agency"]
+      "synonyms": ["Travel Agency", "Travel Bureau"]
     },
     {
       "id": 9910006,
@@ -3258,7 +3258,7 @@
       "id": 7310009,
       "name": "Truck Repair and Service",
       "childCategoryIds": [],
-      "synonyms": ["Truck Service", "Lorry Service", "Lorry Repair", "Truck Repair"]
+      "synonyms": ["Truck Repair", "Lorry Service", "Truck Service", "Lorry Repair"]
     },
     { "id": 9155003, "name": "Truck Wash", "childCategoryIds": [], "synonyms": [] },
     {
@@ -3272,28 +3272,28 @@
       "id": 7315049,
       "name": "Turkish Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Turkish Cuisine", "Turkish Food"]
+      "synonyms": ["Turkish Food", "Turkish Cuisine"]
     },
     {
       "id": 7310007,
       "name": "Tire Service",
       "childCategoryIds": [],
       "synonyms": [
-        "Tire Retail",
-        "Tyre Shop",
-        "Tyre Centre",
-        "Tyre Service",
-        "Tire Shop",
-        "Tyre Retail",
+        "Tire Centre",
         "Tire Center",
-        "Tire Centre"
+        "Tyre Service",
+        "Tyre Centre",
+        "Tire Shop",
+        "Tyre Shop",
+        "Tire Retail",
+        "Tyre Retail"
       ]
     },
     {
       "id": 7315124,
       "name": "Uruguayan Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Uruguayan Cuisine", "Uruguayan Food"]
+      "synonyms": ["Uruguayan Food", "Uruguayan Cuisine"]
     },
     { "id": 8099006, "name": "Valley", "childCategoryIds": [], "synonyms": [] },
     {
@@ -3307,13 +3307,13 @@
       "id": 7315050,
       "name": "Vegetarian Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Vegetarian Food", "Vegetarian Cuisine"]
+      "synonyms": ["Vegetarian Cuisine", "Vegetarian Food"]
     },
     {
       "id": 7315125,
       "name": "Venezuelan Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Venezuelan Cuisine", "Venezuelan Food"]
+      "synonyms": ["Venezuelan Food", "Venezuelan Cuisine"]
     },
     {
       "id": 7315051,
@@ -3326,7 +3326,7 @@
       "id": 7372008,
       "name": "Vocational School",
       "childCategoryIds": [],
-      "synonyms": ["Vocational Training", "Trade School", "Vocational Education"]
+      "synonyms": ["Vocational Training", "Vocational Education", "Trade School"]
     },
     {
       "id": 7376014,
@@ -3345,9 +3345,9 @@
       "name": "Weigh Scales",
       "childCategoryIds": [],
       "synonyms": [
-        "Heavy Vehicle Safety Station",
-        "Heavy Vehicle Safety Stations",
         "Weigh Bridge",
+        "Heavy Vehicle Safety Stations",
+        "Heavy Vehicle Safety Station",
         "HVSS",
         "Weigh Scale"
       ]
@@ -3363,7 +3363,7 @@
       "id": 7315126,
       "name": "Welsh Restaurant",
       "childCategoryIds": [],
-      "synonyms": ["Welsh Food", "Welsh Cuisine"]
+      "synonyms": ["Welsh Cuisine", "Welsh Food"]
     },
     {
       "id": 7315060,
@@ -3388,9 +3388,9 @@
       "name": "Wildlife Park",
       "childCategoryIds": [],
       "synonyms": [
-        "Wildlife",
         "Wildlife Conservation",
         "Wildlife Refuge",
+        "Wildlife",
         "Wildlife Sanctuary"
       ]
     },
@@ -3478,7 +3478,7 @@
       "id": 9360,
       "name": "Ice Skating Rink",
       "childCategoryIds": [],
-      "synonyms": ["Ice Skating", "Skating Rink", "Ice Rink"]
+      "synonyms": ["Ice Rink", "Skating Rink", "Ice Skating"]
     },
     {
       "id": 9369,
@@ -3490,7 +3490,7 @@
       "id": 9911,
       "name": "Golf Course",
       "childCategoryIds": [],
-      "synonyms": ["Links Course", "Golf Links", "Golf", "Links", "Golf Club"]
+      "synonyms": ["Golf Club", "Links", "Golf", "Links Course", "Golf Links"]
     },
     {
       "id": 9371,
@@ -3502,7 +3502,7 @@
       "id": 7338,
       "name": "Swimming Pool",
       "childCategoryIds": [],
-      "synonyms": ["Baths", "Pool", "Public Pool", "Swimming Baths"]
+      "synonyms": ["Baths", "Swimming Baths", "Pool", "Public Pool"]
     },
     {
       "id": 9359,
@@ -3515,12 +3515,12 @@
       "name": "Dentist",
       "childCategoryIds": [],
       "synonyms": [
-        "Teeth",
-        "Denture Repair",
-        "Dental Practitioner",
         "Tooth Doctor",
+        "Denture Repair",
         "Dentist's Office",
-        "Dental Surgery"
+        "Dental Surgery",
+        "Dental Practitioner",
+        "Teeth"
       ]
     },
     {
@@ -3528,14 +3528,14 @@
       "name": "Veterinarian",
       "childCategoryIds": [],
       "synonyms": [
-        "Vet Clinic",
-        "Veterinary Doctor",
+        "Animal Doctor",
         "Animal Hospital",
-        "Veterinary Surgeon",
-        "Animal Clinic",
         "Veterinary Clinic",
+        "Vet Clinic",
         "Vet",
-        "Animal Doctor"
+        "Animal Clinic",
+        "Veterinary Doctor",
+        "Veterinary Surgeon"
       ]
     },
     {
@@ -3561,13 +3561,13 @@
       "name": "Shopping Center",
       "childCategoryIds": [],
       "synonyms": [
+        "Shopping Mall",
         "Shopping Complex",
         "Shopping Arcade",
-        "Precinct",
-        "Shopping Mall",
-        "Shopping Precinct",
         "Mall",
-        "Shopping Centre"
+        "Shopping Precinct",
+        "Shopping Centre",
+        "Precinct"
       ]
     },
     {
@@ -3575,13 +3575,13 @@
       "name": "Fire Station",
       "childCategoryIds": [],
       "synonyms": [
-        "Fire Station/Brigade",
+        "Fire Service",
+        "Fire Hall",
         "Firehouse",
         "Firemen",
-        "Fire Brigade",
         "Fire Department",
-        "Fire Service",
-        "Fire Hall"
+        "Fire Station/Brigade",
+        "Fire Brigade"
       ]
     },
     {
@@ -3601,9 +3601,9 @@
       "synonyms": [
         "Jail",
         "Correctional Facility",
-        "Remand Home",
+        "Prison",
         "Correctional Department",
-        "Prison"
+        "Remand Home"
       ]
     },
     { "id": 7365, "name": "Embassy", "childCategoryIds": [], "synonyms": [] },
@@ -3618,22 +3618,22 @@
       "name": "Transport Authority/Vehicle Registration Office",
       "childCategoryIds": [],
       "synonyms": [
-        "MOT",
-        "Department of Motor Vehicles",
-        "RTO",
-        "Vehicle Registration Office",
+        "Transport Authority/Vehicle Registration",
         "Transport Authority",
-        "Ministry of Transport",
-        "Vehicle Registration",
         "DMV",
-        "Transport Authority/Vehicle Registration"
+        "Vehicle Registration",
+        "RTO",
+        "Ministry of Transport",
+        "Vehicle Registration Office",
+        "Department of Motor Vehicles",
+        "MOT"
       ]
     },
     {
       "id": 9153,
       "name": "Welfare Organization",
       "childCategoryIds": [],
-      "synonyms": ["Welfare", "Trust", "Welfare Organisation"]
+      "synonyms": ["Welfare Organisation", "Welfare", "Trust"]
     },
     {
       "id": 9389,
@@ -3646,35 +3646,35 @@
       "name": "Courthouse",
       "childCategoryIds": [],
       "synonyms": [
-        "Court House",
-        "Law Court",
         "Law Courts",
-        "Judiciary",
-        "Tribunal",
-        "Magistrate Court",
-        "Courtroom",
         "Lawcourt",
+        "Lawcourts",
+        "Magistrate Court",
+        "Tribunal",
         "Court of Law",
-        "Lawcourts"
+        "Law Court",
+        "Judiciary",
+        "Court House",
+        "Courtroom"
       ]
     },
     {
       "id": 7322,
       "name": "Police Station",
       "childCategoryIds": [],
-      "synonyms": ["Station House", "Police", "Cops", "Police Department"]
+      "synonyms": ["Police Department", "Station House", "Police", "Cops"]
     },
     {
       "id": 9150,
       "name": "Primary Resource/Utility",
       "childCategoryIds": [],
       "synonyms": [
-        "Primary Utilities",
-        "Primary Resource",
-        "Utilities",
         "Primary Resources",
+        "Primary Utility",
         "Utility",
-        "Primary Utility"
+        "Primary Resource",
+        "Primary Utilities",
+        "Utilities"
       ]
     },
     {
@@ -3694,11 +3694,11 @@
       "name": "Rent-a-Car-Parking",
       "childCategoryIds": [],
       "synonyms": [
-        "Rental Car Parking",
-        "Rental Parking Garage",
-        "Rent-a-Car Parking",
+        "Rental Parking",
         "Hire Car Parking",
-        "Rental Parking"
+        "Rent-a-Car Parking",
+        "Rental Parking Garage",
+        "Rental Car Parking"
       ]
     },
     { "id": 7317, "name": "Museum", "childCategoryIds": [], "synonyms": [] },
@@ -3715,8 +3715,8 @@
       "synonyms": [
         "Parking Ramp",
         "Indoor Parking",
-        "Parking Structure",
-        "Secure Parking"
+        "Secure Parking",
+        "Parking Structure"
       ]
     },
     {
@@ -3724,20 +3724,20 @@
       "name": "Tourist Information Office",
       "childCategoryIds": [],
       "synonyms": [
-        "Information Centre",
-        "Information Center",
-        "Tourist Information",
-        "Tourist Information Center",
-        "Tourist Office",
-        "Visitor Information Centre",
-        "I-site",
-        "Visitor Center",
-        "Visitor Centre",
-        "Visitor Information Center",
         "Information Office",
-        "Tourist Center",
+        "Visitor Center",
+        "I-site",
         "Tourist Information Centre",
-        "Tourist Centre"
+        "Visitor Centre",
+        "Tourist Centre",
+        "Tourist Information",
+        "Visitor Information Center",
+        "Tourist Office",
+        "Information Center",
+        "Information Centre",
+        "Visitor Information Centre",
+        "Tourist Center",
+        "Tourist Information Center"
       ]
     },
     {
@@ -3745,12 +3745,12 @@
       "name": "Media Facility",
       "childCategoryIds": [],
       "synonyms": [
-        "Media Centre",
-        "Media Center",
-        "Media Studio",
-        "Broadcasting House",
+        "Media House",
         "Broadcaster",
-        "Media House"
+        "Media Centre",
+        "Media Studio",
+        "Media Center",
+        "Broadcasting House"
       ]
     },
     {
@@ -3758,12 +3758,12 @@
       "name": "Winery",
       "childCategoryIds": [],
       "synonyms": [
-        "Wine Estate",
-        "Winemaker",
-        "Vineyard",
-        "Vinery",
         "Vintner",
-        "Wine Maker"
+        "Wine Estate",
+        "Vinery",
+        "Vineyard",
+        "Wine Maker",
+        "Winemaker"
       ]
     },
     {
@@ -3771,31 +3771,31 @@
       "name": "Emergency Medical Service",
       "childCategoryIds": [],
       "synonyms": [
-        "Accident & Emergency Unit",
-        "A&E",
-        "Ambulance Service",
-        "First Aid Post",
-        "Accident and Emergency",
-        "Emergency Call Station",
-        "Medical Service",
-        "A & E",
-        "Emergency Department",
         "First Aid",
+        "Emergency Call Station",
         "Urgent Care",
-        "First Aid Station"
+        "First Aid Station",
+        "A&E",
+        "Accident & Emergency Unit",
+        "Accident and Emergency",
+        "Emergency Department",
+        "First Aid Post",
+        "A & E",
+        "Ambulance Service",
+        "Medical Service"
       ]
     },
     {
       "id": 7341,
       "name": "Casino",
       "childCategoryIds": [],
-      "synonyms": ["Betting", "Gambling", "Gaming Parlour"]
+      "synonyms": ["Gaming Parlour", "Betting", "Gambling"]
     },
     {
       "id": 9156,
       "name": "Manufacturing Facility",
       "childCategoryIds": [],
-      "synonyms": ["Production Plant", "Factory", "Manufacturing Plant"]
+      "synonyms": ["Manufacturing Plant", "Production Plant", "Factory"]
     },
     {
       "id": 9382,
@@ -3814,16 +3814,16 @@
       "name": "Exhibition & Convention Center",
       "childCategoryIds": [],
       "synonyms": [
-        "Exhibition & Convention Centre",
-        "Conference Center",
-        "Exhibition Center",
-        "Exhibition Centre",
+        "Meeting Center",
         "Meeting Centre",
+        "Exhibition Center",
         "Assembly Center",
         "Conference Hall",
-        "Convention Center",
+        "Exhibition & Convention Centre",
         "Convention Centre",
-        "Meeting Center"
+        "Convention Center",
+        "Exhibition Centre",
+        "Conference Center"
       ]
     },
     {
@@ -3831,15 +3831,15 @@
       "name": "Rent-a-Car Facility",
       "childCategoryIds": [],
       "synonyms": [
-        "You-Drive",
-        "Car Hire",
+        "Car Rental Facility",
+        "Self-Drive",
+        "Rent a Car",
         "Rent-a-Car",
         "U-Drive",
+        "You-Drive",
         "Car Rental",
-        "Car Rental Services",
-        "Rent a Car",
-        "Car Rental Facility",
-        "Self-Drive"
+        "Car Hire",
+        "Car Rental Services"
       ]
     },
     {
@@ -3847,39 +3847,39 @@
       "name": "Truck Stop",
       "childCategoryIds": [],
       "synonyms": [
-        "Coach & Lorry Parking",
+        "Coach and Lorry Parking",
         "Transport Café",
         "Coach & Truck Parking",
+        "Truck Service",
         "Dhaba",
         "Bus & Truck Park",
-        "Coach and Lorry Parking",
-        "Truck Service"
+        "Coach & Lorry Parking"
       ]
     },
     {
       "id": 7305,
       "name": "Adventure Sports Facility",
       "childCategoryIds": [],
-      "synonyms": ["Adventure Sports", "Outdoor Centre", "Adventure Sports Venue"]
+      "synonyms": ["Adventure Sports Venue", "Adventure Sports", "Outdoor Centre"]
     },
     {
       "id": 7395,
       "name": "Rest Area",
       "childCategoryIds": [],
       "synonyms": [
-        "Layby",
-        "Highway Services",
-        "Service Area",
         "Rest Stop",
+        "Highway Services",
+        "Break Area",
         "Lay-by",
-        "Break Area"
+        "Service Area",
+        "Layby"
       ]
     },
     {
       "id": 9157,
       "name": "Research Facility",
       "childCategoryIds": [],
-      "synonyms": ["Research Centre", "Research Center", "Research Institute"]
+      "synonyms": ["Research Center", "Research Institute", "Research Centre"]
     },
     {
       "id": 7388,
@@ -3892,52 +3892,52 @@
       "name": "Gas Station",
       "childCategoryIds": [],
       "synonyms": [
-        "Service Station",
-        "Petrol Station",
-        "Filling Station",
-        "Gasoline Station",
         "Fuel Stop",
-        "Petrol Pump",
-        "Diesel Station",
         "Fuel Station",
-        "Servo"
+        "Gasoline Station",
+        "Petrol Station",
+        "Service Station",
+        "Servo",
+        "Diesel Station",
+        "Petrol Pump",
+        "Filling Station"
       ]
     },
     {
       "id": 7368,
       "name": "Motoring Organization Office",
       "childCategoryIds": [],
-      "synonyms": ["AA", "Motoring Association", "Automobile Association"]
+      "synonyms": ["Automobile Association", "Motoring Association", "AA"]
     },
     {
       "id": 7397,
       "name": "ATM",
       "childCategoryIds": [],
       "synonyms": [
-        "Money Machine",
-        "Cash Point",
-        "Cash Dispenser",
-        "Teller",
-        "ATM Machine",
         "Automatic Teller",
         "Automatic Teller Machine",
+        "Teller",
         "Bank Machine",
-        "Cash Machine",
+        "Cash Dispenser",
+        "Money Machine",
         "Automated Teller Machine",
-        "Cashpoint"
+        "Cash Machine",
+        "ATM Machine",
+        "Cashpoint",
+        "Cash Point"
       ]
     },
     {
       "id": 7363,
       "name": "Community Center",
       "childCategoryIds": [],
-      "synonyms": ["Community Centre", "Village Hall"]
+      "synonyms": ["Village Hall", "Community Centre"]
     },
     {
       "id": 9357,
       "name": "Beach",
       "childCategoryIds": [],
-      "synonyms": ["Shore", "Coast", "Sea", "Strand"]
+      "synonyms": ["Sea", "Shore", "Strand", "Coast"]
     },
     {
       "id": 9159,
@@ -3950,24 +3950,24 @@
       "name": "Electric Vehicle Charging Station",
       "childCategoryIds": [],
       "synonyms": [
-        "Electric Car Charge Point",
-        "Charging Point",
-        "Charging Park",
-        "Electrical Vehicle Charging Station",
-        "Charging Spot",
-        "EV Charger",
+        "Charge Station",
         "Electrical Vehicle Station",
         "Charge Spot",
+        "Charging Spot",
+        "EV POI",
+        "Electric Car Charging Station",
+        "Charging Station",
+        "Charge Park",
+        "Electric Car Charge Point",
+        "Electric Vehicle Charge Point",
+        "Electric Charger",
+        "EV Charger",
+        "Electric Vehicle Station",
         "EV station",
         "EV Charging Station",
-        "Electric Car Charging Station",
-        "Charge Park",
-        "EV POI",
-        "Electric Charger",
-        "Charging Station",
-        "Charge Station",
-        "Electric Vehicle Station",
-        "Electric Vehicle Charge Point"
+        "Charging Point",
+        "Charging Park",
+        "Electrical Vehicle Charging Station"
       ]
     },
     {
@@ -3975,14 +3975,14 @@
       "name": "Scenic/Panoramic View",
       "childCategoryIds": [],
       "synonyms": [
-        "Lookout",
-        "Scenic View",
-        "Viewpoint",
         "Panorama",
+        "Viewpoint",
+        "Vista",
+        "Scenery",
         "Beauty Spot",
         "Panoramic View",
-        "Vista",
-        "Scenery"
+        "Scenic View",
+        "Lookout"
       ]
     },
     { "id": 9900, "name": "Entertainment", "childCategoryIds": [], "synonyms": [] },
@@ -3990,7 +3990,7 @@
       "id": 7378,
       "name": "Business Park",
       "childCategoryIds": [],
-      "synonyms": ["Enterprise Zone", "Office Park", "Enterprise Park"]
+      "synonyms": ["Office Park", "Enterprise Zone", "Enterprise Park"]
     },
     { "id": 7328, "name": "Bank", "childCategoryIds": [], "synonyms": [] },
     {
@@ -3998,10 +3998,10 @@
       "name": "Helipad",
       "childCategoryIds": [],
       "synonyms": [
-        "Helicopter Landing",
         "Helicopter Landing Pad",
         "Helicopter",
-        "Heliport"
+        "Heliport",
+        "Helicopter Landing"
       ]
     },
     { "id": 9955, "name": "Checkpoint", "childCategoryIds": [], "synonyms": [] },
@@ -4011,17 +4011,17 @@
       "childCategoryIds": [],
       "synonyms": [
         "Border",
-        "Border Line",
-        "Border Security",
-        "Border Crossing",
-        "Integrated Check Post",
-        "Customs",
-        "Border Control",
-        "Checkpost",
         "Frontier",
-        "Landing Custom Station",
         "Customs Office",
-        "Borderline"
+        "Borderline",
+        "Landing Custom Station",
+        "Border Crossing",
+        "Border Security",
+        "Checkpost",
+        "Integrated Check Post",
+        "Border Line",
+        "Customs",
+        "Border Control"
       ]
     },
     {
@@ -4035,10 +4035,10 @@
       "name": "Toll Gate",
       "childCategoryIds": [],
       "synonyms": [
-        "Toll Bar",
         "Toll Collection Gate",
-        "Toll Station",
+        "Toll Bar",
         "Toll Plaza",
+        "Toll Station",
         "Toll Booth"
       ]
     },
@@ -4047,12 +4047,12 @@
       "name": "Ferry Terminal",
       "childCategoryIds": [],
       "synonyms": [
+        "Ferry Crossing",
+        "Ferry Dock",
         "Ferry Wharf",
         "Ferries",
-        "Ferry Crossing",
-        "Ferry",
-        "Ferry Dock",
-        "Ferry Station"
+        "Ferry Station",
+        "Ferry"
       ]
     }
   ]

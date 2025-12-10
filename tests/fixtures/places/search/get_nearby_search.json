@@ -1,7 +1,7 @@
 {
   "summary": {
     "queryType": "NEARBY",
-    "queryTime": 43,
+    "queryTime": 56,
     "numResults": 10,
     "offset": 0,
     "totalResults": 100,
@@ -9,101 +9,6 @@
     "geoBias": { "lat": 48.872263, "lon": 2.299541 }
   },
   "results": [
-    {
-      "type": "POI",
-      "id": "REFiiI839-Sh-sbaI5vGxg",
-      "score": 99.9835281372,
-      "dist": 16.475589,
-      "info": "search:ta:250009014108461-FR",
-      "poi": {
-        "name": "George V",
-        "phone": "+33 1 47 20 02 68",
-        "brands": [{ "name": "Indigo" }],
-        "categorySet": [{ "id": 7313 }],
-        "url": "www.parkindigo.fr",
-        "categories": ["parking garage"],
-        "classifications": [
-          {
-            "code": "PARKING_GARAGE",
-            "names": [{ "nameLocale": "en-US", "name": "parking garage" }]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "103",
-        "streetName": "Avenue des Champs-Élysées",
-        "municipalitySubdivision": "8ème Arrondissement",
-        "municipality": "Paris",
-        "neighbourhood": "Triangle d'Or",
-        "countrySecondarySubdivision": "Paris",
-        "countrySubdivision": "Île-de-France",
-        "countrySubdivisionName": "Île-de-France",
-        "countrySubdivisionCode": "IDF",
-        "postalCode": "75008",
-        "countryCode": "FR",
-        "country": "France",
-        "countryCodeISO3": "FRA",
-        "freeformAddress": "103 Avenue des Champs-Élysées, 75008 Paris",
-        "localName": "Paris"
-      },
-      "position": { "lat": 48.872132, "lon": 2.299647 },
-      "viewport": {
-        "topLeftPoint": { "lat": 48.87303, "lon": 2.29828 },
-        "btmRightPoint": { "lat": 48.87123, "lon": 2.30101 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 48.8722, "lon": 2.2995 } },
-        { "type": "main", "position": { "lat": 48.8722, "lon": 2.29952 } }
-      ]
-    },
-    {
-      "type": "POI",
-      "id": "guNZCEICjZD_OJzb0SKJGg",
-      "score": 99.9829025269,
-      "dist": 17.092999,
-      "info": "search:ta:250006002294812-FR",
-      "poi": {
-        "name": "Your Good Car",
-        "phone": "+33 1 82 28 07 07",
-        "categorySet": [{ "id": 9910002 }],
-        "url": "www.yourgoodcar.fr",
-        "categories": ["automotive dealer", "car"],
-        "classifications": [
-          {
-            "code": "AUTOMOTIVE_DEALER",
-            "names": [
-              { "nameLocale": "en-US", "name": "automotive dealer" },
-              { "nameLocale": "en-US", "name": "car" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "109",
-        "streetName": "Avenue des Champs-Élysées",
-        "municipalitySubdivision": "8ème Arrondissement",
-        "municipality": "Paris",
-        "neighbourhood": "Triangle d'Or",
-        "countrySecondarySubdivision": "Paris",
-        "countrySubdivision": "Île-de-France",
-        "countrySubdivisionName": "Île-de-France",
-        "countrySubdivisionCode": "IDF",
-        "postalCode": "75008",
-        "countryCode": "FR",
-        "country": "France",
-        "countryCodeISO3": "FRA",
-        "freeformAddress": "109 Avenue des Champs-Élysées, 75008 Paris",
-        "localName": "Paris"
-      },
-      "position": { "lat": 48.872153, "lon": 2.299705 },
-      "viewport": {
-        "topLeftPoint": { "lat": 48.87305, "lon": 2.29834 },
-        "btmRightPoint": { "lat": 48.87125, "lon": 2.30107 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 48.87215, "lon": 2.2997 } }
-      ]
-    },
     {
       "type": "POI",
       "id": "qt37oMdiv-fKOP1u9VAEkw",
@@ -166,8 +71,8 @@
           {
             "code": "COMPANY",
             "names": [
-              { "nameLocale": "en-US", "name": "company" },
-              { "nameLocale": "en-US", "name": "computer software" }
+              { "nameLocale": "en-US", "name": "computer software" },
+              { "nameLocale": "en-US", "name": "company" }
             ]
           }
         ]
@@ -195,7 +100,95 @@
         "btmRightPoint": { "lat": 48.8714, "lon": 2.30067 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 48.87232, "lon": 2.29932 } }
+        { "type": "main", "position": { "lat": 48.87237, "lon": 2.29935 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "ZJJXCLv2pmxV36hezim5Mg",
+      "score": 99.9630355835,
+      "dist": 36.965307,
+      "info": "search:ta:250006003609752-FR",
+      "poi": {
+        "name": "Sunny Lady",
+        "categorySet": [{ "id": 9361067 }],
+        "url": "sunny-lady.com/",
+        "categories": ["beauty salon", "shop"],
+        "classifications": [
+          {
+            "code": "SHOP",
+            "names": [
+              { "nameLocale": "en-US", "name": "shop" },
+              { "nameLocale": "en-US", "name": "beauty salon" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "66",
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Hoche-Friedland",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "66 Avenue des Champs-Élysées, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.872387, "lon": 2.30001 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.87329, "lon": 2.29864 },
+        "btmRightPoint": { "lat": 48.87149, "lon": 2.30138 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.87226, "lon": 2.29992 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "u5f8lXwp4DugmoH0YAbMbw",
+      "score": 99.9630355835,
+      "dist": 36.965307,
+      "info": "search:ta:250006003639866-FR",
+      "poi": {
+        "name": "Gatien Poupard",
+        "categorySet": [{ "id": 7372 }],
+        "url": "impulsion-academie.com/",
+        "categories": ["school"],
+        "classifications": [
+          { "code": "SCHOOL", "names": [{ "nameLocale": "en-US", "name": "school" }] }
+        ]
+      },
+      "address": {
+        "streetNumber": "66",
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Hoche-Friedland",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "66 Avenue des Champs-Élysées, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.872387, "lon": 2.30001 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.87329, "lon": 2.29864 },
+        "btmRightPoint": { "lat": 48.87149, "lon": 2.30138 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.87226, "lon": 2.29992 } }
       ]
     },
     {
@@ -208,7 +201,7 @@
         "name": "France For Perfume",
         "phone": "+33 1 56 52 90 92",
         "categorySet": [{ "id": 9361067 }],
-        "url": "www.isabellearianaparfums.com",
+        "url": "www.isabellearianaparfums.com/",
         "categories": ["beauty salon", "shop"],
         "classifications": [
           {
@@ -244,6 +237,95 @@
       },
       "entryPoints": [
         { "type": "main", "position": { "lat": 48.87211, "lon": 2.29981 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "aWUL8aclI1oLcchGwnjb2w",
+      "score": 99.9601898193,
+      "dist": 39.811984,
+      "info": "search:ta:250007000406680-FR",
+      "poi": {
+        "name": "Bus Toqué",
+        "phone": "+33 6 21 40 20 41",
+        "categorySet": [{ "id": 7315017 }],
+        "url": "www.bustoque.fr/",
+        "categories": ["french", "restaurant"],
+        "classifications": [
+          {
+            "code": "RESTAURANT",
+            "names": [
+              { "nameLocale": "en-US", "name": "french" },
+              { "nameLocale": "en-US", "name": "restaurant" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "107",
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Triangle d'Or",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "107 Avenue des Champs-Élysées, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.871929, "lon": 2.299737 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.87283, "lon": 2.29837 },
+        "btmRightPoint": { "lat": 48.87103, "lon": 2.3011 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.8721, "lon": 2.29985 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "2GvLVLX0ndbiVQXhryUf8Q",
+      "score": 99.9568939209,
+      "dist": 43.103088,
+      "info": "search:ta:250006003634140-FR",
+      "poi": {
+        "name": "Bianochy",
+        "categorySet": [{ "id": 9361 }],
+        "url": "www.bianochy.com/",
+        "categories": ["shop"],
+        "classifications": [
+          { "code": "SHOP", "names": [{ "nameLocale": "en-US", "name": "shop" }] }
+        ]
+      },
+      "address": {
+        "streetNumber": "122",
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Hoche-Friedland",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "122 Avenue des Champs-Élysées, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.872457, "lon": 2.300051 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.87336, "lon": 2.29868 },
+        "btmRightPoint": { "lat": 48.87156, "lon": 2.30142 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.87227, "lon": 2.29991 } }
       ]
     },
     {
@@ -288,48 +370,7 @@
         "btmRightPoint": { "lat": 48.87127, "lon": 2.30025 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 48.8724, "lon": 2.29904 } }
-      ]
-    },
-    {
-      "type": "POI",
-      "id": "kW06W-shImoGfjzZ0av4Sw",
-      "score": 99.9490966797,
-      "dist": 50.902055,
-      "info": "search:ta:250006002246751-FR",
-      "poi": {
-        "name": "Peugeot, Champs Ellysee, Paris",
-        "categorySet": [{ "id": 9361 }],
-        "url": "www.peugeot.com/fr/marque-peugeot/peugeot-avenue",
-        "categories": ["shop"],
-        "classifications": [
-          { "code": "SHOP", "names": [{ "nameLocale": "en-US", "name": "shop" }] }
-        ]
-      },
-      "address": {
-        "streetNumber": "136",
-        "streetName": "Avenue Des Champs-Élysées",
-        "municipalitySubdivision": "8ème Arrondissement",
-        "municipality": "Paris",
-        "neighbourhood": "Hoche-Friedland",
-        "countrySecondarySubdivision": "Paris",
-        "countrySubdivision": "Île-de-France",
-        "countrySubdivisionName": "Île-de-France",
-        "countrySubdivisionCode": "IDF",
-        "postalCode": "75008",
-        "countryCode": "FR",
-        "country": "France",
-        "countryCodeISO3": "FRA",
-        "freeformAddress": "136 Avenue Des Champs-Élysées, 75008 Paris",
-        "localName": "Paris"
-      },
-      "position": { "lat": 48.87272, "lon": 2.2995 },
-      "viewport": {
-        "topLeftPoint": { "lat": 48.87362, "lon": 2.29813 },
-        "btmRightPoint": { "lat": 48.87182, "lon": 2.30087 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 48.87264, "lon": 2.29973 } }
+        { "type": "main", "position": { "lat": 48.87246, "lon": 2.29907 } }
       ]
     },
     {
@@ -348,8 +389,8 @@
           {
             "code": "SHOP",
             "names": [
-              { "nameLocale": "en-US", "name": "real estate agents" },
-              { "nameLocale": "en-US", "name": "shop" }
+              { "nameLocale": "en-US", "name": "shop" },
+              { "nameLocale": "en-US", "name": "real estate agents" }
             ]
           }
         ]
@@ -395,57 +436,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "french" }
-            ]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "122",
-        "streetName": "Avenue des Champs-Élysées",
-        "municipalitySubdivision": "8ème Arrondissement",
-        "municipality": "Paris",
-        "neighbourhood": "Hoche-Friedland",
-        "countrySecondarySubdivision": "Paris",
-        "countrySubdivision": "Île-de-France",
-        "countrySubdivisionName": "Île-de-France",
-        "countrySubdivisionCode": "IDF",
-        "postalCode": "75008",
-        "countryCode": "FR",
-        "country": "France",
-        "countryCodeISO3": "FRA",
-        "freeformAddress": "122 Avenue des Champs-Élysées, 75008 Paris",
-        "localName": "Paris"
-      },
-      "position": { "lat": 48.87251, "lon": 2.30015 },
-      "viewport": {
-        "topLeftPoint": { "lat": 48.87341, "lon": 2.29878 },
-        "btmRightPoint": { "lat": 48.87161, "lon": 2.30152 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 48.87225, "lon": 2.29995 } }
-      ]
-    },
-    {
-      "type": "POI",
-      "id": "SdLeN5AusAEq3Ma9aFOFhw",
-      "score": 99.9476699829,
-      "dist": 52.323768,
-      "info": "search:ta:250006002054497-FR",
-      "poi": {
-        "name": "Quick",
-        "phone": "+33 1 53 75 38 49",
-        "brands": [{ "name": "Quick" }],
-        "categorySet": [{ "id": 7315015 }],
-        "url": "www.quick.fr",
-        "categories": ["fast food", "restaurant"],
-        "classifications": [
-          {
-            "code": "RESTAURANT",
-            "names": [
-              { "nameLocale": "en-US", "name": "restaurant" },
-              { "nameLocale": "en-US", "name": "fast food" }
+              { "nameLocale": "en-US", "name": "french" },
+              { "nameLocale": "en-US", "name": "restaurant" }
             ]
           }
         ]

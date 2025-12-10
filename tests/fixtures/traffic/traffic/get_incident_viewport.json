@@ -1,8 +1,8 @@
 {
   "viewpResp": {
-    "trafficState": { "@trafficAge": 31, "@trafficModelId": "1747322000" },
+    "trafficState": { "@trafficAge": 36, "@trafficModelId": "1765362200" },
     "copyrightIds": "https://www.tomtom.com/en_gb/thirdpartyproductterms/",
-    "@version": "traffic-service-incidents 1.0.139",
+    "@version": "4",
     "@maps": "world"
   }
 }

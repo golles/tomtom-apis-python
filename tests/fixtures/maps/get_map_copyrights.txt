@@ -2,4 +2,4 @@
 
 Data Source © 2025 TomTom
 
-Based on https://www.tomtom.com/en_gb/thirdpartyproductterms/
+Based on https://www.tomtom.com/legal/en_gb/product-attributions/

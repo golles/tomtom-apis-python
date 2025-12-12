@@ -27,7 +27,7 @@ npm install
 
 if [ "$CI" != "true" ]; then
     # Trust the repo
-    git config --global --add safe.directory /workspaces/tomtom-api-python
+    git config --global --add safe.directory "$(pwd)"
 
     # Install pre-commit when available
     if check_uv_package "pre-commit" && [ -f .pre-commit-config.yaml ]; then

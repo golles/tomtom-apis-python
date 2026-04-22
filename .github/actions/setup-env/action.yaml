@@ -5,7 +5,7 @@ runs:
   using: composite
   steps:
     - name: Setup Python and uv
-      uses: astral-sh/setup-uv@v7
+      uses: astral-sh/setup-uv@v8.1.0
       with:
         enable-cache: true
 

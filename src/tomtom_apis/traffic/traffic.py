@@ -8,7 +8,7 @@ from tomtom_apis.utils import serialize_list
 
 from .models import (
     BBoxParam,
-    BoudingBoxParam,
+    BoundingBoxParam,
     FlowSegmentDataParams,
     FlowSegmentDataResponse,
     FlowStyleType,
@@ -101,9 +101,9 @@ class TrafficApi(BaseApi):
     async def get_incident_viewport(  # pylint: disable=too-many-arguments  # noqa: PLR0913
         self: Self,
         *,
-        bounding_box: BoudingBoxParam,
+        bounding_box: BoundingBoxParam,
         bounding_zoom: int,
-        overview_box: BoudingBoxParam,
+        overview_box: BoundingBoxParam,
         overview_zoom: int,
         copyright_information: bool,
         params: BaseParams | None = None,  # No extra params.
@@ -113,9 +113,9 @@ class TrafficApi(BaseApi):
         For more information, see: https://developer.tomtom.com/traffic-api/documentation/traffic-incidents/incident-viewport
 
         Args:
-            bounding_box (BoudingBoxParam): The bounding box defining the primary viewport for incidents.
+            bounding_box (BoundingBoxParam): The bounding box defining the primary viewport for incidents.
             bounding_zoom (int): The zoom level for the primary viewport.
-            overview_box (BoudingBoxParam): The bounding box defining the overview viewport.
+            overview_box (BoundingBoxParam): The bounding box defining the overview viewport.
             overview_zoom (int): The zoom level for the overview viewport.
             copyright_information (bool): Flag to include copyright information in the response.
             params (BaseParams | None, optional): Optional parameters for the request. Defaults to None.

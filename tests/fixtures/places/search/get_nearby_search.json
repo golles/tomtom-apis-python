@@ -1,7 +1,7 @@
 {
   "summary": {
     "queryType": "NEARBY",
-    "queryTime": 56,
+    "queryTime": 81,
     "numResults": 10,
     "offset": 0,
     "totalResults": 100,
@@ -9,6 +9,419 @@
     "geoBias": { "lat": 48.872263, "lon": 2.299541 }
   },
   "results": [
+    {
+      "type": "POI",
+      "id": "fabZ5Vjjb-zQFB7yunovSg",
+      "score": 99.98828125,
+      "dist": 11.721678,
+      "info": "search:ev:35ee7095-f32d-4fd1-a526-b746be4875bd",
+      "poi": {
+        "name": "SAEMES",
+        "brands": [{ "name": "Saemes" }],
+        "categorySet": [{ "id": 7309 }],
+        "categories": ["electric vehicle station"],
+        "classifications": [
+          {
+            "code": "ELECTRIC_VEHICLE_STATION",
+            "names": [{ "nameLocale": "en-US", "name": "electric vehicle station" }]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "32",
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8th Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Triangle d'Or",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "32 Avenue des Champs-Élysées, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.87216, "lon": 2.299575 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.87306, "lon": 2.29821 },
+        "btmRightPoint": { "lat": 48.87126, "lon": 2.30094 }
+      },
+      "vehicleTypes": ["Car", "Truck"],
+      "chargingPark": {
+        "connectors": [
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "StandardHouseholdCountrySpecific",
+            "ratedPowerKW": 3,
+            "voltageV": 230,
+            "currentA": 16,
+            "currentType": "AC1"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          },
+          {
+            "connectorType": "IEC62196Type2Outlet",
+            "ratedPowerKW": 7,
+            "voltageV": 230,
+            "currentA": 32,
+            "currentType": "AC3"
+          }
+        ]
+      },
+      "dataSources": {
+        "chargingAvailability": { "id": "35ee7095-f32d-4fd1-a526-b746be4875bd" }
+      }
+    },
     {
       "type": "POI",
       "id": "qt37oMdiv-fKOP1u9VAEkw",
@@ -20,7 +433,6 @@
         "phone": "+33 1 47 44 45 46",
         "brands": [{ "name": "TotalEnergies" }],
         "categorySet": [{ "id": 7311 }],
-        "url": "store.totalenergies.fr/en_EN/NF058897",
         "categories": ["petrol station"],
         "classifications": [
           {
@@ -78,8 +490,8 @@
         ]
       },
       "address": {
-        "streetNumber": "133",
-        "streetName": "Rue Galilée",
+        "streetNumber": "115",
+        "streetName": "Avenue des Champs-Élysées",
         "municipalitySubdivision": "8ème Arrondissement",
         "municipality": "Paris",
         "neighbourhood": "Triangle d'Or",
@@ -87,11 +499,11 @@
         "countrySubdivision": "Île-de-France",
         "countrySubdivisionName": "Île-de-France",
         "countrySubdivisionCode": "IDF",
-        "postalCode": "75116",
+        "postalCode": "75008",
         "countryCode": "FR",
         "country": "France",
         "countryCodeISO3": "FRA",
-        "freeformAddress": "133 Rue Galilée, 75116 Paris",
+        "freeformAddress": "115 Avenue des Champs-Élysées, 75008 Paris",
         "localName": "Paris"
       },
       "position": { "lat": 48.8723, "lon": 2.2993 },
@@ -105,21 +517,22 @@
     },
     {
       "type": "POI",
-      "id": "ZJJXCLv2pmxV36hezim5Mg",
-      "score": 99.9630355835,
-      "dist": 36.965307,
-      "info": "search:ta:250006003609752-FR",
+      "id": "oAWf6Uvzoi3Y2rXCDdYLng",
+      "score": 99.9627151489,
+      "dist": 37.280604,
+      "info": "search:ta:250008007175294-FR",
       "poi": {
-        "name": "Sunny Lady",
-        "categorySet": [{ "id": 9361067 }],
-        "url": "sunny-lady.com/",
-        "categories": ["beauty salon", "shop"],
+        "name": "Barbaraparislingerie",
+        "phone": "+33 7 71 22 01 48",
+        "categorySet": [{ "id": 9361079 }],
+        "url": "barbaraparis.fr",
+        "categories": ["clothing accessories: specialty", "shop"],
         "classifications": [
           {
             "code": "SHOP",
             "names": [
               { "nameLocale": "en-US", "name": "shop" },
-              { "nameLocale": "en-US", "name": "beauty salon" }
+              { "nameLocale": "en-US", "name": "clothing accessories: specialty" }
             ]
           }
         ]
@@ -141,28 +554,35 @@
         "freeformAddress": "66 Avenue des Champs-Élysées, 75008 Paris",
         "localName": "Paris"
       },
-      "position": { "lat": 48.872387, "lon": 2.30001 },
+      "position": { "lat": 48.872386, "lon": 2.300015 },
       "viewport": {
-        "topLeftPoint": { "lat": 48.87329, "lon": 2.29864 },
+        "topLeftPoint": { "lat": 48.87329, "lon": 2.29865 },
         "btmRightPoint": { "lat": 48.87149, "lon": 2.30138 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 48.87226, "lon": 2.29992 } }
+        { "type": "main", "position": { "lat": 48.87226, "lon": 2.29993 } }
       ]
     },
     {
       "type": "POI",
-      "id": "u5f8lXwp4DugmoH0YAbMbw",
-      "score": 99.9630355835,
-      "dist": 36.965307,
-      "info": "search:ta:250006003639866-FR",
+      "id": "gN-Gp4SIfQsjwc3q5wQ4sQ",
+      "score": 99.9627151489,
+      "dist": 37.280604,
+      "info": "search:ta:250008007175243-FR",
       "poi": {
-        "name": "Gatien Poupard",
-        "categorySet": [{ "id": 7372 }],
-        "url": "impulsion-academie.com/",
-        "categories": ["school"],
+        "name": "Golden Ways",
+        "phone": "+33 7 65 74 25 89",
+        "categorySet": [{ "id": 7320002 }],
+        "url": "goldenwaysparis.systeme.io/717a02de",
+        "categories": ["fitness club center", "sports center"],
         "classifications": [
-          { "code": "SCHOOL", "names": [{ "nameLocale": "en-US", "name": "school" }] }
+          {
+            "code": "SPORTS_CENTER",
+            "names": [
+              { "nameLocale": "en-US", "name": "sports center" },
+              { "nameLocale": "en-US", "name": "fitness club center" }
+            ]
+          }
         ]
       },
       "address": {
@@ -182,33 +602,33 @@
         "freeformAddress": "66 Avenue des Champs-Élysées, 75008 Paris",
         "localName": "Paris"
       },
-      "position": { "lat": 48.872387, "lon": 2.30001 },
+      "position": { "lat": 48.872386, "lon": 2.300015 },
       "viewport": {
-        "topLeftPoint": { "lat": 48.87329, "lon": 2.29864 },
+        "topLeftPoint": { "lat": 48.87329, "lon": 2.29865 },
         "btmRightPoint": { "lat": 48.87149, "lon": 2.30138 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 48.87226, "lon": 2.29992 } }
+        { "type": "main", "position": { "lat": 48.87226, "lon": 2.29993 } }
       ]
     },
     {
       "type": "POI",
-      "id": "vd6QjSALf7UB7TyUBCxDRA",
+      "id": "GmxBmHfQAOTSCE_tS_eYPQ",
       "score": 99.962387085,
       "dist": 37.615626,
-      "info": "search:ta:250006002087452-FR",
+      "info": "search:ta:250008005457509-FR",
       "poi": {
-        "name": "France For Perfume",
+        "name": "France for Perfume",
         "phone": "+33 1 56 52 90 92",
-        "categorySet": [{ "id": 9361067 }],
-        "url": "www.isabellearianaparfums.com/",
-        "categories": ["beauty salon", "shop"],
+        "categorySet": [{ "id": 9361050 }],
+        "url": "www.isabellearianaparfums.com",
+        "categories": ["beauty supplies", "shop"],
         "classifications": [
           {
             "code": "SHOP",
             "names": [
-              { "nameLocale": "en-US", "name": "shop" },
-              { "nameLocale": "en-US", "name": "beauty salon" }
+              { "nameLocale": "en-US", "name": "beauty supplies" },
+              { "nameLocale": "en-US", "name": "shop" }
             ]
           }
         ]
@@ -249,7 +669,7 @@
         "name": "Bus Toqué",
         "phone": "+33 6 21 40 20 41",
         "categorySet": [{ "id": 7315017 }],
-        "url": "www.bustoque.fr/",
+        "url": "www.bustoque.fr",
         "categories": ["french", "restaurant"],
         "classifications": [
           {
@@ -289,114 +709,27 @@
     },
     {
       "type": "POI",
-      "id": "2GvLVLX0ndbiVQXhryUf8Q",
-      "score": 99.9568939209,
-      "dist": 43.103088,
-      "info": "search:ta:250006003634140-FR",
+      "id": "_kGjBe0eavKorZyiN67TzA",
+      "score": 99.9586105347,
+      "dist": 41.382667,
+      "info": "search:ta:250008006372755-FR",
       "poi": {
-        "name": "Bianochy",
-        "categorySet": [{ "id": 9361 }],
-        "url": "www.bianochy.com/",
-        "categories": ["shop"],
-        "classifications": [
-          { "code": "SHOP", "names": [{ "nameLocale": "en-US", "name": "shop" }] }
-        ]
-      },
-      "address": {
-        "streetNumber": "122",
-        "streetName": "Avenue des Champs-Élysées",
-        "municipalitySubdivision": "8ème Arrondissement",
-        "municipality": "Paris",
-        "neighbourhood": "Hoche-Friedland",
-        "countrySecondarySubdivision": "Paris",
-        "countrySubdivision": "Île-de-France",
-        "countrySubdivisionName": "Île-de-France",
-        "countrySubdivisionCode": "IDF",
-        "postalCode": "75008",
-        "countryCode": "FR",
-        "country": "France",
-        "countryCodeISO3": "FRA",
-        "freeformAddress": "122 Avenue des Champs-Élysées, 75008 Paris",
-        "localName": "Paris"
-      },
-      "position": { "lat": 48.872457, "lon": 2.300051 },
-      "viewport": {
-        "topLeftPoint": { "lat": 48.87336, "lon": 2.29868 },
-        "btmRightPoint": { "lat": 48.87156, "lon": 2.30142 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 48.87227, "lon": 2.29991 } }
-      ]
-    },
-    {
-      "type": "POI",
-      "id": "OyoXzK-_cl0CjXF4ZSh5fw",
-      "score": 99.9508132935,
-      "dist": 49.189733,
-      "info": "search:ta:250006002854759-FR",
-      "poi": {
-        "name": "Wash",
-        "phone": "+33 1 40 70 96 31",
-        "brands": [{ "name": "Wash" }],
-        "categorySet": [{ "id": 9155002 }],
-        "categories": ["car wash"],
-        "classifications": [
-          {
-            "code": "CAR_WASH",
-            "names": [{ "nameLocale": "en-US", "name": "car wash" }]
-          }
-        ]
-      },
-      "address": {
-        "streetNumber": "115",
-        "streetName": "Avenue des Champs-Élysées",
-        "municipalitySubdivision": "8ème Arrondissement",
-        "municipality": "Paris",
-        "neighbourhood": "Triangle d'Or",
-        "countrySecondarySubdivision": "Paris",
-        "countrySubdivision": "Île-de-France",
-        "countrySubdivisionName": "Île-de-France",
-        "countrySubdivisionCode": "IDF",
-        "postalCode": "75008",
-        "countryCode": "FR",
-        "country": "France",
-        "countryCodeISO3": "FRA",
-        "freeformAddress": "115 Avenue des Champs-Élysées, 75008 Paris",
-        "localName": "Paris"
-      },
-      "position": { "lat": 48.872168, "lon": 2.298884 },
-      "viewport": {
-        "topLeftPoint": { "lat": 48.87307, "lon": 2.29752 },
-        "btmRightPoint": { "lat": 48.87127, "lon": 2.30025 }
-      },
-      "entryPoints": [
-        { "type": "main", "position": { "lat": 48.87246, "lon": 2.29907 } }
-      ]
-    },
-    {
-      "type": "POI",
-      "id": "FW3Pf8hxgdDoqCaTM-kQHw",
-      "score": 99.9477310181,
-      "dist": 52.265171,
-      "info": "search:ta:250007000521925-FR",
-      "poi": {
-        "name": "Home Rental Service",
-        "phone": "+33 1 42 25 65 40",
-        "categorySet": [{ "id": 9361015 }],
-        "url": "www.homerental.fr",
-        "categories": ["real estate agents", "shop"],
+        "name": "Women's Forum for the Economy & Society",
+        "categorySet": [{ "id": 9361047 }],
+        "url": "www.womens-forum.com",
+        "categories": ["photocopy", "shop"],
         "classifications": [
           {
             "code": "SHOP",
             "names": [
               { "nameLocale": "en-US", "name": "shop" },
-              { "nameLocale": "en-US", "name": "real estate agents" }
+              { "nameLocale": "en-US", "name": "photocopy" }
             ]
           }
         ]
       },
       "address": {
-        "streetNumber": "122",
+        "streetNumber": "133",
         "streetName": "Avenue des Champs-Élysées",
         "municipalitySubdivision": "8ème Arrondissement",
         "municipality": "Paris",
@@ -409,41 +742,42 @@
         "countryCode": "FR",
         "country": "France",
         "countryCodeISO3": "FRA",
-        "freeformAddress": "122 Avenue des Champs-Élysées, 75008 Paris",
+        "freeformAddress": "133 Avenue des Champs-Élysées, 75008 Paris",
         "localName": "Paris"
       },
-      "position": { "lat": 48.872509, "lon": 2.30015 },
+      "position": { "lat": 48.872357, "lon": 2.300088 },
       "viewport": {
-        "topLeftPoint": { "lat": 48.87341, "lon": 2.29878 },
-        "btmRightPoint": { "lat": 48.87161, "lon": 2.30152 }
+        "topLeftPoint": { "lat": 48.87326, "lon": 2.29872 },
+        "btmRightPoint": { "lat": 48.87146, "lon": 2.30146 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 48.87225, "lon": 2.29995 } }
+        { "type": "main", "position": { "lat": 48.87224, "lon": 2.30001 } }
       ]
     },
     {
       "type": "POI",
-      "id": "1XdsN-jE4FILtH_DKJ2lIQ",
-      "score": 99.9476699829,
-      "dist": 52.323768,
-      "info": "search:ta:250006002059275-FR",
+      "id": "n-1Eul-MQlYMhvjMoTA7ZQ",
+      "score": 99.9514846802,
+      "dist": 48.509131,
+      "info": "search:ta:250008006340072-FR",
       "poi": {
-        "name": "Brasserie des Champs",
-        "phone": "+33 1 43 59 93 31",
-        "categorySet": [{ "id": 7315017 }],
-        "categories": ["french", "restaurant"],
+        "name": "Greyhistory",
+        "phone": "+33 9 87 65 43 21",
+        "categorySet": [{ "id": 9361047 }],
+        "url": "greyhistory.com",
+        "categories": ["photocopy", "shop"],
         "classifications": [
           {
-            "code": "RESTAURANT",
+            "code": "SHOP",
             "names": [
-              { "nameLocale": "en-US", "name": "french" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "shop" },
+              { "nameLocale": "en-US", "name": "photocopy" }
             ]
           }
         ]
       },
       "address": {
-        "streetNumber": "122",
+        "streetNumber": "124",
         "streetName": "Avenue des Champs-Élysées",
         "municipalitySubdivision": "8ème Arrondissement",
         "municipality": "Paris",
@@ -456,16 +790,65 @@
         "countryCode": "FR",
         "country": "France",
         "countryCodeISO3": "FRA",
-        "freeformAddress": "122 Avenue des Champs-Élysées, 75008 Paris",
+        "freeformAddress": "124 Avenue des Champs-Élysées, 75008 Paris",
         "localName": "Paris"
       },
-      "position": { "lat": 48.87251, "lon": 2.30015 },
+      "position": { "lat": 48.872608, "lon": 2.299947 },
       "viewport": {
-        "topLeftPoint": { "lat": 48.87341, "lon": 2.29878 },
-        "btmRightPoint": { "lat": 48.87161, "lon": 2.30152 }
+        "topLeftPoint": { "lat": 48.87351, "lon": 2.29858 },
+        "btmRightPoint": { "lat": 48.87171, "lon": 2.30131 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 48.87225, "lon": 2.29995 } }
+        { "type": "main", "position": { "lat": 48.87233, "lon": 2.29973 } }
+      ]
+    },
+    {
+      "type": "POI",
+      "id": "N6owN2Nu4-0yMO1K1JFifA",
+      "score": 99.9513320923,
+      "dist": 48.668157,
+      "info": "search:ta:250008003691439-FR",
+      "poi": {
+        "name": "Bvlgari Paris Champs Élysées",
+        "phone": "+33 1 45 64 69 54",
+        "brands": [{ "name": "Bulgari" }],
+        "categorySet": [{ "id": 9361006 }],
+        "url": "www.bulgari.com/en-gb/storelocator/france/paris/paris/136-avenue-des-champs-%C3%A9lys%C3%A9es",
+        "categories": ["clothing accessories: general", "shop"],
+        "classifications": [
+          {
+            "code": "SHOP",
+            "names": [
+              { "nameLocale": "en-US", "name": "shop" },
+              { "nameLocale": "en-US", "name": "clothing accessories: general" }
+            ]
+          }
+        ]
+      },
+      "address": {
+        "streetNumber": "136",
+        "streetName": "Avenue des Champs-Élysées",
+        "municipalitySubdivision": "8ème Arrondissement",
+        "municipality": "Paris",
+        "neighbourhood": "Hoche-Friedland",
+        "countrySecondarySubdivision": "Paris",
+        "countrySubdivision": "Île-de-France",
+        "countrySubdivisionName": "Île-de-France",
+        "countrySubdivisionCode": "IDF",
+        "postalCode": "75008",
+        "countryCode": "FR",
+        "country": "France",
+        "countryCodeISO3": "FRA",
+        "freeformAddress": "136 Avenue des Champs-Élysées, 75008 Paris",
+        "localName": "Paris"
+      },
+      "position": { "lat": 48.872698, "lon": 2.299608 },
+      "viewport": {
+        "topLeftPoint": { "lat": 48.8736, "lon": 2.29824 },
+        "btmRightPoint": { "lat": 48.8718, "lon": 2.30098 }
+      },
+      "entryPoints": [
+        { "type": "main", "position": { "lat": 48.87243, "lon": 2.29941 } }
       ]
     }
   ]

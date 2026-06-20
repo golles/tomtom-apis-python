@@ -11,7 +11,7 @@ from tomtom_apis.models import Language, TileSizeType
 from tomtom_apis.traffic import TrafficApi
 from tomtom_apis.traffic.models import (
     BBoxParam,
-    BoudingBoxParam,
+    BoundingBoxParam,
     CategoryFilterType,
     FlowSegmentDataParams,
     FlowSegmentDataResponse,
@@ -155,9 +155,9 @@ async def test_deserialization_post_incident_details(traffic_api: TrafficApi) ->
 async def test_deserialization_get_incident_viewport(traffic_api: TrafficApi) -> None:
     """Test the get_incident_viewport method."""
     response = await traffic_api.get_incident_viewport(
-        bounding_box=BoudingBoxParam(minY=-939584.4813015489, minX=-23954526.723651607, maxY=14675583.153020501, maxX=25043442.895825107),
+        bounding_box=BoundingBoxParam(minY=-939584.4813015489, minX=-23954526.723651607, maxY=14675583.153020501, maxX=25043442.895825107),
         bounding_zoom=2,
-        overview_box=BoudingBoxParam(minY=-939584.4813015489, minX=-23954526.723651607, maxY=14675583.153020501, maxX=25043442.895825107),
+        overview_box=BoundingBoxParam(minY=-939584.4813015489, minX=-23954526.723651607, maxY=14675583.153020501, maxX=25043442.895825107),
         overview_zoom=2,
         copyright_information=True,
     )

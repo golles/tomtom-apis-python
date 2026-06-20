@@ -211,7 +211,7 @@ class Brand(DataClassORJSONMixin):
     name: str
 
 
-class CapabilitieType(StrEnum):
+class CapabilitiesType(StrEnum):
     """Supported capabilities."""
 
     CHARGING_PROFILE_CAPABLE = "ChargingProfileCapable"
@@ -271,7 +271,7 @@ class ChargingPark(DataClassORJSONMixin):
 class ChargingPoint(DataClassORJSONMixin):
     """Represents a ChargingPoint."""
 
-    capabilities: list[CapabilitieType]
+    capabilities: list[CapabilitiesType]
     connectors: list[Connector]
     evseId: str
     physicalReference: str | None = None
@@ -492,7 +492,7 @@ class EvSearchNearbyParams(BaseParams):
     connector: list[ConnectorType] | None = None
     accessType: list[AccessType] | None = None
     restriction: list[RestrictionType] | None = None
-    capability: list[CapabilitieType] | None = None
+    capability: list[CapabilitiesType] | None = None
     minPowerKW: float | None = None
     maxPowerKW: float | None = None
 
@@ -566,7 +566,7 @@ class GeocodeParams(BaseParams):
     ofs: int | None = None
     lat: float | None = None
     lon: float | None = None
-    countrySet: str | None = None
+    countrySet: list[str] | None = None
     radius: int | None = None
     topLeft: str | None = None
     btmRight: str | None = None
@@ -826,7 +826,7 @@ class PlaceByIdResponse(DataClassORJSONMixin):
 
 @dataclass(kw_only=True)
 class Poi(DataClassORJSONMixin):
-    """Represents a Result."""
+    """Represents a POI."""
 
     name: str
     phone: str | None = None
@@ -1069,7 +1069,7 @@ class RevGeocodeAddress(DataClassORJSONMixin):
     buildingNumber: str | None = None  # Deprecated
     building: str | None = None
     streetNumber: str | None = None
-    routeNumbers: list | None = None
+    routeNumbers: list[str] | None = None
     street: str | None = None  # Deprecated
     streetName: str
     crossStreet: str | None = None

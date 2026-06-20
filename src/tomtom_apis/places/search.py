@@ -1,6 +1,9 @@
 """Search API."""
 
+from dataclasses import asdict
 from typing import Self
+
+import orjson
 
 from tomtom_apis.api import BaseApi, BaseParams
 from tomtom_apis.models import Language
@@ -116,7 +119,7 @@ class SearchApi(BaseApi):
         geometryList: list[Geometry],
         params: GeometrySearchParams | None = None,
     ) -> SearchResponse:
-        """Get category search.
+        """Get geometry search.
 
         For more information, see: https://developer.tomtom.com/search-api/documentation/search-service/geometry-search
 
@@ -128,8 +131,9 @@ class SearchApi(BaseApi):
         Returns:
             SearchResponse: The response containing search results within the specified geometry.
         """
+        geometry_json = orjson.dumps([{k: v for k, v in asdict(g).items() if v is not None} for g in geometryList]).decode()  # pylint: disable=maybe-no-member
         response = await self.get(
-            endpoint=f"/search/2/geometrySearch/{query}.json?geometryList={geometryList!s}",
+            endpoint=f"/search/2/geometrySearch/{query}.json?geometryList={geometry_json}",
             params=params,
         )
 
@@ -142,7 +146,7 @@ class SearchApi(BaseApi):
         params: GeometrySearchParams | None = None,
         data: GeometrySearchPostData,
     ) -> SearchResponse:
-        """Post category search.
+        """Post geometry search.
 
         For more information, see: https://developer.tomtom.com/search-api/documentation/search-service/geometry-search
 
@@ -262,8 +266,10 @@ class SearchApi(BaseApi):
         Returns:
             GeometryFilterResponse: The response containing the results filtered by the provided geometry and POIs.
         """
+        geometry_json = orjson.dumps([{k: v for k, v in asdict(g).items() if v is not None} for g in geometryList]).decode()  # pylint: disable=maybe-no-member
+        poi_json = orjson.dumps([{k: v for k, v in asdict(p).items() if v is not None} for p in poiList]).decode()  # pylint: disable=maybe-no-member
         response = await self.get(
-            endpoint=f"/search/2/geometryFilter.json?geometryList={geometryList!s}&poiList={poiList!s}",
+            endpoint=f"/search/2/geometryFilter.json?geometryList={geometry_json}&poiList={poi_json}",
             params=params,
         )
 

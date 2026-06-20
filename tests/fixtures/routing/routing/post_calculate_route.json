@@ -4,21 +4,21 @@
     {
       "summary": {
         "lengthInMeters": 1146,
-        "travelTimeInSeconds": 228,
-        "trafficDelayInSeconds": 51,
-        "trafficLengthInMeters": 119,
-        "departureTime": "2025-12-10T11:23:56+01:00",
-        "arrivalTime": "2025-12-10T11:27:44+01:00"
+        "travelTimeInSeconds": 176,
+        "trafficDelayInSeconds": 0,
+        "trafficLengthInMeters": 0,
+        "departureTime": "2026-06-20T13:00:20+02:00",
+        "arrivalTime": "2026-06-20T13:03:16+02:00"
       },
       "legs": [
         {
           "summary": {
             "lengthInMeters": 1146,
-            "travelTimeInSeconds": 228,
-            "trafficDelayInSeconds": 51,
-            "trafficLengthInMeters": 119,
-            "departureTime": "2025-12-10T11:23:56+01:00",
-            "arrivalTime": "2025-12-10T11:27:44+01:00"
+            "travelTimeInSeconds": 176,
+            "trafficDelayInSeconds": 0,
+            "trafficLengthInMeters": 0,
+            "departureTime": "2026-06-20T13:00:20+02:00",
+            "arrivalTime": "2026-06-20T13:03:16+02:00"
           },
           "points": [
             { "latitude": 52.50931, "longitude": 13.42937 },

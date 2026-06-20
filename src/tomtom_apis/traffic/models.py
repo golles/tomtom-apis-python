@@ -39,8 +39,8 @@ class BBoxParam:
 
 
 @dataclass(kw_only=True)
-class BoudingBoxParam:
-    """Boudingbox param."""
+class BoundingBoxParam:
+    """Bounding box param."""
 
     minY: float
     minX: float
@@ -391,7 +391,7 @@ class TrafficState:
 class VectorFlowTilesParams(BaseParams):
     """Parameters for the get_vector_flow_tiles method."""
 
-    roadTypes: RoadType | None = None
+    roadTypes: list[RoadType] | None = None
     trafficLevelStep: float | None = None
     margin: float | None = None
     tags: list[FlowTagType] | None = None

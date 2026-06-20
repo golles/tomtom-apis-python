@@ -475,12 +475,12 @@ class Section(DataClassORJSONMixin):
 
     startPointIndex: int
     endPointIndex: int
-    sectionType: SectionReponseType
+    sectionType: SectionResponseType
     travelMode: TravelModeType
 
 
-class SectionReponseType(StrEnum):
-    """Supported section reponse types."""
+class SectionResponseType(StrEnum):
+    """Supported section response types."""
 
     CAR_TRAIN = "CAR_TRAIN"
     COUNTRY = "COUNTRY"

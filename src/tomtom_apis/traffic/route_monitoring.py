@@ -6,7 +6,7 @@ from tomtom_apis.api import BaseApi
 
 
 class RouteMonitoringApi(BaseApi):
-    """Rote Monitoring API.
+    """Route Monitoring API.
 
     The TomTom Route Monitoring API service provides an intuitive and powerful way to monitor strategic routes in real-time. Customers have the
     ability to pre-define routes important to their businesses getting detailed information on current travel time, current delay time and percentage

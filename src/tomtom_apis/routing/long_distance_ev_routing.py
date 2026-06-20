@@ -24,7 +24,7 @@ class LongDistanceEVRoutingApi(BaseApi):
         params: CalculateLongDistanceEVRouteParams | None = None,
         data: CalculateLongDistanceEVRoutePostData,
     ) -> CalculatedLongDistanceEVRouteResponse:
-        """Get long distance ev route.
+        """Post long distance EV route.
 
         For more information, see:
         https://developer.tomtom.com/long-distance-ev-routing-api/documentation/tomtom-maps/product-information/introduction

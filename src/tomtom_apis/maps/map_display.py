@@ -119,7 +119,7 @@ class MapDisplayApi(BaseApi):
 
         return await response.bytes()
 
-    async def get_static_image(  # pylint: disable=too-many-arguments
+    async def get_static_image(
         self: Self,
         *,
         params: StaticImageParams | None = None,
@@ -129,16 +129,10 @@ class MapDisplayApi(BaseApi):
         For more information, see: https://developer.tomtom.com/map-display-api/documentation/raster/static-image
 
         Args:
-            layer (LayerType): The type of layer for the map tile.
-            style (StyleType): The style of the map tile.
-            x (int): The x-coordinate of the tile.
-            y (int): The y-coordinate of the tile.
-            zoom (int): The zoom level of the tile.
-            image_format (TileFormatType): The format of the image.
-            params (MapTileParams | None, optional): Additional parameters for the map tile. Defaults to None.
+            params (StaticImageParams | None, optional): Parameters for the static image request. Defaults to None.
 
         Returns:
-            bytes: The map tile image data.
+            bytes: The static map image data.
         """
         response = await self.get(
             endpoint="/map/1/staticimage",

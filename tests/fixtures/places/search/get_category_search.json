@@ -2,7 +2,7 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 101,
+    "queryTime": 281,
     "numResults": 10,
     "offset": 0,
     "totalResults": 100,
@@ -14,7 +14,7 @@
       "type": "POI",
       "id": "TN2fBC1dFFOCMcgrl-lTiA",
       "score": 3.0894188881,
-      "dist": 192.991339,
+      "dist": 192.993038,
       "info": "search:ta:840066000511436-US",
       "poi": {
         "name": "Mountain Mike's",
@@ -27,8 +27,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -50,9 +50,9 @@
         "freeformAddress": "29 South 3rd Street, San Jose, CA 95113",
         "localName": "San Jose"
       },
-      "position": { "lat": 37.336264, "lon": -121.888023 },
+      "position": { "lat": 37.336261, "lon": -121.888025 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.33716, "lon": -121.88915 },
+        "topLeftPoint": { "lat": 37.33716, "lon": -121.88916 },
         "btmRightPoint": { "lat": 37.33536, "lon": -121.88689 }
       },
       "entryPoints": [
@@ -75,8 +75,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -121,8 +121,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -170,8 +170,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -218,8 +218,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -266,8 +266,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -308,14 +308,14 @@
         "name": "Kukar's House of Pizza",
         "phone": "+1 408-292-6882",
         "categorySet": [{ "id": 7315036 }],
-        "url": "kukarshouseofpizza.com/",
+        "url": "kukarshouseofpizza.com",
         "categories": ["pizza", "restaurant"],
         "classifications": [
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -356,14 +356,14 @@
         "name": "Fast Pizza",
         "phone": "+1 408-975-0234",
         "categorySet": [{ "id": 7315036 }],
-        "url": "fastpizzajulian.cuteorder.com/",
+        "url": "fastpizzajulian.cuteorder.com",
         "categories": ["pizza", "restaurant"],
         "classifications": [
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -396,57 +396,55 @@
     },
     {
       "type": "POI",
-      "id": "1PYF57BVJAtzyZZ2OwX64A",
-      "score": 3.0879645348,
-      "dist": 1948.191495,
-      "info": "search:ta:840069019635436-US",
+      "id": "kytkHdpjZPeVYIkXHqgoLw",
+      "score": 3.0880668163,
+      "dist": 1879.227202,
+      "info": "search:ta:840068001935442-US",
       "poi": {
-        "name": "Blaze Pizza",
-        "phone": "+1 408-273-7186",
-        "brands": [{ "name": "Blaze Pizza" }],
+        "name": "Mike's Pizza & Taquería",
+        "phone": "+1 408-287-1111",
         "categorySet": [{ "id": 7315036 }],
-        "url": "hq.blazepizza.com/locations/san-jose-coleman-ave",
         "categories": ["pizza", "restaurant"],
         "classifications": [
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
       },
       "address": {
-        "streetNumber": "685",
-        "streetName": "Coleman Avenue",
+        "streetNumber": "889",
+        "streetName": "South Almaden Avenue",
         "municipality": "San Jose",
+        "neighbourhood": "Washington Guadalupe",
         "countrySecondarySubdivision": "Santa Clara",
         "countrySubdivision": "CA",
         "countrySubdivisionName": "California",
         "countrySubdivisionCode": "CA",
         "postalCode": "95110",
-        "extendedPostalCode": "95110-2091",
+        "extendedPostalCode": "95110-3053",
         "countryCode": "US",
         "country": "United States",
         "countryCodeISO3": "USA",
-        "freeformAddress": "685 Coleman Avenue, San Jose, CA 95110",
+        "freeformAddress": "889 South Almaden Avenue, San Jose, CA 95110",
         "localName": "San Jose"
       },
-      "position": { "lat": 37.34181, "lon": -121.91119 },
+      "position": { "lat": 37.320816, "lon": -121.883878 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.34271, "lon": -121.91232 },
-        "btmRightPoint": { "lat": 37.34091, "lon": -121.91006 }
+        "topLeftPoint": { "lat": 37.32172, "lon": -121.88501 },
+        "btmRightPoint": { "lat": 37.31992, "lon": -121.88275 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.34207, "lon": -121.91073 } },
-        { "type": "main", "position": { "lat": 37.34186, "lon": -121.91051 } }
+        { "type": "main", "position": { "lat": 37.32091, "lon": -121.88367 } }
       ]
     },
     {
       "type": "POI",
       "id": "D-TkHJcCJoVpy5OwAxLQqw",
-      "score": 3.0871891975,
+      "score": 3.0871889591,
       "dist": 2409.07945,
       "info": "search:ta:840066000971664-US",
       "poi": {
@@ -460,8 +458,8 @@
           {
             "code": "RESTAURANT",
             "names": [
-              { "nameLocale": "en-US", "name": "pizza" },
-              { "nameLocale": "en-US", "name": "restaurant" }
+              { "nameLocale": "en-US", "name": "restaurant" },
+              { "nameLocale": "en-US", "name": "pizza" }
             ]
           }
         ]
@@ -488,6 +486,7 @@
         "btmRightPoint": { "lat": 37.34858, "lon": -121.91114 }
       },
       "entryPoints": [
+        { "type": "minor", "position": { "lat": 37.34932, "lon": -121.9125 } },
         { "type": "main", "position": { "lat": 37.34968, "lon": -121.91189 } }
       ]
     }

@@ -2,7 +2,7 @@
   "summary": {
     "query": "pizza",
     "queryType": "NON_NEAR",
-    "queryTime": 634,
+    "queryTime": 247,
     "numResults": 6,
     "offset": 0,
     "totalResults": 6,
@@ -20,7 +20,7 @@
       "aliasIds": ["00005543-3300-2800-0000-00000c56a18f"],
       "info": "search:ta:840069002608477-US",
       "poi": {
-        "name": "Round Table Pizza",
+        "name": "Round Table Pizza Avenue",
         "phone": "+1 650-577-0303",
         "brands": [{ "name": "Round Table Pizza" }],
         "categorySet": [{ "id": 7315036 }],
@@ -61,8 +61,8 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.52889, "lon": -122.28962 } }
       ],
-      "detourTime": -18,
-      "detourDistance": 47,
+      "detourTime": 0,
+      "detourDistance": 15,
       "detourOffset": 0
     },
     {
@@ -115,15 +115,15 @@
       "entryPoints": [
         { "type": "main", "position": { "lat": 37.53397, "lon": -122.2955 } }
       ],
-      "detourTime": 35,
-      "detourDistance": 670,
+      "detourTime": 41,
+      "detourDistance": 656,
       "detourOffset": 0
     },
     {
       "type": "POI",
       "id": "tPw2uwxWpqPWQmwemyygmg",
-      "score": 2.7948937416,
-      "dist": 1537.233436,
+      "score": 2.7948749065,
+      "dist": 1541.928498,
       "query": "pizza",
       "externalId": "840066000061509",
       "aliasIds": ["95cc991c-3b90-4c46-bc84-643fc62ed870"],
@@ -132,7 +132,7 @@
         "name": "Aldo's Pizza",
         "phone": "+1 650-572-1797",
         "categorySet": [{ "id": 7315025 }],
-        "url": "www.aldospizza.com/",
+        "url": "www.aldospizza.com",
         "categories": ["italian", "restaurant"],
         "classifications": [
           {
@@ -146,7 +146,7 @@
       },
       "address": {
         "streetNumber": "35",
-        "streetName": "Laurie Meadows Drive",
+        "streetName": "Laurie Meadows Dr",
         "municipality": "San Mateo",
         "neighbourhood": "Lauriedale",
         "countrySecondarySubdivision": "San Mateo",
@@ -157,27 +157,27 @@
         "countryCode": "US",
         "country": "United States",
         "countryCodeISO3": "USA",
-        "freeformAddress": "35 Laurie Meadows Drive, San Mateo, CA 94403",
+        "freeformAddress": "35 Laurie Meadows Dr, San Mateo, CA 94403",
         "localName": "San Mateo"
       },
-      "position": { "lat": 37.53095, "lon": -122.28739 },
+      "position": { "lat": 37.531039, "lon": -122.287369 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.53185, "lon": -122.28852 },
-        "btmRightPoint": { "lat": 37.53005, "lon": -122.28626 }
+        "topLeftPoint": { "lat": 37.53194, "lon": -122.2885 },
+        "btmRightPoint": { "lat": 37.53014, "lon": -122.28623 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.53068, "lon": -122.28703 } },
+        { "type": "main", "position": { "lat": 37.53072, "lon": -122.28698 } },
         { "type": "minor", "position": { "lat": 37.53082, "lon": -122.28717 } }
       ],
-      "detourTime": 69,
-      "detourDistance": 75,
+      "detourTime": 70,
+      "detourDistance": 61,
       "detourOffset": 665
     },
     {
       "type": "POI",
       "id": "NJWtAU0dc-tZ_O9yOOHjHg",
-      "score": 2.6283142567,
-      "dist": 1815.278486,
+      "score": 2.628329277,
+      "dist": 1811.325803,
       "query": "pizza",
       "externalId": "840066000289419",
       "aliasIds": ["981520e4-93d9-40f6-b1b1-90dd985c5cc2"],
@@ -216,16 +216,16 @@
         "freeformAddress": "390 El Camino Real, Belmont, CA 94002",
         "localName": "Belmont"
       },
-      "position": { "lat": 37.526965, "lon": -122.28451 },
+      "position": { "lat": 37.527, "lon": -122.284544 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.52786, "lon": -122.28564 },
-        "btmRightPoint": { "lat": 37.52607, "lon": -122.28338 }
+        "topLeftPoint": { "lat": 37.5279, "lon": -122.28568 },
+        "btmRightPoint": { "lat": 37.5261, "lon": -122.28341 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.52713, "lon": -122.28434 } }
+        { "type": "main", "position": { "lat": 37.52716, "lon": -122.28438 } }
       ],
       "detourTime": 41,
-      "detourDistance": 193,
+      "detourDistance": 179,
       "detourOffset": 665
     },
     {
@@ -242,6 +242,7 @@
         "phone": "+1 650-361-8700",
         "brands": [{ "name": "Pizza Hut" }],
         "categorySet": [{ "id": 7315036 }],
+        "url": "locations.pizzahut.com/ca/redwood-city/600-w-whipple",
         "categories": ["pizza", "restaurant"],
         "classifications": [
           {
@@ -276,17 +277,18 @@
         "btmRightPoint": { "lat": 37.49311, "lon": -122.23482 }
       },
       "entryPoints": [
+        { "type": "minor", "position": { "lat": 37.49415, "lon": -122.23614 } },
         { "type": "main", "position": { "lat": 37.49375, "lon": -122.23572 } }
       ],
-      "detourTime": 274,
+      "detourTime": 279,
       "detourDistance": 685,
       "detourOffset": 4979
     },
     {
       "type": "POI",
       "id": "HlIw-j9jPIbgn5gi_KKHPA",
-      "score": 2.7109262943,
-      "dist": 17423.833872,
+      "score": 2.7108676434,
+      "dist": 17432.490915,
       "query": "pizza",
       "externalId": "840069019784532",
       "aliasIds": ["00005543-3300-2800-0000-00000c5bdefc"],
@@ -324,16 +326,16 @@
         "freeformAddress": "820 Willow Road, Menlo Park, CA 94025",
         "localName": "Menlo Park"
       },
-      "position": { "lat": 37.465532, "lon": -122.156971 },
+      "position": { "lat": 37.4655, "lon": -122.1569 },
       "viewport": {
-        "topLeftPoint": { "lat": 37.46643, "lon": -122.1581 },
-        "btmRightPoint": { "lat": 37.46463, "lon": -122.15584 }
+        "topLeftPoint": { "lat": 37.4664, "lon": -122.15803 },
+        "btmRightPoint": { "lat": 37.4646, "lon": -122.15577 }
       },
       "entryPoints": [
-        { "type": "main", "position": { "lat": 37.4656, "lon": -122.15717 } }
+        { "type": "main", "position": { "lat": 37.46559, "lon": -122.15717 } }
       ],
-      "detourTime": 169,
-      "detourDistance": 882,
+      "detourTime": 313,
+      "detourDistance": 661,
       "detourOffset": 12421
     }
   ]

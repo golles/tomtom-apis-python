@@ -32,18 +32,18 @@ class Fuel(DataClassORJSONMixin):
 
 
 @dataclass(kw_only=True)
+class FuelPricesParams(BaseParams):
+    """Parameters for the get_fuel_price method."""
+
+    fuelPrice: str
+
+
+@dataclass(kw_only=True)
 class FuelPricesResponse(DataClassORJSONMixin):
     """Represents a FuelPrices response."""
 
     fuelPrice: str
     fuels: list[Fuel]
-
-
-@dataclass(kw_only=True)
-class FuelPrizeParams(BaseParams):
-    """Parameters for the get_fuel_prize method."""
-
-    fuelPrice: str
 
 
 class FuelType(StrEnum):

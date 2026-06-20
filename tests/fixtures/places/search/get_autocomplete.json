@@ -25,6 +25,15 @@
       "segments": [
         {
           "type": "brand",
+          "value": "Pizza 73",
+          "matches": { "inputQuery": [{ "offset": 0, "length": 5 }] }
+        }
+      ]
+    },
+    {
+      "segments": [
+        {
+          "type": "brand",
           "value": "Pizza Hut",
           "matches": { "inputQuery": [{ "offset": 0, "length": 5 }] }
         }
@@ -34,17 +43,7 @@
       "segments": [
         {
           "type": "brand",
-          "value": "PizzaExpress",
-          "matches": { "inputQuery": [{ "offset": 0, "length": 5 }] },
-          "matchedAlternativeName": "Pizza Express"
-        }
-      ]
-    },
-    {
-      "segments": [
-        {
-          "type": "brand",
-          "value": "Pizza Hot 4 You",
+          "value": "Pizza Inn",
           "matches": { "inputQuery": [{ "offset": 0, "length": 5 }] }
         }
       ]

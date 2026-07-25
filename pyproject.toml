@@ -81,6 +81,7 @@ target-version = "py313"
 select = ["ALL"]
 ignore = [
   "COM812",  # Cause conflicts when used with the formatter.
+  "CPY001",  # No copyright notices in this project.
   "N803",  # Allow non-lowercase names, for API fields.
   "N815",  # Allow mixedCase names, for API fields.
   "TC",  # Runtime (de)serialization requires types to be available at runtime.

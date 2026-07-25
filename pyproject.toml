@@ -40,7 +40,7 @@ dev = [
     "pytest==9.1.1",
     "pytest-asyncio==1.4.0",
     "pytest-cov==7.1.0",
-    "ruff==0.15.22",
+    "ruff==0.16.0",
     "shellcheck-py==0.11.0.1",
     "yamllint==1.38.0",
 ]
@@ -81,6 +81,7 @@ target-version = "py313"
 select = ["ALL"]
 ignore = [
   "COM812",  # Cause conflicts when used with the formatter.
+  "CPY001",  # No copyright notices in this project.
   "N803",  # Allow non-lowercase names, for API fields.
   "N815",  # Allow mixedCase names, for API fields.
   "TC",  # Runtime (de)serialization requires types to be available at runtime.

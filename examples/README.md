@@ -19,11 +19,13 @@ class_instantiation = MapTileParams(
 )
 
 # Instantiating from a dictionary
-dict_instantiation = MapTileParams.from_dict({
-    "tileSize": 256,
-    "view": "Unified",
-    "language": "en-US",
-})
+dict_instantiation = MapTileParams.from_dict(
+    {
+        "tileSize": 256,
+        "view": "Unified",
+        "language": "en-US",
+    }
+)
 
 # Ensuring both instances are equivalent
 assert class_instantiation == dict_instantiation

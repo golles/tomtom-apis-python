@@ -1,0 +1,45 @@
+{
+  "summary": {
+    "query": "1 state highway 392 san jon nm",
+    "queryType": "NON_NEAR",
+    "queryTime": 190,
+    "numResults": 1,
+    "offset": 0,
+    "totalResults": 3,
+    "fuzzyLevel": 1
+  },
+  "results": [
+    {
+      "type": "Address Range",
+      "id": "p9urmirNxMURY_nM1SAR4g",
+      "score": 15.590013504,
+      "matchConfidence": { "score": 0.68 },
+      "address": {
+        "streetNumber": "1",
+        "streetName": "State Highway 392",
+        "municipality": "San Jon",
+        "countrySecondarySubdivision": "Quay",
+        "countrySubdivision": "NM",
+        "countrySubdivisionName": "New Mexico",
+        "countrySubdivisionCode": "NM",
+        "postalCode": "88434",
+        "extendedPostalCode": "88434-9630",
+        "countryCode": "US",
+        "country": "United States",
+        "countryCodeISO3": "USA",
+        "freeformAddress": "1 State Highway 392, San Jon, NM 88434",
+        "localName": "San Jon"
+      },
+      "position": { "lat": 35.21557, "lon": -103.3313149 },
+      "viewport": {
+        "topLeftPoint": { "lat": 35.21552, "lon": -103.33132 },
+        "btmRightPoint": { "lat": 35.21552, "lon": -103.32879 }
+      },
+      "addressRanges": {
+        "rangeLeft": "1 - 1",
+        "from": { "lat": 35.21552, "lon": -103.33132 },
+        "to": { "lat": 35.21552, "lon": -103.32879 }
+      }
+    }
+  ]
+}

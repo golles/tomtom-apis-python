@@ -56,7 +56,6 @@ source = ["tomtom_apis"]
 packages = ["src/tomtom_apis"]
 
 [tool.mypy]
-python_version = "3.14"
 ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
@@ -75,7 +74,6 @@ log_cli_level = "DEBUG"
 
 [tool.ruff]
 line-length = 150
-target-version = "py313"
 
 [tool.ruff.lint]
 select = ["ALL"]

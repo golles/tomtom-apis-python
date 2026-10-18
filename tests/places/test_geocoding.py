@@ -60,3 +60,22 @@ async def test_deserialization_get_structured_geocode(geocoding_api: GeocodingAp
     assert response.results[0].position
     assert round(response.results[0].position.lat, 5) == 52.37727
     assert round(response.results[0].position.lon, 5) == 4.90943
+
+
+@pytest.mark.usefixtures("json_response")
+@pytest.mark.parametrize("json_response", ["places/geocoding/get_geocode_address_range.json"], indirect=True)
+async def test_deserialization_get_geocode_address_range(geocoding_api: GeocodingApi) -> None:
+    """Test the get_geocode method with an address range result."""
+    response = await geocoding_api.get_geocode(
+        query="1 State Highway 392 San Jon NM",
+    )
+
+    assert response
+    assert isinstance(response, SearchResponse)
+    assert len(response.results) == 1
+    assert response.results[0].type == ResultType.ADDRESS_RANGE
+    assert response.results[0].addressRanges
+    assert response.results[0].addressRanges.rangeLeft == "1 - 1"
+    assert response.results[0].addressRanges.rangeRight is None
+    assert round(response.results[0].addressRanges.from_.lat, 5) == 35.21552
+    assert round(response.results[0].addressRanges.to.lon, 5) == -103.32879

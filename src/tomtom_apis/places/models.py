@@ -79,8 +79,8 @@ class Address(DataClassORJSONMixin):
 class AddressRange(DataClassORJSONMixin):
     """Represents a AddressRange."""
 
-    rangeLeft: str
-    rangeRight: str
+    rangeLeft: str | None = None
+    rangeRight: str | None = None
     from_: LatLon = field(metadata=field_options(alias="from"))
     to: LatLon
 
@@ -1016,7 +1016,7 @@ class Result(DataClassORJSONMixin):
     detourTime: int | None = None
     detourDistance: int | None = None
     detourOffset: int | None = None
-    addressRanges: list[AddressRange] | None = None
+    addressRanges: AddressRange | None = None
     chargingPark: ChargingPark | None = None
     dataSources: DataSources | None = None
     fuelTypes: list[FuelType] | None = None

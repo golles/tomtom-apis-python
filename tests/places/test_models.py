@@ -1,6 +1,6 @@
 """Test for places models."""
 
-from tomtom_apis.places.models import Connector, Context
+from tomtom_apis.places.models import AddressRange, Connector, Context
 
 
 def test_connector_post_deserialize() -> None:
@@ -17,3 +17,12 @@ def test_context_pre_deserialize() -> None:
     context2 = Context.from_dict({"inputQuery": "foo"})
 
     assert context1 == context2
+
+
+def test_address_range_one_side() -> None:
+    """Test AddressRange with a range on only one side of the road."""
+    address_range = AddressRange.from_dict({"rangeRight": "1 - 9", "from": {"lat": 52.0, "lon": 4.0}, "to": {"lat": 52.1, "lon": 4.1}})
+
+    assert address_range.rangeLeft is None
+    assert address_range.rangeRight == "1 - 9"
+    assert address_range.from_.lat == 52.0

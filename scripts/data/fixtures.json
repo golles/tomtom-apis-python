@@ -65,6 +65,11 @@
       },
       {
         "method": "GET",
+        "fixture": "places/geocoding/get_geocode_address_range.json",
+        "url": "search/2/geocode/1+State+Highway+392+San+Jon+NM.json?key={{TT_KEY}}&limit=1"
+      },
+      {
+        "method": "GET",
         "fixture": "places/reverse_geocoding/get_reverse_geocode.json",
         "url": "search/2/reverseGeocode/37.8328%2C-122.27669.json?returnSpeedLimit=false&radius=10000&allowFreeformNewLine=false&returnMatchType=false&view=Unified&key={{TT_KEY}}"
       },

@@ -109,7 +109,7 @@ async def test_dict_json_decode_error(mock_response: AsyncMock) -> None:
     mock_response.text.return_value = "invalid json"
     response = Response(mock_response)
 
-    with pytest.raises(orjson.JSONDecodeError):  # pylint: disable=maybe-no-member
+    with pytest.raises(orjson.JSONDecodeError):
         await response.dict()
 
     mock_response.text.assert_awaited_once()

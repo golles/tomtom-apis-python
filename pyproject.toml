@@ -64,6 +64,7 @@ ignore_missing_imports = true
 
 [tool.pylint]
 max-line-length=150
+extension-pkg-allow-list = ["orjson"]
 
 [tool.pytest.ini_options]
 addopts = "--cov --cov-report=term --cov-report=xml"

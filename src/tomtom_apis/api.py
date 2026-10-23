@@ -134,8 +134,8 @@ class Response:
         logger.info("Deserializing response to dictionary")
         try:
             text = await self._response.text()
-            return orjson.loads(text)  # pylint: disable=maybe-no-member
-        except orjson.JSONDecodeError:  # pylint: disable=maybe-no-member
+            return orjson.loads(text)
+        except orjson.JSONDecodeError:
             logger.exception("Failed to decode JSON response")
             raise
 

@@ -131,7 +131,7 @@ class SearchApi(BaseApi):
         Returns:
             SearchResponse: The response containing search results within the specified geometry.
         """
-        geometry_json = orjson.dumps([{k: v for k, v in asdict(g).items() if v is not None} for g in geometryList]).decode()  # pylint: disable=maybe-no-member
+        geometry_json = orjson.dumps([{k: v for k, v in asdict(g).items() if v is not None} for g in geometryList]).decode()
         response = await self.get(
             endpoint=f"/search/2/geometrySearch/{query}.json?geometryList={geometry_json}",
             params=params,
@@ -266,8 +266,8 @@ class SearchApi(BaseApi):
         Returns:
             GeometryFilterResponse: The response containing the results filtered by the provided geometry and POIs.
         """
-        geometry_json = orjson.dumps([{k: v for k, v in asdict(g).items() if v is not None} for g in geometryList]).decode()  # pylint: disable=maybe-no-member
-        poi_json = orjson.dumps([{k: v for k, v in asdict(p).items() if v is not None} for p in poiList]).decode()  # pylint: disable=maybe-no-member
+        geometry_json = orjson.dumps([{k: v for k, v in asdict(g).items() if v is not None} for g in geometryList]).decode()
+        poi_json = orjson.dumps([{k: v for k, v in asdict(p).items() if v is not None} for p in poiList]).decode()
         response = await self.get(
             endpoint=f"/search/2/geometryFilter.json?geometryList={geometry_json}&poiList={poi_json}",
             params=params,
